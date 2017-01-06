@@ -1,6 +1,6 @@
 import UIKit
 
-class DashboardCoordinator {
+class DashboardPresenter {
 
     func present(onWindow window: UIWindow) {
         let viewController = DashboardViewController()

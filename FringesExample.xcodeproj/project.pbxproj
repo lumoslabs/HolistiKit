@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740AA1E1F8C9400CECDDF /* AppDelegate.swift */; };
-		880740AD1E1F8C9400CECDDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740AC1E1F8C9400CECDDF /* ViewController.swift */; };
+		880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */; };
 		880740B21E1F8C9400CECDDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880740B11E1F8C9400CECDDF /* Assets.xcassets */; };
 		880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740B31E1F8C9400CECDDF /* LaunchScreen.storyboard */; };
 		880740C01E1F8C9400CECDDF /* FringesExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740BF1E1F8C9400CECDDF /* FringesExampleTests.swift */; };
-		880740CC1E1F916700CECDDF /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CB1E1F916700CECDDF /* DashboardCoordinator.swift */; };
+		880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CB1E1F916700CECDDF /* DashboardPresenter.swift */; };
+		880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CE1E1F939300CECDDF /* AppCoordinator.swift */; };
+		880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D01E1FCC8700CECDDF /* RootRouter.swift */; };
+		880740D31E1FCDDB00CECDDF /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +31,17 @@
 /* Begin PBXFileReference section */
 		880740A71E1F8C9400CECDDF /* FringesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FringesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880740AA1E1F8C9400CECDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		880740AC1E1F8C9400CECDDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		880740B11E1F8C9400CECDDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		880740B41E1F8C9400CECDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		880740B61E1F8C9400CECDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		880740BB1E1F8C9400CECDDF /* FringesExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FringesExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		880740BF1E1F8C9400CECDDF /* FringesExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FringesExampleTests.swift; sourceTree = "<group>"; };
 		880740C11E1F8C9400CECDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		880740CB1E1F916700CECDDF /* DashboardCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		880740CB1E1F916700CECDDF /* DashboardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		880740CE1E1F939300CECDDF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		880740D01E1FCC8700CECDDF /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +104,9 @@
 		880740CA1E1F911200CECDDF /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				880740CB1E1F916700CECDDF /* DashboardCoordinator.swift */,
-				880740AC1E1F8C9400CECDDF /* ViewController.swift */,
+				880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */,
+				880740CB1E1F916700CECDDF /* DashboardPresenter.swift */,
+				880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -108,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				880740AA1E1F8C9400CECDDF /* AppDelegate.swift */,
+				880740CE1E1F939300CECDDF /* AppCoordinator.swift */,
+				880740D01E1FCC8700CECDDF /* RootRouter.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -214,8 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880740AD1E1F8C9400CECDDF /* ViewController.swift in Sources */,
-				880740CC1E1F916700CECDDF /* DashboardCoordinator.swift in Sources */,
+				880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */,
+				880740D31E1FCDDB00CECDDF /* DashboardRouter.swift in Sources */,
+				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
+				880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */,
+				880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
