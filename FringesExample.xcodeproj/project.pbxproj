@@ -12,6 +12,7 @@
 		880740B21E1F8C9400CECDDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880740B11E1F8C9400CECDDF /* Assets.xcassets */; };
 		880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740B31E1F8C9400CECDDF /* LaunchScreen.storyboard */; };
 		880740C01E1F8C9400CECDDF /* FringesExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740BF1E1F8C9400CECDDF /* FringesExampleTests.swift */; };
+		880740CC1E1F916700CECDDF /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CB1E1F916700CECDDF /* DashboardCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		880740BB1E1F8C9400CECDDF /* FringesExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FringesExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		880740BF1E1F8C9400CECDDF /* FringesExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FringesExampleTests.swift; sourceTree = "<group>"; };
 		880740C11E1F8C9400CECDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880740CB1E1F916700CECDDF /* DashboardCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +77,8 @@
 		880740A91E1F8C9400CECDDF /* FringesExample */ = {
 			isa = PBXGroup;
 			children = (
-				880740AA1E1F8C9400CECDDF /* AppDelegate.swift */,
-				880740AC1E1F8C9400CECDDF /* ViewController.swift */,
+				880740CD1E1F935200CECDDF /* Main */,
+				880740CA1E1F911200CECDDF /* Dashboard */,
 				880740B11E1F8C9400CECDDF /* Assets.xcassets */,
 				880740B31E1F8C9400CECDDF /* LaunchScreen.storyboard */,
 				880740B61E1F8C9400CECDDF /* Info.plist */,
@@ -91,6 +93,23 @@
 				880740C11E1F8C9400CECDDF /* Info.plist */,
 			);
 			path = FringesExampleTests;
+			sourceTree = "<group>";
+		};
+		880740CA1E1F911200CECDDF /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				880740CB1E1F916700CECDDF /* DashboardCoordinator.swift */,
+				880740AC1E1F8C9400CECDDF /* ViewController.swift */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		880740CD1E1F935200CECDDF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				880740AA1E1F8C9400CECDDF /* AppDelegate.swift */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				880740AD1E1F8C9400CECDDF /* ViewController.swift in Sources */,
+				880740CC1E1F916700CECDDF /* DashboardCoordinator.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
