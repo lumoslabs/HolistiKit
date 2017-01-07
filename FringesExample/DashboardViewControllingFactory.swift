@@ -2,14 +2,14 @@ import UIKit
 
 class DashboardViewControllingFactory: DashboardViewControllingFactoryProtocol {
 
-    func createAndPresent(onWindow window: UIWindow) -> DashboardViewControlling {
+    func create(withPresenter presenter: DashboardPresenter) -> DashboardViewControlling {
         let viewController = DashboardViewController()
-        window.rootViewController = viewController
+        viewController.presenter = presenter
         return viewController
     }
 }
 
 protocol DashboardViewControllingFactoryProtocol {
     
-    func createAndPresent(onWindow window: UIWindow) -> DashboardViewControlling
+    func create(withPresenter presenter: DashboardPresenter) -> DashboardViewControlling
 }

@@ -18,6 +18,6 @@ class FringesTest: XCTestCase {
         let appCoordinator = AppCoordinator(router: router)
         let window = UIWindow()
         appCoordinator.didFinishLaunching(withWindow: window)
-        dashboard = dashboardViewControllerFactory.dashboardViewController
+        dashboard = dashboardViewControllerFactory.viewController
     }
 }

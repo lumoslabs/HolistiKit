@@ -3,17 +3,29 @@ import UIKit
 
 class SpecDashboardViewControllingFactory: DashboardViewControllingFactoryProtocol {
 
-    var dashboardViewController: SpecDashboardViewController!
+    var viewController: SpecDashboardViewController!
 
-    func createAndPresent(onWindow window: UIWindow) -> DashboardViewControlling {
-        dashboardViewController = SpecDashboardViewController()
-        return dashboardViewController
+    func create(withPresenter presenter: DashboardPresenter) -> DashboardViewControlling {
+        viewController = SpecDashboardViewController(presenter: presenter)
+        return viewController
     }
 }
 
 class SpecDashboardViewController: DashboardViewControlling {
 
-    var backgroundColor: UIColor?
+    // Input
+    // ...
+    // Output
+    private(set) var backgroundColor: UIColor?
+
+    private let presenter: DashboardPresenter
+
+    init(presenter: DashboardPresenter) {
+        self.presenter = presenter
+    }
+    
+    func present(onWindow: UIWindow) {
+    }
 
     func set(backgroundColor: UIColor) {
         self.backgroundColor = backgroundColor
