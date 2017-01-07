@@ -1,7 +1,7 @@
 import XCTest
 @testable import FringesExample
 
-class FringesExampleTests: XCTestCase {
+class FringesTest: XCTestCase {
 
     // retain AppCoordinator, as AppDelegate would
     var appCoordinator: AppCoordinator!
@@ -20,9 +20,4 @@ class FringesExampleTests: XCTestCase {
         appCoordinator.didFinishLaunching(withWindow: window)
         dashboard = dashboardViewControllerFactory.dashboardViewController
     }
-    
-    func test_dashboardBackgroundIsTheRightColor() {
-        XCTAssertEqual(dashboard.backgroundColor, UIColor.green)
-    }
-    
 }
