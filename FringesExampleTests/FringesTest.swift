@@ -6,13 +6,15 @@ class FringesTest: XCTestCase {
     // retain AppCoordinator, as AppDelegate would
     var appCoordinator: AppCoordinator!
 
-    var dashboard: SpecDashboardViewController!
+    var dashboard: SpecDashboardViewControllerUI!
     
     override func setUp() {
         super.setUp()
 
         let dashboardViewControllerFactory = SpecDashboardViewControllingFactory()
-        let dashboardPresenter = DashboardPresenter(viewControllerFactory: dashboardViewControllerFactory)
+        let dashboardInteractor = DashboardInteractor()
+        let dashboardPresenter = DashboardPresenter(viewControllerFactory: dashboardViewControllerFactory,
+                                                    interactor: dashboardInteractor)
         let dashboardRouter = DashboardRouter(dashboardPresenter: dashboardPresenter)
         let router = RootRouter(dashboardRouter: dashboardRouter)
         let appCoordinator = AppCoordinator(router: router)

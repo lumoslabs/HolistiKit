@@ -10,7 +10,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = _window
 
         let dashboardViewControllerFactory = DashboardViewControllingFactory()
-        let dashboardPresenter = DashboardPresenter(viewControllerFactory: dashboardViewControllerFactory)
+        let dashboardInteractor = DashboardInteractor()
+        let dashboardPresenter = DashboardPresenter(viewControllerFactory: dashboardViewControllerFactory,
+                                                    interactor: dashboardInteractor)
         let dashboardRouter = DashboardRouter(dashboardPresenter: dashboardPresenter)
         let router = RootRouter(dashboardRouter: dashboardRouter)
         let appCoordinator = AppCoordinator(router: router)

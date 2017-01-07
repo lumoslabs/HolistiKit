@@ -20,8 +20,32 @@
                     <view key="view" contentMode="scaleToFill" id="WFh-DR-MGI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCL-2M-XVu">
+                                <rect key="frame" x="166" y="20" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo9-FI-Qci">
+                                <rect key="frame" x="172" y="49" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="tapAddToCountButton" destination="oDQ-aq-XON" eventType="touchUpInside" id="Xwn-zz-WfL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eo9-FI-Qci" firstAttribute="centerX" secondItem="FCL-2M-XVu" secondAttribute="centerX" id="50F-OL-1HS"/>
+                            <constraint firstItem="FCL-2M-XVu" firstAttribute="centerX" secondItem="WFh-DR-MGI" secondAttribute="centerX" id="Zhx-AF-eEg"/>
+                            <constraint firstItem="FCL-2M-XVu" firstAttribute="top" secondItem="IEu-Fz-paF" secondAttribute="bottom" id="bhK-p9-dnv"/>
+                            <constraint firstItem="eo9-FI-Qci" firstAttribute="top" secondItem="FCL-2M-XVu" secondAttribute="bottom" constant="8" id="ed8-UD-1WC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countLabel" destination="FCL-2M-XVu" id="F6B-Pi-RdR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX7-RW-5dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

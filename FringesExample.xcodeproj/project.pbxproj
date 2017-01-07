@@ -17,10 +17,11 @@
 		880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D01E1FCC8700CECDDF /* RootRouter.swift */; };
 		880740D31E1FCDDB00CECDDF /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */; };
 		880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */; };
-		880740D91E2103A400CECDDF /* SpecDashboardViewControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecDashboardViewControllingFactory.swift */; };
+		880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */; };
 		880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DB1E21079B00CECDDF /* FringesTest.swift */; };
 		880740DF1E2108CE00CECDDF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DD1E21088B00CECDDF /* main.swift */; };
 		880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740E01E21100200CECDDF /* DashboardViewController.storyboard */; };
+		880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740E81E2118FC00CECDDF /* DashboardInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +49,11 @@
 		880740D01E1FCC8700CECDDF /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewControllingFactory.swift; sourceTree = "<group>"; };
-		880740D81E2103A400CECDDF /* SpecDashboardViewControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDashboardViewControllingFactory.swift; sourceTree = "<group>"; };
+		880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDashboardViewController.swift; sourceTree = "<group>"; };
 		880740DB1E21079B00CECDDF /* FringesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FringesTest.swift; sourceTree = "<group>"; };
 		880740DD1E21088B00CECDDF /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		880740E01E21100200CECDDF /* DashboardViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashboardViewController.storyboard; sourceTree = "<group>"; };
+		880740E81E2118FC00CECDDF /* DashboardInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */,
+				880740E81E2118FC00CECDDF /* DashboardInteractor.swift */,
 				880740CB1E1F916700CECDDF /* DashboardPresenter.swift */,
 				880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */,
 				880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */,
@@ -139,7 +142,7 @@
 		880740D71E21038500CECDDF /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
-				880740D81E2103A400CECDDF /* SpecDashboardViewControllingFactory.swift */,
+				880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
 				880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */,
+				880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */,
 				880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 				880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */,
@@ -274,7 +278,7 @@
 			files = (
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */,
-				880740D91E2103A400CECDDF /* SpecDashboardViewControllingFactory.swift in Sources */,
+				880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +466,7 @@
 				880740C61E1F8C9400CECDDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		880740C71E1F8C9400CECDDF /* Build configuration list for PBXNativeTarget "FringesExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +475,7 @@
 				880740C91E1F8C9400CECDDF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -4,12 +4,22 @@ class DashboardViewController: UIViewController, DashboardViewControlling {
 
     var presenter: DashboardPresenter!
 
+    @IBOutlet weak var countLabel: UILabel!
+
+    @IBAction func tapAddToCountButton() {
+        presenter.tapOnAddToCountButton()
+    }
+
     func present(onWindow window: UIWindow) {
         window.rootViewController = self
     }
 
     func set(backgroundColor: UIColor) {
-        self.view.backgroundColor = backgroundColor
+        view.backgroundColor = backgroundColor
+    }
+
+    func set(countLabel: String) {
+        self.countLabel.text = countLabel
     }
 }
 
@@ -17,4 +27,5 @@ protocol DashboardViewControlling: class {
 
     func present(onWindow: UIWindow)
     func set(backgroundColor: UIColor)
+    func set(countLabel: String)
 }
