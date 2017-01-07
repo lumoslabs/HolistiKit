@@ -2,9 +2,9 @@ import UIKit
 
 class DashboardPresenter {
 
-    private let viewControllerFactory: DashboardViewControllingFactory
+    private let viewControllerFactory: DashboardViewControllingFactoryProtocol
 
-    init(viewControllerFactory: DashboardViewControllingFactory) {
+    init(viewControllerFactory: DashboardViewControllingFactoryProtocol) {
         self.viewControllerFactory = viewControllerFactory
     }
 
