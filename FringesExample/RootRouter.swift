@@ -1,10 +1,14 @@
 import UIKit
 
 class RootRouter {
-    
-    func present(onWindow window: UIWindow) {
-        let dashboardRouter = DashboardRouter()
-        dashboardRouter.present(onWindow: window)
+
+    private let dashboardRouter: DashboardRouter
+
+    init(dashboardRouter: DashboardRouter) {
+        self.dashboardRouter = dashboardRouter
     }
     
+    func present(onWindow window: UIWindow) {
+        dashboardRouter.present(onWindow: window)
+    }
 }

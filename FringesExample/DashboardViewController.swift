@@ -1,10 +1,13 @@
 import UIKit
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, DashboardViewControlling {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.view.backgroundColor = UIColor.white
+    func set(backgroundColor: UIColor) {
+        self.view.backgroundColor = backgroundColor
     }
+}
+
+protocol DashboardViewControlling {
+
+    func set(backgroundColor: UIColor)
 }

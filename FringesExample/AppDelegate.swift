@@ -5,15 +5,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let _window = UIWindow(frame: UIScreen.main.bounds)
         window = _window
 
-        let router = RootRouter()
+        let dashboardViewControllerFactory = DashboardViewControllingFactory()
+        let dashboardPresenter = DashboardPresenter(viewControllerFactory: dashboardViewControllerFactory)
+        let dashboardRouter = DashboardRouter(dashboardPresenter: dashboardPresenter)
+        let router = RootRouter(dashboardRouter: dashboardRouter)
         let appCoordinator = AppCoordinator(router: router)
         appCoordinator.didFinishLaunching(withWindow: _window)
         
-        window?.makeKeyAndVisible()
+        _window.makeKeyAndVisible()
         
         return true
     }

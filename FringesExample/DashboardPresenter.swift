@@ -2,9 +2,14 @@ import UIKit
 
 class DashboardPresenter {
 
-    func present(onWindow window: UIWindow) {
-        let viewController = DashboardViewController()
-        window.rootViewController = viewController
+    private let viewControllerFactory: DashboardViewControllingFactory
+
+    init(viewControllerFactory: DashboardViewControllingFactory) {
+        self.viewControllerFactory = viewControllerFactory
     }
-    
+
+    func present(onWindow window: UIWindow) {
+        let viewController = viewControllerFactory.createAndPresent(onWindow: window)
+        viewController.set(backgroundColor: UIColor.green)
+    }
 }
