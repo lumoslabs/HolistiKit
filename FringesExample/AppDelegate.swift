@@ -10,12 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = _window
 
         let dashboardViewControllerFactory = DashboardViewControllingFactory()
-        let dashboardInteractor = DashboardInteractor()
-        let dashboardPresenter = DashboardPresenter(viewControllerFactory: dashboardViewControllerFactory,
-                                                    interactor: dashboardInteractor)
-        let dashboardRouter = DashboardRouter(dashboardPresenter: dashboardPresenter)
-        let router = RootRouter(dashboardRouter: dashboardRouter)
-        let appCoordinator = AppCoordinator(router: router)
+        let appCoordinator = AppCoordinator(dashboardViewControllerFactory: dashboardViewControllerFactory)
         appCoordinator.didFinishLaunching(withWindow: _window)
         
         _window.makeKeyAndVisible()

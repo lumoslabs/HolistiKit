@@ -4,8 +4,12 @@ class AppCoordinator {
 
     let router: RootRouter
 
-    init(router: RootRouter) {
-        self.router = router
+    init(dashboardViewControllerFactory: DashboardViewControllingFactoryProtocol) {
+        let dashboardInteractor = DashboardInteractor()
+        let dashboardPresenter = DashboardPresenter(viewControllerFactory: dashboardViewControllerFactory,
+                                                    interactor: dashboardInteractor)
+        let dashboardRouter = DashboardRouter(dashboardPresenter: dashboardPresenter)
+        self.router = RootRouter(dashboardRouter: dashboardRouter)
     }
     
     func didFinishLaunching(withWindow window: UIWindow) {
