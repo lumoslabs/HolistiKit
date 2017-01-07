@@ -20,6 +20,7 @@
 		880740D91E2103A400CECDDF /* SpecDashboardViewControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecDashboardViewControllingFactory.swift */; };
 		880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DB1E21079B00CECDDF /* FringesTest.swift */; };
 		880740DF1E2108CE00CECDDF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DD1E21088B00CECDDF /* main.swift */; };
+		880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740E01E21100200CECDDF /* DashboardViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		880740D81E2103A400CECDDF /* SpecDashboardViewControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDashboardViewControllingFactory.swift; sourceTree = "<group>"; };
 		880740DB1E21079B00CECDDF /* FringesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FringesTest.swift; sourceTree = "<group>"; };
 		880740DD1E21088B00CECDDF /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		880740E01E21100200CECDDF /* DashboardViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashboardViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				880740CB1E1F916700CECDDF /* DashboardPresenter.swift */,
 				880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */,
 				880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */,
+				880740E01E21100200CECDDF /* DashboardViewController.storyboard */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */,
 				880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */,
 				880740B21E1F8C9400CECDDF /* Assets.xcassets in Resources */,
 			);
