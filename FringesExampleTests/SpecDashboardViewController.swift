@@ -33,6 +33,7 @@ class SpecDashboardViewController: DashboardViewControlling, SpecDashboardViewCo
     }
     
     func present(onWindow: UIWindow) {
+        presenter.viewDidLoad()
     }
 
     func set(backgroundColor: UIColor) {

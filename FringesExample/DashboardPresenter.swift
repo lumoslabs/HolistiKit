@@ -17,7 +17,10 @@ class DashboardPresenter {
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
         _viewController.present(onWindow: window)
-        _viewController.set(backgroundColor: UIColor.green)
+    }
+
+    func viewDidLoad() {
+        viewController?.set(backgroundColor: UIColor.green)
         set(countLabel: "Never tapped before")
     }
 

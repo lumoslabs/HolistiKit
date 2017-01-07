@@ -10,6 +10,11 @@ class DashboardViewController: UIViewController, DashboardViewControlling {
         presenter.tapOnAddToCountButton()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+    }
+
     func present(onWindow window: UIWindow) {
         window.rootViewController = self
     }
