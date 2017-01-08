@@ -3,12 +3,8 @@ import UIKit
 
 class SpecDashboardViewControllingFactory: DashboardViewControllingFactoryProtocol {
 
-    private(set) var viewController: SpecDashboardViewControllerUI!
-
     func create(withPresenter presenter: DashboardPresenter) -> DashboardViewControlling {
-        let _viewController = SpecDashboardViewController(presenter: presenter)
-        viewController = _viewController
-        return _viewController
+        return SpecDashboardViewController(presenter: presenter)
     }
 }
 

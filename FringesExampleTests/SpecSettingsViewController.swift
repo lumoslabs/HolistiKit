@@ -1,13 +1,9 @@
 @testable import FringesExample
 
 class SpecSettingsViewControllerFactory: SettingsViewControllerFactoryProtocol {
-
-    private(set) var viewController: SpecSettingsViewControllerUI!
     
     func create(withPresenter presenter: SettingsPresenter) -> SettingsViewControlling {
-        let _viewController = SpecSettingsViewController(presenter: presenter)
-        viewController = _viewController
-        return _viewController
+        return SpecSettingsViewController(presenter: presenter)
     }
 }
 
