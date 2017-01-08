@@ -3,7 +3,7 @@ import UIKit
 
 class SpecWindow: Windowing {
 
-    var rootViewController: ViewControlling?
+    var rootViewController: SpecViewControllerUI?
 
     var asUIWindow: UIWindow {
         fatalError("This should never be called in tests")

@@ -3,20 +3,26 @@ import XCTest
 
 class FringesTest: XCTestCase {
 
-    // retain AppCoordinator, as AppDelegate would
-    var appCoordinator: AppCoordinator!
-
-    var dashboard: SpecDashboardViewControllerUI!
+    // retain the window, as AppDelegate would
+    var window: SpecWindow!
     
     override func setUp() {
         super.setUp()
 
+        window = SpecWindow()
         let dashboardViewControllerFactory = SpecDashboardViewControllingFactory()
         let settingsViewControllerFactory = SpecSettingsViewControllerFactory()
         let appCoordinator = AppCoordinator(dashboardViewControllerFactory: dashboardViewControllerFactory,
                                             settingsViewControllerFactory: settingsViewControllerFactory)
-        let window = SpecWindow()
+        
         appCoordinator.didFinishLaunching(withWindow: window)
-        dashboard = dashboardViewControllerFactory.viewController
+    }
+
+    var dashboard: SpecDashboardViewControllerUI! {
+        return window.rootViewController as! SpecDashboardViewControllerUI
+    }
+
+    var settings: SpecSettingsViewControllerUI? {
+        return window.rootViewController?.presentedViewController as? SpecSettingsViewControllerUI
     }
 }

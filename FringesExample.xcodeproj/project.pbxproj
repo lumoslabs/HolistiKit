@@ -117,11 +117,11 @@
 		880740A91E1F8C9400CECDDF /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				8807416A1E227AE900CECDDF /* Protocols */,
-				880741671E227A3F00CECDDF /* Extensions */,
 				880740CD1E1F935200CECDDF /* Main */,
 				880741621E2270A700CECDDF /* Settings */,
 				880740CA1E1F911200CECDDF /* Dashboard */,
+				8807416A1E227AE900CECDDF /* Protocols */,
+				880741671E227A3F00CECDDF /* Extensions */,
 				880740DA1E21076900CECDDF /* Supporting Files */,
 			);
 			name = Source;
