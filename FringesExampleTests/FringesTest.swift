@@ -4,7 +4,7 @@ import XCTest
 class FringesTest: XCTestCase {
 
     // retain the window, as AppDelegate would
-    var window: SpecWindow!
+    private(set) var window: SpecWindow!
     
     override func setUp() {
         super.setUp()
@@ -17,12 +17,15 @@ class FringesTest: XCTestCase {
         
         appCoordinator.didFinishLaunching(withWindow: window)
     }
+}
+
+extension FringesTest {
 
     var dashboard: SpecDashboardViewControllerUI! {
         return window.rootViewController as! SpecDashboardViewControllerUI
     }
 
-    var settings: SpecSettingsViewControllerUI? {
-        return window.rootViewController?.presentedViewController as? SpecSettingsViewControllerUI
+    var settings: SpecSettingsViewControllerUI! {
+        return dashboard.presentedViewController as! SpecSettingsViewControllerUI
     }
 }

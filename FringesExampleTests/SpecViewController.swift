@@ -8,14 +8,15 @@ protocol SpecViewControllerUI {
 
 class SpecViewController: ViewControlling, SpecViewControllerUI {
     
-    var presentedViewController: ViewControlling?
+    private(set) var presentedViewController: ViewControlling? {
+        didSet { presentedViewController?.viewDidLoad() }
+    }
 
     func viewDidLoad() { }
 
     func present(onWindow window: Windowing) {
         let specWindow = window as! SpecWindow
         specWindow.rootViewController = self
-        viewDidLoad()
     }
 
     func present(viewController: ViewControlling) {
