@@ -10,7 +10,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = _window
 
         let dashboardViewControllerFactory = DashboardViewControllingFactory()
-        let appCoordinator = AppCoordinator(dashboardViewControllerFactory: dashboardViewControllerFactory)
+        let settingsViewControllerFactory = SettingsViewControllerFactory()
+        let appCoordinator = AppCoordinator(dashboardViewControllerFactory: dashboardViewControllerFactory,
+                                            settingsViewControllerFactory: settingsViewControllerFactory)
         appCoordinator.didFinishLaunching(withWindow: _window)
         
         _window.makeKeyAndVisible()

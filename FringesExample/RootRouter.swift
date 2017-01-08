@@ -2,13 +2,20 @@ import UIKit
 
 class RootRouter {
 
-    private let dashboardRouter: DashboardRouter
+    private let dashboardPresenter: DashboardPresenter
+    private let settingsPresenter: SettingsPresenter
 
-    init(dashboardRouter: DashboardRouter) {
-        self.dashboardRouter = dashboardRouter
+    init(dashboardPresenter: DashboardPresenter,
+         settingsPresenter: SettingsPresenter) {
+        self.dashboardPresenter = dashboardPresenter
+        self.settingsPresenter = settingsPresenter
     }
     
     func present(onWindow window: UIWindow) {
-        dashboardRouter.present(onWindow: window)
+        dashboardPresenter.present(onWindow: window)
+    }
+    
+    func presentSettingsPage(onPresenter presenter: DashboardPresenter) {
+        settingsPresenter.present(onPresenter: presenter)
     }
 }

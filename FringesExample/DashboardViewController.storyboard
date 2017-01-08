@@ -34,13 +34,22 @@
                                     <action selector="tapAddToCountButton" destination="oDQ-aq-XON" eventType="touchUpInside" id="Xwn-zz-WfL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1U-st-T5s">
+                                <rect key="frame" x="159" y="151" width="57" height="30"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="tapSettingsButton" destination="oDQ-aq-XON" eventType="touchUpInside" id="mFm-pI-KSA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eo9-FI-Qci" firstAttribute="centerX" secondItem="FCL-2M-XVu" secondAttribute="centerX" id="50F-OL-1HS"/>
+                            <constraint firstItem="R1U-st-T5s" firstAttribute="centerX" secondItem="WFh-DR-MGI" secondAttribute="centerX" id="WEz-D7-RXv"/>
                             <constraint firstItem="FCL-2M-XVu" firstAttribute="centerX" secondItem="WFh-DR-MGI" secondAttribute="centerX" id="Zhx-AF-eEg"/>
                             <constraint firstItem="FCL-2M-XVu" firstAttribute="top" secondItem="IEu-Fz-paF" secondAttribute="bottom" id="bhK-p9-dnv"/>
                             <constraint firstItem="eo9-FI-Qci" firstAttribute="top" secondItem="FCL-2M-XVu" secondAttribute="bottom" constant="8" id="ed8-UD-1WC"/>
+                            <constraint firstItem="R1U-st-T5s" firstAttribute="top" secondItem="eo9-FI-Qci" secondAttribute="bottom" constant="72" id="k1I-WH-yhy"/>
                         </constraints>
                     </view>
                     <connections>

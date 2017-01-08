@@ -15,13 +15,21 @@
 		880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CB1E1F916700CECDDF /* DashboardPresenter.swift */; };
 		880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CE1E1F939300CECDDF /* AppCoordinator.swift */; };
 		880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D01E1FCC8700CECDDF /* RootRouter.swift */; };
-		880740D31E1FCDDB00CECDDF /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */; };
 		880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */; };
 		880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */; };
 		880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DB1E21079B00CECDDF /* FringesTest.swift */; };
 		880740DF1E2108CE00CECDDF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DD1E21088B00CECDDF /* main.swift */; };
 		880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740E01E21100200CECDDF /* DashboardViewController.storyboard */; };
 		880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740E81E2118FC00CECDDF /* DashboardInteractor.swift */; };
+		880741641E2270BC00CECDDF /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741631E2270BC00CECDDF /* SettingsPresenter.swift */; };
+		880741661E22780C00CECDDF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741651E22780C00CECDDF /* SettingsViewController.swift */; };
+		880741691E227A4D00CECDDF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741681E227A4D00CECDDF /* UIViewController.swift */; };
+		8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807416B1E227AF500CECDDF /* ViewControlling.swift */; };
+		8807416E1E22858400CECDDF /* SettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807416D1E22858400CECDDF /* SettingsViewControllerFactory.swift */; };
+		880741701E22876700CECDDF /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8807416F1E22876700CECDDF /* SettingsViewController.storyboard */; };
+		880741721E2287C200CECDDF /* SpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741711E2287C200CECDDF /* SpecViewController.swift */; };
+		880741741E22889000CECDDF /* SpecSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecSettingsViewController.swift */; };
+		880741761E22896C00CECDDF /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741751E22896C00CECDDF /* SettingsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +55,21 @@
 		880740CB1E1F916700CECDDF /* DashboardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		880740CE1E1F939300CECDDF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		880740D01E1FCC8700CECDDF /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewControllingFactory.swift; sourceTree = "<group>"; };
 		880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDashboardViewController.swift; sourceTree = "<group>"; };
 		880740DB1E21079B00CECDDF /* FringesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FringesTest.swift; sourceTree = "<group>"; };
 		880740DD1E21088B00CECDDF /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		880740E01E21100200CECDDF /* DashboardViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashboardViewController.storyboard; sourceTree = "<group>"; };
 		880740E81E2118FC00CECDDF /* DashboardInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		880741631E2270BC00CECDDF /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		880741651E22780C00CECDDF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		880741681E227A4D00CECDDF /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		8807416B1E227AF500CECDDF /* ViewControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControlling.swift; sourceTree = "<group>"; };
+		8807416D1E22858400CECDDF /* SettingsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerFactory.swift; sourceTree = "<group>"; };
+		8807416F1E22876700CECDDF /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		880741711E2287C200CECDDF /* SpecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecViewController.swift; sourceTree = "<group>"; };
+		880741731E22889000CECDDF /* SpecSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSettingsViewController.swift; sourceTree = "<group>"; };
+		880741751E22896C00CECDDF /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +111,10 @@
 		880740A91E1F8C9400CECDDF /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				8807416A1E227AE900CECDDF /* Protocols */,
+				880741671E227A3F00CECDDF /* Extensions */,
 				880740CD1E1F935200CECDDF /* Main */,
+				880741621E2270A700CECDDF /* Settings */,
 				880740CA1E1F911200CECDDF /* Dashboard */,
 				880740DA1E21076900CECDDF /* Supporting Files */,
 			);
@@ -107,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				880740BF1E1F8C9400CECDDF /* DashboardTests.swift */,
+				880741751E22896C00CECDDF /* SettingsTests.swift */,
 				880740D71E21038500CECDDF /* Fakes */,
 				880740DB1E21079B00CECDDF /* FringesTest.swift */,
 				880740C11E1F8C9400CECDDF /* Info.plist */,
@@ -118,7 +138,6 @@
 		880740CA1E1F911200CECDDF /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				880740D21E1FCDDB00CECDDF /* DashboardRouter.swift */,
 				880740E81E2118FC00CECDDF /* DashboardInteractor.swift */,
 				880740CB1E1F916700CECDDF /* DashboardPresenter.swift */,
 				880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */,
@@ -143,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */,
+				880741731E22889000CECDDF /* SpecSettingsViewController.swift */,
+				880741711E2287C200CECDDF /* SpecViewController.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -155,6 +176,33 @@
 				880740B61E1F8C9400CECDDF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		880741621E2270A700CECDDF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				880741631E2270BC00CECDDF /* SettingsPresenter.swift */,
+				8807416D1E22858400CECDDF /* SettingsViewControllerFactory.swift */,
+				880741651E22780C00CECDDF /* SettingsViewController.swift */,
+				8807416F1E22876700CECDDF /* SettingsViewController.storyboard */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		880741671E227A3F00CECDDF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				880741681E227A4D00CECDDF /* UIViewController.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		8807416A1E227AE900CECDDF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8807416B1E227AF500CECDDF /* ViewControlling.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880741701E22876700CECDDF /* SettingsViewController.storyboard in Resources */,
 				880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */,
 				880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */,
 				880740B21E1F8C9400CECDDF /* Assets.xcassets in Resources */,
@@ -261,13 +310,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */,
-				880740D31E1FCDDB00CECDDF /* DashboardRouter.swift in Sources */,
+				8807416E1E22858400CECDDF /* SettingsViewControllerFactory.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
+				880741691E227A4D00CECDDF /* UIViewController.swift in Sources */,
+				880741661E22780C00CECDDF /* SettingsViewController.swift in Sources */,
 				880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */,
 				880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */,
+				880741641E2270BC00CECDDF /* SettingsPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
+				8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */,
 				880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,8 +329,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880741761E22896C00CECDDF /* SettingsTests.swift in Sources */,
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
+				880741721E2287C200CECDDF /* SpecViewController.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */,
+				880741741E22889000CECDDF /* SpecSettingsViewController.swift in Sources */,
 				880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

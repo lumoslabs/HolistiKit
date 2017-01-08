@@ -4,7 +4,12 @@ class DashboardPresenter {
 
     private let viewControllerFactory: DashboardViewControllingFactoryProtocol
     private let interactor: DashboardInteractor
+    private var router: RootRouter!
     private weak var viewController: DashboardViewControlling?
+
+    func set(router: RootRouter) {
+        self.router = router
+    }
 
     init(viewControllerFactory: DashboardViewControllingFactoryProtocol,
          interactor: DashboardInteractor) {
@@ -19,6 +24,11 @@ class DashboardPresenter {
         _viewController.present(onWindow: window)
     }
 
+    func present(settingsPresenter: SettingsPresenter) {
+        let settingsViewController = settingsPresenter.viewController!
+        viewController?.present(viewController: settingsViewController)
+    }
+
     func viewDidLoad() {
         viewController?.set(backgroundColor: UIColor.green)
         set(countLabel: "Never tapped before")
@@ -26,6 +36,10 @@ class DashboardPresenter {
 
     func tapOnAddToCountButton() {
         interactor.tapOnAddToCountButton()
+    }
+    
+    func tapOnSettingsButton() {
+        router.presentSettingsPage(onPresenter: self)
     }
 
     func set(count: Int) {

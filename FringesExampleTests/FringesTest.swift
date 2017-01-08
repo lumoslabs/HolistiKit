@@ -12,7 +12,9 @@ class FringesTest: XCTestCase {
         super.setUp()
 
         let dashboardViewControllerFactory = SpecDashboardViewControllingFactory()
-        let appCoordinator = AppCoordinator(dashboardViewControllerFactory: dashboardViewControllerFactory)
+        let settingsViewControllerFactory = SpecSettingsViewControllerFactory()
+        let appCoordinator = AppCoordinator(dashboardViewControllerFactory: dashboardViewControllerFactory,
+                                            settingsViewControllerFactory: settingsViewControllerFactory)
         let window = UIWindow()
         appCoordinator.didFinishLaunching(withWindow: window)
         dashboard = dashboardViewControllerFactory.viewController

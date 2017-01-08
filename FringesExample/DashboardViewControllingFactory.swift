@@ -3,8 +3,7 @@ import UIKit
 class DashboardViewControllingFactory: DashboardViewControllingFactoryProtocol {
 
     func create(withPresenter presenter: DashboardPresenter) -> DashboardViewControlling {
-        let viewController = DashboardViewController.create(presenter: presenter)
-        return viewController
+        return DashboardViewController.create(presenter: presenter)
     }
 }
 

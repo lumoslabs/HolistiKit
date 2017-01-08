@@ -12,16 +12,17 @@ class SpecDashboardViewControllingFactory: DashboardViewControllingFactoryProtoc
     }
 }
 
-protocol SpecDashboardViewControllerUI {
+protocol SpecDashboardViewControllerUI: SpecViewControllerUI {
     
     // Input
     func tapOnAddToCountButton()
+    func tapOnSettingsButton()
     // Output
     var countLabel: String? { get }
     var backgroundColor: UIColor? { get }
 }
 
-class SpecDashboardViewController: DashboardViewControlling, SpecDashboardViewControllerUI {
+class SpecDashboardViewController: SpecViewController, DashboardViewControlling, SpecDashboardViewControllerUI {
 
     private(set) var backgroundColor: UIColor?
     private(set) var countLabel: String?
@@ -42,6 +43,10 @@ class SpecDashboardViewController: DashboardViewControlling, SpecDashboardViewCo
     
     func tapOnAddToCountButton() {
         presenter.tapOnAddToCountButton()
+    }
+
+    func tapOnSettingsButton() {
+        presenter.tapOnSettingsButton()
     }
 
     func set(countLabel: String) {

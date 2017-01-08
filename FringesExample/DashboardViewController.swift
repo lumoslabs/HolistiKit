@@ -10,6 +10,10 @@ class DashboardViewController: UIViewController, DashboardViewControlling {
         presenter.tapOnAddToCountButton()
     }
 
+    @IBAction func tapSettingsButton() {
+        presenter.tapOnSettingsButton()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
@@ -23,12 +27,12 @@ class DashboardViewController: UIViewController, DashboardViewControlling {
         view.backgroundColor = backgroundColor
     }
 
-    func set(countLabel: String) {
-        self.countLabel.text = countLabel
+    func set(countLabel text: String) {
+        countLabel.text = text
     }
 }
 
-protocol DashboardViewControlling: class {
+protocol DashboardViewControlling: class, ViewControlling {
 
     func present(onWindow: UIWindow)
     func set(backgroundColor: UIColor)

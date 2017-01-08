@@ -4,12 +4,15 @@ class AppCoordinator {
 
     let router: RootRouter
 
-    init(dashboardViewControllerFactory: DashboardViewControllingFactoryProtocol) {
+    init(dashboardViewControllerFactory: DashboardViewControllingFactoryProtocol,
+         settingsViewControllerFactory: SettingsViewControllerFactoryProtocol) {
         let dashboardInteractor = DashboardInteractor()
         let dashboardPresenter = DashboardPresenter(viewControllerFactory: dashboardViewControllerFactory,
                                                     interactor: dashboardInteractor)
-        let dashboardRouter = DashboardRouter(dashboardPresenter: dashboardPresenter)
-        self.router = RootRouter(dashboardRouter: dashboardRouter)
+        let settingsPresenter = SettingsPresenter(viewControllerFactory: settingsViewControllerFactory)
+        self.router = RootRouter(dashboardPresenter: dashboardPresenter,
+                                 settingsPresenter: settingsPresenter)
+        dashboardPresenter.set(router: router)
     }
     
     func didFinishLaunching(withWindow window: UIWindow) {
