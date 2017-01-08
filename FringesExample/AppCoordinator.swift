@@ -1,5 +1,3 @@
-import UIKit
-
 class AppCoordinator {
 
     let router: RootRouter
@@ -15,7 +13,7 @@ class AppCoordinator {
         dashboardPresenter.set(router: router)
     }
     
-    func didFinishLaunching(withWindow window: UIWindow) {
+    func didFinishLaunching(withWindow window: Windowing) {
         router.present(onWindow: window)
     }
 }

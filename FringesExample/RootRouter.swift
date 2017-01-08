@@ -1,5 +1,3 @@
-import UIKit
-
 class RootRouter {
 
     private let dashboardPresenter: DashboardPresenter
@@ -11,7 +9,7 @@ class RootRouter {
         self.settingsPresenter = settingsPresenter
     }
     
-    func present(onWindow window: UIWindow) {
+    func present(onWindow window: Windowing) {
         dashboardPresenter.present(onWindow: window)
     }
     

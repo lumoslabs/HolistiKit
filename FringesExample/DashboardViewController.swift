@@ -19,10 +19,6 @@ class DashboardViewController: UIViewController, DashboardViewControlling {
         presenter.viewDidLoad()
     }
 
-    func present(onWindow window: UIWindow) {
-        window.rootViewController = self
-    }
-
     func set(backgroundColor: UIColor) {
         view.backgroundColor = backgroundColor
     }
@@ -34,7 +30,6 @@ class DashboardViewController: UIViewController, DashboardViewControlling {
 
 protocol DashboardViewControlling: class, ViewControlling {
 
-    func present(onWindow: UIWindow)
     func set(backgroundColor: UIColor)
     func set(countLabel: String)
 }

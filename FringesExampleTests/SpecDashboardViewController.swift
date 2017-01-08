@@ -32,8 +32,9 @@ class SpecDashboardViewController: SpecViewController, DashboardViewControlling,
     init(presenter: DashboardPresenter) {
         self.presenter = presenter
     }
-    
-    func present(onWindow: UIWindow) {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         presenter.viewDidLoad()
     }
 

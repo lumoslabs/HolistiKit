@@ -18,7 +18,7 @@ class DashboardPresenter {
         interactor.set(presenter: self)
     }
 
-    func present(onWindow window: UIWindow) {
+    func present(onWindow window: Windowing) {
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
         _viewController.present(onWindow: window)

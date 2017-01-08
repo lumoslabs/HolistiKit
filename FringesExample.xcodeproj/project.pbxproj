@@ -30,6 +30,9 @@
 		880741721E2287C200CECDDF /* SpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741711E2287C200CECDDF /* SpecViewController.swift */; };
 		880741741E22889000CECDDF /* SpecSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecSettingsViewController.swift */; };
 		880741761E22896C00CECDDF /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741751E22896C00CECDDF /* SettingsTests.swift */; };
+		880741781E22915500CECDDF /* Windowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741771E22915500CECDDF /* Windowing.swift */; };
+		8807417A1E22919600CECDDF /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741791E22919600CECDDF /* UIWindow.swift */; };
+		8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417B1E2292A600CECDDF /* SpecWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		880741711E2287C200CECDDF /* SpecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecViewController.swift; sourceTree = "<group>"; };
 		880741731E22889000CECDDF /* SpecSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSettingsViewController.swift; sourceTree = "<group>"; };
 		880741751E22896C00CECDDF /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
+		880741771E22915500CECDDF /* Windowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windowing.swift; sourceTree = "<group>"; };
+		880741791E22919600CECDDF /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		8807417B1E2292A600CECDDF /* SpecWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,7 @@
 				880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */,
 				880741731E22889000CECDDF /* SpecSettingsViewController.swift */,
 				880741711E2287C200CECDDF /* SpecViewController.swift */,
+				8807417B1E2292A600CECDDF /* SpecWindow.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -193,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				880741681E227A4D00CECDDF /* UIViewController.swift */,
+				880741791E22919600CECDDF /* UIWindow.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -201,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				8807416B1E227AF500CECDDF /* ViewControlling.swift */,
+				880741771E22915500CECDDF /* Windowing.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -311,6 +320,7 @@
 			files = (
 				880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */,
 				8807416E1E22858400CECDDF /* SettingsViewControllerFactory.swift in Sources */,
+				880741781E22915500CECDDF /* Windowing.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
 				880741691E227A4D00CECDDF /* UIViewController.swift in Sources */,
@@ -320,6 +330,7 @@
 				880741641E2270BC00CECDDF /* SettingsPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
+				8807417A1E22919600CECDDF /* UIWindow.swift in Sources */,
 				8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */,
 				880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */,
 			);
@@ -332,6 +343,7 @@
 				880741761E22896C00CECDDF /* SettingsTests.swift in Sources */,
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
 				880741721E2287C200CECDDF /* SpecViewController.swift in Sources */,
+				8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */,
 				880741741E22889000CECDDF /* SpecSettingsViewController.swift in Sources */,
 				880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */,
