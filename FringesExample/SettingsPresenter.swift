@@ -3,7 +3,7 @@ import UIKit
 class SettingsPresenter {
 
     private let viewControllerFactory: SettingsViewControllerFactoryProtocol
-    var viewController: SettingsViewControlling!
+    weak var viewController: SettingsViewControlling!
 
     init(viewControllerFactory: SettingsViewControllerFactoryProtocol) {
         self.viewControllerFactory = viewControllerFactory

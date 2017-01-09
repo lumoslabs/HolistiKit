@@ -1,19 +1,21 @@
 class RootRouter {
 
-    private let dashboardPresenter: DashboardPresenter
-    private let settingsPresenter: SettingsPresenter
+    private let dashboardPresenterFactory: DashboardPresenterFactory
+    private let settingsPresenterFactory: SettingsPresenterFactory
 
-    init(dashboardPresenter: DashboardPresenter,
-         settingsPresenter: SettingsPresenter) {
-        self.dashboardPresenter = dashboardPresenter
-        self.settingsPresenter = settingsPresenter
+    init(dashboardPresenterFactory: DashboardPresenterFactory,
+         settingsPresenterFactory: SettingsPresenterFactory) {
+        self.dashboardPresenterFactory = dashboardPresenterFactory
+        self.settingsPresenterFactory = settingsPresenterFactory
     }
     
     func present(onWindow window: Windowing) {
+        let dashboardPresenter = dashboardPresenterFactory.create(withRouter: self)
         dashboardPresenter.present(onWindow: window)
     }
     
     func presentSettingsPage(onPresenter presenter: DashboardPresenter) {
+        let settingsPresenter = settingsPresenterFactory.create(withRouter: self)
         settingsPresenter.present(onPresenter: presenter)
     }
 }
