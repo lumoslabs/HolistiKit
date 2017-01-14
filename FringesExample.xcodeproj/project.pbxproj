@@ -44,6 +44,7 @@
 		885F9D0A1E2A3939003ADC21 /* SpecDashboardNavigationControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationControlling.swift */; };
 		885F9D0D1E2A3979003ADC21 /* SpecNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */; };
 		885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */; };
+		885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDashboardNavigationControlling.swift; sourceTree = "<group>"; };
 		885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNavigationController.swift; sourceTree = "<group>"; };
 		885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushablePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,9 +233,8 @@
 		8807416A1E227AE900CECDDF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				8807416B1E227AF500CECDDF /* ViewControlling.swift */,
-				885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */,
-				880741771E22915500CECDDF /* Windowing.swift */,
+				885F9D121E2A4D49003ADC21 /* UIKit Abstraction */,
+				885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -309,6 +310,16 @@
 				880740E81E2118FC00CECDDF /* DashboardInteractor.swift */,
 			);
 			name = Interactor;
+			sourceTree = "<group>";
+		};
+		885F9D121E2A4D49003ADC21 /* UIKit Abstraction */ = {
+			isa = PBXGroup;
+			children = (
+				8807416B1E227AF500CECDDF /* ViewControlling.swift */,
+				885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */,
+				880741771E22915500CECDDF /* Windowing.swift */,
+			);
+			name = "UIKit Abstraction";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +443,7 @@
 				880741641E2270BC00CECDDF /* SettingsPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */,
 				885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */,
+				885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 				8807417A1E22919600CECDDF /* UIWindow.swift in Sources */,
 				885F9D061E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift in Sources */,

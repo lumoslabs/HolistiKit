@@ -17,17 +17,13 @@ class DashboardRouter {
         dashboardNavigationPresenter.present(onWindow: window)
     }
 
-    //
-    //
-    // TODO make this take a (new) NavigationPresenting
-    //
-    func pushDashboard(on presenter: DashboardNavigationPresenter) {
+    func pushDashboard(on presenter: PushablePresenter) {
         let dashboardPresenter = dashboardPresenterFactory.create(withRouter: self)
         dashboardPresenter.push(on: presenter)
     }
     
-    func pushSettings(onPresenter presenter: DashboardPresenter) {
+    func pushSettings(on presenter: PushablePresenter) {
         let settingsPresenter = settingsPresenterFactory.create(withRouter: self)
-        settingsPresenter.push(onPresenter: presenter)
+        settingsPresenter.push(on: presenter)
     }
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class DashboardPresenter {
+class DashboardPresenter: PushablePresenter {
 
     private let viewControllerFactory: DashboardViewControllingFactoryProtocol
     private let interactor: DashboardInteractor
@@ -16,15 +16,14 @@ class DashboardPresenter {
         interactor.set(presenter: self)
     }
     
-    func push(on presenter: DashboardNavigationPresenter) {
+    func push(on presenter: PushablePresenter) {
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
         presenter.push(viewController: _viewController)
     }
 
-    func push(settingsPresenter: SettingsPresenter) {
-        let settingsViewController = settingsPresenter.viewController!
-        viewController?.push(viewController: settingsViewController, animated: true)
+    func push(viewController viewControllerToPush: ViewControlling) {
+        viewController?.push(viewController: viewControllerToPush, animated: true)
     }
 
     func viewDidLoad() {
@@ -32,6 +31,6 @@ class DashboardPresenter {
     }
 
     func tapFirstRow() {
-        router.pushSettings(onPresenter: self)
+        router.pushSettings(on: self)
     }
 }

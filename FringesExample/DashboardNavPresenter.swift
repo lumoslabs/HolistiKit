@@ -1,6 +1,6 @@
 import UIKit
 
-class DashboardNavigationPresenter {
+class DashboardNavigationPresenter: PushablePresenter {
 
     private let viewControllerFactory: DashboardNavigationControllingFactoryProtocol
     private let router: DashboardRouter
@@ -18,7 +18,7 @@ class DashboardNavigationPresenter {
         router.pushDashboard(on: self)
         _viewController.present(onWindow: window)
     }
-    
+
     func push(viewController viewControllerToPush: ViewControlling) {
         viewController?.push(viewController: viewControllerToPush, animated: false)
     }
