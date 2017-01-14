@@ -7,7 +7,7 @@ class SpecWindow: Windowing {
     
     func set(rootViewController: ViewControlling) {
         self.rootViewController = rootViewController
-        rootViewController.viewDidLoad()
+        rootViewController.viewDidLoadAndAppear()
     }
 
     var asUIWindow: UIWindow {

@@ -18,6 +18,6 @@ class SpecNavigationController: SpecViewController, NavigationControlling, SpecN
         guard let viewController = viewController as? SpecViewController else { fatalError() }
         viewControllers.append(viewController)
         viewController.navigationControlling = self
-        viewController.viewDidLoad()
+        viewController.viewDidLoadAndAppear()
     }
 }

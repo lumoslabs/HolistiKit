@@ -8,21 +8,32 @@ protocol SpecViewControllerUI {
 
 class SpecViewController: ViewControlling, SpecViewControllerUI {
     
-    private(set) var presentedViewController: ViewControlling?
     var navigationControlling: NavigationControlling?
+    private(set) var presentedViewController: ViewControlling?
 
     func viewDidLoad() { }
 
     func present(viewController: ViewControlling) {
         presentedViewController = viewController
-        viewController.viewDidLoad()
+        viewController.viewDidLoadAndAppear()
     }
 
     func push(viewController: ViewControlling, animated: Bool) {
-        navigationControlling?.push(viewController: viewController, animated: animated)
+        navigationControlling!.push(viewController: viewController, animated: animated)
     }
 
     var asUIViewController: UIViewController {
         fatalError("This should never be called in tests")
+    }
+}
+
+extension ViewControlling {
+
+    var asSpecViewController: SpecViewController {
+        return self as! SpecViewController
+    }
+
+    func viewDidLoadAndAppear() {
+        asSpecViewController.viewDidLoad()
     }
 }
