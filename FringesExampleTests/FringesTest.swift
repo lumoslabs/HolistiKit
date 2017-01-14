@@ -3,35 +3,37 @@ import XCTest
 
 class FringesTest: XCTestCase {
 
-    // retain the window, as AppDelegate would
-    private(set) var window: SpecWindow!
+    private(set) var appDelegate: SpecAppDelegate!
     
     override func setUp() {
         super.setUp()
 
-        window = SpecWindow()
-        let dashboardNavigationControllerFactory = SpecDashboardNavigationControllingFactory()
-        let dashboardViewControllerFactory = SpecDashboardViewControllingFactory()
-        let settingsViewControllerFactory = SpecSettingsViewControllerFactory()
-        let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
-                                            dashboardViewControllerFactory: dashboardViewControllerFactory,
-                                            settingsViewControllerFactory: settingsViewControllerFactory)
-        
-        appCoordinator.didFinishLaunching(withWindow: window)
+        appDelegate = SpecAppDelegate()
     }
 }
 
 extension FringesTest {
 
+    func tapAppIcon() {
+        appDelegate.applicationDidLaunch()
+    }
+}
+
+extension FringesTest {
+
+    private var topViewController: SpecViewController? {
+        return appDelegate.window.topViewController
+    }
+
     var dashboardNav: SpecDashboardNavigationControllerUI! {
-        return window.topViewController as! SpecDashboardNavigationControllerUI
+        return topViewController as! SpecDashboardNavigationControllerUI
     }
 
     var dashboard: SpecDashboardViewControllerUI! {
-        return window.topViewController as! SpecDashboardViewControllerUI
+        return topViewController as! SpecDashboardViewControllerUI
     }
 
     var settings: SpecSettingsViewControllerUI! {
-        return window.topViewController as! SpecSettingsViewControllerUI
+        return topViewController as! SpecSettingsViewControllerUI
     }
 }
