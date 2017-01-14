@@ -14,7 +14,7 @@ class SpecNavigationController: SpecViewController, NavigationControlling, SpecN
     override func push(viewController: ViewControlling, animated: Bool) {
         guard let viewController = viewController as? SpecViewController else { fatalError() }
         viewControllers.append(viewController)
-        viewController.navigationControlling = self
+        viewController.set(navigationController: self)
         viewController.viewDidLoadAndAppear()
     }
 }

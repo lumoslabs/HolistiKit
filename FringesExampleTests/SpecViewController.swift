@@ -3,8 +3,8 @@ import UIKit
 
 class SpecViewController: ViewControlling {
     
-    var navigationControlling: SpecNavigationController?
-    private(set) var presentedViewController: SpecViewController?
+    private var navigationController: SpecNavigationController?
+    private var presentedViewController: SpecViewController?
 
     func viewDidLoad() { }
 
@@ -14,7 +14,11 @@ class SpecViewController: ViewControlling {
     }
 
     func push(viewController: ViewControlling, animated: Bool) {
-        navigationControlling!.push(viewController: viewController, animated: animated)
+        navigationController!.push(viewController: viewController, animated: animated)
+    }
+
+    func set(navigationController: SpecNavigationController) {
+        self.navigationController = navigationController
     }
 
     var asUIViewController: UIViewController {
