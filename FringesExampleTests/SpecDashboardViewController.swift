@@ -11,17 +11,14 @@ class SpecDashboardViewControllingFactory: DashboardViewControllingFactoryProtoc
 protocol SpecDashboardViewControllerUI: SpecViewControllerUI {
     
     // Input
-    func tapOnAddToCountButton()
-    func tapOnSettingsButton()
+    func tapFirstRow()
     // Output
-    var countLabel: String? { get }
-    var backgroundColor: UIColor? { get }
+    var firstRowTitle: String? { get }
 }
 
 class SpecDashboardViewController: SpecViewController, DashboardViewControlling, SpecDashboardViewControllerUI {
-
-    private(set) var backgroundColor: UIColor?
-    private(set) var countLabel: String?
+    
+    private(set) var firstRowTitle: String?
 
     private let presenter: DashboardPresenter
 
@@ -34,19 +31,11 @@ class SpecDashboardViewController: SpecViewController, DashboardViewControlling,
         presenter.viewDidLoad()
     }
 
-    func set(backgroundColor: UIColor) {
-        self.backgroundColor = backgroundColor
-    }
-    
-    func tapOnAddToCountButton() {
-        presenter.tapOnAddToCountButton()
+    func set(firstRowTitle text: String) {
+        firstRowTitle = text
     }
 
-    func tapOnSettingsButton() {
-        presenter.tapOnSettingsButton()
-    }
-
-    func set(countLabel: String) {
-        self.countLabel = countLabel
+    func tapFirstRow() {
+        presenter.tapFirstRow()
     }
 }

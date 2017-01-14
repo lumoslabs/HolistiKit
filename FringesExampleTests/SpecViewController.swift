@@ -8,9 +8,8 @@ protocol SpecViewControllerUI {
 
 class SpecViewController: ViewControlling, SpecViewControllerUI {
     
-    private(set) var presentedViewController: ViewControlling? {
-        didSet { presentedViewController?.viewDidLoad() }
-    }
+    private(set) var presentedViewController: ViewControlling?
+    var navigationControlling: NavigationControlling?
 
     func viewDidLoad() { }
 
@@ -21,6 +20,11 @@ class SpecViewController: ViewControlling, SpecViewControllerUI {
 
     func present(viewController: ViewControlling) {
         presentedViewController = viewController
+        viewController.viewDidLoad()
+    }
+
+    func push(viewController: ViewControlling, animated: Bool) {
+        navigationControlling?.push(viewController: viewController, animated: animated)
     }
 
     var asUIViewController: UIViewController {

@@ -1,35 +1,26 @@
 import UIKit
 
-class DashboardViewController: UIViewController, DashboardViewControlling {
+class DashboardViewController: UITableViewController, DashboardViewControlling {
 
     var presenter: DashboardPresenter!
 
-    @IBOutlet weak var countLabel: UILabel!
-
-    @IBAction func tapAddToCountButton() {
-        presenter.tapOnAddToCountButton()
-    }
-
-    @IBAction func tapSettingsButton() {
-        presenter.tapOnSettingsButton()
-    }
+    @IBOutlet weak var firstRow: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
     }
-
-    func set(backgroundColor: UIColor) {
-        view.backgroundColor = backgroundColor
+    
+    func set(firstRowTitle text: String) {
+        firstRow.textLabel?.text = text
     }
 
-    func set(countLabel text: String) {
-        countLabel.text = text
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.tapFirstRow()
     }
 }
 
 protocol DashboardViewControlling: class, ViewControlling {
 
-    func set(backgroundColor: UIColor)
-    func set(countLabel: String)
+    func set(firstRowTitle: String)
 }

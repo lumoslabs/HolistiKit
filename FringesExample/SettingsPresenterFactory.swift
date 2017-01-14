@@ -6,7 +6,7 @@ class SettingsPresenterFactory {
         self.viewControllerFactory = viewControllerFactory
     }
 
-    func create(withRouter router: RootRouter) -> SettingsPresenter {
+    func create(withRouter router: DashboardRouter) -> SettingsPresenter {
         return SettingsPresenter(viewControllerFactory: viewControllerFactory)
     }
 }

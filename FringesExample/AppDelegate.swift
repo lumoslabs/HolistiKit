@@ -8,10 +8,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let _window = UIWindow(frame: UIScreen.main.bounds)
         window = _window
+        let dashboardNavigationControllerFactory = DashboardNavigationControllingFactory()
         let dashboardViewControllerFactory = DashboardViewControllingFactory()
         let settingsViewControllerFactory = SettingsViewControllerFactory()
         
-        let appCoordinator = AppCoordinator(dashboardViewControllerFactory: dashboardViewControllerFactory,
+        let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
+                                            dashboardViewControllerFactory: dashboardViewControllerFactory,
                                             settingsViewControllerFactory: settingsViewControllerFactory)
         appCoordinator.didFinishLaunching(withWindow: _window)
         

@@ -6,12 +6,11 @@ class DashboardPresenterFactory {
         self.viewControllerFactory = viewControllerFactory
     }
 
-    func create(withRouter router: RootRouter) -> DashboardPresenter {
+    func create(withRouter router: DashboardRouter) -> DashboardPresenter {
         let interactor = DashboardInteractor()
-        let presenter = DashboardPresenter(viewControllerFactory: viewControllerFactory,
-                                           interactor: interactor)
-        presenter.set(router: router)
-        return presenter
+        return DashboardPresenter(viewControllerFactory: viewControllerFactory,
+                                  interactor: interactor,
+                                  router: router)
     }
 
 }

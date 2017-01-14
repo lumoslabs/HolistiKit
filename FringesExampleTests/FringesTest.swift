@@ -10,9 +10,11 @@ class FringesTest: XCTestCase {
         super.setUp()
 
         window = SpecWindow()
+        let dashboardNavigationControllerFactory = SpecDashboardNavigationControllingFactory()
         let dashboardViewControllerFactory = SpecDashboardViewControllingFactory()
         let settingsViewControllerFactory = SpecSettingsViewControllerFactory()
-        let appCoordinator = AppCoordinator(dashboardViewControllerFactory: dashboardViewControllerFactory,
+        let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
+                                            dashboardViewControllerFactory: dashboardViewControllerFactory,
                                             settingsViewControllerFactory: settingsViewControllerFactory)
         
         appCoordinator.didFinishLaunching(withWindow: window)
@@ -21,11 +23,15 @@ class FringesTest: XCTestCase {
 
 extension FringesTest {
 
+    var dashboardNav: SpecDashboardNavigationControllerUI! {
+        return window.rootViewController as! SpecDashboardNavigationControllerUI
+    }
+
     var dashboard: SpecDashboardViewControllerUI! {
-        return window.rootViewController as! SpecDashboardViewControllerUI
+        return dashboardNav.topViewController as! SpecDashboardViewControllerUI
     }
 
     var settings: SpecSettingsViewControllerUI! {
-        return dashboard.presentedViewController as! SpecSettingsViewControllerUI
+        return dashboardNav.topViewController as! SpecSettingsViewControllerUI
     }
 }

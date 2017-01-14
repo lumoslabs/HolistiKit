@@ -2,11 +2,14 @@ class AppCoordinator {
 
     let router: RootRouter
 
-    init(dashboardViewControllerFactory: DashboardViewControllingFactoryProtocol,
+    init(dashboardNavigationControllerFactory: DashboardNavigationControllingFactoryProtocol,
+         dashboardViewControllerFactory: DashboardViewControllingFactoryProtocol,
          settingsViewControllerFactory: SettingsViewControllerFactoryProtocol) {
+        let dashboardNavigationPresenterFactory = DashboardNavigationPresenterFactory(viewControllerFactory: dashboardNavigationControllerFactory)
         let dashboardPresenterFactory = DashboardPresenterFactory(viewControllerFactory: dashboardViewControllerFactory)
         let settingsPresenterFactory = SettingsPresenterFactory(viewControllerFactory: settingsViewControllerFactory)
-        self.router = RootRouter(dashboardPresenterFactory: dashboardPresenterFactory,
+        self.router = RootRouter(dashboardNavigationPresenterFactory: dashboardNavigationPresenterFactory,
+                                 dashboardPresenterFactory: dashboardPresenterFactory,
                                  settingsPresenterFactory: settingsPresenterFactory)
     }
     

@@ -11,7 +11,7 @@ extension DashboardViewController {
 
     static let storyboardName = "DashboardViewController"
 
-    class func create(presenter: DashboardPresenter) -> DashboardViewController {
+    class func create(presenter: DashboardPresenter) -> DashboardViewControlling {
         let vc = UIStoryboard(name: storyboardName, bundle: nil)
             .instantiateInitialViewController() as! DashboardViewController
         vc.presenter = presenter

@@ -4,51 +4,34 @@ class DashboardPresenter {
 
     private let viewControllerFactory: DashboardViewControllingFactoryProtocol
     private let interactor: DashboardInteractor
-    private var router: RootRouter!
+    private let router: DashboardRouter
     private weak var viewController: DashboardViewControlling?
 
-    func set(router: RootRouter) {
-        self.router = router
-    }
-
     init(viewControllerFactory: DashboardViewControllingFactoryProtocol,
-         interactor: DashboardInteractor) {
+         interactor: DashboardInteractor,
+         router: DashboardRouter) {
         self.viewControllerFactory = viewControllerFactory
         self.interactor = interactor
+        self.router = router
         interactor.set(presenter: self)
     }
-
-    func present(onWindow window: Windowing) {
+    
+    func push(on presenter: DashboardNavigationPresenter) {
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
-        _viewController.present(onWindow: window)
+        presenter.push(viewController: _viewController)
     }
 
-    func present(settingsPresenter: SettingsPresenter) {
+    func push(settingsPresenter: SettingsPresenter) {
         let settingsViewController = settingsPresenter.viewController!
-        viewController?.present(viewController: settingsViewController)
+        viewController?.push(viewController: settingsViewController, animated: true)
     }
 
     func viewDidLoad() {
-        viewController?.set(backgroundColor: UIColor.green)
-        set(countLabel: "Never tapped before")
+        viewController?.set(firstRowTitle: "Settings")
     }
 
-    func tapOnAddToCountButton() {
-        interactor.tapOnAddToCountButton()
-    }
-    
-    func tapOnSettingsButton() {
-        router.presentSettingsPage(onPresenter: self)
-    }
-
-    func set(count: Int) {
-        let times = count == 1 ? "time" : "times"
-        let text = "tapped \(count) \(times)"
-        set(countLabel: text)
-    }
-
-    private func set(countLabel: String) {
-        viewController?.set(countLabel: countLabel)
+    func tapFirstRow() {
+        router.pushSettings(onPresenter: self)
     }
 }

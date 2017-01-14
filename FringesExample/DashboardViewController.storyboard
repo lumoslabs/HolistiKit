@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oDQ-aq-XON">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fsV-FS-FWS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,55 +10,40 @@
     </dependencies>
     <scenes>
         <!--Dashboard View Controller-->
-        <scene sceneID="Izl-jT-M9d">
+        <scene sceneID="lW2-Ii-pEr">
             <objects>
-                <viewController id="oDQ-aq-XON" customClass="DashboardViewController" customModule="FringesExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IEu-Fz-paF"/>
-                        <viewControllerLayoutGuide type="bottom" id="goG-fX-hOD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="WFh-DR-MGI">
+                <tableViewController id="fsV-FS-FWS" customClass="DashboardViewController" customModule="FringesExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="0cl-UE-iDg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCL-2M-XVu">
-                                <rect key="frame" x="166" y="20" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eo9-FI-Qci">
-                                <rect key="frame" x="172" y="49" width="30" height="30"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="tapAddToCountButton" destination="oDQ-aq-XON" eventType="touchUpInside" id="Xwn-zz-WfL"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1U-st-T5s">
-                                <rect key="frame" x="159" y="151" width="57" height="30"/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <action selector="tapSettingsButton" destination="oDQ-aq-XON" eventType="touchUpInside" id="mFm-pI-KSA"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="eo9-FI-Qci" firstAttribute="centerX" secondItem="FCL-2M-XVu" secondAttribute="centerX" id="50F-OL-1HS"/>
-                            <constraint firstItem="R1U-st-T5s" firstAttribute="centerX" secondItem="WFh-DR-MGI" secondAttribute="centerX" id="WEz-D7-RXv"/>
-                            <constraint firstItem="FCL-2M-XVu" firstAttribute="centerX" secondItem="WFh-DR-MGI" secondAttribute="centerX" id="Zhx-AF-eEg"/>
-                            <constraint firstItem="FCL-2M-XVu" firstAttribute="top" secondItem="IEu-Fz-paF" secondAttribute="bottom" id="bhK-p9-dnv"/>
-                            <constraint firstItem="eo9-FI-Qci" firstAttribute="top" secondItem="FCL-2M-XVu" secondAttribute="bottom" constant="8" id="ed8-UD-1WC"/>
-                            <constraint firstItem="R1U-st-T5s" firstAttribute="top" secondItem="eo9-FI-Qci" secondAttribute="bottom" constant="72" id="k1I-WH-yhy"/>
-                        </constraints>
-                    </view>
+                        <sections>
+                            <tableViewSection id="nWu-Uq-emJ">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="cDK-hr-s7I">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cDK-hr-s7I" id="U0p-ih-8ES">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fsV-FS-FWS" id="LpE-g3-E2r"/>
+                            <outlet property="delegate" destination="fsV-FS-FWS" id="hyt-Hl-OKQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1pd-cg-tPR"/>
                     <connections>
-                        <outlet property="countLabel" destination="FCL-2M-XVu" id="F6B-Pi-RdR"/>
+                        <outlet property="firstRow" destination="cDK-hr-s7I" id="Ww0-Sx-z5A"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PX7-RW-5dQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7IW-bZ-uW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="46"/>
+            <point key="canvasLocation" x="572" y="59.820089955022496"/>
         </scene>
     </scenes>
 </document>

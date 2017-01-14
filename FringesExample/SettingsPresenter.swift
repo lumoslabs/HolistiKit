@@ -9,9 +9,9 @@ class SettingsPresenter {
         self.viewControllerFactory = viewControllerFactory
     }
     
-    func present(onPresenter presenter: DashboardPresenter) {
+    func push(onPresenter presenter: DashboardPresenter) {
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
-        presenter.present(settingsPresenter: self)
+        presenter.push(settingsPresenter: self)
     }
 }

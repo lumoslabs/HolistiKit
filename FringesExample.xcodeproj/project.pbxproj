@@ -35,6 +35,15 @@
 		8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417B1E2292A600CECDDF /* SpecWindow.swift */; };
 		8807417E1E239A3F00CECDDF /* DashboardPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417D1E239A3F00CECDDF /* DashboardPresenterFactory.swift */; };
 		880741801E23A4C400CECDDF /* SettingsPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417F1E23A4C400CECDDF /* SettingsPresenterFactory.swift */; };
+		885F9CFA1E2A265B003ADC21 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */; };
+		885F9CFC1E2A276E003ADC21 /* DashboardNavPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* DashboardNavPresenter.swift */; };
+		885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* DashboardNavControllingFactory.swift */; };
+		885F9D001E2A288D003ADC21 /* DashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFF1E2A288D003ADC21 /* DashboardNavigationController.swift */; };
+		885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */; };
+		885F9D061E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D051E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift */; };
+		885F9D0A1E2A3939003ADC21 /* SpecDashboardNavigationControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationControlling.swift */; };
+		885F9D0D1E2A3979003ADC21 /* SpecNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */; };
+		885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +89,15 @@
 		8807417B1E2292A600CECDDF /* SpecWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecWindow.swift; sourceTree = "<group>"; };
 		8807417D1E239A3F00CECDDF /* DashboardPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenterFactory.swift; sourceTree = "<group>"; };
 		8807417F1E23A4C400CECDDF /* SettingsPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenterFactory.swift; sourceTree = "<group>"; };
+		885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		885F9CFB1E2A276E003ADC21 /* DashboardNavPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavPresenter.swift; sourceTree = "<group>"; };
+		885F9CFD1E2A2825003ADC21 /* DashboardNavControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavControllingFactory.swift; sourceTree = "<group>"; };
+		885F9CFF1E2A288D003ADC21 /* DashboardNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavigationController.swift; sourceTree = "<group>"; };
+		885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControlling.swift; sourceTree = "<group>"; };
+		885F9D051E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavigationPresenterFactory.swift; sourceTree = "<group>"; };
+		885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDashboardNavigationControlling.swift; sourceTree = "<group>"; };
+		885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNavigationController.swift; sourceTree = "<group>"; };
+		885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				880740CD1E1F935200CECDDF /* Main */,
-				880741621E2270A700CECDDF /* Settings */,
+				885F9CF81E2A2639003ADC21 /* Dashboard Nav */,
 				880740CA1E1F911200CECDDF /* Dashboard */,
+				880741621E2270A700CECDDF /* Settings */,
 				8807416A1E227AE900CECDDF /* Protocols */,
 				880741671E227A3F00CECDDF /* Extensions */,
 				880740DA1E21076900CECDDF /* Supporting Files */,
@@ -148,9 +167,9 @@
 		880740CA1E1F911200CECDDF /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				880740E81E2118FC00CECDDF /* DashboardInteractor.swift */,
 				880741831E23B3C700CECDDF /* Presenter */,
-				880741841E23B3D100CECDDF /* ViewController */,
+				885F9D071E2A386C003ADC21 /* Interactor */,
+				880741841E23B3D100CECDDF /* View */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -162,6 +181,7 @@
 				880740AA1E1F8C9400CECDDF /* AppDelegate.swift */,
 				880740CE1E1F939300CECDDF /* AppCoordinator.swift */,
 				880740D01E1FCC8700CECDDF /* RootRouter.swift */,
+				885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -169,9 +189,11 @@
 		880740D71E21038500CECDDF /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
+				885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationControlling.swift */,
 				880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */,
 				880741731E22889000CECDDF /* SpecSettingsViewController.swift */,
 				880741711E2287C200CECDDF /* SpecViewController.swift */,
+				885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */,
 				8807417B1E2292A600CECDDF /* SpecWindow.swift */,
 			);
 			name = Fakes;
@@ -191,7 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				880741811E23B3AC00CECDDF /* Presenter */,
-				880741821E23B3B500CECDDF /* ViewController */,
+				880741821E23B3B500CECDDF /* View */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -200,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				880741681E227A4D00CECDDF /* UIViewController.swift */,
+				885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */,
 				880741791E22919600CECDDF /* UIWindow.swift */,
 			);
 			name = Extensions;
@@ -209,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				8807416B1E227AF500CECDDF /* ViewControlling.swift */,
+				885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */,
 				880741771E22915500CECDDF /* Windowing.swift */,
 			);
 			name = Protocols;
@@ -223,14 +247,14 @@
 			name = Presenter;
 			sourceTree = "<group>";
 		};
-		880741821E23B3B500CECDDF /* ViewController */ = {
+		880741821E23B3B500CECDDF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				8807416D1E22858400CECDDF /* SettingsViewControllerFactory.swift */,
 				880741651E22780C00CECDDF /* SettingsViewController.swift */,
 				8807416F1E22876700CECDDF /* SettingsViewController.storyboard */,
 			);
-			name = ViewController;
+			name = View;
 			sourceTree = "<group>";
 		};
 		880741831E23B3C700CECDDF /* Presenter */ = {
@@ -242,14 +266,49 @@
 			name = Presenter;
 			sourceTree = "<group>";
 		};
-		880741841E23B3D100CECDDF /* ViewController */ = {
+		880741841E23B3D100CECDDF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */,
 				880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */,
 				880740E01E21100200CECDDF /* DashboardViewController.storyboard */,
 			);
-			name = ViewController;
+			name = View;
+			sourceTree = "<group>";
+		};
+		885F9CF81E2A2639003ADC21 /* Dashboard Nav */ = {
+			isa = PBXGroup;
+			children = (
+				885F9D031E2A2FE4003ADC21 /* Presenter */,
+				885F9D041E2A2FEC003ADC21 /* View */,
+			);
+			name = "Dashboard Nav";
+			sourceTree = "<group>";
+		};
+		885F9D031E2A2FE4003ADC21 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				885F9D051E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift */,
+				885F9CFB1E2A276E003ADC21 /* DashboardNavPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		885F9D041E2A2FEC003ADC21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				885F9CFD1E2A2825003ADC21 /* DashboardNavControllingFactory.swift */,
+				885F9CFF1E2A288D003ADC21 /* DashboardNavigationController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		885F9D071E2A386C003ADC21 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				880740E81E2118FC00CECDDF /* DashboardInteractor.swift */,
+			);
+			name = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,19 +419,26 @@
 				8807416E1E22858400CECDDF /* SettingsViewControllerFactory.swift in Sources */,
 				880741801E23A4C400CECDDF /* SettingsPresenterFactory.swift in Sources */,
 				8807417E1E239A3F00CECDDF /* DashboardPresenterFactory.swift in Sources */,
+				885F9D001E2A288D003ADC21 /* DashboardNavigationController.swift in Sources */,
 				880741781E22915500CECDDF /* Windowing.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
+				885F9CFA1E2A265B003ADC21 /* DashboardRouter.swift in Sources */,
+				885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */,
 				880741691E227A4D00CECDDF /* UIViewController.swift in Sources */,
 				880741661E22780C00CECDDF /* SettingsViewController.swift in Sources */,
 				880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */,
 				880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */,
 				880741641E2270BC00CECDDF /* SettingsPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */,
+				885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 				8807417A1E22919600CECDDF /* UIWindow.swift in Sources */,
+				885F9D061E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift in Sources */,
+				885F9CFC1E2A276E003ADC21 /* DashboardNavPresenter.swift in Sources */,
 				8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */,
 				880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */,
+				885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,10 +447,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				880741761E22896C00CECDDF /* SettingsTests.swift in Sources */,
+				885F9D0A1E2A3939003ADC21 /* SpecDashboardNavigationControlling.swift in Sources */,
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
 				880741721E2287C200CECDDF /* SpecViewController.swift in Sources */,
 				8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */,
+				885F9D0D1E2A3979003ADC21 /* SpecNavigationController.swift in Sources */,
 				880741741E22889000CECDDF /* SpecSettingsViewController.swift in Sources */,
 				880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */,
 			);
