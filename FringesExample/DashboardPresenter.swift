@@ -27,6 +27,7 @@ class DashboardPresenter: PushablePresenter {
     }
 
     func viewDidLoad() {
+        viewController?.set(title: "Examples")
         viewController?.set(firstRowTitle: "Settings")
     }
 

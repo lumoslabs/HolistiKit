@@ -144,9 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				880740CD1E1F935200CECDDF /* Main */,
-				885F9CF81E2A2639003ADC21 /* Dashboard Nav */,
-				880740CA1E1F911200CECDDF /* Dashboard */,
-				880741621E2270A700CECDDF /* Settings */,
+				885F9D181E2A95AC003ADC21 /* Modules */,
 				8807416A1E227AE900CECDDF /* Protocols */,
 				880741671E227A3F00CECDDF /* Extensions */,
 				880740DA1E21076900CECDDF /* Supporting Files */,
@@ -185,7 +183,6 @@
 				880740AA1E1F8C9400CECDDF /* AppDelegate.swift */,
 				880740CE1E1F939300CECDDF /* AppCoordinator.swift */,
 				880740D01E1FCC8700CECDDF /* RootRouter.swift */,
-				885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -280,13 +277,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		885F9CF81E2A2639003ADC21 /* Dashboard Nav */ = {
+		885F9CF81E2A2639003ADC21 /* DashboardNavigation */ = {
 			isa = PBXGroup;
 			children = (
 				885F9D031E2A2FE4003ADC21 /* Presenter */,
 				885F9D041E2A2FEC003ADC21 /* View */,
 			);
-			name = "Dashboard Nav";
+			name = DashboardNavigation;
 			sourceTree = "<group>";
 		};
 		885F9D031E2A2FE4003ADC21 /* Presenter */ = {
@@ -323,6 +320,25 @@
 				880741771E22915500CECDDF /* Windowing.swift */,
 			);
 			name = "UIKit Abstraction";
+			sourceTree = "<group>";
+		};
+		885F9D171E2A9582003ADC21 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */,
+				885F9CF81E2A2639003ADC21 /* DashboardNavigation */,
+				880740CA1E1F911200CECDDF /* Dashboard */,
+				880741621E2270A700CECDDF /* Settings */,
+			);
+			name = Dashboard;
+			sourceTree = "<group>";
+		};
+		885F9D181E2A95AC003ADC21 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				885F9D171E2A9582003ADC21 /* Dashboard */,
+			);
+			name = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -11,6 +11,10 @@ class DashboardViewController: UITableViewController, DashboardViewControlling {
         presenter.viewDidLoad()
     }
     
+    func set(title text: String) {
+        title = text
+    }
+    
     func set(firstRowTitle text: String) {
         firstRow.textLabel?.text = text
     }
@@ -22,5 +26,6 @@ class DashboardViewController: UITableViewController, DashboardViewControlling {
 
 protocol DashboardViewControlling: class, ViewControlling {
 
+    func set(title: String)
     func set(firstRowTitle: String)
 }

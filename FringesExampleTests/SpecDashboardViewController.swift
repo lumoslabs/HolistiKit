@@ -13,11 +13,13 @@ protocol SpecDashboardViewControllerUI {
     // Input
     func tapFirstRow()
     // Output
+    var title: String? { get }
     var firstRowTitle: String? { get }
 }
 
 class SpecDashboardViewController: SpecViewController, DashboardViewControlling, SpecDashboardViewControllerUI {
     
+    private(set) var title: String?
     private(set) var firstRowTitle: String?
 
     private let presenter: DashboardPresenter
@@ -29,6 +31,10 @@ class SpecDashboardViewController: SpecViewController, DashboardViewControlling,
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+    }
+
+    func set(title text: String) {
+        title = text
     }
 
     func set(firstRowTitle text: String) {
