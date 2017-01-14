@@ -20,7 +20,7 @@ class DashboardViewController: UITableViewController, DashboardViewControlling {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.tapFirstRow()
+        presenter.tap(rowAt: indexPath)
     }
 }
 

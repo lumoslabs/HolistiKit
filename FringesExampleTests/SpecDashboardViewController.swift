@@ -11,7 +11,7 @@ class SpecDashboardViewControllingFactory: DashboardViewControllingFactoryProtoc
 protocol SpecDashboardViewControllerUI {
     
     // Input
-    func tapFirstRow()
+    func tap(row: Int)
     // Output
     var title: String? { get }
     var firstRowTitle: String? { get }
@@ -41,7 +41,8 @@ class SpecDashboardViewController: SpecViewController, DashboardViewControlling,
         firstRowTitle = text
     }
 
-    func tapFirstRow() {
-        presenter.tapFirstRow()
+    func tap(row: Int) {
+        let indexPath = IndexPath(row: row, section: 0)
+        presenter.tap(rowAt: indexPath)
     }
 }

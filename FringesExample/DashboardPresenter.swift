@@ -31,7 +31,12 @@ class DashboardPresenter: PushablePresenter {
         viewController?.set(firstRowTitle: "Settings")
     }
 
-    func tapFirstRow() {
-        router.pushSettings(on: self)
+    func tap(rowAt indexPath: IndexPath) {
+        switch indexPath {
+        case IndexPath(row: 0, section: 0):
+            router.pushSettings(on: self)
+        default:
+            break
+        }
     }
 }
