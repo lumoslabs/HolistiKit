@@ -3,15 +3,19 @@ import UIKit
 
 class SpecWindow: Windowing {
 
-    private(set) var rootViewController: ViewControlling?
+    private(set) var rootViewController: SpecViewController?
     
     func set(rootViewController: ViewControlling) {
-        self.rootViewController = rootViewController
-        rootViewController.viewDidLoadAndAppear()
+        self.rootViewController = rootViewController.asSpecViewController
+        self.rootViewController!.viewDidLoadAndAppear()
     }
 
     var asUIWindow: UIWindow {
         fatalError("This should never be called in tests")
+    }
+
+    var topViewController: SpecViewController {
+        return rootViewController!.topViewController
     }
 }
     

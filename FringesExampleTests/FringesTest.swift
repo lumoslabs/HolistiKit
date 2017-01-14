@@ -24,14 +24,14 @@ class FringesTest: XCTestCase {
 extension FringesTest {
 
     var dashboardNav: SpecDashboardNavigationControllerUI! {
-        return window.rootViewController as! SpecDashboardNavigationControllerUI
+        return window.topViewController as! SpecDashboardNavigationControllerUI
     }
 
     var dashboard: SpecDashboardViewControllerUI! {
-        return dashboardNav.topViewController as! SpecDashboardViewControllerUI
+        return window.topViewController as! SpecDashboardViewControllerUI
     }
 
     var settings: SpecSettingsViewControllerUI! {
-        return dashboardNav.topViewController as! SpecSettingsViewControllerUI
+        return window.topViewController as! SpecSettingsViewControllerUI
     }
 }

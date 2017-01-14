@@ -1,17 +1,14 @@
 import UIKit
 @testable import FringesExample
 
-protocol SpecNavigationControllerUI {
-    
-    var topViewController: ViewControlling? { get }
-}
+protocol SpecNavigationControllerUI { }
 
 class SpecNavigationController: SpecViewController, NavigationControlling, SpecNavigationControllerUI {
 
-    private var viewControllers = [ViewControlling]()
+    fileprivate var viewControllers = [SpecViewController]()
 
-    var topViewController: ViewControlling? {
-        return viewControllers.last
+    override var topViewController: SpecViewController {
+        return viewControllers.last!.topViewController
     }
 
     override func push(viewController: ViewControlling, animated: Bool) {
@@ -19,5 +16,12 @@ class SpecNavigationController: SpecViewController, NavigationControlling, SpecN
         viewControllers.append(viewController)
         viewController.navigationControlling = self
         viewController.viewDidLoadAndAppear()
+    }
+}
+
+extension NavigationControlling {
+
+    var asSpecNavigationController: SpecNavigationController {
+        return self as! SpecNavigationController
     }
 }

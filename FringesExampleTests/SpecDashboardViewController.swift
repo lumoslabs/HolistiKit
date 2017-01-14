@@ -8,7 +8,7 @@ class SpecDashboardViewControllingFactory: DashboardViewControllingFactoryProtoc
     }
 }
 
-protocol SpecDashboardViewControllerUI: SpecViewControllerUI {
+protocol SpecDashboardViewControllerUI {
     
     // Input
     func tapFirstRow()

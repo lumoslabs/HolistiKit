@@ -1,21 +1,16 @@
 import UIKit
 @testable import FringesExample
 
-protocol SpecViewControllerUI {
+class SpecViewController: ViewControlling {
     
-    var presentedViewController: ViewControlling? { get }
-}
-
-class SpecViewController: ViewControlling, SpecViewControllerUI {
-    
-    var navigationControlling: NavigationControlling?
-    private(set) var presentedViewController: ViewControlling?
+    var navigationControlling: SpecNavigationController?
+    private(set) var presentedViewController: SpecViewController?
 
     func viewDidLoad() { }
 
     func present(viewController: ViewControlling) {
-        presentedViewController = viewController
-        viewController.viewDidLoadAndAppear()
+        presentedViewController = viewController.asSpecViewController
+        presentedViewController!.viewDidLoadAndAppear()
     }
 
     func push(viewController: ViewControlling, animated: Bool) {
@@ -25,15 +20,22 @@ class SpecViewController: ViewControlling, SpecViewControllerUI {
     var asUIViewController: UIViewController {
         fatalError("This should never be called in tests")
     }
+
+    var topViewController: SpecViewController {
+        if let presentedViewController = presentedViewController {
+            return presentedViewController.topViewController
+        }
+        return self
+    }
+
+    func viewDidLoadAndAppear() {
+        viewDidLoad()
+    }
 }
 
 extension ViewControlling {
 
     var asSpecViewController: SpecViewController {
         return self as! SpecViewController
-    }
-
-    func viewDidLoadAndAppear() {
-        asSpecViewController.viewDidLoad()
     }
 }
