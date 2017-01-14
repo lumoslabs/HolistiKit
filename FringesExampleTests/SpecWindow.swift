@@ -3,8 +3,11 @@ import UIKit
 
 class SpecWindow: Windowing {
 
-    var rootViewController: SpecViewController? {
-        didSet { rootViewController?.viewDidLoad() }
+    private(set) var rootViewController: ViewControlling?
+    
+    func set(rootViewController: ViewControlling) {
+        self.rootViewController = rootViewController
+        rootViewController.viewDidLoad()
     }
 
     var asUIWindow: UIWindow {

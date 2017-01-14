@@ -16,7 +16,7 @@ class DashboardNavigationPresenter: PushablePresenter {
         let _viewController = viewControllerFactory.create()
         viewController = _viewController
         router.pushDashboard(on: self)
-        _viewController.present(onWindow: window)
+        window.set(rootViewController: _viewController)
     }
 
     func push(viewController viewControllerToPush: ViewControlling) {
