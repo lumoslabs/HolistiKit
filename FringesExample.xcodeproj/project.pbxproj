@@ -28,8 +28,8 @@
 		8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807416D1E22858400CECDDF /* DateViewControllerFactory.swift */; };
 		880741701E22876700CECDDF /* DateViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8807416F1E22876700CECDDF /* DateViewController.storyboard */; };
 		880741721E2287C200CECDDF /* SpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741711E2287C200CECDDF /* SpecViewController.swift */; };
-		880741741E22889000CECDDF /* SpecSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecSettingsViewController.swift */; };
-		880741761E22896C00CECDDF /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741751E22896C00CECDDF /* SettingsTests.swift */; };
+		880741741E22889000CECDDF /* SpecDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecDateViewController.swift */; };
+		880741761E22896C00CECDDF /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741751E22896C00CECDDF /* DateTests.swift */; };
 		880741781E22915500CECDDF /* Windowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741771E22915500CECDDF /* Windowing.swift */; };
 		8807417A1E22919600CECDDF /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741791E22919600CECDDF /* UIWindow.swift */; };
 		8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417B1E2292A600CECDDF /* SpecWindow.swift */; };
@@ -92,8 +92,8 @@
 		8807416D1E22858400CECDDF /* DateViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewControllerFactory.swift; sourceTree = "<group>"; };
 		8807416F1E22876700CECDDF /* DateViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DateViewController.storyboard; sourceTree = "<group>"; };
 		880741711E2287C200CECDDF /* SpecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecViewController.swift; sourceTree = "<group>"; };
-		880741731E22889000CECDDF /* SpecSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSettingsViewController.swift; sourceTree = "<group>"; };
-		880741751E22896C00CECDDF /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
+		880741731E22889000CECDDF /* SpecDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateViewController.swift; sourceTree = "<group>"; };
+		880741751E22896C00CECDDF /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		880741771E22915500CECDDF /* Windowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windowing.swift; sourceTree = "<group>"; };
 		880741791E22919600CECDDF /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		8807417B1E2292A600CECDDF /* SpecWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecWindow.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				880740BF1E1F8C9400CECDDF /* DashboardTests.swift */,
-				880741751E22896C00CECDDF /* SettingsTests.swift */,
+				880741751E22896C00CECDDF /* DateTests.swift */,
 				880740D71E21038500CECDDF /* Fakes */,
 				880740DB1E21079B00CECDDF /* FringesTest.swift */,
 				880740C11E1F8C9400CECDDF /* Info.plist */,
@@ -213,7 +213,7 @@
 				885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */,
 				885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationControlling.swift */,
 				880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */,
-				880741731E22889000CECDDF /* SpecSettingsViewController.swift */,
+				880741731E22889000CECDDF /* SpecDateViewController.swift */,
 				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
 				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
 			);
@@ -523,7 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880741761E22896C00CECDDF /* SettingsTests.swift in Sources */,
+				880741761E22896C00CECDDF /* DateTests.swift in Sources */,
 				885F9D0A1E2A3939003ADC21 /* SpecDashboardNavigationControlling.swift in Sources */,
 				885F9D2B1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift in Sources */,
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
@@ -533,7 +533,7 @@
 				880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */,
 				885F9D0D1E2A3979003ADC21 /* SpecNavigationController.swift in Sources */,
 				885F9D161E2A9131003ADC21 /* SpecAppDelegate.swift in Sources */,
-				880741741E22889000CECDDF /* SpecSettingsViewController.swift in Sources */,
+				880741741E22889000CECDDF /* SpecDateViewController.swift in Sources */,
 				880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

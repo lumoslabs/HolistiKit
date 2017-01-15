@@ -3,14 +3,19 @@ import UIKit
 
 class SpecViewController: ViewControlling {
     
-    private weak var navigationController: SpecNavigationController?
+    weak var navigationController: SpecNavigationController?
     private var presentedViewController: SpecViewController?
 
     func viewDidLoad() { }
+    func viewWillAppear() { }
+    func viewDidAppear() { }
+    func viewWillDisappear() { }
+    func viewDidDisappear() { }
 
     func present(viewController: ViewControlling) {
         presentedViewController = viewController.asSpecViewController
-        presentedViewController!.viewDidLoadAndAppear()
+        viewDisappear()
+        presentedViewController!.viewLoadAndAppear()
     }
 
     func push(viewController: ViewControlling, animated: Bool) {
@@ -33,8 +38,19 @@ class SpecViewController: ViewControlling {
         return (nextViewController?.viewControllerStack ?? []) + [self]
     }
 
-    func viewDidLoadAndAppear() {
+    func viewLoadAndAppear() {
         viewDidLoad()
+        viewAppear()
+    }
+    
+    func viewAppear() {
+        viewWillAppear()
+        viewWillDisappear()
+    }
+
+    func viewDisappear() {
+        viewWillDisappear()
+        viewDidDisappear()
     }
 
     var asUIViewController: UIViewController {

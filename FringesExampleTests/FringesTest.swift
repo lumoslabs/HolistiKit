@@ -23,17 +23,21 @@ extension FringesTest {
 extension FringesTest {
 
     func progress(minutes: Int) {
-        appDelegate.dateProvider.progress(minutes: 1)
+        appDelegate.dateProvider.progress(minutes: minutes)
     }
 }
 
 // MARK: Top View Controller Accessing
 extension FringesTest {
 
-    private func topViewController<I>(as interface: I.Type) -> I {
+    var window: SpecWindow {
         guard let window = appDelegate.window else {
             fatalError("There is no window. Did you forget to launch the app?")
         }
+        return window
+    }
+
+    private func topViewController<I>(as interface: I.Type) -> I {
         if let top = window.topViewController as? I {
             return top
         }
@@ -53,5 +57,16 @@ extension FringesTest {
 
     var date: SpecDateViewControllerUI! {
         return topViewController(as: SpecDateViewControllerUI.self)
+    }
+
+    private var topNavigationController: SpecNavigationControllerUI {
+        guard let navigationController = window.topViewController.navigationController else {
+            fatalError("The top view controller is not inside a navigation controller.")
+        }
+        return navigationController
+    }
+
+    func tapBack() {
+        topNavigationController.tapBack()
     }
 }
