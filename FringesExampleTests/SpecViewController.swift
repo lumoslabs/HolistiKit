@@ -21,10 +21,6 @@ class SpecViewController: ViewControlling {
         self.navigationController = navigationController
     }
 
-    var asUIViewController: UIViewController {
-        fatalError("This should never be called in tests")
-    }
-
     var topViewController: SpecViewController {
         return nextViewController?.topViewController ?? self
     }
@@ -39,6 +35,10 @@ class SpecViewController: ViewControlling {
 
     func viewDidLoadAndAppear() {
         viewDidLoad()
+    }
+
+    var asUIViewController: UIViewController {
+        fatalError("This should never be called in tests")
     }
 }
 

@@ -22,17 +22,20 @@ extension FringesTest {
 extension FringesTest {
 
     private func topViewController<I>(as interface: I.Type) -> I {
-        if let top = appDelegate.window.topViewController as? I {
+        guard let window = appDelegate.window else {
+            fatalError("There is no window. Did you forget to launch the app?")
+        }
+        if let top = window.topViewController as? I {
             return top
         }
-        let currentViewControllerStack = appDelegate.window.viewControllerStack
+        let currentViewControllerStack = window.viewControllerStack
             .enumerated()
             .map { "[\($0)] [\($1)]" }
             .joined(separator: "\n")
         fatalError("\nThe top view controller was not an instance of [\(I.self)]\n" +
             "This is the current view controller stack:\n" +
             "\(currentViewControllerStack)\n" +
-            "[ ] Window\n")
+            "[-] Window\n")
     }
 
     var dashboard: SpecDashboardViewControllerUI! {

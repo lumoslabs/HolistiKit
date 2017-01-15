@@ -18,7 +18,7 @@ class DashboardTests: FringesTest {
 
     func test_canNavigateToTheSettingsPage() {
         tapAppIcon()
-        dashboard.tap(row: 0)
+        dashboard.tapSettingsRow()
         XCTAssertNotNil(settings)
     }
 }
