@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dashboardNavigationControllerFactory = DashboardNavigationControllingFactory()
         let dashboardViewControllerFactory = DashboardViewControllingFactory()
         let settingsViewControllerFactory = SettingsViewControllerFactory()
+        let dateProvider = DateProvider()
+        let timeZoneProvider = TimeZoneProvider()
         let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
                                             dashboardViewControllerFactory: dashboardViewControllerFactory,
-                                            settingsViewControllerFactory: settingsViewControllerFactory)
+                                            settingsViewControllerFactory: settingsViewControllerFactory,
+                                            dateProvider: dateProvider,
+                                            timeZoneProvider: timeZoneProvider)
         appCoordinator.didFinishLaunching(withWindow: _window)
         
         _window.makeKeyAndVisible()

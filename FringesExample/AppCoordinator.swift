@@ -4,10 +4,14 @@ class AppCoordinator {
 
     init(dashboardNavigationControllerFactory: DashboardNavigationControllingFactoryProtocol,
          dashboardViewControllerFactory: DashboardViewControllingFactoryProtocol,
-         settingsViewControllerFactory: SettingsViewControllerFactoryProtocol) {
+         settingsViewControllerFactory: SettingsViewControllerFactoryProtocol,
+         dateProvider: DateProviding,
+         timeZoneProvider: TimeZoneProviding) {
         let dashboardNavigationPresenterFactory = DashboardNavigationPresenterFactory(viewControllerFactory: dashboardNavigationControllerFactory)
         let dashboardPresenterFactory = DashboardPresenterFactory(viewControllerFactory: dashboardViewControllerFactory)
-        let settingsPresenterFactory = SettingsPresenterFactory(viewControllerFactory: settingsViewControllerFactory)
+        let settingsPresenterFactory = SettingsPresenterFactory(viewControllerFactory: settingsViewControllerFactory,
+                                                                dateProvider: dateProvider,
+                                                                timeZoneProvider: timeZoneProvider)
         self.router = RootRouter(dashboardNavigationPresenterFactory: dashboardNavigationPresenterFactory,
                                  dashboardPresenterFactory: dashboardPresenterFactory,
                                  settingsPresenterFactory: settingsPresenterFactory)

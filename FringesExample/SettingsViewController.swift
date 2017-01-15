@@ -9,6 +9,11 @@ class SettingsViewController: UIViewController, SettingsViewControlling {
     func set(dateLabel text: String) {
         dateLabel.text = text
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+    }
 }
 
 protocol SettingsViewControlling: class, ViewControlling {

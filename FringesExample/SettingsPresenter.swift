@@ -3,10 +3,16 @@ import UIKit
 class SettingsPresenter {
 
     private let viewControllerFactory: SettingsViewControllerFactoryProtocol
+    fileprivate let interactor: SettingsInteractor
+    fileprivate let datePrinter: DatePrinter
     fileprivate weak var viewController: SettingsViewControlling!
 
-    init(viewControllerFactory: SettingsViewControllerFactoryProtocol) {
+    init(viewControllerFactory: SettingsViewControllerFactoryProtocol,
+         interactor: SettingsInteractor,
+         datePrinter: DatePrinter) {
         self.viewControllerFactory = viewControllerFactory
+        self.interactor = interactor
+        self.datePrinter = datePrinter
     }
     
     func push(on presenter: PushablePresenter) {
@@ -19,7 +25,15 @@ class SettingsPresenter {
 extension SettingsPresenter: SettingsPresenting {
     
     func viewDidLoad() {
-        viewController.set(dateLabel: "00:00 August 23rd, 2016")
+        interactor.delegate = self
+    }
+}
+
+extension SettingsPresenter: SettingsInteractorDelegate {
+
+    func updateWith(date: Date) {
+        let formattedDate = datePrinter.string(for: date, withFormat: .long)
+        viewController.set(dateLabel: formattedDate)
     }
 }
 

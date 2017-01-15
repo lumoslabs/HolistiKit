@@ -47,6 +47,13 @@
 		885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */; };
 		885F9D161E2A9131003ADC21 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
 		885F9D1A1E2B8036003ADC21 /* DashboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */; };
+		885F9D1C1E2BA5F5003ADC21 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1B1E2BA5F5003ADC21 /* SettingsInteractor.swift */; };
+		885F9D1F1E2BB289003ADC21 /* DateProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1E1E2BB289003ADC21 /* DateProviding.swift */; };
+		885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D211E2BB3D2003ADC21 /* DateProvider.swift */; };
+		885F9D251E2BB41E003ADC21 /* SpecDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */; };
+		885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D261E2BC8FC003ADC21 /* DatePrinter.swift */; };
+		885F9D291E2BC965003ADC21 /* TimeZoneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D281E2BC965003ADC21 /* TimeZoneProvider.swift */; };
+		885F9D2B1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +111,13 @@
 		885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushablePresenter.swift; sourceTree = "<group>"; };
 		885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecAppDelegate.swift; sourceTree = "<group>"; };
 		885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDataSource.swift; sourceTree = "<group>"; };
+		885F9D1B1E2BA5F5003ADC21 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		885F9D1E1E2BB289003ADC21 /* DateProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProviding.swift; sourceTree = "<group>"; };
+		885F9D211E2BB3D2003ADC21 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
+		885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProvider.swift; sourceTree = "<group>"; };
+		885F9D261E2BC8FC003ADC21 /* DatePrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePrinter.swift; sourceTree = "<group>"; };
+		885F9D281E2BC965003ADC21 /* TimeZoneProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZoneProvider.swift; sourceTree = "<group>"; };
+		885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimeZoneProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +161,7 @@
 			children = (
 				880740CD1E1F935200CECDDF /* Main */,
 				885F9D181E2A95AC003ADC21 /* Modules */,
+				885F9D201E2BB3C1003ADC21 /* Services */,
 				8807416A1E227AE900CECDDF /* Protocols */,
 				880741671E227A3F00CECDDF /* Extensions */,
 				880740DA1E21076900CECDDF /* Supporting Files */,
@@ -199,6 +214,8 @@
 				885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationControlling.swift */,
 				880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */,
 				880741731E22889000CECDDF /* SpecSettingsViewController.swift */,
+				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
+				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -235,6 +252,7 @@
 		8807416A1E227AE900CECDDF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				885F9D1D1E2BB27C003ADC21 /* Foundation Abstraction */,
 				885F9D121E2A4D49003ADC21 /* UIKit Abstraction */,
 				885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */,
 			);
@@ -246,6 +264,7 @@
 			children = (
 				8807417F1E23A4C400CECDDF /* SettingsPresenterFactory.swift */,
 				880741631E2270BC00CECDDF /* SettingsPresenter.swift */,
+				885F9D1B1E2BA5F5003ADC21 /* SettingsInteractor.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -342,6 +361,24 @@
 				885F9D171E2A9582003ADC21 /* Dashboard */,
 			);
 			name = Modules;
+			sourceTree = "<group>";
+		};
+		885F9D1D1E2BB27C003ADC21 /* Foundation Abstraction */ = {
+			isa = PBXGroup;
+			children = (
+				885F9D1E1E2BB289003ADC21 /* DateProviding.swift */,
+			);
+			name = "Foundation Abstraction";
+			sourceTree = "<group>";
+		};
+		885F9D201E2BB3C1003ADC21 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				885F9D211E2BB3D2003ADC21 /* DateProvider.swift */,
+				885F9D261E2BC8FC003ADC21 /* DatePrinter.swift */,
+				885F9D281E2BC965003ADC21 /* TimeZoneProvider.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,8 +487,10 @@
 			files = (
 				880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */,
 				8807416E1E22858400CECDDF /* SettingsViewControllerFactory.swift in Sources */,
+				885F9D1F1E2BB289003ADC21 /* DateProviding.swift in Sources */,
 				880741801E23A4C400CECDDF /* SettingsPresenterFactory.swift in Sources */,
 				8807417E1E239A3F00CECDDF /* DashboardPresenterFactory.swift in Sources */,
+				885F9D291E2BC965003ADC21 /* TimeZoneProvider.swift in Sources */,
 				885F9D001E2A288D003ADC21 /* DashboardNavigationController.swift in Sources */,
 				880741781E22915500CECDDF /* Windowing.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
@@ -471,9 +510,12 @@
 				885F9D061E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift in Sources */,
 				885F9CFC1E2A276E003ADC21 /* DashboardNavPresenter.swift in Sources */,
 				8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */,
+				885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */,
 				880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */,
 				885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */,
+				885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */,
 				885F9D1A1E2B8036003ADC21 /* DashboardDataSource.swift in Sources */,
+				885F9D1C1E2BA5F5003ADC21 /* SettingsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +525,9 @@
 			files = (
 				880741761E22896C00CECDDF /* SettingsTests.swift in Sources */,
 				885F9D0A1E2A3939003ADC21 /* SpecDashboardNavigationControlling.swift in Sources */,
+				885F9D2B1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift in Sources */,
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
+				885F9D251E2BB41E003ADC21 /* SpecDateProvider.swift in Sources */,
 				880741721E2287C200CECDDF /* SpecViewController.swift in Sources */,
 				8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */,
