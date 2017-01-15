@@ -51,7 +51,7 @@ extension FringesTest {
         return topViewController(as: SpecDashboardViewControllerUI.self)
     }
 
-    var settings: SpecSettingsViewControllerUI! {
-        return topViewController(as: SpecSettingsViewControllerUI.self)
+    var date: SpecDateViewControllerUI! {
+        return topViewController(as: SpecDateViewControllerUI.self)
     }
 }

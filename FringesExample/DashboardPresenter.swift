@@ -40,7 +40,7 @@ extension DashboardPresenter: DashboardPresenting {
     func tap(rowAt indexPath: IndexPath) {
         switch indexPath {
         case IndexPath(row: 0, section: 0):
-            router.pushSettings(on: self)
+            router.pushDate(on: self)
         default:
             break
         }

@@ -12,12 +12,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let dashboardNavigationControllerFactory = DashboardNavigationControllingFactory()
         let dashboardViewControllerFactory = DashboardViewControllingFactory()
-        let settingsViewControllerFactory = SettingsViewControllerFactory()
+        let dateViewControllerFactory = DateViewControllerFactory()
         let dateProvider = DateProvider()
         let timeZoneProvider = TimeZoneProvider()
         let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
                                             dashboardViewControllerFactory: dashboardViewControllerFactory,
-                                            settingsViewControllerFactory: settingsViewControllerFactory,
+                                            dateViewControllerFactory: dateViewControllerFactory,
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider)
         appCoordinator.didFinishLaunching(withWindow: _window)

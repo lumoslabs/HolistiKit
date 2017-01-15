@@ -4,10 +4,10 @@ class RootRouter {
 
     init(dashboardNavigationPresenterFactory: DashboardNavigationPresenterFactory,
          dashboardPresenterFactory: DashboardPresenterFactory,
-         settingsPresenterFactory: SettingsPresenterFactory) {
+         datePresenterFactory: DatePresenterFactory) {
         self.dashboardRouter = DashboardRouter(dashboardNavigationPresenterFactory: dashboardNavigationPresenterFactory,
                                                dashboardPresenterFactory: dashboardPresenterFactory,
-                                               settingsPresenterFactory: settingsPresenterFactory)
+                                               datePresenterFactory: datePresenterFactory)
     }
     
     func present(onWindow window: Windowing) {

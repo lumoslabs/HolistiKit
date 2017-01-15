@@ -1,23 +1,23 @@
 @testable import FringesExample
 
-class SpecSettingsViewControllerFactory: SettingsViewControllerFactoryProtocol {
+class SpecDateViewControllerFactory: DateViewControllerFactoryProtocol {
     
-    func create(withPresenter presenter: SettingsPresenter) -> SettingsViewControlling {
-        return SpecSettingsViewController(presenter: presenter)
+    func create(withPresenter presenter: DatePresenter) -> DateViewControlling {
+        return SpecDateViewController(presenter: presenter)
     }
 }
 
-protocol SpecSettingsViewControllerUI {
+protocol SpecDateViewControllerUI {
 
     var dateLabel: String? { get }
 }
 
-class SpecSettingsViewController: SpecViewController, SettingsViewControlling, SpecSettingsViewControllerUI {
+class SpecDateViewController: SpecViewController, DateViewControlling, SpecDateViewControllerUI {
 
     private(set) var dateLabel: String?
-    private let presenter: SettingsPresenting
+    private let presenter: DatePresenting
 
-    init(presenter: SettingsPresenting) {
+    init(presenter: DatePresenting) {
         self.presenter = presenter
     }
 

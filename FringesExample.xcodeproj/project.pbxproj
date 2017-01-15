@@ -21,12 +21,12 @@
 		880740DF1E2108CE00CECDDF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DD1E21088B00CECDDF /* main.swift */; };
 		880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740E01E21100200CECDDF /* DashboardViewController.storyboard */; };
 		880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740E81E2118FC00CECDDF /* DashboardInteractor.swift */; };
-		880741641E2270BC00CECDDF /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741631E2270BC00CECDDF /* SettingsPresenter.swift */; };
-		880741661E22780C00CECDDF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741651E22780C00CECDDF /* SettingsViewController.swift */; };
+		880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741631E2270BC00CECDDF /* DatePresenter.swift */; };
+		880741661E22780C00CECDDF /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741651E22780C00CECDDF /* DateViewController.swift */; };
 		880741691E227A4D00CECDDF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741681E227A4D00CECDDF /* UIViewController.swift */; };
 		8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807416B1E227AF500CECDDF /* ViewControlling.swift */; };
-		8807416E1E22858400CECDDF /* SettingsViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807416D1E22858400CECDDF /* SettingsViewControllerFactory.swift */; };
-		880741701E22876700CECDDF /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8807416F1E22876700CECDDF /* SettingsViewController.storyboard */; };
+		8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807416D1E22858400CECDDF /* DateViewControllerFactory.swift */; };
+		880741701E22876700CECDDF /* DateViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8807416F1E22876700CECDDF /* DateViewController.storyboard */; };
 		880741721E2287C200CECDDF /* SpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741711E2287C200CECDDF /* SpecViewController.swift */; };
 		880741741E22889000CECDDF /* SpecSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecSettingsViewController.swift */; };
 		880741761E22896C00CECDDF /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741751E22896C00CECDDF /* SettingsTests.swift */; };
@@ -34,7 +34,7 @@
 		8807417A1E22919600CECDDF /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741791E22919600CECDDF /* UIWindow.swift */; };
 		8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417B1E2292A600CECDDF /* SpecWindow.swift */; };
 		8807417E1E239A3F00CECDDF /* DashboardPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417D1E239A3F00CECDDF /* DashboardPresenterFactory.swift */; };
-		880741801E23A4C400CECDDF /* SettingsPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417F1E23A4C400CECDDF /* SettingsPresenterFactory.swift */; };
+		880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */; };
 		885F9CFA1E2A265B003ADC21 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */; };
 		885F9CFC1E2A276E003ADC21 /* DashboardNavPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* DashboardNavPresenter.swift */; };
 		885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* DashboardNavControllingFactory.swift */; };
@@ -47,7 +47,7 @@
 		885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */; };
 		885F9D161E2A9131003ADC21 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
 		885F9D1A1E2B8036003ADC21 /* DashboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */; };
-		885F9D1C1E2BA5F5003ADC21 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1B1E2BA5F5003ADC21 /* SettingsInteractor.swift */; };
+		885F9D1C1E2BA5F5003ADC21 /* DateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1B1E2BA5F5003ADC21 /* DateInteractor.swift */; };
 		885F9D1F1E2BB289003ADC21 /* DateProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1E1E2BB289003ADC21 /* DateProviding.swift */; };
 		885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D211E2BB3D2003ADC21 /* DateProvider.swift */; };
 		885F9D251E2BB41E003ADC21 /* SpecDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */; };
@@ -85,12 +85,12 @@
 		880740DD1E21088B00CECDDF /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		880740E01E21100200CECDDF /* DashboardViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashboardViewController.storyboard; sourceTree = "<group>"; };
 		880740E81E2118FC00CECDDF /* DashboardInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
-		880741631E2270BC00CECDDF /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		880741651E22780C00CECDDF /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		880741631E2270BC00CECDDF /* DatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenter.swift; sourceTree = "<group>"; };
+		880741651E22780C00CECDDF /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		880741681E227A4D00CECDDF /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		8807416B1E227AF500CECDDF /* ViewControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControlling.swift; sourceTree = "<group>"; };
-		8807416D1E22858400CECDDF /* SettingsViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerFactory.swift; sourceTree = "<group>"; };
-		8807416F1E22876700CECDDF /* SettingsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		8807416D1E22858400CECDDF /* DateViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewControllerFactory.swift; sourceTree = "<group>"; };
+		8807416F1E22876700CECDDF /* DateViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DateViewController.storyboard; sourceTree = "<group>"; };
 		880741711E2287C200CECDDF /* SpecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecViewController.swift; sourceTree = "<group>"; };
 		880741731E22889000CECDDF /* SpecSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSettingsViewController.swift; sourceTree = "<group>"; };
 		880741751E22896C00CECDDF /* SettingsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		880741791E22919600CECDDF /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		8807417B1E2292A600CECDDF /* SpecWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecWindow.swift; sourceTree = "<group>"; };
 		8807417D1E239A3F00CECDDF /* DashboardPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenterFactory.swift; sourceTree = "<group>"; };
-		8807417F1E23A4C400CECDDF /* SettingsPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenterFactory.swift; sourceTree = "<group>"; };
+		8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenterFactory.swift; sourceTree = "<group>"; };
 		885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
 		885F9CFB1E2A276E003ADC21 /* DashboardNavPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavPresenter.swift; sourceTree = "<group>"; };
 		885F9CFD1E2A2825003ADC21 /* DashboardNavControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavControllingFactory.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 		885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushablePresenter.swift; sourceTree = "<group>"; };
 		885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecAppDelegate.swift; sourceTree = "<group>"; };
 		885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDataSource.swift; sourceTree = "<group>"; };
-		885F9D1B1E2BA5F5003ADC21 /* SettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		885F9D1B1E2BA5F5003ADC21 /* DateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInteractor.swift; sourceTree = "<group>"; };
 		885F9D1E1E2BB289003ADC21 /* DateProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProviding.swift; sourceTree = "<group>"; };
 		885F9D211E2BB3D2003ADC21 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProvider.swift; sourceTree = "<group>"; };
@@ -230,13 +230,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		880741621E2270A700CECDDF /* Settings */ = {
+		880741621E2270A700CECDDF /* Date */ = {
 			isa = PBXGroup;
 			children = (
 				880741811E23B3AC00CECDDF /* Presenter */,
 				880741821E23B3B500CECDDF /* View */,
 			);
-			name = Settings;
+			name = Date;
 			sourceTree = "<group>";
 		};
 		880741671E227A3F00CECDDF /* Extensions */ = {
@@ -262,9 +262,9 @@
 		880741811E23B3AC00CECDDF /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				8807417F1E23A4C400CECDDF /* SettingsPresenterFactory.swift */,
-				880741631E2270BC00CECDDF /* SettingsPresenter.swift */,
-				885F9D1B1E2BA5F5003ADC21 /* SettingsInteractor.swift */,
+				8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */,
+				880741631E2270BC00CECDDF /* DatePresenter.swift */,
+				885F9D1B1E2BA5F5003ADC21 /* DateInteractor.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -272,9 +272,9 @@
 		880741821E23B3B500CECDDF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8807416D1E22858400CECDDF /* SettingsViewControllerFactory.swift */,
-				880741651E22780C00CECDDF /* SettingsViewController.swift */,
-				8807416F1E22876700CECDDF /* SettingsViewController.storyboard */,
+				8807416D1E22858400CECDDF /* DateViewControllerFactory.swift */,
+				880741651E22780C00CECDDF /* DateViewController.swift */,
+				8807416F1E22876700CECDDF /* DateViewController.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 				885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */,
 				885F9CF81E2A2639003ADC21 /* DashboardNavigation */,
 				880740CA1E1F911200CECDDF /* Dashboard */,
-				880741621E2270A700CECDDF /* Settings */,
+				880741621E2270A700CECDDF /* Date */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -464,7 +464,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880741701E22876700CECDDF /* SettingsViewController.storyboard in Resources */,
+				880741701E22876700CECDDF /* DateViewController.storyboard in Resources */,
 				880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */,
 				880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */,
 				880740B21E1F8C9400CECDDF /* Assets.xcassets in Resources */,
@@ -486,9 +486,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */,
-				8807416E1E22858400CECDDF /* SettingsViewControllerFactory.swift in Sources */,
+				8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */,
 				885F9D1F1E2BB289003ADC21 /* DateProviding.swift in Sources */,
-				880741801E23A4C400CECDDF /* SettingsPresenterFactory.swift in Sources */,
+				880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */,
 				8807417E1E239A3F00CECDDF /* DashboardPresenterFactory.swift in Sources */,
 				885F9D291E2BC965003ADC21 /* TimeZoneProvider.swift in Sources */,
 				885F9D001E2A288D003ADC21 /* DashboardNavigationController.swift in Sources */,
@@ -498,10 +498,10 @@
 				885F9CFA1E2A265B003ADC21 /* DashboardRouter.swift in Sources */,
 				885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */,
 				880741691E227A4D00CECDDF /* UIViewController.swift in Sources */,
-				880741661E22780C00CECDDF /* SettingsViewController.swift in Sources */,
+				880741661E22780C00CECDDF /* DateViewController.swift in Sources */,
 				880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */,
 				880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */,
-				880741641E2270BC00CECDDF /* SettingsPresenter.swift in Sources */,
+				880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */,
 				885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */,
 				885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */,
@@ -515,7 +515,7 @@
 				885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */,
 				885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */,
 				885F9D1A1E2B8036003ADC21 /* DashboardDataSource.swift in Sources */,
-				885F9D1C1E2BA5F5003ADC21 /* SettingsInteractor.swift in Sources */,
+				885F9D1C1E2BA5F5003ADC21 /* DateInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,15 @@
 class DashboardRouter {
 
     private let dashboardPresenterFactory: DashboardPresenterFactory
-    private let settingsPresenterFactory: SettingsPresenterFactory
+    private let datePresenterFactory: DatePresenterFactory
     private let dashboardNavigationPresenterFactory: DashboardNavigationPresenterFactory
 
     init(dashboardNavigationPresenterFactory: DashboardNavigationPresenterFactory,
          dashboardPresenterFactory: DashboardPresenterFactory,
-         settingsPresenterFactory: SettingsPresenterFactory) {
+         datePresenterFactory: DatePresenterFactory) {
         self.dashboardNavigationPresenterFactory = dashboardNavigationPresenterFactory
         self.dashboardPresenterFactory = dashboardPresenterFactory
-        self.settingsPresenterFactory = settingsPresenterFactory
+        self.datePresenterFactory = datePresenterFactory
     }
     
     func present(onWindow window: Windowing) {
@@ -22,8 +22,8 @@ class DashboardRouter {
         dashboardPresenter.push(on: presenter)
     }
     
-    func pushSettings(on presenter: PushablePresenter) {
-        let settingsPresenter = settingsPresenterFactory.create(withRouter: self)
-        settingsPresenter.push(on: presenter)
+    func pushDate(on presenter: PushablePresenter) {
+        let datePresenter = datePresenterFactory.create(withRouter: self)
+        datePresenter.push(on: presenter)
     }
 }

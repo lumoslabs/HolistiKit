@@ -1,11 +1,11 @@
 import XCTest
 
-class SettingsTests: FringesTest {
+class DateTests: FringesTest {
 
     func test_showsTheCurrentTime() {
         tapAppIcon()
         progress(minutes: 1)
-        dashboard.tapSettingsRow()
-        XCTAssertEqual(settings.dateLabel, "21:01 22 August 2016")
+        dashboard.tapDateRow()
+        XCTAssertEqual(date.dateLabel, "21:01 22 August 2016")
     }
 }

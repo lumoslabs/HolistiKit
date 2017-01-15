@@ -9,16 +9,16 @@ class DashboardTests: FringesTest {
 
     func test_rowsAreCorrectlyConfigured() {
         tapAppIcon()
-        let expectedTitles = [ "Settings" ]
+        let expectedTitles = [ "Date" ]
         XCTAssertEqual(dashboard.numberOfRows, expectedTitles.count)
         expectedTitles.enumerated().forEach {
             XCTAssertEqual(dashboard.title(forRow: $0), $1)
         }
     }
 
-    func test_canNavigateToTheSettingsPage() {
+    func test_canNavigateToTheDatePage() {
         tapAppIcon()
-        dashboard.tapSettingsRow()
-        XCTAssertNotNil(settings)
+        dashboard.tapDateRow()
+        XCTAssertNotNil(date)
     }
 }

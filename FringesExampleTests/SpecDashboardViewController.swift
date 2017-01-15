@@ -11,7 +11,7 @@ class SpecDashboardViewControllingFactory: DashboardViewControllingFactoryProtoc
 protocol SpecDashboardViewControllerUI {
     
     // Input
-    func tapSettingsRow()
+    func tapDateRow()
     // Output
     var title: String? { get }
     var numberOfRows: Int { get }
@@ -47,7 +47,7 @@ class SpecDashboardViewController: SpecViewController, DashboardViewControlling,
         presenter.tap(rowAt: ip)
     }
 
-    func tapSettingsRow() {
+    func tapDateRow() {
         tap(row: 0)
     }
 

@@ -1,10 +1,10 @@
-class SettingsPresenterFactory {
+class DatePresenterFactory {
     
-    private let viewControllerFactory: SettingsViewControllerFactoryProtocol
+    private let viewControllerFactory: DateViewControllerFactoryProtocol
     private let dateProvider: DateProviding
     private let timeZoneProvider: TimeZoneProviding
 
-    init(viewControllerFactory: SettingsViewControllerFactoryProtocol,
+    init(viewControllerFactory: DateViewControllerFactoryProtocol,
          dateProvider: DateProviding,
          timeZoneProvider: TimeZoneProviding) {
         self.viewControllerFactory = viewControllerFactory
@@ -12,10 +12,10 @@ class SettingsPresenterFactory {
         self.timeZoneProvider = timeZoneProvider
     }
 
-    func create(withRouter router: DashboardRouter) -> SettingsPresenter {
-        let interactor = SettingsInteractor(dateProvider: dateProvider)
+    func create(withRouter router: DashboardRouter) -> DatePresenter {
+        let interactor = DateInteractor(dateProvider: dateProvider)
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
-        return SettingsPresenter(viewControllerFactory: viewControllerFactory,
+        return DatePresenter(viewControllerFactory: viewControllerFactory,
                                  interactor: interactor,
                                  datePrinter: datePrinter)
     }

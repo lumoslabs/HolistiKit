@@ -11,13 +11,13 @@ class SpecAppDelegate {
         
         let dashboardNavigationControllerFactory = SpecDashboardNavigationControllingFactory()
         let dashboardViewControllerFactory = SpecDashboardViewControllingFactory()
-        let settingsViewControllerFactory = SpecSettingsViewControllerFactory()
+        let dateViewControllerFactory = SpecDateViewControllerFactory()
         let _dateProvider = SpecDateProvider()
         dateProvider = _dateProvider
         let timeZoneProvider = SpecTimeZoneProvider()
         let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
                                             dashboardViewControllerFactory: dashboardViewControllerFactory,
-                                            settingsViewControllerFactory: settingsViewControllerFactory,
+                                            dateViewControllerFactory: dateViewControllerFactory,
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider)
         

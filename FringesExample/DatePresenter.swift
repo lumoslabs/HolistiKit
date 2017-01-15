@@ -1,14 +1,14 @@
 import UIKit
 
-class SettingsPresenter {
+class DatePresenter {
 
-    private let viewControllerFactory: SettingsViewControllerFactoryProtocol
-    fileprivate let interactor: SettingsInteractor
+    private let viewControllerFactory: DateViewControllerFactoryProtocol
+    fileprivate let interactor: DateInteractor
     fileprivate let datePrinter: DatePrinter
-    fileprivate weak var viewController: SettingsViewControlling!
+    fileprivate weak var viewController: DateViewControlling!
 
-    init(viewControllerFactory: SettingsViewControllerFactoryProtocol,
-         interactor: SettingsInteractor,
+    init(viewControllerFactory: DateViewControllerFactoryProtocol,
+         interactor: DateInteractor,
          datePrinter: DatePrinter) {
         self.viewControllerFactory = viewControllerFactory
         self.interactor = interactor
@@ -22,14 +22,14 @@ class SettingsPresenter {
     }
 }
 
-extension SettingsPresenter: SettingsPresenting {
+extension DatePresenter: DatePresenting {
     
     func viewDidLoad() {
         interactor.delegate = self
     }
 }
 
-extension SettingsPresenter: SettingsInteractorDelegate {
+extension DatePresenter: DateInteractorDelegate {
 
     func updateWith(date: Date) {
         let formattedDate = datePrinter.string(for: date, withFormat: .long)
@@ -37,7 +37,7 @@ extension SettingsPresenter: SettingsInteractorDelegate {
     }
 }
 
-protocol SettingsPresenting {
+protocol DatePresenting {
 
     func viewDidLoad()
 }

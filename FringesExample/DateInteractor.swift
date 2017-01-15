@@ -1,8 +1,8 @@
 import Foundation
 
-class SettingsInteractor {
+class DateInteractor {
 
-    weak var delegate: SettingsInteractorDelegate? {
+    weak var delegate: DateInteractorDelegate? {
         didSet {
             delegate?.updateWith(date: dateProvider.date)
         }
@@ -15,7 +15,7 @@ class SettingsInteractor {
     }
 }
 
-protocol SettingsInteractorDelegate: class {
+protocol DateInteractorDelegate: class {
 
     func updateWith(date: Date)
 }

@@ -4,17 +4,17 @@ class AppCoordinator {
 
     init(dashboardNavigationControllerFactory: DashboardNavigationControllingFactoryProtocol,
          dashboardViewControllerFactory: DashboardViewControllingFactoryProtocol,
-         settingsViewControllerFactory: SettingsViewControllerFactoryProtocol,
+         dateViewControllerFactory: DateViewControllerFactoryProtocol,
          dateProvider: DateProviding,
          timeZoneProvider: TimeZoneProviding) {
         let dashboardNavigationPresenterFactory = DashboardNavigationPresenterFactory(viewControllerFactory: dashboardNavigationControllerFactory)
         let dashboardPresenterFactory = DashboardPresenterFactory(viewControllerFactory: dashboardViewControllerFactory)
-        let settingsPresenterFactory = SettingsPresenterFactory(viewControllerFactory: settingsViewControllerFactory,
+        let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
                                                                 dateProvider: dateProvider,
                                                                 timeZoneProvider: timeZoneProvider)
         self.router = RootRouter(dashboardNavigationPresenterFactory: dashboardNavigationPresenterFactory,
                                  dashboardPresenterFactory: dashboardPresenterFactory,
-                                 settingsPresenterFactory: settingsPresenterFactory)
+                                 datePresenterFactory: datePresenterFactory)
     }
     
     func didFinishLaunching(withWindow window: Windowing) {

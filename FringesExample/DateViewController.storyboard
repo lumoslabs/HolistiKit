@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings View Controller-->
+        <!--Date View Controller-->
         <scene sceneID="GhQ-HR-qsA">
             <objects>
-                <viewController id="uQk-oT-HCU" customClass="SettingsViewController" customModule="FringesExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uQk-oT-HCU" customClass="DateViewController" customModule="FringesExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RiL-tj-bx3"/>
                         <viewControllerLayoutGuide type="bottom" id="FWu-o4-lGw"/>

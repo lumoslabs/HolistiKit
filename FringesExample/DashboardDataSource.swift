@@ -3,7 +3,7 @@ import Foundation
 class DashboardDataSource {
 
     private let data = [
-        DashboardCellConfig(title: "Settings")
+        DashboardCellConfig(title: "Date")
     ]
     
     func cellConfiguration(for indexPath: IndexPath) -> DashboardCellConfig {

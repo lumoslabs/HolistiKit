@@ -1,8 +1,8 @@
 import UIKit
 
-class SettingsViewController: UIViewController, SettingsViewControlling {
+class DateViewController: UIViewController, DateViewControlling {
 
-    var presenter: SettingsPresenter!
+    var presenter: DatePresenter!
     
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -16,7 +16,7 @@ class SettingsViewController: UIViewController, SettingsViewControlling {
     }
 }
 
-protocol SettingsViewControlling: class, ViewControlling {
+protocol DateViewControlling: class, ViewControlling {
     
     func set(dateLabel text: String)
 }
