@@ -25,6 +25,7 @@ class DatePresenter {
 extension DatePresenter: DatePresenting {
     
     func viewDidLoad() {
+        viewController.set(title: "Date")
         interactor.delegate = self
     }
 }

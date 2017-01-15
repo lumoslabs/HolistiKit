@@ -21,8 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View shown at:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxz-x6-1S3">
+                                <rect key="frame" x="129.5" y="64" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oed-Jp-pKV">
-                                <rect key="frame" x="149" y="64" width="77" height="21"/>
+                                <rect key="frame" x="149" y="129" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,7 +37,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oed-Jp-pKV" firstAttribute="centerX" secondItem="CqG-Vk-AZ1" secondAttribute="centerX" id="2yQ-Dm-2UE"/>
-                            <constraint firstItem="oed-Jp-pKV" firstAttribute="top" secondItem="RiL-tj-bx3" secondAttribute="bottom" constant="44" id="V2F-rV-yfW"/>
+                            <constraint firstItem="Dxz-x6-1S3" firstAttribute="centerX" secondItem="CqG-Vk-AZ1" secondAttribute="centerX" id="Vr1-rE-OSP"/>
+                            <constraint firstItem="Dxz-x6-1S3" firstAttribute="top" secondItem="RiL-tj-bx3" secondAttribute="bottom" constant="44" id="gG0-lI-pVv"/>
+                            <constraint firstItem="oed-Jp-pKV" firstAttribute="top" secondItem="Dxz-x6-1S3" secondAttribute="bottom" constant="44" id="lCd-Ko-NMs"/>
                         </constraints>
                     </view>
                     <connections>

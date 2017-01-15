@@ -2,6 +2,12 @@ import XCTest
 
 class DateTests: FringesTest {
 
+    func test_titleIsCorrect() {
+        tapAppIcon()
+        dashboard.tapDateRow()
+        XCTAssertEqual(date.title, "Date")
+    }
+
     func test_showsTheCurrentTime() {
         tapAppIcon()
         progress(minutes: 1)

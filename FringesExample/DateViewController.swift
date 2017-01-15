@@ -2,12 +2,16 @@ import UIKit
 
 class DateViewController: UIViewController, DateViewControlling {
 
-    var presenter: DatePresenter!
+    var presenter: DatePresenting!
     
     @IBOutlet weak var dateLabel: UILabel!
     
     func set(dateLabel text: String) {
         dateLabel.text = text
+    }
+    
+    func set(title text: String) {
+        title = text
     }
 
     override func viewDidLoad() {
@@ -19,4 +23,5 @@ class DateViewController: UIViewController, DateViewControlling {
 protocol DateViewControlling: class, ViewControlling {
     
     func set(dateLabel text: String)
+    func set(title text: String)
 }

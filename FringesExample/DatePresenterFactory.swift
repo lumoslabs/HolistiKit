@@ -16,7 +16,7 @@ class DatePresenterFactory {
         let interactor = DateInteractor(dateProvider: dateProvider)
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
         return DatePresenter(viewControllerFactory: viewControllerFactory,
-                                 interactor: interactor,
-                                 datePrinter: datePrinter)
+                             interactor: interactor,
+                             datePrinter: datePrinter)
     }
 }
