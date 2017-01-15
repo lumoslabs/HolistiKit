@@ -1,5 +1,7 @@
 <img src="https://cloud.githubusercontent.com/assets/309224/21964712/bc5d538c-db51-11e6-9f29-347c64d649e2.png" alt="App Logo" width="60" height="60"> FringesExample
 ======================================
+[![Build Status](https://travis-ci.org/solidcell/FringesExample.svg?branch=master)](https://travis-ci.org/solidcell/FringesExample)
+[![codecov](https://codecov.io/gh/solidcell/FringesExample/branch/master/graph/badge.svg)](https://codecov.io/gh/solidcell/FringesExample)
 
 ## About
 
