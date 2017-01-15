@@ -12,7 +12,7 @@ class DateTests: FringesTest {
         tapAppIcon()
         progress(minutes: 1)
         dashboard.tapDateRow()
-        XCTAssertEqual(date.dateLabel, "21:01 22 August 2016")
+        XCTAssertEqual(date.dateLabel, "21:01:00 22 August 2016")
     }
     
     func test_canExit() {
@@ -25,12 +25,12 @@ class DateTests: FringesTest {
 
     func test_updatesTheTimeUponViewLoad() {
         tapAppIcon()
-        progress(minutes: 5)
+        progress(seconds: 2, hours: 4)
         dashboard.tapDateRow()
-        XCTAssertEqual(date.dateLabel, "21:05 22 August 2016")
+        XCTAssertEqual(date.dateLabel, "01:00:02 23 August 2016")
         tapBack()
-        progress(minutes: 2)
+        progress(minutes: 2, days: 1)
         dashboard.tapDateRow()
-        XCTAssertEqual(date.dateLabel, "21:07 22 August 2016")
+        XCTAssertEqual(date.dateLabel, "01:02:02 24 August 2016")
     }
 }

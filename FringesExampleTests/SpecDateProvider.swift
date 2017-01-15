@@ -10,8 +10,17 @@ class SpecDateProvider {
         return formatter.date(from: initialDateString)!
     }()
 
-    func progress(minutes: Int) {
-        progress(by: TimeInterval(60 * minutes))
+    func progress(seconds: Int = 0,
+                  minutes: Int = 0,
+                  hours: Int = 0,
+                  days: Int = 0) {
+        let timeInterval = TimeInterval(
+            seconds +
+            minutes * 60 +
+            hours * 60 * 60 +
+            days * 24 * 60 * 60
+        )
+        progress(by: timeInterval)
     }
 
     private func progress(by timeInterval: TimeInterval) {

@@ -22,8 +22,14 @@ extension FringesTest {
 // MARK: Time
 extension FringesTest {
 
-    func progress(minutes: Int) {
-        appDelegate.dateProvider.progress(minutes: minutes)
+    func progress(seconds: Int = 0,
+                  minutes: Int = 0,
+                  hours: Int = 0,
+                  days: Int = 0) {
+        appDelegate.dateProvider.progress(seconds: seconds,
+                                          minutes: minutes,
+                                          hours: hours,
+                                          days: days)
     }
 }
 

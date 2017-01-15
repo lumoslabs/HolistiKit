@@ -3,7 +3,7 @@ import Foundation
 class DatePrinter {
 
     enum Format: String {
-        case long = "HH:mm d MMMM yyyy"
+        case long = "HH:mm:ss d MMMM yyyy"
     }
 
     private let timeZoneProvider: TimeZoneProviding
