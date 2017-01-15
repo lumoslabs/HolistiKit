@@ -1,11 +1,12 @@
 import UIKit
 
-class DashboardPresenter: PushablePresenter {
+class DashboardPresenter {
 
     private let viewControllerFactory: DashboardViewControllingFactoryProtocol
-    private let interactor: DashboardInteractor
-    private let router: DashboardRouter
-    private weak var viewController: DashboardViewControlling?
+    fileprivate let interactor: DashboardInteractor
+    fileprivate let router: DashboardRouter
+    fileprivate let dataSource = DashboardDataSource()
+    fileprivate weak var viewController: DashboardViewControlling?
 
     init(viewControllerFactory: DashboardViewControllingFactoryProtocol,
          interactor: DashboardInteractor,
@@ -21,14 +22,19 @@ class DashboardPresenter: PushablePresenter {
         viewController = _viewController
         presenter.push(viewController: _viewController)
     }
+}
+
+extension DashboardPresenter: PushablePresenter {
 
     func push(viewController viewControllerToPush: ViewControlling) {
         viewController?.push(viewController: viewControllerToPush, animated: true)
     }
+}
+
+extension DashboardPresenter: DashboardPresenting {
 
     func viewDidLoad() {
         viewController?.set(title: "Examples")
-        viewController?.set(firstRowTitle: "Settings")
     }
 
     func tap(rowAt indexPath: IndexPath) {
@@ -39,4 +45,20 @@ class DashboardPresenter: PushablePresenter {
             break
         }
     }
+    
+    func cellConfiguration(for indexPath: IndexPath) -> DashboardCellConfig {
+        return dataSource.cellConfiguration(for: indexPath)
+    }
+
+    var numberOfRows: Int {
+        return dataSource.numberOfRows
+    }
+}
+
+protocol DashboardPresenting {
+    
+    func viewDidLoad()
+    func tap(rowAt indexPath: IndexPath)
+    func cellConfiguration(for: IndexPath) -> DashboardCellConfig
+    var numberOfRows: Int { get }
 }

@@ -2,7 +2,8 @@ import UIKit
 
 class DashboardViewController: UITableViewController, DashboardViewControlling {
 
-    var presenter: DashboardPresenter!
+    var presenter: DashboardPresenting!
+    private static let cellIdentifier = "DashboardCell"
 
     @IBOutlet weak var firstRow: UITableViewCell!
     
@@ -14,12 +15,23 @@ class DashboardViewController: UITableViewController, DashboardViewControlling {
     func set(title text: String) {
         title = text
     }
-    
-    func set(firstRowTitle text: String) {
-        firstRow.textLabel?.text = text
+
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: DashboardViewController.cellIdentifier,
+                                                 for: indexPath)
+        let config = presenter.cellConfiguration(for: indexPath)
+        cell.textLabel?.text = config.title
+        return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_: UITableView,
+                            numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfRows
+    }
+
+    override func tableView(_: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
         presenter.tap(rowAt: indexPath)
     }
 }
@@ -27,5 +39,4 @@ class DashboardViewController: UITableViewController, DashboardViewControlling {
 protocol DashboardViewControlling: class, ViewControlling {
 
     func set(title: String)
-    func set(firstRowTitle: String)
 }

@@ -9,7 +9,8 @@ class DashboardTests: FringesTest {
 
     func test_rowsAreCorrectlyConfigured() {
         tapAppIcon()
-        XCTAssertEqual(dashboard.firstRowTitle, "Settings")
+        XCTAssertEqual(dashboard.numberOfRows, 1)
+        XCTAssertEqual(dashboard.title(forRow: 0), "Settings")
     }
 
     func test_tappingOnTheFirstRowNavigatesToTheSettingsPage() {

@@ -46,6 +46,7 @@
 		885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */; };
 		885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */; };
 		885F9D161E2A9131003ADC21 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
+		885F9D1A1E2B8036003ADC21 /* DashboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushablePresenter.swift; sourceTree = "<group>"; };
 		885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecAppDelegate.swift; sourceTree = "<group>"; };
+		885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,8 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				880741831E23B3C700CECDDF /* Presenter */,
-				885F9D071E2A386C003ADC21 /* Interactor */,
 				880741841E23B3D100CECDDF /* View */,
+				885F9D071E2A386C003ADC21 /* Interactor */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -263,6 +265,7 @@
 			children = (
 				8807417D1E239A3F00CECDDF /* DashboardPresenterFactory.swift */,
 				880740CB1E1F916700CECDDF /* DashboardPresenter.swift */,
+				885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */,
 				880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */,
 				885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */,
+				885F9D1A1E2B8036003ADC21 /* DashboardDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

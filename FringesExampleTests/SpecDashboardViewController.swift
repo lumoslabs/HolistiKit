@@ -14,15 +14,14 @@ protocol SpecDashboardViewControllerUI {
     func tap(row: Int)
     // Output
     var title: String? { get }
-    var firstRowTitle: String? { get }
+    var numberOfRows: Int { get }
+    func title(forRow: Int) -> String
 }
 
 class SpecDashboardViewController: SpecViewController, DashboardViewControlling, SpecDashboardViewControllerUI {
     
     private(set) var title: String?
-    private(set) var firstRowTitle: String?
-
-    private let presenter: DashboardPresenter
+    private let presenter: DashboardPresenting
 
     init(presenter: DashboardPresenter) {
         self.presenter = presenter
@@ -36,13 +35,23 @@ class SpecDashboardViewController: SpecViewController, DashboardViewControlling,
     func set(title text: String) {
         title = text
     }
-
-    func set(firstRowTitle text: String) {
-        firstRowTitle = text
+    
+    func title(forRow row: Int) -> String {
+        let ip = indexPath(forRow: row)
+        let config = presenter.cellConfiguration(for: ip)
+        return config.title
     }
 
     func tap(row: Int) {
-        let indexPath = IndexPath(row: row, section: 0)
-        presenter.tap(rowAt: indexPath)
+        let ip = indexPath(forRow: row)
+        presenter.tap(rowAt: ip)
+    }
+
+    var numberOfRows: Int {
+        return presenter.numberOfRows
+    }
+
+    private func indexPath(forRow row: Int) -> IndexPath {
+        return IndexPath(row: row, section: 0)
     }
 }
