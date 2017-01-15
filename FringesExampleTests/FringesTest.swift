@@ -7,11 +7,11 @@ class FringesTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
-
         appDelegate = SpecAppDelegate()
     }
 }
 
+// MARK: App Launching, Backgrounding, Killing, etc.
 extension FringesTest {
 
     func tapAppIcon() {
@@ -19,6 +19,15 @@ extension FringesTest {
     }
 }
 
+// MARK: Time
+extension FringesTest {
+
+    func progress(minutes: Int) {
+        appDelegate.dateProvider.progress(minutes: 1)
+    }
+}
+
+// MARK: Top View Controller Accessing
 extension FringesTest {
 
     private func topViewController<I>(as interface: I.Type) -> I {

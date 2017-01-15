@@ -4,14 +4,18 @@ import Foundation
 class SpecDateProvider {
 
     fileprivate lazy var currentDate: Date = {
-        let strTime = "2016-08-23 00:00:00 +0000"
+        let initialDateString = "2016-08-23 00:00:00 +0000"
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-        return formatter.date(from: strTime)!
+        return formatter.date(from: initialDateString)!
     }()
 
-    func set(date: Date) {
-        self.currentDate = date
+    func progress(minutes: Int) {
+        progress(by: TimeInterval(60 * minutes))
+    }
+
+    private func progress(by timeInterval: TimeInterval) {
+        currentDate = currentDate.addingTimeInterval(timeInterval)
     }
 }
 
