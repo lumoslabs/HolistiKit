@@ -7,8 +7,12 @@ class SpecNavigationController: SpecViewController, NavigationControlling, SpecN
 
     fileprivate var viewControllers = [SpecViewController]()
 
+    override var nextViewController: SpecViewController? {
+        return viewControllers.last
+    }
+
     override var topViewController: SpecViewController {
-        return viewControllers.last!.topViewController
+        return nextViewController!.topViewController
     }
 
     override func push(viewController: ViewControlling, animated: Bool) {

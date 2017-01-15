@@ -17,5 +17,9 @@ class SpecWindow: Windowing {
     var topViewController: SpecViewController {
         return rootViewController!.topViewController
     }
+
+    var viewControllerStack: [SpecViewController] {
+        return rootViewController!.viewControllerStack
+    }
 }
     

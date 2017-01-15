@@ -3,7 +3,7 @@ import UIKit
 
 class SpecViewController: ViewControlling {
     
-    private var navigationController: SpecNavigationController?
+    private weak var navigationController: SpecNavigationController?
     private var presentedViewController: SpecViewController?
 
     func viewDidLoad() { }
@@ -26,10 +26,15 @@ class SpecViewController: ViewControlling {
     }
 
     var topViewController: SpecViewController {
-        if let presentedViewController = presentedViewController {
-            return presentedViewController.topViewController
-        }
-        return self
+        return nextViewController?.topViewController ?? self
+    }
+
+    var nextViewController: SpecViewController? {
+        return presentedViewController
+    }
+
+    var viewControllerStack: [SpecViewController] {
+        return (nextViewController?.viewControllerStack ?? []) + [self]
     }
 
     func viewDidLoadAndAppear() {
