@@ -12,6 +12,7 @@ protocol SpecDashboardViewControllerUI {
     
     // Input
     func tapDateRow()
+    func tapTimerRow()
     // Output
     var title: String? { get }
     var numberOfRows: Int { get }
@@ -43,12 +44,17 @@ class SpecDashboardViewController: SpecViewController, DashboardViewControlling,
     }
 
     private func tap(row: Int) {
+        if row >= numberOfRows { fatalError("Tapping on a non-existent row") }
         let ip = indexPath(forRow: row)
         presenter.tap(rowAt: ip)
     }
 
     func tapDateRow() {
         tap(row: 0)
+    }
+
+    func tapTimerRow() {
+        tap(row: 1)
     }
 
     var numberOfRows: Int {

@@ -6,14 +6,17 @@ class DashboardPresenter {
     fileprivate let interactor: DashboardInteractor
     fileprivate let router: DashboardRouter
     fileprivate let dataSource = DashboardDataSource()
+    fileprivate let errorLogger: ErrorLogging
     fileprivate weak var viewController: DashboardViewControlling?
 
     init(viewControllerFactory: DashboardViewControllingFactoryProtocol,
          interactor: DashboardInteractor,
-         router: DashboardRouter) {
+         router: DashboardRouter,
+         errorLogger: ErrorLogging) {
         self.viewControllerFactory = viewControllerFactory
         self.interactor = interactor
         self.router = router
+        self.errorLogger = errorLogger
         interactor.set(presenter: self)
     }
     
@@ -41,8 +44,10 @@ extension DashboardPresenter: DashboardPresenting {
         switch indexPath {
         case IndexPath(row: 0, section: 0):
             router.pushDate(on: self)
+        case IndexPath(row: 1, section: 0):
+            router.pushTimer(on: self)
         default:
-            break
+            errorLogger.log("Tapping on a row (section: \(indexPath.section), row: \(indexPath.row)) that is not handled")
         }
     }
     

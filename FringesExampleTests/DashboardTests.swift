@@ -9,7 +9,7 @@ class DashboardTests: FringesTest {
 
     func test_rowsAreCorrectlyConfigured() {
         tapAppIcon()
-        let expectedTitles = [ "Date" ]
+        let expectedTitles = [ "Date", "Timer" ]
         XCTAssertEqual(dashboard.numberOfRows, expectedTitles.count)
         expectedTitles.enumerated().forEach {
             XCTAssertEqual(dashboard.title(forRow: $0), $1)
