@@ -9,10 +9,14 @@ class ExamplesTests: FringesTest {
 
     func test_rowsAreCorrectlyConfigured() {
         tapAppIcon()
-        let expectedTitles = [ "Date", "Timer" ]
-        XCTAssertEqual(examples.numberOfRows, expectedTitles.count)
-        expectedTitles.enumerated().forEach {
-            XCTAssertEqual(examples.title(forRow: $0), $1)
+        let expectedRows: [(String, UITableViewCellAccessoryType)] = [
+            ("Date", .disclosureIndicator),
+            ("Timer", .disclosureIndicator)
+        ]
+        XCTAssertEqual(examples.numberOfRows, expectedRows.count)
+        expectedRows.enumerated().forEach { index, row in
+            XCTAssertEqual(examples.title(forRow: index), row.0)
+            XCTAssertEqual(examples.accessoryIndicator(forRow: index), row.1)
         }
     }
 

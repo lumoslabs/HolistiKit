@@ -17,6 +17,7 @@ protocol SpecExamplesViewControllerUI {
     var title: String? { get }
     var numberOfRows: Int { get }
     func title(forRow: Int) -> String
+    func accessoryIndicator(forRow: Int) -> UITableViewCellAccessoryType
 }
 
 class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, SpecExamplesViewControllerUI {
@@ -38,9 +39,16 @@ class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, S
     }
     
     func title(forRow row: Int) -> String {
+        return cellConfiguration(forRow: row).title
+    }
+
+    func accessoryIndicator(forRow row: Int) -> UITableViewCellAccessoryType {
+        return cellConfiguration(forRow: row).accessoryType
+    }
+
+    private func cellConfiguration(forRow row: Int) -> ExamplesCellConfig {
         let ip = indexPath(forRow: row)
-        let config = presenter.cellConfiguration(for: ip)
-        return config.title
+        return presenter.cellConfiguration(for: ip)
     }
 
     private func tap(row: Int) {

@@ -1,10 +1,10 @@
-import Foundation
+import UIKit
 
 class ExamplesDataSource {
 
     private let data = [
-        ExamplesCellConfig(title: "Date"),
-        ExamplesCellConfig(title: "Timer")
+        ExamplesCellConfig(title: "Date", accessoryType: .disclosureIndicator),
+        ExamplesCellConfig(title: "Timer", accessoryType: .disclosureIndicator)
     ]
     
     func cellConfiguration(for indexPath: IndexPath) -> ExamplesCellConfig {
@@ -20,4 +20,5 @@ class ExamplesDataSource {
 struct ExamplesCellConfig {
     
     let title: String
+    let accessoryType: UITableViewCellAccessoryType
 }

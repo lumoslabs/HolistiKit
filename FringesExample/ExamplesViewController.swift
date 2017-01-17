@@ -22,6 +22,7 @@ class ExamplesViewController: UITableViewController, ExamplesViewControlling {
                                                  for: indexPath)
         let config = presenter.cellConfiguration(for: indexPath)
         cell.textLabel?.text = config.title
+        cell.accessoryType = config.accessoryType
         return cell
     }
 
