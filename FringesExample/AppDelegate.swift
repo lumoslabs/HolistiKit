@@ -17,13 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dateProvider = DateProvider()
         let timeZoneProvider = TimeZoneProvider()
         let errorLogger = ErrorLogger()
+        let timerFactory = TimerFactory()
         let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
                                             dashboardViewControllerFactory: dashboardViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
-                                            errorLogger: errorLogger)
+                                            errorLogger: errorLogger,
+                                            timerFactory: timerFactory)
         appCoordinator.didFinishLaunching(withWindow: _window)
         
         _window.makeKeyAndVisible()

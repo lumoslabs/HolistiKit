@@ -17,13 +17,15 @@ class SpecAppDelegate {
         dateProvider = _dateProvider
         let timeZoneProvider = SpecTimeZoneProvider()
         let errorLogger = SpecErrorLogger()
+        let timerFactory = SpecTimerFactory()
         let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
                                             dashboardViewControllerFactory: dashboardViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
-                                            errorLogger: errorLogger)
+                                            errorLogger: errorLogger,
+                                            timerFactory: timerFactory)
         
         appCoordinator.didFinishLaunching(withWindow: window)
     }

@@ -9,9 +9,12 @@ class TimerInteractor {
     }
 
     private let dateProvider: DateProviding
+    private let timerFactory: TimerFactoryProtocol
 
-    init(dateProvider: DateProviding) {
+    init(dateProvider: DateProviding,
+         timerFactory: TimerFactoryProtocol) {
         self.dateProvider = dateProvider
+        self.timerFactory = timerFactory
     }
 }
 

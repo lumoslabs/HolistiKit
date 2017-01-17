@@ -8,13 +8,15 @@ class AppCoordinator {
          dateViewControllerFactory: DateViewControllerFactoryProtocol,
          dateProvider: DateProviding,
          timeZoneProvider: TimeZoneProviding,
-         errorLogger: ErrorLogging) {
+         errorLogger: ErrorLogging,
+         timerFactory: TimerFactoryProtocol) {
         let dashboardNavigationPresenterFactory = DashboardNavigationPresenterFactory(viewControllerFactory: dashboardNavigationControllerFactory)
         let dashboardPresenterFactory = DashboardPresenterFactory(viewControllerFactory: dashboardViewControllerFactory,
                                                                   errorLogger: errorLogger)
         let timerPresenterFactory = TimerPresenterFactory(viewControllerFactory: timerViewControllerFactory,
                                                           dateProvider: dateProvider,
-                                                          timeZoneProvider: timeZoneProvider)
+                                                          timeZoneProvider: timeZoneProvider,
+                                                          timerFactory: timerFactory)
         let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
                                                                 dateProvider: dateProvider,
                                                                 timeZoneProvider: timeZoneProvider)
