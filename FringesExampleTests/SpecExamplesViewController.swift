@@ -1,14 +1,14 @@
 import UIKit
 @testable import FringesExample
 
-class SpecDashboardViewControllingFactory: DashboardViewControllingFactoryProtocol {
+class SpecExamplesViewControllingFactory: ExamplesViewControllingFactoryProtocol {
 
-    func create(withPresenter presenter: DashboardPresenter) -> DashboardViewControlling {
-        return SpecDashboardViewController(presenter: presenter)
+    func create(withPresenter presenter: ExamplesPresenter) -> ExamplesViewControlling {
+        return SpecExamplesViewController(presenter: presenter)
     }
 }
 
-protocol SpecDashboardViewControllerUI {
+protocol SpecExamplesViewControllerUI {
     
     // Input
     func tapDateRow()
@@ -19,12 +19,12 @@ protocol SpecDashboardViewControllerUI {
     func title(forRow: Int) -> String
 }
 
-class SpecDashboardViewController: SpecViewController, DashboardViewControlling, SpecDashboardViewControllerUI {
+class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, SpecExamplesViewControllerUI {
     
     private(set) var title: String?
-    private let presenter: DashboardPresenting
+    private let presenter: ExamplesPresenting
 
-    init(presenter: DashboardPresenter) {
+    init(presenter: ExamplesPresenter) {
         self.presenter = presenter
     }
 

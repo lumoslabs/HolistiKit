@@ -1,17 +1,17 @@
 import UIKit
 
-class DashboardPresenter {
+class ExamplesPresenter {
 
-    private let viewControllerFactory: DashboardViewControllingFactoryProtocol
-    fileprivate let interactor: DashboardInteractor
-    fileprivate let router: DashboardRouter
-    fileprivate let dataSource = DashboardDataSource()
+    private let viewControllerFactory: ExamplesViewControllingFactoryProtocol
+    fileprivate let interactor: ExamplesInteractor
+    fileprivate let router: ExamplesRouter
+    fileprivate let dataSource = ExamplesDataSource()
     fileprivate let errorLogger: ErrorLogging
-    fileprivate weak var viewController: DashboardViewControlling?
+    fileprivate weak var viewController: ExamplesViewControlling?
 
-    init(viewControllerFactory: DashboardViewControllingFactoryProtocol,
-         interactor: DashboardInteractor,
-         router: DashboardRouter,
+    init(viewControllerFactory: ExamplesViewControllingFactoryProtocol,
+         interactor: ExamplesInteractor,
+         router: ExamplesRouter,
          errorLogger: ErrorLogging) {
         self.viewControllerFactory = viewControllerFactory
         self.interactor = interactor
@@ -27,14 +27,14 @@ class DashboardPresenter {
     }
 }
 
-extension DashboardPresenter: PushablePresenter {
+extension ExamplesPresenter: PushablePresenter {
 
     func push(viewController viewControllerToPush: ViewControlling) {
         viewController?.push(viewController: viewControllerToPush, animated: true)
     }
 }
 
-extension DashboardPresenter: DashboardPresenting {
+extension ExamplesPresenter: ExamplesPresenting {
 
     func viewDidLoad() {
         viewController?.set(title: "Examples")
@@ -51,7 +51,7 @@ extension DashboardPresenter: DashboardPresenting {
         }
     }
     
-    func cellConfiguration(for indexPath: IndexPath) -> DashboardCellConfig {
+    func cellConfiguration(for indexPath: IndexPath) -> ExamplesCellConfig {
         return dataSource.cellConfiguration(for: indexPath)
     }
 
@@ -60,10 +60,10 @@ extension DashboardPresenter: DashboardPresenting {
     }
 }
 
-protocol DashboardPresenting {
+protocol ExamplesPresenting {
     
     func viewDidLoad()
     func tap(rowAt indexPath: IndexPath)
-    func cellConfiguration(for: IndexPath) -> DashboardCellConfig
+    func cellConfiguration(for: IndexPath) -> ExamplesCellConfig
     var numberOfRows: Int { get }
 }

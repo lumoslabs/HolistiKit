@@ -51,8 +51,8 @@ extension FringesTest {
             "[-] Window\n")
     }
 
-    var dashboard: SpecDashboardViewControllerUI! {
-        return topViewController(as: SpecDashboardViewControllerUI.self)
+    var examples: SpecExamplesViewControllerUI! {
+        return topViewController(as: SpecExamplesViewControllerUI.self)
     }
 
     var date: SpecDateViewControllerUI! {

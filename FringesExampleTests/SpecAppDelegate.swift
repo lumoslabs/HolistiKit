@@ -8,8 +8,8 @@ class SpecAppDelegate {
     func applicationDidLaunch() {
         window = SpecWindow()
         
-        let dashboardNavigationControllerFactory = SpecDashboardNavigationControllingFactory()
-        let dashboardViewControllerFactory = SpecDashboardViewControllingFactory()
+        let examplesNavigationControllerFactory = SpecExamplesNavigationControllingFactory()
+        let examplesViewControllerFactory = SpecExamplesViewControllingFactory()
         let timerViewControllerFactory = SpecTimerViewControllerFactory()
         let dateViewControllerFactory = SpecDateViewControllerFactory()
         let _dateProvider = SpecDateProvider()
@@ -17,8 +17,8 @@ class SpecAppDelegate {
         let timeZoneProvider = SpecTimeZoneProvider()
         let errorLogger = SpecErrorLogger()
         let timerFactory = SpecTimerFactory(dateProvider: _dateProvider)
-        let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
-                                            dashboardViewControllerFactory: dashboardViewControllerFactory,
+        let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
+                                            examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
                                             dateProvider: dateProvider,

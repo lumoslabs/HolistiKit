@@ -1,9 +1,9 @@
 import UIKit
 
-class DashboardViewController: UITableViewController, DashboardViewControlling {
+class ExamplesViewController: UITableViewController, ExamplesViewControlling {
 
-    var presenter: DashboardPresenting!
-    private static let cellIdentifier = "DashboardCell"
+    var presenter: ExamplesPresenting!
+    private static let cellIdentifier = "ExamplesCell"
 
     @IBOutlet weak var firstRow: UITableViewCell!
     
@@ -18,7 +18,7 @@ class DashboardViewController: UITableViewController, DashboardViewControlling {
 
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DashboardViewController.cellIdentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: ExamplesViewController.cellIdentifier,
                                                  for: indexPath)
         let config = presenter.cellConfiguration(for: indexPath)
         cell.textLabel?.text = config.title
@@ -36,7 +36,7 @@ class DashboardViewController: UITableViewController, DashboardViewControlling {
     }
 }
 
-protocol DashboardViewControlling: class, ViewControlling {
+protocol ExamplesViewControlling: class, ViewControlling {
 
     func set(title: String)
 }

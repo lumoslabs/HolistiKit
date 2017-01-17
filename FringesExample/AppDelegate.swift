@@ -10,16 +10,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _window = UIWindow(frame: UIScreen.main.bounds)
         window = _window
 
-        let dashboardNavigationControllerFactory = DashboardNavigationControllingFactory()
-        let dashboardViewControllerFactory = DashboardViewControllingFactory()
+        let examplesNavigationControllerFactory = ExamplesNavigationControllingFactory()
+        let examplesViewControllerFactory = ExamplesViewControllingFactory()
         let timerViewControllerFactory = TimerViewControllerFactory()
         let dateViewControllerFactory = DateViewControllerFactory()
         let dateProvider = DateProvider()
         let timeZoneProvider = TimeZoneProvider()
         let errorLogger = ErrorLogger()
         let timerFactory = TimerFactory()
-        let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
-                                            dashboardViewControllerFactory: dashboardViewControllerFactory,
+        let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
+                                            examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
                                             dateProvider: dateProvider,

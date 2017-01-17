@@ -1,18 +1,18 @@
 class RootRouter {
 
-    private let dashboardRouter: DashboardRouter
+    private let examplesRouter: ExamplesRouter
 
-    init(dashboardNavigationPresenterFactory: DashboardNavigationPresenterFactory,
-         dashboardPresenterFactory: DashboardPresenterFactory,
+    init(examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory,
+         examplesPresenterFactory: ExamplesPresenterFactory,
          timerPresenterFactory: TimerPresenterFactory,
          datePresenterFactory: DatePresenterFactory) {
-        self.dashboardRouter = DashboardRouter(dashboardNavigationPresenterFactory: dashboardNavigationPresenterFactory,
-                                               dashboardPresenterFactory: dashboardPresenterFactory,
+        self.examplesRouter = ExamplesRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
+                                               examplesPresenterFactory: examplesPresenterFactory,
                                                timerPresenterFactory: timerPresenterFactory,
                                                datePresenterFactory: datePresenterFactory)
     }
     
     func present(onWindow window: Windowing) {
-        dashboardRouter.present(onWindow: window)
+        examplesRouter.present(onWindow: window)
     }
 }

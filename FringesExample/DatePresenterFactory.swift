@@ -12,7 +12,7 @@ class DatePresenterFactory {
         self.timeZoneProvider = timeZoneProvider
     }
 
-    func create(withRouter router: DashboardRouter) -> DatePresenter {
+    func create(withRouter router: ExamplesRouter) -> DatePresenter {
         let interactor = DateInteractor(dateProvider: dateProvider)
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
         return DatePresenter(viewControllerFactory: viewControllerFactory,

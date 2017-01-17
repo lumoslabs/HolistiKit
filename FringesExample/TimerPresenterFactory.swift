@@ -15,7 +15,7 @@ class TimerPresenterFactory {
         self.timerFactory = timerFactory
     }
     
-    func create(withRouter router: DashboardRouter) -> TimerPresenter {
+    func create(withRouter router: ExamplesRouter) -> TimerPresenter {
         let interactor = TimerInteractor(dateProvider: dateProvider,
                                          timerFactory: timerFactory)
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)

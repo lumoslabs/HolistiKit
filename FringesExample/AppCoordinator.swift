@@ -2,16 +2,16 @@ class AppCoordinator {
 
     let router: RootRouter
 
-    init(dashboardNavigationControllerFactory: DashboardNavigationControllingFactoryProtocol,
-         dashboardViewControllerFactory: DashboardViewControllingFactoryProtocol,
+    init(examplesNavigationControllerFactory: ExamplesNavigationControllingFactoryProtocol,
+         examplesViewControllerFactory: ExamplesViewControllingFactoryProtocol,
          timerViewControllerFactory: TimerViewControllerFactoryProtocol,
          dateViewControllerFactory: DateViewControllerFactoryProtocol,
          dateProvider: DateProviding,
          timeZoneProvider: TimeZoneProviding,
          errorLogger: ErrorLogging,
          timerFactory: TimerFactoryProtocol) {
-        let dashboardNavigationPresenterFactory = DashboardNavigationPresenterFactory(viewControllerFactory: dashboardNavigationControllerFactory)
-        let dashboardPresenterFactory = DashboardPresenterFactory(viewControllerFactory: dashboardViewControllerFactory,
+        let examplesNavigationPresenterFactory = ExamplesNavigationPresenterFactory(viewControllerFactory: examplesNavigationControllerFactory)
+        let examplesPresenterFactory = ExamplesPresenterFactory(viewControllerFactory: examplesViewControllerFactory,
                                                                   errorLogger: errorLogger)
         let timerPresenterFactory = TimerPresenterFactory(viewControllerFactory: timerViewControllerFactory,
                                                           dateProvider: dateProvider,
@@ -20,8 +20,8 @@ class AppCoordinator {
         let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
                                                                 dateProvider: dateProvider,
                                                                 timeZoneProvider: timeZoneProvider)
-        self.router = RootRouter(dashboardNavigationPresenterFactory: dashboardNavigationPresenterFactory,
-                                 dashboardPresenterFactory: dashboardPresenterFactory,
+        self.router = RootRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
+                                 examplesPresenterFactory: examplesPresenterFactory,
                                  timerPresenterFactory: timerPresenterFactory,
                                  datePresenterFactory: datePresenterFactory)
     }

@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740AA1E1F8C9400CECDDF /* AppDelegate.swift */; };
-		880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */; };
+		880740AD1E1F8C9400CECDDF /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740AC1E1F8C9400CECDDF /* ExamplesViewController.swift */; };
 		880740B21E1F8C9400CECDDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880740B11E1F8C9400CECDDF /* Assets.xcassets */; };
 		880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740B31E1F8C9400CECDDF /* LaunchScreen.storyboard */; };
-		880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740BF1E1F8C9400CECDDF /* DashboardTests.swift */; };
-		880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CB1E1F916700CECDDF /* DashboardPresenter.swift */; };
+		880740C01E1F8C9400CECDDF /* ExamplesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740BF1E1F8C9400CECDDF /* ExamplesTests.swift */; };
+		880740CC1E1F916700CECDDF /* ExamplesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CB1E1F916700CECDDF /* ExamplesPresenter.swift */; };
 		880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740CE1E1F939300CECDDF /* AppCoordinator.swift */; };
 		880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D01E1FCC8700CECDDF /* RootRouter.swift */; };
-		880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */; };
-		880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */; };
+		880740D61E201C2300CECDDF /* ExamplesViewControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D51E201C2300CECDDF /* ExamplesViewControllingFactory.swift */; };
+		880740D91E2103A400CECDDF /* SpecExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */; };
 		880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DB1E21079B00CECDDF /* FringesTest.swift */; };
 		880740DF1E2108CE00CECDDF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DD1E21088B00CECDDF /* main.swift */; };
-		880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740E01E21100200CECDDF /* DashboardViewController.storyboard */; };
-		880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740E81E2118FC00CECDDF /* DashboardInteractor.swift */; };
+		880740E21E21100A00CECDDF /* ExamplesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880740E01E21100200CECDDF /* ExamplesViewController.storyboard */; };
+		880740E91E2118FC00CECDDF /* ExamplesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740E81E2118FC00CECDDF /* ExamplesInteractor.swift */; };
 		880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741631E2270BC00CECDDF /* DatePresenter.swift */; };
 		880741661E22780C00CECDDF /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741651E22780C00CECDDF /* DateViewController.swift */; };
 		880741691E227A4D00CECDDF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741681E227A4D00CECDDF /* UIViewController.swift */; };
@@ -33,20 +33,20 @@
 		880741781E22915500CECDDF /* Windowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741771E22915500CECDDF /* Windowing.swift */; };
 		8807417A1E22919600CECDDF /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741791E22919600CECDDF /* UIWindow.swift */; };
 		8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417B1E2292A600CECDDF /* SpecWindow.swift */; };
-		8807417E1E239A3F00CECDDF /* DashboardPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417D1E239A3F00CECDDF /* DashboardPresenterFactory.swift */; };
+		8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */; };
 		880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */; };
-		885F9CFA1E2A265B003ADC21 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */; };
-		885F9CFC1E2A276E003ADC21 /* DashboardNavPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* DashboardNavPresenter.swift */; };
-		885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* DashboardNavControllingFactory.swift */; };
-		885F9D001E2A288D003ADC21 /* DashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFF1E2A288D003ADC21 /* DashboardNavigationController.swift */; };
+		885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */; };
+		885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */; };
+		885F9CFE1E2A2825003ADC21 /* ExamplesdNavControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* ExamplesdNavControllingFactory.swift */; };
+		885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */; };
 		885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */; };
-		885F9D061E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D051E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift */; };
-		885F9D0A1E2A3939003ADC21 /* SpecDashboardNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationController.swift */; };
+		885F9D061E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D051E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift */; };
+		885F9D0A1E2A3939003ADC21 /* SpecExamplesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */; };
 		885F9D0D1E2A3979003ADC21 /* SpecNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */; };
 		885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */; };
 		885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */; };
 		885F9D161E2A9131003ADC21 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
-		885F9D1A1E2B8036003ADC21 /* DashboardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */; };
+		885F9D1A1E2B8036003ADC21 /* ExamplesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D191E2B8036003ADC21 /* ExamplesDataSource.swift */; };
 		885F9D1C1E2BA5F5003ADC21 /* DateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1B1E2BA5F5003ADC21 /* DateInteractor.swift */; };
 		885F9D1F1E2BB289003ADC21 /* DateProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1E1E2BB289003ADC21 /* DateProviding.swift */; };
 		885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D211E2BB3D2003ADC21 /* DateProvider.swift */; };
@@ -83,22 +83,22 @@
 /* Begin PBXFileReference section */
 		880740A71E1F8C9400CECDDF /* FringesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FringesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880740AA1E1F8C9400CECDDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		880740AC1E1F8C9400CECDDF /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 		880740B11E1F8C9400CECDDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		880740B41E1F8C9400CECDDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		880740B61E1F8C9400CECDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		880740BB1E1F8C9400CECDDF /* FringesExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FringesExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		880740BF1E1F8C9400CECDDF /* DashboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
+		880740BF1E1F8C9400CECDDF /* ExamplesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesTests.swift; sourceTree = "<group>"; };
 		880740C11E1F8C9400CECDDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		880740CB1E1F916700CECDDF /* DashboardPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		880740CB1E1F916700CECDDF /* ExamplesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesPresenter.swift; sourceTree = "<group>"; };
 		880740CE1E1F939300CECDDF /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		880740D01E1FCC8700CECDDF /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
-		880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewControllingFactory.swift; sourceTree = "<group>"; };
-		880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDashboardViewController.swift; sourceTree = "<group>"; };
+		880740D51E201C2300CECDDF /* ExamplesViewControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesViewControllingFactory.swift; sourceTree = "<group>"; };
+		880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecExamplesViewController.swift; sourceTree = "<group>"; };
 		880740DB1E21079B00CECDDF /* FringesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FringesTest.swift; sourceTree = "<group>"; };
 		880740DD1E21088B00CECDDF /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		880740E01E21100200CECDDF /* DashboardViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DashboardViewController.storyboard; sourceTree = "<group>"; };
-		880740E81E2118FC00CECDDF /* DashboardInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
+		880740E01E21100200CECDDF /* ExamplesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExamplesViewController.storyboard; sourceTree = "<group>"; };
+		880740E81E2118FC00CECDDF /* ExamplesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesInteractor.swift; sourceTree = "<group>"; };
 		880741631E2270BC00CECDDF /* DatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenter.swift; sourceTree = "<group>"; };
 		880741651E22780C00CECDDF /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		880741681E227A4D00CECDDF /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
@@ -111,20 +111,20 @@
 		880741771E22915500CECDDF /* Windowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windowing.swift; sourceTree = "<group>"; };
 		880741791E22919600CECDDF /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		8807417B1E2292A600CECDDF /* SpecWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecWindow.swift; sourceTree = "<group>"; };
-		8807417D1E239A3F00CECDDF /* DashboardPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardPresenterFactory.swift; sourceTree = "<group>"; };
+		8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesPresenterFactory.swift; sourceTree = "<group>"; };
 		8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenterFactory.swift; sourceTree = "<group>"; };
-		885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
-		885F9CFB1E2A276E003ADC21 /* DashboardNavPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavPresenter.swift; sourceTree = "<group>"; };
-		885F9CFD1E2A2825003ADC21 /* DashboardNavControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavControllingFactory.swift; sourceTree = "<group>"; };
-		885F9CFF1E2A288D003ADC21 /* DashboardNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavigationController.swift; sourceTree = "<group>"; };
+		885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesRouter.swift; sourceTree = "<group>"; };
+		885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationPresenter.swift; sourceTree = "<group>"; };
+		885F9CFD1E2A2825003ADC21 /* ExamplesdNavControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesdNavControllingFactory.swift; sourceTree = "<group>"; };
+		885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationController.swift; sourceTree = "<group>"; };
 		885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControlling.swift; sourceTree = "<group>"; };
-		885F9D051E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardNavigationPresenterFactory.swift; sourceTree = "<group>"; };
-		885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDashboardNavigationController.swift; sourceTree = "<group>"; };
+		885F9D051E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationPresenterFactory.swift; sourceTree = "<group>"; };
+		885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecExamplesNavigationController.swift; sourceTree = "<group>"; };
 		885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNavigationController.swift; sourceTree = "<group>"; };
 		885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushablePresenter.swift; sourceTree = "<group>"; };
 		885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecAppDelegate.swift; sourceTree = "<group>"; };
-		885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDataSource.swift; sourceTree = "<group>"; };
+		885F9D191E2B8036003ADC21 /* ExamplesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesDataSource.swift; sourceTree = "<group>"; };
 		885F9D1B1E2BA5F5003ADC21 /* DateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInteractor.swift; sourceTree = "<group>"; };
 		885F9D1E1E2BB289003ADC21 /* DateProviding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProviding.swift; sourceTree = "<group>"; };
 		885F9D211E2BB3D2003ADC21 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		880740BE1E1F8C9400CECDDF /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				880740BF1E1F8C9400CECDDF /* DashboardTests.swift */,
+				880740BF1E1F8C9400CECDDF /* ExamplesTests.swift */,
 				880741751E22896C00CECDDF /* DateTests.swift */,
 				886013E31E2D4CD500C86FDE /* TimerTests.swift */,
 				880740D71E21038500CECDDF /* Fakes */,
@@ -212,14 +212,14 @@
 			path = FringesExampleTests;
 			sourceTree = "<group>";
 		};
-		880740CA1E1F911200CECDDF /* Dashboard */ = {
+		880740CA1E1F911200CECDDF /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				880741831E23B3C700CECDDF /* Presenter */,
 				880741841E23B3D100CECDDF /* View */,
 				885F9D071E2A386C003ADC21 /* Interactor */,
 			);
-			name = Dashboard;
+			name = Examples;
 			sourceTree = "<group>";
 		};
 		880740CD1E1F935200CECDDF /* Main */ = {
@@ -240,8 +240,8 @@
 				8807417B1E2292A600CECDDF /* SpecWindow.swift */,
 				880741711E2287C200CECDDF /* SpecViewController.swift */,
 				885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */,
-				885F9D081E2A38BF003ADC21 /* SpecDashboardNavigationController.swift */,
-				880740D81E2103A400CECDDF /* SpecDashboardViewController.swift */,
+				885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */,
+				880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */,
 				880741731E22889000CECDDF /* SpecDateViewController.swift */,
 				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
 				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
@@ -315,9 +315,9 @@
 		880741831E23B3C700CECDDF /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				8807417D1E239A3F00CECDDF /* DashboardPresenterFactory.swift */,
-				880740CB1E1F916700CECDDF /* DashboardPresenter.swift */,
-				885F9D191E2B8036003ADC21 /* DashboardDataSource.swift */,
+				8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */,
+				880740CB1E1F916700CECDDF /* ExamplesPresenter.swift */,
+				885F9D191E2B8036003ADC21 /* ExamplesDataSource.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -325,27 +325,27 @@
 		880741841E23B3D100CECDDF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				880740D51E201C2300CECDDF /* DashboardViewControllingFactory.swift */,
-				880740AC1E1F8C9400CECDDF /* DashboardViewController.swift */,
-				880740E01E21100200CECDDF /* DashboardViewController.storyboard */,
+				880740D51E201C2300CECDDF /* ExamplesViewControllingFactory.swift */,
+				880740AC1E1F8C9400CECDDF /* ExamplesViewController.swift */,
+				880740E01E21100200CECDDF /* ExamplesViewController.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
 		};
-		885F9CF81E2A2639003ADC21 /* DashboardNavigation */ = {
+		885F9CF81E2A2639003ADC21 /* ExamplesNavigation */ = {
 			isa = PBXGroup;
 			children = (
 				885F9D031E2A2FE4003ADC21 /* Presenter */,
 				885F9D041E2A2FEC003ADC21 /* View */,
 			);
-			name = DashboardNavigation;
+			name = ExamplesNavigation;
 			sourceTree = "<group>";
 		};
 		885F9D031E2A2FE4003ADC21 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				885F9D051E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift */,
-				885F9CFB1E2A276E003ADC21 /* DashboardNavPresenter.swift */,
+				885F9D051E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift */,
+				885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */,
 			);
 			name = Presenter;
 			sourceTree = "<group>";
@@ -353,8 +353,8 @@
 		885F9D041E2A2FEC003ADC21 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				885F9CFD1E2A2825003ADC21 /* DashboardNavControllingFactory.swift */,
-				885F9CFF1E2A288D003ADC21 /* DashboardNavigationController.swift */,
+				885F9CFD1E2A2825003ADC21 /* ExamplesdNavControllingFactory.swift */,
+				885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 		885F9D071E2A386C003ADC21 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
-				880740E81E2118FC00CECDDF /* DashboardInteractor.swift */,
+				880740E81E2118FC00CECDDF /* ExamplesInteractor.swift */,
 			);
 			name = Interactor;
 			sourceTree = "<group>";
@@ -377,22 +377,22 @@
 			name = "UIKit Abstraction";
 			sourceTree = "<group>";
 		};
-		885F9D171E2A9582003ADC21 /* Dashboard */ = {
+		885F9D171E2A9582003ADC21 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				885F9CF91E2A265B003ADC21 /* DashboardRouter.swift */,
-				885F9CF81E2A2639003ADC21 /* DashboardNavigation */,
-				880740CA1E1F911200CECDDF /* Dashboard */,
+				885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */,
+				885F9CF81E2A2639003ADC21 /* ExamplesNavigation */,
+				880740CA1E1F911200CECDDF /* Examples */,
 				880741621E2270A700CECDDF /* Date */,
 				886013EB1E2D678900C86FDE /* Timer */,
 			);
-			name = Dashboard;
+			name = Examples;
 			sourceTree = "<group>";
 		};
 		885F9D181E2A95AC003ADC21 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				885F9D171E2A9582003ADC21 /* Dashboard */,
+				885F9D171E2A9582003ADC21 /* Examples */,
 			);
 			name = Modules;
 			sourceTree = "<group>";
@@ -540,7 +540,7 @@
 			files = (
 				886013F91E2D6C3E00C86FDE /* TimerViewController.storyboard in Resources */,
 				880741701E22876700CECDDF /* DateViewController.storyboard in Resources */,
-				880740E21E21100A00CECDDF /* DashboardViewController.storyboard in Resources */,
+				880740E21E21100A00CECDDF /* ExamplesViewController.storyboard in Resources */,
 				880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */,
 				880740B21E1F8C9400CECDDF /* Assets.xcassets in Resources */,
 			);
@@ -565,38 +565,38 @@
 				8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */,
 				885F9D1F1E2BB289003ADC21 /* DateProviding.swift in Sources */,
 				880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */,
-				8807417E1E239A3F00CECDDF /* DashboardPresenterFactory.swift in Sources */,
+				8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */,
 				885F9D291E2BC965003ADC21 /* TimeZoneProvider.swift in Sources */,
-				885F9D001E2A288D003ADC21 /* DashboardNavigationController.swift in Sources */,
+				885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */,
 				880741781E22915500CECDDF /* Windowing.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
-				885F9CFA1E2A265B003ADC21 /* DashboardRouter.swift in Sources */,
+				885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */,
 				885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */,
 				880741691E227A4D00CECDDF /* UIViewController.swift in Sources */,
 				888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */,
 				880741661E22780C00CECDDF /* DateViewController.swift in Sources */,
-				880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */,
-				880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */,
+				880740AD1E1F8C9400CECDDF /* ExamplesViewController.swift in Sources */,
+				880740E91E2118FC00CECDDF /* ExamplesInteractor.swift in Sources */,
 				880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */,
-				880740CC1E1F916700CECDDF /* DashboardPresenter.swift in Sources */,
+				880740CC1E1F916700CECDDF /* ExamplesPresenter.swift in Sources */,
 				885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */,
 				885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 				8807417A1E22919600CECDDF /* UIWindow.swift in Sources */,
 				886013E81E2D4E4000C86FDE /* ErrorLogger.swift in Sources */,
-				885F9D061E2A302E003ADC21 /* DashboardNavigationPresenterFactory.swift in Sources */,
-				885F9CFC1E2A276E003ADC21 /* DashboardNavPresenter.swift in Sources */,
+				885F9D061E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift in Sources */,
+				885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */,
 				8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */,
 				885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */,
-				880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */,
+				880740D61E201C2300CECDDF /* ExamplesViewControllingFactory.swift in Sources */,
 				888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */,
 				886013F51E2D68FC00C86FDE /* TimerViewController.swift in Sources */,
 				886013F01E2D67FD00C86FDE /* TimerPresenter.swift in Sources */,
-				885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */,
+				885F9CFE1E2A2825003ADC21 /* ExamplesdNavControllingFactory.swift in Sources */,
 				886013F31E2D685900C86FDE /* TimerViewControllerFactory.swift in Sources */,
 				885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */,
-				885F9D1A1E2B8036003ADC21 /* DashboardDataSource.swift in Sources */,
+				885F9D1A1E2B8036003ADC21 /* ExamplesDataSource.swift in Sources */,
 				886013EE1E2D67AE00C86FDE /* TimerPresenterFactory.swift in Sources */,
 				885F9D1C1E2BA5F5003ADC21 /* DateInteractor.swift in Sources */,
 			);
@@ -608,7 +608,7 @@
 			files = (
 				880741761E22896C00CECDDF /* DateTests.swift in Sources */,
 				886013E61E2D4D5500C86FDE /* SpecTimerViewController.swift in Sources */,
-				885F9D0A1E2A3939003ADC21 /* SpecDashboardNavigationController.swift in Sources */,
+				885F9D0A1E2A3939003ADC21 /* SpecExamplesNavigationController.swift in Sources */,
 				885F9D2B1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift in Sources */,
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
 				888B2D171E2E4B8A00FB3165 /* SpecTimerFactory.swift in Sources */,
@@ -616,13 +616,13 @@
 				880741721E2287C200CECDDF /* SpecViewController.swift in Sources */,
 				886013EA1E2D4F5C00C86FDE /* SpecErrorLogger.swift in Sources */,
 				8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */,
-				880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */,
+				880740C01E1F8C9400CECDDF /* ExamplesTests.swift in Sources */,
 				885F9D0D1E2A3979003ADC21 /* SpecNavigationController.swift in Sources */,
 				888B2D1B1E2E57E300FB3165 /* SpecScheduledTimer.swift in Sources */,
 				885F9D161E2A9131003ADC21 /* SpecAppDelegate.swift in Sources */,
 				880741741E22889000CECDDF /* SpecDateViewController.swift in Sources */,
 				886013E41E2D4CD500C86FDE /* TimerTests.swift in Sources */,
-				880740D91E2103A400CECDDF /* SpecDashboardViewController.swift in Sources */,
+				880740D91E2103A400CECDDF /* SpecExamplesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,13 +1,13 @@
 import UIKit
 
-class DashboardNavigationPresenter: PushablePresenter {
+class ExamplesNavigationPresenter: PushablePresenter {
 
-    private let viewControllerFactory: DashboardNavigationControllingFactoryProtocol
-    private let router: DashboardRouter
-    private weak var viewController: DashboardNavigationControlling?
+    private let viewControllerFactory: ExamplesNavigationControllingFactoryProtocol
+    private let router: ExamplesRouter
+    private weak var viewController: ExamplesNavigationControlling?
 
-    init(viewControllerFactory: DashboardNavigationControllingFactoryProtocol,
-         router: DashboardRouter) {
+    init(viewControllerFactory: ExamplesNavigationControllingFactoryProtocol,
+         router: ExamplesRouter) {
         self.viewControllerFactory = viewControllerFactory
         self.router = router
     }
@@ -15,7 +15,7 @@ class DashboardNavigationPresenter: PushablePresenter {
     func present(onWindow window: Windowing) {
         let _viewController = viewControllerFactory.create()
         viewController = _viewController
-        router.pushDashboard(on: self)
+        router.pushExamples(on: self)
         window.set(rootViewController: _viewController)
     }
 
