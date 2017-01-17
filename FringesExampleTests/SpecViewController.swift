@@ -45,7 +45,7 @@ class SpecViewController: ViewControlling {
     
     func viewAppear() {
         viewWillAppear()
-        viewWillDisappear()
+        viewDidAppear()
     }
 
     func viewDisappear() {

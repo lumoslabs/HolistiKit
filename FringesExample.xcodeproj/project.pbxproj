@@ -246,9 +246,9 @@
 				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
 				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
 				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
-				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
 				888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */,
 				888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */,
+				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";

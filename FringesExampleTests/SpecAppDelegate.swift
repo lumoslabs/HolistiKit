@@ -3,7 +3,6 @@
 class SpecAppDelegate {
     
     private(set) var window: SpecWindow!
-
     private(set) weak var dateProvider: SpecDateProvider!
 
     func applicationDidLaunch() {

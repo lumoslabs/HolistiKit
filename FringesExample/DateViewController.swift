@@ -1,13 +1,13 @@
 import UIKit
 
-class DateViewController: UIViewController, DateViewControlling {
+class DateViewController: UITableViewController, DateViewControlling {
 
     var presenter: DatePresenting!
     
-    @IBOutlet weak var dateLabel: UILabel!
-    
+    @IBOutlet weak var viewLoadedAtLabel: UITableViewCell!
+
     func set(dateLabel text: String) {
-        dateLabel.text = text
+        viewLoadedAtLabel.textLabel?.text = text
     }
     
     func set(title text: String) {
