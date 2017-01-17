@@ -10,11 +10,13 @@ class SpecTimerViewControllerFactory: TimerViewControllerFactoryProtocol {
 protocol SpecTimerViewControllerUI {
 
     var title: String? { get }
+    var dateLabel: String? { get }
 }
 
 class SpecTimerViewController: SpecViewController, TimerViewControlling, SpecTimerViewControllerUI {
 
     private(set) var title: String?
+    private(set) var dateLabel: String?
     private let presenter: TimerPresenting
 
     init(presenter: TimerPresenting) {
@@ -27,5 +29,9 @@ class SpecTimerViewController: SpecViewController, TimerViewControlling, SpecTim
 
     func set(title text: String) {
         title = text
+    }
+
+    func set(dateLabel text: String) {
+        dateLabel = text
     }
 }

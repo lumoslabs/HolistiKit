@@ -12,7 +12,9 @@ class AppCoordinator {
         let dashboardNavigationPresenterFactory = DashboardNavigationPresenterFactory(viewControllerFactory: dashboardNavigationControllerFactory)
         let dashboardPresenterFactory = DashboardPresenterFactory(viewControllerFactory: dashboardViewControllerFactory,
                                                                   errorLogger: errorLogger)
-        let timerPresenterFactory = TimerPresenterFactory(viewControllerFactory: timerViewControllerFactory)
+        let timerPresenterFactory = TimerPresenterFactory(viewControllerFactory: timerViewControllerFactory,
+                                                          dateProvider: dateProvider,
+                                                          timeZoneProvider: timeZoneProvider)
         let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
                                                                 dateProvider: dateProvider,
                                                                 timeZoneProvider: timeZoneProvider)

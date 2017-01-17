@@ -63,6 +63,7 @@
 		886013F31E2D685900C86FDE /* TimerViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013F21E2D685900C86FDE /* TimerViewControllerFactory.swift */; };
 		886013F51E2D68FC00C86FDE /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013F41E2D68FC00C86FDE /* TimerViewController.swift */; };
 		886013F91E2D6C3E00C86FDE /* TimerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886013F81E2D6C3E00C86FDE /* TimerViewController.storyboard */; };
+		888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		886013F21E2D685900C86FDE /* TimerViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewControllerFactory.swift; sourceTree = "<group>"; };
 		886013F41E2D68FC00C86FDE /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		886013F81E2D6C3E00C86FDE /* TimerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimerViewController.storyboard; sourceTree = "<group>"; };
+		888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,6 +411,7 @@
 			children = (
 				886013EC1E2D679F00C86FDE /* Presenter */,
 				886013F11E2D684D00C86FDE /* View */,
+				888B2D131E2E1D8C00FB3165 /* Interactor */,
 			);
 			name = Timer;
 			sourceTree = "<group>";
@@ -430,6 +433,14 @@
 				886013F81E2D6C3E00C86FDE /* TimerViewController.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		888B2D131E2E1D8C00FB3165 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */,
+			);
+			name = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,6 +561,7 @@
 				885F9CFA1E2A265B003ADC21 /* DashboardRouter.swift in Sources */,
 				885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */,
 				880741691E227A4D00CECDDF /* UIViewController.swift in Sources */,
+				888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */,
 				880741661E22780C00CECDDF /* DateViewController.swift in Sources */,
 				880740AD1E1F8C9400CECDDF /* DashboardViewController.swift in Sources */,
 				880740E91E2118FC00CECDDF /* DashboardInteractor.swift in Sources */,

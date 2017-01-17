@@ -1,13 +1,17 @@
 import UIKit
 
-class TimerViewController: UIViewController, TimerViewControlling {
+class TimerViewController: UITableViewController, TimerViewControlling {
 
     var presenter: TimerPresenting!
     
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateCell: UITableViewCell!
     
     func set(title text: String) {
         title = text
+    }
+    
+    func set(dateLabel text: String) {
+        dateCell.textLabel?.text = text
     }
 
     override func viewDidLoad() {
@@ -19,4 +23,5 @@ class TimerViewController: UIViewController, TimerViewControlling {
 protocol TimerViewControlling: class, ViewControlling {
     
     func set(title text: String)
+    func set(dateLabel text: String)
 }
