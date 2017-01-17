@@ -66,6 +66,8 @@
 		888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */; };
 		888B2D151E2E4AEC00FB3165 /* TimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D141E2E4AEC00FB3165 /* TimerFactory.swift */; };
 		888B2D171E2E4B8A00FB3165 /* SpecTimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */; };
+		888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */; };
+		888B2D1B1E2E57E300FB3165 /* SpecScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +144,8 @@
 		888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
 		888B2D141E2E4AEC00FB3165 /* TimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerFactory.swift; sourceTree = "<group>"; };
 		888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
+		888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
+		888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecScheduledTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,7 @@
 				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
 				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
 				888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */,
+				888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 				885F9D281E2BC965003ADC21 /* TimeZoneProvider.swift */,
 				886013E71E2D4E4000C86FDE /* ErrorLogger.swift */,
 				888B2D141E2E4AEC00FB3165 /* TimerFactory.swift */,
+				888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 				8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */,
 				885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */,
 				880740D61E201C2300CECDDF /* DashboardViewControllingFactory.swift in Sources */,
+				888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */,
 				886013F51E2D68FC00C86FDE /* TimerViewController.swift in Sources */,
 				886013F01E2D67FD00C86FDE /* TimerPresenter.swift in Sources */,
 				885F9CFE1E2A2825003ADC21 /* DashboardNavControllingFactory.swift in Sources */,
@@ -611,6 +618,7 @@
 				8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* DashboardTests.swift in Sources */,
 				885F9D0D1E2A3979003ADC21 /* SpecNavigationController.swift in Sources */,
+				888B2D1B1E2E57E300FB3165 /* SpecScheduledTimer.swift in Sources */,
 				885F9D161E2A9131003ADC21 /* SpecAppDelegate.swift in Sources */,
 				880741741E22889000CECDDF /* SpecDateViewController.swift in Sources */,
 				886013E41E2D4CD500C86FDE /* TimerTests.swift in Sources */,

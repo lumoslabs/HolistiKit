@@ -17,7 +17,7 @@ class SpecAppDelegate {
         dateProvider = _dateProvider
         let timeZoneProvider = SpecTimeZoneProvider()
         let errorLogger = SpecErrorLogger()
-        let timerFactory = SpecTimerFactory()
+        let timerFactory = SpecTimerFactory(dateProvider: _dateProvider)
         let appCoordinator = AppCoordinator(dashboardNavigationControllerFactory: dashboardNavigationControllerFactory,
                                             dashboardViewControllerFactory: dashboardViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
