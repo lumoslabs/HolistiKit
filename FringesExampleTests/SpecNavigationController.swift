@@ -41,10 +41,3 @@ extension SpecNavigationController: SpecNavigationControllerUI {
         viewControllers.last!.viewAppear()
     }
 }
-
-extension NavigationControlling {
-
-    var asSpecNavigationController: SpecNavigationController {
-        return self as! SpecNavigationController
-    }
-}

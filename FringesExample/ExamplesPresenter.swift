@@ -3,21 +3,17 @@ import UIKit
 class ExamplesPresenter {
 
     private let viewControllerFactory: ExamplesViewControllingFactoryProtocol
-    fileprivate let interactor: ExamplesInteractor
     fileprivate let router: ExamplesRouter
     fileprivate let dataSource = ExamplesDataSource()
     fileprivate let errorLogger: ErrorLogging
     fileprivate weak var viewController: ExamplesViewControlling?
 
     init(viewControllerFactory: ExamplesViewControllingFactoryProtocol,
-         interactor: ExamplesInteractor,
          router: ExamplesRouter,
          errorLogger: ErrorLogging) {
         self.viewControllerFactory = viewControllerFactory
-        self.interactor = interactor
         self.router = router
         self.errorLogger = errorLogger
-        interactor.set(presenter: self)
     }
     
     func push(on presenter: PushablePresenter) {

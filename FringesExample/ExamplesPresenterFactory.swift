@@ -10,9 +10,7 @@ class ExamplesPresenterFactory {
     }
 
     func create(withRouter router: ExamplesRouter) -> ExamplesPresenter {
-        let interactor = ExamplesInteractor()
         return ExamplesPresenter(viewControllerFactory: viewControllerFactory,
-                                  interactor: interactor,
                                   router: router,
                                   errorLogger: errorLogger)
     }
