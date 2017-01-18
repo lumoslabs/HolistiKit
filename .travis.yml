@@ -1,6 +1,7 @@
 language: objective-c
 osx_image: xcode8.2
 script:
-  - set -o pipefail && xcodebuild clean build test -scheme 'FringesExample' -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' -enableCodeCoverage YES | xcpretty
+  - set -o pipefail && xcodebuild clean build -scheme 'FringesExample' -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' -enableCodeCoverage YES | xcpretty
+  - set -o pipefail && xcodebuild test        -scheme 'FringesExample' -destination 'platform=iOS Simulator,name=iPhone 6,OS=8.1' -enableCodeCoverage YES | xcpretty
 after_success:
   - bash <(curl -s https://codecov.io/bash) -J 'FringesExample'
