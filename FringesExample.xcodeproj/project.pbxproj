@@ -34,6 +34,13 @@
 		8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417B1E2292A600CECDDF /* SpecWindow.swift */; };
 		8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */; };
 		880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */; };
+		883566801E2F51F800289510 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835667F1E2F51F800289510 /* NetworkRequestTests.swift */; };
+		883566821E2F567A00289510 /* SpecNetworkRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */; };
+		883566861E2F572100289510 /* NetworkRequestPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */; };
+		883566881E2F577F00289510 /* NetworkRequestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566871E2F577F00289510 /* NetworkRequestPresenter.swift */; };
+		8835668B1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835668A1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift */; };
+		8835668D1E2F582900289510 /* NetworkRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835668C1E2F582900289510 /* NetworkRequestViewController.swift */; };
+		8835668F1E2F5A5700289510 /* NetworkRequestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8835668E1E2F5A5700289510 /* NetworkRequestViewController.storyboard */; };
 		885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */; };
 		885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */; };
 		885F9CFE1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift */; };
@@ -111,6 +118,13 @@
 		8807417B1E2292A600CECDDF /* SpecWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecWindow.swift; sourceTree = "<group>"; };
 		8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesPresenterFactory.swift; sourceTree = "<group>"; };
 		8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenterFactory.swift; sourceTree = "<group>"; };
+		8835667F1E2F51F800289510 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
+		883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNetworkRequestViewController.swift; sourceTree = "<group>"; };
+		883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPresenterFactory.swift; sourceTree = "<group>"; };
+		883566871E2F577F00289510 /* NetworkRequestPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPresenter.swift; sourceTree = "<group>"; };
+		8835668A1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestViewControllerFactory.swift; sourceTree = "<group>"; };
+		8835668C1E2F582900289510 /* NetworkRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestViewController.swift; sourceTree = "<group>"; };
+		8835668E1E2F5A5700289510 /* NetworkRequestViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NetworkRequestViewController.storyboard; sourceTree = "<group>"; };
 		885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesRouter.swift; sourceTree = "<group>"; };
 		885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationPresenter.swift; sourceTree = "<group>"; };
 		885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesdNavigationControllingFactory.swift; sourceTree = "<group>"; };
@@ -202,6 +216,7 @@
 				880740BF1E1F8C9400CECDDF /* ExamplesTests.swift */,
 				880741751E22896C00CECDDF /* DateTests.swift */,
 				886013E31E2D4CD500C86FDE /* TimerTests.swift */,
+				8835667F1E2F51F800289510 /* NetworkRequestTests.swift */,
 				880740D71E21038500CECDDF /* Fakes */,
 				880740DB1E21079B00CECDDF /* FringesTest.swift */,
 				880740C11E1F8C9400CECDDF /* Info.plist */,
@@ -241,6 +256,7 @@
 				880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */,
 				880741731E22889000CECDDF /* SpecDateViewController.swift */,
 				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
+				883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */,
 				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
 				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
 				888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */,
@@ -329,6 +345,34 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		883566831E2F570000289510 /* NetworkRequest */ = {
+			isa = PBXGroup;
+			children = (
+				883566841E2F571300289510 /* Presenter */,
+				883566891E2F57DB00289510 /* View */,
+			);
+			name = NetworkRequest;
+			sourceTree = "<group>";
+		};
+		883566841E2F571300289510 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */,
+				883566871E2F577F00289510 /* NetworkRequestPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		883566891E2F57DB00289510 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8835668A1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift */,
+				8835668C1E2F582900289510 /* NetworkRequestViewController.swift */,
+				8835668E1E2F5A5700289510 /* NetworkRequestViewController.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		885F9CF81E2A2639003ADC21 /* ExamplesNavigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +418,7 @@
 				880740CA1E1F911200CECDDF /* Examples */,
 				880741621E2270A700CECDDF /* Date */,
 				886013EB1E2D678900C86FDE /* Timer */,
+				883566831E2F570000289510 /* NetworkRequest */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -529,6 +574,7 @@
 			files = (
 				886013F91E2D6C3E00C86FDE /* TimerViewController.storyboard in Resources */,
 				880741701E22876700CECDDF /* DateViewController.storyboard in Resources */,
+				8835668F1E2F5A5700289510 /* NetworkRequestViewController.storyboard in Resources */,
 				880740E21E21100A00CECDDF /* ExamplesViewController.storyboard in Resources */,
 				880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */,
 				880740B21E1F8C9400CECDDF /* Assets.xcassets in Resources */,
@@ -557,6 +603,7 @@
 				8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */,
 				885F9D291E2BC965003ADC21 /* TimeZoneProvider.swift in Sources */,
 				885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */,
+				8835668B1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift in Sources */,
 				880741781E22915500CECDDF /* Windowing.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
@@ -565,8 +612,11 @@
 				880741691E227A4D00CECDDF /* UIViewController.swift in Sources */,
 				888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */,
 				880741661E22780C00CECDDF /* DateViewController.swift in Sources */,
+				8835668D1E2F582900289510 /* NetworkRequestViewController.swift in Sources */,
 				880740AD1E1F8C9400CECDDF /* ExamplesViewController.swift in Sources */,
+				883566861E2F572100289510 /* NetworkRequestPresenterFactory.swift in Sources */,
 				880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */,
+				883566881E2F577F00289510 /* NetworkRequestPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* ExamplesPresenter.swift in Sources */,
 				885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */,
 				885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */,
@@ -601,7 +651,9 @@
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
 				888B2D171E2E4B8A00FB3165 /* SpecTimerFactory.swift in Sources */,
 				885F9D251E2BB41E003ADC21 /* SpecDateProvider.swift in Sources */,
+				883566821E2F567A00289510 /* SpecNetworkRequestViewController.swift in Sources */,
 				880741721E2287C200CECDDF /* SpecViewController.swift in Sources */,
+				883566801E2F51F800289510 /* NetworkRequestTests.swift in Sources */,
 				886013EA1E2D4F5C00C86FDE /* SpecErrorLogger.swift in Sources */,
 				8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* ExamplesTests.swift in Sources */,

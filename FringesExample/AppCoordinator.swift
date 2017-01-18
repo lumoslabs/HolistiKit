@@ -5,6 +5,7 @@ class AppCoordinator {
     init(examplesNavigationControllerFactory: ExamplesNavigationControllingFactoryProtocol,
          examplesViewControllerFactory: ExamplesViewControllingFactoryProtocol,
          timerViewControllerFactory: TimerViewControllerFactoryProtocol,
+         networkRequestViewControllerFactory: NetworkRequestViewControllerFactoryProtocol,
          dateViewControllerFactory: DateViewControllerFactoryProtocol,
          dateProvider: DateProviding,
          timeZoneProvider: TimeZoneProviding,
@@ -17,12 +18,14 @@ class AppCoordinator {
                                                           dateProvider: dateProvider,
                                                           timeZoneProvider: timeZoneProvider,
                                                           timerFactory: timerFactory)
+        let networkRequestPresenterFactory = NetworkRequestPresenterFactory(viewControllerFactory: networkRequestViewControllerFactory)
         let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
                                                                 dateProvider: dateProvider,
                                                                 timeZoneProvider: timeZoneProvider)
         self.router = RootRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
                                  examplesPresenterFactory: examplesPresenterFactory,
                                  timerPresenterFactory: timerPresenterFactory,
+                                 networkRequestPresenterFactory: networkRequestPresenterFactory,
                                  datePresenterFactory: datePresenterFactory)
     }
     

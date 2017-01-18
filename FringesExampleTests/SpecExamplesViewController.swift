@@ -13,6 +13,7 @@ protocol SpecExamplesViewControllerUI {
     // Input
     func tapDateRow()
     func tapTimerRow()
+    func tapNetworkRequestRow()
     // Output
     var title: String? { get }
     var numberOfRows: Int { get }
@@ -46,6 +47,18 @@ class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, S
         return cellConfiguration(forRow: row).accessoryType
     }
 
+    func tapDateRow() { tap(row: 0) }
+    func tapTimerRow() { tap(row: 1) }
+    func tapNetworkRequestRow() { tap(row: 2) }
+    
+    var numberOfRows: Int {
+        return presenter.numberOfRows
+    }
+
+    private func indexPath(forRow row: Int) -> IndexPath {
+        return IndexPath(row: row, section: 0)
+    }
+
     private func cellConfiguration(forRow row: Int) -> ExamplesCellConfig {
         let ip = indexPath(forRow: row)
         return presenter.cellConfiguration(for: ip)
@@ -55,21 +68,5 @@ class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, S
         if row >= numberOfRows { fatalError("Tapping on a non-existent row") }
         let ip = indexPath(forRow: row)
         presenter.tap(rowAt: ip)
-    }
-
-    func tapDateRow() {
-        tap(row: 0)
-    }
-
-    func tapTimerRow() {
-        tap(row: 1)
-    }
-
-    var numberOfRows: Int {
-        return presenter.numberOfRows
-    }
-
-    private func indexPath(forRow row: Int) -> IndexPath {
-        return IndexPath(row: row, section: 0)
     }
 }

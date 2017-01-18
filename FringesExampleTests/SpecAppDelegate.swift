@@ -11,6 +11,7 @@ class SpecAppDelegate {
         let examplesNavigationControllerFactory = SpecExamplesNavigationControllingFactory()
         let examplesViewControllerFactory = SpecExamplesViewControllingFactory()
         let timerViewControllerFactory = SpecTimerViewControllerFactory()
+        let networkRequestViewControllerFactory = SpecNetworkRequestViewControllerFactory()
         let dateViewControllerFactory = SpecDateViewControllerFactory()
         let _dateProvider = SpecDateProvider()
         dateProvider = _dateProvider
@@ -20,6 +21,7 @@ class SpecAppDelegate {
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
+                                            networkRequestViewControllerFactory: networkRequestViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,

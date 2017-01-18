@@ -3,15 +3,18 @@ class ExamplesRouter {
     private let examplesPresenterFactory: ExamplesPresenterFactory
     private let datePresenterFactory: DatePresenterFactory
     private let timerPresenterFactory: TimerPresenterFactory
+    private let networkRequestPresenterFactory: NetworkRequestPresenterFactory
     private let examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory
 
     init(examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory,
          examplesPresenterFactory: ExamplesPresenterFactory,
          timerPresenterFactory: TimerPresenterFactory,
+         networkRequestPresenterFactory: NetworkRequestPresenterFactory,
          datePresenterFactory: DatePresenterFactory) {
         self.examplesNavigationPresenterFactory = examplesNavigationPresenterFactory
         self.examplesPresenterFactory = examplesPresenterFactory
         self.timerPresenterFactory = timerPresenterFactory
+        self.networkRequestPresenterFactory = networkRequestPresenterFactory
         self.datePresenterFactory = datePresenterFactory
     }
     
@@ -33,5 +36,10 @@ class ExamplesRouter {
     func pushTimer(on presenter: PushablePresenter) {
         let timerPresenter = timerPresenterFactory.create(withRouter: self)
         timerPresenter.push(on: presenter)
+    }
+    
+    func pushNetworkRequest(on presenter: PushablePresenter) {
+        let networkRequestPresenter = networkRequestPresenterFactory.create(withRouter: self)
+        networkRequestPresenter.push(on: presenter)
     }
 }

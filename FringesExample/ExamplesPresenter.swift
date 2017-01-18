@@ -42,6 +42,8 @@ extension ExamplesPresenter: ExamplesPresenting {
             router.pushDate(on: self)
         case IndexPath(row: 1, section: 0):
             router.pushTimer(on: self)
+        case IndexPath(row: 2, section: 0):
+            router.pushNetworkRequest(on: self)
         default:
             errorLogger.log("Tapping on a row (section: \(indexPath.section), row: \(indexPath.row)) that is not handled")
         }
