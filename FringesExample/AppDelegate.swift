@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dateProvider = DateProvider()
         let timeZoneProvider = TimeZoneProvider()
         let errorLogger = ErrorLogger()
+        let networkRequestService = NetworkRequestService()
         let timerFactory = TimerFactory()
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
@@ -27,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
                                             errorLogger: errorLogger,
+                                            networkRequestService: networkRequestService,
                                             timerFactory: timerFactory)
         appCoordinator.didFinishLaunching(withWindow: _window)
         

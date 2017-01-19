@@ -4,10 +4,14 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
 
     var presenter: NetworkRequestPresenting!
     
-    @IBOutlet weak var dateCell: UITableViewCell!
+    @IBOutlet weak var dataCell: UITableViewCell!
     
     func set(title text: String) {
         title = text
+    }
+    
+    func set(data text: String) {
+        dataCell.textLabel?.text = text
     }
 
     override func viewDidLoad() {
@@ -19,4 +23,5 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
 protocol NetworkRequestViewControlling: class, ViewControlling {
     
     func set(title text: String)
+    func set(data text: String)
 }

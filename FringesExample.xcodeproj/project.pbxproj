@@ -71,6 +71,7 @@
 		886013F91E2D6C3E00C86FDE /* TimerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886013F81E2D6C3E00C86FDE /* TimerViewController.storyboard */; };
 		8876C1ED1E30C2E600F3E420 /* NetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876C1EC1E30C2E600F3E420 /* NetworkRequestService.swift */; };
 		8876C1EF1E30C30200F3E420 /* SpecNetworkRequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876C1EE1E30C30200F3E420 /* SpecNetworkRequestService.swift */; };
+		8876C1F21E312A6E00F3E420 /* NetworkRequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */; };
 		888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */; };
 		888B2D151E2E4AEC00FB3165 /* TimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D141E2E4AEC00FB3165 /* TimerFactory.swift */; };
 		888B2D171E2E4B8A00FB3165 /* SpecTimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */; };
@@ -157,6 +158,7 @@
 		886013F81E2D6C3E00C86FDE /* TimerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimerViewController.storyboard; sourceTree = "<group>"; };
 		8876C1EC1E30C2E600F3E420 /* NetworkRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestService.swift; sourceTree = "<group>"; };
 		8876C1EE1E30C30200F3E420 /* SpecNetworkRequestService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNetworkRequestService.swift; sourceTree = "<group>"; };
+		8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestInteractor.swift; sourceTree = "<group>"; };
 		888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
 		888B2D141E2E4AEC00FB3165 /* TimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerFactory.swift; sourceTree = "<group>"; };
 		888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			children = (
 				883566841E2F571300289510 /* Presenter */,
 				883566891E2F57DB00289510 /* View */,
+				8876C1F01E312A4500F3E420 /* Interactor */,
 			);
 			name = NetworkRequest;
 			sourceTree = "<group>";
@@ -485,6 +488,14 @@
 				886013F81E2D6C3E00C86FDE /* TimerViewController.storyboard */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		8876C1F01E312A4500F3E420 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */,
+			);
+			name = Interactor;
 			sourceTree = "<group>";
 		};
 		888B2D131E2E1D8C00FB3165 /* Interactor */ = {
@@ -620,6 +631,7 @@
 				880741661E22780C00CECDDF /* DateViewController.swift in Sources */,
 				8835668D1E2F582900289510 /* NetworkRequestViewController.swift in Sources */,
 				880740AD1E1F8C9400CECDDF /* ExamplesViewController.swift in Sources */,
+				8876C1F21E312A6E00F3E420 /* NetworkRequestInteractor.swift in Sources */,
 				883566861E2F572100289510 /* NetworkRequestPresenterFactory.swift in Sources */,
 				880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */,
 				883566881E2F577F00289510 /* NetworkRequestPresenter.swift in Sources */,

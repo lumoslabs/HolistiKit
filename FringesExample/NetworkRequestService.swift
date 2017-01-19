@@ -1,6 +1,6 @@
 import Foundation
 
-class NetworkRequestService {
+class NetworkRequestService: NetworkRequestingService {
 
     enum Response {
         case success([String : Any])

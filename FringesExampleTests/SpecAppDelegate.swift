@@ -29,6 +29,7 @@ class SpecAppDelegate {
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
                                             errorLogger: errorLogger,
+                                            networkRequestService: networkRequestService,
                                             timerFactory: timerFactory)
         
         appCoordinator.didFinishLaunching(withWindow: window)

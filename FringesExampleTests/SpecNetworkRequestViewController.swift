@@ -10,12 +10,13 @@ class SpecNetworkRequestViewControllerFactory: NetworkRequestViewControllerFacto
 protocol SpecNetworkRequestViewControllerUI {
     
     var title: String? { get }
+    var dataLabel: String? { get }
 }
 
 class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewControlling, SpecNetworkRequestViewControllerUI {
 
     private(set) var title: String?
-    private(set) var dateLabel: String?
+    private(set) var dataLabel: String?
     private let presenter: NetworkRequestPresenting
 
     init(presenter: NetworkRequestPresenting) {
@@ -28,5 +29,9 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
 
     func set(title text: String) {
         title = text
+    }
+
+    func set(data text: String) {
+        dataLabel = text
     }
 }
