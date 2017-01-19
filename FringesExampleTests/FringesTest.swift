@@ -27,6 +27,18 @@ extension FringesTest {
     }
 }
 
+// MARK: Network
+extension FringesTest {
+
+    func respond(to urlRequest: SpecNetworkRequestService.RequestURL, with response: NetworkRequestService.Response) {
+        networkRequestService.respond(to: urlRequest, with: response)
+    }
+
+    private var networkRequestService: SpecNetworkRequestService {
+        return appDelegate.networkRequestService
+    }
+}
+
 // MARK: Top View Controller Accessing
 extension FringesTest {
 
@@ -63,7 +75,7 @@ extension FringesTest {
         return topViewController(as: SpecTimerViewControllerUI.self)
     }
 
-    var networkRequest: SpecNetworkRequestViewControllerUI! {
+    var networkRequestView: SpecNetworkRequestViewControllerUI! {
         return topViewController(as: SpecNetworkRequestViewControllerUI.self)
     }
 

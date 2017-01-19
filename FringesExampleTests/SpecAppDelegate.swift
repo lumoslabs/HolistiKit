@@ -4,10 +4,13 @@ class SpecAppDelegate {
     
     private(set) var window: SpecWindow!
     private(set) weak var dateProvider: SpecDateProvider!
+    private(set) weak var networkRequestService: SpecNetworkRequestService!
 
     func applicationDidLaunch() {
         window = SpecWindow()
-        
+
+        let _networkRequestService = SpecNetworkRequestService()
+        networkRequestService = _networkRequestService
         let examplesNavigationControllerFactory = SpecExamplesNavigationControllingFactory()
         let examplesViewControllerFactory = SpecExamplesViewControllingFactory()
         let timerViewControllerFactory = SpecTimerViewControllerFactory()
