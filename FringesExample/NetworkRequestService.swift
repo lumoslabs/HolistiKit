@@ -7,7 +7,7 @@ class NetworkRequestService: NetworkRequestingService {
         case error(Error)
     }
 
-    func request(_ urlString: String, handler: @escaping (Response) -> Void) {
+    func request(_ urlString: String, handler: @escaping (Response) -> Void) -> NetworkRequestProtocol {
         let urlSession = URLSession.shared
         let url = URL(string: urlString)!
 
@@ -26,11 +26,11 @@ class NetworkRequestService: NetworkRequestingService {
             }
         })
         task.resume()
+        return task
     }
 }
 
-
 protocol NetworkRequestingService {
 
-    func request(_ urlString: String, handler: @escaping (NetworkRequestService.Response) -> Void)
+    func request(_ urlString: String, handler: @escaping (NetworkRequestService.Response) -> Void) -> NetworkRequestProtocol
 }

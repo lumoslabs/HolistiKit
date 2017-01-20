@@ -45,6 +45,8 @@
 		885371C41E3236CB00CC5B75 /* SpecSharedApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C31E3236CB00CC5B75 /* SpecSharedApplication.swift */; };
 		885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */; };
 		885371C81E323A2700CC5B75 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C71E323A2700CC5B75 /* UIApplication.swift */; };
+		885371CA1E32446000CC5B75 /* NSURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C91E32446000CC5B75 /* NSURLSession.swift */; };
+		885371CC1E3244BE00CC5B75 /* NetworkRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371CB1E3244BE00CC5B75 /* NetworkRequestProtocol.swift */; };
 		885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */; };
 		885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */; };
 		885F9CFE1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift */; };
@@ -136,6 +138,8 @@
 		885371C31E3236CB00CC5B75 /* SpecSharedApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSharedApplication.swift; sourceTree = "<group>"; };
 		885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityManager.swift; sourceTree = "<group>"; };
 		885371C71E323A2700CC5B75 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		885371C91E32446000CC5B75 /* NSURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSession.swift; sourceTree = "<group>"; };
+		885371CB1E3244BE00CC5B75 /* NetworkRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestProtocol.swift; sourceTree = "<group>"; };
 		885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesRouter.swift; sourceTree = "<group>"; };
 		885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationPresenter.swift; sourceTree = "<group>"; };
 		885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesdNavigationControllingFactory.swift; sourceTree = "<group>"; };
@@ -308,6 +312,7 @@
 				885F9D0E1E2A3D65003ADC21 /* UINavigationController.swift */,
 				880741791E22919600CECDDF /* UIWindow.swift */,
 				885371C71E323A2700CC5B75 /* UIApplication.swift */,
+				885371C91E32446000CC5B75 /* NSURLSession.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				885F9D1E1E2BB289003ADC21 /* DateProviding.swift */,
+				885371CB1E3244BE00CC5B75 /* NetworkRequestProtocol.swift */,
 			);
 			name = "Foundation Abstraction";
 			sourceTree = "<group>";
@@ -629,6 +635,7 @@
 				8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */,
 				885F9D1F1E2BB289003ADC21 /* DateProviding.swift in Sources */,
 				880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */,
+				885371CA1E32446000CC5B75 /* NSURLSession.swift in Sources */,
 				8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */,
 				885371C21E322AA600CC5B75 /* ApplicationProtocol.swift in Sources */,
 				885F9D291E2BC965003ADC21 /* TimeZoneProvider.swift in Sources */,
@@ -641,6 +648,7 @@
 				885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */,
 				885F9D0F1E2A3D65003ADC21 /* UINavigationController.swift in Sources */,
 				880741691E227A4D00CECDDF /* UIViewController.swift in Sources */,
+				885371CC1E3244BE00CC5B75 /* NetworkRequestProtocol.swift in Sources */,
 				888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */,
 				880741661E22780C00CECDDF /* DateViewController.swift in Sources */,
 				8835668D1E2F582900289510 /* NetworkRequestViewController.swift in Sources */,

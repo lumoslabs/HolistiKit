@@ -9,6 +9,7 @@ class NetworkRequestInteractor {
     private let networkRequestService: NetworkRequestingService
     private let errorLogger: ErrorLogging
     private let networkActivityManager: NetworkActivityManager
+    private var request: NetworkRequestProtocol?
 
     init(networkRequestService: NetworkRequestingService,
          errorLogger: ErrorLogging,
@@ -21,7 +22,7 @@ class NetworkRequestInteractor {
     private func startRequest() {
         networkActivityManager.activityStarted()
         let url = "https://httpbin.org/get"
-        networkRequestService.request(url) { [weak self] response in
+        request = networkRequestService.request(url) { [weak self] response in
             self?.networkActivityManager.activityFinished()
             switch response {
             case .success(let data):
@@ -30,5 +31,10 @@ class NetworkRequestInteractor {
                 self?.errorLogger.log("We haven't implemented error handling in the interactor yet.")
             }
         }
+    }
+
+    deinit {
+        request?.cancel()
+        networkActivityManager.activityFinished()
     }
 }

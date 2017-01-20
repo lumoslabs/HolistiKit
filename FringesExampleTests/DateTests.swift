@@ -19,7 +19,7 @@ class DateTests: FringesTest {
         tapAppIcon()
         examples.tapDateRow()
         XCTAssertNotNil(date)
-        tapBack()
+        navigationController.tapBack()
         XCTAssertNotNil(examples)
     }
 
@@ -28,7 +28,7 @@ class DateTests: FringesTest {
         progress(seconds: 2)
         examples.tapDateRow()
         XCTAssertEqual(date.dateLabel, "21:00:02 22 August 2016")
-        tapBack()
+        navigationController.tapBack()
         progress(seconds: 1)
         examples.tapDateRow()
         XCTAssertEqual(date.dateLabel, "21:00:03 22 August 2016")

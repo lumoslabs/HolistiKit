@@ -2,9 +2,25 @@
     
 class SpecNetworkRequestService {
 
-    struct Request {
+    class Request: NetworkRequestProtocol {
         let url: RequestURL
         let handler: (NetworkRequestService.Response) -> Void
+        var status: Status = .running
+
+        init(url: RequestURL, handler: @escaping (NetworkRequestService.Response) -> Void) {
+            self.url = url
+            self.handler = handler
+        }
+
+        func cancel() {
+            status = .cancelled
+        }
+
+        enum Status {
+            case running
+            case finished
+            case cancelled
+        }
     }
 
     enum RequestURL: String {
@@ -23,22 +39,29 @@ class SpecNetworkRequestService {
 
     fileprivate var requests = [Request]()
 
-    func respond(to urlRequest: SpecNetworkRequestService.RequestURL, with response: NetworkRequestService.Response) {
-        let index = requests.index { $0.url == urlRequest }
-        guard let validIndex = index else {
-            fatalError("There was no request for \(urlRequest) in the app at the moment.")
+    fileprivate var runningRequests: [Request] {
+        return requests.filter { $0.status == .running }
+    }
+
+    fileprivate func firstRunningRequest(forURL url: SpecNetworkRequestService.RequestURL) -> SpecNetworkRequestService.Request? {
+        return runningRequests.first { $0.url == url }
+    }
+
+    func respond(to url: SpecNetworkRequestService.RequestURL, with response: NetworkRequestService.Response) {
+        guard let request = firstRunningRequest(forURL: url) else {
+            fatalError("There was no request for \(url) in the app at the moment.")
         }
-        let request = requests.remove(at: validIndex)
+        request.status = .finished
         request.handler(response)
     }
 }
 
 extension SpecNetworkRequestService: NetworkRequestingService {
-    
-    func request(_ urlString: String, handler: @escaping (NetworkRequestService.Response) -> Void) {
+
+    func request(_ urlString: String, handler: @escaping (NetworkRequestService.Response) -> Void) -> NetworkRequestProtocol {
         let requestURL = RequestURL(urlString)
-        let request = Request(url: requestURL,
-                              handler: handler)
+        let request = Request(url: requestURL, handler: handler)
         requests.append(request)
+        return request
     }
 }
