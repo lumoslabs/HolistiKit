@@ -39,12 +39,8 @@ class SpecNetworkRequestService {
 
     fileprivate var requests = [Request]()
 
-    fileprivate var runningRequests: [Request] {
-        return requests.filter { $0.status == .running }
-    }
-
     fileprivate func firstRunningRequest(forURL url: SpecNetworkRequestService.RequestURL) -> SpecNetworkRequestService.Request? {
-        return runningRequests.first { $0.url == url }
+        return requests.running.with(url: url).first
     }
 
     func respond(to url: SpecNetworkRequestService.RequestURL, with response: NetworkRequestService.Response) {
@@ -53,6 +49,17 @@ class SpecNetworkRequestService {
         }
         request.status = .finished
         request.handler(response)
+    }
+}
+
+extension Array where Element: SpecNetworkRequestService.Request {
+
+    fileprivate var running: [Element] {
+        return filter { $0.status == .running }
+    }
+
+    fileprivate func with(url: SpecNetworkRequestService.RequestURL) -> [Element] {
+        return filter { $0.url == url }
     }
 }
 
