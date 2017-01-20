@@ -1,2 +1,0 @@
-protocol NavigationControlling: ViewControlling {
-}

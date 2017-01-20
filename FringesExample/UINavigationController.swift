@@ -1,4 +1,5 @@
 import UIKit
 
-extension UINavigationController: NavigationControlling {
-}
+extension UINavigationController: NavigationControlling { }
+
+protocol NavigationControlling: ViewControlling { }

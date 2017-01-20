@@ -23,13 +23,11 @@
 		880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741631E2270BC00CECDDF /* DatePresenter.swift */; };
 		880741661E22780C00CECDDF /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741651E22780C00CECDDF /* DateViewController.swift */; };
 		880741691E227A4D00CECDDF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741681E227A4D00CECDDF /* UIViewController.swift */; };
-		8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807416B1E227AF500CECDDF /* ViewControlling.swift */; };
 		8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807416D1E22858400CECDDF /* DateViewControllerFactory.swift */; };
 		880741701E22876700CECDDF /* DateViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8807416F1E22876700CECDDF /* DateViewController.storyboard */; };
 		880741721E2287C200CECDDF /* SpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741711E2287C200CECDDF /* SpecViewController.swift */; };
 		880741741E22889000CECDDF /* SpecDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecDateViewController.swift */; };
 		880741761E22896C00CECDDF /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741751E22896C00CECDDF /* DateTests.swift */; };
-		880741781E22915500CECDDF /* Windowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741771E22915500CECDDF /* Windowing.swift */; };
 		8807417A1E22919600CECDDF /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741791E22919600CECDDF /* UIWindow.swift */; };
 		8807417C1E2292A600CECDDF /* SpecWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417B1E2292A600CECDDF /* SpecWindow.swift */; };
 		8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */; };
@@ -41,7 +39,6 @@
 		8835668B1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835668A1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift */; };
 		8835668D1E2F582900289510 /* NetworkRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835668C1E2F582900289510 /* NetworkRequestViewController.swift */; };
 		8835668F1E2F5A5700289510 /* NetworkRequestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8835668E1E2F5A5700289510 /* NetworkRequestViewController.storyboard */; };
-		885371C21E322AA600CC5B75 /* ApplicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C11E322AA600CC5B75 /* ApplicationProtocol.swift */; };
 		885371C41E3236CB00CC5B75 /* SpecSharedApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C31E3236CB00CC5B75 /* SpecSharedApplication.swift */; };
 		885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */; };
 		885371C81E323A2700CC5B75 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C71E323A2700CC5B75 /* UIApplication.swift */; };
@@ -49,7 +46,6 @@
 		885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */; };
 		885F9CFE1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift */; };
 		885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */; };
-		885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */; };
 		885F9D061E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D051E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift */; };
 		885F9D0A1E2A3939003ADC21 /* SpecExamplesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */; };
 		885F9D0D1E2A3979003ADC21 /* SpecNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */; };
@@ -112,13 +108,11 @@
 		880741631E2270BC00CECDDF /* DatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenter.swift; sourceTree = "<group>"; };
 		880741651E22780C00CECDDF /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		880741681E227A4D00CECDDF /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		8807416B1E227AF500CECDDF /* ViewControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControlling.swift; sourceTree = "<group>"; };
 		8807416D1E22858400CECDDF /* DateViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateViewControllerFactory.swift; sourceTree = "<group>"; };
 		8807416F1E22876700CECDDF /* DateViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DateViewController.storyboard; sourceTree = "<group>"; };
 		880741711E2287C200CECDDF /* SpecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecViewController.swift; sourceTree = "<group>"; };
 		880741731E22889000CECDDF /* SpecDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateViewController.swift; sourceTree = "<group>"; };
 		880741751E22896C00CECDDF /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
-		880741771E22915500CECDDF /* Windowing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windowing.swift; sourceTree = "<group>"; };
 		880741791E22919600CECDDF /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		8807417B1E2292A600CECDDF /* SpecWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecWindow.swift; sourceTree = "<group>"; };
 		8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesPresenterFactory.swift; sourceTree = "<group>"; };
@@ -130,7 +124,6 @@
 		8835668A1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestViewControllerFactory.swift; sourceTree = "<group>"; };
 		8835668C1E2F582900289510 /* NetworkRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestViewController.swift; sourceTree = "<group>"; };
 		8835668E1E2F5A5700289510 /* NetworkRequestViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NetworkRequestViewController.storyboard; sourceTree = "<group>"; };
-		885371C11E322AA600CC5B75 /* ApplicationProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationProtocol.swift; sourceTree = "<group>"; };
 		885371C31E3236CB00CC5B75 /* SpecSharedApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSharedApplication.swift; sourceTree = "<group>"; };
 		885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityManager.swift; sourceTree = "<group>"; };
 		885371C71E323A2700CC5B75 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -138,7 +131,6 @@
 		885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationPresenter.swift; sourceTree = "<group>"; };
 		885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesdNavigationControllingFactory.swift; sourceTree = "<group>"; };
 		885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationController.swift; sourceTree = "<group>"; };
-		885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControlling.swift; sourceTree = "<group>"; };
 		885F9D051E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationPresenterFactory.swift; sourceTree = "<group>"; };
 		885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecExamplesNavigationController.swift; sourceTree = "<group>"; };
 		885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNavigationController.swift; sourceTree = "<group>"; };
@@ -311,7 +303,6 @@
 		8807416A1E227AE900CECDDF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				885F9D121E2A4D49003ADC21 /* UIKit Abstraction */,
 				885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */,
 			);
 			name = Protocols;
@@ -432,17 +423,6 @@
 				885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		885F9D121E2A4D49003ADC21 /* UIKit Abstraction */ = {
-			isa = PBXGroup;
-			children = (
-				8807416B1E227AF500CECDDF /* ViewControlling.swift */,
-				885F9D011E2A28EC003ADC21 /* NavigationControlling.swift */,
-				880741771E22915500CECDDF /* Windowing.swift */,
-				885371C11E322AA600CC5B75 /* ApplicationProtocol.swift */,
-			);
-			name = "UIKit Abstraction";
 			sourceTree = "<group>";
 		};
 		885F9D171E2A9582003ADC21 /* Examples */ = {
@@ -630,12 +610,10 @@
 				8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */,
 				880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */,
 				8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */,
-				885371C21E322AA600CC5B75 /* ApplicationProtocol.swift in Sources */,
 				885F9D291E2BC965003ADC21 /* TimeZoneProvider.swift in Sources */,
 				885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */,
 				885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */,
 				8835668B1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift in Sources */,
-				880741781E22915500CECDDF /* Windowing.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
 				885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */,
@@ -650,7 +628,6 @@
 				880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */,
 				883566881E2F577F00289510 /* NetworkRequestPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* ExamplesPresenter.swift in Sources */,
-				885F9D021E2A28EC003ADC21 /* NavigationControlling.swift in Sources */,
 				885F9D141E2A4D62003ADC21 /* PushablePresenter.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 				8807417A1E22919600CECDDF /* UIWindow.swift in Sources */,
@@ -658,7 +635,6 @@
 				885371C81E323A2700CC5B75 /* UIApplication.swift in Sources */,
 				885F9D061E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift in Sources */,
 				885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */,
-				8807416C1E227AF500CECDDF /* ViewControlling.swift in Sources */,
 				885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */,
 				880740D61E201C2300CECDDF /* ExamplesViewControllingFactory.swift in Sources */,
 				888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */,

@@ -8,3 +8,9 @@ extension UIWindow: Windowing {
         self.rootViewController = rootViewController.asUIViewController
     }
 }
+
+protocol Windowing {
+
+    var asUIWindow: UIWindow { get }
+    func set(rootViewController: ViewControlling)
+}
