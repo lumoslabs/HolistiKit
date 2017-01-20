@@ -255,11 +255,7 @@
 				8807417B1E2292A600CECDDF /* SpecWindow.swift */,
 				880741711E2287C200CECDDF /* SpecViewController.swift */,
 				885F9D0B1E2A396A003ADC21 /* SpecNavigationController.swift */,
-				885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */,
-				880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */,
-				880741731E22889000CECDDF /* SpecDateViewController.swift */,
-				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
-				883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */,
+				885371CF1E3271C800CC5B75 /* View Controllers */,
 				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
 				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
 				888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */,
@@ -396,6 +392,18 @@
 				888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */,
 			);
 			name = Fringe;
+			sourceTree = "<group>";
+		};
+		885371CF1E3271C800CC5B75 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */,
+				880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */,
+				880741731E22889000CECDDF /* SpecDateViewController.swift */,
+				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
+				883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		885F9CF81E2A2639003ADC21 /* ExamplesNavigation */ = {
