@@ -5,10 +5,13 @@ class SpecAppDelegate {
     private(set) var window: SpecWindow!
     private(set) weak var dateProvider: SpecDateProvider!
     private(set) weak var networkRequestService: SpecNetworkRequestService!
+    private(set) weak var sharedApplication: SpecSharedApplication!
 
     func applicationDidLaunch() {
         window = SpecWindow()
 
+        let _sharedApplication = SpecSharedApplication()
+        sharedApplication = _sharedApplication
         let _networkRequestService = SpecNetworkRequestService()
         networkRequestService = _networkRequestService
         let examplesNavigationControllerFactory = SpecExamplesNavigationControllingFactory()
@@ -30,7 +33,8 @@ class SpecAppDelegate {
                                             timeZoneProvider: timeZoneProvider,
                                             errorLogger: errorLogger,
                                             networkRequestService: networkRequestService,
-                                            timerFactory: timerFactory)
+                                            timerFactory: timerFactory,
+                                            sharedApplication: sharedApplication)
         
         appCoordinator.didFinishLaunching(withWindow: window)
     }

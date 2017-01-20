@@ -11,7 +11,9 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
     }
     
     func set(data text: String) {
-        dataCell.textLabel?.text = text
+        DispatchQueue.main.async { [weak self] in
+            self?.dataCell.textLabel?.text = text
+        }
     }
 
     override func viewDidLoad() {

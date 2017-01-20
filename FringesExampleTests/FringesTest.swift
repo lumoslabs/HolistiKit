@@ -39,6 +39,17 @@ extension FringesTest {
     }
 }
 
+extension FringesTest {
+
+    var networkActivityIndicatorIsVisible: Bool {
+        return sharedApplication.isNetworkActivityIndicatorVisible
+    }
+
+    private var sharedApplication: ApplicationProtocol {
+        return appDelegate.sharedApplication
+    }
+}
+
 // MARK: Top View Controller Accessing
 extension FringesTest {
 

@@ -38,3 +38,8 @@ protocol NetworkRequestPresenting {
 
     func viewDidLoad()
 }
+
+protocol NetworkRequestInteractorDelegate: class {
+
+    func received(data: [String : Any])
+}

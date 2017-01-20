@@ -8,16 +8,21 @@ class NetworkRequestInteractor {
 
     private let networkRequestService: NetworkRequestingService
     private let errorLogger: ErrorLogging
+    private let networkActivityManager: NetworkActivityManager
 
     init(networkRequestService: NetworkRequestingService,
-         errorLogger: ErrorLogging) {
+         errorLogger: ErrorLogging,
+         networkActivityManager: NetworkActivityManager) {
         self.networkRequestService = networkRequestService
         self.errorLogger = errorLogger
+        self.networkActivityManager = networkActivityManager
     }
 
     private func startRequest() {
+        networkActivityManager.activityStarted()
         let url = "https://httpbin.org/get"
         networkRequestService.request(url) { [weak self] response in
+            self?.networkActivityManager.activityFinished()
             switch response {
             case .success(let data):
                 self?.delegate?.received(data: data)
@@ -26,9 +31,4 @@ class NetworkRequestInteractor {
             }
         }
     }
-}
-
-protocol NetworkRequestInteractorDelegate: class {
-
-    func received(data: [String : Any])
 }

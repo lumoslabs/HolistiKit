@@ -11,20 +11,23 @@ class AppCoordinator {
          timeZoneProvider: TimeZoneProviding,
          errorLogger: ErrorLogging,
          networkRequestService: NetworkRequestingService,
-         timerFactory: TimerFactoryProtocol) {
+         timerFactory: TimerFactoryProtocol,
+         sharedApplication: ApplicationProtocol) {
+        let networkActivityManager = NetworkActivityManager(sharedApplication: sharedApplication)
         let examplesNavigationPresenterFactory = ExamplesNavigationPresenterFactory(viewControllerFactory: examplesNavigationControllerFactory)
         let examplesPresenterFactory = ExamplesPresenterFactory(viewControllerFactory: examplesViewControllerFactory,
-                                                                  errorLogger: errorLogger)
+                                                                errorLogger: errorLogger)
         let timerPresenterFactory = TimerPresenterFactory(viewControllerFactory: timerViewControllerFactory,
                                                           dateProvider: dateProvider,
                                                           timeZoneProvider: timeZoneProvider,
                                                           timerFactory: timerFactory)
         let networkRequestPresenterFactory = NetworkRequestPresenterFactory(viewControllerFactory: networkRequestViewControllerFactory,
                                                                             networkRequestService: networkRequestService,
-                                                                            errorLogger: errorLogger)
+                                                                            errorLogger: errorLogger,
+                                                                            networkActivityManager: networkActivityManager)
         let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
-                                                                dateProvider: dateProvider,
-                                                                timeZoneProvider: timeZoneProvider)
+                                                        dateProvider: dateProvider,
+                                                        timeZoneProvider: timeZoneProvider)
         self.router = RootRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
                                  examplesPresenterFactory: examplesPresenterFactory,
                                  timerPresenterFactory: timerPresenterFactory,
