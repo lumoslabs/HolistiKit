@@ -6,3 +6,9 @@ class DateProvider: DateProviding {
         return Date()
     }
 }
+
+
+protocol DateProviding {
+    
+    var date: Date { get }
+}

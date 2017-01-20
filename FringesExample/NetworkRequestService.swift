@@ -34,3 +34,10 @@ protocol NetworkRequestingService {
 
     func request(_ urlString: String, handler: @escaping (NetworkRequestService.Response) -> Void) -> NetworkRequestProtocol
 }
+
+extension URLSessionTask: NetworkRequestProtocol { }
+
+protocol NetworkRequestProtocol {
+    
+    func cancel()
+}

@@ -1,4 +1,0 @@
-protocol NetworkRequestProtocol {
-    
-    func cancel()
-}
