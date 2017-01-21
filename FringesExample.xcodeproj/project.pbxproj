@@ -225,7 +225,7 @@
 				8835667F1E2F51F800289510 /* NetworkRequestTests.swift */,
 				880740D71E21038500CECDDF /* Fakes */,
 				880740DB1E21079B00CECDDF /* FringesTest.swift */,
-				880740C11E1F8C9400CECDDF /* Info.plist */,
+				88A1E1851E3381C600CFA0CD /* Supporting Files */,
 			);
 			name = Tests;
 			path = FringesExampleTests;
@@ -518,6 +518,14 @@
 				88A1E1821E33802800CFA0CD /* UIKitFringes.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88A1E1851E3381C600CFA0CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				880740C11E1F8C9400CECDDF /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

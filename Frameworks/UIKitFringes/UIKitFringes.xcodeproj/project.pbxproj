@@ -53,8 +53,8 @@
 		88A1E15D1E337FE300CFA0CD = {
 			isa = PBXGroup;
 			children = (
-				88A1E1691E337FE300CFA0CD /* UIKitFringes */,
-				88A1E1741E337FE300CFA0CD /* UIKitFringesTests */,
+				88A1E1691E337FE300CFA0CD /* Source */,
+				88A1E1741E337FE300CFA0CD /* Tests */,
 				88A1E1681E337FE300CFA0CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +68,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		88A1E1691E337FE300CFA0CD /* UIKitFringes */ = {
+		88A1E1691E337FE300CFA0CD /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */,
-				88A1E16B1E337FE300CFA0CD /* Info.plist */,
+				88A1E1841E3381AE00CFA0CD /* Supporting Files */,
 			);
+			name = Source;
 			path = UIKitFringes;
 			sourceTree = "<group>";
 		};
-		88A1E1741E337FE300CFA0CD /* UIKitFringesTests */ = {
+		88A1E1741E337FE300CFA0CD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				88A1E1751E337FE300CFA0CD /* UIKitFringesTests.swift */,
 				88A1E1771E337FE300CFA0CD /* Info.plist */,
 			);
+			name = Tests;
 			path = UIKitFringesTests;
+			sourceTree = "<group>";
+		};
+		88A1E1841E3381AE00CFA0CD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */,
+				88A1E16B1E337FE300CFA0CD /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
