@@ -17,6 +17,10 @@
 		885EC14C1E33902800A61FA1 /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885EC14B1E33902800A61FA1 /* UIKitFringes.framework */; };
 		885EC14F1E33981F00A61FA1 /* RecordingSpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC14E1E33981F00A61FA1 /* RecordingSpecViewController.swift */; };
 		885EC1511E33BBB300A61FA1 /* SpecViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */; };
+		885EC1531E33C0E900A61FA1 /* SpecSharedApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */; };
+		885EC1551E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */; };
+		885EC1571E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */; };
+		885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1591E33E0C300A61FA1 /* XCTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,10 @@
 		885EC14B1E33902800A61FA1 /* UIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKitFringes.framework; path = "../../../../Library/Developer/Xcode/DerivedData/FringesExample-eoxwvalotzdijddikhqzkkuxcskt/Build/Products/Debug-iphonesimulator/UIKitFringes.framework"; sourceTree = "<group>"; };
 		885EC14E1E33981F00A61FA1 /* RecordingSpecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecViewController.swift; sourceTree = "<group>"; };
 		885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecViewControllerTests.swift; sourceTree = "<group>"; };
+		885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSharedApplicationTests.swift; sourceTree = "<group>"; };
+		885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNavigationControllerTests.swift; sourceTree = "<group>"; };
+		885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecNavigationController.swift; sourceTree = "<group>"; };
+		885EC1591E33E0C300A61FA1 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +95,10 @@
 		885EC1261E338E8A00A61FA1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
 				885EC1431E338F4200A61FA1 /* SpecSharedApplication.swift */,
-				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
+				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
+				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
 				885EC13F1E338EBD00A61FA1 /* Supporting Files */,
 			);
 			name = Source;
@@ -100,9 +108,12 @@
 		885EC1311E338E8B00A61FA1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */,
 				885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */,
 				885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */,
+				885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */,
 				885EC14D1E33980B00A61FA1 /* Fakes */,
+				885EC1581E33E0A600A61FA1 /* Extensions */,
 				885EC13E1E338EB400A61FA1 /* Supporting Files */,
 			);
 			name = Tests;
@@ -138,8 +149,17 @@
 			isa = PBXGroup;
 			children = (
 				885EC14E1E33981F00A61FA1 /* RecordingSpecViewController.swift */,
+				885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */,
 			);
 			name = Fakes;
+			sourceTree = "<group>";
+		};
+		885EC1581E33E0A600A61FA1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				885EC1591E33E0C300A61FA1 /* XCTest.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				885EC1531E33C0E900A61FA1 /* SpecSharedApplicationTests.swift in Sources */,
 				885EC1331E338E8B00A61FA1 /* SpecWindowTests.swift in Sources */,
+				885EC1571E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift in Sources */,
 				885EC14F1E33981F00A61FA1 /* RecordingSpecViewController.swift in Sources */,
+				885EC1551E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift in Sources */,
+				885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */,
 				885EC1511E33BBB300A61FA1 /* SpecViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +486,7 @@
 				885EC13A1E338E8B00A61FA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		885EC13B1E338E8B00A61FA1 /* Build configuration list for PBXNativeTarget "SpecUIKitFringesTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +495,7 @@
 				885EC13D1E338E8B00A61FA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

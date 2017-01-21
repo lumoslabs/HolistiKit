@@ -19,7 +19,7 @@ open class SpecNavigationController: SpecViewController, NavigationControlling {
     }
 
     override public func push(viewController: ViewControlling, animated: Bool) {
-        guard let viewController = viewController as? SpecViewController else { fatalError() }
+        let viewController = viewController.asSpecViewController
         let previousTopViewController = viewControllers.last
         viewControllers.append(viewController)
         viewController.set(navigationController: self)
