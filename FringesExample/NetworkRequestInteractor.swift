@@ -10,6 +10,7 @@ class NetworkRequestInteractor {
     private let errorLogger: ErrorLogging
     private let networkActivityManager: NetworkActivityManager
     private var request: NetworkRequestProtocol?
+    private var networkActivity: NetworkActivityManager.Activity?
 
     init(networkRequestService: NetworkRequestingService,
          errorLogger: ErrorLogging,
@@ -20,10 +21,10 @@ class NetworkRequestInteractor {
     }
 
     private func startRequest() {
-        networkActivityManager.activityStarted()
+        networkActivity = networkActivityManager.activityStarted()
         let url = "https://httpbin.org/get"
         request = networkRequestService.request(url) { [weak self] response in
-            self?.networkActivityManager.activityFinished()
+            self?.networkActivity?.finish()
             switch response {
             case .success(let data):
                 self?.delegate?.received(data: data)
@@ -34,7 +35,6 @@ class NetworkRequestInteractor {
     }
 
     deinit {
-        request?.cancel()
-        networkActivityManager.activityFinished()
+        networkActivity?.finish()
     }
 }
