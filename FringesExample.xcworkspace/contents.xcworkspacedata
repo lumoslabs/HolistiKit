@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Frameworks/UIKitFringes/UIKitFringes.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Frameworks/SpecUIKitFringes/SpecUIKitFringes.xcodeproj">
+   </FileRef>
 </Workspace>
