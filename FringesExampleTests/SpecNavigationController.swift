@@ -1,4 +1,5 @@
 import UIKit
+import UIKitFringes
 @testable import FringesExample
 
 protocol SpecNavigationControllerUI {

@@ -1,3 +1,5 @@
+import UIKitFringes
+
 class ExamplesRouter {
 
     private let examplesPresenterFactory: ExamplesPresenterFactory

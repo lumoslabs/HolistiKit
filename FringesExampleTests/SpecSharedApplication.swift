@@ -1,4 +1,5 @@
 import Foundation
+import UIKitFringes
 @testable import FringesExample
 
 class SpecSharedApplication: ApplicationProtocol {

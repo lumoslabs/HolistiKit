@@ -1,3 +1,5 @@
+import UIKitFringes
+
 class AppCoordinator {
 
     let router: RootRouter

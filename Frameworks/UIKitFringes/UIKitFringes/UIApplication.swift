@@ -2,7 +2,7 @@ import UIKit
 
 extension UIApplication: ApplicationProtocol { }
 
-protocol ApplicationProtocol: class {
+public protocol ApplicationProtocol: class {
 
     var isNetworkActivityIndicatorVisible: Bool { get set }
 }

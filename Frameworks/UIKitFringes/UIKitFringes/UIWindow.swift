@@ -2,14 +2,14 @@ import UIKit
 
 extension UIWindow: Windowing {
 
-    var asUIWindow: UIWindow { return self }
+    public var asUIWindow: UIWindow { return self }
 
-    func set(rootViewController: ViewControlling) {
+    public func set(rootViewController: ViewControlling) {
         self.rootViewController = rootViewController.asUIViewController
     }
 }
 
-protocol Windowing {
+public protocol Windowing {
 
     var asUIWindow: UIWindow { get }
     func set(rootViewController: ViewControlling)

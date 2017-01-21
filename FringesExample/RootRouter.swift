@@ -1,3 +1,5 @@
+import UIKitFringes
+
 class RootRouter {
 
     private let examplesRouter: ExamplesRouter

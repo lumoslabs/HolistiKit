@@ -2,4 +2,4 @@ import UIKit
 
 extension UINavigationController: NavigationControlling { }
 
-protocol NavigationControlling: ViewControlling { }
+public protocol NavigationControlling: ViewControlling { }

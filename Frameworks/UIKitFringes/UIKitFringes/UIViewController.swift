@@ -2,13 +2,13 @@ import UIKit
 
 extension UIViewController: ViewControlling {
     
-    var asUIViewController: UIViewController { return self }
+    public var asUIViewController: UIViewController { return self }
 
-    func present(viewController: ViewControlling) {
+    public func present(viewController: ViewControlling) {
         present(viewController.asUIViewController, animated: true, completion: nil)
     }
 
-    func push(viewController: ViewControlling, animated: Bool) {
+    public func push(viewController: ViewControlling, animated: Bool) {
         if let navController = self as? UINavigationController {
             navController.pushViewController(viewController.asUIViewController, animated: animated)
         } else {
@@ -17,7 +17,7 @@ extension UIViewController: ViewControlling {
     }
 }
 
-protocol ViewControlling {
+public protocol ViewControlling {
     
     var asUIViewController: UIViewController { get }
     func present(viewController: ViewControlling)

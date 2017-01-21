@@ -1,4 +1,5 @@
 import UIKit
+import UIKitFringes
 
 class ExamplesNavigationPresenter: PushablePresenter {
 
