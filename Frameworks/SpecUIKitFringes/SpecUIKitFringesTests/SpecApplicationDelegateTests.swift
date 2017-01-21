@@ -36,4 +36,20 @@ class SpecApplicationDelegateTests: XCTestCase {
         subject.doubleTapHomeButton()
         XCTAssertEqual(subject.events, [ .applicationWillResignActive ])
     }
+
+    func test_tappingOnTheHomeButtonWhileInAppSwitcher() {
+        subject.tapAppIcon()
+        subject.doubleTapHomeButton()
+        subject.clearEvents()
+        subject.tapHomeButton()
+        XCTAssertEqual(subject.events, [ .applicationDidBecomeActive ])
+    }
+
+    func test_tappingOnTheAppScreenshotWhileInAppSwitcher() {
+        subject.tapAppIcon()
+        subject.doubleTapHomeButton()
+        subject.clearEvents()
+        subject.tapAppScreenShot()
+        XCTAssertEqual(subject.events, [ .applicationDidBecomeActive ])
+    }
 }
