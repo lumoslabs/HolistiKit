@@ -15,6 +15,14 @@ class SpecApplicationDelegateTests: XCTestCase {
         XCTAssertEqual(subject.events, [ .applicationDidLaunch, .applicationDidBecomeActive ])
     }
 
+    func test_tappingOnTheAppIconWhenTheAppIsRunning() {
+        subject.tapAppIcon()
+        subject.tapHomeButton()
+        subject.clearEvents()
+        subject.tapAppIcon()
+        XCTAssertEqual(subject.events, [ .applicationWillEnterForeground, .applicationDidBecomeActive ])
+    }
+
     func test_tappingOnTheHomeButton() {
         subject.tapAppIcon()
         subject.clearEvents()

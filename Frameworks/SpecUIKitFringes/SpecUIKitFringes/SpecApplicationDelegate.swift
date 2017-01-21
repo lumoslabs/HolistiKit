@@ -8,10 +8,18 @@ open class SpecApplicationDelegate {
     open func applicationWillEnterForeground() { }
     open func applicationDidBecomeActive() { }
     open func applicationWillTerminate() { }
+
+    private var running = false
     
     public func tapAppIcon() {
-        applicationDidLaunch()
-        applicationDidBecomeActive()
+        if running {
+            applicationWillEnterForeground()
+            applicationDidBecomeActive()
+        } else {
+            applicationDidLaunch()
+            applicationDidBecomeActive()
+        }
+        running = true
     }
     
     public func tapHomeButton() {
