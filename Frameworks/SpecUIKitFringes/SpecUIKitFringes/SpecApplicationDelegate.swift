@@ -2,9 +2,9 @@ open class SpecApplicationDelegate {
 
     public init() { }
 
-    func applicationDidLaunch() { }
+    open func applicationDidLaunch() { }
     
-    func tapAppIcon() {
+    public func tapAppIcon() {
         applicationDidLaunch()
     }
 }

@@ -8,7 +8,9 @@ class SpecAppDelegate: SpecApplicationDelegate {
     private(set) weak var networkRequestService: SpecNetworkRequestService!
     private(set) weak var sharedApplication: SpecSharedApplication!
 
-    func applicationDidLaunch() {
+    override func applicationDidLaunch() {
+        super.applicationDidLaunch()
+        
         window = SpecWindow()
 
         let _sharedApplication = SpecSharedApplication()

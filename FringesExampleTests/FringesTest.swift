@@ -17,7 +17,7 @@ class FringesTest: XCTestCase {
 extension FringesTest {
 
     func tapAppIcon() {
-        appDelegate.applicationDidLaunch()
+        appDelegate.tapAppIcon()
     }
 }
 
