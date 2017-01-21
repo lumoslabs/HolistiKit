@@ -115,8 +115,8 @@
 		885EC1311E338E8B00A61FA1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */,
 				885EC15D1E33EADD00A61FA1 /* SpecApplicationDelegateTests.swift */,
+				885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */,
 				885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */,
 				885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */,
 				885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */,
