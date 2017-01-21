@@ -75,6 +75,7 @@
 		888B2D171E2E4B8A00FB3165 /* SpecTimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */; };
 		888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */; };
 		888B2D1B1E2E57E300FB3165 /* SpecScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */; };
+		88A1E1831E33802800CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1821E33802800CFA0CD /* UIKitFringes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
 		888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
 		888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecScheduledTimer.swift; sourceTree = "<group>"; };
+		88A1E1821E33802800CFA0CD /* UIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKitFringes.framework; path = "Frameworks/UIKitFringes/build/Debug-iphoneos/UIKitFringes.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A1E1831E33802800CFA0CD /* UIKitFringes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +189,7 @@
 				880740A91E1F8C9400CECDDF /* Source */,
 				880740BE1E1F8C9400CECDDF /* Tests */,
 				880740A81E1F8C9400CECDDF /* Products */,
+				88A1E1811E33802800CFA0CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -508,6 +512,14 @@
 			name = Interactor;
 			sourceTree = "<group>";
 		};
+		88A1E1811E33802800CFA0CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88A1E1821E33802800CFA0CD /* UIKitFringes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -803,6 +815,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = FringesExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -816,6 +829,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = FringesExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
