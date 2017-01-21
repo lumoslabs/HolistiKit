@@ -4,4 +4,7 @@
    <FileRef
       location = "container:FringesExample.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Frameworks/UIKitFringes/UIKitFringes.xcodeproj">
+   </FileRef>
 </Workspace>
