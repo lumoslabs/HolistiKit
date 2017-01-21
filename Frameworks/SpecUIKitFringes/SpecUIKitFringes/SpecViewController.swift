@@ -1,25 +1,26 @@
 import UIKit
 import UIKitFringes
-@testable import FringesExample
 
-class SpecViewController: ViewControlling {
-    
-    weak var navigationController: SpecNavigationController?
+open class SpecViewController: ViewControlling {
+
+    public init() { }
+
+    public weak var navigationController: SpecNavigationController?
     private var presentedViewController: SpecViewController?
 
-    func viewDidLoad() { }
-    func viewWillAppear() { }
-    func viewDidAppear() { }
-    func viewWillDisappear() { }
-    func viewDidDisappear() { }
+    open func viewDidLoad() { }
+    open func viewWillAppear() { }
+    open func viewDidAppear() { }
+    open func viewWillDisappear() { }
+    open func viewDidDisappear() { }
 
-    func present(viewController: ViewControlling) {
+    public func present(viewController: ViewControlling) {
         presentedViewController = viewController.asSpecViewController
         viewDisappear()
         presentedViewController!.viewLoadAndAppear()
     }
 
-    func push(viewController: ViewControlling, animated: Bool) {
+    public func push(viewController: ViewControlling, animated: Bool) {
         navigationController!.push(viewController: viewController, animated: animated)
     }
 
@@ -54,7 +55,7 @@ class SpecViewController: ViewControlling {
         viewDidDisappear()
     }
 
-    var asUIViewController: UIViewController {
+    public var asUIViewController: UIViewController {
         fatalError("This should never be called in tests")
     }
 }

@@ -1,3 +1,4 @@
+import SpecUIKitFringes
 @testable import FringesExample
 
 class SpecNetworkRequestViewControllerFactory: NetworkRequestViewControllerFactoryProtocol {
@@ -24,6 +25,7 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         presenter.viewDidLoad()
     }
 

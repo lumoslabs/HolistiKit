@@ -1,4 +1,4 @@
-import UIKit
+import SpecUIKitFringes
 @testable import FringesExample
 
 class SpecExamplesNavigationControllingFactory: ExamplesNavigationControllingFactoryProtocol {

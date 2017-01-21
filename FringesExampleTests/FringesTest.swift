@@ -1,5 +1,6 @@
 import XCTest
 import UIKitFringes
+import SpecUIKitFringes
 @testable import FringesExample
 
 class FringesTest: XCTestCase {

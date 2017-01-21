@@ -1,3 +1,4 @@
+import SpecUIKitFringes
 @testable import FringesExample
 
 class SpecTimerViewControllerFactory: TimerViewControllerFactoryProtocol {
@@ -24,6 +25,7 @@ class SpecTimerViewController: SpecViewController, TimerViewControlling, SpecTim
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         presenter.viewDidLoad()
     }
 

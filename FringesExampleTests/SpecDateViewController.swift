@@ -1,3 +1,4 @@
+import SpecUIKitFringes
 @testable import FringesExample
 
 class SpecDateViewControllerFactory: DateViewControllerFactoryProtocol {
@@ -24,6 +25,7 @@ class SpecDateViewController: SpecViewController, DateViewControlling, SpecDateV
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         presenter.viewDidLoad()
     }
 

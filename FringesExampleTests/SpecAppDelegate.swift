@@ -1,3 +1,4 @@
+import SpecUIKitFringes
 @testable import FringesExample
 
 class SpecAppDelegate {

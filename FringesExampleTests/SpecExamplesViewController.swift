@@ -1,3 +1,4 @@
+import SpecUIKitFringes
 import UIKit
 @testable import FringesExample
 

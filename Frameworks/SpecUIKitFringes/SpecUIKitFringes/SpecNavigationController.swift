@@ -1,13 +1,12 @@
 import UIKit
 import UIKitFringes
-@testable import FringesExample
 
-protocol SpecNavigationControllerUI {
+public protocol SpecNavigationControllerUI {
 
     func tapBack()
 }
 
-class SpecNavigationController: SpecViewController, NavigationControlling {
+open class SpecNavigationController: SpecViewController, NavigationControlling {
 
     fileprivate var viewControllers = [SpecViewController]()
 
@@ -19,7 +18,7 @@ class SpecNavigationController: SpecViewController, NavigationControlling {
         return nextViewController!.topViewController
     }
 
-    override func push(viewController: ViewControlling, animated: Bool) {
+    override public func push(viewController: ViewControlling, animated: Bool) {
         guard let viewController = viewController as? SpecViewController else { fatalError() }
         let previousTopViewController = viewControllers.last
         viewControllers.append(viewController)
@@ -33,7 +32,7 @@ class SpecNavigationController: SpecViewController, NavigationControlling {
 
 extension SpecNavigationController: SpecNavigationControllerUI {
 
-    func tapBack() {
+    public func tapBack() {
         if viewControllers.count < 2 {
             fatalError("There wouldn't be a back button since there aren't at least 2 view controllers in the stack.")
         }
