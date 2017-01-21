@@ -26,4 +26,8 @@ open class SpecApplicationDelegate {
         applicationWillResignActive()
         applicationDidEnterBackground()
     }
+    
+    public func doubleTapHomeButton() {
+        applicationWillResignActive()
+    }
 }
