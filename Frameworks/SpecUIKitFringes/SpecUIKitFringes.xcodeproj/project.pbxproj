@@ -22,6 +22,8 @@
 		885EC1571E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */; };
 		885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1591E33E0C300A61FA1 /* XCTest.swift */; };
 		885EC15C1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */; };
+		885EC15E1E33EADD00A61FA1 /* SpecApplicationDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC15D1E33EADD00A61FA1 /* SpecApplicationDelegateTests.swift */; };
+		885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecNavigationController.swift; sourceTree = "<group>"; };
 		885EC1591E33E0C300A61FA1 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecApplicationDelegate.swift; sourceTree = "<group>"; };
+		885EC15D1E33EADD00A61FA1 /* SpecApplicationDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecApplicationDelegateTests.swift; sourceTree = "<group>"; };
+		885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecApplicationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */,
+				885EC15D1E33EADD00A61FA1 /* SpecApplicationDelegateTests.swift */,
 				885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */,
 				885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */,
 				885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */,
@@ -151,6 +156,7 @@
 		885EC14D1E33980B00A61FA1 /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
+				885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */,
 				885EC14E1E33981F00A61FA1 /* RecordingSpecViewController.swift */,
 				885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */,
 			);
@@ -290,9 +296,11 @@
 			files = (
 				885EC1531E33C0E900A61FA1 /* SpecSharedApplicationTests.swift in Sources */,
 				885EC1331E338E8B00A61FA1 /* SpecWindowTests.swift in Sources */,
+				885EC15E1E33EADD00A61FA1 /* SpecApplicationDelegateTests.swift in Sources */,
 				885EC1571E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift in Sources */,
 				885EC14F1E33981F00A61FA1 /* RecordingSpecViewController.swift in Sources */,
 				885EC1551E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift in Sources */,
+				885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */,
 				885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */,
 				885EC1511E33BBB300A61FA1 /* SpecViewControllerTests.swift in Sources */,
 			);
