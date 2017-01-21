@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		885EC12E1E338E8B00A61FA1 /* SpecUIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885EC1241E338E8A00A61FA1 /* SpecUIKitFringes.framework */; };
-		885EC1331E338E8B00A61FA1 /* SpecUIKitFringesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1321E338E8B00A61FA1 /* SpecUIKitFringesTests.swift */; };
+		885EC1331E338E8B00A61FA1 /* SpecWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */; };
 		885EC1351E338E8B00A61FA1 /* SpecUIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 885EC1271E338E8A00A61FA1 /* SpecUIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		885EC1461E338F4200A61FA1 /* SpecNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */; };
 		885EC1471E338F4200A61FA1 /* SpecSharedApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1431E338F4200A61FA1 /* SpecSharedApplication.swift */; };
 		885EC1481E338F4200A61FA1 /* SpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1441E338F4200A61FA1 /* SpecViewController.swift */; };
 		885EC1491E338F4200A61FA1 /* SpecWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1451E338F4200A61FA1 /* SpecWindow.swift */; };
 		885EC14C1E33902800A61FA1 /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885EC14B1E33902800A61FA1 /* UIKitFringes.framework */; };
+		885EC14F1E33981F00A61FA1 /* RecordingSpecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC14E1E33981F00A61FA1 /* RecordingSpecViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,13 +33,14 @@
 		885EC1271E338E8A00A61FA1 /* SpecUIKitFringes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecUIKitFringes.h; sourceTree = "<group>"; };
 		885EC1281E338E8A00A61FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		885EC12D1E338E8B00A61FA1 /* SpecUIKitFringesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpecUIKitFringesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		885EC1321E338E8B00A61FA1 /* SpecUIKitFringesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecUIKitFringesTests.swift; sourceTree = "<group>"; };
+		885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecWindowTests.swift; sourceTree = "<group>"; };
 		885EC1341E338E8B00A61FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNavigationController.swift; sourceTree = "<group>"; };
 		885EC1431E338F4200A61FA1 /* SpecSharedApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSharedApplication.swift; sourceTree = "<group>"; };
 		885EC1441E338F4200A61FA1 /* SpecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecViewController.swift; sourceTree = "<group>"; };
 		885EC1451E338F4200A61FA1 /* SpecWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecWindow.swift; sourceTree = "<group>"; };
 		885EC14B1E33902800A61FA1 /* UIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKitFringes.framework; path = "../../../../Library/Developer/Xcode/DerivedData/FringesExample-eoxwvalotzdijddikhqzkkuxcskt/Build/Products/Debug-iphonesimulator/UIKitFringes.framework"; sourceTree = "<group>"; };
+		885EC14E1E33981F00A61FA1 /* RecordingSpecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,8 @@
 		885EC1311E338E8B00A61FA1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				885EC1321E338E8B00A61FA1 /* SpecUIKitFringesTests.swift */,
+				885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */,
+				885EC14D1E33980B00A61FA1 /* Fakes */,
 				885EC13E1E338EB400A61FA1 /* Supporting Files */,
 			);
 			name = Tests;
@@ -126,6 +129,14 @@
 				885EC14B1E33902800A61FA1 /* UIKitFringes.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		885EC14D1E33980B00A61FA1 /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+				885EC14E1E33981F00A61FA1 /* RecordingSpecViewController.swift */,
+			);
+			name = Fakes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +261,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				885EC1331E338E8B00A61FA1 /* SpecUIKitFringesTests.swift in Sources */,
+				885EC1331E338E8B00A61FA1 /* SpecWindowTests.swift in Sources */,
+				885EC14F1E33981F00A61FA1 /* RecordingSpecViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
