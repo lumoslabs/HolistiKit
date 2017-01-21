@@ -1,7 +1,7 @@
 import SpecUIKitFringes
 @testable import FringesExample
 
-class SpecAppDelegate {
+class SpecAppDelegate: SpecApplicationDelegate {
     
     private(set) var window: SpecWindow!
     private(set) weak var dateProvider: SpecDateProvider!

@@ -21,6 +21,7 @@
 		885EC1551E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */; };
 		885EC1571E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */; };
 		885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1591E33E0C300A61FA1 /* XCTest.swift */; };
+		885EC15C1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNavigationControllerTests.swift; sourceTree = "<group>"; };
 		885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecNavigationController.swift; sourceTree = "<group>"; };
 		885EC1591E33E0C300A61FA1 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
+		885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecApplicationDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		885EC1261E338E8A00A61FA1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */,
 				885EC1431E338F4200A61FA1 /* SpecSharedApplication.swift */,
 				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
@@ -275,6 +278,7 @@
 			files = (
 				885EC1481E338F4200A61FA1 /* SpecViewController.swift in Sources */,
 				885EC1471E338F4200A61FA1 /* SpecSharedApplication.swift in Sources */,
+				885EC15C1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift in Sources */,
 				885EC1491E338F4200A61FA1 /* SpecWindow.swift in Sources */,
 				885EC1461E338F4200A61FA1 /* SpecNavigationController.swift in Sources */,
 			);
