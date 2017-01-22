@@ -1,4 +1,4 @@
-open class SpecApplicationDelegate {
+open class SpecApplicationDelegate: SpecApplicationDelegateProtocol {
 
     public init() { }
 
@@ -8,36 +8,14 @@ open class SpecApplicationDelegate {
     open func applicationWillEnterForeground() { }
     open func applicationDidBecomeActive() { }
     open func applicationWillTerminate() { }
+}
 
-    private var running = false
-    private var inAppSwitcher = false
+protocol SpecApplicationDelegateProtocol {
     
-    public func tapAppIcon() {
-        if running {
-            applicationWillEnterForeground()
-            applicationDidBecomeActive()
-        } else {
-            applicationDidLaunch()
-            applicationDidBecomeActive()
-        }
-        running = true
-    }
-    
-    public func tapHomeButton() {
-        if inAppSwitcher {
-            applicationDidBecomeActive()
-        } else {
-            applicationWillResignActive()
-            applicationDidEnterBackground()
-        }
-    }
-    
-    public func doubleTapHomeButton() {
-        inAppSwitcher = true
-        applicationWillResignActive()
-    }
-
-    public func tapAppScreenShot() {
-        applicationDidBecomeActive()
-    }
+    func applicationDidLaunch()
+    func applicationWillResignActive()
+    func applicationDidEnterBackground()
+    func applicationWillEnterForeground()
+    func applicationDidBecomeActive()
+    func applicationWillTerminate()
 }
