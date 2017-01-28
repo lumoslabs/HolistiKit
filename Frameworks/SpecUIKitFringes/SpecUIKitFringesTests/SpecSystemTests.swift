@@ -57,7 +57,7 @@ class SpecSystemTests: SpecUIKitFringesTestCase {
         XCTAssertEqual(appDelegate.events, [ .applicationDidBecomeActive ])
     }
 
-    func test_swipingUpOnTheAppScreenshotWhileInTheAppSwitcher() {
+    func test_swipingUpOnTheAppScreenshotWhenTheAppIsRunning() {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
         appDelegate.clearEvents()
@@ -81,7 +81,15 @@ class SpecSystemTests: SpecUIKitFringesTestCase {
         fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(recordedFatalError, .notInAppSwitcher)
+        XCTAssertEqual(recordedFatalErrors, [ .appSwitcherNotOpen, .noScreenshotInAppSwitcher ])
+    }
+
+    func test_tappingOnTheAppScreenshotWhenTheAppHasNeverBeenRunBefore() {
+        subject.doubleTapHomeButton()
+        fatalErrorsOff {
+            self.subject.tapAppScreenshot()
+        }
+        XCTAssertEqual(recordedFatalErrors, [ .noScreenshotInAppSwitcher ])
     }
 }
 

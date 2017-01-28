@@ -1,23 +1,26 @@
 class RealityChecker {
 
     static let shared = RealityChecker()
-    var recordedFatalError: FatalError?
+    var recordedFatalErrors = [FatalError]()
     private var recordingMode = false
 
     enum FatalError {
-        case notInAppSwitcher
+        case appSwitcherNotOpen
+        case noScreenshotInAppSwitcher
 
         var message: String {
             switch self {
-            case .notInAppSwitcher:
+            case .appSwitcherNotOpen:
                 return "The user is not in the App Switcher"
+            case .noScreenshotInAppSwitcher:
+                return "The screenshot is not in the App Switcher"
             }
         }
     }
 
     func error(_ error: FatalError) {
         if recordingMode {
-            self.recordedFatalError = error
+            recordedFatalErrors.append(error)
         } else {
             fatalError(error.message)
         }
@@ -27,5 +30,9 @@ class RealityChecker {
         recordingMode = true
         block()
         recordingMode = false
+    }
+
+    func clearRecordedErrors() {
+        recordedFatalErrors = []
     }
 }

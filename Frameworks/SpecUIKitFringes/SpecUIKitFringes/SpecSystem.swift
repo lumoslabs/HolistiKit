@@ -4,6 +4,7 @@ open class SpecSystem {
 
     public private(set) var appDelegate: SpecApplicationDelegateProtocol!
     private var inAppSwitcher = false
+    private var screenshotInAppSwitcher = false
 
     public struct AppDelegateBundle {
         let appDelegate: SpecApplicationDelegateProtocol
@@ -38,6 +39,7 @@ open class SpecSystem {
         appDelegate = newAppDelegateBundle.appDelegate
         appDelegate.applicationDidLaunch()
         appDelegate.applicationDidBecomeActive()
+        screenshotInAppSwitcher = true
     }
 
     public func tapHomeButton() {
@@ -51,11 +53,12 @@ open class SpecSystem {
     
     public func doubleTapHomeButton() {
         inAppSwitcher = true
-        appDelegate.applicationWillResignActive()
+        appDelegate?.applicationWillResignActive()
     }
 
     public func tapAppScreenshot() {
-        if !inAppSwitcher { RealityChecker.shared.error(.notInAppSwitcher) }
+        errorIfAppSwitcherIsNotOpen()
+        errorIfNoScreenshotInAppSwitcher()
         if let appDelegate = appDelegate {
             appDelegate.applicationDidBecomeActive()
         } else {
@@ -66,5 +69,13 @@ open class SpecSystem {
         appDelegate.applicationDidEnterBackground()
         appDelegate.applicationWillTerminate()
         appDelegate = nil
+    }
+
+    private func errorIfAppSwitcherIsNotOpen() {
+        if !inAppSwitcher { RealityChecker.shared.error(.appSwitcherNotOpen) }
+    }
+
+    private func errorIfNoScreenshotInAppSwitcher() {
+        if !screenshotInAppSwitcher { RealityChecker.shared.error(.noScreenshotInAppSwitcher) }
     }
 }

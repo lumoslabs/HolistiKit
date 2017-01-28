@@ -3,12 +3,17 @@ import XCTest
 
 class SpecUIKitFringesTestCase: XCTestCase {
 
+    override func tearDown() {
+        super.tearDown()
+        realityChecker.clearRecordedErrors()
+    }
+
     func fatalErrorsOff(_ block: @escaping () -> Void) {
         realityChecker.fatalErrorsOff(block)
     }
 
-    var recordedFatalError: RealityChecker.FatalError? {
-        return realityChecker.recordedFatalError
+    var recordedFatalErrors: [RealityChecker.FatalError] {
+        return realityChecker.recordedFatalErrors
     }
 
     private var realityChecker: RealityChecker {
