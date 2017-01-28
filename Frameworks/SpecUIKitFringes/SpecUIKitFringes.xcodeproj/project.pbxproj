@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		883E43731E3CF9880051BD21 /* RealityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43721E3CF9880051BD21 /* RealityChecker.swift */; };
+		883E43751E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */; };
 		885EC12E1E338E8B00A61FA1 /* SpecUIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885EC1241E338E8A00A61FA1 /* SpecUIKitFringes.framework */; };
 		885EC1331E338E8B00A61FA1 /* SpecWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */; };
 		885EC1351E338E8B00A61FA1 /* SpecUIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 885EC1271E338E8A00A61FA1 /* SpecUIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		883E43721E3CF9880051BD21 /* RealityChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealityChecker.swift; sourceTree = "<group>"; };
+		883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUIKitFringesTestCase.swift; sourceTree = "<group>"; };
 		885EC1241E338E8A00A61FA1 /* SpecUIKitFringes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpecUIKitFringes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		885EC1271E338E8A00A61FA1 /* SpecUIKitFringes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecUIKitFringes.h; sourceTree = "<group>"; };
 		885EC1281E338E8A00A61FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
+				883E43721E3CF9880051BD21 /* RealityChecker.swift */,
 				885EC13F1E338EBD00A61FA1 /* Supporting Files */,
 			);
 			name = Source;
@@ -123,6 +128,7 @@
 				885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */,
 				885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */,
 				885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */,
+				883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */,
 				885EC14D1E33980B00A61FA1 /* Fakes */,
 				885EC1581E33E0A600A61FA1 /* Extensions */,
 				885EC13E1E338EB400A61FA1 /* Supporting Files */,
@@ -290,6 +296,7 @@
 				885EC15C1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift in Sources */,
 				885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */,
 				885EC1491E338F4200A61FA1 /* SpecWindow.swift in Sources */,
+				883E43731E3CF9880051BD21 /* RealityChecker.swift in Sources */,
 				885EC1461E338F4200A61FA1 /* SpecNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +313,7 @@
 				885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */,
 				885EC18E1E34BC1700A61FA1 /* SpecSystemTests.swift in Sources */,
 				885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */,
+				883E43751E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift in Sources */,
 				885EC1511E33BBB300A61FA1 /* SpecViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

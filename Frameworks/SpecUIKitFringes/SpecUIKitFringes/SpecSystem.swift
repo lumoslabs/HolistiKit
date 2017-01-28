@@ -29,13 +29,17 @@ open class SpecSystem {
             appDelegate.applicationWillEnterForeground()
             appDelegate.applicationDidBecomeActive()
         } else {
-            let newAppDelegateBundle = createAppDelegateBundle()
-            appDelegate = newAppDelegateBundle.appDelegate
-            appDelegate.applicationDidLaunch()
-            appDelegate.applicationDidBecomeActive()
+            launch()
         }
     }
-    
+
+    private func launch() {
+        let newAppDelegateBundle = createAppDelegateBundle()
+        appDelegate = newAppDelegateBundle.appDelegate
+        appDelegate.applicationDidLaunch()
+        appDelegate.applicationDidBecomeActive()
+    }
+
     public func tapHomeButton() {
         if inAppSwitcher {
             appDelegate.applicationDidBecomeActive()
@@ -51,7 +55,11 @@ open class SpecSystem {
     }
 
     public func tapAppScreenshot() {
-        appDelegate.applicationDidBecomeActive()
+        if !inAppSwitcher { RealityChecker.shared.error(.notInAppSwitcher) }
+        if let appDelegate = appDelegate {
+            appDelegate.applicationDidBecomeActive()
+        } else {
+        }
     }
 
     public func swipeUpAppScreenshot() {

@@ -1,7 +1,7 @@
 import XCTest
 @testable import SpecUIKitFringes
 
-class SpecSystemTests: XCTestCase {
+class SpecSystemTests: SpecUIKitFringesTestCase {
 
     var subject: SpecSystem!
     
@@ -75,6 +75,13 @@ class SpecSystemTests: XCTestCase {
         subject.tapAppIcon()
         XCTAssertEqual(appDelegate.events, [ .applicationDidLaunch, .applicationDidBecomeActive ])
         XCTAssertNotSame(oldAppDelegate, appDelegate)
+    }
+
+    func test_tappingOnTheAppScreenshotWhileNotInTheAppSwitcher() {
+        fatalErrorsOff {
+            self.subject.tapAppScreenshot()
+        }
+        XCTAssertEqual(recordedFatalError, .notInAppSwitcher)
     }
 }
 
