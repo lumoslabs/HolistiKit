@@ -39,7 +39,7 @@ def xcodebuild(command, scheme)
     | xcpretty"
 end
 
-[:FringesExample, :UIKitFringes, :SpecUIKitFringes].each do |scheme|
+[:SpecUIKitFringes, :UIKitFringes, :FringesExample].each do |scheme|
   xcodebuild(:build, scheme)
   xcodebuild(:test, scheme)
 end
