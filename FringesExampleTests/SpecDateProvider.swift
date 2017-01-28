@@ -10,7 +10,7 @@ class SpecDateProvider {
         return formatter.date(from: initialDateString)!
     }()
 
-    func progress(seconds: Int = 0) {
+    func progress(seconds: Int) {
         for _ in 0..<seconds {
             currentDate = currentDate.addingTimeInterval(1)
             SpecDateProviderNotifier.post(date: currentDate)

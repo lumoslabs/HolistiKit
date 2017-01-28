@@ -5,7 +5,7 @@ import SpecUIKitFringes
 
 class FringesTest: XCTestCase {
 
-    private(set) var system: FringesSpecSystem!
+    fileprivate var system: FringesSpecSystem!
     
     override func setUp() {
         super.setUp()
@@ -24,8 +24,12 @@ extension FringesTest {
 // MARK: Time
 extension FringesTest {
 
-    func progress(seconds: Int = 0) {
-        system.dateProvider.progress(seconds: seconds)
+    func progress(seconds: Int) {
+        dateProvider.progress(seconds: seconds)
+    }
+
+    private var dateProvider: SpecDateProvider {
+        return system.dateProvider
     }
 }
 
