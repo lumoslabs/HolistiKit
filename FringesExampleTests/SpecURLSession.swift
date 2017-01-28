@@ -12,6 +12,20 @@ class SpecURLSession: URLSessionProtocol {
         return request
     }
 
+    func respond(to url: RequestURL, with response: Response) {
+        guard let request = firstRunningRequest(forURL: url) else {
+            fatalError("There was no request for \(url) in the app at the moment.")
+        }
+        request.finish(withResponse: response)
+    }
+    
+    private func firstRunningRequest(forURL url: RequestURL) -> SpecURLSessionDataTask? {
+        return requests.running.with(url: url).first
+    }
+}
+
+extension SpecURLSession {
+    
     enum RequestURL: String {
         case httpbin = "https://httpbin.org/get"
 
@@ -28,17 +42,6 @@ class SpecURLSession: URLSessionProtocol {
 
     enum Response {
         case success(Data)
-    }
-
-    func respond(to url: RequestURL, with response: Response) {
-        guard let request = firstRunningRequest(forURL: url) else {
-            fatalError("There was no request for \(url) in the app at the moment.")
-        }
-        request.finish(withResponse: response)
-    }
-    
-    private func firstRunningRequest(forURL url: RequestURL) -> SpecURLSessionDataTask? {
-        return requests.running.with(url: url).first
     }
 }
 
