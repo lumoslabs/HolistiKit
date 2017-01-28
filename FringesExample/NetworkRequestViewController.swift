@@ -5,7 +5,19 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
 
     var presenter: NetworkRequestPresenting!
     
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet fileprivate weak var textView: UITextView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        tableView.estimatedRowHeight = 44
+
+        presenter.viewDidLoad()
+    }
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     func set(title text: String) {
         title = text
@@ -15,11 +27,6 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
         DispatchQueue.main.async { [weak self] in
             self?.textView.text = text
         }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        presenter.viewDidLoad()
     }
 }
 
