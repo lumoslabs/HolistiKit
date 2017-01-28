@@ -8,16 +8,16 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
     private weak var sharedApplication: SpecSharedApplication!
     private weak var dateProvider: SpecDateProvider!
     private weak var timeZoneProvider: SpecTimeZoneProvider!
-    private weak var networkRequestService: SpecNetworkRequestService!
+    private weak var urlSession: SpecURLSession!
 
     init(sharedApplication: SpecSharedApplication,
          dateProvider: SpecDateProvider,
          timeZoneProvider: SpecTimeZoneProvider,
-         networkRequestService: SpecNetworkRequestService) {
+         urlSession: SpecURLSession) {
         self.sharedApplication = sharedApplication
         self.dateProvider = dateProvider
         self.timeZoneProvider = timeZoneProvider
-        self.networkRequestService = networkRequestService
+        self.urlSession = urlSession
     }
 
     func applicationDidLaunch() {
@@ -39,9 +39,9 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
                                             errorLogger: errorLogger,
-                                            networkRequestService: networkRequestService,
                                             timerFactory: timerFactory,
-                                            sharedApplication: sharedApplication)
+                                            sharedApplication: sharedApplication,
+                                            urlSession: urlSession)
         
         appCoordinator.didFinishLaunching(withWindow: window)
     }

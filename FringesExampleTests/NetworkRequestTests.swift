@@ -13,7 +13,9 @@ class NetworkRequestTests: FringesTest {
         tapAppIcon()
         examples.tapNetworkRequestRow()
         XCTAssertNil(networkRequestView.dataLabel)
-        respond(to: .httpbin, with: .success(["Some key" : "Some value"]))
+        let json = ["Some key" : "Some value"]
+        let data = try! JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
+        respond(to: .httpbin, with: .success(data))
         XCTAssertEqual(networkRequestView.dataLabel, "Some key")
     }
 
@@ -22,7 +24,8 @@ class NetworkRequestTests: FringesTest {
         XCTAssertFalse(networkActivityIndicatorIsVisible)
         examples.tapNetworkRequestRow()
         XCTAssertTrue(networkActivityIndicatorIsVisible)
-        respond(to: .httpbin, with: .success([:]))
+        let data = try! JSONSerialization.data(withJSONObject: [:], options: .prettyPrinted)
+        respond(to: .httpbin, with: .success(data))
         XCTAssertFalse(networkActivityIndicatorIsVisible)
     }
 

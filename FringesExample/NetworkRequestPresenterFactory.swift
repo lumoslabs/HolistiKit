@@ -1,24 +1,24 @@
 class NetworkRequestPresenterFactory {
 
     private let viewControllerFactory: NetworkRequestViewControllerFactoryProtocol
-    private let networkRequestService: NetworkRequestingService
     private let errorLogger: ErrorLogging
     private let networkActivityManager: NetworkActivityManager
+    private let urlSession: URLSessionProtocol
     
     init(viewControllerFactory: NetworkRequestViewControllerFactoryProtocol,
-         networkRequestService: NetworkRequestingService,
          errorLogger: ErrorLogging,
-         networkActivityManager: NetworkActivityManager) {
+         networkActivityManager: NetworkActivityManager,
+         urlSession: URLSessionProtocol) {
         self.viewControllerFactory = viewControllerFactory
-        self.networkRequestService = networkRequestService
         self.errorLogger = errorLogger
         self.networkActivityManager = networkActivityManager
+        self.urlSession = urlSession
     }
 
     func create(withRouter router: ExamplesRouter) -> NetworkRequestPresenter {
-        let interactor = NetworkRequestInteractor(networkRequestService: networkRequestService,
-                                                  errorLogger: errorLogger,
-                                                  networkActivityManager: networkActivityManager)
+        let interactor = NetworkRequestInteractor(errorLogger: errorLogger,
+                                                  networkActivityManager: networkActivityManager,
+                                                  urlSession: urlSession)
         return NetworkRequestPresenter(viewControllerFactory: viewControllerFactory,
                                        interactor: interactor)
     }

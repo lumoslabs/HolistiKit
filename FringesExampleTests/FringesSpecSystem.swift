@@ -6,7 +6,7 @@ class FringesSpecSystem: SpecSystem {
     let dateProvider: SpecDateProvider
     let timeZoneProvider: SpecTimeZoneProvider
     
-    weak var networkRequestService: SpecNetworkRequestService!
+    weak var urlSession: SpecURLSession!
 
     override init() {
         self.sharedApplication = SpecSharedApplication()
@@ -16,13 +16,13 @@ class FringesSpecSystem: SpecSystem {
     }
 
     override open func createAppDelegateBundle() -> AppDelegateBundle {
-        let _networkRequestService = SpecNetworkRequestService()
-        self.networkRequestService = _networkRequestService
+        let _urlSession = SpecURLSession()
+        self.urlSession = _urlSession
         let appDelegate = SpecAppDelegate(sharedApplication: sharedApplication,
                                           dateProvider: dateProvider,
                                           timeZoneProvider: timeZoneProvider,
-                                          networkRequestService: networkRequestService)
+                                          urlSession: urlSession)
         return AppDelegateBundle(appDelegate: appDelegate,
-                                 temporarilyStrong: [networkRequestService])
+                                 temporarilyStrong: [urlSession])
     }
 }

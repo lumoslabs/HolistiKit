@@ -12,9 +12,9 @@ class AppCoordinator {
          dateProvider: DateProviding,
          timeZoneProvider: TimeZoneProviding,
          errorLogger: ErrorLogging,
-         networkRequestService: NetworkRequestingService,
          timerFactory: TimerFactoryProtocol,
-         sharedApplication: ApplicationProtocol) {
+         sharedApplication: ApplicationProtocol,
+         urlSession: URLSessionProtocol) {
         let networkActivityManager = NetworkActivityManager(sharedApplication: sharedApplication)
         let examplesNavigationPresenterFactory = ExamplesNavigationPresenterFactory(viewControllerFactory: examplesNavigationControllerFactory)
         let examplesPresenterFactory = ExamplesPresenterFactory(viewControllerFactory: examplesViewControllerFactory,
@@ -24,9 +24,9 @@ class AppCoordinator {
                                                           timeZoneProvider: timeZoneProvider,
                                                           timerFactory: timerFactory)
         let networkRequestPresenterFactory = NetworkRequestPresenterFactory(viewControllerFactory: networkRequestViewControllerFactory,
-                                                                            networkRequestService: networkRequestService,
                                                                             errorLogger: errorLogger,
-                                                                            networkActivityManager: networkActivityManager)
+                                                                            networkActivityManager: networkActivityManager,
+                                                                            urlSession: urlSession)
         let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
                                                         dateProvider: dateProvider,
                                                         timeZoneProvider: timeZoneProvider)

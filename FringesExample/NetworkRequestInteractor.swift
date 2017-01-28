@@ -6,32 +6,39 @@ class NetworkRequestInteractor {
         didSet { startRequest() }
     }
 
-    private let networkRequestService: NetworkRequestingService
+    private let urlSession: URLSessionProtocol
     private let errorLogger: ErrorLogging
     private let networkActivityManager: NetworkActivityManager
-    private var request: NetworkRequestProtocol?
     private var networkActivity: NetworkActivityManager.Activity?
 
-    init(networkRequestService: NetworkRequestingService,
-         errorLogger: ErrorLogging,
-         networkActivityManager: NetworkActivityManager) {
-        self.networkRequestService = networkRequestService
+    init(errorLogger: ErrorLogging,
+         networkActivityManager: NetworkActivityManager,
+         urlSession: URLSessionProtocol) {
         self.errorLogger = errorLogger
         self.networkActivityManager = networkActivityManager
+        self.urlSession = urlSession
     }
 
     private func startRequest() {
         networkActivity = networkActivityManager.activityStarted()
-        let url = "https://httpbin.org/get"
-        request = networkRequestService.request(url) { [weak self] response in
+        let urlString = "https://httpbin.org/get"
+        let url = URL(string: urlString)!
+
+        let task = urlSession.urlDataTask(with: url, completionHandler: { [weak self] (data, response, error) -> Void in
             self?.networkActivity?.finish()
-            switch response {
-            case .success(let data):
-                self?.delegate?.received(data: data)
-            case .error:
-                self?.errorLogger.log("We haven't implemented error handling in the interactor yet.")
+            if let error = error {
+                self?.errorLogger.log(String(describing: error))
+            } else {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as! [String : Any]
+                    self?.delegate?.received(data: json)
+                }
+                catch {
+                    self?.errorLogger.log("JSON parsing error.")
+                }
             }
-        }
+        })
+        task.resume()
     }
 
     deinit {

@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dateProvider = DateProvider()
         let timeZoneProvider = TimeZoneProvider()
         let errorLogger = ErrorLogger()
-        let networkRequestService = NetworkRequestService()
         let timerFactory = TimerFactory()
         let sharedApplication = UIApplication.shared
+        let urlSession = URLSession.shared
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
                                             errorLogger: errorLogger,
-                                            networkRequestService: networkRequestService,
                                             timerFactory: timerFactory,
-                                            sharedApplication: sharedApplication)
+                                            sharedApplication: sharedApplication,
+                                            urlSession: urlSession)
         appCoordinator.didFinishLaunching(withWindow: _window)
         
         _window.makeKeyAndVisible()

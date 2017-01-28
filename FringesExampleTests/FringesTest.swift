@@ -32,12 +32,12 @@ extension FringesTest {
 // MARK: Network
 extension FringesTest {
 
-    func respond(to urlRequest: SpecNetworkRequestService.RequestURL, with response: NetworkRequestService.Response) {
-        networkRequestService.respond(to: urlRequest, with: response)
+    func respond(to urlRequest: SpecURLSession.RequestURL, with response: SpecURLSession.Response) {
+        urlSession.respond(to: urlRequest, with: response)
     }
 
-    private var networkRequestService: SpecNetworkRequestService {
-        return system.networkRequestService
+    private var urlSession: SpecURLSession {
+        return system.urlSession
     }
 }
 
