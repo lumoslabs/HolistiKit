@@ -9,12 +9,27 @@ class AppSwitcherTests: SpecSystemTestCase {
         XCTAssertNil(appDelegate)
     }
 
+    func test_doubleTappingOnTheHomeButtonComingFromTheSpringBoard() {
+        subject.doubleTapHomeButton()
+        subject.doubleTapHomeButton()
+        XCTAssertNil(appDelegate)
+    }
+
     func test_tappingOnTheHomeButtonComingFromTheSpringBoardWhileTheAppIsRunning() {
         subject.tapAppIcon()
         subject.tapHomeButton()
         subject.doubleTapHomeButton()
         appDelegate.clearEvents()
         subject.tapHomeButton()
+        XCTAssertEqual(appDelegate.events, [ ])
+    }
+
+    func test_doubldTappingOnTheHomeButtonComingFromTheSpringBoardWhileTheAppIsRunning() {
+        subject.tapAppIcon()
+        subject.tapHomeButton()
+        subject.doubleTapHomeButton()
+        appDelegate.clearEvents()
+        subject.doubleTapHomeButton()
         XCTAssertEqual(appDelegate.events, [ ])
     }
 

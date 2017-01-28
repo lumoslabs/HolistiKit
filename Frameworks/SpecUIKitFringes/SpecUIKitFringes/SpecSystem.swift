@@ -53,12 +53,7 @@ open class SpecSystem {
     public func tapHomeButton() {
         switch location {
         case .appSwitcher:
-            if let appDelegate = appDelegate, cameFrom(.app) {
-                appDelegate.applicationDidBecomeActive()
-                move(to: .app)
-            } else {
-                move(to: .springBoard)
-            }
+            anyHomeButtonTapInAppSwitcher()
         case .app:
             appDelegate.applicationWillResignActive()
             appDelegate.applicationDidEnterBackground()
@@ -67,10 +62,26 @@ open class SpecSystem {
             break;
         }
     }
-    
+
+    private func anyHomeButtonTapInAppSwitcher() {
+        if let appDelegate = appDelegate, cameFrom(.app) {
+            appDelegate.applicationDidBecomeActive()
+            move(to: .app)
+        } else {
+            move(to: .springBoard)
+        }
+    }
+
     public func doubleTapHomeButton() {
-        move(to: .appSwitcher)
-        appDelegate?.applicationWillResignActive()
+        switch location {
+        case .appSwitcher:
+            anyHomeButtonTapInAppSwitcher()
+        case .app:
+            appDelegate.applicationWillResignActive()
+            move(to: .appSwitcher)
+        case .springBoard:
+            move(to: .appSwitcher)
+        }
     }
 
     public func tapAppScreenshot() {
