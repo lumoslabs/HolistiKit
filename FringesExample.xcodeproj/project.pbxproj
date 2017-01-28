@@ -28,6 +28,7 @@
 		880741761E22896C00CECDDF /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741751E22896C00CECDDF /* DateTests.swift */; };
 		8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */; };
 		880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */; };
+		8814F2D11E3D4B60005506DB /* SpecURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */; };
 		883566801E2F51F800289510 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835667F1E2F51F800289510 /* NetworkRequestTests.swift */; };
 		883566821E2F567A00289510 /* SpecNetworkRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */; };
 		883566861E2F572100289510 /* NetworkRequestPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */; };
@@ -108,6 +109,7 @@
 		880741751E22896C00CECDDF /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesPresenterFactory.swift; sourceTree = "<group>"; };
 		8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenterFactory.swift; sourceTree = "<group>"; };
+		8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSessionDataTask.swift; sourceTree = "<group>"; };
 		8835667F1E2F51F800289510 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
 		883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNetworkRequestViewController.swift; sourceTree = "<group>"; };
 		883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPresenterFactory.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */,
 				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
 				883E43871E3D3CA30051BD21 /* SpecURLSession.swift */,
+				8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */,
 				885371CF1E3271C800CC5B75 /* View Controllers */,
 			);
 			name = Fakes;
@@ -663,6 +666,7 @@
 				883566821E2F567A00289510 /* SpecNetworkRequestViewController.swift in Sources */,
 				883566801E2F51F800289510 /* NetworkRequestTests.swift in Sources */,
 				885EC1931E34EFA300A61FA1 /* FringesSpecSystem.swift in Sources */,
+				8814F2D11E3D4B60005506DB /* SpecURLSessionDataTask.swift in Sources */,
 				886013EA1E2D4F5C00C86FDE /* SpecErrorLogger.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* ExamplesTests.swift in Sources */,
 				883E43881E3D3CA30051BD21 /* SpecURLSession.swift in Sources */,
