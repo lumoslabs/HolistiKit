@@ -67,6 +67,29 @@ extension FringesTest {
         return window
     }
 
+    var examplesUI: SpecExamplesViewControllerUI! {
+        return topViewController(as: SpecExamplesViewControllerUI.self)
+    }
+
+    var dateUI: SpecDateViewControllerUI! {
+        return topViewController(as: SpecDateViewControllerUI.self)
+    }
+
+    var timerUI: SpecTimerViewControllerUI! {
+        return topViewController(as: SpecTimerViewControllerUI.self)
+    }
+
+    var networkRequestUI: SpecNetworkRequestViewControllerUI! {
+        return topViewController(as: SpecNetworkRequestViewControllerUI.self)
+    }
+
+    var navigationController: SpecNavigationControllerUI {
+        guard let navigationController = window.topViewController.navigationController else {
+            fatalError("The top view controller is not inside a navigation controller.")
+        }
+        return navigationController
+    }
+
     private func topViewController<I>(as interface: I.Type) -> I {
         if let top = window.topViewController as? I {
             return top
@@ -79,28 +102,5 @@ extension FringesTest {
             "This is the current view controller stack:\n" +
             "\(currentViewControllerStack)\n" +
             "[-] Window\n")
-    }
-
-    var examples: SpecExamplesViewControllerUI! {
-        return topViewController(as: SpecExamplesViewControllerUI.self)
-    }
-
-    var date: SpecDateViewControllerUI! {
-        return topViewController(as: SpecDateViewControllerUI.self)
-    }
-
-    var timer: SpecTimerViewControllerUI! {
-        return topViewController(as: SpecTimerViewControllerUI.self)
-    }
-
-    var networkRequestView: SpecNetworkRequestViewControllerUI! {
-        return topViewController(as: SpecNetworkRequestViewControllerUI.self)
-    }
-
-    var navigationController: SpecNavigationControllerUI {
-        guard let navigationController = window.topViewController.navigationController else {
-            fatalError("The top view controller is not inside a navigation controller.")
-        }
-        return navigationController
     }
 }

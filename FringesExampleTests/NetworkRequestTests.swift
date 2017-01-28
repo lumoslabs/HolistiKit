@@ -5,22 +5,22 @@ class NetworkRequestTests: FringesTest {
 
     func test_titleIsCorrect() {
         tapAppIcon()
-        examples.tapNetworkRequestRow()
-        XCTAssertEqual(networkRequestView.title, "Network Request")
+        examplesUI.tapNetworkRequestRow()
+        XCTAssertEqual(networkRequestUI.title, "Network Request")
     }
 
     func test_theRequestDataIsShownUponSuccess() {
         tapAppIcon()
-        examples.tapNetworkRequestRow()
-        XCTAssertNil(networkRequestView.dataLabel)
+        examplesUI.tapNetworkRequestRow()
+        XCTAssertNil(networkRequestUI.dataLabel)
         respond(to: .httpbin, with: ["Some key" : "Some value"])
-        XCTAssertEqual(networkRequestView.dataLabel, "Some key")
+        XCTAssertEqual(networkRequestUI.dataLabel, "Some key")
     }
 
     func test_theNetworkActivityIndicatorIsShown() {
         tapAppIcon()
         XCTAssertFalse(networkActivityIndicatorIsVisible)
-        examples.tapNetworkRequestRow()
+        examplesUI.tapNetworkRequestRow()
         XCTAssertTrue(networkActivityIndicatorIsVisible)
         respond(to: .httpbin, with: [:])
         XCTAssertFalse(networkActivityIndicatorIsVisible)
@@ -29,7 +29,7 @@ class NetworkRequestTests: FringesTest {
     func test_theNetworkActivityIndicatorIsRemovedWhenTappingBack() {
         tapAppIcon()
         XCTAssertFalse(networkActivityIndicatorIsVisible)
-        examples.tapNetworkRequestRow()
+        examplesUI.tapNetworkRequestRow()
         XCTAssertTrue(networkActivityIndicatorIsVisible)
         navigationController.tapBack()
         XCTAssertFalse(networkActivityIndicatorIsVisible)
