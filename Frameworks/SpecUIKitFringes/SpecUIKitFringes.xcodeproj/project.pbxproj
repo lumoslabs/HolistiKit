@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		883E43731E3CF9880051BD21 /* RealityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43721E3CF9880051BD21 /* RealityChecker.swift */; };
 		883E43751E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */; };
+		883E437E1E3D140F0051BD21 /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E437D1E3D140F0051BD21 /* AppIconTests.swift */; };
+		883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */; };
+		883E43821E3D14DB0051BD21 /* HomeButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43811E3D14DB0051BD21 /* HomeButtonTests.swift */; };
+		883E43841E3D15050051BD21 /* AppSwitcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43831E3D15050051BD21 /* AppSwitcherTests.swift */; };
 		885EC12E1E338E8B00A61FA1 /* SpecUIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885EC1241E338E8A00A61FA1 /* SpecUIKitFringes.framework */; };
 		885EC1331E338E8B00A61FA1 /* SpecWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */; };
 		885EC1351E338E8B00A61FA1 /* SpecUIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 885EC1271E338E8A00A61FA1 /* SpecUIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,7 +29,7 @@
 		885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1591E33E0C300A61FA1 /* XCTest.swift */; };
 		885EC15C1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */; };
 		885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */; };
-		885EC18E1E34BC1700A61FA1 /* SpecSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18D1E34BC1700A61FA1 /* SpecSystemTests.swift */; };
+		885EC18E1E34BC1700A61FA1 /* SpecSystemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */; };
 		885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +46,10 @@
 /* Begin PBXFileReference section */
 		883E43721E3CF9880051BD21 /* RealityChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealityChecker.swift; sourceTree = "<group>"; };
 		883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUIKitFringesTestCase.swift; sourceTree = "<group>"; };
+		883E437D1E3D140F0051BD21 /* AppIconTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
+		883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecSystem.swift; sourceTree = "<group>"; };
+		883E43811E3D14DB0051BD21 /* HomeButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeButtonTests.swift; sourceTree = "<group>"; };
+		883E43831E3D15050051BD21 /* AppSwitcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSwitcherTests.swift; sourceTree = "<group>"; };
 		885EC1241E338E8A00A61FA1 /* SpecUIKitFringes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpecUIKitFringes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		885EC1271E338E8A00A61FA1 /* SpecUIKitFringes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecUIKitFringes.h; sourceTree = "<group>"; };
 		885EC1281E338E8A00A61FA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,7 +69,7 @@
 		885EC1591E33E0C300A61FA1 /* XCTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTest.swift; sourceTree = "<group>"; };
 		885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecApplicationDelegate.swift; sourceTree = "<group>"; };
 		885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecApplicationDelegate.swift; sourceTree = "<group>"; };
-		885EC18D1E34BC1700A61FA1 /* SpecSystemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystemTests.swift; sourceTree = "<group>"; };
+		885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystemTestCase.swift; sourceTree = "<group>"; };
 		885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		883E437C1E3D13DB0051BD21 /* Spec System */ = {
+			isa = PBXGroup;
+			children = (
+				883E437D1E3D140F0051BD21 /* AppIconTests.swift */,
+				883E43811E3D14DB0051BD21 /* HomeButtonTests.swift */,
+				883E43831E3D15050051BD21 /* AppSwitcherTests.swift */,
+				885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */,
+			);
+			name = "Spec System";
+			sourceTree = "<group>";
+		};
 		885EC11A1E338E8A00A61FA1 = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +142,7 @@
 		885EC1311E338E8B00A61FA1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				885EC18D1E34BC1700A61FA1 /* SpecSystemTests.swift */,
+				883E437C1E3D13DB0051BD21 /* Spec System */,
 				885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */,
 				885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */,
 				885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */,
@@ -168,6 +187,7 @@
 				885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */,
 				885EC14E1E33981F00A61FA1 /* RecordingSpecViewController.swift */,
 				885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */,
+				883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -310,8 +330,12 @@
 				885EC1571E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift in Sources */,
 				885EC14F1E33981F00A61FA1 /* RecordingSpecViewController.swift in Sources */,
 				885EC1551E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift in Sources */,
+				883E43821E3D14DB0051BD21 /* HomeButtonTests.swift in Sources */,
+				883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */,
 				885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */,
-				885EC18E1E34BC1700A61FA1 /* SpecSystemTests.swift in Sources */,
+				883E43841E3D15050051BD21 /* AppSwitcherTests.swift in Sources */,
+				883E437E1E3D140F0051BD21 /* AppIconTests.swift in Sources */,
+				885EC18E1E34BC1700A61FA1 /* SpecSystemTestCase.swift in Sources */,
 				885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */,
 				883E43751E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift in Sources */,
 				885EC1511E33BBB300A61FA1 /* SpecViewControllerTests.swift in Sources */,
