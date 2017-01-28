@@ -32,6 +32,11 @@ extension FringesTest {
 // MARK: Network
 extension FringesTest {
 
+    func respond(to urlRequest: SpecURLSession.RequestURL, with json: [String:Any]) {
+        let data = NetworkResponseCreator.data(from: json)
+        respond(to: urlRequest, with: .success(data))
+    }
+
     func respond(to urlRequest: SpecURLSession.RequestURL, with response: SpecURLSession.Response) {
         urlSession.respond(to: urlRequest, with: response)
     }
