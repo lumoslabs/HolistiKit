@@ -3,8 +3,14 @@ open class SpecSystem {
     public init() { }
 
     public private(set) var appDelegate: SpecApplicationDelegateProtocol!
-    private var inAppSwitcher = false
+    private var locations: [Location] = [.springboard]
     private var screenshotInAppSwitcher = false
+
+    enum Location {
+        case springboard
+        case app
+        case appSwitcher
+    }
 
     public struct AppDelegateBundle {
         let appDelegate: SpecApplicationDelegateProtocol
@@ -43,7 +49,7 @@ open class SpecSystem {
     }
 
     public func tapHomeButton() {
-        if inAppSwitcher {
+        if at(.appSwitcher) {
             appDelegate.applicationDidBecomeActive()
         } else {
             appDelegate.applicationWillResignActive()
@@ -52,7 +58,7 @@ open class SpecSystem {
     }
     
     public func doubleTapHomeButton() {
-        inAppSwitcher = true
+        move(to: .appSwitcher)
         appDelegate?.applicationWillResignActive()
     }
 
@@ -71,8 +77,20 @@ open class SpecSystem {
         appDelegate = nil
     }
 
+    private func move(to location: Location) {
+        locations.append(location)
+    }
+
+    private func at(_ location: Location) -> Bool {
+        return self.location == location
+    }
+
+    private var location: Location {
+        return locations.last!
+    }
+
     private func errorIfAppSwitcherIsNotOpen() {
-        if !inAppSwitcher { RealityChecker.shared.error(.appSwitcherNotOpen) }
+        if !at(.appSwitcher) { RealityChecker.shared.error(.appSwitcherNotOpen) }
     }
 
     private func errorIfNoScreenshotInAppSwitcher() {

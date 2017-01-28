@@ -1,10 +1,9 @@
-
 import XCTest
 @testable import SpecUIKitFringes
 
 class AppSwitcherTests: SpecSystemTestCase {
 
-    func test_tappingOnTheHomeButtonWhileInAppSwitcher() {
+    func test_tappingOnTheHomeButton() {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
         appDelegate.clearEvents()
@@ -12,7 +11,7 @@ class AppSwitcherTests: SpecSystemTestCase {
         XCTAssertEqual(appDelegate.events, [ .applicationDidBecomeActive ])
     }
 
-    func test_tappingOnTheAppScreenshotWhileInAppSwitcher() {
+    func test_tappingOnTheAppScreenshot() {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
         appDelegate.clearEvents()
