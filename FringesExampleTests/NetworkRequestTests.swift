@@ -12,9 +12,9 @@ class NetworkRequestTests: FringesTest {
     func test_theRequestDataIsShownUponSuccess() {
         tapAppIcon()
         examplesUI.tapNetworkRequestRow()
-        XCTAssertNil(networkRequestUI.dataLabel)
+        XCTAssertEqual(networkRequestUI.dataLabel, "")
         respond(to: .httpbin, with: ["Some key" : "Some value"])
-        XCTAssertEqual(networkRequestUI.dataLabel, "Some key")
+        XCTAssertEqual(networkRequestUI.dataLabel, "[\"Some key\": Some value]")
     }
 
     func test_theNetworkActivityIndicatorIsShown() {

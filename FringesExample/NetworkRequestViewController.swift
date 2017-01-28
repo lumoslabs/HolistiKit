@@ -5,7 +5,7 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
 
     var presenter: NetworkRequestPresenting!
     
-    @IBOutlet weak var dataCell: UITableViewCell!
+    @IBOutlet weak var textView: UITextView!
     
     func set(title text: String) {
         title = text
@@ -13,7 +13,7 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
     
     func set(data text: String) {
         DispatchQueue.main.async { [weak self] in
-            self?.dataCell.textLabel?.text = text
+            self?.textView.text = text
         }
     }
 
