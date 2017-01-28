@@ -6,7 +6,7 @@ open class SpecSystem {
     private var locations: [Location] = [.springBoard]
     private var screenshotInAppSwitcher = false
 
-    enum Location {
+    private enum Location {
         case springBoard
         case app
         case appSwitcher
@@ -51,17 +51,20 @@ open class SpecSystem {
     }
 
     public func tapHomeButton() {
-        if at(.appSwitcher) {
+        switch location {
+        case .appSwitcher:
             if let appDelegate = appDelegate {
                 appDelegate.applicationDidBecomeActive()
                 move(to: .app)
             } else {
                 move(to: .springBoard)
             }
-        } else {
+        case .app:
             appDelegate.applicationWillResignActive()
             appDelegate.applicationDidEnterBackground()
             move(to: .springBoard)
+        case .springBoard:
+            break;
         }
     }
     
