@@ -29,6 +29,7 @@
 		8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */; };
 		880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */; };
 		8814F2D11E3D4B60005506DB /* SpecURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */; };
+		8814F2D71E3D4CFB005506DB /* NetworkResponseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */; };
 		883566801E2F51F800289510 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835667F1E2F51F800289510 /* NetworkRequestTests.swift */; };
 		883566821E2F567A00289510 /* SpecNetworkRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */; };
 		883566861E2F572100289510 /* NetworkRequestPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */; };
@@ -110,6 +111,7 @@
 		8807417D1E239A3F00CECDDF /* ExamplesPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesPresenterFactory.swift; sourceTree = "<group>"; };
 		8807417F1E23A4C400CECDDF /* DatePresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenterFactory.swift; sourceTree = "<group>"; };
 		8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSessionDataTask.swift; sourceTree = "<group>"; };
+		8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseCreator.swift; sourceTree = "<group>"; };
 		8835667F1E2F51F800289510 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
 		883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNetworkRequestViewController.swift; sourceTree = "<group>"; };
 		883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPresenterFactory.swift; sourceTree = "<group>"; };
@@ -213,8 +215,9 @@
 				880741751E22896C00CECDDF /* DateTests.swift */,
 				886013E31E2D4CD500C86FDE /* TimerTests.swift */,
 				8835667F1E2F51F800289510 /* NetworkRequestTests.swift */,
-				880740D71E21038500CECDDF /* Fakes */,
 				880740DB1E21079B00CECDDF /* FringesTest.swift */,
+				880740D71E21038500CECDDF /* Fakes */,
+				8814F2D51E3D4CB0005506DB /* Utilities */,
 				88A1E1851E3381C600CFA0CD /* Supporting Files */,
 			);
 			name = Tests;
@@ -244,16 +247,11 @@
 		880740D71E21038500CECDDF /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
-				885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */,
-				885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */,
-				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
-				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
-				888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */,
-				888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */,
 				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
-				883E43871E3D3CA30051BD21 /* SpecURLSession.swift */,
-				8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */,
-				885371CF1E3271C800CC5B75 /* View Controllers */,
+				8814F2D41E3D4BFC005506DB /* App Lifecycle */,
+				8814F2D31E3D4BEE005506DB /* Time */,
+				8814F2D21E3D4BDF005506DB /* URLSession */,
+				885371CF1E3271C800CC5B75 /* ViewControllers */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -325,6 +323,43 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		8814F2D21E3D4BDF005506DB /* URLSession */ = {
+			isa = PBXGroup;
+			children = (
+				883E43871E3D3CA30051BD21 /* SpecURLSession.swift */,
+				8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */,
+			);
+			name = URLSession;
+			sourceTree = "<group>";
+		};
+		8814F2D31E3D4BEE005506DB /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
+				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
+				888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */,
+				888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */,
+			);
+			name = Time;
+			sourceTree = "<group>";
+		};
+		8814F2D41E3D4BFC005506DB /* App Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */,
+				885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */,
+			);
+			name = "App Lifecycle";
+			sourceTree = "<group>";
+		};
+		8814F2D51E3D4CB0005506DB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		883566831E2F570000289510 /* NetworkRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,7 +410,7 @@
 			name = Fringe;
 			sourceTree = "<group>";
 		};
-		885371CF1E3271C800CC5B75 /* View Controllers */ = {
+		885371CF1E3271C800CC5B75 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */,
@@ -384,7 +419,7 @@
 				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
 				883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */,
 			);
-			name = "View Controllers";
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		885F9CF81E2A2639003ADC21 /* ExamplesNavigation */ = {
@@ -660,6 +695,7 @@
 				886013E61E2D4D5500C86FDE /* SpecTimerViewController.swift in Sources */,
 				885F9D0A1E2A3939003ADC21 /* SpecExamplesNavigationController.swift in Sources */,
 				885F9D2B1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift in Sources */,
+				8814F2D71E3D4CFB005506DB /* NetworkResponseCreator.swift in Sources */,
 				880740DC1E21079B00CECDDF /* FringesTest.swift in Sources */,
 				888B2D171E2E4B8A00FB3165 /* SpecTimerFactory.swift in Sources */,
 				885F9D251E2BB41E003ADC21 /* SpecDateProvider.swift in Sources */,
