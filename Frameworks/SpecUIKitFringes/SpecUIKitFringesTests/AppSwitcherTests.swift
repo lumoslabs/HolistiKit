@@ -3,6 +3,21 @@ import XCTest
 
 class AppSwitcherTests: SpecSystemTestCase {
 
+    func test_tappingOnTheHomeButtonComingFromTheSpringBoard() {
+        subject.doubleTapHomeButton()
+        subject.tapHomeButton()
+        XCTAssertNil(appDelegate)
+    }
+
+    func test_tappingOnTheHomeButtonComingFromTheSpringBoardWhileTheAppIsRunning() {
+        subject.tapAppIcon()
+        subject.tapHomeButton()
+        subject.doubleTapHomeButton()
+        appDelegate.clearEvents()
+        subject.tapHomeButton()
+        XCTAssertEqual(appDelegate.events, [ ])
+    }
+
     func test_tappingOnTheHomeButtonComingFromTheApp() {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
@@ -29,11 +44,19 @@ class AppSwitcherTests: SpecSystemTestCase {
         XCTAssertNil(appDelegate)
     }
 
-    func test_tappingOnTheAppScreenshotWhileNotInTheAppSwitcher() {
+    func test_tappingOnTheAppScreenshotWhileOnTheSpringBoard() {
         fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
         XCTAssertEqual(recordedFatalErrors, [ .appSwitcherNotOpen, .noScreenshotInAppSwitcher ])
+    }
+
+    func test_tappingOnTheAppScreenshotWhileInTheApp() {
+        subject.tapAppIcon()
+        fatalErrorsOff {
+            self.subject.tapAppScreenshot()
+        }
+        XCTAssertEqual(recordedFatalErrors, [ .appSwitcherNotOpen ])
     }
 
     func test_tappingOnTheAppScreenshotWhenTheAppHasNeverBeenRunBefore() {

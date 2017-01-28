@@ -53,7 +53,7 @@ open class SpecSystem {
     public func tapHomeButton() {
         switch location {
         case .appSwitcher:
-            if let appDelegate = appDelegate {
+            if let appDelegate = appDelegate, cameFrom(.app) {
                 appDelegate.applicationDidBecomeActive()
                 move(to: .app)
             } else {
@@ -99,6 +99,14 @@ open class SpecSystem {
 
     private var location: Location {
         return locations.last!
+    }
+
+    private func cameFrom(_ location: Location) -> Bool {
+        return lastLocation == location
+    }
+
+    private var lastLocation: Location {
+        return locations[locations.count - 2]
     }
 
     private func errorIfNotOnSpringBoard() {
