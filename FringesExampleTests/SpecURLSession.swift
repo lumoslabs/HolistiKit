@@ -2,15 +2,15 @@ import Foundation
 @testable import FringesExample
 
 class SpecURLSession: URLSessionProtocol {
+    
+    private var requests = [SpecURLSessionDataTask]()
 
-    func urlDataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
+    func urlDataTask(with url: URL, completionHandler: @escaping SpecURLSessionDataTask.Handler) -> URLSessionDataTaskProtocol {
         let requestURL = RequestURL(url.absoluteString)
         let request = SpecURLSessionDataTask(url: requestURL, handler: completionHandler)
         requests.append(request)
         return request
     }
-    
-    private var requests = [SpecURLSessionDataTask]()
 
     enum RequestURL: String {
         case httpbin = "https://httpbin.org/get"
@@ -29,20 +29,16 @@ class SpecURLSession: URLSessionProtocol {
     enum Response {
         case success(Data)
     }
-    
-    fileprivate func firstRunningRequest(forURL url: RequestURL) -> SpecURLSessionDataTask? {
-        return requests.running.with(url: url).first
-    }
-    
+
     func respond(to url: RequestURL, with response: Response) {
         guard let request = firstRunningRequest(forURL: url) else {
             fatalError("There was no request for \(url) in the app at the moment.")
         }
-        request.state = .completed
-        switch response {
-        case .success(let data):
-            request.handler(data, nil, nil)
-        }
+        request.finish(withResponse: response)
+    }
+    
+    private func firstRunningRequest(forURL url: RequestURL) -> SpecURLSessionDataTask? {
+        return requests.running.with(url: url).first
     }
 }
 
@@ -60,9 +56,10 @@ extension Array where Element: SpecURLSessionDataTask {
 class SpecURLSessionDataTask: URLSessionDataTaskProtocol {
 
     typealias Handler = (Data?, URLResponse?, Error?) -> Void
+
     let url: SpecURLSession.RequestURL
-    let handler: Handler
     var state: URLSessionTask.State = .suspended
+    private let handler: Handler
 
     init(url: SpecURLSession.RequestURL, handler: @escaping Handler) {
         self.url = url
@@ -71,5 +68,13 @@ class SpecURLSessionDataTask: URLSessionDataTaskProtocol {
 
     func resume() {
         state = .running
+    }
+
+    func finish(withResponse response: SpecURLSession.Response) {
+        state = .completed
+        switch response {
+        case .success(let data):
+            handler(data, nil, nil)
+        }
     }
 }
