@@ -21,8 +21,17 @@ class AppIconTests: SpecSystemTestCase {
         subject.doubleTapHomeButton()
         let oldAppDelegate = appDelegate!
         subject.swipeUpAppScreenshot()
+        subject.tapHomeButton()
         subject.tapAppIcon()
         XCTAssertEqual(appDelegate.events, [ .applicationDidLaunch, .applicationDidBecomeActive ])
         XCTAssertNotSame(oldAppDelegate, appDelegate)
+    }
+
+    func test_tappingOnTheAppIconWhenNotOnTheSpringboard() {
+        subject.doubleTapHomeButton()
+        fatalErrorsOff {
+            self.subject.tapAppIcon()
+        }
+        XCTAssertEqual(recordedFatalErrors, [ .notOnSpringBoard ])
     }
 }

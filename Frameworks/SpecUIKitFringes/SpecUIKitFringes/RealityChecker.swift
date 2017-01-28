@@ -7,6 +7,7 @@ class RealityChecker {
     enum FatalError {
         case appSwitcherNotOpen
         case noScreenshotInAppSwitcher
+        case notOnSpringBoard
 
         var message: String {
             switch self {
@@ -14,6 +15,8 @@ class RealityChecker {
                 return "The user is not in the App Switcher"
             case .noScreenshotInAppSwitcher:
                 return "The screenshot is not in the App Switcher"
+            case .notOnSpringBoard:
+                return "The user is not on the SpringBoard"
             }
         }
     }

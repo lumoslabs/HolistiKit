@@ -3,11 +3,11 @@ open class SpecSystem {
     public init() { }
 
     public private(set) var appDelegate: SpecApplicationDelegateProtocol!
-    private var locations: [Location] = [.springboard]
+    private var locations: [Location] = [.springBoard]
     private var screenshotInAppSwitcher = false
 
     enum Location {
-        case springboard
+        case springBoard
         case app
         case appSwitcher
     }
@@ -32,6 +32,7 @@ open class SpecSystem {
     }
     
     public func tapAppIcon() {
+        errorIfNotOnSpringBoard()
         if let appDelegate = appDelegate {
             appDelegate.applicationWillEnterForeground()
             appDelegate.applicationDidBecomeActive()
@@ -50,7 +51,11 @@ open class SpecSystem {
 
     public func tapHomeButton() {
         if at(.appSwitcher) {
-            appDelegate.applicationDidBecomeActive()
+            if let appDelegate = appDelegate {
+                appDelegate.applicationDidBecomeActive()
+            } else {
+                move(to: .springBoard)
+            }
         } else {
             appDelegate.applicationWillResignActive()
             appDelegate.applicationDidEnterBackground()
@@ -87,6 +92,10 @@ open class SpecSystem {
 
     private var location: Location {
         return locations.last!
+    }
+
+    private func errorIfNotOnSpringBoard() {
+        if !at(.springBoard) { RealityChecker.shared.error(.notOnSpringBoard) }
     }
 
     private func errorIfAppSwitcherIsNotOpen() {
