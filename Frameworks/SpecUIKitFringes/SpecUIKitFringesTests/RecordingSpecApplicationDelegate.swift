@@ -1,6 +1,8 @@
 @testable import SpecUIKitFringes
 
-class RecordingSpecApplicationDelegate: SpecApplicationDelegate {
+class RecordingSpecApplicationDelegate: SpecApplicationDelegateProtocol {
+    
+    public var window: SpecWindow!
     
     enum Event {
         case applicationDidLaunch
@@ -17,33 +19,27 @@ class RecordingSpecApplicationDelegate: SpecApplicationDelegate {
         events.removeAll()
     }
 
-    override func applicationDidLaunch() {
-        super.applicationDidLaunch()
+    func applicationDidLaunch() {
         add(event: .applicationDidLaunch)
     }
     
-    override func applicationWillResignActive() {
-        super.applicationWillResignActive()
+    func applicationWillResignActive() {
         add(event: .applicationWillResignActive)
     }
     
-    override func applicationDidEnterBackground() {
-        super.applicationDidEnterBackground()
+    func applicationDidEnterBackground() {
         add(event: .applicationDidEnterBackground)
     }
     
-    override func applicationWillEnterForeground() {
-        super.applicationWillEnterForeground()
+    func applicationWillEnterForeground() {
         add(event: .applicationWillEnterForeground)
     }
     
-    override func applicationDidBecomeActive() {
-        super.applicationDidBecomeActive()
+    func applicationDidBecomeActive() {
         add(event: .applicationDidBecomeActive)
     }
     
-    override func applicationWillTerminate() {
-        super.applicationWillTerminate()
+    func applicationWillTerminate() {
         add(event: .applicationWillTerminate)
     }
     

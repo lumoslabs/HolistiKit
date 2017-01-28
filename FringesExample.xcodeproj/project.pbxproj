@@ -37,6 +37,7 @@
 		8835668F1E2F5A5700289510 /* NetworkRequestViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8835668E1E2F5A5700289510 /* NetworkRequestViewController.storyboard */; };
 		885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */; };
 		885EC1411E338EEE00A61FA1 /* SpecUIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885EC1401E338EEE00A61FA1 /* SpecUIKitFringes.framework */; };
+		885EC1931E34EFA300A61FA1 /* FringesSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */; };
 		885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */; };
 		885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */; };
 		885F9CFE1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift */; };
@@ -116,6 +117,7 @@
 		8835668E1E2F5A5700289510 /* NetworkRequestViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NetworkRequestViewController.storyboard; sourceTree = "<group>"; };
 		885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityManager.swift; sourceTree = "<group>"; };
 		885EC1401E338EEE00A61FA1 /* SpecUIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecUIKitFringes.framework; path = "Frameworks/SpecUIKitFringes/build/Debug-iphoneos/SpecUIKitFringes.framework"; sourceTree = "<group>"; };
+		885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FringesSpecSystem.swift; sourceTree = "<group>"; };
 		885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesRouter.swift; sourceTree = "<group>"; };
 		885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationPresenter.swift; sourceTree = "<group>"; };
 		885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesdNavigationControllingFactory.swift; sourceTree = "<group>"; };
@@ -240,14 +242,15 @@
 		880740D71E21038500CECDDF /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
+				885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */,
 				885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */,
-				885371CF1E3271C800CC5B75 /* View Controllers */,
 				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
 				885F9D2A1E2BCACC003ADC21 /* SpecTimeZoneProvider.swift */,
 				888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */,
 				888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */,
 				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
 				8876C1EE1E30C30200F3E420 /* SpecNetworkRequestService.swift */,
+				885371CF1E3271C800CC5B75 /* View Controllers */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				883566821E2F567A00289510 /* SpecNetworkRequestViewController.swift in Sources */,
 				8876C1EF1E30C30200F3E420 /* SpecNetworkRequestService.swift in Sources */,
 				883566801E2F51F800289510 /* NetworkRequestTests.swift in Sources */,
+				885EC1931E34EFA300A61FA1 /* FringesSpecSystem.swift in Sources */,
 				886013EA1E2D4F5C00C86FDE /* SpecErrorLogger.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* ExamplesTests.swift in Sources */,
 				888B2D1B1E2E57E300FB3165 /* SpecScheduledTimer.swift in Sources */,

@@ -1,32 +1,36 @@
 import SpecUIKitFringes
 @testable import FringesExample
 
-class SpecAppDelegate: SpecApplicationDelegate {
+class SpecAppDelegate: SpecApplicationDelegateProtocol {
     
     private(set) var window: SpecWindow!
-    private(set) weak var dateProvider: SpecDateProvider!
-    private(set) weak var networkRequestService: SpecNetworkRequestService!
-    private(set) weak var sharedApplication: SpecSharedApplication!
+    
+    private weak var sharedApplication: SpecSharedApplication!
+    private weak var dateProvider: SpecDateProvider!
+    private weak var timeZoneProvider: SpecTimeZoneProvider!
+    private weak var networkRequestService: SpecNetworkRequestService!
 
-    override func applicationDidLaunch() {
-        super.applicationDidLaunch()
-        
+    init(sharedApplication: SpecSharedApplication,
+         dateProvider: SpecDateProvider,
+         timeZoneProvider: SpecTimeZoneProvider,
+         networkRequestService: SpecNetworkRequestService) {
+        self.sharedApplication = sharedApplication
+        self.dateProvider = dateProvider
+        self.timeZoneProvider = timeZoneProvider
+        self.networkRequestService = networkRequestService
+    }
+
+    func applicationDidLaunch() {
+
         window = SpecWindow()
 
-        let _sharedApplication = SpecSharedApplication()
-        sharedApplication = _sharedApplication
-        let _networkRequestService = SpecNetworkRequestService()
-        networkRequestService = _networkRequestService
         let examplesNavigationControllerFactory = SpecExamplesNavigationControllingFactory()
         let examplesViewControllerFactory = SpecExamplesViewControllingFactory()
         let timerViewControllerFactory = SpecTimerViewControllerFactory()
         let networkRequestViewControllerFactory = SpecNetworkRequestViewControllerFactory()
         let dateViewControllerFactory = SpecDateViewControllerFactory()
-        let _dateProvider = SpecDateProvider()
-        dateProvider = _dateProvider
-        let timeZoneProvider = SpecTimeZoneProvider()
         let errorLogger = SpecErrorLogger()
-        let timerFactory = SpecTimerFactory(dateProvider: _dateProvider)
+        let timerFactory = SpecTimerFactory(dateProvider: dateProvider)
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,

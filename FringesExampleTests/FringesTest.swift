@@ -5,11 +5,11 @@ import SpecUIKitFringes
 
 class FringesTest: XCTestCase {
 
-    private(set) var appDelegate: SpecAppDelegate!
+    private(set) var system: FringesSpecSystem!
     
     override func setUp() {
         super.setUp()
-        appDelegate = SpecAppDelegate()
+        system = FringesSpecSystem()
     }
 }
 
@@ -17,7 +17,7 @@ class FringesTest: XCTestCase {
 extension FringesTest {
 
     func tapAppIcon() {
-        appDelegate.tapAppIcon()
+        system.tapAppIcon()
     }
 }
 
@@ -25,7 +25,7 @@ extension FringesTest {
 extension FringesTest {
 
     func progress(seconds: Int = 0) {
-        appDelegate.dateProvider.progress(seconds: seconds)
+        system.dateProvider.progress(seconds: seconds)
     }
 }
 
@@ -37,7 +37,7 @@ extension FringesTest {
     }
 
     private var networkRequestService: SpecNetworkRequestService {
-        return appDelegate.networkRequestService
+        return system.networkRequestService
     }
 }
 
@@ -48,7 +48,7 @@ extension FringesTest {
     }
 
     private var sharedApplication: ApplicationProtocol {
-        return appDelegate.sharedApplication
+        return system.sharedApplication
     }
 }
 
@@ -56,7 +56,7 @@ extension FringesTest {
 extension FringesTest {
 
     var window: SpecWindow {
-        guard let window = appDelegate.window else {
+        guard let window = system.appDelegate.window else {
             fatalError("There is no window. Did you forget to launch the app?")
         }
         return window

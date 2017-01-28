@@ -1,16 +1,6 @@
-open class SpecApplicationDelegate: SpecApplicationDelegateProtocol {
-
-    public init() { }
-
-    open func applicationDidLaunch() { }
-    open func applicationWillResignActive() { }
-    open func applicationDidEnterBackground() { }
-    open func applicationWillEnterForeground() { }
-    open func applicationDidBecomeActive() { }
-    open func applicationWillTerminate() { }
-}
-
-protocol SpecApplicationDelegateProtocol {
+public protocol SpecApplicationDelegateProtocol {
+    
+    var window: SpecWindow! { get }
     
     func applicationDidLaunch()
     func applicationWillResignActive()
@@ -18,4 +8,14 @@ protocol SpecApplicationDelegateProtocol {
     func applicationWillEnterForeground()
     func applicationDidBecomeActive()
     func applicationWillTerminate()
+}
+
+public extension SpecApplicationDelegateProtocol {
+    
+    func applicationDidLaunch() { }
+    func applicationWillResignActive() { }
+    func applicationDidEnterBackground() { }
+    func applicationWillEnterForeground() { }
+    func applicationDidBecomeActive() { }
+    func applicationWillTerminate() { }
 }

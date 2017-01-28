@@ -7,11 +7,11 @@ class SpecSystemTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        subject = SpecSystem(appDelegateFactory: RecordingSpecApplicationDelegateFactory())
+        subject = RecordingSpecSystem()
     }
 
-    private var appDelegate: RecordingSpecApplicationDelegate {
-        return subject.appDelegate as! RecordingSpecApplicationDelegate
+    private var appDelegate: RecordingSpecApplicationDelegate! {
+        return subject.appDelegate as? RecordingSpecApplicationDelegate
     }
 
     func test_tappingOnTheAppIconWhenTheAppIsOff() {
@@ -53,14 +53,35 @@ class SpecSystemTests: XCTestCase {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
         appDelegate.clearEvents()
-        subject.tapAppScreenShot()
+        subject.tapAppScreenshot()
         XCTAssertEqual(appDelegate.events, [ .applicationDidBecomeActive ])
+    }
+
+    func test_swipingUpOnTheAppScreenshotWhileInTheAppSwitcher() {
+        subject.tapAppIcon()
+        subject.doubleTapHomeButton()
+        appDelegate.clearEvents()
+        let retainedAppDelegate = appDelegate
+        subject.swipeUpAppScreenshot()
+        XCTAssertEqual(retainedAppDelegate!.events, [ .applicationDidEnterBackground, .applicationWillTerminate ])
+        XCTAssertNil(appDelegate)
+    }
+
+    func test_tappingOnTheAppIconAfterTheAppHasBeenKilled() {
+        subject.tapAppIcon()
+        subject.doubleTapHomeButton()
+        let oldAppDelegate = appDelegate!
+        subject.swipeUpAppScreenshot()
+        subject.tapAppIcon()
+        XCTAssertEqual(appDelegate.events, [ .applicationDidLaunch, .applicationDidBecomeActive ])
+        XCTAssertNotSame(oldAppDelegate, appDelegate)
     }
 }
 
-private class RecordingSpecApplicationDelegateFactory: SpecApplicationDelegateFactoryProtocol {
+private class RecordingSpecSystem: SpecSystem {
 
-    func create() -> SpecApplicationDelegateProtocol {
-        return RecordingSpecApplicationDelegate()
+    override func createAppDelegateBundle() -> SpecSystem.AppDelegateBundle {
+        return SpecSystem.AppDelegateBundle(appDelegate: RecordingSpecApplicationDelegate(),
+                                            temporarilyStrong: [])
     }
 }
