@@ -86,6 +86,7 @@ open class SpecSystem {
         appDelegate.applicationDidEnterBackground()
         appDelegate.applicationWillTerminate()
         appDelegate = nil
+        screenshotInAppSwitcher = false
     }
 
     private func move(to location: Location) {
