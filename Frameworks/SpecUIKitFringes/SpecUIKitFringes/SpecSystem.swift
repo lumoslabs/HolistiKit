@@ -47,18 +47,21 @@ open class SpecSystem {
         appDelegate.applicationDidLaunch()
         appDelegate.applicationDidBecomeActive()
         screenshotInAppSwitcher = true
+        move(to: .app)
     }
 
     public func tapHomeButton() {
         if at(.appSwitcher) {
             if let appDelegate = appDelegate {
                 appDelegate.applicationDidBecomeActive()
+                move(to: .app)
             } else {
                 move(to: .springBoard)
             }
         } else {
             appDelegate.applicationWillResignActive()
             appDelegate.applicationDidEnterBackground()
+            move(to: .springBoard)
         }
     }
     

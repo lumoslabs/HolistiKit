@@ -27,7 +27,15 @@ class AppIconTests: SpecSystemTestCase {
         XCTAssertNotSame(oldAppDelegate, appDelegate)
     }
 
-    func test_tappingOnTheAppIconWhenNotOnTheSpringboard() {
+    func test_tappingOnTheAppIconWhenInTheApp() {
+        subject.tapAppIcon()
+        fatalErrorsOff {
+            self.subject.tapAppIcon()
+        }
+        XCTAssertEqual(recordedFatalErrors, [ .notOnSpringBoard ])
+    }
+
+    func test_tappingOnTheAppIconWhenInTheAppSwitcher() {
         subject.doubleTapHomeButton()
         fatalErrorsOff {
             self.subject.tapAppIcon()
