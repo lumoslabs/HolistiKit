@@ -1,20 +1,20 @@
 import UIKit
 
-class NetworkRequestPresenter {
+class URLSessionPresenter {
 
-    private let viewControllerFactory: NetworkRequestViewControllerFactoryProtocol
-    fileprivate weak var viewController: NetworkRequestViewControlling!
-    fileprivate let interactor: NetworkRequestInteractor
+    private let viewControllerFactory: URLSessionViewControllerFactoryProtocol
+    fileprivate weak var viewController: URLSessionViewControlling!
+    fileprivate let interactor: URLSessionInteractor
     fileprivate let errorLogger: ErrorLogging
 
-    init(viewControllerFactory: NetworkRequestViewControllerFactoryProtocol,
-         interactor: NetworkRequestInteractor,
+    init(viewControllerFactory: URLSessionViewControllerFactoryProtocol,
+         interactor: URLSessionInteractor,
          errorLogger: ErrorLogging) {
         self.viewControllerFactory = viewControllerFactory
         self.interactor = interactor
         self.errorLogger = errorLogger
     }
-    
+
     func push(on presenter: PushablePresenter) {
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
@@ -22,10 +22,10 @@ class NetworkRequestPresenter {
     }
 }
 
-extension NetworkRequestPresenter: NetworkRequestPresenting {
+extension URLSessionPresenter: URLSessionPresenting {
 
     func viewDidLoad() {
-        viewController.set(title: "Network Request")
+        viewController.set(title: "URLSession")
         viewController.set(data: "", animated: false)
         interactor.delegate = self
     }
@@ -42,7 +42,7 @@ extension NetworkRequestPresenter: NetworkRequestPresenting {
     }
 }
 
-extension NetworkRequestPresenter: NetworkRequestInteractorDelegate {
+extension URLSessionPresenter: URLSessionInteractorDelegate {
 
     func received(json: [String : Any]) {
         let text = String(describing: json)
@@ -54,13 +54,13 @@ extension NetworkRequestPresenter: NetworkRequestInteractorDelegate {
     }
 }
 
-protocol NetworkRequestPresenting {
+protocol URLSessionPresenting {
 
     func viewDidLoad()
     func didTap(rowAt indexPath: IndexPath)
 }
 
-protocol NetworkRequestInteractorDelegate: class {
+protocol URLSessionInteractorDelegate: class {
 
     func received(json: [String : Any])
     func received(html: String)

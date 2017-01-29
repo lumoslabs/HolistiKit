@@ -44,7 +44,7 @@ extension ExamplesPresenter: ExamplesPresenting {
         case IndexPath(row: 1, section: 0):
             router.pushTimer(on: self)
         case IndexPath(row: 2, section: 0):
-            router.pushNetworkRequest(on: self)
+            router.pushURLSession(on: self)
         case IndexPath(row: 3, section: 0):
             router.pushUIViewController(on: self)
         default:

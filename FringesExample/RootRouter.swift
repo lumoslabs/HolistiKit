@@ -7,13 +7,13 @@ class RootRouter {
     init(examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory,
          examplesPresenterFactory: ExamplesPresenterFactory,
          timerPresenterFactory: TimerPresenterFactory,
-         networkRequestPresenterFactory: NetworkRequestPresenterFactory,
+         urlSessionPresenterFactory: URLSessionPresenterFactory,
          datePresenterFactory: DatePresenterFactory,
          uiViewControllerPresenterFactory: UIViewControllerPresenterFactory) {
         self.examplesRouter = ExamplesRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
                                              examplesPresenterFactory: examplesPresenterFactory,
                                              timerPresenterFactory: timerPresenterFactory,
-                                             networkRequestPresenterFactory: networkRequestPresenterFactory,
+                                             urlSessionPresenterFactory: urlSessionPresenterFactory,
                                              datePresenterFactory: datePresenterFactory,
                                              uiViewControllerPresenterFactory: uiViewControllerPresenterFactory)
     }

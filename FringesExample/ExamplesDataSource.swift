@@ -5,7 +5,7 @@ class ExamplesDataSource {
     private let data = [
         ExamplesCellConfig(title: "Date", accessoryType: .disclosureIndicator),
         ExamplesCellConfig(title: "Timer", accessoryType: .disclosureIndicator),
-        ExamplesCellConfig(title: "Network Request", accessoryType: .disclosureIndicator),
+        ExamplesCellConfig(title: "URLSession", accessoryType: .disclosureIndicator),
         ExamplesCellConfig(title: "UIViewController", accessoryType: .disclosureIndicator)
     ]
     

@@ -14,7 +14,7 @@ protocol SpecExamplesViewControllerUI {
     // Input
     func tapDateRow()
     func tapTimerRow()
-    func tapNetworkRequestRow()
+    func tapURLSessionRow()
     func tapUIViewControllerRow()
     // Output
     var title: String? { get }
@@ -51,7 +51,7 @@ class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, S
 
     func tapDateRow() { tap(row: 0) }
     func tapTimerRow() { tap(row: 1) }
-    func tapNetworkRequestRow() { tap(row: 2) }
+    func tapURLSessionRow() { tap(row: 2) }
     func tapUIViewControllerRow() { tap(row: 3) }
     
     var numberOfRows: Int {

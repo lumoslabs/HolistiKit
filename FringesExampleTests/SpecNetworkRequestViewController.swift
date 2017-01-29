@@ -1,35 +1,35 @@
 import SpecUIKitFringes
 @testable import FringesExample
 
-class SpecNetworkRequestViewControllerFactory: NetworkRequestViewControllerFactoryProtocol {
+class SpecURLSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol {
     
-    func create(withPresenter presenter: NetworkRequestPresenter) -> NetworkRequestViewControlling {
-        return SpecNetworkRequestViewController(presenter: presenter)
+    func create(withPresenter presenter: URLSessionPresenter) -> URLSessionViewControlling {
+        return SpecURLSessionViewController(presenter: presenter)
     }
 }
 
-protocol SpecNetworkRequestViewControllerUI {
+protocol SpecURLSessionViewControllerUI {
 
     // Input
     func tapRequestJSON()
     func tapRequestHTML()
     // Output
     var title: String? { get }
-    var dataLabel: SpecNetworkRequestViewController.DataLabel? { get }
+    var dataLabel: SpecURLSessionViewController.DataLabel? { get }
 }
 
-class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewControlling, SpecNetworkRequestViewControllerUI {
+class SpecURLSessionViewController: SpecViewController, URLSessionViewControlling, SpecURLSessionViewControllerUI {
 
     private(set) var title: String?
     private(set) var dataLabel: DataLabel?
-    private let presenter: NetworkRequestPresenting
+    private let presenter: URLSessionPresenting
 
     struct DataLabel {
         let text: String
         let animated: Bool
     }
 
-    init(presenter: NetworkRequestPresenting) {
+    init(presenter: URLSessionPresenting) {
         self.presenter = presenter
     }
 
@@ -64,8 +64,8 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
     }
 }
 
-extension SpecNetworkRequestViewController.DataLabel: Equatable { }
-func ==(lhs: SpecNetworkRequestViewController.DataLabel, rhs: SpecNetworkRequestViewController.DataLabel) -> Bool {
+extension SpecURLSessionViewController.DataLabel: Equatable { }
+func ==(lhs: SpecURLSessionViewController.DataLabel, rhs: SpecURLSessionViewController.DataLabel) -> Bool {
     return lhs.text == rhs.text &&
         lhs.animated == rhs.animated
 }

@@ -1,8 +1,8 @@
 import Foundation
 
-class NetworkRequestInteractor {
+class URLSessionInteractor {
 
-    weak var delegate: NetworkRequestInteractorDelegate?
+    weak var delegate: URLSessionInteractorDelegate?
     private let urlSession: URLSessionProtocol
     private let errorLogger: ErrorLogging
     private let networkActivityManager: NetworkActivityManager

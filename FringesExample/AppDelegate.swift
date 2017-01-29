@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let examplesNavigationControllerFactory = ExamplesNavigationControllingFactory()
         let examplesViewControllerFactory = ExamplesViewControllingFactory()
         let timerViewControllerFactory = TimerViewControllerFactory()
-        let networkRequestViewControllerFactory = NetworkRequestViewControllerFactory()
+        let urlSessionViewControllerFactory = URLSessionViewControllerFactory()
         let dateViewControllerFactory = DateViewControllerFactory()
         let uiViewControllerViewControllerFactory = UIViewControllerViewControllerFactory()
         let dateProvider = DateProvider()
@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
-                                            networkRequestViewControllerFactory: networkRequestViewControllerFactory,
+                                            urlSessionViewControllerFactory: urlSessionViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
                                             uiViewControllerViewControllerFactory: uiViewControllerViewControllerFactory,
                                             dateProvider: dateProvider,

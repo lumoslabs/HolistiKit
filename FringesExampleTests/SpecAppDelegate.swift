@@ -27,7 +27,7 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
         let examplesNavigationControllerFactory = SpecExamplesNavigationControllingFactory()
         let examplesViewControllerFactory = SpecExamplesViewControllingFactory()
         let timerViewControllerFactory = SpecTimerViewControllerFactory()
-        let networkRequestViewControllerFactory = SpecNetworkRequestViewControllerFactory()
+        let urlSessionViewControllerFactory = SpecURLSessionViewControllerFactory()
         let dateViewControllerFactory = SpecDateViewControllerFactory()
         let uiViewControllerViewControllerFactory = SpecUIViewControllerViewControllerFactory()
         let errorLogger = SpecErrorLogger()
@@ -35,7 +35,7 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
-                                            networkRequestViewControllerFactory: networkRequestViewControllerFactory,
+                                            urlSessionViewControllerFactory: urlSessionViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
                                             uiViewControllerViewControllerFactory: uiViewControllerViewControllerFactory,
                                             dateProvider: dateProvider,

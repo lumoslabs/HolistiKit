@@ -7,7 +7,7 @@ class AppCoordinator {
     init(examplesNavigationControllerFactory: ExamplesNavigationControllingFactoryProtocol,
          examplesViewControllerFactory: ExamplesViewControllingFactoryProtocol,
          timerViewControllerFactory: TimerViewControllerFactoryProtocol,
-         networkRequestViewControllerFactory: NetworkRequestViewControllerFactoryProtocol,
+         urlSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol,
          dateViewControllerFactory: DateViewControllerFactoryProtocol,
          uiViewControllerViewControllerFactory: UIViewControllerViewControllerFactoryProtocol,
          dateProvider: DateProviding,
@@ -24,7 +24,7 @@ class AppCoordinator {
                                                           dateProvider: dateProvider,
                                                           timeZoneProvider: timeZoneProvider,
                                                           timerFactory: timerFactory)
-        let networkRequestPresenterFactory = NetworkRequestPresenterFactory(viewControllerFactory: networkRequestViewControllerFactory,
+        let urlSessionPresenterFactory = URLSessionPresenterFactory(viewControllerFactory: urlSessionViewControllerFactory,
                                                                             errorLogger: errorLogger,
                                                                             networkActivityManager: networkActivityManager,
                                                                             urlSession: urlSession)
@@ -35,7 +35,7 @@ class AppCoordinator {
         self.router = RootRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
                                  examplesPresenterFactory: examplesPresenterFactory,
                                  timerPresenterFactory: timerPresenterFactory,
-                                 networkRequestPresenterFactory: networkRequestPresenterFactory,
+                                 urlSessionPresenterFactory: urlSessionPresenterFactory,
                                  datePresenterFactory: datePresenterFactory,
                                  uiViewControllerPresenterFactory: uiViewControllerPresenterFactory)
     }

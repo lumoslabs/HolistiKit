@@ -98,8 +98,8 @@ extension FringesTest {
         return topViewController(as: SpecTimerViewControllerUI.self)
     }
 
-    var networkRequestUI: SpecNetworkRequestViewControllerUI! {
-        return topViewController(as: SpecNetworkRequestViewControllerUI.self)
+    var urlSessionUI: SpecURLSessionViewControllerUI! {
+        return topViewController(as: SpecURLSessionViewControllerUI.self)
     }
 
     var uiViewControllerUI: SpecUIViewControllerViewControllerUI! {

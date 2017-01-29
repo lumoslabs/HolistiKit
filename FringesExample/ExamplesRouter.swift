@@ -5,20 +5,20 @@ class ExamplesRouter {
     private let examplesPresenterFactory: ExamplesPresenterFactory
     private let datePresenterFactory: DatePresenterFactory
     private let timerPresenterFactory: TimerPresenterFactory
-    private let networkRequestPresenterFactory: NetworkRequestPresenterFactory
+    private let urlSessionPresenterFactory: URLSessionPresenterFactory
     private let examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory
     private let uiViewControllerPresenterFactory: UIViewControllerPresenterFactory
 
     init(examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory,
          examplesPresenterFactory: ExamplesPresenterFactory,
          timerPresenterFactory: TimerPresenterFactory,
-         networkRequestPresenterFactory: NetworkRequestPresenterFactory,
+         urlSessionPresenterFactory: URLSessionPresenterFactory,
          datePresenterFactory: DatePresenterFactory,
          uiViewControllerPresenterFactory: UIViewControllerPresenterFactory) {
         self.examplesNavigationPresenterFactory = examplesNavigationPresenterFactory
         self.examplesPresenterFactory = examplesPresenterFactory
         self.timerPresenterFactory = timerPresenterFactory
-        self.networkRequestPresenterFactory = networkRequestPresenterFactory
+        self.urlSessionPresenterFactory = urlSessionPresenterFactory
         self.datePresenterFactory = datePresenterFactory
         self.uiViewControllerPresenterFactory = uiViewControllerPresenterFactory
     }
@@ -43,9 +43,9 @@ class ExamplesRouter {
         timerPresenter.push(on: presenter)
     }
     
-    func pushNetworkRequest(on presenter: PushablePresenter) {
-        let networkRequestPresenter = networkRequestPresenterFactory.create(withRouter: self)
-        networkRequestPresenter.push(on: presenter)
+    func pushURLSession(on presenter: PushablePresenter) {
+        let urlSessionPresenter = urlSessionPresenterFactory.create(withRouter: self)
+        urlSessionPresenter.push(on: presenter)
     }
     
     func pushUIViewController(on presenter: PushablePresenter) {

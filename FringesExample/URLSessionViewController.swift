@@ -1,9 +1,9 @@
 import UIKit
 import UIKitFringes
 
-class NetworkRequestViewController: UITableViewController, NetworkRequestViewControlling, UITextViewDelegate {
+class URLSessionViewController: UITableViewController, URLSessionViewControlling, UITextViewDelegate {
 
-    var presenter: NetworkRequestPresenting!
+    var presenter: URLSessionPresenting!
 
     @IBOutlet fileprivate weak var textView: UITextView!
 
@@ -23,11 +23,11 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
         tableView.deselectRow(at: indexPath, animated: true)
         presenter.didTap(rowAt: indexPath)
     }
-    
+
     func set(title text: String) {
         title = text
     }
-    
+
     func set(data text: String, animated: Bool) {
         DispatchQueue.main.async { [weak self] in
             self?.textView.text = text
@@ -43,8 +43,8 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
     }
 }
 
-protocol NetworkRequestViewControlling: class, ViewControlling {
-    
+protocol URLSessionViewControlling: class, ViewControlling {
+
     func set(title text: String)
     func set(data text: String, animated: Bool)
 }
