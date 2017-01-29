@@ -12,7 +12,8 @@ class ExamplesTests: FringesTest {
         let expectedRows: [(String, UITableViewCellAccessoryType)] = [
             ("Date", .disclosureIndicator),
             ("Timer", .disclosureIndicator),
-            ("Network Request", .disclosureIndicator)
+            ("Network Request", .disclosureIndicator),
+            ("UIViewController", .disclosureIndicator)
         ]
         XCTAssertEqual(examplesUI.numberOfRows, expectedRows.count)
         expectedRows.enumerated().forEach { index, row in

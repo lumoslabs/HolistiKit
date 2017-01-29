@@ -29,6 +29,7 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
         let timerViewControllerFactory = SpecTimerViewControllerFactory()
         let networkRequestViewControllerFactory = SpecNetworkRequestViewControllerFactory()
         let dateViewControllerFactory = SpecDateViewControllerFactory()
+        let uiViewControllerViewControllerFactory = SpecUIViewControllerViewControllerFactory()
         let errorLogger = SpecErrorLogger()
         let timerFactory = SpecTimerFactory(dateProvider: dateProvider)
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
@@ -36,6 +37,7 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
                                             timerViewControllerFactory: timerViewControllerFactory,
                                             networkRequestViewControllerFactory: networkRequestViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
+                                            uiViewControllerViewControllerFactory: uiViewControllerViewControllerFactory,
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
                                             errorLogger: errorLogger,

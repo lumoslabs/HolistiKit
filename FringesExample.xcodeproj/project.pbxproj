@@ -32,6 +32,13 @@
 		8814F2D71E3D4CFB005506DB /* NetworkResponseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */; };
 		8814F2D91E3D516F005506DB /* SpecDateProviderNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D81E3D516F005506DB /* SpecDateProviderNotifier.swift */; };
 		8814F2DF1E3E0139005506DB /* UIView+PerformWithAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2DD1E3DFFFD005506DB /* UIView+PerformWithAnimations.swift */; };
+		8814F2E11E3E3023005506DB /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */; };
+		8814F2E31E3E30FF005506DB /* SpecUIViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2E21E3E30FF005506DB /* SpecUIViewControllerViewController.swift */; };
+		8814F2E71E3E31E6005506DB /* UIViewControllerViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2E61E3E31E6005506DB /* UIViewControllerViewControllerFactory.swift */; };
+		8814F2E91E3E322D005506DB /* UIViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2E81E3E322D005506DB /* UIViewControllerViewController.swift */; };
+		8814F2EC1E3E328F005506DB /* UIViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2EB1E3E328F005506DB /* UIViewControllerPresenter.swift */; };
+		8814F2EE1E3E34A6005506DB /* UIViewControllerPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2ED1E3E34A6005506DB /* UIViewControllerPresenterFactory.swift */; };
+		8814F2F01E3E37F7005506DB /* UIViewControllerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8814F2EF1E3E37F7005506DB /* UIViewControllerViewController.storyboard */; };
 		883566801E2F51F800289510 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835667F1E2F51F800289510 /* NetworkRequestTests.swift */; };
 		883566821E2F567A00289510 /* SpecNetworkRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */; };
 		883566861E2F572100289510 /* NetworkRequestPresenterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */; };
@@ -116,6 +123,13 @@
 		8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseCreator.swift; sourceTree = "<group>"; };
 		8814F2D81E3D516F005506DB /* SpecDateProviderNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProviderNotifier.swift; sourceTree = "<group>"; };
 		8814F2DD1E3DFFFD005506DB /* UIView+PerformWithAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PerformWithAnimations.swift"; sourceTree = "<group>"; };
+		8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
+		8814F2E21E3E30FF005506DB /* SpecUIViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUIViewControllerViewController.swift; sourceTree = "<group>"; };
+		8814F2E61E3E31E6005506DB /* UIViewControllerViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerViewControllerFactory.swift; sourceTree = "<group>"; };
+		8814F2E81E3E322D005506DB /* UIViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerViewController.swift; sourceTree = "<group>"; };
+		8814F2EB1E3E328F005506DB /* UIViewControllerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerPresenter.swift; sourceTree = "<group>"; };
+		8814F2ED1E3E34A6005506DB /* UIViewControllerPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerPresenterFactory.swift; sourceTree = "<group>"; };
+		8814F2EF1E3E37F7005506DB /* UIViewControllerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UIViewControllerViewController.storyboard; sourceTree = "<group>"; };
 		8835667F1E2F51F800289510 /* NetworkRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
 		883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNetworkRequestViewController.swift; sourceTree = "<group>"; };
 		883566851E2F572100289510 /* NetworkRequestPresenterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestPresenterFactory.swift; sourceTree = "<group>"; };
@@ -220,6 +234,7 @@
 				880741751E22896C00CECDDF /* DateTests.swift */,
 				886013E31E2D4CD500C86FDE /* TimerTests.swift */,
 				8835667F1E2F51F800289510 /* NetworkRequestTests.swift */,
+				8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */,
 				880740DB1E21079B00CECDDF /* FringesTest.swift */,
 				880740D71E21038500CECDDF /* Fakes */,
 				8814F2D51E3D4CB0005506DB /* Utilities */,
@@ -390,6 +405,34 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		8814F2E41E3E31A6005506DB /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8814F2EA1E3E3285005506DB /* Presenter */,
+				8814F2E51E3E31B8005506DB /* View */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		8814F2E51E3E31B8005506DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8814F2E61E3E31E6005506DB /* UIViewControllerViewControllerFactory.swift */,
+				8814F2E81E3E322D005506DB /* UIViewControllerViewController.swift */,
+				8814F2EF1E3E37F7005506DB /* UIViewControllerViewController.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8814F2EA1E3E3285005506DB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8814F2ED1E3E34A6005506DB /* UIViewControllerPresenterFactory.swift */,
+				8814F2EB1E3E328F005506DB /* UIViewControllerPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
 		883566831E2F570000289510 /* NetworkRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +491,7 @@
 				880741731E22889000CECDDF /* SpecDateViewController.swift */,
 				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
 				883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */,
+				8814F2E21E3E30FF005506DB /* SpecUIViewControllerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -488,6 +532,7 @@
 				880741621E2270A700CECDDF /* Date */,
 				886013EB1E2D678900C86FDE /* Timer */,
 				883566831E2F570000289510 /* NetworkRequest */,
+				8814F2E41E3E31A6005506DB /* UIViewController */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -656,6 +701,7 @@
 			files = (
 				886013F91E2D6C3E00C86FDE /* TimerViewController.storyboard in Resources */,
 				880741701E22876700CECDDF /* DateViewController.storyboard in Resources */,
+				8814F2F01E3E37F7005506DB /* UIViewControllerViewController.storyboard in Resources */,
 				8835668F1E2F5A5700289510 /* NetworkRequestViewController.storyboard in Resources */,
 				880740E21E21100A00CECDDF /* ExamplesViewController.storyboard in Resources */,
 				880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */,
@@ -680,8 +726,10 @@
 				880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */,
 				8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */,
 				880741801E23A4C400CECDDF /* DatePresenterFactory.swift in Sources */,
+				8814F2E71E3E31E6005506DB /* UIViewControllerViewControllerFactory.swift in Sources */,
 				8807417E1E239A3F00CECDDF /* ExamplesPresenterFactory.swift in Sources */,
 				885F9D291E2BC965003ADC21 /* TimeZoneProvider.swift in Sources */,
+				8814F2EC1E3E328F005506DB /* UIViewControllerPresenter.swift in Sources */,
 				885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */,
 				885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */,
 				8835668B1E2F57EA00289510 /* NetworkRequestViewControllerFactory.swift in Sources */,
@@ -703,6 +751,7 @@
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 				886013E81E2D4E4000C86FDE /* ErrorLogger.swift in Sources */,
 				885F9D061E2A302E003ADC21 /* ExamplesNavigationPresenterFactory.swift in Sources */,
+				8814F2E91E3E322D005506DB /* UIViewControllerViewController.swift in Sources */,
 				885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */,
 				885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */,
 				880740D61E201C2300CECDDF /* ExamplesViewControllingFactory.swift in Sources */,
@@ -710,6 +759,7 @@
 				886013F51E2D68FC00C86FDE /* TimerViewController.swift in Sources */,
 				886013F01E2D67FD00C86FDE /* TimerPresenter.swift in Sources */,
 				885F9CFE1E2A2825003ADC21 /* ExamplesdNavigationControllingFactory.swift in Sources */,
+				8814F2EE1E3E34A6005506DB /* UIViewControllerPresenterFactory.swift in Sources */,
 				886013F31E2D685900C86FDE /* TimerViewControllerFactory.swift in Sources */,
 				885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */,
 				885F9D1A1E2B8036003ADC21 /* ExamplesDataSource.swift in Sources */,
@@ -734,6 +784,7 @@
 				883566801E2F51F800289510 /* NetworkRequestTests.swift in Sources */,
 				885EC1931E34EFA300A61FA1 /* FringesSpecSystem.swift in Sources */,
 				8814F2D11E3D4B60005506DB /* SpecURLSessionDataTask.swift in Sources */,
+				8814F2E11E3E3023005506DB /* UIViewControllerTests.swift in Sources */,
 				886013EA1E2D4F5C00C86FDE /* SpecErrorLogger.swift in Sources */,
 				880740C01E1F8C9400CECDDF /* ExamplesTests.swift in Sources */,
 				883E43881E3D3CA30051BD21 /* SpecURLSession.swift in Sources */,
@@ -742,6 +793,7 @@
 				880741741E22889000CECDDF /* SpecDateViewController.swift in Sources */,
 				8814F2D91E3D516F005506DB /* SpecDateProviderNotifier.swift in Sources */,
 				886013E41E2D4CD500C86FDE /* TimerTests.swift in Sources */,
+				8814F2E31E3E30FF005506DB /* SpecUIViewControllerViewController.swift in Sources */,
 				880740D91E2103A400CECDDF /* SpecExamplesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

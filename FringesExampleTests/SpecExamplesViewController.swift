@@ -15,6 +15,7 @@ protocol SpecExamplesViewControllerUI {
     func tapDateRow()
     func tapTimerRow()
     func tapNetworkRequestRow()
+    func tapUIViewControllerRow()
     // Output
     var title: String? { get }
     var numberOfRows: Int { get }
@@ -51,6 +52,7 @@ class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, S
     func tapDateRow() { tap(row: 0) }
     func tapTimerRow() { tap(row: 1) }
     func tapNetworkRequestRow() { tap(row: 2) }
+    func tapUIViewControllerRow() { tap(row: 3) }
     
     var numberOfRows: Int {
         return presenter.numberOfRows

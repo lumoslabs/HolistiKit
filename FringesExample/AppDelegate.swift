@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let timerViewControllerFactory = TimerViewControllerFactory()
         let networkRequestViewControllerFactory = NetworkRequestViewControllerFactory()
         let dateViewControllerFactory = DateViewControllerFactory()
+        let uiViewControllerViewControllerFactory = UIViewControllerViewControllerFactory()
         let dateProvider = DateProvider()
         let timeZoneProvider = TimeZoneProvider()
         let errorLogger = ErrorLogger()
@@ -26,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             timerViewControllerFactory: timerViewControllerFactory,
                                             networkRequestViewControllerFactory: networkRequestViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
+                                            uiViewControllerViewControllerFactory: uiViewControllerViewControllerFactory,
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
                                             errorLogger: errorLogger,

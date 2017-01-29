@@ -8,12 +8,14 @@ class RootRouter {
          examplesPresenterFactory: ExamplesPresenterFactory,
          timerPresenterFactory: TimerPresenterFactory,
          networkRequestPresenterFactory: NetworkRequestPresenterFactory,
-         datePresenterFactory: DatePresenterFactory) {
+         datePresenterFactory: DatePresenterFactory,
+         uiViewControllerPresenterFactory: UIViewControllerPresenterFactory) {
         self.examplesRouter = ExamplesRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
                                              examplesPresenterFactory: examplesPresenterFactory,
                                              timerPresenterFactory: timerPresenterFactory,
                                              networkRequestPresenterFactory: networkRequestPresenterFactory,
-                                             datePresenterFactory: datePresenterFactory)
+                                             datePresenterFactory: datePresenterFactory,
+                                             uiViewControllerPresenterFactory: uiViewControllerPresenterFactory)
     }
 
     func present(onWindow window: Windowing) {

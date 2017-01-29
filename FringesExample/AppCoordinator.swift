@@ -9,6 +9,7 @@ class AppCoordinator {
          timerViewControllerFactory: TimerViewControllerFactoryProtocol,
          networkRequestViewControllerFactory: NetworkRequestViewControllerFactoryProtocol,
          dateViewControllerFactory: DateViewControllerFactoryProtocol,
+         uiViewControllerViewControllerFactory: UIViewControllerViewControllerFactoryProtocol,
          dateProvider: DateProviding,
          timeZoneProvider: TimeZoneProviding,
          errorLogger: ErrorLogging,
@@ -30,11 +31,13 @@ class AppCoordinator {
         let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
                                                         dateProvider: dateProvider,
                                                         timeZoneProvider: timeZoneProvider)
+        let uiViewControllerPresenterFactory = UIViewControllerPresenterFactory(viewControllerFactory: uiViewControllerViewControllerFactory)
         self.router = RootRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
                                  examplesPresenterFactory: examplesPresenterFactory,
                                  timerPresenterFactory: timerPresenterFactory,
                                  networkRequestPresenterFactory: networkRequestPresenterFactory,
-                                 datePresenterFactory: datePresenterFactory)
+                                 datePresenterFactory: datePresenterFactory,
+                                 uiViewControllerPresenterFactory: uiViewControllerPresenterFactory)
     }
     
     func didFinishLaunching(withWindow window: Windowing) {

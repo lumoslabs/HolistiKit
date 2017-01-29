@@ -45,6 +45,8 @@ extension ExamplesPresenter: ExamplesPresenting {
             router.pushTimer(on: self)
         case IndexPath(row: 2, section: 0):
             router.pushNetworkRequest(on: self)
+        case IndexPath(row: 3, section: 0):
+            router.pushUIViewController(on: self)
         default:
             errorLogger.log("Tapping on a row (section: \(indexPath.section), row: \(indexPath.row)) that is not handled")
         }

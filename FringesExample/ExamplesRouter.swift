@@ -7,17 +7,20 @@ class ExamplesRouter {
     private let timerPresenterFactory: TimerPresenterFactory
     private let networkRequestPresenterFactory: NetworkRequestPresenterFactory
     private let examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory
+    private let uiViewControllerPresenterFactory: UIViewControllerPresenterFactory
 
     init(examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory,
          examplesPresenterFactory: ExamplesPresenterFactory,
          timerPresenterFactory: TimerPresenterFactory,
          networkRequestPresenterFactory: NetworkRequestPresenterFactory,
-         datePresenterFactory: DatePresenterFactory) {
+         datePresenterFactory: DatePresenterFactory,
+         uiViewControllerPresenterFactory: UIViewControllerPresenterFactory) {
         self.examplesNavigationPresenterFactory = examplesNavigationPresenterFactory
         self.examplesPresenterFactory = examplesPresenterFactory
         self.timerPresenterFactory = timerPresenterFactory
         self.networkRequestPresenterFactory = networkRequestPresenterFactory
         self.datePresenterFactory = datePresenterFactory
+        self.uiViewControllerPresenterFactory = uiViewControllerPresenterFactory
     }
     
     func present(onWindow window: Windowing) {
@@ -43,5 +46,10 @@ class ExamplesRouter {
     func pushNetworkRequest(on presenter: PushablePresenter) {
         let networkRequestPresenter = networkRequestPresenterFactory.create(withRouter: self)
         networkRequestPresenter.push(on: presenter)
+    }
+    
+    func pushUIViewController(on presenter: PushablePresenter) {
+        let uiViewControllerPresenter = uiViewControllerPresenterFactory.create(withRouter: self)
+        uiViewControllerPresenter.push(on: presenter)
     }
 }
