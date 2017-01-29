@@ -30,6 +30,7 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
     }
 
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         presenter.didTap(rowAt: indexPath)
     }
 }
