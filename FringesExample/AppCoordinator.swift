@@ -31,7 +31,8 @@ class AppCoordinator {
         let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
                                                         dateProvider: dateProvider,
                                                         timeZoneProvider: timeZoneProvider)
-        let uiViewControllerPresenterFactory = UIViewControllerPresenterFactory(viewControllerFactory: uiViewControllerViewControllerFactory)
+        let uiViewControllerPresenterFactory = UIViewControllerPresenterFactory(viewControllerFactory: uiViewControllerViewControllerFactory,
+                                                                                errorLogger: errorLogger)
         self.router = RootRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
                                  examplesPresenterFactory: examplesPresenterFactory,
                                  timerPresenterFactory: timerPresenterFactory,

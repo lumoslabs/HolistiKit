@@ -1,4 +1,5 @@
 import SpecUIKitFringes
+import UIKitFringes
 @testable import FringesExample
 
 class SpecUIViewControllerViewControllerFactory: UIViewControllerViewControllerFactoryProtocol {
@@ -10,8 +11,11 @@ class SpecUIViewControllerViewControllerFactory: UIViewControllerViewControllerF
 
 protocol SpecUIViewControllerViewControllerUI {
 
+    // Input
+    func tapPresentViewController()
     // Output
     var title: String? { get }
+    var presentedViewControlling: ViewControlling? { get }
 }
 
 class SpecUIViewControllerViewController: SpecViewController, UIViewControllerViewControlling, SpecUIViewControllerViewControllerUI {
@@ -23,11 +27,22 @@ class SpecUIViewControllerViewController: SpecViewController, UIViewControllerVi
         self.presenter = presenter
     }
 
+    override func viewDidLoad() {
+        presenter.viewDidLoad()
+    }
+
     func set(title text: String) {
         title = text
     }
 
-    override func viewDidLoad() {
-        presenter.viewDidLoad()
+    func tapPresentViewController() { tap(row: 0) }
+
+    private func tap(row: Int) {
+        let ip = indexPath(forRow: row)
+        presenter.didTap(rowAt: ip)
+    }
+
+    private func indexPath(forRow row: Int) -> IndexPath {
+        return IndexPath(row: row, section: 0)
     }
 }

@@ -81,6 +81,7 @@
 		888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */; };
 		888B2D1B1E2E57E300FB3165 /* SpecScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */; };
 		88A1E1831E33802800CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1821E33802800CFA0CD /* UIKitFringes.framework */; };
+		88A7D3471E3E3FD80004C1FB /* PresentablePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7D3461E3E3FD80004C1FB /* PresentablePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
 		888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecScheduledTimer.swift; sourceTree = "<group>"; };
 		88A1E1821E33802800CFA0CD /* UIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKitFringes.framework; path = "Frameworks/UIKitFringes/build/Debug-iphoneos/UIKitFringes.framework"; sourceTree = "<group>"; };
+		88A7D3461E3E3FD80004C1FB /* PresentablePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentablePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				885F9D131E2A4D62003ADC21 /* PushablePresenter.swift */,
+				88A7D3461E3E3FD80004C1FB /* PresentablePresenter.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */,
 				885F9D1A1E2B8036003ADC21 /* ExamplesDataSource.swift in Sources */,
 				886013EE1E2D67AE00C86FDE /* TimerPresenterFactory.swift in Sources */,
+				88A7D3471E3E3FD80004C1FB /* PresentablePresenter.swift in Sources */,
 				885F9D1C1E2BA5F5003ADC21 /* DateInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -52,4 +52,9 @@ class ExamplesRouter {
         let uiViewControllerPresenter = uiViewControllerPresenterFactory.create(withRouter: self)
         uiViewControllerPresenter.push(on: presenter)
     }
+    
+    func presentUIViewController(on presenter: PresentablePresenter) {
+        let uiViewControllerPresenter = uiViewControllerPresenterFactory.create(withRouter: self)
+        uiViewControllerPresenter.present(on: presenter)
+    }
 }

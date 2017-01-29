@@ -38,13 +38,8 @@ class SpecURLSessionViewController: SpecViewController, URLSessionViewControllin
         presenter.viewDidLoad()
     }
 
-    func tapRequestJSON() {
-        tap(row: 0)
-    }
-
-    func tapRequestHTML() {
-        tap(row: 1)
-    }
+    func tapRequestJSON() { tap(row: 0) }
+    func tapRequestHTML() { tap(row: 1) }
 
     func set(title text: String) {
         title = text

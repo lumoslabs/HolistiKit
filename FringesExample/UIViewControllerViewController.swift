@@ -1,16 +1,20 @@
 import UIKit
 import UIKitFringes
 
-class UIViewControllerViewController: UIViewController, UIViewControllerViewControlling {
+class UIViewControllerViewController: UITableViewController, UIViewControllerViewControlling {
     
     var presenter: UIViewControllerPresenting!
+
+    override func viewDidLoad() {
+        presenter.viewDidLoad()
+    }
     
     func set(title text: String) {
         title = text
     }
 
-    override func viewDidLoad() {
-        presenter.viewDidLoad()
+    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didTap(rowAt: indexPath)
     }
 }
 

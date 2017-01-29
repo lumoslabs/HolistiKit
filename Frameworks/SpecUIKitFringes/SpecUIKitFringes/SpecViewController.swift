@@ -6,6 +6,7 @@ open class SpecViewController: ViewControlling {
     public init() { }
 
     public weak var navigationController: SpecNavigationController?
+    public var presentedViewControlling: ViewControlling? { return presentedViewController }
     private var presentedViewController: SpecViewController?
 
     open func viewDidLoad() { }

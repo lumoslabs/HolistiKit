@@ -8,4 +8,12 @@ class UIViewControllerTests: FringesTest {
         examplesUI.tapUIViewControllerRow()
         XCTAssertEqual(uiViewControllerUI.title, "UIViewController")
     }
+
+    func test_canPresentAViewController() {
+        tapAppIcon()
+        examplesUI.tapUIViewControllerRow()
+        let vc = uiViewControllerUI
+        uiViewControllerUI.tapPresentViewController()
+        XCTAssertNotNil(vc?.presentedViewControlling)
+    }
 }
