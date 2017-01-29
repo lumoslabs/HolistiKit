@@ -14,14 +14,19 @@ protocol SpecNetworkRequestViewControllerUI {
     func tapRequestJSON()
     // Output
     var title: String? { get }
-    var dataLabel: String? { get }
+    var dataLabel: SpecNetworkRequestViewController.DataLabel? { get }
 }
 
 class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewControlling, SpecNetworkRequestViewControllerUI {
 
     private(set) var title: String?
-    private(set) var dataLabel: String?
+    private(set) var dataLabel: DataLabel?
     private let presenter: NetworkRequestPresenting
+
+    struct DataLabel {
+        let text: String
+        let animated: Bool
+    }
 
     init(presenter: NetworkRequestPresenting) {
         self.presenter = presenter
@@ -41,7 +46,7 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
     }
 
     func set(data text: String, animated: Bool) {
-        dataLabel = text
+        dataLabel = DataLabel(text: text, animated: animated)
     }
 
     private func tap(row: Int) {
@@ -52,4 +57,11 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
     private func indexPath(forRow row: Int) -> IndexPath {
         return IndexPath(row: row, section: 0)
     }
+}
+
+extension SpecNetworkRequestViewController.DataLabel: Equatable { }
+
+func ==(lhs: SpecNetworkRequestViewController.DataLabel, rhs: SpecNetworkRequestViewController.DataLabel) -> Bool {
+    return lhs.text == rhs.text &&
+        lhs.animated == rhs.animated
 }
