@@ -40,7 +40,7 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
         title = text
     }
 
-    func set(data text: String) {
+    func set(data text: String, animated: Bool) {
         dataLabel = text
     }
 

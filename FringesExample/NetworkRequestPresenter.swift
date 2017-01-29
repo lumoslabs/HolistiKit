@@ -26,7 +26,7 @@ extension NetworkRequestPresenter: NetworkRequestPresenting {
 
     func viewDidLoad() {
         viewController.set(title: "Network Request")
-        viewController.set(data: "")
+        viewController.set(data: "", animated: false)
         interactor.delegate = self
     }
 
@@ -43,7 +43,8 @@ extension NetworkRequestPresenter: NetworkRequestPresenting {
 extension NetworkRequestPresenter: NetworkRequestInteractorDelegate {
 
     func received(data: [String : Any]) {
-        viewController.set(data: String(describing: data))
+        let text = String(describing: data)
+        viewController.set(data: text, animated: true)
     }
 }
 

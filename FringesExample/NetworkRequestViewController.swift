@@ -1,7 +1,7 @@
 import UIKit
 import UIKitFringes
 
-class NetworkRequestViewController: UITableViewController, NetworkRequestViewControlling {
+class NetworkRequestViewController: UITableViewController, NetworkRequestViewControlling, UITextViewDelegate {
 
     var presenter: NetworkRequestPresenting!
 
@@ -18,25 +18,33 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+
+    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter.didTap(rowAt: indexPath)
+    }
     
     func set(title text: String) {
         title = text
     }
     
-    func set(data text: String) {
+    func set(data text: String, animated: Bool) {
         DispatchQueue.main.async { [weak self] in
             self?.textView.text = text
+            self?.resizeTextView(animated: animated)
         }
     }
 
-    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        presenter.didTap(rowAt: indexPath)
+    private func resizeTextView(animated: Bool) {
+        UIView.performWithAnimation(animated) {
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
     }
 }
 
 protocol NetworkRequestViewControlling: class, ViewControlling {
     
     func set(title text: String)
-    func set(data text: String)
+    func set(data text: String, animated: Bool)
 }
