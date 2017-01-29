@@ -9,15 +9,26 @@ class NetworkRequestTests: FringesTest {
         XCTAssertEqual(networkRequestUI.title, "Network Request")
     }
 
-    func test_theRequestDataIsShownUponSuccess() {
+    func test_jsonIsShownUponSuccess() {
         tapAppIcon()
         examplesUI.tapNetworkRequestRow()
-        networkRequestUI.tapRequestJSON()
         XCTAssertEqual(networkRequestUI.dataLabel,
                        SpecNetworkRequestViewController.DataLabel(text: "", animated: false))
-        respond(to: .httpbin, with: ["Some key" : "Some value"])
+        networkRequestUI.tapRequestJSON()
+        respond(to: .json, with: ["Some key" : "Some value"])
         XCTAssertEqual(networkRequestUI.dataLabel, 
                        SpecNetworkRequestViewController.DataLabel(text: "[\"Some key\": Some value]", animated: true))
+    }
+
+    func test_htmlIsShownUponSuccess() {
+        tapAppIcon()
+        examplesUI.tapNetworkRequestRow()
+        XCTAssertEqual(networkRequestUI.dataLabel,
+                       SpecNetworkRequestViewController.DataLabel(text: "", animated: false))
+        networkRequestUI.tapRequestHTML()
+        respond(to: .html, with: "<p>hello world</p>")
+        XCTAssertEqual(networkRequestUI.dataLabel, 
+                       SpecNetworkRequestViewController.DataLabel(text: "<p>hello world</p>", animated: true))
     }
 
     func test_theNetworkActivityIndicatorIsShown() {
@@ -26,7 +37,7 @@ class NetworkRequestTests: FringesTest {
         examplesUI.tapNetworkRequestRow()
         networkRequestUI.tapRequestJSON()
         XCTAssertTrue(networkActivityIndicatorIsVisible)
-        respond(to: .httpbin, with: [:])
+        respond(to: .json, with: [:])
         XCTAssertFalse(networkActivityIndicatorIsVisible)
     }
 

@@ -21,8 +21,8 @@ class SpecURLSessionDataTask: URLSessionDataTaskProtocol {
     func finish(withResponse response: SpecURLSession.Response) {
         state = .completed
         switch response {
-        case .success(let data):
-            handler(data, nil, nil)
+        case .success(let data, let urlResponse):
+            handler(data, urlResponse, nil)
         }
     }
 }

@@ -36,12 +36,27 @@ extension FringesTest {
 // MARK: Network
 extension FringesTest {
 
-    func respond(to urlRequest: SpecURLSession.RequestURL, with json: [String:Any]) {
-        let data = NetworkResponseCreator.data(from: json)
-        respond(to: urlRequest, with: .success(data))
+    func respond(to urlRequest: SpecURLSession.RequestURL, with html: String) {
+        let data = NetworkResponseCreator.data(from: html)
+        let url = URL(string: urlRequest.rawValue)!
+        let urlResponse = URLResponse(url: url,
+                                      mimeType: "text/html",
+                                      expectedContentLength: data.count,
+                                      textEncodingName: "utf-8")
+        respond(to: urlRequest, with: .success(data, urlResponse))
     }
 
-    func respond(to urlRequest: SpecURLSession.RequestURL, with response: SpecURLSession.Response) {
+    func respond(to urlRequest: SpecURLSession.RequestURL, with json: [String:Any]) {
+        let data = NetworkResponseCreator.data(from: json)
+        let url = URL(string: urlRequest.rawValue)!
+        let urlResponse = URLResponse(url: url,
+                                      mimeType: "application/json",
+                                      expectedContentLength: data.count,
+                                      textEncodingName: nil)
+        respond(to: urlRequest, with: .success(data, urlResponse))
+    }
+
+    private func respond(to urlRequest: SpecURLSession.RequestURL, with response: SpecURLSession.Response) {
         urlSession.respond(to: urlRequest, with: response)
     }
 

@@ -14,7 +14,7 @@ class SpecURLSession: URLSessionProtocol {
 
     func respond(to url: RequestURL, with response: Response) {
         guard let request = firstRunningRequest(forURL: url) else {
-            fatalError("There was no request for \(url) in the app at the moment.")
+            fatalError("There was no request for \(url.rawValue) in the app at the moment.")
         }
         request.finish(withResponse: response)
     }
@@ -27,7 +27,8 @@ class SpecURLSession: URLSessionProtocol {
 extension SpecURLSession {
     
     enum RequestURL: String {
-        case httpbin = "https://httpbin.org/delay/3"
+        case json = "https://httpbin.org/delay/3"
+        case html = "https://httpbin.org/html"
 
         init(_ rawValue: String) {
             let request = RequestURL(rawValue: rawValue)
@@ -41,6 +42,6 @@ extension SpecURLSession {
     }
 
     enum Response {
-        case success(Data)
+        case success(Data, URLResponse)
     }
 }

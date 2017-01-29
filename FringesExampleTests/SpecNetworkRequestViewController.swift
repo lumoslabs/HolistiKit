@@ -12,6 +12,7 @@ protocol SpecNetworkRequestViewControllerUI {
 
     // Input
     func tapRequestJSON()
+    func tapRequestHTML()
     // Output
     var title: String? { get }
     var dataLabel: SpecNetworkRequestViewController.DataLabel? { get }
@@ -39,6 +40,10 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
 
     func tapRequestJSON() {
         tap(row: 0)
+    }
+
+    func tapRequestHTML() {
+        tap(row: 1)
     }
 
     func set(title text: String) {

@@ -33,7 +33,9 @@ extension NetworkRequestPresenter: NetworkRequestPresenting {
     func didTap(rowAt indexPath: IndexPath) {
         switch indexPath {
         case IndexPath(row: 0, section: 0):
-            interactor.requestJSON()
+            interactor.request(.json)
+        case IndexPath(row: 1, section: 0):
+            interactor.request(.html)
         default:
             errorLogger.log("Tapping on a row (section: \(indexPath.section), row: \(indexPath.row)) that is not handled")
         }
@@ -42,9 +44,13 @@ extension NetworkRequestPresenter: NetworkRequestPresenting {
 
 extension NetworkRequestPresenter: NetworkRequestInteractorDelegate {
 
-    func received(data: [String : Any]) {
-        let text = String(describing: data)
+    func received(json: [String : Any]) {
+        let text = String(describing: json)
         viewController.set(data: text, animated: true)
+    }
+
+    func received(html: String) {
+        viewController.set(data: html, animated: true)
     }
 }
 
@@ -56,5 +62,6 @@ protocol NetworkRequestPresenting {
 
 protocol NetworkRequestInteractorDelegate: class {
 
-    func received(data: [String : Any])
+    func received(json: [String : Any])
+    func received(html: String)
 }
