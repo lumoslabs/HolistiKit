@@ -2,10 +2,7 @@ import Foundation
 
 class NetworkRequestInteractor {
 
-    weak var delegate: NetworkRequestInteractorDelegate? {
-        didSet { startRequest() }
-    }
-
+    weak var delegate: NetworkRequestInteractorDelegate?
     private let urlSession: URLSessionProtocol
     private let errorLogger: ErrorLogging
     private let networkActivityManager: NetworkActivityManager
@@ -19,8 +16,14 @@ class NetworkRequestInteractor {
         self.urlSession = urlSession
     }
 
+    func requestJSON() {
+        startRequest()
+    }
+
     private func startRequest() {
+        networkActivity?.finish()
         networkActivity = networkActivityManager.activityStarted()
+        
         let urlString = "https://httpbin.org/get"
         let url = URL(string: urlString)!
 

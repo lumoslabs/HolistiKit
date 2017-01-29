@@ -4,7 +4,7 @@ import UIKitFringes
 class NetworkRequestViewController: UITableViewController, NetworkRequestViewControlling {
 
     var presenter: NetworkRequestPresenting!
-    
+
     @IBOutlet fileprivate weak var textView: UITextView!
 
     override func viewDidLoad() {
@@ -27,6 +27,10 @@ class NetworkRequestViewController: UITableViewController, NetworkRequestViewCon
         DispatchQueue.main.async { [weak self] in
             self?.textView.text = text
         }
+    }
+
+    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didTap(rowAt: indexPath)
     }
 }
 

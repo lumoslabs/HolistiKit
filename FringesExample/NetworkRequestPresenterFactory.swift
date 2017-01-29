@@ -20,6 +20,7 @@ class NetworkRequestPresenterFactory {
                                                   networkActivityManager: networkActivityManager,
                                                   urlSession: urlSession)
         return NetworkRequestPresenter(viewControllerFactory: viewControllerFactory,
-                                       interactor: interactor)
+                                       interactor: interactor,
+                                       errorLogger: errorLogger)
     }
 }

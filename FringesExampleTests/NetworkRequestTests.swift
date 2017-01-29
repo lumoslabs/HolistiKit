@@ -12,6 +12,7 @@ class NetworkRequestTests: FringesTest {
     func test_theRequestDataIsShownUponSuccess() {
         tapAppIcon()
         examplesUI.tapNetworkRequestRow()
+        networkRequestUI.tapRequestJSON()
         XCTAssertEqual(networkRequestUI.dataLabel, "")
         respond(to: .httpbin, with: ["Some key" : "Some value"])
         XCTAssertEqual(networkRequestUI.dataLabel, "[\"Some key\": Some value]")
@@ -21,6 +22,7 @@ class NetworkRequestTests: FringesTest {
         tapAppIcon()
         XCTAssertFalse(networkActivityIndicatorIsVisible)
         examplesUI.tapNetworkRequestRow()
+        networkRequestUI.tapRequestJSON()
         XCTAssertTrue(networkActivityIndicatorIsVisible)
         respond(to: .httpbin, with: [:])
         XCTAssertFalse(networkActivityIndicatorIsVisible)
@@ -30,6 +32,7 @@ class NetworkRequestTests: FringesTest {
         tapAppIcon()
         XCTAssertFalse(networkActivityIndicatorIsVisible)
         examplesUI.tapNetworkRequestRow()
+        networkRequestUI.tapRequestJSON()
         XCTAssertTrue(networkActivityIndicatorIsVisible)
         navigationController.tapBack()
         XCTAssertFalse(networkActivityIndicatorIsVisible)

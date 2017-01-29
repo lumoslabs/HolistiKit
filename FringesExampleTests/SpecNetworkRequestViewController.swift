@@ -9,7 +9,10 @@ class SpecNetworkRequestViewControllerFactory: NetworkRequestViewControllerFacto
 }
 
 protocol SpecNetworkRequestViewControllerUI {
-    
+
+    // Input
+    func tapRequestJSON()
+    // Output
     var title: String? { get }
     var dataLabel: String? { get }
 }
@@ -29,11 +32,24 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
         presenter.viewDidLoad()
     }
 
+    func tapRequestJSON() {
+        tap(row: 0)
+    }
+
     func set(title text: String) {
         title = text
     }
 
     func set(data text: String) {
         dataLabel = text
+    }
+
+    private func tap(row: Int) {
+        let ip = indexPath(forRow: row)
+        presenter.didTap(rowAt: ip)
+    }
+
+    private func indexPath(forRow row: Int) -> IndexPath {
+        return IndexPath(row: row, section: 0)
     }
 }
