@@ -24,7 +24,7 @@ class NetworkRequestInteractor {
         networkActivity?.finish()
         networkActivity = networkActivityManager.activityStarted()
         
-        let urlString = "https://httpbin.org/get"
+        let urlString = "https://httpbin.org/delay/3"
         let url = URL(string: urlString)!
 
         let task = urlSession.urlDataTask(with: url, completionHandler: { [weak self] (data, response, error) -> Void in

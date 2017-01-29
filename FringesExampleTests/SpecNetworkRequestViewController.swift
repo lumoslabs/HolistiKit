@@ -60,7 +60,6 @@ class SpecNetworkRequestViewController: SpecViewController, NetworkRequestViewCo
 }
 
 extension SpecNetworkRequestViewController.DataLabel: Equatable { }
-
 func ==(lhs: SpecNetworkRequestViewController.DataLabel, rhs: SpecNetworkRequestViewController.DataLabel) -> Bool {
     return lhs.text == rhs.text &&
         lhs.animated == rhs.animated

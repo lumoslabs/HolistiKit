@@ -27,7 +27,7 @@ class SpecURLSession: URLSessionProtocol {
 extension SpecURLSession {
     
     enum RequestURL: String {
-        case httpbin = "https://httpbin.org/get"
+        case httpbin = "https://httpbin.org/delay/3"
 
         init(_ rawValue: String) {
             let request = RequestURL(rawValue: rawValue)
