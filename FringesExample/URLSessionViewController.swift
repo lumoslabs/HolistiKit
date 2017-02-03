@@ -36,9 +36,9 @@ class URLSessionViewController: UITableViewController, URLSessionViewControlling
     }
 
     private func resizeTextView(animated: Bool) {
-        UIView.performWithAnimation(animated) {
-            tableView.beginUpdates()
-            tableView.endUpdates()
+        UIView.performWithAnimation(animated) { [weak self] in
+            self?.tableView.beginUpdates()
+            self?.tableView.endUpdates()
         }
     }
 }
