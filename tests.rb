@@ -22,7 +22,7 @@ def xcodebuildCodeCoverage(command)
 end
 
 def xcodebuildScheme(scheme)
-  if [:FringesExample, :UIKitFringes, :SpecUIKitFringes].include? scheme
+  if [:ExampleApp, :UIKitFringes, :SpecUIKitFringes].include? scheme
     scheme
   else
     raise "Unhandled xcodebuild scheme"
@@ -32,14 +32,14 @@ end
 def xcodebuild(command, scheme)
   run "set -o pipefail && \
     xcodebuild #{xcodebuildCommand(command)} \
-      -workspace FringesExample.xcworkspace \
+      -workspace ExampleApp.xcworkspace \
       -scheme '#{xcodebuildScheme(scheme)}' \
       -destination 'platform=iOS Simulator,name=#{DEVICE},OS=#{IOS_VERSION}' \
       #{xcodebuildCodeCoverage(command)} \
     | xcpretty"
 end
 
-[:SpecUIKitFringes, :UIKitFringes, :FringesExample].each do |scheme|
+[:SpecUIKitFringes, :UIKitFringes, :ExampleApp].each do |scheme|
   xcodebuild(:build, scheme)
   xcodebuild(:test, scheme)
 end
