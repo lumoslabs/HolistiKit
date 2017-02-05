@@ -28,6 +28,10 @@ open class SpecNavigationController: SpecViewController, NavigationControlling {
         }
         viewController.viewLoadAndAppear()
     }
+
+    public var asUINavigationController: UINavigationController { 
+        fatalError("This should never be called in tests")
+    }
 }
 
 extension SpecNavigationController: SpecNavigationControllerUI {

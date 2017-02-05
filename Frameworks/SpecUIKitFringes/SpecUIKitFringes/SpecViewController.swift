@@ -5,7 +5,9 @@ open class SpecViewController: ViewControlling {
 
     public init() { }
 
+    public var navigationControlling: NavigationControlling? { return navigationController }
     public weak var navigationController: SpecNavigationController?
+    
     public var presentedViewControlling: ViewControlling? { return presentedViewController }
     private var presentedViewController: SpecViewController?
 
@@ -22,7 +24,7 @@ open class SpecViewController: ViewControlling {
     }
 
     public func push(viewController: ViewControlling, animated: Bool) {
-        navigationController!.push(viewController: viewController, animated: animated)
+        navigationControlling!.push(viewController: viewController, animated: animated)
     }
 
     func set(navigationController: SpecNavigationController) {

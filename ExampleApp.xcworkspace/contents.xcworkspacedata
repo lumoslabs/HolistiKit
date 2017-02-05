@@ -5,9 +5,9 @@
       location = "container:ExampleApp.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Frameworks/UIKitFringes/UIKitFringes.xcodeproj">
+      location = "group:Frameworks/SpecUIKitFringes/SpecUIKitFringes.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Frameworks/SpecUIKitFringes/SpecUIKitFringes.xcodeproj">
+      location = "group:Frameworks/UIKitFringes/UIKitFringes.xcodeproj">
    </FileRef>
 </Workspace>

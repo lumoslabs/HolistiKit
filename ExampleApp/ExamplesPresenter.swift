@@ -27,7 +27,7 @@ class ExamplesPresenter {
 extension ExamplesPresenter: PushablePresenter {
 
     func push(viewController viewControllerToPush: ViewControlling) {
-        viewController?.push(viewController: viewControllerToPush, animated: true)
+        viewController?.navigationControlling?.push(viewController: viewControllerToPush, animated: true)
     }
 }
 

@@ -16,4 +16,11 @@ class SpecViewControllerTests: XCTestCase {
         XCTAssertEqual(subject.events, [ .viewWillDisappear, .viewDidDisappear ])
         XCTAssertEqual(presentedViewController.events, [ .viewDidLoad, .viewWillAppear, .viewDidAppear ])
     }
+
+    func test_gettingTheNavigationController() {
+        let navigationController = SpecNavigationController()
+        XCTAssertNil(subject.navigationControlling)
+        navigationController.push(viewController: subject, animated: true)
+        XCTAssertNotNil(subject.navigationControlling)
+    }
 }
