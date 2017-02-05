@@ -1,9 +1,8 @@
-import UIKit
 import UIKitFringes
 
 class ExamplesPresenter {
 
-    private let viewControllerFactory: ExamplesViewControllingFactoryProtocol
+    fileprivate let viewControllerFactory: ExamplesViewControllingFactoryProtocol
     fileprivate let router: ExamplesRouter
     fileprivate let dataSource = ExamplesDataSource()
     fileprivate let errorLogger: ErrorLogging
@@ -16,15 +15,19 @@ class ExamplesPresenter {
         self.router = router
         self.errorLogger = errorLogger
     }
+}
+
+extension ExamplesPresenter: PushedPresenter {
     
-    func push(on presenter: PushablePresenter) {
+    var viewControlling: ViewControlling {
+        if let viewController = viewController { return viewController }
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
-        presenter.push(viewController: _viewController)
+        return _viewController
     }
 }
 
-extension ExamplesPresenter: PushablePresenter {
+extension ExamplesPresenter: PushingPresenter {
 
     func push(viewController viewControllerToPush: ViewControlling) {
         viewController?.navigationControlling?.push(viewController: viewControllerToPush, animated: true)

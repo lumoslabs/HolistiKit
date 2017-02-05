@@ -1,8 +1,8 @@
-import UIKit
+import UIKitFringes
 
 class TimerPresenter {
 
-    private let viewControllerFactory: TimerViewControllerFactoryProtocol
+    fileprivate let viewControllerFactory: TimerViewControllerFactoryProtocol
     fileprivate let interactor: TimerInteractor
     fileprivate let datePrinter: DatePrinter
     fileprivate weak var viewController: TimerViewControlling!
@@ -14,11 +14,15 @@ class TimerPresenter {
         self.interactor = interactor
         self.datePrinter = datePrinter
     }
-    
-    func push(on presenter: PushablePresenter) {
+}
+
+extension TimerPresenter: PushedPresenter {
+
+    var viewControlling: ViewControlling {
+        if let viewController = viewController { return viewController }
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
-        presenter.push(viewController: _viewController)
+        return _viewController
     }
 }
 

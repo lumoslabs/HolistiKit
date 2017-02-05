@@ -1,7 +1,6 @@
-import UIKit
 import UIKitFringes
 
-class ExamplesNavigationPresenter: PushablePresenter {
+class ExamplesNavigationPresenter: PushingPresenter {
 
     private let viewControllerFactory: ExamplesNavigationControllingFactoryProtocol
     private let router: ExamplesRouter

@@ -1,6 +1,6 @@
 import UIKitFringes
 
-protocol PushablePresenter {
+protocol PushingPresenter {
     
     func push(viewController viewControllerToPush: ViewControlling)
 }

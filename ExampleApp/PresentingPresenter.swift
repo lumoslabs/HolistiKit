@@ -1,6 +1,6 @@
 import UIKitFringes
 
-protocol PresentablePresenter {
+protocol PresentingPresenter {
 
     func present(viewController viewControllerToPresent: ViewControlling)
 }

@@ -2,10 +2,10 @@ import UIKitFringes
 
 class UIViewControllerPresenter: UIViewControllerPresenting {
     
-    private let viewControllerFactory: UIViewControllerViewControllerFactoryProtocol
-    fileprivate weak var viewController: UIViewControllerViewControlling!
+    fileprivate let viewControllerFactory: UIViewControllerViewControllerFactoryProtocol
     fileprivate let router: ExamplesRouter
     fileprivate let errorLogger: ErrorLogging
+    fileprivate weak var viewController: UIViewControllerViewControlling!
 
     init(viewControllerFactory: UIViewControllerViewControllerFactoryProtocol,
          router: ExamplesRouter,
@@ -14,14 +14,8 @@ class UIViewControllerPresenter: UIViewControllerPresenting {
         self.router = router
         self.errorLogger = errorLogger
     }
-    
-    func push(on presenter: PushablePresenter) {
-        let _viewController = viewControllerFactory.create(withPresenter: self)
-        viewController = _viewController
-        presenter.push(viewController: _viewController)
-    }
-    
-    func present(on presenter: PresentablePresenter) {
+
+    func present(on presenter: PresentingPresenter) {
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
         presenter.present(viewController: _viewController)
@@ -41,7 +35,17 @@ class UIViewControllerPresenter: UIViewControllerPresenting {
     }
 }
 
-extension UIViewControllerPresenter: PresentablePresenter {
+extension UIViewControllerPresenter: PushedPresenter {
+
+    var viewControlling: ViewControlling {
+        if let viewController = viewController { return viewController }
+        let _viewController = viewControllerFactory.create(withPresenter: self)
+        viewController = _viewController
+        return _viewController
+    }
+}
+
+extension UIViewControllerPresenter: PresentingPresenter {
 
     func present(viewController viewControllerToPresent: ViewControlling) {
         viewController?.present(viewController: viewControllerToPresent)

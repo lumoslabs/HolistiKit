@@ -1,8 +1,8 @@
-import UIKit
+import UIKitFringes
 
 class URLSessionPresenter {
 
-    private let viewControllerFactory: URLSessionViewControllerFactoryProtocol
+    fileprivate let viewControllerFactory: URLSessionViewControllerFactoryProtocol
     fileprivate weak var viewController: URLSessionViewControlling!
     fileprivate let interactor: URLSessionInteractor
     fileprivate let errorLogger: ErrorLogging
@@ -14,11 +14,15 @@ class URLSessionPresenter {
         self.interactor = interactor
         self.errorLogger = errorLogger
     }
+}
 
-    func push(on presenter: PushablePresenter) {
+extension URLSessionPresenter: PushedPresenter {
+    
+    var viewControlling: ViewControlling {
+        if let viewController = viewController { return viewController }
         let _viewController = viewControllerFactory.create(withPresenter: self)
         viewController = _viewController
-        presenter.push(viewController: _viewController)
+        return _viewController
     }
 }
 

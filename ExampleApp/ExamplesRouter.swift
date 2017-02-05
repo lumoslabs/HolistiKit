@@ -28,32 +28,32 @@ class ExamplesRouter {
         examplesNavigationPresenter.present(onWindow: window)
     }
 
-    func pushExamples(on presenter: PushablePresenter) {
+    func pushExamples(on presenter: PushingPresenter) {
         let examplesPresenter = examplesPresenterFactory.create(withRouter: self)
         examplesPresenter.push(on: presenter)
     }
     
-    func pushDate(on presenter: PushablePresenter) {
+    func pushDate(on presenter: PushingPresenter) {
         let datePresenter = datePresenterFactory.create(withRouter: self)
         datePresenter.push(on: presenter)
     }
     
-    func pushTimer(on presenter: PushablePresenter) {
+    func pushTimer(on presenter: PushingPresenter) {
         let timerPresenter = timerPresenterFactory.create(withRouter: self)
         timerPresenter.push(on: presenter)
     }
     
-    func pushURLSession(on presenter: PushablePresenter) {
+    func pushURLSession(on presenter: PushingPresenter) {
         let urlSessionPresenter = urlSessionPresenterFactory.create(withRouter: self)
         urlSessionPresenter.push(on: presenter)
     }
     
-    func pushUIViewController(on presenter: PushablePresenter) {
+    func pushUIViewController(on presenter: PushingPresenter) {
         let uiViewControllerPresenter = uiViewControllerPresenterFactory.create(withRouter: self)
         uiViewControllerPresenter.push(on: presenter)
     }
     
-    func presentUIViewController(on presenter: PresentablePresenter) {
+    func presentUIViewController(on presenter: PresentingPresenter) {
         let uiViewControllerPresenter = uiViewControllerPresenterFactory.create(withRouter: self)
         uiViewControllerPresenter.present(on: presenter)
     }
