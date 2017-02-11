@@ -19,7 +19,7 @@ class ExamplesViewController: UITableViewController, ExamplesViewControlling {
 
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ExamplesViewController.cellIdentifier,
+        let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).cellIdentifier,
                                                  for: indexPath)
         let config = presenter.cellConfiguration(for: indexPath)
         cell.textLabel?.text = config.title

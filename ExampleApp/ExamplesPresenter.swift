@@ -41,18 +41,17 @@ extension ExamplesPresenter: ExamplesPresenting {
     }
 
     func tap(rowAt indexPath: IndexPath) {
+        let presenterToPush: ExamplesRouter.PresenterIdentifier
         switch indexPath {
-        case IndexPath(row: 0, section: 0):
-            router.pushDate(on: self)
-        case IndexPath(row: 1, section: 0):
-            router.pushTimer(on: self)
-        case IndexPath(row: 2, section: 0):
-            router.pushURLSession(on: self)
-        case IndexPath(row: 3, section: 0):
-            router.pushUIViewController(on: self)
+        case IndexPath(row: 0, section: 0): presenterToPush = .date
+        case IndexPath(row: 1, section: 0): presenterToPush = .timer
+        case IndexPath(row: 2, section: 0): presenterToPush = .urlSession
+        case IndexPath(row: 3, section: 0): presenterToPush = .uiViewController
         default:
             errorLogger.log("Tapping on a row (section: \(indexPath.section), row: \(indexPath.row)) that is not handled")
+            presenterToPush = .date
         }
+        router.push(presenterToPush, on: self)
     }
     
     func cellConfiguration(for indexPath: IndexPath) -> ExamplesCellConfig {

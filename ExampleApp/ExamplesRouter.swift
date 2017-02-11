@@ -28,29 +28,32 @@ class ExamplesRouter {
         examplesNavigationPresenter.present(onWindow: window)
     }
 
-    func pushExamples(on presenter: PushingPresenter) {
-        let examplesPresenter = examplesPresenterFactory.create(withRouter: self)
-        examplesPresenter.push(on: presenter)
+    enum PresenterIdentifier {
+        case examples
+        case date
+        case timer
+        case urlSession
+        case uiViewController
     }
-    
-    func pushDate(on presenter: PushingPresenter) {
-        let datePresenter = datePresenterFactory.create(withRouter: self)
-        datePresenter.push(on: presenter)
+
+    private func presenter(for presenterIdentifier: PresenterIdentifier) -> PushedPresenter {
+        switch presenterIdentifier {
+        case .examples:
+            return examplesPresenterFactory.create(withRouter: self)
+        case .date:
+            return datePresenterFactory.create(withRouter: self)
+        case .timer:
+            return timerPresenterFactory.create(withRouter: self)
+        case .urlSession:
+            return urlSessionPresenterFactory.create(withRouter: self)
+        case .uiViewController:
+            return uiViewControllerPresenterFactory.create(withRouter: self)
+        }
     }
-    
-    func pushTimer(on presenter: PushingPresenter) {
-        let timerPresenter = timerPresenterFactory.create(withRouter: self)
-        timerPresenter.push(on: presenter)
-    }
-    
-    func pushURLSession(on presenter: PushingPresenter) {
-        let urlSessionPresenter = urlSessionPresenterFactory.create(withRouter: self)
-        urlSessionPresenter.push(on: presenter)
-    }
-    
-    func pushUIViewController(on presenter: PushingPresenter) {
-        let uiViewControllerPresenter = uiViewControllerPresenterFactory.create(withRouter: self)
-        uiViewControllerPresenter.push(on: presenter)
+
+    func push(_ presenterIdentifier: PresenterIdentifier, on pushingPresenter: PushingPresenter) {
+        let pushedPresenter = presenter(for: presenterIdentifier)
+        pushedPresenter.push(on: pushingPresenter)
     }
     
     func presentUIViewController(on presenter: PresentingPresenter) {
