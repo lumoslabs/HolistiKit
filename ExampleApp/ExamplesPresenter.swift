@@ -17,7 +17,7 @@ class ExamplesPresenter {
     }
 }
 
-extension ExamplesPresenter: PushedPresenter {
+extension ExamplesPresenter: Presenting {
     
     var viewControlling: ViewControlling {
         if let viewController = viewController { return viewController }
@@ -29,7 +29,8 @@ extension ExamplesPresenter: PushedPresenter {
 
 extension ExamplesPresenter: PushingPresenter {
 
-    func push(viewController viewControllerToPush: ViewControlling) {
+    func push(_ presenter: Presenting) {
+        let viewControllerToPush = presenter.viewControlling
         viewController?.navigationControlling?.push(viewController: viewControllerToPush, animated: true)
     }
 }

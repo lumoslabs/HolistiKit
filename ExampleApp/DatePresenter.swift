@@ -16,7 +16,7 @@ class DatePresenter {
     }
 }
 
-extension DatePresenter: PushedPresenter {
+extension DatePresenter: Presenting {
 
     var viewControlling: ViewControlling {
         if let viewController = viewController { return viewController }

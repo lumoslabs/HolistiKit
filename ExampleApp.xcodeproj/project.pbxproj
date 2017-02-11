@@ -76,7 +76,7 @@
 		8863D4B81E46144A00CD5DD2 /* SpecNetworkRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */; };
 		8863D4B91E46144A00CD5DD2 /* SpecUIViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2E21E3E30FF005506DB /* SpecUIViewControllerViewController.swift */; };
 		8863D4BA1E46144F00CD5DD2 /* NetworkResponseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */; };
-		8863D4BE1E476BFC00CD5DD2 /* PushedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863D4BD1E476BFC00CD5DD2 /* PushedPresenter.swift */; };
+		8863D4C01E4F3E7700CD5DD2 /* Presenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863D4BF1E4F3E7700CD5DD2 /* Presenting.swift */; };
 		8876C1F21E312A6E00F3E420 /* NetworkRequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */; };
 		888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */; };
 		888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */; };
@@ -167,7 +167,7 @@
 		886013F41E2D68FC00C86FDE /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		886013F81E2D6C3E00C86FDE /* TimerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimerViewController.storyboard; sourceTree = "<group>"; };
 		8863D49A1E4613FB00CD5DD2 /* ExampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8863D4BD1E476BFC00CD5DD2 /* PushedPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushedPresenter.swift; sourceTree = "<group>"; };
+		8863D4BF1E4F3E7700CD5DD2 /* Presenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenting.swift; sourceTree = "<group>"; };
 		8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestInteractor.swift; sourceTree = "<group>"; };
 		888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
 		888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
@@ -283,8 +283,9 @@
 		8807416A1E227AE900CECDDF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				8863D4BC1E476BD300CD5DD2 /* Push */,
+				885F9D131E2A4D62003ADC21 /* PushingPresenter.swift */,
 				88A7D3461E3E3FD80004C1FB /* PresentingPresenter.swift */,
+				8863D4BF1E4F3E7700CD5DD2 /* Presenting.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -586,15 +587,6 @@
 			path = ExampleAppTests;
 			sourceTree = "<group>";
 		};
-		8863D4BC1E476BD300CD5DD2 /* Push */ = {
-			isa = PBXGroup;
-			children = (
-				885F9D131E2A4D62003ADC21 /* PushingPresenter.swift */,
-				8863D4BD1E476BFC00CD5DD2 /* PushedPresenter.swift */,
-			);
-			name = Push;
-			sourceTree = "<group>";
-		};
 		8876C1F01E312A4500F3E420 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -745,6 +737,7 @@
 				885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */,
 				885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */,
 				8835668B1E2F57EA00289510 /* URLSessionViewControllerFactory.swift in Sources */,
+				8863D4C01E4F3E7700CD5DD2 /* Presenting.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
 				885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */,
@@ -756,7 +749,6 @@
 				8876C1F21E312A6E00F3E420 /* NetworkRequestInteractor.swift in Sources */,
 				883566861E2F572100289510 /* URLSessionPresenterFactory.swift in Sources */,
 				880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */,
-				8863D4BE1E476BFC00CD5DD2 /* PushedPresenter.swift in Sources */,
 				883566881E2F577F00289510 /* URLSessionPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* ExamplesPresenter.swift in Sources */,
 				883E43861E3D33C80051BD21 /* URLSessionProtocol.swift in Sources */,

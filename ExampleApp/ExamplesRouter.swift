@@ -36,7 +36,7 @@ class ExamplesRouter {
         case uiViewController
     }
 
-    private func presenter(for presenterIdentifier: PresenterIdentifier) -> PushedPresenter {
+    private func presenter(for presenterIdentifier: PresenterIdentifier) -> Presenting {
         switch presenterIdentifier {
         case .examples:
             return examplesPresenterFactory.create(withRouter: self)
@@ -53,7 +53,7 @@ class ExamplesRouter {
 
     func push(_ presenterIdentifier: PresenterIdentifier, on pushingPresenter: PushingPresenter) {
         let pushedPresenter = presenter(for: presenterIdentifier)
-        pushedPresenter.push(on: pushingPresenter)
+        pushingPresenter.push(pushedPresenter)
     }
     
     func presentUIViewController(on presenter: PresentingPresenter) {

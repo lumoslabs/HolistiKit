@@ -35,7 +35,7 @@ class UIViewControllerPresenter: UIViewControllerPresenting {
     }
 }
 
-extension UIViewControllerPresenter: PushedPresenter {
+extension UIViewControllerPresenter: Presenting {
 
     var viewControlling: ViewControlling {
         if let viewController = viewController { return viewController }

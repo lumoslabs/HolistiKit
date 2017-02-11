@@ -16,7 +16,7 @@ class URLSessionPresenter {
     }
 }
 
-extension URLSessionPresenter: PushedPresenter {
+extension URLSessionPresenter: Presenting {
     
     var viewControlling: ViewControlling {
         if let viewController = viewController { return viewController }

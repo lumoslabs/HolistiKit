@@ -16,7 +16,7 @@ class TimerPresenter {
     }
 }
 
-extension TimerPresenter: PushedPresenter {
+extension TimerPresenter: Presenting {
 
     var viewControlling: ViewControlling {
         if let viewController = viewController { return viewController }
