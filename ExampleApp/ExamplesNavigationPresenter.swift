@@ -15,8 +15,12 @@ class ExamplesNavigationPresenter: PushingPresenter {
     func present(onWindow window: Windowing) {
         let _viewController = viewControllerFactory.create()
         viewController = _viewController
-        router.push(.examples, on: self)
+        router.pushExamples(on: self)
         window.set(rootViewController: _viewController)
+    }
+
+    func pushVC(_ viewControllerToPush: ViewControlling) {
+        viewController?.push(viewController: viewControllerToPush, animated: false)
     }
 
     func push(_ presenter: Presenting) {

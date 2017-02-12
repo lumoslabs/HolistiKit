@@ -3,14 +3,14 @@ import UIKitFringes
 
 class ExamplesViewController: UITableViewController, ExamplesViewControlling {
 
-    var presenter: ExamplesPresenting!
+    var interactor: ExamplesInteractor!
     private static let cellIdentifier = "ExamplesCell"
 
     @IBOutlet weak var firstRow: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
     
     func set(title text: String) {
@@ -21,7 +21,7 @@ class ExamplesViewController: UITableViewController, ExamplesViewControlling {
                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: type(of: self).cellIdentifier,
                                                  for: indexPath)
-        let config = presenter.cellConfiguration(for: indexPath)
+        let config = interactor.cellConfiguration(for: indexPath)
         cell.textLabel?.text = config.title
         cell.accessoryType = config.accessoryType
         return cell
@@ -29,12 +29,12 @@ class ExamplesViewController: UITableViewController, ExamplesViewControlling {
 
     override func tableView(_: UITableView,
                             numberOfRowsInSection section: Int) -> Int {
-        return presenter.numberOfRows
+        return interactor.numberOfRows
     }
 
     override func tableView(_: UITableView,
                             didSelectRowAt indexPath: IndexPath) {
-        presenter.tap(rowAt: indexPath)
+        interactor.tap(rowAt: indexPath)
     }
 }
 

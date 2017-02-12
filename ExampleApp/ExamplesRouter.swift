@@ -28,10 +28,6 @@ class ExamplesRouter {
         examplesNavigationPresenter.present(onWindow: window)
     }
 
-    enum PresenterIdentifier {
-        case examples
-    }
-
     func pushTimer(on pushingPresenter: ExamplesPresenter) {
         let pushedViewController = timerPresenterFactory.create(withRouter: self)
         pushingPresenter.pushVC(pushedViewController)
@@ -52,16 +48,9 @@ class ExamplesRouter {
         pushingPresenter.pushVC(pushedViewController)
     }
 
-    private func presenter(for presenterIdentifier: PresenterIdentifier) -> Presenting {
-        switch presenterIdentifier {
-        case .examples:
-            return examplesPresenterFactory.create(withRouter: self)
-        }
-    }
-
-    func push(_ presenterIdentifier: PresenterIdentifier, on pushingPresenter: PushingPresenter) {
-        let pushedPresenter = presenter(for: presenterIdentifier)
-        pushingPresenter.push(pushedPresenter)
+    func pushExamples(on pushingPresenter: ExamplesNavigationPresenter) {
+        let pushedViewController = examplesPresenterFactory.create(withRouter: self)
+        pushingPresenter.pushVC(pushedViewController)
     }
     
     func presentUIViewController(on presenter: PresentingPresenter) {
