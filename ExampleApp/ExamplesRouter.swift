@@ -25,7 +25,7 @@ class ExamplesRouter {
     
     func present(onWindow window: Windowing) {
         let examplesNavigationPresenter = examplesNavigationPresenterFactory.create(withRouter: self)
-        examplesNavigationPresenter.present(onWindow: window)
+        window.set(rootViewController: examplesNavigationPresenter)
     }
 
     func pushTimer(on pushingPresenter: ExamplesPresenter) {
