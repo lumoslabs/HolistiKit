@@ -2,5 +2,5 @@ import UIKitFringes
 
 protocol PushingPresenter {
     
-    func push(_ presenter: Presenting)
+    func push(_ viewControllerToPush: ViewControlling)
 }

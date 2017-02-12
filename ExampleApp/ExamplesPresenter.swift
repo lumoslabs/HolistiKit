@@ -36,12 +36,7 @@ class ExamplesPresenter {
 
 extension ExamplesPresenter: PushingPresenter {
 
-    func pushVC(_ viewControlling: ViewControlling) {
+    func push(_ viewControlling: ViewControlling) {
         viewController?.navigationControlling?.push(viewController: viewControlling, animated: true)
-    }
-
-    func push(_ presenter: Presenting) {
-        let viewControllerToPush = presenter.viewControlling
-        viewController?.navigationControlling?.push(viewController: viewControllerToPush, animated: true)
     }
 }

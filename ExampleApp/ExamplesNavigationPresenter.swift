@@ -19,12 +19,7 @@ class ExamplesNavigationPresenter: PushingPresenter {
         window.set(rootViewController: _viewController)
     }
 
-    func pushVC(_ viewControllerToPush: ViewControlling) {
-        viewController?.push(viewController: viewControllerToPush, animated: false)
-    }
-
-    func push(_ presenter: Presenting) {
-        let viewControllerToPush = presenter.viewControlling
+    func push(_ viewControllerToPush: ViewControlling) {
         viewController?.push(viewController: viewControllerToPush, animated: false)
     }
 }
