@@ -18,7 +18,7 @@ class UIViewControllerPresenter {
     }
 
     func presentUIViewController() {
-        router.presentUIViewController(on: self)
+        router.navigate(to: .uiViewController, by: .present(self))
     }
 }
 

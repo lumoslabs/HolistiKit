@@ -76,7 +76,6 @@
 		8863D4B81E46144A00CD5DD2 /* SpecNetworkRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */; };
 		8863D4B91E46144A00CD5DD2 /* SpecUIViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2E21E3E30FF005506DB /* SpecUIViewControllerViewController.swift */; };
 		8863D4BA1E46144F00CD5DD2 /* NetworkResponseCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */; };
-		8863D4C01E4F3E7700CD5DD2 /* Presenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863D4BF1E4F3E7700CD5DD2 /* Presenting.swift */; };
 		8863D4C41E50BFE900CD5DD2 /* UIViewControllerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863D4C31E50BFE900CD5DD2 /* UIViewControllerInteractor.swift */; };
 		8863D4C71E50C43100CD5DD2 /* ExamplesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863D4C61E50C43100CD5DD2 /* ExamplesInteractor.swift */; };
 		8876C1F21E312A6E00F3E420 /* NetworkRequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */; };
@@ -169,7 +168,6 @@
 		886013F41E2D68FC00C86FDE /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		886013F81E2D6C3E00C86FDE /* TimerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TimerViewController.storyboard; sourceTree = "<group>"; };
 		8863D49A1E4613FB00CD5DD2 /* ExampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8863D4BF1E4F3E7700CD5DD2 /* Presenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenting.swift; sourceTree = "<group>"; };
 		8863D4C31E50BFE900CD5DD2 /* UIViewControllerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerInteractor.swift; sourceTree = "<group>"; };
 		8863D4C61E50C43100CD5DD2 /* ExamplesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesInteractor.swift; sourceTree = "<group>"; };
 		8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestInteractor.swift; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 			children = (
 				885F9D131E2A4D62003ADC21 /* PushingPresenter.swift */,
 				88A7D3461E3E3FD80004C1FB /* PresentingPresenter.swift */,
-				8863D4BF1E4F3E7700CD5DD2 /* Presenting.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -767,7 +764,6 @@
 				885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */,
 				885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */,
 				8835668B1E2F57EA00289510 /* URLSessionViewControllerFactory.swift in Sources */,
-				8863D4C01E4F3E7700CD5DD2 /* Presenting.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
 				880740D11E1FCC8700CECDDF /* RootRouter.swift in Sources */,
 				885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */,

@@ -29,28 +29,32 @@ class ExamplesRouter {
         window.set(rootViewController: examplesNavigationViewController)
     }
 
-    func pushTimer(on pushingPresenter: ExamplesPresenter) {
-        let pushedViewController = timerModuleFactory.create(withRouter: self)
-        pushingPresenter.push(pushedViewController)
+    enum ModuleIdentifier {
+        case uiViewController
+        case date
+        case urlSession
+        case timer
     }
 
-    func pushURLSession(on pushingPresenter: ExamplesPresenter) {
-        let pushedViewController = urlSessionModuleFactory.create(withRouter: self)
-        pushingPresenter.push(pushedViewController)
-    }
-    
-    func pushUIViewController(on pushingPresenter: ExamplesPresenter) {
-        let pushedViewController = uiViewControllerModuleFactory.create(withRouter: self)
-        pushingPresenter.push(pushedViewController)
+    enum SegueInfo {
+        case present(PresentingPresenter)
+        case push(PushingPresenter)
     }
 
-    func pushDate(on pushingPresenter: ExamplesPresenter) {
-        let pushedViewController = dateModuleFactory.create(withRouter: self)
-        pushingPresenter.push(pushedViewController)
+    func navigate(to module: ModuleIdentifier, by segue: SegueInfo) {
+        let vc = viewController(for: module)
+        switch segue {
+        case .present(let presenter): presenter.present(viewController: vc)
+        case .push(let presenter): presenter.push(vc)
+        }
     }
 
-    func presentUIViewController(on presenter: PresentingPresenter) {
-        let uiViewControllerPresenter = uiViewControllerModuleFactory.create(withRouter: self)
-        presenter.present(viewController: uiViewControllerPresenter)
+    private func viewController(for module: ModuleIdentifier) -> ViewControlling {
+        switch module {
+        case .uiViewController: return uiViewControllerModuleFactory.create(withRouter: self)
+        case .date: return dateModuleFactory.create(withRouter: self)
+        case .urlSession: return urlSessionModuleFactory.create(withRouter: self)
+        case .timer: return timerModuleFactory.create(withRouter: self)
+        }
     }
 }

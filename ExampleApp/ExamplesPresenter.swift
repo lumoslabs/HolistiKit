@@ -18,19 +18,19 @@ class ExamplesPresenter {
     }
 
     func navigateToDate() {
-        router.pushDate(on: self)
+        router.navigate(to: .date, by: .push(self))
     }
 
     func navigateToTimer() {
-        router.pushTimer(on: self)
+        router.navigate(to: .timer, by: .push(self))
     }
 
     func navigateToURLSession() {
-        router.pushURLSession(on: self)
+        router.navigate(to: .urlSession, by: .push(self))
     }
 
     func navigateToUIViewController() {
-        router.pushUIViewController(on: self)
+        router.navigate(to: .uiViewController, by: .push(self))
     }
 }
 
