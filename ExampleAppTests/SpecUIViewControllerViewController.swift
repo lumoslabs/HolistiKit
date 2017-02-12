@@ -4,8 +4,8 @@ import UIKitFringes
 
 class SpecUIViewControllerViewControllerFactory: UIViewControllerViewControllerFactoryProtocol {
     
-    func create(withPresenter presenter: UIViewControllerPresenter) -> UIViewControllerViewControlling {
-        return SpecUIViewControllerViewController(presenter: presenter)
+    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewControlling {
+        return SpecUIViewControllerViewController(interactor: interactor)
     }
 }
 
@@ -21,14 +21,14 @@ protocol SpecUIViewControllerViewControllerUI {
 class SpecUIViewControllerViewController: SpecViewController, UIViewControllerViewControlling, SpecUIViewControllerViewControllerUI {
 
     private(set) var title: String?
-    private let presenter: UIViewControllerPresenting
+    private let interactor: UIViewControllerInteractor
 
-    init(presenter: UIViewControllerPresenting) {
-        self.presenter = presenter
+    init(interactor: UIViewControllerInteractor) {
+        self.interactor = interactor
     }
 
     override func viewDidLoad() {
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
 
     func set(title text: String) {
@@ -39,7 +39,7 @@ class SpecUIViewControllerViewController: SpecViewController, UIViewControllerVi
 
     private func tap(row: Int) {
         let ip = indexPath(forRow: row)
-        presenter.didTap(rowAt: ip)
+        interactor.didTap(rowAt: ip)
     }
 
     private func indexPath(forRow row: Int) -> IndexPath {

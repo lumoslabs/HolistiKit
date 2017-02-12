@@ -1,3 +1,5 @@
+import UIKitFringes
+
 class UIViewControllerPresenterFactory {
 
     private let viewControllerFactory: UIViewControllerViewControllerFactoryProtocol
@@ -9,9 +11,12 @@ class UIViewControllerPresenterFactory {
         self.errorLogger = errorLogger
     }
 
-    func create(withRouter router: ExamplesRouter) -> UIViewControllerPresenter {
-        return UIViewControllerPresenter(viewControllerFactory: viewControllerFactory,
-                                         router: router,
-                                         errorLogger: errorLogger)
+    func create(withRouter router: ExamplesRouter) -> ViewControlling {
+        let presenter = UIViewControllerPresenter(router: router)
+        let interactor = UIViewControllerInteractor(presenter: presenter,
+                                                    errorLogger: errorLogger)
+        let viewController = viewControllerFactory.create(withInteractor: interactor)
+        presenter.set(viewController: viewController)
+        return viewController
     }
 }

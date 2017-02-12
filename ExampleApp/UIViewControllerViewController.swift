@@ -3,10 +3,10 @@ import UIKitFringes
 
 class UIViewControllerViewController: UITableViewController, UIViewControllerViewControlling {
     
-    var presenter: UIViewControllerPresenting!
+    var interactor: UIViewControllerInteractor!
 
     override func viewDidLoad() {
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
     
     func set(title text: String) {
@@ -14,7 +14,7 @@ class UIViewControllerViewController: UITableViewController, UIViewControllerVie
     }
 
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.didTap(rowAt: indexPath)
+        interactor.didTap(rowAt: indexPath)
     }
 }
 

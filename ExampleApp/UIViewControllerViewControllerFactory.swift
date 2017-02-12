@@ -2,8 +2,8 @@ import UIKit
 
 class UIViewControllerViewControllerFactory: UIViewControllerViewControllerFactoryProtocol {
 
-    func create(withPresenter presenter: UIViewControllerPresenter) -> UIViewControllerViewControlling {
-        return UIViewControllerViewController.create(presenter: presenter)
+    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewControlling {
+        return UIViewControllerViewController.create(withInteractor: interactor)
     }
 }
 
@@ -11,15 +11,15 @@ extension UIViewControllerViewController {
 
     static let storyboardName = "UIViewControllerViewController"
 
-    class func create(presenter: UIViewControllerPresenter) -> UIViewControllerViewController {
+    class func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewController {
         let vc = UIStoryboard(name: storyboardName, bundle: nil)
             .instantiateInitialViewController() as! UIViewControllerViewController
-        vc.presenter = presenter
+        vc.interactor = interactor
         return vc
     }
 }
 
 protocol UIViewControllerViewControllerFactoryProtocol {
     
-    func create(withPresenter presenter: UIViewControllerPresenter) -> UIViewControllerViewControlling
+    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewControlling
 }

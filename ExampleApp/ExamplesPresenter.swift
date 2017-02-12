@@ -51,10 +51,10 @@ extension ExamplesPresenter: ExamplesPresenting {
         case IndexPath(row: 0, section: 0): router.pushDate(on: self); return
         case IndexPath(row: 1, section: 0): router.pushTimer(on: self); return
         case IndexPath(row: 2, section: 0): router.pushURLSession(on: self); return
-        case IndexPath(row: 3, section: 0): presenterToPush = .uiViewController
+        case IndexPath(row: 3, section: 0): router.pushUIViewController(on: self); return
         default:
             errorLogger.log("Tapping on a row (section: \(indexPath.section), row: \(indexPath.row)) that is not handled")
-            presenterToPush = .uiViewController
+            fatalError()
         }
         router.push(presenterToPush, on: self)
     }
