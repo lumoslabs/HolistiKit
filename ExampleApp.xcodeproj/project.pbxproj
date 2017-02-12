@@ -423,9 +423,9 @@
 		883566831E2F570000289510 /* URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				8876C1F01E312A4500F3E420 /* Interactor */,
 				883566841E2F571300289510 /* Presenter */,
 				883566891E2F57DB00289510 /* View */,
-				8876C1F01E312A4500F3E420 /* Interactor */,
 			);
 			name = URLSession;
 			sourceTree = "<group>";

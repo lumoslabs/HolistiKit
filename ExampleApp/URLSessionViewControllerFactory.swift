@@ -2,8 +2,8 @@ import UIKit
 
 class URLSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol {
 
-    func create(withPresenter presenter: URLSessionPresenter) -> URLSessionViewControlling {
-        return URLSessionViewController.create(presenter: presenter)
+    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewControlling {
+        return URLSessionViewController.create(withInteractor: interactor)
     }
 }
 
@@ -11,15 +11,15 @@ extension URLSessionViewController {
 
     static let storyboardName = "URLSessionViewController"
 
-    class func create(presenter: URLSessionPresenter) -> URLSessionViewController {
+    class func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewController {
         let vc = UIStoryboard(name: storyboardName, bundle: nil)
             .instantiateInitialViewController() as! URLSessionViewController
-        vc.presenter = presenter
+        vc.interactor = interactor
         return vc
     }
 }
 
 protocol URLSessionViewControllerFactoryProtocol {
 
-    func create(withPresenter presenter: URLSessionPresenter) -> URLSessionViewControlling
+    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewControlling
 }

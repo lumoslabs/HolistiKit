@@ -1,3 +1,5 @@
+import UIKitFringes
+
 class URLSessionPresenterFactory {
 
     private let viewControllerFactory: URLSessionViewControllerFactoryProtocol
@@ -15,12 +17,14 @@ class URLSessionPresenterFactory {
         self.urlSession = urlSession
     }
 
-    func create(withRouter router: ExamplesRouter) -> URLSessionPresenter {
-        let interactor = URLSessionInteractor(errorLogger: errorLogger,
+    func create(withRouter router: ExamplesRouter) -> ViewControlling {
+        let presenter = URLSessionPresenter(errorLogger: errorLogger)
+        let interactor = URLSessionInteractor(presenter: presenter,
+                                              errorLogger: errorLogger,
                                               networkActivityManager: networkActivityManager,
                                               urlSession: urlSession)
-        return URLSessionPresenter(viewControllerFactory: viewControllerFactory,
-                                   interactor: interactor,
-                                   errorLogger: errorLogger)
+        let viewController = viewControllerFactory.create(withInteractor: interactor)
+        presenter.set(viewController: viewController)
+        return viewController
     }
 }

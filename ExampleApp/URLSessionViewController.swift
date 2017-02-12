@@ -3,7 +3,7 @@ import UIKitFringes
 
 class URLSessionViewController: UITableViewController, URLSessionViewControlling, UITextViewDelegate {
 
-    var presenter: URLSessionPresenting!
+    var interactor: URLSessionInteractor!
 
     @IBOutlet fileprivate weak var textView: UITextView!
 
@@ -12,7 +12,7 @@ class URLSessionViewController: UITableViewController, URLSessionViewControlling
 
         tableView.estimatedRowHeight = 44
 
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -21,7 +21,7 @@ class URLSessionViewController: UITableViewController, URLSessionViewControlling
 
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        presenter.didTap(rowAt: indexPath)
+        interactor.didTap(rowAt: indexPath)
     }
 
     func set(title text: String) {

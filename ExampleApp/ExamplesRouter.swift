@@ -30,12 +30,16 @@ class ExamplesRouter {
 
     enum PresenterIdentifier {
         case examples
-        case urlSession
         case uiViewController
     }
 
     func pushTimer(on pushingPresenter: ExamplesPresenter) {
         let pushedViewController = timerPresenterFactory.create(withRouter: self)
+        pushingPresenter.pushVC(pushedViewController)
+    }
+
+    func pushURLSession(on pushingPresenter: ExamplesPresenter) {
+        let pushedViewController = urlSessionPresenterFactory.create(withRouter: self)
         pushingPresenter.pushVC(pushedViewController)
     }
 
@@ -48,8 +52,6 @@ class ExamplesRouter {
         switch presenterIdentifier {
         case .examples:
             return examplesPresenterFactory.create(withRouter: self)
-        case .urlSession:
-            return urlSessionPresenterFactory.create(withRouter: self)
         case .uiViewController:
             return uiViewControllerPresenterFactory.create(withRouter: self)
         }

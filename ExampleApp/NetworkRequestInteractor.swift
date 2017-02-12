@@ -2,15 +2,17 @@ import Foundation
 
 class URLSessionInteractor {
 
-    weak var delegate: URLSessionInteractorDelegate?
+    private let presenter: URLSessionPresenter
     private let urlSession: URLSessionProtocol
     private let errorLogger: ErrorLogging
     private let networkActivityManager: NetworkActivityManager
     private var networkActivity: NetworkActivityManager.Activity?
 
-    init(errorLogger: ErrorLogging,
+    init(presenter: URLSessionPresenter,
+         errorLogger: ErrorLogging,
          networkActivityManager: NetworkActivityManager,
          urlSession: URLSessionProtocol) {
+        self.presenter = presenter
         self.errorLogger = errorLogger
         self.networkActivityManager = networkActivityManager
         self.urlSession = urlSession
@@ -67,11 +69,11 @@ class URLSessionInteractor {
         switch mimeType {
         case "text/html":
             let html = String(data: data, encoding: encoding(for: response.textEncodingName))!
-            delegate?.received(html: html)
+            presenter.received(html: html)
         case "application/json":
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String : Any]
-                delegate?.received(json: json)
+                presenter.received(json: json)
             }
             catch {
                 errorLogger.log("JSON parsing error.")
@@ -89,6 +91,20 @@ class URLSessionInteractor {
         let encodingUInt = CFStringConvertEncodingToNSStringEncoding(cfStringEncoding)
         if encodingUInt == UInt(kCFStringEncodingInvalidId) { return fallback }
         return String.Encoding(rawValue: encodingUInt)
+    }
+
+    func viewDidLoad() {
+        presenter.set(title: "URLSession")
+        presenter.receivedNothingYet()
+    }
+
+    func didTap(rowAt indexPath: IndexPath) {
+        switch indexPath {
+        case IndexPath(row: 0, section: 0): request(.json)
+        case IndexPath(row: 1, section: 0): request(.html)
+        default:
+            errorLogger.log("Tapping on a row (section: \(indexPath.section), row: \(indexPath.row)) that is not handled")
+        }
     }
 
     deinit {

@@ -3,8 +3,8 @@ import SpecUIKitFringes
 
 class SpecURLSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol {
     
-    func create(withPresenter presenter: URLSessionPresenter) -> URLSessionViewControlling {
-        return SpecURLSessionViewController(presenter: presenter)
+    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewControlling {
+        return SpecURLSessionViewController(interactor: interactor)
     }
 }
 
@@ -22,20 +22,20 @@ class SpecURLSessionViewController: SpecViewController, URLSessionViewControllin
 
     private(set) var title: String?
     private(set) var dataLabel: DataLabel?
-    private let presenter: URLSessionPresenting
+    private let interactor: URLSessionInteractor
 
     struct DataLabel {
         let text: String
         let animated: Bool
     }
 
-    init(presenter: URLSessionPresenting) {
-        self.presenter = presenter
+    init(interactor: URLSessionInteractor) {
+        self.interactor = interactor
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
 
     func tapRequestJSON() { tap(row: 0) }
@@ -51,7 +51,7 @@ class SpecURLSessionViewController: SpecViewController, URLSessionViewControllin
 
     private func tap(row: Int) {
         let ip = indexPath(forRow: row)
-        presenter.didTap(rowAt: ip)
+        interactor.didTap(rowAt: ip)
     }
 
     private func indexPath(forRow row: Int) -> IndexPath {
