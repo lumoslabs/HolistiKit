@@ -22,7 +22,7 @@ class ExamplesRouter {
         self.dateModuleFactory = dateModuleFactory
         self.uiViewControllerModuleFactory = uiViewControllerModuleFactory
     }
-    
+
     func present(onWindow window: Windowing) {
         let examplesViewController = examplesModuleFactory.create(withRouter: self)
         let examplesNavigationViewController = examplesNavigationModuleFactory.create(rootViewController: examplesViewController)

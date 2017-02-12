@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             sharedApplication: sharedApplication,
                                             urlSession: urlSession)
         appCoordinator.didFinishLaunching(withWindow: _window)
-        
+
         _window.makeKeyAndVisible()
         return true
     }

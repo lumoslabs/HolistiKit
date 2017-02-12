@@ -26,10 +26,10 @@ class ExamplesInteractor {
 
     func tap(rowAt indexPath: IndexPath) {
         switch indexPath {
-        case IndexPath(row: 0, section: 0): presenter.navigateToDate()
-        case IndexPath(row: 1, section: 0): presenter.navigateToTimer()
-        case IndexPath(row: 2, section: 0): presenter.navigateToURLSession()
-        case IndexPath(row: 3, section: 0): presenter.navigateToUIViewController()
+        case IndexPath(row: 0, section: 0): presenter.push(.date)
+        case IndexPath(row: 1, section: 0): presenter.push(.timer)
+        case IndexPath(row: 2, section: 0): presenter.push(.urlSession)
+        case IndexPath(row: 3, section: 0): presenter.push(.uiViewController)
         default:
             errorLogger.log("Tapping on a row (section: \(indexPath.section), row: \(indexPath.row)) that is not handled")
         }

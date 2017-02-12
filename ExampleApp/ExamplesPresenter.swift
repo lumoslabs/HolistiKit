@@ -17,20 +17,8 @@ class ExamplesPresenter {
         viewController?.set(title: text)
     }
 
-    func navigateToDate() {
-        router.navigate(to: .date, by: .push(self))
-    }
-
-    func navigateToTimer() {
-        router.navigate(to: .timer, by: .push(self))
-    }
-
-    func navigateToURLSession() {
-        router.navigate(to: .urlSession, by: .push(self))
-    }
-
-    func navigateToUIViewController() {
-        router.navigate(to: .uiViewController, by: .push(self))
+    func push(_ module: ExamplesRouter.ModuleIdentifier) {
+        router.navigate(to: module, by: .push(self))
     }
 }
 
