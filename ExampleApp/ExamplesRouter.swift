@@ -45,7 +45,7 @@ class ExamplesRouter {
         let vc = viewController(for: module)
         switch segue {
         case .present(let presenter): presenter.present(viewController: vc)
-        case .push(let presenter): presenter.push(vc)
+        case .push(let presenter): presenter.push(viewController: vc)
         }
     }
 

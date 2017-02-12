@@ -24,7 +24,7 @@ class UIViewControllerPresenter {
 
 extension UIViewControllerPresenter: PresentingPresenter {
 
-    func present(viewController viewControllerToPresent: ViewControlling) {
-        viewController?.present(viewController: viewControllerToPresent)
+    func present(viewController: ViewControlling) {
+        self.viewController?.present(viewController: viewController)
     }
 }

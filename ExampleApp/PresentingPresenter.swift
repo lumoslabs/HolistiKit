@@ -2,5 +2,5 @@ import UIKitFringes
 
 protocol PresentingPresenter {
 
-    func present(viewController viewControllerToPresent: ViewControlling)
+    func present(viewController: ViewControlling)
 }
