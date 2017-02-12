@@ -8,11 +8,10 @@ class ExamplesNavigationPresenterFactory {
         self.viewControllerFactory = viewControllerFactory
     }
 
-    func create(withRouter router: ExamplesRouter) -> ViewControlling {
-        let presenter = ExamplesNavigationPresenter(router: router)
+    func create(rootViewController: ViewControlling) -> ViewControlling {
+        let presenter = ExamplesNavigationPresenter()
         let viewController = viewControllerFactory.create()
-        presenter.set(viewController: viewController)
-        router.pushExamples(on: presenter)
+        presenter.set(viewController: viewController, rootViewController: rootViewController)
         return viewController
     }
 }

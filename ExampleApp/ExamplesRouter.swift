@@ -24,7 +24,8 @@ class ExamplesRouter {
     }
     
     func present(onWindow window: Windowing) {
-        let examplesNavigationPresenter = examplesNavigationPresenterFactory.create(withRouter: self)
+        let examplesViewController = examplesPresenterFactory.create(withRouter: self)
+        let examplesNavigationPresenter = examplesNavigationPresenterFactory.create(rootViewController: examplesViewController)
         window.set(rootViewController: examplesNavigationPresenter)
     }
 
@@ -48,11 +49,6 @@ class ExamplesRouter {
         pushingPresenter.push(pushedViewController)
     }
 
-    func pushExamples(on pushingPresenter: ExamplesNavigationPresenter) {
-        let pushedViewController = examplesPresenterFactory.create(withRouter: self)
-        pushingPresenter.push(pushedViewController)
-    }
-    
     func presentUIViewController(on presenter: PresentingPresenter) {
         let uiViewControllerPresenter = uiViewControllerPresenterFactory.create(withRouter: self)
         presenter.present(viewController: uiViewControllerPresenter)
