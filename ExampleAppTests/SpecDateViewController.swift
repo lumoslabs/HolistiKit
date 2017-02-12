@@ -2,9 +2,9 @@ import SpecUIKitFringes
 @testable import ExampleApp
 
 class SpecDateViewControllerFactory: DateViewControllerFactoryProtocol {
-    
-    func create(withPresenter presenter: DatePresenter) -> DateViewControlling {
-        return SpecDateViewController(presenter: presenter)
+
+    func create(withInteractor interactor: DateInteractor) -> DateViewControlling {
+        return SpecDateViewController(interactor: interactor)
     }
 }
 
@@ -18,15 +18,15 @@ class SpecDateViewController: SpecViewController, DateViewControlling, SpecDateV
 
     private(set) var dateLabel: String?
     private(set) var title: String?
-    private let presenter: DatePresenting
+    private let interactor: DateInteractor
 
-    init(presenter: DatePresenting) {
-        self.presenter = presenter
+    init(interactor: DateInteractor) {
+        self.interactor = interactor
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
 
     func set(dateLabel text: String) {

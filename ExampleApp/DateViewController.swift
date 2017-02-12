@@ -3,7 +3,7 @@ import UIKitFringes
 
 class DateViewController: UITableViewController, DateViewControlling {
 
-    var presenter: DatePresenting!
+    var interactor: DateInteractor!
     
     @IBOutlet weak var viewLoadedAtLabel: UITableViewCell!
 
@@ -17,7 +17,7 @@ class DateViewController: UITableViewController, DateViewControlling {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
 }
 

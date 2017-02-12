@@ -2,16 +2,18 @@ import Foundation
 
 class DateInteractor {
 
-    weak var delegate: DateInteractorDelegate? {
-        didSet {
-            delegate?.updateWith(date: dateProvider.date)
-        }
-    }
-
+    private let presenter: DatePresenter
     private let dateProvider: DateProviding
 
-    init(dateProvider: DateProviding) {
+    init(presenter: DatePresenter,
+         dateProvider: DateProviding) {
+        self.presenter = presenter
         self.dateProvider = dateProvider
+    }
+    
+    func viewDidLoad() {
+        presenter.set(title: "Date")
+        presenter.updateWith(date: dateProvider.date)
     }
 }
 

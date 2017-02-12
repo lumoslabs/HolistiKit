@@ -1,3 +1,5 @@
+import UIKitFringes
+
 class DatePresenterFactory {
     
     private let viewControllerFactory: DateViewControllerFactoryProtocol
@@ -12,11 +14,13 @@ class DatePresenterFactory {
         self.timeZoneProvider = timeZoneProvider
     }
 
-    func create(withRouter router: ExamplesRouter) -> DatePresenter {
-        let interactor = DateInteractor(dateProvider: dateProvider)
+    func create(withRouter router: ExamplesRouter) -> ViewControlling {
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
-        return DatePresenter(viewControllerFactory: viewControllerFactory,
-                             interactor: interactor,
-                             datePrinter: datePrinter)
+        let presenter = DatePresenter(datePrinter: datePrinter)
+        let interactor = DateInteractor(presenter: presenter,
+                                        dateProvider: dateProvider)
+        let viewController = viewControllerFactory.create(withInteractor: interactor)
+        presenter.set(viewController: viewController)
+        return viewController
     }
 }

@@ -2,8 +2,8 @@ import UIKit
 
 class DateViewControllerFactory: DateViewControllerFactoryProtocol {
     
-    func create(withPresenter presenter: DatePresenter) -> DateViewControlling {
-        return DateViewController.create(presenter: presenter)
+    func create(withInteractor interactor: DateInteractor) -> DateViewControlling {
+        return DateViewController.create(withInteractor: interactor)
     }
 }
 
@@ -11,15 +11,15 @@ extension DateViewController {
 
     static let storyboardName = "DateViewController"
 
-    class func create(presenter: DatePresenter) -> DateViewController {
+    class func create(withInteractor interactor: DateInteractor) -> DateViewController {
         let vc = UIStoryboard(name: storyboardName, bundle: nil)
             .instantiateInitialViewController() as! DateViewController
-        vc.presenter = presenter
+        vc.interactor = interactor
         return vc
     }
 }
 
 protocol DateViewControllerFactoryProtocol {
     
-    func create(withPresenter presenter: DatePresenter) -> DateViewControlling
+    func create(withInteractor interactor: DateInteractor) -> DateViewControlling
 }

@@ -30,7 +30,6 @@ class ExamplesRouter {
 
     enum PresenterIdentifier {
         case examples
-        case date
         case urlSession
         case uiViewController
     }
@@ -40,12 +39,15 @@ class ExamplesRouter {
         pushingPresenter.pushVC(pushedViewController)
     }
 
+    func pushDate(on pushingPresenter: ExamplesPresenter) {
+        let pushedViewController = datePresenterFactory.create(withRouter: self)
+        pushingPresenter.pushVC(pushedViewController)
+    }
+
     private func presenter(for presenterIdentifier: PresenterIdentifier) -> Presenting {
         switch presenterIdentifier {
         case .examples:
             return examplesPresenterFactory.create(withRouter: self)
-        case .date:
-            return datePresenterFactory.create(withRouter: self)
         case .urlSession:
             return urlSessionPresenterFactory.create(withRouter: self)
         case .uiViewController:
