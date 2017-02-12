@@ -2,9 +2,9 @@ import SpecUIKitFringes
 @testable import ExampleApp
 
 class SpecTimerViewControllerFactory: TimerViewControllerFactoryProtocol {
-    
-    func create(withPresenter presenter: TimerPresenter) -> TimerViewControlling {
-        return SpecTimerViewController(presenter: presenter)
+
+    func create(withInteractor interactor: TimerInteractor) -> TimerViewControlling {
+        return SpecTimerViewController(interactor: interactor)
     }
 }
 
@@ -18,15 +18,15 @@ class SpecTimerViewController: SpecViewController, TimerViewControlling, SpecTim
 
     private(set) var title: String?
     private(set) var dateLabel: String?
-    private let presenter: TimerPresenting
+    private let interactor: TimerInteractor
 
-    init(presenter: TimerPresenting) {
-        self.presenter = presenter
+    init(interactor: TimerInteractor) {
+        self.interactor = interactor
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
 
     func set(title text: String) {

@@ -2,29 +2,32 @@ import Foundation
 
 class TimerInteractor {
 
-    weak var delegate: TimerInteractorDelegate? {
-        didSet { updateDelegateWithDate() }
-    }
-
     private let dateProvider: DateProviding
     private let timer: Timing
     private let timerInterval: TimeInterval = 1
+    private let presenter: TimerPresenter
 
     init(dateProvider: DateProviding,
-         timerFactory: TimerFactoryProtocol) {
+         timerFactory: TimerFactoryProtocol,
+         presenter: TimerPresenter) {
         self.dateProvider = dateProvider
+        self.presenter = presenter
         self.timer = timerFactory.create()
+    }
+
+    func viewDidLoad() {
+        presenter.set(title: "Timer")
+        startUpdatingDate()
+    }
+
+    private func startUpdatingDate() {
+        updateDate()
         timer.start(interval: timerInterval, repeats: true) { [weak self] in
-            self?.updateDelegateWithDate()
+            self?.updateDate()
         }
     }
 
-    private func updateDelegateWithDate() {
-        delegate?.updateWith(date: dateProvider.date)
+    private func updateDate() {
+        presenter.updateWith(date: dateProvider.date)
     }
-}
-
-protocol TimerInteractorDelegate: class {
-
-    func updateWith(date: Date)
 }

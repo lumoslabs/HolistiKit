@@ -544,9 +544,9 @@
 		886013EB1E2D678900C86FDE /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				888B2D131E2E1D8C00FB3165 /* Interactor */,
 				886013EC1E2D679F00C86FDE /* Presenter */,
 				886013F11E2D684D00C86FDE /* View */,
-				888B2D131E2E1D8C00FB3165 /* Interactor */,
 			);
 			name = Timer;
 			sourceTree = "<group>";

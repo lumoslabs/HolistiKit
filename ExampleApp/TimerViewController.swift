@@ -3,7 +3,7 @@ import UIKitFringes
 
 class TimerViewController: UITableViewController, TimerViewControlling {
 
-    var presenter: TimerPresenting!
+    var interactor: TimerInteractor!
     
     @IBOutlet weak var dateCell: UITableViewCell!
     
@@ -17,7 +17,7 @@ class TimerViewController: UITableViewController, TimerViewControlling {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
+        interactor.viewDidLoad()
     }
 }
 

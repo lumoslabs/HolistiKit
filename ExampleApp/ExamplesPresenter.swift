@@ -29,6 +29,10 @@ extension ExamplesPresenter: Presenting {
 
 extension ExamplesPresenter: PushingPresenter {
 
+    func pushVC(_ viewControlling: ViewControlling) {
+        viewController?.navigationControlling?.push(viewController: viewControlling, animated: true)
+    }
+
     func push(_ presenter: Presenting) {
         let viewControllerToPush = presenter.viewControlling
         viewController?.navigationControlling?.push(viewController: viewControllerToPush, animated: true)
@@ -45,7 +49,7 @@ extension ExamplesPresenter: ExamplesPresenting {
         let presenterToPush: ExamplesRouter.PresenterIdentifier
         switch indexPath {
         case IndexPath(row: 0, section: 0): presenterToPush = .date
-        case IndexPath(row: 1, section: 0): presenterToPush = .timer
+        case IndexPath(row: 1, section: 0): router.pushTimer(on: self); return
         case IndexPath(row: 2, section: 0): presenterToPush = .urlSession
         case IndexPath(row: 3, section: 0): presenterToPush = .uiViewController
         default:
