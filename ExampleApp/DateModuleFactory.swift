@@ -1,28 +1,24 @@
 import UIKitFringes
 
-class TimerPresenterFactory {
+class DateModuleFactory {
     
-    private let viewControllerFactory: TimerViewControllerFactoryProtocol
+    private let viewControllerFactory: DateViewControllerFactoryProtocol
     private let dateProvider: DateProviding
     private let timeZoneProvider: TimeZoneProviding
-    private let timerFactory: TimerFactoryProtocol
-    
-    init(viewControllerFactory: TimerViewControllerFactoryProtocol,
+
+    init(viewControllerFactory: DateViewControllerFactoryProtocol,
          dateProvider: DateProviding,
-         timeZoneProvider: TimeZoneProviding,
-         timerFactory: TimerFactoryProtocol) {
+         timeZoneProvider: TimeZoneProviding) {
         self.viewControllerFactory = viewControllerFactory
         self.dateProvider = dateProvider
         self.timeZoneProvider = timeZoneProvider
-        self.timerFactory = timerFactory
     }
-    
+
     func create(withRouter router: ExamplesRouter) -> ViewControlling {
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
-        let presenter = TimerPresenter(datePrinter: datePrinter)
-        let interactor = TimerInteractor(dateProvider: dateProvider,
-                                         timerFactory: timerFactory,
-                                         presenter: presenter)
+        let presenter = DatePresenter(datePrinter: datePrinter)
+        let interactor = DateInteractor(presenter: presenter,
+                                        dateProvider: dateProvider)
         let viewController = viewControllerFactory.create(withInteractor: interactor)
         presenter.set(viewController: viewController)
         return viewController

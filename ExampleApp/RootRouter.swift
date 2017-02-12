@@ -4,18 +4,18 @@ class RootRouter {
 
     private let examplesRouter: ExamplesRouter
 
-    init(examplesNavigationPresenterFactory: ExamplesNavigationPresenterFactory,
-         examplesPresenterFactory: ExamplesPresenterFactory,
-         timerPresenterFactory: TimerPresenterFactory,
-         urlSessionPresenterFactory: URLSessionPresenterFactory,
-         datePresenterFactory: DatePresenterFactory,
-         uiViewControllerPresenterFactory: UIViewControllerPresenterFactory) {
-        self.examplesRouter = ExamplesRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
-                                             examplesPresenterFactory: examplesPresenterFactory,
-                                             timerPresenterFactory: timerPresenterFactory,
-                                             urlSessionPresenterFactory: urlSessionPresenterFactory,
-                                             datePresenterFactory: datePresenterFactory,
-                                             uiViewControllerPresenterFactory: uiViewControllerPresenterFactory)
+    init(examplesNavigationModuleFactory: ExamplesNavigationModuleFactory,
+         examplesModuleFactory: ExamplesModuleFactory,
+         timerModuleFactory: TimerModuleFactory,
+         urlSessionModuleFactory: URLSessionModuleFactory,
+         dateModuleFactory: DateModuleFactory,
+         uiViewControllerModuleFactory: UIViewControllerModuleFactory) {
+        self.examplesRouter = ExamplesRouter(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
+                                             examplesModuleFactory: examplesModuleFactory,
+                                             timerModuleFactory: timerModuleFactory,
+                                             urlSessionModuleFactory: urlSessionModuleFactory,
+                                             dateModuleFactory: dateModuleFactory,
+                                             uiViewControllerModuleFactory: uiViewControllerModuleFactory)
     }
 
     func present(onWindow window: Windowing) {

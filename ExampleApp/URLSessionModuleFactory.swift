@@ -1,6 +1,6 @@
 import UIKitFringes
 
-class URLSessionPresenterFactory {
+class URLSessionModuleFactory {
 
     private let viewControllerFactory: URLSessionViewControllerFactoryProtocol
     private let errorLogger: ErrorLogging

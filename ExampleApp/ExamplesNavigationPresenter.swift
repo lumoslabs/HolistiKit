@@ -2,7 +2,7 @@ import UIKitFringes
 
 class ExamplesNavigationPresenter {
 
-    func set(viewController: NavigationControlling, rootViewController: ViewControlling) {
+    func set(viewController: ExamplesNavigationControlling, rootViewController: ViewControlling) {
         viewController.push(viewController: rootViewController, animated: false)
     }
 }

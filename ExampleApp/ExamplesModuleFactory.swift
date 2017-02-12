@@ -1,6 +1,6 @@
 import UIKitFringes
 
-class ExamplesPresenterFactory {
+class ExamplesModuleFactory {
 
     private let viewControllerFactory: ExamplesViewControllingFactoryProtocol
     private let errorLogger: ErrorLogging

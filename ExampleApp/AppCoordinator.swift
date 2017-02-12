@@ -17,28 +17,28 @@ class AppCoordinator {
          sharedApplication: ApplicationProtocol,
          urlSession: URLSessionProtocol) {
         let networkActivityManager = NetworkActivityManager(sharedApplication: sharedApplication)
-        let examplesNavigationPresenterFactory = ExamplesNavigationPresenterFactory(viewControllerFactory: examplesNavigationControllerFactory)
-        let examplesPresenterFactory = ExamplesPresenterFactory(viewControllerFactory: examplesViewControllerFactory,
+        let examplesNavigationModuleFactory = ExamplesNavigationModuleFactory(viewControllerFactory: examplesNavigationControllerFactory)
+        let examplesModuleFactory = ExamplesModuleFactory(viewControllerFactory: examplesViewControllerFactory,
                                                                 errorLogger: errorLogger)
-        let timerPresenterFactory = TimerPresenterFactory(viewControllerFactory: timerViewControllerFactory,
+        let timerModuleFactory = TimerModuleFactory(viewControllerFactory: timerViewControllerFactory,
                                                           dateProvider: dateProvider,
                                                           timeZoneProvider: timeZoneProvider,
                                                           timerFactory: timerFactory)
-        let urlSessionPresenterFactory = URLSessionPresenterFactory(viewControllerFactory: urlSessionViewControllerFactory,
+        let urlSessionModuleFactory = URLSessionModuleFactory(viewControllerFactory: urlSessionViewControllerFactory,
                                                                             errorLogger: errorLogger,
                                                                             networkActivityManager: networkActivityManager,
                                                                             urlSession: urlSession)
-        let datePresenterFactory = DatePresenterFactory(viewControllerFactory: dateViewControllerFactory,
+        let dateModuleFactory = DateModuleFactory(viewControllerFactory: dateViewControllerFactory,
                                                         dateProvider: dateProvider,
                                                         timeZoneProvider: timeZoneProvider)
-        let uiViewControllerPresenterFactory = UIViewControllerPresenterFactory(viewControllerFactory: uiViewControllerViewControllerFactory,
+        let uiViewControllerModuleFactory = UIViewControllerModuleFactory(viewControllerFactory: uiViewControllerViewControllerFactory,
                                                                                 errorLogger: errorLogger)
-        self.router = RootRouter(examplesNavigationPresenterFactory: examplesNavigationPresenterFactory,
-                                 examplesPresenterFactory: examplesPresenterFactory,
-                                 timerPresenterFactory: timerPresenterFactory,
-                                 urlSessionPresenterFactory: urlSessionPresenterFactory,
-                                 datePresenterFactory: datePresenterFactory,
-                                 uiViewControllerPresenterFactory: uiViewControllerPresenterFactory)
+        self.router = RootRouter(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
+                                 examplesModuleFactory: examplesModuleFactory,
+                                 timerModuleFactory: timerModuleFactory,
+                                 urlSessionModuleFactory: urlSessionModuleFactory,
+                                 dateModuleFactory: dateModuleFactory,
+                                 uiViewControllerModuleFactory: uiViewControllerModuleFactory)
     }
     
     func didFinishLaunching(withWindow window: Windowing) {

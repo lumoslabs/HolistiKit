@@ -1,6 +1,6 @@
 import UIKitFringes
 
-class ExamplesNavigationPresenterFactory {
+class ExamplesNavigationModuleFactory {
 
     let viewControllerFactory: ExamplesNavigationControllingFactoryProtocol
 
