@@ -16,7 +16,8 @@ class TimerModuleFactory {
         self.timeZoneProvider = timeZoneProvider
         self.timerFactory = timerFactory
     }
-    
+
+    // TODO remove `router` (and from others that don't need it
     func create(withRouter router: ExamplesRouter) -> ViewControlling {
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
         let presenter = TimerPresenter(datePrinter: datePrinter)

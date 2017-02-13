@@ -6,7 +6,8 @@ class ExamplesDataSource {
         ExamplesCellConfig(title: "Date", accessoryType: .disclosureIndicator),
         ExamplesCellConfig(title: "Timer", accessoryType: .disclosureIndicator),
         ExamplesCellConfig(title: "URLSession", accessoryType: .disclosureIndicator),
-        ExamplesCellConfig(title: "UIViewController", accessoryType: .disclosureIndicator)
+        ExamplesCellConfig(title: "UIViewController", accessoryType: .disclosureIndicator),
+        ExamplesCellConfig(title: "CLLocationManager", accessoryType: .disclosureIndicator)
     ]
     
     func cellConfiguration(for indexPath: IndexPath) -> ExamplesCellConfig {

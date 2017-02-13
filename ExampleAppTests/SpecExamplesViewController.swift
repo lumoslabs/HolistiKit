@@ -16,6 +16,7 @@ protocol SpecExamplesViewControllerUI {
     func tapTimerRow()
     func tapURLSessionRow()
     func tapUIViewControllerRow()
+    func tapCLLocationManagerRow()
     // Output
     var title: String? { get }
     var numberOfRows: Int { get }
@@ -53,6 +54,7 @@ class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, S
     func tapTimerRow() { tap(row: 1) }
     func tapURLSessionRow() { tap(row: 2) }
     func tapUIViewControllerRow() { tap(row: 3) }
+    func tapCLLocationManagerRow()  { tap(row: 4) }
     
     var numberOfRows: Int {
         return interactor.numberOfRows

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let urlSessionViewControllerFactory = URLSessionViewControllerFactory()
         let dateViewControllerFactory = DateViewControllerFactory()
         let uiViewControllerViewControllerFactory = UIViewControllerViewControllerFactory()
+        let clLocationManagerViewControllerFactory = CLLocationManagerViewControllerFactory()
         let dateProvider = DateProvider()
         let timeZoneProvider = TimeZoneProvider()
         let errorLogger = ErrorLogger()
@@ -28,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             urlSessionViewControllerFactory: urlSessionViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,
                                             uiViewControllerViewControllerFactory: uiViewControllerViewControllerFactory,
+                                            clLocationManagerViewControllerFactory: clLocationManagerViewControllerFactory,
                                             dateProvider: dateProvider,
                                             timeZoneProvider: timeZoneProvider,
                                             errorLogger: errorLogger,

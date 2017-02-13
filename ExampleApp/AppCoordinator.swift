@@ -10,6 +10,7 @@ class AppCoordinator {
          urlSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol,
          dateViewControllerFactory: DateViewControllerFactoryProtocol,
          uiViewControllerViewControllerFactory: UIViewControllerViewControllerFactoryProtocol,
+         clLocationManagerViewControllerFactory: CLLocationManagerViewControllerFactoryProtocol,
          dateProvider: DateProviding,
          timeZoneProvider: TimeZoneProviding,
          errorLogger: ErrorLogging,
@@ -33,12 +34,14 @@ class AppCoordinator {
                                                   timeZoneProvider: timeZoneProvider)
         let uiViewControllerModuleFactory = UIViewControllerModuleFactory(viewControllerFactory: uiViewControllerViewControllerFactory,
                                                                           errorLogger: errorLogger)
+        let clLocationManagerModuleFactory = CLLocationManagerModuleFactory(viewControllerFactory: clLocationManagerViewControllerFactory)
         self.router = RootRouter(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
                                  examplesModuleFactory: examplesModuleFactory,
                                  timerModuleFactory: timerModuleFactory,
                                  urlSessionModuleFactory: urlSessionModuleFactory,
                                  dateModuleFactory: dateModuleFactory,
-                                 uiViewControllerModuleFactory: uiViewControllerModuleFactory)
+                                 uiViewControllerModuleFactory: uiViewControllerModuleFactory,
+                                 clLocationManagerModuleFactory: clLocationManagerModuleFactory)
     }
 
     func didFinishLaunching(withWindow window: Windowing) {

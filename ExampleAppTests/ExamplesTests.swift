@@ -13,7 +13,8 @@ class ExamplesTests: FringesTest {
             ("Date", .disclosureIndicator),
             ("Timer", .disclosureIndicator),
             ("URLSession", .disclosureIndicator),
-            ("UIViewController", .disclosureIndicator)
+            ("UIViewController", .disclosureIndicator),
+            ("CLLocationManager", .disclosureIndicator)
         ]
         XCTAssertEqual(examplesUI.numberOfRows, expectedRows.count)
         expectedRows.enumerated().forEach { index, row in

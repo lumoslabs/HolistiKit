@@ -28,6 +28,7 @@ class SpecUIViewControllerViewController: SpecViewController, UIViewControllerVi
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         interactor.viewDidLoad()
     }
 

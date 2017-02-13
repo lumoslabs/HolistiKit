@@ -8,19 +8,22 @@ class ExamplesRouter {
     private let urlSessionModuleFactory: URLSessionModuleFactory
     private let examplesNavigationModuleFactory: ExamplesNavigationModuleFactory
     private let uiViewControllerModuleFactory: UIViewControllerModuleFactory
+    private let clLocationManagerModuleFactory: CLLocationManagerModuleFactory
 
     init(examplesNavigationModuleFactory: ExamplesNavigationModuleFactory,
          examplesModuleFactory: ExamplesModuleFactory,
          timerModuleFactory: TimerModuleFactory,
          urlSessionModuleFactory: URLSessionModuleFactory,
          dateModuleFactory: DateModuleFactory,
-         uiViewControllerModuleFactory: UIViewControllerModuleFactory) {
+         uiViewControllerModuleFactory: UIViewControllerModuleFactory,
+         clLocationManagerModuleFactory: CLLocationManagerModuleFactory) {
         self.examplesNavigationModuleFactory = examplesNavigationModuleFactory
         self.examplesModuleFactory = examplesModuleFactory
         self.timerModuleFactory = timerModuleFactory
         self.urlSessionModuleFactory = urlSessionModuleFactory
         self.dateModuleFactory = dateModuleFactory
         self.uiViewControllerModuleFactory = uiViewControllerModuleFactory
+        self.clLocationManagerModuleFactory = clLocationManagerModuleFactory
     }
 
     func present(onWindow window: Windowing) {
@@ -34,6 +37,7 @@ class ExamplesRouter {
         case date
         case urlSession
         case timer
+        case clLocationManager
     }
 
     enum SegueInfo {
@@ -55,6 +59,7 @@ class ExamplesRouter {
         case .date: return dateModuleFactory.create(withRouter: self)
         case .urlSession: return urlSessionModuleFactory.create(withRouter: self)
         case .timer: return timerModuleFactory.create(withRouter: self)
+        case .clLocationManager: return clLocationManagerModuleFactory.create()
         }
     }
 }

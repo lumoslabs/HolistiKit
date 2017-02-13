@@ -106,6 +106,10 @@ extension FringesTest {
         return topViewController(as: SpecUIViewControllerViewControllerUI.self)
     }
 
+    var clLocationManagerUI: SpecCLLocationManagerViewControllerUI! {
+        return topViewController(as: SpecCLLocationManagerViewControllerUI.self)
+    }
+
     var navigationController: SpecNavigationControllerUI {
         guard let navigationController = window.topViewController.navigationController else {
             fatalError("The top view controller is not inside a navigation controller.")

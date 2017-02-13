@@ -80,6 +80,14 @@
 		8863D4C41E50BFE900CD5DD2 /* UIViewControllerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863D4C31E50BFE900CD5DD2 /* UIViewControllerInteractor.swift */; };
 		8863D4C71E50C43100CD5DD2 /* ExamplesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8863D4C61E50C43100CD5DD2 /* ExamplesInteractor.swift */; };
 		8876C1F21E312A6E00F3E420 /* NetworkRequestInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */; };
+		887CDBF81E51F7E3008465FE /* CLLocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDBF71E51F7E3008465FE /* CLLocationManagerTests.swift */; };
+		887CDBFA1E51F884008465FE /* SpecCLLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDBF91E51F884008465FE /* SpecCLLocationManagerViewController.swift */; };
+		887CDBFE1E51FD39008465FE /* CLLocationManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDBFD1E51FD39008465FE /* CLLocationManagerViewController.swift */; };
+		887CDC001E51FD5C008465FE /* CLLocationManagerViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDBFF1E51FD5C008465FE /* CLLocationManagerViewControllerFactory.swift */; };
+		887CDC031E51FE2C008465FE /* CLLocationManagerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDC021E51FE2C008465FE /* CLLocationManagerInteractor.swift */; };
+		887CDC051E5216E7008465FE /* CLLocationManagerModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDC041E5216E7008465FE /* CLLocationManagerModuleFactory.swift */; };
+		887CDC071E52178F008465FE /* CLLocationManagerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDC061E52178F008465FE /* CLLocationManagerPresenter.swift */; };
+		887CDC0A1E521AE7008465FE /* CLLocationManagerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CDC091E521AE7008465FE /* CLLocationManagerViewController.storyboard */; };
 		888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */; };
 		888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */; };
 		88A1E1831E33802800CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1821E33802800CFA0CD /* UIKitFringes.framework */; };
@@ -173,6 +181,14 @@
 		8863D4C31E50BFE900CD5DD2 /* UIViewControllerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerInteractor.swift; sourceTree = "<group>"; };
 		8863D4C61E50C43100CD5DD2 /* ExamplesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesInteractor.swift; sourceTree = "<group>"; };
 		8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestInteractor.swift; sourceTree = "<group>"; };
+		887CDBF71E51F7E3008465FE /* CLLocationManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerTests.swift; sourceTree = "<group>"; };
+		887CDBF91E51F884008465FE /* SpecCLLocationManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecCLLocationManagerViewController.swift; sourceTree = "<group>"; };
+		887CDBFD1E51FD39008465FE /* CLLocationManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerViewController.swift; sourceTree = "<group>"; };
+		887CDBFF1E51FD5C008465FE /* CLLocationManagerViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerViewControllerFactory.swift; sourceTree = "<group>"; };
+		887CDC021E51FE2C008465FE /* CLLocationManagerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerInteractor.swift; sourceTree = "<group>"; };
+		887CDC041E5216E7008465FE /* CLLocationManagerModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerModuleFactory.swift; sourceTree = "<group>"; };
+		887CDC061E52178F008465FE /* CLLocationManagerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerPresenter.swift; sourceTree = "<group>"; };
+		887CDC091E521AE7008465FE /* CLLocationManagerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CLLocationManagerViewController.storyboard; sourceTree = "<group>"; };
 		888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
 		888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
 		888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
@@ -485,6 +501,7 @@
 				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
 				883566811E2F567A00289510 /* SpecNetworkRequestViewController.swift */,
 				8814F2E21E3E30FF005506DB /* SpecUIViewControllerViewController.swift */,
+				887CDBF91E51F884008465FE /* SpecCLLocationManagerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -526,6 +543,7 @@
 				886013EB1E2D678900C86FDE /* Timer */,
 				883566831E2F570000289510 /* URLSession */,
 				8814F2E41E3E31A6005506DB /* UIViewController */,
+				887CDBFB1E51FCFE008465FE /* CLLocationManager */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -584,6 +602,7 @@
 				886013E31E2D4CD500C86FDE /* TimerTests.swift */,
 				8835667F1E2F51F800289510 /* NetworkRequestTests.swift */,
 				8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */,
+				887CDBF71E51F7E3008465FE /* CLLocationManagerTests.swift */,
 				880740DB1E21079B00CECDDF /* FringesTest.swift */,
 				880740D71E21038500CECDDF /* Fakes */,
 				8814F2D51E3D4CB0005506DB /* Utilities */,
@@ -623,6 +642,43 @@
 				8876C1F11E312A6E00F3E420 /* NetworkRequestInteractor.swift */,
 			);
 			name = Interactor;
+			sourceTree = "<group>";
+		};
+		887CDBFB1E51FCFE008465FE /* CLLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				887CDC041E5216E7008465FE /* CLLocationManagerModuleFactory.swift */,
+				887CDC011E51FE24008465FE /* Interactor */,
+				887CDC081E52179A008465FE /* Presenter */,
+				887CDBFC1E51FD12008465FE /* View */,
+			);
+			name = CLLocationManager;
+			sourceTree = "<group>";
+		};
+		887CDBFC1E51FD12008465FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				887CDBFD1E51FD39008465FE /* CLLocationManagerViewController.swift */,
+				887CDC091E521AE7008465FE /* CLLocationManagerViewController.storyboard */,
+				887CDBFF1E51FD5C008465FE /* CLLocationManagerViewControllerFactory.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		887CDC011E51FE24008465FE /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				887CDC021E51FE2C008465FE /* CLLocationManagerInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		887CDC081E52179A008465FE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				887CDC061E52178F008465FE /* CLLocationManagerPresenter.swift */,
+			);
+			name = Presenter;
 			sourceTree = "<group>";
 		};
 		888B2D131E2E1D8C00FB3165 /* Interactor */ = {
@@ -737,6 +793,7 @@
 				886013F91E2D6C3E00C86FDE /* TimerViewController.storyboard in Resources */,
 				880741701E22876700CECDDF /* DateViewController.storyboard in Resources */,
 				8814F2F01E3E37F7005506DB /* UIViewControllerViewController.storyboard in Resources */,
+				887CDC0A1E521AE7008465FE /* CLLocationManagerViewController.storyboard in Resources */,
 				8835668F1E2F5A5700289510 /* URLSessionViewController.storyboard in Resources */,
 				880740E21E21100A00CECDDF /* ExamplesViewController.storyboard in Resources */,
 				880740B51E1F8C9400CECDDF /* LaunchScreen.storyboard in Resources */,
@@ -759,7 +816,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				880740CF1E1F939300CECDDF /* AppCoordinator.swift in Sources */,
+				887CDC001E51FD5C008465FE /* CLLocationManagerViewControllerFactory.swift in Sources */,
 				8807416E1E22858400CECDDF /* DateViewControllerFactory.swift in Sources */,
+				887CDC051E5216E7008465FE /* CLLocationManagerModuleFactory.swift in Sources */,
 				880741801E23A4C400CECDDF /* DateModuleFactory.swift in Sources */,
 				8814F2E71E3E31E6005506DB /* UIViewControllerViewControllerFactory.swift in Sources */,
 				8807417E1E239A3F00CECDDF /* ExamplesModuleFactory.swift in Sources */,
@@ -782,10 +841,13 @@
 				883566881E2F577F00289510 /* URLSessionPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* ExamplesPresenter.swift in Sources */,
 				883E43861E3D33C80051BD21 /* URLSessionProtocol.swift in Sources */,
+				887CDC071E52178F008465FE /* CLLocationManagerPresenter.swift in Sources */,
 				8863D4C71E50C43100CD5DD2 /* ExamplesInteractor.swift in Sources */,
 				885F9D141E2A4D62003ADC21 /* PushingPresenter.swift in Sources */,
 				880740AB1E1F8C9400CECDDF /* AppDelegate.swift in Sources */,
 				886013E81E2D4E4000C86FDE /* ErrorLogger.swift in Sources */,
+				887CDBFE1E51FD39008465FE /* CLLocationManagerViewController.swift in Sources */,
+				887CDC031E51FE2C008465FE /* CLLocationManagerInteractor.swift in Sources */,
 				885F9D061E2A302E003ADC21 /* ExamplesNavigationModuleFactory.swift in Sources */,
 				8814F2E91E3E322D005506DB /* UIViewControllerViewController.swift in Sources */,
 				885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */,
@@ -815,8 +877,10 @@
 				8863D4A91E46142F00CD5DD2 /* FringesTest.swift in Sources */,
 				8863D4B61E46144A00CD5DD2 /* SpecDateViewController.swift in Sources */,
 				8863D4B91E46144A00CD5DD2 /* SpecUIViewControllerViewController.swift in Sources */,
+				887CDBF81E51F7E3008465FE /* CLLocationManagerTests.swift in Sources */,
 				8863D4AC1E46143C00CD5DD2 /* SpecAppDelegate.swift in Sources */,
 				8863D4B01E46144A00CD5DD2 /* SpecTimerFactory.swift in Sources */,
+				887CDBFA1E51F884008465FE /* SpecCLLocationManagerViewController.swift in Sources */,
 				8863D4B21E46144A00CD5DD2 /* SpecURLSession.swift in Sources */,
 				8863D4AE1E46144A00CD5DD2 /* SpecDateProvider.swift in Sources */,
 				8863D4B31E46144A00CD5DD2 /* SpecURLSessionDataTask.swift in Sources */,
