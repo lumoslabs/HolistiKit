@@ -1,3 +1,5 @@
+import CoreLocation
+
 class CLLocationManagerInteractor {
 
     private let presenter: CLLocationManagerPresenter
@@ -8,5 +10,6 @@ class CLLocationManagerInteractor {
 
     func viewDidLoad() {
         presenter.set(title: "CLLocationManager")
+        presenter.set(authorizationStatus: CLLocationManager.authorizationStatus())
     }
 }

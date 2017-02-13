@@ -13,11 +13,13 @@ protocol SpecCLLocationManagerViewControllerUI {
 
     // Output
     var title: String? { get }
+    var authorizationStatus: String? { get }
 }
 
 class SpecCLLocationManagerViewController: SpecViewController, CLLocationManagerViewControlling, SpecCLLocationManagerViewControllerUI {
 
     private(set) var title: String?
+    private(set) var authorizationStatus: String?
     private let interactor: CLLocationManagerInteractor
 
     init(interactor: CLLocationManagerInteractor) {
@@ -31,5 +33,9 @@ class SpecCLLocationManagerViewController: SpecViewController, CLLocationManager
 
     func set(title text: String) {
         title = text
+    }
+
+    func set(authorizationStatus text: String) {
+        authorizationStatus = text
     }
 }

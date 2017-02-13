@@ -88,6 +88,7 @@
 		887CDC051E5216E7008465FE /* CLLocationManagerModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDC041E5216E7008465FE /* CLLocationManagerModuleFactory.swift */; };
 		887CDC071E52178F008465FE /* CLLocationManagerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDC061E52178F008465FE /* CLLocationManagerPresenter.swift */; };
 		887CDC0A1E521AE7008465FE /* CLLocationManagerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CDC091E521AE7008465FE /* CLLocationManagerViewController.storyboard */; };
+		887CDC0C1E521DC7008465FE /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDC0B1E521DC7008465FE /* CLAuthorizationStatus+CustomStringConvertible.swift */; };
 		888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */; };
 		888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */; };
 		88A1E1831E33802800CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1821E33802800CFA0CD /* UIKitFringes.framework */; };
@@ -189,6 +190,7 @@
 		887CDC041E5216E7008465FE /* CLLocationManagerModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerModuleFactory.swift; sourceTree = "<group>"; };
 		887CDC061E52178F008465FE /* CLLocationManagerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManagerPresenter.swift; sourceTree = "<group>"; };
 		887CDC091E521AE7008465FE /* CLLocationManagerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CLLocationManagerViewController.storyboard; sourceTree = "<group>"; };
+		887CDC0B1E521DC7008465FE /* CLAuthorizationStatus+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLAuthorizationStatus+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
 		888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
 		888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
@@ -409,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				8814F2DD1E3DFFFD005506DB /* UIView+PerformWithAnimations.swift */,
+				887CDC0B1E521DC7008465FE /* CLAuthorizationStatus+CustomStringConvertible.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -836,6 +839,7 @@
 				8835668D1E2F582900289510 /* URLSessionViewController.swift in Sources */,
 				880740AD1E1F8C9400CECDDF /* ExamplesViewController.swift in Sources */,
 				8876C1F21E312A6E00F3E420 /* NetworkRequestInteractor.swift in Sources */,
+				887CDC0C1E521DC7008465FE /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */,
 				883566861E2F572100289510 /* URLSessionModuleFactory.swift in Sources */,
 				880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */,
 				883566881E2F577F00289510 /* URLSessionPresenter.swift in Sources */,

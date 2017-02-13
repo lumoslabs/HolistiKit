@@ -1,4 +1,5 @@
 import UIKitFringes
+import CoreLocation
 
 class CLLocationManagerPresenter {
     
@@ -10,5 +11,9 @@ class CLLocationManagerPresenter {
 
     func set(title text: String) {
         viewController.set(title: text)
+    }
+
+    func set(authorizationStatus: CLAuthorizationStatus) {
+        viewController.set(authorizationStatus: String(describing: authorizationStatus))
     }
 }
