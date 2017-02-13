@@ -16,8 +16,3 @@ class DateInteractor {
         presenter.updateWith(date: dateProvider.date)
     }
 }
-
-protocol DateInteractorDelegate: class {
-
-    func updateWith(date: Date)
-}
