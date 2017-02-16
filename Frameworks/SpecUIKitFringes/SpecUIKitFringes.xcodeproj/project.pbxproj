@@ -31,7 +31,7 @@
 		885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */; };
 		885EC18E1E34BC1700A61FA1 /* SpecSystemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */; };
 		885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */; };
-		88D2C8B31E562D810065882D /* FakeLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B21E562D810065882D /* FakeLocationManager.swift */; };
+		88D2C8B31E562D810065882D /* SpecLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B21E562D810065882D /* SpecLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,7 @@
 		885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecApplicationDelegate.swift; sourceTree = "<group>"; };
 		885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystemTestCase.swift; sourceTree = "<group>"; };
 		885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystem.swift; sourceTree = "<group>"; };
-		88D2C8B21E562D810065882D /* FakeLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeLocationManager.swift; sourceTree = "<group>"; };
+		88D2C8B21E562D810065882D /* SpecLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,7 +134,7 @@
 				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
-				88D2C8B21E562D810065882D /* FakeLocationManager.swift */,
+				88D2C8B21E562D810065882D /* SpecLocationManager.swift */,
 				883E43721E3CF9880051BD21 /* RealityChecker.swift */,
 				885EC13F1E338EBD00A61FA1 /* Supporting Files */,
 			);
@@ -321,7 +321,7 @@
 				885EC1491E338F4200A61FA1 /* SpecWindow.swift in Sources */,
 				883E43731E3CF9880051BD21 /* RealityChecker.swift in Sources */,
 				885EC1461E338F4200A61FA1 /* SpecNavigationController.swift in Sources */,
-				88D2C8B31E562D810065882D /* FakeLocationManager.swift in Sources */,
+				88D2C8B31E562D810065882D /* SpecLocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ import UIKitFringes
  documentation and experimenting with it).
 */
 
-public class FakeLocationManager {
+public class SpecLocationManager {
 
     public init() {}
 
@@ -55,13 +55,13 @@ public class FakeLocationManager {
 }
 
 // MARK: Internal Inconsistencies
-extension FakeLocationManager {
+extension SpecLocationManager {
 
     /*
-     During normal usage of FakeLocationManager in specs, incorrect usage should
+     During normal usage of SpecLocationManager in specs, incorrect usage should
      fatalError immediately. If you're trying to do something that wouldn't be
      possible, or something that CLLocationManager wouldn't actually be doing, we
-     should know right away. However, in testing FakeLocationManager itself, we
+     should know right away. However, in testing SpecLocationManager itself, we
      want to be able to test these checks where a fatalError would normally be
      occuring. Thus: InternalInconsistency.
      
@@ -106,7 +106,7 @@ extension FakeLocationManager {
 }
 
 // MARK: Async callbacks
-extension FakeLocationManager {
+extension SpecLocationManager {
 
     public func locationRequestSuccess() {
         if ![.authorizedWhenInUse, .authorizedAlways].contains(authorizationStatus()) {
@@ -124,7 +124,7 @@ extension FakeLocationManager {
 }
 
 // MARK: User taps for Location Services
-extension FakeLocationManager {
+extension SpecLocationManager {
 
     /* Both "Settings" and "Cancel" buttons have the same
      effect on the app and state in the ways we care.
@@ -142,7 +142,7 @@ extension FakeLocationManager {
 }
 
 // MARK: User taps for authorization dialog prompts
-extension FakeLocationManager {
+extension SpecLocationManager {
 
     public func tapAllowInDialog() {
         guard let dialog = dialog else {
@@ -189,7 +189,7 @@ extension FakeLocationManager {
 }
 
 // MARK: User's settings in the Settings app
-extension FakeLocationManager {
+extension SpecLocationManager {
 
     public func setAuthorizationStatusInSettingsApp(_ status: CLAuthorizationStatus) {
         // should there be some check here to make sure that the user would even
@@ -204,7 +204,7 @@ extension FakeLocationManager {
 }
 
 // MARK: requestWhenInUseAuthorization outcomes
-extension FakeLocationManager {
+extension SpecLocationManager {
     
     fileprivate func requestWhenInUseWhileNotDetermined() {
         fatalErrorIfCurrentlyADialog()
@@ -234,7 +234,7 @@ extension FakeLocationManager {
 }
 
 // MARK: requestLocation outcomes
-extension FakeLocationManager {
+extension SpecLocationManager {
 
     fileprivate func requestLocationWhileNotDetermined() {
         let error = NSError(domain: kCLErrorDomain, code: 0, userInfo: nil)
@@ -249,7 +249,7 @@ extension FakeLocationManager {
 }
 
 // MARK: startUpdatingLocation outcomes
-extension FakeLocationManager {
+extension SpecLocationManager {
 
     fileprivate func startUpdatingLocationWhileWhenInUse() {
         updatingLocation = true
@@ -258,7 +258,7 @@ extension FakeLocationManager {
 }
 
 // MARK: LocationManaging
-extension FakeLocationManager: LocationManaging {
+extension SpecLocationManager: LocationManaging {
 
     public var location: CLLocation? {
         return mostRecentLocation

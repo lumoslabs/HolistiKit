@@ -8,7 +8,7 @@ public protocol LocationManaging: class {
 
      These methods are exposed as instance methods, since they need
      to be testable. If they were left as class methods, in
-     FakeLocationManager their backing variables would need to be
+     SpecLocationManager their backing variables would need to be
      class variables, be Swift doesn't support class variables, so
      they would have to be static, but static won't reset itself
      between tests, so the values would pollute other tests.
