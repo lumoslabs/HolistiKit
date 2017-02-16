@@ -56,9 +56,9 @@ class ExamplesRouter {
     private func viewController(for module: ModuleIdentifier) -> ViewControlling {
         switch module {
         case .uiViewController: return uiViewControllerModuleFactory.create(withRouter: self)
-        case .date: return dateModuleFactory.create(withRouter: self)
-        case .urlSession: return urlSessionModuleFactory.create(withRouter: self)
-        case .timer: return timerModuleFactory.create(withRouter: self)
+        case .date: return dateModuleFactory.create()
+        case .urlSession: return urlSessionModuleFactory.create()
+        case .timer: return timerModuleFactory.create()
         case .clLocationManager: return clLocationManagerModuleFactory.create()
         }
     }

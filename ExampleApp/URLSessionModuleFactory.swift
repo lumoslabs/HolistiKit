@@ -17,7 +17,7 @@ class URLSessionModuleFactory {
         self.urlSession = urlSession
     }
 
-    func create(withRouter router: ExamplesRouter) -> ViewControlling {
+    func create() -> ViewControlling {
         let presenter = URLSessionPresenter(errorLogger: errorLogger)
         let interactor = URLSessionInteractor(presenter: presenter,
                                               errorLogger: errorLogger,

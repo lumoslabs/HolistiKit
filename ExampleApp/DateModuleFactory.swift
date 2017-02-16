@@ -14,7 +14,7 @@ class DateModuleFactory {
         self.timeZoneProvider = timeZoneProvider
     }
 
-    func create(withRouter router: ExamplesRouter) -> ViewControlling {
+    func create() -> ViewControlling {
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
         let presenter = DatePresenter(datePrinter: datePrinter)
         let interactor = DateInteractor(presenter: presenter,
