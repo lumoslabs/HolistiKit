@@ -37,9 +37,7 @@ public class SpecLocationManager {
     fileprivate var fatalErrorsOn: Bool = true
     public fileprivate(set) var erroredWith: InternalInconsistency?
 
-    public weak var delegate: CLLocationManagerDelegate? {
-        didSet { sendCurrentStatus() }
-    }
+    public weak var delegate: CLLocationManagerDelegate?
     public var mostRecentLocation: CLLocation?
     public fileprivate(set) var dialog: Dialog?
     fileprivate var _authorizationStatus = CLAuthorizationStatus.notDetermined {

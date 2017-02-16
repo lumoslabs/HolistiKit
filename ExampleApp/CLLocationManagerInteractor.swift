@@ -18,6 +18,7 @@ class CLLocationManagerInteractor: NSObject, CLLocationManagerDelegate {
     func viewDidLoad() {
         locationManager.delegate = self
         presenter.set(title: "CLLocationManager")
+        presenter.set(authorizationStatus: locationManager.authorizationStatus())
     }
 
     func didTap(rowAt indexPath: IndexPath) {

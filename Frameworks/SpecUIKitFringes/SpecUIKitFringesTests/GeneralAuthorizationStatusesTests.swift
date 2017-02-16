@@ -7,10 +7,10 @@ class GeneralAuthorizationStatusesTests: SpecLocationManagerTestCase {
     func test_WhenStatusNotDetermined() {
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
         
-        XCTAssertEqual(delegate.receivedAuthorizationChange, .notDetermined)
+        XCTAssertNil(delegate.receivedAuthorizationChange)
     }
 
-    func test_WhenLocationServicesIsOff() {
+    func test_WhenLocationServicesIsTurnedOff() {
         subject.setLocationServicesEnabledInSettingsApp(false)
         
         XCTAssertEqual(subject.authorizationStatus(), .denied)
