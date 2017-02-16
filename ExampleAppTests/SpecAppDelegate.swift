@@ -33,6 +33,7 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
         let clLocationManagerViewControllerFactory = SpecCLLocationManagerViewControllerFactory()
         let errorLogger = SpecErrorLogger()
         let timerFactory = SpecTimerFactory(dateProvider: dateProvider)
+        let locationManager = SpecLocationManager()
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
@@ -45,7 +46,8 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
                                             errorLogger: errorLogger,
                                             timerFactory: timerFactory,
                                             sharedApplication: sharedApplication,
-                                            urlSession: urlSession)
+                                            urlSession: urlSession,
+                                            locationManager: locationManager)
         
         appCoordinator.didFinishLaunching(withWindow: window)
     }

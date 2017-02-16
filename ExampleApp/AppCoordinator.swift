@@ -16,7 +16,8 @@ class AppCoordinator {
          errorLogger: ErrorLogging,
          timerFactory: TimerFactoryProtocol,
          sharedApplication: ApplicationProtocol,
-         urlSession: URLSessionProtocol) {
+         urlSession: URLSessionProtocol,
+         locationManager: LocationManaging) {
         let networkActivityManager = NetworkActivityManager(sharedApplication: sharedApplication)
         let examplesNavigationModuleFactory = ExamplesNavigationModuleFactory(viewControllerFactory: examplesNavigationControllerFactory)
         let examplesModuleFactory = ExamplesModuleFactory(viewControllerFactory: examplesViewControllerFactory,
@@ -34,7 +35,8 @@ class AppCoordinator {
                                                   timeZoneProvider: timeZoneProvider)
         let uiViewControllerModuleFactory = UIViewControllerModuleFactory(viewControllerFactory: uiViewControllerViewControllerFactory,
                                                                           errorLogger: errorLogger)
-        let clLocationManagerModuleFactory = CLLocationManagerModuleFactory(viewControllerFactory: clLocationManagerViewControllerFactory)
+        let clLocationManagerModuleFactory = CLLocationManagerModuleFactory(viewControllerFactory: clLocationManagerViewControllerFactory,
+                                                                            locationManager: locationManager)
         self.router = RootRouter(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
                                  examplesModuleFactory: examplesModuleFactory,
                                  timerModuleFactory: timerModuleFactory,

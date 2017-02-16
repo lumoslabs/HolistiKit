@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let timerFactory = TimerFactory()
         let sharedApplication = UIApplication.shared
         let urlSession = URLSession.shared
+        let locationManager = CLLocationManager()
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
@@ -35,7 +37,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             errorLogger: errorLogger,
                                             timerFactory: timerFactory,
                                             sharedApplication: sharedApplication,
-                                            urlSession: urlSession)
+                                            urlSession: urlSession,
+                                            locationManager: locationManager)
         appCoordinator.didFinishLaunching(withWindow: _window)
 
         _window.makeKeyAndVisible()
