@@ -38,13 +38,14 @@ class AppCoordinator {
         let clLocationManagerModuleFactory = CLLocationManagerModuleFactory(viewControllerFactory: clLocationManagerViewControllerFactory,
                                                                             locationManager: locationManager,
                                                                             errorLogger: errorLogger)
-        self.router = RootRouter(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
-                                 examplesModuleFactory: examplesModuleFactory,
-                                 timerModuleFactory: timerModuleFactory,
-                                 urlSessionModuleFactory: urlSessionModuleFactory,
-                                 dateModuleFactory: dateModuleFactory,
-                                 uiViewControllerModuleFactory: uiViewControllerModuleFactory,
-                                 clLocationManagerModuleFactory: clLocationManagerModuleFactory)
+        let examplesRouterFactory = ExamplesRouterFactory(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
+                                                          examplesModuleFactory: examplesModuleFactory,
+                                                          timerModuleFactory: timerModuleFactory,
+                                                          urlSessionModuleFactory: urlSessionModuleFactory,
+                                                          dateModuleFactory: dateModuleFactory,
+                                                          uiViewControllerModuleFactory: uiViewControllerModuleFactory,
+                                                          clLocationManagerModuleFactory: clLocationManagerModuleFactory)
+        self.router = RootRouter(examplesRouterFactory: examplesRouterFactory)
     }
 
     func didFinishLaunching(withWindow window: Windowing) {

@@ -63,3 +63,40 @@ class ExamplesRouter {
         }
     }
 }
+
+class ExamplesRouterFactory {
+    
+    private let examplesNavigationModuleFactory: ExamplesNavigationModuleFactory
+    private let examplesModuleFactory: ExamplesModuleFactory
+    private let timerModuleFactory: TimerModuleFactory
+    private let urlSessionModuleFactory: URLSessionModuleFactory
+    private let dateModuleFactory: DateModuleFactory
+    private let uiViewControllerModuleFactory: UIViewControllerModuleFactory
+    private let clLocationManagerModuleFactory: CLLocationManagerModuleFactory
+
+    init(examplesNavigationModuleFactory: ExamplesNavigationModuleFactory,
+         examplesModuleFactory: ExamplesModuleFactory,
+         timerModuleFactory: TimerModuleFactory,
+         urlSessionModuleFactory: URLSessionModuleFactory,
+         dateModuleFactory: DateModuleFactory,
+         uiViewControllerModuleFactory: UIViewControllerModuleFactory,
+         clLocationManagerModuleFactory: CLLocationManagerModuleFactory) {
+        self.examplesNavigationModuleFactory = examplesNavigationModuleFactory
+        self.examplesModuleFactory = examplesModuleFactory
+        self.timerModuleFactory = timerModuleFactory
+        self.urlSessionModuleFactory = urlSessionModuleFactory
+        self.dateModuleFactory = dateModuleFactory
+        self.uiViewControllerModuleFactory = uiViewControllerModuleFactory
+        self.clLocationManagerModuleFactory = clLocationManagerModuleFactory
+    }
+
+    func create() -> ExamplesRouter {
+        return ExamplesRouter(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
+                              examplesModuleFactory: examplesModuleFactory,
+                              timerModuleFactory: timerModuleFactory,
+                              urlSessionModuleFactory: urlSessionModuleFactory,
+                              dateModuleFactory: dateModuleFactory,
+                              uiViewControllerModuleFactory: uiViewControllerModuleFactory,
+                              clLocationManagerModuleFactory: clLocationManagerModuleFactory)
+    }
+}
