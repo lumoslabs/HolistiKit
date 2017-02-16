@@ -4,8 +4,8 @@ class AppCoordinator {
 
     private let router: RootRouter
 
-    init(examplesNavigationControllerFactory: ExamplesNavigationControllingFactoryProtocol,
-         examplesViewControllerFactory: ExamplesViewControllingFactoryProtocol,
+    init(examplesNavigationControllerFactory: ExamplesNavigationControllerFactoryProtocol,
+         examplesViewControllerFactory: ExamplesViewControllerFactoryProtocol,
          timerViewControllerFactory: TimerViewControllerFactoryProtocol,
          urlSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol,
          dateViewControllerFactory: DateViewControllerFactoryProtocol,

@@ -1,7 +1,7 @@
 import SpecUIKitFringes
 @testable import ExampleApp
 
-class SpecExamplesNavigationControllingFactory: ExamplesNavigationControllingFactoryProtocol {
+class SpecExamplesNavigationControllerFactory: ExamplesNavigationControllerFactoryProtocol {
 
     func create() -> ExamplesNavigationControlling {
         return SpecExamplesNavigationController()

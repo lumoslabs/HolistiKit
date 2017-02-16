@@ -2,9 +2,9 @@ import UIKitFringes
 
 class ExamplesNavigationModuleFactory {
 
-    let viewControllerFactory: ExamplesNavigationControllingFactoryProtocol
+    let viewControllerFactory: ExamplesNavigationControllerFactoryProtocol
 
-    init(viewControllerFactory: ExamplesNavigationControllingFactoryProtocol) {
+    init(viewControllerFactory: ExamplesNavigationControllerFactoryProtocol) {
         self.viewControllerFactory = viewControllerFactory
     }
 

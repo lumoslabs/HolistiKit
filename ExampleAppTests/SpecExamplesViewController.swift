@@ -2,7 +2,7 @@ import SpecUIKitFringes
 import UIKit
 @testable import ExampleApp
 
-class SpecExamplesViewControllingFactory: ExamplesViewControllingFactoryProtocol {
+class SpecExamplesViewControllerFactory: ExamplesViewControllerFactoryProtocol {
 
     func create(withInteractor interactor: ExamplesInteractor) -> ExamplesViewControlling {
         return SpecExamplesViewController(interactor: interactor)

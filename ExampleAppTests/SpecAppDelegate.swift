@@ -27,8 +27,8 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
 
         window = SpecWindow()
 
-        let examplesNavigationControllerFactory = SpecExamplesNavigationControllingFactory()
-        let examplesViewControllerFactory = SpecExamplesViewControllingFactory()
+        let examplesNavigationControllerFactory = SpecExamplesNavigationControllerFactory()
+        let examplesViewControllerFactory = SpecExamplesViewControllerFactory()
         let timerViewControllerFactory = SpecTimerViewControllerFactory()
         let urlSessionViewControllerFactory = SpecURLSessionViewControllerFactory()
         let dateViewControllerFactory = SpecDateViewControllerFactory()

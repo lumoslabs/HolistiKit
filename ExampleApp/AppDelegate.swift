@@ -11,8 +11,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _window = UIWindow(frame: UIScreen.main.bounds)
         window = _window
 
-        let examplesNavigationControllerFactory = ExamplesNavigationControllingFactory()
-        let examplesViewControllerFactory = ExamplesViewControllingFactory()
+        let examplesNavigationControllerFactory = ExamplesNavigationControllerFactory()
+        let examplesViewControllerFactory = ExamplesViewControllerFactory()
         let timerViewControllerFactory = TimerViewControllerFactory()
         let urlSessionViewControllerFactory = URLSessionViewControllerFactory()
         let dateViewControllerFactory = DateViewControllerFactory()

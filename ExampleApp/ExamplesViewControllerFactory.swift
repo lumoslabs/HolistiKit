@@ -1,6 +1,6 @@
 import UIKit
 
-class ExamplesViewControllingFactory: ExamplesViewControllingFactoryProtocol {
+class ExamplesViewControllerFactory: ExamplesViewControllerFactoryProtocol {
 
     func create(withInteractor interactor: ExamplesInteractor) -> ExamplesViewControlling {
         return ExamplesViewController.create(interactor: interactor)
@@ -19,7 +19,7 @@ extension ExamplesViewController {
     }
 }
 
-protocol ExamplesViewControllingFactoryProtocol {
+protocol ExamplesViewControllerFactoryProtocol {
     
     func create(withInteractor interactor: ExamplesInteractor) -> ExamplesViewControlling
 }

@@ -2,10 +2,10 @@ import UIKitFringes
 
 class ExamplesModuleFactory {
 
-    private let viewControllerFactory: ExamplesViewControllingFactoryProtocol
+    private let viewControllerFactory: ExamplesViewControllerFactoryProtocol
     private let errorLogger: ErrorLogging
 
-    init(viewControllerFactory: ExamplesViewControllingFactoryProtocol,
+    init(viewControllerFactory: ExamplesViewControllerFactoryProtocol,
          errorLogger: ErrorLogging) {
         self.viewControllerFactory = viewControllerFactory
         self.errorLogger = errorLogger
