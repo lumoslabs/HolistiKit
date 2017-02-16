@@ -19,6 +19,7 @@ class CLLocationManagerViewController: UITableViewController, CLLocationManagerV
 
     func set(authorizationStatus text: String) {
         authorizationStatusCell.textLabel?.text = text
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
     }
 
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
