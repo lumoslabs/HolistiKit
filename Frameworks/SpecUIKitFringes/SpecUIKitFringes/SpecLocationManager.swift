@@ -12,6 +12,11 @@ import UIKitFringes
  documentation and experimenting with it).
 */
 
+/* TODO
+ * Instantiate SpecLocationManagers on the fly via an injected factory and update them via a broadcast from a system-level user location object
+ * Add a check for the necessary string before showing an auth dialog: Bundle.main.infoDictionary?["NSLocationWhenInUseUsageDescription"]
+ */
+
 public class SpecLocationManager {
 
     public init() {}

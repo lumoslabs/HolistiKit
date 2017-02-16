@@ -34,7 +34,7 @@ class SpecCLLocationManagerViewController: SpecViewController, CLLocationManager
     }
 
     func tapRequestAuthorizationRow() {
-        interactor.tapRequestAuthorization()
+        interactor.didTap(rowAt: IndexPath(row: 0, section: 1))
     }
 
     func set(title text: String) {

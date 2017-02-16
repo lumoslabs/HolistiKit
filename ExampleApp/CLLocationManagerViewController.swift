@@ -20,6 +20,11 @@ class CLLocationManagerViewController: UITableViewController, CLLocationManagerV
     func set(authorizationStatus text: String) {
         authorizationStatusCell.textLabel?.text = text
     }
+
+    override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        interactor.didTap(rowAt: indexPath)
+    }
 }
 
 protocol CLLocationManagerViewControlling: class, ViewControlling {

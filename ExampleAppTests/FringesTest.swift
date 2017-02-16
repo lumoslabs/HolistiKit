@@ -65,6 +65,15 @@ extension FringesTest {
     }
 }
 
+// MARK: CLLocationManager
+extension FringesTest {
+
+    var locationManager: SpecLocationManager {
+        return system.locationManager
+    }
+}
+
+// MARK: Shared Application
 extension FringesTest {
 
     var networkActivityIndicatorIsVisible: Bool {

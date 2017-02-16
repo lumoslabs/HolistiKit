@@ -17,6 +17,7 @@ class FringesSpecSystem: SpecSystem {
     }
 
     override open func createAppDelegateBundle() -> AppDelegateBundle {
+        // TODO if these were created via a factory which will aggregate their state it wouldn't be necessary to play this weak/strong game
         let _urlSession = SpecURLSession()
         self.urlSession = _urlSession
         let _locationManager = SpecLocationManager()

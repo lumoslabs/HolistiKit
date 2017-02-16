@@ -36,7 +36,8 @@ class AppCoordinator {
         let uiViewControllerModuleFactory = UIViewControllerModuleFactory(viewControllerFactory: uiViewControllerViewControllerFactory,
                                                                           errorLogger: errorLogger)
         let clLocationManagerModuleFactory = CLLocationManagerModuleFactory(viewControllerFactory: clLocationManagerViewControllerFactory,
-                                                                            locationManager: locationManager)
+                                                                            locationManager: locationManager,
+                                                                            errorLogger: errorLogger)
         self.router = RootRouter(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
                                  examplesModuleFactory: examplesModuleFactory,
                                  timerModuleFactory: timerModuleFactory,
