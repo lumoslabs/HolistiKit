@@ -32,6 +32,13 @@
 		885EC18E1E34BC1700A61FA1 /* SpecSystemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */; };
 		885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */; };
 		88D2C8B31E562D810065882D /* SpecLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B21E562D810065882D /* SpecLocationManager.swift */; };
+		88D2C8D21E562FF70065882D /* AuthorizationInSettingsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8C41E562FB30065882D /* AuthorizationInSettingsAppTests.swift */; };
+		88D2C8D31E562FF70065882D /* SpecLocationManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8C51E562FB30065882D /* SpecLocationManagerTestCase.swift */; };
+		88D2C8D41E562FF70065882D /* GeneralAuthorizationStatusesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8C61E562FB30065882D /* GeneralAuthorizationStatusesTests.swift */; };
+		88D2C8D51E562FF70065882D /* LocationServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8C71E562FB30065882D /* LocationServicesTests.swift */; };
+		88D2C8D61E562FF70065882D /* LocationUpdatingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8C81E562FB30065882D /* LocationUpdatingTests.swift */; };
+		88D2C8D71E562FF70065882D /* RequestingAuthorizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8C91E562FB30065882D /* RequestingAuthorizationTests.swift */; };
+		88D2C8D81E562FF70065882D /* SpecLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8CA1E562FB30065882D /* SpecLocationManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +80,13 @@
 		885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystemTestCase.swift; sourceTree = "<group>"; };
 		885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystem.swift; sourceTree = "<group>"; };
 		88D2C8B21E562D810065882D /* SpecLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationManager.swift; sourceTree = "<group>"; };
+		88D2C8C41E562FB30065882D /* AuthorizationInSettingsAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationInSettingsAppTests.swift; sourceTree = "<group>"; };
+		88D2C8C51E562FB30065882D /* SpecLocationManagerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationManagerTestCase.swift; sourceTree = "<group>"; };
+		88D2C8C61E562FB30065882D /* GeneralAuthorizationStatusesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralAuthorizationStatusesTests.swift; sourceTree = "<group>"; };
+		88D2C8C71E562FB30065882D /* LocationServicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationServicesTests.swift; sourceTree = "<group>"; };
+		88D2C8C81E562FB30065882D /* LocationUpdatingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationUpdatingTests.swift; sourceTree = "<group>"; };
+		88D2C8C91E562FB30065882D /* RequestingAuthorizationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestingAuthorizationTests.swift; sourceTree = "<group>"; };
+		88D2C8CA1E562FB30065882D /* SpecLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +109,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		883E437C1E3D13DB0051BD21 /* Spec System */ = {
+		883E437C1E3D13DB0051BD21 /* SpecSystem */ = {
 			isa = PBXGroup;
 			children = (
 				883E437D1E3D140F0051BD21 /* AppIconTests.swift */,
@@ -103,7 +117,7 @@
 				883E43831E3D15050051BD21 /* AppSwitcherTests.swift */,
 				885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */,
 			);
-			name = "Spec System";
+			name = SpecSystem;
 			sourceTree = "<group>";
 		};
 		885EC11A1E338E8A00A61FA1 = {
@@ -145,7 +159,8 @@
 		885EC1311E338E8B00A61FA1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				883E437C1E3D13DB0051BD21 /* Spec System */,
+				88D2C8C31E562F8B0065882D /* SpecLocationManager */,
+				883E437C1E3D13DB0051BD21 /* SpecSystem */,
 				885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */,
 				885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */,
 				885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */,
@@ -201,6 +216,20 @@
 				885EC1591E33E0C300A61FA1 /* XCTest.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		88D2C8C31E562F8B0065882D /* SpecLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				88D2C8C41E562FB30065882D /* AuthorizationInSettingsAppTests.swift */,
+				88D2C8C61E562FB30065882D /* GeneralAuthorizationStatusesTests.swift */,
+				88D2C8C71E562FB30065882D /* LocationServicesTests.swift */,
+				88D2C8C81E562FB30065882D /* LocationUpdatingTests.swift */,
+				88D2C8C91E562FB30065882D /* RequestingAuthorizationTests.swift */,
+				88D2C8CA1E562FB30065882D /* SpecLocationManagerDelegate.swift */,
+				88D2C8C51E562FB30065882D /* SpecLocationManagerTestCase.swift */,
+			);
+			name = SpecLocationManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,14 +360,21 @@
 			files = (
 				885EC1531E33C0E900A61FA1 /* SpecSharedApplicationTests.swift in Sources */,
 				885EC1331E338E8B00A61FA1 /* SpecWindowTests.swift in Sources */,
+				88D2C8D21E562FF70065882D /* AuthorizationInSettingsAppTests.swift in Sources */,
 				885EC1571E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift in Sources */,
+				88D2C8D71E562FF70065882D /* RequestingAuthorizationTests.swift in Sources */,
 				885EC14F1E33981F00A61FA1 /* RecordingSpecViewController.swift in Sources */,
 				885EC1551E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift in Sources */,
 				883E43821E3D14DB0051BD21 /* HomeButtonTests.swift in Sources */,
 				883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */,
+				88D2C8D51E562FF70065882D /* LocationServicesTests.swift in Sources */,
 				885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */,
+				88D2C8D31E562FF70065882D /* SpecLocationManagerTestCase.swift in Sources */,
+				88D2C8D61E562FF70065882D /* LocationUpdatingTests.swift in Sources */,
 				883E43841E3D15050051BD21 /* AppSwitcherTests.swift in Sources */,
+				88D2C8D41E562FF70065882D /* GeneralAuthorizationStatusesTests.swift in Sources */,
 				883E437E1E3D140F0051BD21 /* AppIconTests.swift in Sources */,
+				88D2C8D81E562FF70065882D /* SpecLocationManagerDelegate.swift in Sources */,
 				885EC18E1E34BC1700A61FA1 /* SpecSystemTestCase.swift in Sources */,
 				885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */,
 				883E43751E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift in Sources */,
