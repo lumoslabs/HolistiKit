@@ -6,7 +6,7 @@ class ExamplesViewController: UITableViewController, ExamplesViewControlling {
     var interactor: ExamplesInteractor!
     private static let cellIdentifier = "ExamplesCell"
 
-    @IBOutlet weak var firstRow: UITableViewCell!
+    @IBOutlet private weak var firstRow: UITableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()

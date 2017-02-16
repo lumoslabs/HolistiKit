@@ -5,7 +5,7 @@ class DateViewController: UITableViewController, DateViewControlling {
 
     var interactor: DateInteractor!
     
-    @IBOutlet weak var viewLoadedAtLabel: UITableViewCell!
+    @IBOutlet private weak var viewLoadedAtLabel: UITableViewCell!
 
     func set(dateLabel text: String) {
         viewLoadedAtLabel.textLabel?.text = text

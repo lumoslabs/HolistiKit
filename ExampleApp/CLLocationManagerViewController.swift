@@ -3,8 +3,7 @@ import UIKitFringes
 
 class CLLocationManagerViewController: UITableViewController, CLLocationManagerViewControlling {
 
-    // TODO can outlets be private? fileprivate if not?
-    @IBOutlet weak var authorizationStatusCell: UITableViewCell!
+    @IBOutlet private weak var authorizationStatusCell: UITableViewCell!
 
     var interactor: CLLocationManagerInteractor!
     

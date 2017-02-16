@@ -5,7 +5,7 @@ class TimerViewController: UITableViewController, TimerViewControlling {
 
     var interactor: TimerInteractor!
     
-    @IBOutlet weak var dateCell: UITableViewCell!
+    @IBOutlet private weak var dateCell: UITableViewCell!
     
     func set(title text: String) {
         title = text
