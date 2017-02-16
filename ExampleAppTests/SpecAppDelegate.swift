@@ -9,15 +9,18 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
     private weak var dateProvider: SpecDateProvider!
     private weak var timeZoneProvider: SpecTimeZoneProvider!
     private weak var urlSession: SpecURLSession!
+    private weak var locationManager: SpecLocationManager!
 
     init(sharedApplication: SpecSharedApplication,
          dateProvider: SpecDateProvider,
          timeZoneProvider: SpecTimeZoneProvider,
-         urlSession: SpecURLSession) {
+         urlSession: SpecURLSession,
+         locationManager: SpecLocationManager) {
         self.sharedApplication = sharedApplication
         self.dateProvider = dateProvider
         self.timeZoneProvider = timeZoneProvider
         self.urlSession = urlSession
+        self.locationManager = locationManager
     }
 
     func applicationDidLaunch() {
@@ -33,7 +36,6 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
         let clLocationManagerViewControllerFactory = SpecCLLocationManagerViewControllerFactory()
         let errorLogger = SpecErrorLogger()
         let timerFactory = SpecTimerFactory(dateProvider: dateProvider)
-        let locationManager = SpecLocationManager()
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,

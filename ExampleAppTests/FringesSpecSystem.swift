@@ -7,6 +7,7 @@ class FringesSpecSystem: SpecSystem {
     let timeZoneProvider: SpecTimeZoneProvider
     
     weak var urlSession: SpecURLSession!
+    weak var locationManager: SpecLocationManager!
 
     override init() {
         self.sharedApplication = SpecSharedApplication()
@@ -18,11 +19,14 @@ class FringesSpecSystem: SpecSystem {
     override open func createAppDelegateBundle() -> AppDelegateBundle {
         let _urlSession = SpecURLSession()
         self.urlSession = _urlSession
+        let _locationManager = SpecLocationManager()
+        self.locationManager = _locationManager
         let appDelegate = SpecAppDelegate(sharedApplication: sharedApplication,
                                           dateProvider: dateProvider,
                                           timeZoneProvider: timeZoneProvider,
-                                          urlSession: urlSession)
+                                          urlSession: urlSession,
+                                          locationManager: locationManager)
         return AppDelegateBundle(appDelegate: appDelegate,
-                                 temporarilyStrong: [urlSession])
+                                 temporarilyStrong: [urlSession, locationManager])
     }
 }

@@ -11,6 +11,8 @@ class SpecCLLocationManagerViewControllerFactory: CLLocationManagerViewControlle
 
 protocol SpecCLLocationManagerViewControllerUI {
 
+    // Input
+    func tapRequestAuthorizationRow()
     // Output
     var title: String? { get }
     var authorizationStatus: String? { get }
@@ -29,6 +31,10 @@ class SpecCLLocationManagerViewController: SpecViewController, CLLocationManager
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor.viewDidLoad()
+    }
+
+    func tapRequestAuthorizationRow() {
+        interactor.tapRequestAuthorization()
     }
 
     func set(title text: String) {

@@ -15,4 +15,7 @@ class CLLocationManagerInteractor {
         presenter.set(title: "CLLocationManager")
         presenter.set(authorizationStatus: locationManager.authorizationStatus())
     }
+
+    func tapRequestAuthorization() {
+    }
 }

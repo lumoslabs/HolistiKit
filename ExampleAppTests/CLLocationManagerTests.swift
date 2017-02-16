@@ -14,4 +14,10 @@ class CLLocationManagerTests: FringesTest {
         examplesUI.tapCLLocationManagerRow()
         XCTAssertEqual(clLocationManagerUI.authorizationStatus, "notDetermined")
     }
+
+    func test_tappingOnRequestAuthorization() {
+        tapAppIcon()
+        examplesUI.tapCLLocationManagerRow()
+        clLocationManagerUI.tapRequestAuthorizationRow()
+    }
 }
