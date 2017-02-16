@@ -14,6 +14,7 @@
 		88A1E1711E337FE300CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1671E337FE300CFA0CD /* UIKitFringes.framework */; };
 		88A1E1761E337FE300CFA0CD /* UIKitFringesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1E1751E337FE300CFA0CD /* UIKitFringesTests.swift */; };
 		88A1E1781E337FE300CFA0CD /* UIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B01E562C600065882D /* CLLocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		88A1E1701E337FE300CFA0CD /* UIKitFringesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitFringesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A1E1751E337FE300CFA0CD /* UIKitFringesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitFringesTests.swift; sourceTree = "<group>"; };
 		88A1E1771E337FE300CFA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88D2C8B01E562C600065882D /* CLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				885EC10A1E3384BB00A61FA1 /* UINavigationController.swift */,
 				885EC10B1E3384BB00A61FA1 /* UIViewController.swift */,
 				885EC10C1E3384BB00A61FA1 /* UIWindow.swift */,
+				88D2C8B01E562C600065882D /* CLLocationManager.swift */,
 				88A1E1841E3381AE00CFA0CD /* Supporting Files */,
 			);
 			name = Source;
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */,
+				88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */,
 				885EC10E1E3384BB00A61FA1 /* UINavigationController.swift in Sources */,
 				885EC10F1E3384BB00A61FA1 /* UIViewController.swift in Sources */,
 				885EC1101E3384BB00A61FA1 /* UIWindow.swift in Sources */,
@@ -294,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -341,7 +345,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
