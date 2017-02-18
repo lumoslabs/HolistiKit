@@ -43,7 +43,7 @@ public class SpecLocationManager {
         self.locationServices = locationServices
         self.locationAuthorizationStatus = locationAuthorizationStatus
         locationServices.delegate = self
-        SpecAuthorizationStatusChangeNotifier.observe(on: self, selector: #selector(didChangeAuthorizationStatus))
+        locationAuthorizationStatus.observe(on: self, selector: #selector(didChangeAuthorizationStatus))
     }
 
     @objc
