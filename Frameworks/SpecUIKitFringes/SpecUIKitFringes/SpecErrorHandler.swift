@@ -47,11 +47,15 @@ public class SpecErrorHandler {
 
     func error(_ error: FatalError) {
         if recordingMode {
-            if recordedError == nil {
-                recordedError = error
-            }
+            record(error)
         } else {
             fatalError(error.message)
+        }
+    }
+
+    private func record(_ error: FatalError) {
+        if recordedError == nil {
+            recordedError = error
         }
     }
 

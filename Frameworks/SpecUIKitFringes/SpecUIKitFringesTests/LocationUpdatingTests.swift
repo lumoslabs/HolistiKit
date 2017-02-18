@@ -13,7 +13,7 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
         
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 1)
         
-        errorHandler.fatalErrorsOff() {
+        errorHandler.fatalErrorsOff {
             self.subject.locationRequestSuccess()
         }
         XCTAssertEqual(errorHandler.recordedError, .noLocationRequestInProgress)
@@ -64,7 +64,7 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
     }
 
     func test_updatedLocationWithoutAuthorization() {
-        errorHandler.fatalErrorsOff() {
+        errorHandler.fatalErrorsOff {
             self.subject.locationRequestSuccess()
         }
         XCTAssertEqual(errorHandler.recordedError, .notAuthorized)
