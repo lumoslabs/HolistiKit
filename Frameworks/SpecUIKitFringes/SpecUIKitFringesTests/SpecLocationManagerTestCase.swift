@@ -5,11 +5,13 @@ class SpecLocationManagerTestCase: XCTestCase {
 
     var subject: SpecLocationManager!
     var delegate: SpecLocationManagerDelegate!
+    var systemDialog: SystemDialog!
     
     override func setUp() {
         super.setUp()
 
-        subject = SpecLocationManager()
+        systemDialog = SystemDialog()
+        subject = SpecLocationManager(systemDialog: systemDialog)
         delegate = SpecLocationManagerDelegate()
         subject.delegate = delegate
     }

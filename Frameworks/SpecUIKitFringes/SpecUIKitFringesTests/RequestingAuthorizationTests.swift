@@ -10,11 +10,11 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
         subject.requestWhenInUseAuthorization()
 
-        XCTAssertEqual(subject.dialog, .requestAccessWhileInUse)
+        XCTAssertEqual(systemDialog.visibleDialog, .locationManager(.requestAccessWhileInUse))
         
         subject.tapAllowInDialog()
         
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
         XCTAssertEqual(subject.authorizationStatus(), .authorizedWhenInUse)
         XCTAssertEqual(delegate.receivedAuthorizationChange, .authorizedWhenInUse)
     }
@@ -25,11 +25,11 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
         subject.requestWhenInUseAuthorization()
 
-        XCTAssertEqual(subject.dialog, .requestAccessWhileInUse)
+        XCTAssertEqual(systemDialog.visibleDialog, .locationManager(.requestAccessWhileInUse))
         
         subject.tapDoNotAllowAccessInDialog()
         
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
         XCTAssertEqual(subject.authorizationStatus(), .denied)
         XCTAssertEqual(delegate.receivedAuthorizationChange, .denied)
     }
@@ -40,7 +40,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         
         subject.requestWhenInUseAuthorization()
 
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
         XCTAssertEqual(subject.authorizationStatus(), .denied)
         XCTAssertNil(delegate.receivedAuthorizationChange)
     }
@@ -51,7 +51,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
         subject.requestWhenInUseAuthorization()
 
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
         XCTAssertEqual(subject.authorizationStatus(), .authorizedWhenInUse)
         XCTAssertNil(delegate.receivedAuthorizationChange)
     }
@@ -63,11 +63,11 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
         subject.requestWhenInUseAuthorization()
 
-        XCTAssertEqual(subject.dialog, .requestJumpToLocationServicesSettings)
+        XCTAssertEqual(systemDialog.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
         subject.tapSettingsOrCancelInDialog()
         
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
     }
 
     func test_WhenStatusAuthorizedWhenInUse_AndLocationServicesOff_ThenOn() {
@@ -77,11 +77,11 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
         subject.requestWhenInUseAuthorization()
 
-        XCTAssertEqual(subject.dialog, .requestJumpToLocationServicesSettings)
+        XCTAssertEqual(systemDialog.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
         subject.tapSettingsOrCancelInDialog()
         
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
         
         subject.setLocationServicesEnabledInSettingsApp(true)
         
@@ -95,13 +95,13 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
         subject.requestWhenInUseAuthorization()
 
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
         XCTAssertEqual(subject.authorizationStatus(), .denied)
         XCTAssertNil(delegate.receivedAuthorizationChange)
     }
 
     func test_tappingAllowInDialogWhenNotPrompted() {
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
         
         subject.fatalErrorsOff() {
             subject.tapAllowInDialog()
@@ -112,7 +112,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     func test_tappingAllowInDialogWhenWrongDialog() {
         subject.setLocationServicesEnabledInSettingsApp(false)
         subject.requestWhenInUseAuthorization()
-        XCTAssertEqual(subject.dialog, .requestJumpToLocationServicesSettings)
+        XCTAssertEqual(systemDialog.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
         subject.fatalErrorsOff() {
             subject.tapAllowInDialog()
@@ -121,7 +121,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
 
     func test_tappingDoNotAllowInDialogWhenNotPrompted() {
-        XCTAssertNil(subject.dialog)
+        XCTAssertNil(systemDialog.visibleDialog)
         
         subject.fatalErrorsOff() {
             subject.tapDoNotAllowAccessInDialog()
@@ -132,7 +132,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     func test_tappingDoNotAllowInDialogWhenWrongDialog() {
         subject.setLocationServicesEnabledInSettingsApp(false)
         subject.requestWhenInUseAuthorization()
-        XCTAssertEqual(subject.dialog, .requestJumpToLocationServicesSettings)
+        XCTAssertEqual(systemDialog.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
         subject.fatalErrorsOff() {
             subject.tapDoNotAllowAccessInDialog()

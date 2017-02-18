@@ -1,9 +1,17 @@
 import Foundation
 
-class SystemDialog {
+public class SystemDialog {
 
     enum LocationManagerIdentifier {
+        // "Allow "TransitApp" to access your location while you use the app?"
+        // "<message you have set in Info.plist for NSLocationWhenInUseUsageDescription>"
+        // [Don't Allow] [Allow]
         case requestAccessWhileInUse
+        // Similar to the one above, but with different messaging.
+        case requestAccessAlways
+        // "Turn On Location Services to Allow "TransitApp" to Determine Your Location"
+        // [Settings] [Cancel]
+        case requestJumpToLocationServicesSettings
     }
 
     enum DialogIdentifier {
@@ -16,6 +24,7 @@ class SystemDialog {
         dialogs.append(identifier)
     }
 
+    @discardableResult
     func popDialog() -> DialogIdentifier? {
         if dialogs.isEmpty { return nil }
         return dialogs.remove(at: 0)

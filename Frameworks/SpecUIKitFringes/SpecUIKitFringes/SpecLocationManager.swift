@@ -19,19 +19,10 @@ import UIKitFringes
 
 public class SpecLocationManager {
 
-    public init() {}
+    fileprivate let systemDialog: SystemDialog
 
-    // this probably belongs in a Spec UIApplication
-    public enum Dialog {
-        // "Allow "TransitApp" to access your location while you use the app?"
-        // "<message you have set in Info.plist for NSLocationWhenInUseUsageDescription>"
-        // [Don't Allow] [Allow]
-        case requestAccessWhileInUse
-        // Similar to the one above, but with different messaging.
-        case requestAccessAlways
-        // "Turn On Location Services to Allow "TransitApp" to Determine Your Location"
-        // [Settings] [Cancel]
-        case requestJumpToLocationServicesSettings
+    public init(systemDialog: SystemDialog) {
+        self.systemDialog = systemDialog
     }
     
     fileprivate var fatalErrorsOn: Bool = true
@@ -39,7 +30,6 @@ public class SpecLocationManager {
 
     public weak var delegate: CLLocationManagerDelegate?
     public var mostRecentLocation: CLLocation?
-    public fileprivate(set) var dialog: Dialog?
     fileprivate var _authorizationStatus = CLAuthorizationStatus.notDetermined {
         didSet { sendCurrentStatus() }
     }
@@ -129,16 +119,18 @@ extension SpecLocationManager {
 // MARK: User taps for Location Services
 extension SpecLocationManager {
 
+    // TODO expose this as two methods which happen to internally call a single private func
+    // Going to settings would also background the app, which cancel would make it active
     /* Both "Settings" and "Cancel" buttons have the same
      effect on the app and state in the ways we care.
      "Settings" will additionally background the app, but
      we don't care about that, at least yet.
      */
     public func tapSettingsOrCancelInDialog() {
-        if dialog != .requestJumpToLocationServicesSettings {
+        if visibleDialog != .requestJumpToLocationServicesSettings {
             errorWith(.noLocationServicesDialog)
         }
-        dialog = nil
+        systemDialog.popDialog()
         locationServicesDialogResponseCount += 1
     }
     
@@ -147,13 +139,20 @@ extension SpecLocationManager {
 // MARK: User taps for authorization dialog prompts
 extension SpecLocationManager {
 
+    var visibleDialog: SystemDialog.LocationManagerIdentifier? {
+        guard let dialog = systemDialog.visibleDialog else { return nil }
+        switch dialog {
+        case .locationManager(let locationManagerDialog): return locationManagerDialog
+        }
+    }
+
     public func tapAllowInDialog() {
-        guard let dialog = dialog else {
+        guard let visibleDialog = visibleDialog else {
             errorWith(.noDialog)
             return
         }
         let accessLevel: CLAuthorizationStatus
-        switch dialog {
+        switch visibleDialog {
         case .requestAccessWhileInUse: accessLevel = .authorizedWhenInUse
         case .requestAccessAlways: accessLevel = .authorizedAlways
         case .requestJumpToLocationServicesSettings:
@@ -173,19 +172,19 @@ extension SpecLocationManager {
     }
 
     private func respondToAccessDialog(_ level: CLAuthorizationStatus) {
-        guard let _dialog = dialog else {
+        guard let dialog = visibleDialog else {
             errorWith(.noDialog)
             return
         }
         // the dialog must currently be one asking for authorization
-        if ![.requestAccessWhileInUse, .requestAccessAlways].contains(_dialog) {
+        if ![.requestAccessWhileInUse, .requestAccessAlways].contains(dialog) {
             fatalErrorWrongDialog()
         }
         // the authorization must be one that can come from a user tap on the dialog
         if ![.denied, .authorizedWhenInUse, .authorizedAlways].contains(level) {
             fatalError("This is not a valid user response from the dialog.")
         }
-        dialog = nil
+        systemDialog.popDialog()
         _authorizationStatus = level
     }
     
@@ -211,13 +210,13 @@ extension SpecLocationManager {
     
     fileprivate func requestWhenInUseWhileNotDetermined() {
         fatalErrorIfCurrentlyADialog()
-        dialog = .requestAccessWhileInUse
+        systemDialog.addDialog(withIdentifier: .locationManager(.requestAccessWhileInUse))
     }
 
     fileprivate func requestWhenInUseWhileDeniedDueToLocationServices() {
         if !iOSwillPermitALocationServicesDialogToBeShown { return }
         fatalErrorIfCurrentlyADialog()
-        dialog = .requestJumpToLocationServicesSettings
+        systemDialog.addDialog(withIdentifier: .locationManager(.requestJumpToLocationServicesSettings))
     }
 
     private var iOSwillPermitALocationServicesDialogToBeShown: Bool {
@@ -229,8 +228,10 @@ extension SpecLocationManager {
         return locationServicesDialogResponseCount < 2
     }
 
+    // TODO this is not the case.
+    // add tests to SystemDialog to show how they stack and affect app active/inactive
     private func fatalErrorIfCurrentlyADialog() {
-        guard let dialog = dialog else { return }
+        guard let dialog = visibleDialog else { return }
         fatalError("There is already a dialog displayed: \(dialog). If showing another one would create a stack of dialogs, then update `dialog` to handle a stack.")
     }
 
