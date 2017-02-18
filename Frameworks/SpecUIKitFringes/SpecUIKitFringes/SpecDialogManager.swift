@@ -10,7 +10,7 @@ public class SpecDialogManager {
 
     private var dialogs = [SpecDialog]()
     
-    func addDialog(withIdentifier identifier: SpecDialog) {
+    func addDialog(_ identifier: SpecDialog) {
         dialogs.append(identifier)
     }
 

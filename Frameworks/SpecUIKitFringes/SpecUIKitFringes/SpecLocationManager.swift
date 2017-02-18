@@ -210,13 +210,13 @@ extension SpecLocationManager {
     
     fileprivate func requestWhenInUseWhileNotDetermined() {
         fatalErrorIfCurrentlyADialog()
-        dialogManager.addDialog(withIdentifier: LocationManagerDialog(identifier: .requestAccessWhileInUse))
+        dialogManager.addDialog(LocationManagerDialog(identifier: .requestAccessWhileInUse))
     }
 
     fileprivate func requestWhenInUseWhileDeniedDueToLocationServices() {
         if !iOSwillPermitALocationServicesDialogToBeShown { return }
         fatalErrorIfCurrentlyADialog()
-        dialogManager.addDialog(withIdentifier: LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings))
+        dialogManager.addDialog(LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings))
     }
 
     private var iOSwillPermitALocationServicesDialogToBeShown: Bool {
