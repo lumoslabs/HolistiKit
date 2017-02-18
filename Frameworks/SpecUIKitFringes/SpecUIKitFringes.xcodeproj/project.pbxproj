@@ -42,6 +42,7 @@
 		88D2C8E41E56E3B40065882D /* SpecDialogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8E31E56E3B40065882D /* SpecDialogManager.swift */; };
 		88D2C8E61E56E3D80065882D /* SpecDialogManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8E51E56E3D80065882D /* SpecDialogManagerTests.swift */; };
 		88FED3F41E58690300217628 /* SystemDialogIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F31E58690300217628 /* SystemDialogIdentifier.swift */; };
+		88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F71E5870CD00217628 /* SpecDialog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		88D2C8E31E56E3B40065882D /* SpecDialogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogManager.swift; sourceTree = "<group>"; };
 		88D2C8E51E56E3D80065882D /* SpecDialogManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogManagerTests.swift; sourceTree = "<group>"; };
 		88FED3F31E58690300217628 /* SystemDialogIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemDialogIdentifier.swift; sourceTree = "<group>"; };
+		88FED3F71E5870CD00217628 /* SpecDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				88D2C8E31E56E3B40065882D /* SpecDialogManager.swift */,
+				88FED3F71E5870CD00217628 /* SpecDialog.swift */,
 				88FED3F31E58690300217628 /* SystemDialogIdentifier.swift */,
 			);
 			name = SpecDialogManager;
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */,
 				88D2C8E41E56E3B40065882D /* SpecDialogManager.swift in Sources */,
 				885EC1481E338F4200A61FA1 /* SpecViewController.swift in Sources */,
 				885EC1471E338F4200A61FA1 /* SpecSharedApplication.swift in Sources */,
