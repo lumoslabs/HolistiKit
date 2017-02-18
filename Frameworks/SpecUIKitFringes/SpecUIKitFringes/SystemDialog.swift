@@ -16,6 +16,11 @@ class SystemDialog {
         dialogs.append(identifier)
     }
 
+    func popDialog() -> DialogIdentifier? {
+        if dialogs.isEmpty { return nil }
+        return dialogs.remove(at: 0)
+    }
+
     var visibleDialog: DialogIdentifier? {
         return dialogs.first
     }
