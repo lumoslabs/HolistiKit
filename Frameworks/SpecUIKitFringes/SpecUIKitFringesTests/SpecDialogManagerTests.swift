@@ -17,18 +17,6 @@ class SpecDialogManagerTests: XCTestCase {
         XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessAlways))
     }
 
-    func test_poppingADialog() {
-        subject.addDialog(TestDialog())
-        XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessAlways))
-        let poppedDialog = subject.popDialog()
-        XCTAssertNil(subject.visibleDialog)
-        XCTAssertEqual(poppedDialog?.identifier, .locationManager(.requestAccessAlways))
-    }
-    
-    func test_poppingADialogWhenNoneIsPresent() {
-        XCTAssertNil(subject.popDialog())
-    }
-
     func test_tappingOnAButton() {
         let testDialog = TestDialog()
         subject.addDialog(testDialog)

@@ -44,7 +44,7 @@ public class SpecDialogManager {
         }
     }
 
-    func popDialog() -> SpecDialog? {
+    private func popDialog() -> SpecDialog? {
         if dialogs.isEmpty { return nil }
         return dialogs.remove(at: 0)
     }

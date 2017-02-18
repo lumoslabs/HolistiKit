@@ -157,7 +157,7 @@
 				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
-				88D2C8B21E562D810065882D /* SpecLocationManager.swift */,
+				88FED3FC1E58C51D00217628 /* SpecLocationManager */,
 				883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */,
 				885EC13F1E338EBD00A61FA1 /* Supporting Files */,
 			);
@@ -250,6 +250,14 @@
 				88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */,
 			);
 			name = SpecDialogManager;
+			sourceTree = "<group>";
+		};
+		88FED3FC1E58C51D00217628 /* SpecLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				88D2C8B21E562D810065882D /* SpecLocationManager.swift */,
+			);
+			name = SpecLocationManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
