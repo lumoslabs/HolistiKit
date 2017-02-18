@@ -13,16 +13,21 @@ import UIKitFringes
 */
 
 /* TODO
- * Instantiate SpecLocationManagers on the fly via an injected factory and update them via a broadcast from a system-level user location object
+ * Interact with a SpecUserLocation class which will send new coordinates to this class instead
  * Add a check for the necessary string before showing an auth dialog: Bundle.main.infoDictionary?["NSLocationWhenInUseUsageDescription"]
  */
 
 public class SpecLocationManager {
 
+    public weak var delegate: CLLocationManagerDelegate?
     fileprivate let dialogManager: SpecDialogManager
     fileprivate let errorHandler: SpecErrorHandler
     fileprivate let locationServices: SpecLocationServices
     fileprivate let locationAuthorizationStatus: SpecLocationAuthorizationStatus
+    public var mostRecentLocation: CLLocation?
+    fileprivate let bsFirstArg = CLLocationManager()
+    fileprivate var locationRequestInProgress = false
+    fileprivate var updatingLocation = false
 
     public convenience init(dialogManager: SpecDialogManager,
                             locationServices: SpecLocationServices,
@@ -42,7 +47,7 @@ public class SpecLocationManager {
         self.errorHandler = errorHandler
         self.locationServices = locationServices
         self.locationAuthorizationStatus = locationAuthorizationStatus
-        locationServices.delegate = self
+        locationServices.observe(on: self, selector: #selector(locationServicesEnabledDidChange))
         locationAuthorizationStatus.observe(on: self, selector: #selector(didChangeAuthorizationStatus))
     }
 
@@ -51,11 +56,10 @@ public class SpecLocationManager {
         sendCurrentStatus()
     }
 
-    public weak var delegate: CLLocationManagerDelegate?
-    public var mostRecentLocation: CLLocation?
-    fileprivate let bsFirstArg = CLLocationManager()
-    fileprivate var locationRequestInProgress = false
-    fileprivate var updatingLocation = false
+    @objc
+    func locationServicesEnabledDidChange() {
+        sendCurrentStatus()
+    }
 
     fileprivate func sendCurrentStatus() {
         delegate?.locationManager?(bsFirstArg, didChangeAuthorization: authorizationStatus())
@@ -113,6 +117,7 @@ extension SpecLocationManager {
 }
 
 // MARK: User's settings in the Settings app
+// TODO move these to a separate class
 extension SpecLocationManager {
 
     public func setAuthorizationStatusInSettingsApp(_ status: CLAuthorizationStatus) {
@@ -197,12 +202,5 @@ extension SpecLocationManager: LocationManaging {
 
     private func requestLocationWhileWhenInUse() {
         locationRequestInProgress = true
-    }
-}
-
-extension SpecLocationManager: SpecLocationServicesDelegate {
-    
-    func locationServicesEnabledDidChange() {
-        sendCurrentStatus()
     }
 }

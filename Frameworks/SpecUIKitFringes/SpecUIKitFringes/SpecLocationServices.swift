@@ -2,12 +2,11 @@ public class SpecLocationServices {
 
     public init() { }
 
-    weak var delegate: SpecLocationServicesDelegate?
-
+    private let notifier = SpecMulticaster()
     private var locationServicesDialogResponseCount = 0
     
     private(set) var enabled = true {
-        didSet { delegate?.locationServicesEnabledDidChange() }
+        didSet { notifier.post() }
     }
 
     func respondedToLocationServicesDialog() {
@@ -16,6 +15,10 @@ public class SpecLocationServices {
 
     func locationServices(enabled: Bool) {
         self.enabled = enabled
+    }
+    
+    func observe(on observer: Any, selector: Selector) {
+        notifier.observe(on: observer, selector: selector)
     }
 
     var canShowDialog: Bool {
@@ -26,9 +29,4 @@ public class SpecLocationServices {
         // * Receiving a call, accepting, and then clicking Home.
         return locationServicesDialogResponseCount < 2
     }
-}
-
-protocol SpecLocationServicesDelegate: class {
-
-    func locationServicesEnabledDidChange()
 }

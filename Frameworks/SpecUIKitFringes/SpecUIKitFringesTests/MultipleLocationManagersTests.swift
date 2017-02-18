@@ -3,11 +3,18 @@ import XCTest
 
 class MultipleLocationManagersTests: SpecLocationManagerTestCase {
 
-    func test_authorizationStatusIsShared() {
-        let subject2 = factory.create()
-        let delegate2 = SpecLocationManagerDelegate()
-        subject2.delegate = delegate2
+    var subject2: SpecLocationManager!
+    var delegate2: SpecLocationManagerDelegate!
+
+    override func setUp() {
+        super.setUp()
         
+        subject2 = factory.create()
+        delegate2 = SpecLocationManagerDelegate()
+        subject2.delegate = delegate2
+    }
+
+    func test_authorizationStatusIsShared() {
         subject.requestWhenInUseAuthorization()
         dialogManager.tap(.allow)
         
@@ -15,5 +22,17 @@ class MultipleLocationManagersTests: SpecLocationManagerTestCase {
         XCTAssertEqual(subject2.authorizationStatus(), .authorizedWhenInUse)
         XCTAssertEqual(delegate.receivedAuthorizationChange, .authorizedWhenInUse)
         XCTAssertEqual(delegate2.receivedAuthorizationChange, .authorizedWhenInUse)
+    }
+
+    func test_locationServicesEnabledStatusIsShared() {
+        subject.requestWhenInUseAuthorization()
+        dialogManager.tap(.allow)
+
+        subject.setLocationServicesEnabledInSettingsApp(false)
+        
+        XCTAssertEqual(subject.authorizationStatus(), .denied)
+        XCTAssertEqual(subject2.authorizationStatus(), .denied)
+        XCTAssertEqual(delegate.receivedAuthorizationChange, .denied)
+        XCTAssertEqual(delegate2.receivedAuthorizationChange, .denied)
     }
 }
