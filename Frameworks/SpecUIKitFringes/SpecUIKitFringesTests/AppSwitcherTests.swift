@@ -63,7 +63,7 @@ class AppSwitcherTests: SpecSystemTestCase {
         fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(recordedFatalErrors, [ .appSwitcherNotOpen, .noScreenshotInAppSwitcher ])
+        XCTAssertEqual(errors, [ .appSwitcherNotOpen, .noScreenshotInAppSwitcher ])
     }
 
     func test_tappingOnTheAppScreenshotWhileInTheApp() {
@@ -71,7 +71,7 @@ class AppSwitcherTests: SpecSystemTestCase {
         fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(recordedFatalErrors, [ .appSwitcherNotOpen ])
+        XCTAssertEqual(errors, [ .appSwitcherNotOpen ])
     }
 
     func test_tappingOnTheAppScreenshotWhenTheAppHasNeverBeenRunBefore() {
@@ -79,7 +79,7 @@ class AppSwitcherTests: SpecSystemTestCase {
         fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(recordedFatalErrors, [ .noScreenshotInAppSwitcher ])
+        XCTAssertEqual(errors, [ .noScreenshotInAppSwitcher ])
     }
 
     func test_tappingOnTheAppScreenshotWhenAlreadySwippedUp() {
@@ -89,6 +89,6 @@ class AppSwitcherTests: SpecSystemTestCase {
         fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(recordedFatalErrors, [ .noScreenshotInAppSwitcher ])
+        XCTAssertEqual(errors, [ .noScreenshotInAppSwitcher ])
     }
 }

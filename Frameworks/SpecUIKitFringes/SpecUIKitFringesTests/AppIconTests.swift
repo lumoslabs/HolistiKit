@@ -32,7 +32,7 @@ class AppIconTests: SpecSystemTestCase {
         fatalErrorsOff {
             self.subject.tapAppIcon()
         }
-        XCTAssertEqual(recordedFatalErrors, [ .notOnSpringBoard ])
+        XCTAssertEqual(errors, [ .notOnSpringBoard ])
     }
 
     func test_tappingOnTheAppIconWhenInTheAppSwitcher() {
@@ -40,6 +40,6 @@ class AppIconTests: SpecSystemTestCase {
         fatalErrorsOff {
             self.subject.tapAppIcon()
         }
-        XCTAssertEqual(recordedFatalErrors, [ .notOnSpringBoard ])
+        XCTAssertEqual(errors, [ .notOnSpringBoard ])
     }
 }

@@ -14,7 +14,7 @@ class SpecUIKitFringesTestCase: XCTestCase {
         errorHandler.fatalErrorsOff(block)
     }
 
-    var recordedFatalErrors: [SpecErrorHandler.FatalError] {
-        return errorHandler.recordedFatalErrors
+    var errors: [SpecErrorHandler.FatalError] {
+        return errorHandler.errors
     }
 }

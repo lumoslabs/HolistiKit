@@ -1,6 +1,6 @@
 public class SpecErrorHandler {
 
-    var recordedFatalErrors = [FatalError]()
+    var errors = [FatalError]()
     private var recordingMode = false
 
     enum FatalError {
@@ -31,15 +31,16 @@ public class SpecErrorHandler {
 
     func error(_ error: FatalError) {
         if recordingMode {
-            recordedFatalErrors.append(error)
+            errors.append(error)
         } else {
             fatalError(error.message)
         }
     }
 
     func fatalErrorsOff(_ block: @escaping () -> Void) {
+        let initialMode = recordingMode
         recordingMode = true
         block()
-        recordingMode = false
+        recordingMode = initialMode
     }
 }

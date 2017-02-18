@@ -106,7 +106,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         errorHandler.fatalErrorsOff() {
             self.dialogManager.tap(.allow)
         }
-        XCTAssertEqual(errorHandler.recordedFatalErrors, [.noDialog])
+        XCTAssertEqual(errorHandler.errors, [.noDialog])
     }
 
     func test_tappingAllowInDialogWhenWrongDialog() {
@@ -117,7 +117,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         errorHandler.fatalErrorsOff() {
             self.dialogManager.tap(.allow)
         }
-        XCTAssertEqual(errorHandler.recordedFatalErrors, [.notAValidDialogResponse])
+        XCTAssertEqual(errorHandler.errors, [.notAValidDialogResponse])
     }
 
     func test_tappingDoNotAllowInDialogWhenNotPrompted() {
@@ -126,7 +126,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         errorHandler.fatalErrorsOff() {
             self.dialogManager.tap(.dontAllow)
         }
-        XCTAssertEqual(errorHandler.recordedFatalErrors, [.noDialog])
+        XCTAssertEqual(errorHandler.errors, [.noDialog])
     }
 
     func test_tappingDoNotAllowInDialogWhenWrongDialog() {
@@ -137,7 +137,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         errorHandler.fatalErrorsOff() {
             self.dialogManager.tap(.dontAllow)
         }
-        XCTAssertEqual(errorHandler.recordedFatalErrors, [.notAValidDialogResponse])
+        XCTAssertEqual(errorHandler.errors, [.notAValidDialogResponse])
     }
     
 }
