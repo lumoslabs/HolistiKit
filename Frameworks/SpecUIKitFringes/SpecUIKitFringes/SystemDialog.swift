@@ -1,10 +1,20 @@
 import Foundation
 
-public class SystemDialog {
+public protocol DialogData {
 
-    public struct DialogData {
-        let identifier: DialogIdentifier
+    var identifier: SystemDialog.DialogIdentifier { get }
+}
+
+public struct LocationManagerDialog: DialogData {
+
+    public let identifier: SystemDialog.DialogIdentifier
+
+    init(identifier locationManagerIdentifier: SystemDialog.LocationManagerIdentifier) {
+        self.identifier = .locationManager(locationManagerIdentifier)
     }
+}
+
+public class SystemDialog {
 
     public init() { }
 

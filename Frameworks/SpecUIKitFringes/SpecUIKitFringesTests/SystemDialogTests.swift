@@ -11,14 +11,12 @@ class SystemDialogTests: XCTestCase {
     }
 
     func test_addingADialog() {
-        let dialog = SystemDialog.DialogData(identifier: .locationManager(.requestAccessWhileInUse))
-        subject.addDialog(withIdentifier: dialog)
+        subject.addDialog(withIdentifier: LocationManagerDialog(identifier: .requestAccessWhileInUse))
         XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessWhileInUse))
     }
 
     func test_poppingADialog() {
-        let dialog = SystemDialog.DialogData(identifier: .locationManager(.requestAccessWhileInUse))
-        subject.addDialog(withIdentifier: dialog)
+        subject.addDialog(withIdentifier: LocationManagerDialog(identifier: .requestAccessWhileInUse))
         XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessWhileInUse))
         let poppedDialog = subject.popDialog()
         XCTAssertNil(subject.visibleDialog)
