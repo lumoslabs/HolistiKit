@@ -13,8 +13,10 @@ class SpecLocationManagerTestCase: XCTestCase {
 
         errorHandler = SpecErrorHandler()
         dialogManager = SpecDialogManager(errorHandler: errorHandler)
+        let locationServices = SpecLocationServices()
         subject = SpecLocationManager(dialogManager: dialogManager,
-                                      errorHandler: errorHandler)
+                                      errorHandler: errorHandler,
+                                      locationServices: locationServices)
         delegate = SpecLocationManagerDelegate()
         subject.delegate = delegate
     }

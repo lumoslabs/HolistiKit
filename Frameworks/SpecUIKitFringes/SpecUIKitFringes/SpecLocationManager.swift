@@ -21,17 +21,23 @@ public class SpecLocationManager {
 
     fileprivate let dialogManager: SpecDialogManager
     fileprivate let errorHandler: SpecErrorHandler
-    
-    public convenience init(dialogManager: SpecDialogManager) {
+    fileprivate let locationServices: SpecLocationServices
+
+    public convenience init(dialogManager: SpecDialogManager,
+                            locationServices: SpecLocationServices) {
         let errorHandler = SpecErrorHandler()
         self.init(dialogManager: dialogManager,
-                  errorHandler: errorHandler)
+                  errorHandler: errorHandler,
+                  locationServices: locationServices)
     }
 
     init(dialogManager: SpecDialogManager,
-         errorHandler: SpecErrorHandler) {
+         errorHandler: SpecErrorHandler,
+         locationServices: SpecLocationServices) {
         self.dialogManager = dialogManager
         self.errorHandler = errorHandler
+        self.locationServices = locationServices
+        locationServices.delegate = self
     }
 
     public weak var delegate: CLLocationManagerDelegate?
@@ -39,15 +45,11 @@ public class SpecLocationManager {
     fileprivate var _authorizationStatus = CLAuthorizationStatus.notDetermined {
         didSet { sendCurrentStatus() }
     }
-    fileprivate var _locationServicesEnabled = true {
-        didSet { sendCurrentStatus() }
-    }
-    fileprivate var locationServicesDialogResponseCount = 0
     fileprivate let bsFirstArg = CLLocationManager()
     fileprivate var locationRequestInProgress = false
     fileprivate var updatingLocation = false
 
-    private func sendCurrentStatus() {
+    fileprivate func sendCurrentStatus() {
         delegate?.locationManager?(bsFirstArg, didChangeAuthorization: authorizationStatus())
     }
 
@@ -99,7 +101,7 @@ extension SpecLocationManager {
     }
 
     private func tapSettingsOrCancelInDialog() {
-        locationServicesDialogResponseCount += 1
+        locationServices.respondedToLocationServicesDialog()
     }
 }
 
@@ -113,7 +115,7 @@ extension SpecLocationManager {
     }
 
     public func setLocationServicesEnabledInSettingsApp(_ enabled: Bool) {
-        _locationServicesEnabled = enabled
+        locationServices.locationServices(enabled: enabled)
     }
 
 }
@@ -164,7 +166,7 @@ extension SpecLocationManager: LocationManaging {
     }
 
     public func isLocationServicesEnabled() -> Bool {
-        return _locationServicesEnabled
+        return locationServices.enabled
     }
 
     private func requestWhenInUseWhileNotDetermined() {
@@ -172,17 +174,8 @@ extension SpecLocationManager: LocationManaging {
     }
 
     private func requestWhenInUseWhileDeniedDueToLocationServices() {
-        if !iOSwillPermitALocationServicesDialogToBeShown { return }
+        if !locationServices.canShowDialog { return }
         dialogManager.addDialog(LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings, locationManager: self))
-    }
-
-    private var iOSwillPermitALocationServicesDialogToBeShown: Bool {
-        // iOS will only ever show the user this dialog twice for this app.
-        // It only counts as being shown if the user responds. For example,
-        // the following things can dismiss the dialog without it counting:
-        // * Locking the device.
-        // * Receiving a call, accepting, and then clicking Home.
-        return locationServicesDialogResponseCount < 2
     }
 
     private func startUpdatingLocationWhileWhenInUse() {
@@ -197,5 +190,12 @@ extension SpecLocationManager: LocationManaging {
 
     private func requestLocationWhileWhenInUse() {
         locationRequestInProgress = true
+    }
+}
+
+extension SpecLocationManager: SpecLocationServicesDelegate {
+    
+    func locationServicesEnabledDidChange() {
+        sendCurrentStatus()
     }
 }
