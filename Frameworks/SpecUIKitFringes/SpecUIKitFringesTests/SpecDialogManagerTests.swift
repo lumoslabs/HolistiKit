@@ -20,10 +20,28 @@ class SpecDialogManagerTests: XCTestCase {
         XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessWhileInUse))
         let poppedDialog = subject.popDialog()
         XCTAssertNil(subject.visibleDialog)
-        XCTAssertEqual(poppedDialog, .locationManager(.requestAccessWhileInUse))
+        XCTAssertEqual(poppedDialog?.identifier, .locationManager(.requestAccessWhileInUse))
     }
     
     func test_poppingADialogWhenNoneIsPresent() {
         XCTAssertNil(subject.popDialog())
+    }
+
+    func test_tappingOnAButton() {
+        let testDialog = TestDialog()
+        subject.addDialog(testDialog)
+        subject.tap(.allow)
+        XCTAssertEqual(testDialog.response, .allow)
+        XCTAssertNil(subject.visibleDialog)
+    }
+}
+
+public class TestDialog: SpecDialog {
+
+    var response: SpecDialogManager.Response?
+    public let identifier: SpecDialogManager.DialogIdentifier = .locationManager(.requestAccessAlways)
+
+    public func responded(with response: SpecDialogManager.Response) {
+        self.response = response
     }
 }

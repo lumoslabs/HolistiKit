@@ -4,8 +4,12 @@ public class SpecDialogManager {
 
     public init() { }
 
+    private var _visibleDialog: SpecDialog? {
+        return dialogs.first
+    }
+
     public var visibleDialog: DialogIdentifier? {
-        return dialogs.first?.identifier
+        return _visibleDialog?.identifier
     }
 
     private var dialogs = [SpecDialog]()
@@ -14,9 +18,17 @@ public class SpecDialogManager {
         dialogs.append(identifier)
     }
 
-    @discardableResult
-    func popDialog() -> DialogIdentifier? {
+    public enum Response {
+        case allow
+    }
+
+    func tap(_ response: Response) {
+        let dialog = popDialog()!
+        dialog.responded(with: response)
+    }
+
+    func popDialog() -> SpecDialog? {
         if dialogs.isEmpty { return nil }
-        return dialogs.remove(at: 0).identifier
+        return dialogs.remove(at: 0)
     }
 }

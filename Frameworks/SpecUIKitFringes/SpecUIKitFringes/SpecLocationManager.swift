@@ -130,7 +130,7 @@ extension SpecLocationManager {
         if visibleDialog != .requestJumpToLocationServicesSettings {
             errorWith(.noLocationServicesDialog)
         }
-        dialogManager.popDialog()
+        _ = dialogManager.popDialog()
         locationServicesDialogResponseCount += 1
     }
     
@@ -184,7 +184,7 @@ extension SpecLocationManager {
         if ![.denied, .authorizedWhenInUse, .authorizedAlways].contains(level) {
             fatalError("This is not a valid user response from the dialog.")
         }
-        dialogManager.popDialog()
+        _ = dialogManager.popDialog()
         _authorizationStatus = level
     }
     
