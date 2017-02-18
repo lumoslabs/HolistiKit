@@ -116,22 +116,6 @@ extension SpecLocationManager {
     }
 }
 
-// MARK: User's settings in the Settings app
-// TODO move these to a separate class
-extension SpecLocationManager {
-
-    public func setAuthorizationStatusInSettingsApp(_ status: CLAuthorizationStatus) {
-        // should there be some check here to make sure that the user would even
-        // have the option to be setting a (certain) status in the Settings app?
-        locationAuthorizationStatus.authorizationStatus = status
-    }
-
-    public func setLocationServicesEnabledInSettingsApp(_ enabled: Bool) {
-        locationServices.locationServices(enabled: enabled)
-    }
-
-}
-
 // MARK: LocationManaging
 extension SpecLocationManager: LocationManaging {
 

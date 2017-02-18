@@ -7,7 +7,7 @@ class AuthorizationInSettingsAppTests: SpecLocationManagerTestCase {
     func test_WhenStatusNotDetermined_ThenAuthorizedWhenInUse() {
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
 
-        subject.setAuthorizationStatusInSettingsApp(.authorizedWhenInUse)
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
 
         XCTAssertEqual(delegate.receivedAuthorizationChange, .authorizedWhenInUse)
         XCTAssertEqual(subject.authorizationStatus(), .authorizedWhenInUse)
@@ -16,7 +16,7 @@ class AuthorizationInSettingsAppTests: SpecLocationManagerTestCase {
     func test_WhenStatusNotDetermined_ThenDenied() {
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
         
-        subject.setAuthorizationStatusInSettingsApp(.denied)
+        settingsApp.set(authorizationStatus: .denied)
         
         XCTAssertEqual(delegate.receivedAuthorizationChange, .denied)
         XCTAssertEqual(subject.authorizationStatus(), .denied)

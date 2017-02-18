@@ -28,7 +28,7 @@ class MultipleLocationManagersTests: SpecLocationManagerTestCase {
         subject.requestWhenInUseAuthorization()
         dialogManager.tap(.allow)
 
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(locationServicesEnabled: false)
         
         XCTAssertEqual(subject.authorizationStatus(), .denied)
         XCTAssertEqual(subject2.authorizationStatus(), .denied)

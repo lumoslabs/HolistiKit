@@ -5,16 +5,16 @@ import CoreLocation
 class LocationServicesTests: SpecLocationManagerTestCase {
 
     func test_WhenStatusAuthorizedWhenInUse_ThenLocationServicesOff() {
-        subject.setAuthorizationStatusInSettingsApp(.authorizedWhenInUse)
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(locationServicesEnabled: false)
         
         XCTAssertEqual(delegate.receivedAuthorizationChange, .denied)
         XCTAssertEqual(subject.authorizationStatus(), .denied)
     }
 
     func test_RespondToTheLocationServicesDialogTwice() {
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(locationServicesEnabled: false)
         subject.requestWhenInUseAuthorization()
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         

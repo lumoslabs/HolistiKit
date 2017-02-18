@@ -5,7 +5,7 @@ import CoreLocation
 class LocationUpdatingTests: SpecLocationManagerTestCase {
 
     func test_locationRequestSuccess_AfterRequestLocation() {
-        subject.setAuthorizationStatusInSettingsApp(.authorizedWhenInUse)
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         subject.requestLocation()
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 0)
         
@@ -29,7 +29,7 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
     }
 
     func test_locationRequestSuccess_AfterStartUpdatingLocation() {
-        subject.setAuthorizationStatusInSettingsApp(.authorizedWhenInUse)
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         subject.startUpdatingLocation()
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 0)
         
@@ -56,7 +56,7 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
     }
 
     func test_location_AfterHavingReceivedALocationBefore() {
-        subject.setAuthorizationStatusInSettingsApp(.authorizedWhenInUse)
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         subject.requestLocation()
         subject.locationRequestSuccess()
         

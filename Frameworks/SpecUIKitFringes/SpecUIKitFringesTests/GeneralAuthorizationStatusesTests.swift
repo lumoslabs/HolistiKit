@@ -11,7 +11,7 @@ class GeneralAuthorizationStatusesTests: SpecLocationManagerTestCase {
     }
 
     func test_WhenLocationServicesIsTurnedOff() {
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(locationServicesEnabled: false)
         
         XCTAssertEqual(subject.authorizationStatus(), .denied)
     }

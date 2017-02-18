@@ -35,7 +35,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
     
     func test_WhenStatusDenied() {
-        subject.setAuthorizationStatusInSettingsApp(.denied)
+        settingsApp.set(authorizationStatus: .denied)
         delegate.receivedAuthorizationChange = nil
         
         subject.requestWhenInUseAuthorization()
@@ -46,7 +46,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
     
     func test_WhenStatusAuthorizedWhenInUse() {
-        subject.setAuthorizationStatusInSettingsApp(.authorizedWhenInUse)
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         delegate.receivedAuthorizationChange = nil
 
         subject.requestWhenInUseAuthorization()
@@ -58,7 +58,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
     func test_WhenStatusNotDetermined_AndLocationServicesOff() {
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(locationServicesEnabled: false)
         delegate.receivedAuthorizationChange = nil
 
         subject.requestWhenInUseAuthorization()
@@ -71,8 +71,8 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
 
     func test_WhenStatusAuthorizedWhenInUse_AndLocationServicesOff_ThenOn() {
-        subject.setAuthorizationStatusInSettingsApp(.authorizedWhenInUse)
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
+        settingsApp.set(locationServicesEnabled: false)
         delegate.receivedAuthorizationChange = nil
 
         subject.requestWhenInUseAuthorization()
@@ -83,14 +83,14 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         
         XCTAssertNil(dialogManager.visibleDialog)
         
-        subject.setLocationServicesEnabledInSettingsApp(true)
+        settingsApp.set(locationServicesEnabled: true)
         
         XCTAssertEqual(delegate.receivedAuthorizationChange, .authorizedWhenInUse)
     }
 
     func test_WhenStatusAuthorizedDenied_AndLocationServicesOff() {
-        subject.setAuthorizationStatusInSettingsApp(.denied)
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(authorizationStatus: .denied)
+        settingsApp.set(locationServicesEnabled: false)
         delegate.receivedAuthorizationChange = nil
 
         subject.requestWhenInUseAuthorization()
@@ -110,7 +110,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
 
     func test_tappingAllowInDialogWhenWrongDialog() {
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(locationServicesEnabled: false)
         subject.requestWhenInUseAuthorization()
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
@@ -130,7 +130,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
 
     func test_tappingDoNotAllowInDialogWhenWrongDialog() {
-        subject.setLocationServicesEnabledInSettingsApp(false)
+        settingsApp.set(locationServicesEnabled: false)
         subject.requestWhenInUseAuthorization()
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         

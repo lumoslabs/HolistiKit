@@ -8,6 +8,7 @@ class SpecLocationManagerTestCase: XCTestCase {
     var delegate: SpecLocationManagerDelegate!
     var dialogManager: SpecDialogManager!
     var errorHandler: SpecErrorHandler!
+    var settingsApp: SpecSettingsApp!
     
     override func setUp() {
         super.setUp()
@@ -16,6 +17,8 @@ class SpecLocationManagerTestCase: XCTestCase {
         dialogManager = SpecDialogManager(errorHandler: errorHandler)
         let locationServices = SpecLocationServices()
         let locationAuthorizationStatus = SpecLocationAuthorizationStatus()
+        settingsApp = SpecSettingsApp(locationAuthorizationStatus: locationAuthorizationStatus,
+                                      locationServices: locationServices)
         factory = SpecLocationManagerFactory(dialogManager: dialogManager,
                                              errorHandler: errorHandler,
                                              locationServices: locationServices,
