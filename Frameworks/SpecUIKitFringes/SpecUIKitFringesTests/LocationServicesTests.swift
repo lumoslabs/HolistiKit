@@ -38,7 +38,7 @@ class LocationServicesTests: SpecLocationManagerTestCase {
         errorHandler.fatalErrorsOff {
             self.dialogManager.tap(.cancel)
         }
-        XCTAssertEqual(errorHandler.errors, [.noDialog])
+        XCTAssertEqual(errorHandler.recordedError, .noDialog)
     }
     
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		883E43731E3CF9880051BD21 /* SpecErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */; };
-		883E43751E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */; };
 		883E437E1E3D140F0051BD21 /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E437D1E3D140F0051BD21 /* AppIconTests.swift */; };
 		883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */; };
 		883E43821E3D14DB0051BD21 /* HomeButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43811E3D14DB0051BD21 /* HomeButtonTests.swift */; };
@@ -58,7 +57,6 @@
 
 /* Begin PBXFileReference section */
 		883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecErrorHandler.swift; sourceTree = "<group>"; };
-		883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUIKitFringesTestCase.swift; sourceTree = "<group>"; };
 		883E437D1E3D140F0051BD21 /* AppIconTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
 		883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecSystem.swift; sourceTree = "<group>"; };
 		883E43811E3D14DB0051BD21 /* HomeButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeButtonTests.swift; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				885EC1321E338E8B00A61FA1 /* SpecWindowTests.swift */,
 				885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */,
 				885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */,
-				883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */,
 				885EC14D1E33980B00A61FA1 /* Fakes */,
 				885EC1581E33E0A600A61FA1 /* Extensions */,
 				885EC13E1E338EB400A61FA1 /* Supporting Files */,
@@ -405,7 +402,6 @@
 				88D2C8D81E562FF70065882D /* SpecLocationManagerDelegate.swift in Sources */,
 				885EC18E1E34BC1700A61FA1 /* SpecSystemTestCase.swift in Sources */,
 				885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */,
-				883E43751E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift in Sources */,
 				885EC1511E33BBB300A61FA1 /* SpecViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

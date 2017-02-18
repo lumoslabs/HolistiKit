@@ -29,17 +29,17 @@ class AppIconTests: SpecSystemTestCase {
 
     func test_tappingOnTheAppIconWhenInTheApp() {
         subject.tapAppIcon()
-        fatalErrorsOff {
+        errorHandler.fatalErrorsOff {
             self.subject.tapAppIcon()
         }
-        XCTAssertEqual(errors, [ .notOnSpringBoard ])
+        XCTAssertEqual(errorHandler.recordedError, .notOnSpringBoard)
     }
 
     func test_tappingOnTheAppIconWhenInTheAppSwitcher() {
         subject.doubleTapHomeButton()
-        fatalErrorsOff {
+        errorHandler.fatalErrorsOff {
             self.subject.tapAppIcon()
         }
-        XCTAssertEqual(errors, [ .notOnSpringBoard ])
+        XCTAssertEqual(errorHandler.recordedError, .notOnSpringBoard)
     }
 }

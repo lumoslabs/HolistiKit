@@ -60,35 +60,35 @@ class AppSwitcherTests: SpecSystemTestCase {
     }
 
     func test_tappingOnTheAppScreenshotWhileOnTheSpringBoard() {
-        fatalErrorsOff {
+        errorHandler.fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(errors, [ .appSwitcherNotOpen, .noScreenshotInAppSwitcher ])
+        XCTAssertEqual(errorHandler.recordedError, .appSwitcherNotOpen)
     }
 
     func test_tappingOnTheAppScreenshotWhileInTheApp() {
         subject.tapAppIcon()
-        fatalErrorsOff {
+        errorHandler.fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(errors, [ .appSwitcherNotOpen ])
+        XCTAssertEqual(errorHandler.recordedError, .appSwitcherNotOpen)
     }
 
     func test_tappingOnTheAppScreenshotWhenTheAppHasNeverBeenRunBefore() {
         subject.doubleTapHomeButton()
-        fatalErrorsOff {
+        errorHandler.fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(errors, [ .noScreenshotInAppSwitcher ])
+        XCTAssertEqual(errorHandler.recordedError, .noScreenshotInAppSwitcher)
     }
 
     func test_tappingOnTheAppScreenshotWhenAlreadySwippedUp() {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
         subject.swipeUpAppScreenshot()
-        fatalErrorsOff {
+        errorHandler.fatalErrorsOff {
             self.subject.tapAppScreenshot()
         }
-        XCTAssertEqual(errors, [ .noScreenshotInAppSwitcher ])
+        XCTAssertEqual(errorHandler.recordedError, .noScreenshotInAppSwitcher)
     }
 }

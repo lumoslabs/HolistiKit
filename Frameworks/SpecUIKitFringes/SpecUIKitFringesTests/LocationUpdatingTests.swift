@@ -16,7 +16,7 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
         errorHandler.fatalErrorsOff() {
             self.subject.locationRequestSuccess()
         }
-        XCTAssertEqual(errorHandler.errors, [.noLocationRequestInProgress])
+        XCTAssertEqual(errorHandler.recordedError, .noLocationRequestInProgress)
     }
 
     func test_requestLocation_WhileNotDetermined() {
@@ -67,6 +67,6 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
         errorHandler.fatalErrorsOff() {
             self.subject.locationRequestSuccess()
         }
-        XCTAssertEqual(errorHandler.errors, [.notAuthorized, .noLocationRequestInProgress])
+        XCTAssertEqual(errorHandler.recordedError, .notAuthorized)
     }
 }

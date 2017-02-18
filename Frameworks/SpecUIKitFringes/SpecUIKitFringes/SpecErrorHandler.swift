@@ -13,7 +13,7 @@
     
 public class SpecErrorHandler {
 
-    var errors = [FatalError]()
+    var recordedError: FatalError?
     private var recordingMode = false
 
     enum FatalError {
@@ -47,7 +47,9 @@ public class SpecErrorHandler {
 
     func error(_ error: FatalError) {
         if recordingMode {
-            errors.append(error)
+            if recordedError == nil {
+                recordedError = error
+            }
         } else {
             fatalError(error.message)
         }

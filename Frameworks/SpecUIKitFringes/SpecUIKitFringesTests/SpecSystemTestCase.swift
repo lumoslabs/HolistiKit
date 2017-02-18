@@ -1,12 +1,14 @@
 import XCTest
 @testable import SpecUIKitFringes
 
-class SpecSystemTestCase: SpecUIKitFringesTestCase {
+class SpecSystemTestCase: XCTestCase {
 
     var subject: SpecSystem!
+    var errorHandler: SpecErrorHandler!
     
     override func setUp() {
         super.setUp()
+        errorHandler = SpecErrorHandler()
         subject = RecordingSpecSystem(errorHandler: errorHandler)
     }
 
