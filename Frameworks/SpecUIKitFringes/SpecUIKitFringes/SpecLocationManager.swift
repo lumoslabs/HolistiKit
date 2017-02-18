@@ -20,8 +20,9 @@ import UIKitFringes
 public class SpecLocationManager {
 
     public weak var delegate: CLLocationManagerDelegate?
-    fileprivate(set) public var location: CLLocation?
+    public var location: CLLocation? { return userLocation.location }
 
+    fileprivate let userLocation: SpecUserLocation
     fileprivate let dialogManager: SpecDialogManager
     fileprivate let errorHandler: SpecErrorHandler
     fileprivate let locationServices: SpecLocationServices
@@ -31,25 +32,35 @@ public class SpecLocationManager {
     fileprivate var updatingLocation = false
 
     public convenience init(dialogManager: SpecDialogManager,
+                            userLocation: SpecUserLocation,
                             locationServices: SpecLocationServices,
                             locationAuthorizationStatus: SpecLocationAuthorizationStatus) {
         let errorHandler = SpecErrorHandler()
         self.init(dialogManager: dialogManager,
                   errorHandler: errorHandler,
+                  userLocation: userLocation,
                   locationServices: locationServices,
                   locationAuthorizationStatus: locationAuthorizationStatus)
     }
 
     init(dialogManager: SpecDialogManager,
          errorHandler: SpecErrorHandler,
+         userLocation: SpecUserLocation,
          locationServices: SpecLocationServices,
          locationAuthorizationStatus: SpecLocationAuthorizationStatus) {
         self.dialogManager = dialogManager
+        self.userLocation = userLocation
         self.errorHandler = errorHandler
         self.locationServices = locationServices
         self.locationAuthorizationStatus = locationAuthorizationStatus
+        userLocation.observe(on: self, selector: #selector(didChangeLocation))
         locationServices.observe(on: self, selector: #selector(locationServicesEnabledDidChange))
         locationAuthorizationStatus.observe(on: self, selector: #selector(didChangeAuthorizationStatus))
+    }
+
+    @objc
+    func didChangeLocation() {
+        delegate!.locationManager?(bsFirstArg, didUpdateLocations: [userLocation.location!])
     }
 
     @objc
@@ -79,8 +90,7 @@ extension SpecLocationManager {
         }
         locationRequestInProgress = false
         let fakeCurrentLocation = CLLocation(latitude: 1.0, longitude: 2.0)
-        location = fakeCurrentLocation
-        delegate!.locationManager?(bsFirstArg, didUpdateLocations: [fakeCurrentLocation])
+        userLocation.location = fakeCurrentLocation
     }
 
 }

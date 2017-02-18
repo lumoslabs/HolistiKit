@@ -35,4 +35,15 @@ class MultipleLocationManagersTests: SpecLocationManagerTestCase {
         XCTAssertEqual(delegate.receivedAuthorizationChange, .denied)
         XCTAssertEqual(delegate2.receivedAuthorizationChange, .denied)
     }
+
+    func test_locationIsShared() {
+        subject.requestWhenInUseAuthorization()
+        dialogManager.tap(.allow)
+
+        subject.requestLocation()
+        subject.locationRequestSuccess()
+        
+        XCTAssertEqual(delegate.receivedUpdatedLocations.count, 1)
+        XCTAssertEqual(delegate2.receivedUpdatedLocations.count, 1)
+    }
 }
