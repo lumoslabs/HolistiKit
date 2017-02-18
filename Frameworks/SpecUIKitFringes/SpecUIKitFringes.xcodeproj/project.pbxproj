@@ -44,6 +44,7 @@
 		88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F71E5870CD00217628 /* SpecDialog.swift */; };
 		88FED3FB1E58AFE100217628 /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */; };
 		88FED3FE1E58C81000217628 /* SpecLocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3FD1E58C81000217628 /* SpecLocationServices.swift */; };
+		88FED4001E58CDC000217628 /* SpecLocationAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3FF1E58CDC000217628 /* SpecLocationAuthorizationStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		88FED3F71E5870CD00217628 /* SpecDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialog.swift; sourceTree = "<group>"; };
 		88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLAuthorizationStatus+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		88FED3FD1E58C81000217628 /* SpecLocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationServices.swift; sourceTree = "<group>"; };
+		88FED3FF1E58CDC000217628 /* SpecLocationAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationAuthorizationStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 			children = (
 				88D2C8B21E562D810065882D /* SpecLocationManager.swift */,
 				88FED3FD1E58C81000217628 /* SpecLocationServices.swift */,
+				88FED3FF1E58CDC000217628 /* SpecLocationAuthorizationStatus.swift */,
 			);
 			name = SpecLocationManager;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */,
 				88D2C8E41E56E3B40065882D /* SpecDialogManager.swift in Sources */,
 				885EC1481E338F4200A61FA1 /* SpecViewController.swift in Sources */,
+				88FED4001E58CDC000217628 /* SpecLocationAuthorizationStatus.swift in Sources */,
 				885EC1471E338F4200A61FA1 /* SpecSharedApplication.swift in Sources */,
 				885EC15C1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift in Sources */,
 				885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */,

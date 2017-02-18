@@ -22,7 +22,11 @@ class FringesSpecSystem: SpecSystem {
         self.urlSession = _urlSession
         let _dialogManager = SpecDialogManager()
         self.dialogManager = _dialogManager
-        let _locationManager = SpecLocationManager(dialogManager: dialogManager)
+        let locationServices = SpecLocationServices()
+        let locationAuthorizationStatus = SpecLocationAuthorizationStatus()
+        let _locationManager = SpecLocationManager(dialogManager: dialogManager,
+                                                   locationServices: locationServices,
+                                                   locationAuthorizationStatus: locationAuthorizationStatus)
         self.locationManager = _locationManager
         let appDelegate = SpecAppDelegate(sharedApplication: sharedApplication,
                                           dateProvider: dateProvider,

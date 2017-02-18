@@ -1,6 +1,6 @@
-import CoreLocation
-
 public class SpecLocationServices {
+
+    public init() { }
 
     weak var delegate: SpecLocationServicesDelegate?
 

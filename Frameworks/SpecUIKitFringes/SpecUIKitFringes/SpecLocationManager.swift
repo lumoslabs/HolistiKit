@@ -22,29 +22,32 @@ public class SpecLocationManager {
     fileprivate let dialogManager: SpecDialogManager
     fileprivate let errorHandler: SpecErrorHandler
     fileprivate let locationServices: SpecLocationServices
+    fileprivate let locationAuthorizationStatus: SpecLocationAuthorizationStatus
 
     public convenience init(dialogManager: SpecDialogManager,
-                            locationServices: SpecLocationServices) {
+                            locationServices: SpecLocationServices,
+                            locationAuthorizationStatus: SpecLocationAuthorizationStatus) {
         let errorHandler = SpecErrorHandler()
         self.init(dialogManager: dialogManager,
                   errorHandler: errorHandler,
-                  locationServices: locationServices)
+                  locationServices: locationServices,
+                  locationAuthorizationStatus: locationAuthorizationStatus)
     }
 
     init(dialogManager: SpecDialogManager,
          errorHandler: SpecErrorHandler,
-         locationServices: SpecLocationServices) {
+         locationServices: SpecLocationServices,
+         locationAuthorizationStatus: SpecLocationAuthorizationStatus) {
         self.dialogManager = dialogManager
         self.errorHandler = errorHandler
         self.locationServices = locationServices
+        self.locationAuthorizationStatus = locationAuthorizationStatus
         locationServices.delegate = self
+        locationAuthorizationStatus.delegate = self
     }
 
     public weak var delegate: CLLocationManagerDelegate?
     public var mostRecentLocation: CLLocation?
-    fileprivate var _authorizationStatus = CLAuthorizationStatus.notDetermined {
-        didSet { sendCurrentStatus() }
-    }
     fileprivate let bsFirstArg = CLLocationManager()
     fileprivate var locationRequestInProgress = false
     fileprivate var updatingLocation = false
@@ -81,14 +84,14 @@ extension SpecLocationManager {
         switch dialog {
         case .requestAccessWhileInUse:
             switch response {
-            case .allow: _authorizationStatus = .authorizedWhenInUse
-            case .dontAllow: _authorizationStatus = .denied
+            case .allow: locationAuthorizationStatus.authorizationStatus = .authorizedWhenInUse
+            case .dontAllow: locationAuthorizationStatus.authorizationStatus = .denied
             default: return false
             }
         case .requestAccessAlways:
             switch response {
-            case .allow: _authorizationStatus = .authorizedAlways
-            case .dontAllow: _authorizationStatus = .denied
+            case .allow: locationAuthorizationStatus.authorizationStatus = .authorizedAlways
+            case .dontAllow: locationAuthorizationStatus.authorizationStatus = .denied
             default: return false
             }
         case .requestJumpToLocationServicesSettings:
@@ -111,7 +114,7 @@ extension SpecLocationManager {
     public func setAuthorizationStatusInSettingsApp(_ status: CLAuthorizationStatus) {
         // should there be some check here to make sure that the user would even
         // have the option to be setting a (certain) status in the Settings app?
-        _authorizationStatus = status
+        locationAuthorizationStatus.authorizationStatus = status
     }
 
     public func setLocationServicesEnabledInSettingsApp(_ enabled: Bool) {
@@ -132,7 +135,7 @@ extension SpecLocationManager: LocationManaging {
         case .notDetermined: requestWhenInUseWhileNotDetermined()
         case .denied:
             // if .denied due to base status (the user having tapped "Don't Allow" before)
-            if _authorizationStatus == .denied { break }
+            if locationAuthorizationStatus.authorizationStatus == .denied { break }
             if !isLocationServicesEnabled() {
                 // or, if .denied due to Location Services being off, but user has not before denied auth.
                 requestWhenInUseWhileDeniedDueToLocationServices()
@@ -162,7 +165,7 @@ extension SpecLocationManager: LocationManaging {
     
     public func authorizationStatus() -> CLAuthorizationStatus {
         if !isLocationServicesEnabled() { return .denied }
-        return _authorizationStatus
+        return locationAuthorizationStatus.authorizationStatus
     }
 
     public func isLocationServicesEnabled() -> Bool {
@@ -196,6 +199,13 @@ extension SpecLocationManager: LocationManaging {
 extension SpecLocationManager: SpecLocationServicesDelegate {
     
     func locationServicesEnabledDidChange() {
+        sendCurrentStatus()
+    }
+}
+
+extension SpecLocationManager: SpecLocationAuthorizationStatusDelegate {
+    
+    func locationAuthorizationStatusDidChange() {
         sendCurrentStatus()
     }
 }
