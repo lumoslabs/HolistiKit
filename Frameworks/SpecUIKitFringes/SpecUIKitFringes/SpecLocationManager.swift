@@ -23,6 +23,7 @@ public class SpecLocationManager {
     fileprivate let errorHandler: SpecErrorHandler
     fileprivate let locationServices: SpecLocationServices
     fileprivate let locationAuthorizationStatus: SpecLocationAuthorizationStatus
+    private var authorizationObserverToken: NSObjectProtocol?
 
     public convenience init(dialogManager: SpecDialogManager,
                             locationServices: SpecLocationServices,
@@ -43,7 +44,7 @@ public class SpecLocationManager {
         self.locationServices = locationServices
         self.locationAuthorizationStatus = locationAuthorizationStatus
         locationServices.delegate = self
-        locationAuthorizationStatus.delegate = self
+        authorizationObserverToken = SpecAuthorizationStatusChangeNotifier.observe(sendCurrentStatus)
     }
 
     public weak var delegate: CLLocationManagerDelegate?
@@ -56,6 +57,9 @@ public class SpecLocationManager {
         delegate?.locationManager?(bsFirstArg, didChangeAuthorization: authorizationStatus())
     }
 
+    deinit {
+        SpecAuthorizationStatusChangeNotifier.remove(observer: authorizationObserverToken)
+    }
 }
 
 // MARK: Async callbacks
@@ -199,13 +203,6 @@ extension SpecLocationManager: LocationManaging {
 extension SpecLocationManager: SpecLocationServicesDelegate {
     
     func locationServicesEnabledDidChange() {
-        sendCurrentStatus()
-    }
-}
-
-extension SpecLocationManager: SpecLocationAuthorizationStatusDelegate {
-    
-    func locationAuthorizationStatusDidChange() {
         sendCurrentStatus()
     }
 }

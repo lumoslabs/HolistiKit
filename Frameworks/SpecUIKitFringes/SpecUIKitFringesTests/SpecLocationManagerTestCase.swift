@@ -4,6 +4,7 @@ import XCTest
 class SpecLocationManagerTestCase: XCTestCase {
 
     var subject: SpecLocationManager!
+    var factory: SpecLocationManagerFactory!
     var delegate: SpecLocationManagerDelegate!
     var dialogManager: SpecDialogManager!
     var errorHandler: SpecErrorHandler!
@@ -15,10 +16,11 @@ class SpecLocationManagerTestCase: XCTestCase {
         dialogManager = SpecDialogManager(errorHandler: errorHandler)
         let locationServices = SpecLocationServices()
         let locationAuthorizationStatus = SpecLocationAuthorizationStatus()
-        subject = SpecLocationManager(dialogManager: dialogManager,
-                                      errorHandler: errorHandler,
-                                      locationServices: locationServices,
-                                      locationAuthorizationStatus: locationAuthorizationStatus)
+        factory = SpecLocationManagerFactory(dialogManager: dialogManager,
+                                             errorHandler: errorHandler,
+                                             locationServices: locationServices,
+                                             locationAuthorizationStatus: locationAuthorizationStatus)
+        subject = factory.create()
         delegate = SpecLocationManagerDelegate()
         subject.delegate = delegate
     }
