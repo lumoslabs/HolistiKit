@@ -1,11 +1,11 @@
 import Foundation
 
-public protocol DialogData {
+public protocol SpecDialog {
 
     var identifier: SpecDialogManager.DialogIdentifier { get }
 }
 
-public struct LocationManagerDialog: DialogData {
+public struct LocationManagerDialog: SpecDialog {
 
     public let identifier: SpecDialogManager.DialogIdentifier
 
@@ -22,9 +22,9 @@ public class SpecDialogManager {
         return dialogs.first?.identifier
     }
 
-    private var dialogs = [DialogData]()
+    private var dialogs = [SpecDialog]()
     
-    func addDialog(withIdentifier identifier: DialogData) {
+    func addDialog(withIdentifier identifier: SpecDialog) {
         dialogs.append(identifier)
     }
 
