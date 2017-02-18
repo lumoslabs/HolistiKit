@@ -2,10 +2,10 @@ import Foundation
 
 public class SpecDialogManager {
 
-    private let realityChecker: RealityChecker
+    private let errorHandler: SpecErrorHandler
 
-    public init(realityChecker: RealityChecker) {
-        self.realityChecker = realityChecker
+    public init(errorHandler: SpecErrorHandler) {
+        self.errorHandler = errorHandler
     }
 
     private var _visibleDialog: SpecDialog? {
@@ -29,12 +29,12 @@ public class SpecDialogManager {
 
     func tap(_ response: Response) {
         guard let dialog = popDialog() else {
-            realityChecker.error(.noDialog)
+            errorHandler.error(.noDialog)
             return
         }
         let isValidResponse = dialog.responded(with: response)
         if !isValidResponse {
-            realityChecker.error(.notAValidDialogResponse)
+            errorHandler.error(.notAValidDialogResponse)
         }
     }
 

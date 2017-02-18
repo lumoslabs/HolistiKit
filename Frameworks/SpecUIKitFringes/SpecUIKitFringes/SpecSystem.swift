@@ -1,9 +1,9 @@
 open class SpecSystem {
 
-    private let realityChecker: RealityChecker
+    private let errorHandler: SpecErrorHandler
     
-    public init(realityChecker: RealityChecker) {
-        self.realityChecker = realityChecker
+    public init(errorHandler: SpecErrorHandler) {
+        self.errorHandler = errorHandler
     }
 
     public private(set) var appDelegate: SpecApplicationDelegateProtocol!
@@ -125,14 +125,14 @@ open class SpecSystem {
     }
 
     private func errorIfNotOnSpringBoard() {
-        if !at(.springBoard) { realityChecker.error(.notOnSpringBoard) }
+        if !at(.springBoard) { errorHandler.error(.notOnSpringBoard) }
     }
 
     private func errorIfAppSwitcherIsNotOpen() {
-        if !at(.appSwitcher) { realityChecker.error(.appSwitcherNotOpen) }
+        if !at(.appSwitcher) { errorHandler.error(.appSwitcherNotOpen) }
     }
 
     private func errorIfNoScreenshotInAppSwitcher() {
-        if !screenshotInAppSwitcher { realityChecker.error(.noScreenshotInAppSwitcher) }
+        if !screenshotInAppSwitcher { errorHandler.error(.noScreenshotInAppSwitcher) }
     }
 }

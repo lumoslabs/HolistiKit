@@ -1,5 +1,4 @@
-// TODO Rename to SpecErrorHandler
-public class RealityChecker {
+public class SpecErrorHandler {
 
     var recordedFatalErrors = [FatalError]()
     private var recordingMode = false

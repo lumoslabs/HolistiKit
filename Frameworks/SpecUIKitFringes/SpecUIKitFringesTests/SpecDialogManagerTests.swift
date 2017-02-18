@@ -4,12 +4,12 @@ import XCTest
 class SpecDialogManagerTests: XCTestCase {
 
     var subject: SpecDialogManager!
-    var realityChecker: RealityChecker!
+    var errorHandler: SpecErrorHandler!
     
     override func setUp() {
         super.setUp()
-        realityChecker = RealityChecker()
-        subject = SpecDialogManager(realityChecker: realityChecker)
+        errorHandler = SpecErrorHandler()
+        subject = SpecDialogManager(errorHandler: errorHandler)
     }
 
     func test_addingADialog() {
@@ -40,10 +40,10 @@ class SpecDialogManagerTests: XCTestCase {
     func test_tappingOnANonExistentButton() {
         let testDialog = TestDialog()
         subject.addDialog(testDialog)
-        realityChecker.fatalErrorsOff {
+        errorHandler.fatalErrorsOff {
             self.subject.tap(.dontAllow)
         }
-        XCTAssertEqual(realityChecker.recordedFatalErrors, [.notAValidDialogResponse])
+        XCTAssertEqual(errorHandler.recordedFatalErrors, [.notAValidDialogResponse])
     }
 }
 

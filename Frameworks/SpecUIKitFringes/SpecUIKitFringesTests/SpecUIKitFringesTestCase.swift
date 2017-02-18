@@ -3,18 +3,18 @@ import XCTest
 
 class SpecUIKitFringesTestCase: XCTestCase {
 
-    var realityChecker: RealityChecker!
+    var errorHandler: SpecErrorHandler!
 
     override func setUp() {
         super.setUp()
-        realityChecker = RealityChecker()
+        errorHandler = SpecErrorHandler()
     }
 
     func fatalErrorsOff(_ block: @escaping () -> Void) {
-        realityChecker.fatalErrorsOff(block)
+        errorHandler.fatalErrorsOff(block)
     }
 
-    var recordedFatalErrors: [RealityChecker.FatalError] {
-        return realityChecker.recordedFatalErrors
+    var recordedFatalErrors: [SpecErrorHandler.FatalError] {
+        return errorHandler.recordedFatalErrors
     }
 }

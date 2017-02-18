@@ -7,7 +7,7 @@ class SpecSystemTestCase: SpecUIKitFringesTestCase {
     
     override func setUp() {
         super.setUp()
-        subject = RecordingSpecSystem(realityChecker: realityChecker)
+        subject = RecordingSpecSystem(errorHandler: errorHandler)
     }
 
     var appDelegate: RecordingSpecApplicationDelegate! {

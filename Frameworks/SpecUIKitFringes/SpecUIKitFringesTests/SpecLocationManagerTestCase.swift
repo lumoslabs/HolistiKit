@@ -10,7 +10,7 @@ class SpecLocationManagerTestCase: SpecUIKitFringesTestCase {
     override func setUp() {
         super.setUp()
 
-        dialogManager = SpecDialogManager(realityChecker: realityChecker)
+        dialogManager = SpecDialogManager(errorHandler: errorHandler)
         subject = SpecLocationManager(dialogManager: dialogManager)
         delegate = SpecLocationManagerDelegate()
         subject.delegate = delegate

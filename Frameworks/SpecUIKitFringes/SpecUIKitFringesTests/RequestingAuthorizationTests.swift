@@ -103,10 +103,10 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     func test_tappingAllowInDialogWhenNotPrompted() {
         XCTAssertNil(dialogManager.visibleDialog)
         
-        realityChecker.fatalErrorsOff() {
+        errorHandler.fatalErrorsOff() {
             self.dialogManager.tap(.allow)
         }
-        XCTAssertEqual(realityChecker.recordedFatalErrors, [.noDialog])
+        XCTAssertEqual(errorHandler.recordedFatalErrors, [.noDialog])
     }
 
     func test_tappingAllowInDialogWhenWrongDialog() {
@@ -114,19 +114,19 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         subject.requestWhenInUseAuthorization()
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
-        realityChecker.fatalErrorsOff() {
+        errorHandler.fatalErrorsOff() {
             self.dialogManager.tap(.allow)
         }
-        XCTAssertEqual(realityChecker.recordedFatalErrors, [.notAValidDialogResponse])
+        XCTAssertEqual(errorHandler.recordedFatalErrors, [.notAValidDialogResponse])
     }
 
     func test_tappingDoNotAllowInDialogWhenNotPrompted() {
         XCTAssertNil(dialogManager.visibleDialog)
         
-        realityChecker.fatalErrorsOff() {
+        errorHandler.fatalErrorsOff() {
             self.dialogManager.tap(.dontAllow)
         }
-        XCTAssertEqual(realityChecker.recordedFatalErrors, [.noDialog])
+        XCTAssertEqual(errorHandler.recordedFatalErrors, [.noDialog])
     }
 
     func test_tappingDoNotAllowInDialogWhenWrongDialog() {
@@ -134,10 +134,10 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         subject.requestWhenInUseAuthorization()
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
-        realityChecker.fatalErrorsOff() {
+        errorHandler.fatalErrorsOff() {
             self.dialogManager.tap(.dontAllow)
         }
-        XCTAssertEqual(realityChecker.recordedFatalErrors, [.notAValidDialogResponse])
+        XCTAssertEqual(errorHandler.recordedFatalErrors, [.notAValidDialogResponse])
     }
     
 }

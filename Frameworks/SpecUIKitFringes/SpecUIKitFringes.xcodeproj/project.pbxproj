@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		883E43731E3CF9880051BD21 /* RealityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43721E3CF9880051BD21 /* RealityChecker.swift */; };
+		883E43731E3CF9880051BD21 /* SpecErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */; };
 		883E43751E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */; };
 		883E437E1E3D140F0051BD21 /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E437D1E3D140F0051BD21 /* AppIconTests.swift */; };
 		883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */; };
@@ -57,7 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		883E43721E3CF9880051BD21 /* RealityChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealityChecker.swift; sourceTree = "<group>"; };
+		883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecErrorHandler.swift; sourceTree = "<group>"; };
 		883E43741E3CFEDE0051BD21 /* SpecUIKitFringesTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUIKitFringesTestCase.swift; sourceTree = "<group>"; };
 		883E437D1E3D140F0051BD21 /* AppIconTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
 		883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecSystem.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
 				88D2C8B21E562D810065882D /* SpecLocationManager.swift */,
-				883E43721E3CF9880051BD21 /* RealityChecker.swift */,
+				883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */,
 				885EC13F1E338EBD00A61FA1 /* Supporting Files */,
 			);
 			name = Source;
@@ -374,7 +374,7 @@
 				885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */,
 				88FED3F41E58690300217628 /* SpecDialogIdentifier.swift in Sources */,
 				885EC1491E338F4200A61FA1 /* SpecWindow.swift in Sources */,
-				883E43731E3CF9880051BD21 /* RealityChecker.swift in Sources */,
+				883E43731E3CF9880051BD21 /* SpecErrorHandler.swift in Sources */,
 				885EC1461E338F4200A61FA1 /* SpecNavigationController.swift in Sources */,
 				88D2C8B31E562D810065882D /* SpecLocationManager.swift in Sources */,
 			);
