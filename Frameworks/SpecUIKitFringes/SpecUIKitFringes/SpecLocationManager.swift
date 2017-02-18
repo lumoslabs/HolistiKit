@@ -13,7 +13,6 @@ import UIKitFringes
 */
 
 /* TODO
- * Interact with a SpecUserLocation class which will send new coordinates to this class instead
  * Add a check for the necessary string before showing an auth dialog: Bundle.main.infoDictionary?["NSLocationWhenInUseUsageDescription"]
  */
 
@@ -28,7 +27,7 @@ public class SpecLocationManager {
     fileprivate let locationServices: SpecLocationServices
     fileprivate let locationAuthorizationStatus: SpecLocationAuthorizationStatus
     fileprivate let bsFirstArg = CLLocationManager()
-    fileprivate var locationRequestInProgress = false
+    fileprivate var requestedLocation = false
     fileprivate var updatingLocation = false
 
     public convenience init(dialogManager: SpecDialogManager,
@@ -60,7 +59,10 @@ public class SpecLocationManager {
 
     @objc
     func didChangeLocation() {
-        delegate!.locationManager?(bsFirstArg, didUpdateLocations: [userLocation.location!])
+        if requestedLocation || updatingLocation {
+            requestedLocation = false
+            delegate!.locationManager?(bsFirstArg, didUpdateLocations: [userLocation.location!])
+        }
     }
 
     @objc
@@ -76,23 +78,6 @@ public class SpecLocationManager {
     fileprivate func sendCurrentStatus() {
         delegate?.locationManager?(bsFirstArg, didChangeAuthorization: authorizationStatus())
     }
-}
-
-// MARK: Async callbacks
-extension SpecLocationManager {
-
-    public func locationRequestSuccess() {
-        if ![.authorizedWhenInUse, .authorizedAlways].contains(authorizationStatus()) {
-            errorHandler.error(.notAuthorized)
-        }
-        if !(locationRequestInProgress || updatingLocation) {
-            errorHandler.error(.noLocationRequestInProgress)
-        }
-        locationRequestInProgress = false
-        let fakeCurrentLocation = CLLocation(latitude: 1.0, longitude: 2.0)
-        userLocation.location = fakeCurrentLocation
-    }
-
 }
 
 // MARK: User taps for authorization dialog prompts
@@ -192,6 +177,6 @@ extension SpecLocationManager: LocationManaging {
     }
 
     private func requestLocationWhileWhenInUse() {
-        locationRequestInProgress = true
+        requestedLocation = true
     }
 }

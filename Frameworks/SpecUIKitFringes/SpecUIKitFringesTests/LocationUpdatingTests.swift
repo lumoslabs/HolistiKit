@@ -4,19 +4,14 @@ import CoreLocation
 
 class LocationUpdatingTests: SpecLocationManagerTestCase {
 
-    func test_locationRequestSuccess_AfterRequestLocation() {
+    func test_requestLocation() {
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
-        subject.requestLocation()
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 0)
-        
-        subject.locationRequestSuccess()
-        
+
+        subject.requestLocation()
+        userLocation.userIsInBerlin()
+
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 1)
-        
-        errorHandler.fatalErrorsOff {
-            self.subject.locationRequestSuccess()
-        }
-        XCTAssertEqual(errorHandler.recordedError, .noLocationRequestInProgress)
     }
 
     func test_requestLocation_WhileNotDetermined() {
@@ -28,16 +23,16 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
         XCTAssertNotNil(delegate.receivedError)
     }
 
-    func test_locationRequestSuccess_AfterStartUpdatingLocation() {
+    func test_startUpdatingLocation() {
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         subject.startUpdatingLocation()
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 0)
         
-        subject.locationRequestSuccess()
+        userLocation.userIsInBerlin()
         
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 1)
         
-        subject.locationRequestSuccess()
+        userLocation.userIsInBerlin()
         
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 2)
     }
@@ -58,15 +53,14 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
     func test_location_AfterHavingReceivedALocationBefore() {
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         subject.requestLocation()
-        subject.locationRequestSuccess()
+        userLocation.userIsInBerlin()
         
         XCTAssertNotNil(subject.location)
     }
 
-    func test_updatedLocationWithoutAuthorization() {
-        errorHandler.fatalErrorsOff {
-            self.subject.locationRequestSuccess()
-        }
-        XCTAssertEqual(errorHandler.recordedError, .notAuthorized)
+    func test_receivingLocation_WithoutWantingLocation() {
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
+        userLocation.userIsInBerlin()
+        XCTAssertEqual(delegate.receivedUpdatedLocations.count, 0)
     }
 }

@@ -22,8 +22,6 @@ public class SpecErrorHandler {
         case notOnSpringBoard
         case noDialog
         case notAValidDialogResponse
-        case noLocationRequestInProgress
-        case notAuthorized
 
         var message: String {
             switch self {
@@ -37,10 +35,6 @@ public class SpecErrorHandler {
                 return "There is no dialog visible"
             case .notAValidDialogResponse:
                 return "The dialog has no such available response"
-            case .noLocationRequestInProgress:
-                return "CLLocationManager would not be sending the location, since there was no location request in progress."
-            case .notAuthorized:
-                return "CLLocationManager would not be sending the location, since user has not authorized access."
             }
         }
     }

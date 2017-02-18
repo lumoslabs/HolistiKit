@@ -41,7 +41,8 @@ class MultipleLocationManagersTests: SpecLocationManagerTestCase {
         dialogManager.tap(.allow)
 
         subject.requestLocation()
-        subject.locationRequestSuccess()
+        subject2.requestLocation()
+        userLocation.userIsInBerlin()
         
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 1)
         XCTAssertEqual(delegate2.receivedUpdatedLocations.count, 1)
