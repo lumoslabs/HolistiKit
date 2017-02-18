@@ -1,11 +1,12 @@
 import Foundation
 
-public class SpecDialogManager {
+public final class SpecDialogManager {
 
     private let errorHandler: SpecErrorHandler
 
-    public init() {
-        self.errorHandler = SpecErrorHandler()
+    public convenience init() {
+        let errorHandler = SpecErrorHandler()
+        self.init(errorHandler: errorHandler)
     }
 
     init(errorHandler: SpecErrorHandler) {

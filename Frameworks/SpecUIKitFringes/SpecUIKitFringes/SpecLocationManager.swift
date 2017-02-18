@@ -22,9 +22,10 @@ public class SpecLocationManager {
     fileprivate let dialogManager: SpecDialogManager
     fileprivate let errorHandler: SpecErrorHandler
     
-    public init(dialogManager: SpecDialogManager) {
-        self.dialogManager = dialogManager
-        self.errorHandler = SpecErrorHandler()
+    public convenience init(dialogManager: SpecDialogManager) {
+        let errorHandler = SpecErrorHandler()
+        self.init(dialogManager: dialogManager,
+                  errorHandler: errorHandler)
     }
 
     init(dialogManager: SpecDialogManager,

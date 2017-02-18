@@ -1,0 +1,5 @@
+import CoreLocation
+
+class SpecLocationServices {
+    
+}
