@@ -24,7 +24,7 @@ extension SpecDialogManager {
     }
 }
 
-extension SpecDialogManager.DialogIdentifier: Equatable {}
+extension SpecDialogManager.DialogIdentifier: Equatable { }
 public func ==(lhs: SpecDialogManager.DialogIdentifier, rhs: SpecDialogManager.DialogIdentifier) -> Bool {
     switch (lhs, rhs) {
         case (.locationManager(let subL), .locationManager(let subR)):
