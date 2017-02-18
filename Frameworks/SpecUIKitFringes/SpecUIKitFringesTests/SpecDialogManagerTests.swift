@@ -13,16 +13,16 @@ class SpecDialogManagerTests: XCTestCase {
     }
 
     func test_addingADialog() {
-        subject.addDialog(LocationManagerDialog(identifier: .requestAccessWhileInUse))
-        XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessWhileInUse))
+        subject.addDialog(TestDialog())
+        XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessAlways))
     }
 
     func test_poppingADialog() {
-        subject.addDialog(LocationManagerDialog(identifier: .requestAccessWhileInUse))
-        XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessWhileInUse))
+        subject.addDialog(TestDialog())
+        XCTAssertEqual(subject.visibleDialog, .locationManager(.requestAccessAlways))
         let poppedDialog = subject.popDialog()
         XCTAssertNil(subject.visibleDialog)
-        XCTAssertEqual(poppedDialog?.identifier, .locationManager(.requestAccessWhileInUse))
+        XCTAssertEqual(poppedDialog?.identifier, .locationManager(.requestAccessAlways))
     }
     
     func test_poppingADialogWhenNoneIsPresent() {

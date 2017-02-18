@@ -9,7 +9,9 @@ public class RealityChecker {
         case appSwitcherNotOpen
         case noScreenshotInAppSwitcher
         case notOnSpringBoard
+        case noDialog
         case notAValidDialogResponse
+        case noRequestPermissionDialog
 
         var message: String {
             switch self {
@@ -19,8 +21,12 @@ public class RealityChecker {
                 return "The screenshot is not in the App Switcher"
             case .notOnSpringBoard:
                 return "The user is not on the SpringBoard"
+            case .noDialog:
+                return "There is no dialog visible"
             case .notAValidDialogResponse:
                 return "The dialog has no such available response"
+            case .noRequestPermissionDialog:
+                return "There is no location authorization dialog"
             }
         }
     }

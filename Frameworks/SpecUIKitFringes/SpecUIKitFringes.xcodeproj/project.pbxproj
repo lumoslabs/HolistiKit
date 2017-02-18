@@ -43,6 +43,7 @@
 		88D2C8E61E56E3D80065882D /* SpecDialogManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8E51E56E3D80065882D /* SpecDialogManagerTests.swift */; };
 		88FED3F41E58690300217628 /* SpecDialogIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */; };
 		88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F71E5870CD00217628 /* SpecDialog.swift */; };
+		88FED3FB1E58AFE100217628 /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		88D2C8E51E56E3D80065882D /* SpecDialogManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogManagerTests.swift; sourceTree = "<group>"; };
 		88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogIdentifier.swift; sourceTree = "<group>"; };
 		88FED3F71E5870CD00217628 /* SpecDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialog.swift; sourceTree = "<group>"; };
+		88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLAuthorizationStatus+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				885EC1591E33E0C300A61FA1 /* XCTest.swift */,
+				88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */,
 				88D2C8D31E562FF70065882D /* SpecLocationManagerTestCase.swift in Sources */,
 				88D2C8D61E562FF70065882D /* LocationUpdatingTests.swift in Sources */,
+				88FED3FB1E58AFE100217628 /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */,
 				883E43841E3D15050051BD21 /* AppSwitcherTests.swift in Sources */,
 				88D2C8D41E562FF70065882D /* GeneralAuthorizationStatusesTests.swift in Sources */,
 				883E437E1E3D140F0051BD21 /* AppIconTests.swift in Sources */,

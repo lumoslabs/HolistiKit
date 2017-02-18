@@ -28,7 +28,10 @@ public class SpecDialogManager {
     }
 
     func tap(_ response: Response) {
-        let dialog = popDialog()!
+        guard let dialog = popDialog() else {
+            realityChecker.error(.noDialog)
+            return
+        }
         let isValidResponse = dialog.responded(with: response)
         if !isValidResponse {
             realityChecker.error(.notAValidDialogResponse)

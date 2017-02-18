@@ -146,48 +146,27 @@ extension SpecLocationManager {
         }
     }
 
-    public func tapAllowInDialog() {
-        guard let visibleDialog = visibleDialog else {
-            errorWith(.noDialog)
-            return
-        }
-        let accessLevel: CLAuthorizationStatus
-        switch visibleDialog {
-        case .requestAccessWhileInUse: accessLevel = .authorizedWhenInUse
-        case .requestAccessAlways: accessLevel = .authorizedAlways
+    public func respondedTo(dialog: SpecDialogManager.LocationManagerIdentifier,
+                            with response: SpecDialogManager.Response) -> Bool {
+        switch dialog {
+        case .requestAccessWhileInUse:
+            switch response {
+            case .allow: _authorizationStatus = .authorizedWhenInUse
+            case .dontAllow: _authorizationStatus = .denied
+            }
+            return true
+        case .requestAccessAlways:
+            switch response {
+            case .allow: _authorizationStatus = .authorizedAlways
+            case .dontAllow: _authorizationStatus = .denied
+            }
+            return true
         case .requestJumpToLocationServicesSettings:
-            fatalErrorWrongDialog()
-            // it needs to be set, even though we don't care about it now
-            accessLevel = .authorizedAlways
+            switch response {
+            default: return false
+            }
         }
-        respondToAccessDialog(accessLevel)
     }
-    
-    public func tapDoNotAllowAccessInDialog() {
-        respondToAccessDialog(.denied)
-    }
-
-    private func fatalErrorWrongDialog() {
-        errorWith(.noRequestPermissionDialog)
-    }
-
-    private func respondToAccessDialog(_ level: CLAuthorizationStatus) {
-        guard let dialog = visibleDialog else {
-            errorWith(.noDialog)
-            return
-        }
-        // the dialog must currently be one asking for authorization
-        if ![.requestAccessWhileInUse, .requestAccessAlways].contains(dialog) {
-            fatalErrorWrongDialog()
-        }
-        // the authorization must be one that can come from a user tap on the dialog
-        if ![.denied, .authorizedWhenInUse, .authorizedAlways].contains(level) {
-            fatalError("This is not a valid user response from the dialog.")
-        }
-        _ = dialogManager.popDialog()
-        _authorizationStatus = level
-    }
-    
 }
 
 // MARK: User's settings in the Settings app
@@ -210,13 +189,13 @@ extension SpecLocationManager {
     
     fileprivate func requestWhenInUseWhileNotDetermined() {
         fatalErrorIfCurrentlyADialog()
-        dialogManager.addDialog(LocationManagerDialog(identifier: .requestAccessWhileInUse))
+        dialogManager.addDialog(LocationManagerDialog(identifier: .requestAccessWhileInUse, locationManager: self))
     }
 
     fileprivate func requestWhenInUseWhileDeniedDueToLocationServices() {
         if !iOSwillPermitALocationServicesDialogToBeShown { return }
         fatalErrorIfCurrentlyADialog()
-        dialogManager.addDialog(LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings))
+        dialogManager.addDialog(LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings, locationManager: self))
     }
 
     private var iOSwillPermitALocationServicesDialogToBeShown: Bool {
