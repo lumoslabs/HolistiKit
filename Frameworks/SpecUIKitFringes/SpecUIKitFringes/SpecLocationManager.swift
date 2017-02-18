@@ -20,11 +20,12 @@ import UIKitFringes
 public class SpecLocationManager {
 
     public weak var delegate: CLLocationManagerDelegate?
+    fileprivate(set) public var location: CLLocation?
+
     fileprivate let dialogManager: SpecDialogManager
     fileprivate let errorHandler: SpecErrorHandler
     fileprivate let locationServices: SpecLocationServices
     fileprivate let locationAuthorizationStatus: SpecLocationAuthorizationStatus
-    public var mostRecentLocation: CLLocation?
     fileprivate let bsFirstArg = CLLocationManager()
     fileprivate var locationRequestInProgress = false
     fileprivate var updatingLocation = false
@@ -78,7 +79,7 @@ extension SpecLocationManager {
         }
         locationRequestInProgress = false
         let fakeCurrentLocation = CLLocation(latitude: 1.0, longitude: 2.0)
-        mostRecentLocation = fakeCurrentLocation
+        location = fakeCurrentLocation
         delegate!.locationManager?(bsFirstArg, didUpdateLocations: [fakeCurrentLocation])
     }
 
@@ -118,10 +119,6 @@ extension SpecLocationManager {
 
 // MARK: LocationManaging
 extension SpecLocationManager: LocationManaging {
-
-    public var location: CLLocation? {
-        return mostRecentLocation
-    }
 
     public func requestWhenInUseAuthorization() {
         switch authorizationStatus() {
