@@ -11,7 +11,8 @@ class SpecLocationManagerTestCase: SpecUIKitFringesTestCase {
         super.setUp()
 
         dialogManager = SpecDialogManager(errorHandler: errorHandler)
-        subject = SpecLocationManager(dialogManager: dialogManager)
+        subject = SpecLocationManager(dialogManager: dialogManager,
+                                      errorHandler: errorHandler)
         delegate = SpecLocationManagerDelegate()
         subject.delegate = delegate
     }

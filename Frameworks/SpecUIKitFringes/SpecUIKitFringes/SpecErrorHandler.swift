@@ -1,3 +1,16 @@
+/*
+ During normal usage of Spec fake classes in specs, incorrect usage should
+ fatalError immediately. If you're trying to do something that wouldn't be
+ possible, or something that wouldn't actually be happening/possible, we
+ should know right away. However, in testing this fatalError behavior itself,
+ we need to be able to log these errors instead of fatal erroring.
+
+ Note: When testing for these errors, ensure that the tests test nothing 
+ further afterward, since a fatalError would normally halt operation.
+ However, in tests, execution can continue, so any state after the error is 
+ unreliable.
+ */
+    
 public class SpecErrorHandler {
 
     var errors = [FatalError]()
@@ -9,7 +22,8 @@ public class SpecErrorHandler {
         case notOnSpringBoard
         case noDialog
         case notAValidDialogResponse
-        case noRequestPermissionDialog
+        case noLocationRequestInProgress
+        case notAuthorized
 
         var message: String {
             switch self {
@@ -23,8 +37,10 @@ public class SpecErrorHandler {
                 return "There is no dialog visible"
             case .notAValidDialogResponse:
                 return "The dialog has no such available response"
-            case .noRequestPermissionDialog:
-                return "There is no location authorization dialog"
+            case .noLocationRequestInProgress:
+                return "CLLocationManager would not be sending the location, since there was no location request in progress."
+            case .notAuthorized:
+                return "CLLocationManager would not be sending the location, since user has not authorized access."
             }
         }
     }

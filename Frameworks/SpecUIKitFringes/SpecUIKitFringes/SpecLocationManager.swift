@@ -20,13 +20,13 @@ import UIKitFringes
 public class SpecLocationManager {
 
     fileprivate let dialogManager: SpecDialogManager
+    fileprivate let errorHandler: SpecErrorHandler
 
-    public init(dialogManager: SpecDialogManager) {
+    public init(dialogManager: SpecDialogManager,
+                errorHandler: SpecErrorHandler) {
         self.dialogManager = dialogManager
+        self.errorHandler = errorHandler
     }
-    
-    fileprivate var fatalErrorsOn: Bool = true
-    public fileprivate(set) var erroredWith: InternalInconsistency?
 
     public weak var delegate: CLLocationManagerDelegate?
     public var mostRecentLocation: CLLocation?
@@ -47,66 +47,15 @@ public class SpecLocationManager {
 
 }
 
-// MARK: Internal Inconsistencies
-extension SpecLocationManager {
-
-    /*
-     During normal usage of SpecLocationManager in specs, incorrect usage should
-     fatalError immediately. If you're trying to do something that wouldn't be
-     possible, or something that CLLocationManager wouldn't actually be doing, we
-     should know right away. However, in testing SpecLocationManager itself, we
-     want to be able to test these checks where a fatalError would normally be
-     occuring. Thus: InternalInconsistency.
-     
-     Note: When testing for internal inconsistencies, ensure that the test tests
-     nothing further afterward, since a fatalError would normally halt operation.
-     However, in tests, execution can continue, so any state afterward is unreliable.
-     */
-
-    public enum InternalInconsistency {
-        case noLocationRequestInProgress
-        case notAuthorized
-        case noLocationServicesDialog
-        case noRequestPermissionDialog
-        case noDialog
-    }
-
-    public func fatalErrorsOff(block: () -> Void) {
-        let previousSetting = fatalErrorsOn
-        defer { fatalErrorsOn = previousSetting }
-        fatalErrorsOn = false
-        block()
-    }
-
-    fileprivate func errorWith(_ internalInconsistency: InternalInconsistency) {
-        if fatalErrorsOn {
-            switch internalInconsistency {
-            case .noLocationRequestInProgress:
-                fatalError("CLLocationManager would not be sending the location, since there was no location request in progress.")
-            case .notAuthorized:
-                fatalError("CLLocationManager would not be sending the location, since user has not authorized access.")
-            case .noLocationServicesDialog:
-                fatalError("The dialog to jump to Location Services was not prompted.")
-            case .noDialog:
-                fatalError("There is no dialog to be responding to.")
-            case .noRequestPermissionDialog:
-                fatalError("The requestPermission dialog was not prompted.")
-            }
-        }
-        if erroredWith == nil { erroredWith = internalInconsistency }
-    }
-
-}
-
 // MARK: Async callbacks
 extension SpecLocationManager {
 
     public func locationRequestSuccess() {
         if ![.authorizedWhenInUse, .authorizedAlways].contains(authorizationStatus()) {
-            errorWith(.notAuthorized)
+            errorHandler.error(.notAuthorized)
         }
         if !(locationRequestInProgress || updatingLocation) {
-            errorWith(.noLocationRequestInProgress)
+            errorHandler.error(.noLocationRequestInProgress)
         }
         locationRequestInProgress = false
         let fakeCurrentLocation = CLLocation(latitude: 1.0, longitude: 2.0)
