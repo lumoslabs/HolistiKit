@@ -1,13 +1,13 @@
 import XCTest
 @testable import SpecUIKitFringes
 
-class SystemDialogTests: XCTestCase {
+class SpecDialogManagerTests: XCTestCase {
 
-    var subject: SystemDialog!
+    var subject: SpecDialogManager!
     
     override func setUp() {
         super.setUp()
-        subject = SystemDialog()
+        subject = SpecDialogManager()
     }
 
     func test_addingADialog() {

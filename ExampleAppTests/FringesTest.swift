@@ -68,8 +68,8 @@ extension FringesTest {
 // MARK: CLLocationManager
 extension FringesTest {
 
-    var visibleDialog: SystemDialog.DialogIdentifier? {
-        return system.systemDialog.visibleDialog
+    var visibleDialog: SpecDialogManager.DialogIdentifier? {
+        return system.dialogManager.visibleDialog
     }
 }
 

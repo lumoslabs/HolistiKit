@@ -1,4 +1,4 @@
-extension SystemDialog {
+extension SpecDialogManager {
     
     public enum LocationManagerIdentifier {
         // "Allow "<AppName>" to access your location while you use the app?"
@@ -24,8 +24,8 @@ extension SystemDialog {
     }
 }
 
-extension SystemDialog.DialogIdentifier: Equatable {}
-public func ==(lhs: SystemDialog.DialogIdentifier, rhs: SystemDialog.DialogIdentifier) -> Bool {
+extension SpecDialogManager.DialogIdentifier: Equatable {}
+public func ==(lhs: SpecDialogManager.DialogIdentifier, rhs: SpecDialogManager.DialogIdentifier) -> Bool {
     switch (lhs, rhs) {
         case (.locationManager(let subL), .locationManager(let subR)):
             return subL == subR

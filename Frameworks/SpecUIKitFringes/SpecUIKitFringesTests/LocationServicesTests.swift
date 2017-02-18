@@ -16,22 +16,22 @@ class LocationServicesTests: SpecLocationManagerTestCase {
     func test_RespondToTheLocationServicesDialogTwice() {
         subject.setLocationServicesEnabledInSettingsApp(false)
         subject.requestWhenInUseAuthorization()
-        XCTAssertEqual(systemDialog.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
+        XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
         subject.tapSettingsOrCancelInDialog()
         
-        XCTAssertNil(systemDialog.visibleDialog)
+        XCTAssertNil(dialogManager.visibleDialog)
         
         subject.requestWhenInUseAuthorization()
-        XCTAssertEqual(systemDialog.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
+        XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
         subject.tapSettingsOrCancelInDialog()
         
-        XCTAssertNil(systemDialog.visibleDialog)
+        XCTAssertNil(dialogManager.visibleDialog)
         
         subject.requestWhenInUseAuthorization()
         
-        XCTAssertNil(systemDialog.visibleDialog)
+        XCTAssertNil(dialogManager.visibleDialog)
     }
 
     func test_respondingToDialogWhenItIsNotPresented() {

@@ -19,10 +19,10 @@ import UIKitFringes
 
 public class SpecLocationManager {
 
-    fileprivate let systemDialog: SystemDialog
+    fileprivate let dialogManager: SpecDialogManager
 
-    public init(systemDialog: SystemDialog) {
-        self.systemDialog = systemDialog
+    public init(dialogManager: SpecDialogManager) {
+        self.dialogManager = dialogManager
     }
     
     fileprivate var fatalErrorsOn: Bool = true
@@ -130,7 +130,7 @@ extension SpecLocationManager {
         if visibleDialog != .requestJumpToLocationServicesSettings {
             errorWith(.noLocationServicesDialog)
         }
-        systemDialog.popDialog()
+        dialogManager.popDialog()
         locationServicesDialogResponseCount += 1
     }
     
@@ -139,8 +139,8 @@ extension SpecLocationManager {
 // MARK: User taps for authorization dialog prompts
 extension SpecLocationManager {
 
-    var visibleDialog: SystemDialog.LocationManagerIdentifier? {
-        guard let dialog = systemDialog.visibleDialog else { return nil }
+    var visibleDialog: SpecDialogManager.LocationManagerIdentifier? {
+        guard let dialog = dialogManager.visibleDialog else { return nil }
         switch dialog {
         case .locationManager(let locationManagerDialog): return locationManagerDialog
         }
@@ -184,7 +184,7 @@ extension SpecLocationManager {
         if ![.denied, .authorizedWhenInUse, .authorizedAlways].contains(level) {
             fatalError("This is not a valid user response from the dialog.")
         }
-        systemDialog.popDialog()
+        dialogManager.popDialog()
         _authorizationStatus = level
     }
     
@@ -210,13 +210,13 @@ extension SpecLocationManager {
     
     fileprivate func requestWhenInUseWhileNotDetermined() {
         fatalErrorIfCurrentlyADialog()
-        systemDialog.addDialog(withIdentifier: LocationManagerDialog(identifier: .requestAccessWhileInUse))
+        dialogManager.addDialog(withIdentifier: LocationManagerDialog(identifier: .requestAccessWhileInUse))
     }
 
     fileprivate func requestWhenInUseWhileDeniedDueToLocationServices() {
         if !iOSwillPermitALocationServicesDialogToBeShown { return }
         fatalErrorIfCurrentlyADialog()
-        systemDialog.addDialog(withIdentifier: LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings))
+        dialogManager.addDialog(withIdentifier: LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings))
     }
 
     private var iOSwillPermitALocationServicesDialogToBeShown: Bool {
@@ -229,7 +229,7 @@ extension SpecLocationManager {
     }
 
     // TODO this is not the case.
-    // add tests to SystemDialog to show how they stack and affect app active/inactive
+    // add tests to SpecDialogManager to show how they stack and affect app active/inactive
     private func fatalErrorIfCurrentlyADialog() {
         guard let dialog = visibleDialog else { return }
         fatalError("There is already a dialog displayed: \(dialog). If showing another one would create a stack of dialogs, then update `dialog` to handle a stack.")
