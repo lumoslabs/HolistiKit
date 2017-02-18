@@ -1,7 +1,6 @@
 // TODO Rename to SpecErrorHandler
 public class RealityChecker {
 
-    static let shared = RealityChecker()
     var recordedFatalErrors = [FatalError]()
     private var recordingMode = false
 
@@ -43,9 +42,5 @@ public class RealityChecker {
         recordingMode = true
         block()
         recordingMode = false
-    }
-
-    func clearRecordedErrors() {
-        recordedFatalErrors = []
     }
 }

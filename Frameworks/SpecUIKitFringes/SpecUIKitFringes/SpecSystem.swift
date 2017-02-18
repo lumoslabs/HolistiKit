@@ -1,6 +1,10 @@
 open class SpecSystem {
+
+    private let realityChecker: RealityChecker
     
-    public init() { }
+    public init(realityChecker: RealityChecker) {
+        self.realityChecker = realityChecker
+    }
 
     public private(set) var appDelegate: SpecApplicationDelegateProtocol!
     private var locations: [Location] = [.springBoard]
@@ -121,14 +125,14 @@ open class SpecSystem {
     }
 
     private func errorIfNotOnSpringBoard() {
-        if !at(.springBoard) { RealityChecker.shared.error(.notOnSpringBoard) }
+        if !at(.springBoard) { realityChecker.error(.notOnSpringBoard) }
     }
 
     private func errorIfAppSwitcherIsNotOpen() {
-        if !at(.appSwitcher) { RealityChecker.shared.error(.appSwitcherNotOpen) }
+        if !at(.appSwitcher) { realityChecker.error(.appSwitcherNotOpen) }
     }
 
     private func errorIfNoScreenshotInAppSwitcher() {
-        if !screenshotInAppSwitcher { RealityChecker.shared.error(.noScreenshotInAppSwitcher) }
+        if !screenshotInAppSwitcher { realityChecker.error(.noScreenshotInAppSwitcher) }
     }
 }
