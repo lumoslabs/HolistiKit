@@ -4,7 +4,11 @@ public class SpecDialogManager {
 
     private let errorHandler: SpecErrorHandler
 
-    public init(errorHandler: SpecErrorHandler) {
+    public init() {
+        self.errorHandler = SpecErrorHandler()
+    }
+
+    init(errorHandler: SpecErrorHandler) {
         self.errorHandler = errorHandler
     }
 
@@ -29,7 +33,7 @@ public class SpecDialogManager {
         case cancel
     }
 
-    func tap(_ response: Response) {
+    public func tap(_ response: Response) {
         guard let dialog = popDialog() else {
             errorHandler.error(.noDialog)
             return

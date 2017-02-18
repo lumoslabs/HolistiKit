@@ -2,7 +2,11 @@ open class SpecSystem {
 
     private let errorHandler: SpecErrorHandler
     
-    public init(errorHandler: SpecErrorHandler) {
+    public init() {
+        self.errorHandler = SpecErrorHandler()
+    }
+    
+    init(errorHandler: SpecErrorHandler) {
         self.errorHandler = errorHandler
     }
 

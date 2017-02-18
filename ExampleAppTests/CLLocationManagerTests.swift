@@ -27,7 +27,7 @@ class CLLocationManagerTests: FringesTest {
         examplesUI.tapCLLocationManagerRow()
         clLocationManagerUI.tapRequestAuthorizationRow()
         XCTAssertEqual(clLocationManagerUI.authorizationStatus, "notDetermined")
-        locationManager.tapAllowInDialog()
+        dialogResponse(.allow)
         XCTAssertEqual(clLocationManagerUI.authorizationStatus, "authorizedWhenInUse")
     }
 }

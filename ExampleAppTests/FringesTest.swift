@@ -69,7 +69,15 @@ extension FringesTest {
 extension FringesTest {
 
     var visibleDialog: SpecDialogManager.DialogIdentifier? {
-        return system.dialogManager.visibleDialog
+        return dialogManager.visibleDialog
+    }
+    
+    func dialogResponse(_ response: SpecDialogManager.Response) {
+        return dialogManager.tap(response)
+    }
+
+    private var dialogManager: SpecDialogManager {
+        return system.dialogManager
     }
 }
 

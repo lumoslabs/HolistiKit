@@ -14,7 +14,6 @@ class FringesSpecSystem: SpecSystem {
         self.sharedApplication = SpecSharedApplication()
         self.dateProvider = SpecDateProvider()
         self.timeZoneProvider = SpecTimeZoneProvider()
-        super.init()
     }
 
     override open func createAppDelegateBundle() -> AppDelegateBundle {
