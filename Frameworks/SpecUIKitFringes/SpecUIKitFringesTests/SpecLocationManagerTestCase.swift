@@ -10,7 +10,7 @@ class SpecLocationManagerTestCase: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        dialogManager = SpecDialogManager()
+        dialogManager = SpecDialogManager(realityChecker: RealityChecker())
         subject = SpecLocationManager(dialogManager: dialogManager)
         delegate = SpecLocationManagerDelegate()
         subject.delegate = delegate

@@ -1,7 +1,7 @@
 public protocol SpecDialog {
 
     var identifier: SpecDialogManager.DialogIdentifier { get }
-    func responded(with: SpecDialogManager.Response)
+    func responded(with: SpecDialogManager.Response) -> Bool
 }
 
 public struct LocationManagerDialog: SpecDialog {
@@ -12,6 +12,7 @@ public struct LocationManagerDialog: SpecDialog {
         self.identifier = .locationManager(locationManagerIdentifier)
     }
     
-    public func responded(with response: SpecDialogManager.Response) {
+    public func responded(with response: SpecDialogManager.Response) -> Bool {
+        return false
     }
 }

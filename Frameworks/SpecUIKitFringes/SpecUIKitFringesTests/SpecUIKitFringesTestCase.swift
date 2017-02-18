@@ -17,6 +17,7 @@ class SpecUIKitFringesTestCase: XCTestCase {
     }
 
     private var realityChecker: RealityChecker {
+        // TODO don't leave this as a global singleton
         return RealityChecker.shared
     }
 }

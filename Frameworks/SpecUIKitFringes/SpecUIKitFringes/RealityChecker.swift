@@ -1,4 +1,5 @@
-class RealityChecker {
+// TODO Rename to SpecErrorHandler
+public class RealityChecker {
 
     static let shared = RealityChecker()
     var recordedFatalErrors = [FatalError]()
@@ -8,6 +9,7 @@ class RealityChecker {
         case appSwitcherNotOpen
         case noScreenshotInAppSwitcher
         case notOnSpringBoard
+        case notAValidDialogResponse
 
         var message: String {
             switch self {
@@ -17,6 +19,8 @@ class RealityChecker {
                 return "The screenshot is not in the App Switcher"
             case .notOnSpringBoard:
                 return "The user is not on the SpringBoard"
+            case .notAValidDialogResponse:
+                return "The dialog has no such available response"
             }
         }
     }
