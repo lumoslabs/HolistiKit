@@ -117,52 +117,6 @@ extension SpecLocationManager {
 
 }
 
-// MARK: requestWhenInUseAuthorization outcomes
-extension SpecLocationManager {
-    
-    fileprivate func requestWhenInUseWhileNotDetermined() {
-        dialogManager.addDialog(LocationManagerDialog(identifier: .requestAccessWhileInUse, locationManager: self))
-    }
-
-    fileprivate func requestWhenInUseWhileDeniedDueToLocationServices() {
-        if !iOSwillPermitALocationServicesDialogToBeShown { return }
-        dialogManager.addDialog(LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings, locationManager: self))
-    }
-
-    private var iOSwillPermitALocationServicesDialogToBeShown: Bool {
-        // iOS will only ever show the user this dialog twice for this app.
-        // It only counts as being shown if the user responds. For example,
-        // the following things can dismiss the dialog without it counting:
-        // * Locking the device.
-        // * Receiving a call, accepting, and then clicking Home.
-        return locationServicesDialogResponseCount < 2
-    }
-}
-
-// MARK: requestLocation outcomes
-extension SpecLocationManager {
-
-    fileprivate func requestLocationWhileNotDetermined() {
-        let error = NSError(domain: kCLErrorDomain, code: 0, userInfo: nil)
-        // this actually happens about 10 seconds later
-        delegate!.locationManager!(bsFirstArg, didFailWithError: error)
-    }
-
-    fileprivate func requestLocationWhileWhenInUse() {
-        locationRequestInProgress = true
-    }
-
-}
-
-// MARK: startUpdatingLocation outcomes
-extension SpecLocationManager {
-
-    fileprivate func startUpdatingLocationWhileWhenInUse() {
-        updatingLocation = true
-    }
-
-}
-
 // MARK: LocationManaging
 extension SpecLocationManager: LocationManaging {
 
@@ -212,4 +166,35 @@ extension SpecLocationManager: LocationManaging {
         return _locationServicesEnabled
     }
 
+    private func requestWhenInUseWhileNotDetermined() {
+        dialogManager.addDialog(LocationManagerDialog(identifier: .requestAccessWhileInUse, locationManager: self))
+    }
+
+    private func requestWhenInUseWhileDeniedDueToLocationServices() {
+        if !iOSwillPermitALocationServicesDialogToBeShown { return }
+        dialogManager.addDialog(LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings, locationManager: self))
+    }
+
+    private var iOSwillPermitALocationServicesDialogToBeShown: Bool {
+        // iOS will only ever show the user this dialog twice for this app.
+        // It only counts as being shown if the user responds. For example,
+        // the following things can dismiss the dialog without it counting:
+        // * Locking the device.
+        // * Receiving a call, accepting, and then clicking Home.
+        return locationServicesDialogResponseCount < 2
+    }
+
+    private func startUpdatingLocationWhileWhenInUse() {
+        updatingLocation = true
+    }
+
+    private func requestLocationWhileNotDetermined() {
+        let error = NSError(domain: kCLErrorDomain, code: 0, userInfo: nil)
+        // this actually happens about 10 seconds later
+        delegate!.locationManager!(bsFirstArg, didFailWithError: error)
+    }
+
+    private func requestLocationWhileWhenInUse() {
+        locationRequestInProgress = true
+    }
 }
