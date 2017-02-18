@@ -25,6 +25,8 @@ public class SpecDialogManager {
     public enum Response {
         case allow
         case dontAllow
+        case settings
+        case cancel
     }
 
     func tap(_ response: Response) {

@@ -65,7 +65,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
-        subject.tapSettingsOrCancelInDialog()
+        dialogManager.tap(.cancel)
         
         XCTAssertNil(dialogManager.visibleDialog)
     }
@@ -79,7 +79,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
 
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
-        subject.tapSettingsOrCancelInDialog()
+        dialogManager.tap(.settings)
         
         XCTAssertNil(dialogManager.visibleDialog)
         

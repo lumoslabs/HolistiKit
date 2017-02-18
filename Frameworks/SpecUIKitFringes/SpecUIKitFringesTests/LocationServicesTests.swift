@@ -18,14 +18,14 @@ class LocationServicesTests: SpecLocationManagerTestCase {
         subject.requestWhenInUseAuthorization()
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
-        subject.tapSettingsOrCancelInDialog()
+        dialogManager.tap(.settings)
         
         XCTAssertNil(dialogManager.visibleDialog)
         
         subject.requestWhenInUseAuthorization()
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
-        subject.tapSettingsOrCancelInDialog()
+        dialogManager.tap(.cancel)
         
         XCTAssertNil(dialogManager.visibleDialog)
         
@@ -35,10 +35,10 @@ class LocationServicesTests: SpecLocationManagerTestCase {
     }
 
     func test_respondingToDialogWhenItIsNotPresented() {
-        subject.fatalErrorsOff() {
-            subject.tapSettingsOrCancelInDialog()
-            XCTAssertEqual(subject.erroredWith, .noLocationServicesDialog)
+        errorHandler.fatalErrorsOff {
+            self.dialogManager.tap(.cancel)
         }
+        XCTAssertEqual(errorHandler.errors, [.noDialog])
     }
     
 }

@@ -116,35 +116,8 @@ extension SpecLocationManager {
 
 }
 
-// MARK: User taps for Location Services
-extension SpecLocationManager {
-
-    // TODO expose this as two methods which happen to internally call a single private func
-    // Going to settings would also background the app, which cancel would make it active
-    /* Both "Settings" and "Cancel" buttons have the same
-     effect on the app and state in the ways we care.
-     "Settings" will additionally background the app, but
-     we don't care about that, at least yet.
-     */
-    public func tapSettingsOrCancelInDialog() {
-        if visibleDialog != .requestJumpToLocationServicesSettings {
-            errorWith(.noLocationServicesDialog)
-        }
-        _ = dialogManager.popDialog()
-        locationServicesDialogResponseCount += 1
-    }
-    
-}
-
 // MARK: User taps for authorization dialog prompts
 extension SpecLocationManager {
-
-    var visibleDialog: SpecDialogManager.LocationManagerIdentifier? {
-        guard let dialog = dialogManager.visibleDialog else { return nil }
-        switch dialog {
-        case .locationManager(let locationManagerDialog): return locationManagerDialog
-        }
-    }
 
     public func respondedTo(dialog: SpecDialogManager.LocationManagerIdentifier,
                             with response: SpecDialogManager.Response) -> Bool {
@@ -153,19 +126,25 @@ extension SpecLocationManager {
             switch response {
             case .allow: _authorizationStatus = .authorizedWhenInUse
             case .dontAllow: _authorizationStatus = .denied
+            default: return false
             }
-            return true
         case .requestAccessAlways:
             switch response {
             case .allow: _authorizationStatus = .authorizedAlways
             case .dontAllow: _authorizationStatus = .denied
+            default: return false
             }
-            return true
         case .requestJumpToLocationServicesSettings:
             switch response {
+            case .settings, .cancel: tapSettingsOrCancelInDialog()
             default: return false
             }
         }
+        return true
+    }
+
+    private func tapSettingsOrCancelInDialog() {
+        locationServicesDialogResponseCount += 1
     }
 }
 
@@ -188,13 +167,11 @@ extension SpecLocationManager {
 extension SpecLocationManager {
     
     fileprivate func requestWhenInUseWhileNotDetermined() {
-        fatalErrorIfCurrentlyADialog()
         dialogManager.addDialog(LocationManagerDialog(identifier: .requestAccessWhileInUse, locationManager: self))
     }
 
     fileprivate func requestWhenInUseWhileDeniedDueToLocationServices() {
         if !iOSwillPermitALocationServicesDialogToBeShown { return }
-        fatalErrorIfCurrentlyADialog()
         dialogManager.addDialog(LocationManagerDialog(identifier: .requestJumpToLocationServicesSettings, locationManager: self))
     }
 
@@ -206,14 +183,6 @@ extension SpecLocationManager {
         // * Receiving a call, accepting, and then clicking Home.
         return locationServicesDialogResponseCount < 2
     }
-
-    // TODO this is not the case.
-    // add tests to SpecDialogManager to show how they stack and affect app active/inactive
-    private func fatalErrorIfCurrentlyADialog() {
-        guard let dialog = visibleDialog else { return }
-        fatalError("There is already a dialog displayed: \(dialog). If showing another one would create a stack of dialogs, then update `dialog` to handle a stack.")
-    }
-
 }
 
 // MARK: requestLocation outcomes
