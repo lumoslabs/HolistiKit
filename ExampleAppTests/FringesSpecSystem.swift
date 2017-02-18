@@ -8,6 +8,7 @@ class FringesSpecSystem: SpecSystem {
     
     weak var urlSession: SpecURLSession!
     weak var locationManager: SpecLocationManager!
+    weak var systemDialog: SystemDialog!
 
     override init() {
         self.sharedApplication = SpecSharedApplication()
@@ -20,7 +21,9 @@ class FringesSpecSystem: SpecSystem {
         // TODO if these were created via a factory which will aggregate their state it wouldn't be necessary to play this weak/strong game
         let _urlSession = SpecURLSession()
         self.urlSession = _urlSession
-        let _locationManager = SpecLocationManager()
+        let _systemDialog = SystemDialog()
+        self.systemDialog = _systemDialog
+        let _locationManager = SpecLocationManager(systemDialog: systemDialog)
         self.locationManager = _locationManager
         let appDelegate = SpecAppDelegate(sharedApplication: sharedApplication,
                                           dateProvider: dateProvider,
@@ -28,6 +31,6 @@ class FringesSpecSystem: SpecSystem {
                                           urlSession: urlSession,
                                           locationManager: locationManager)
         return AppDelegateBundle(appDelegate: appDelegate,
-                                 temporarilyStrong: [urlSession, locationManager])
+                                 temporarilyStrong: [urlSession, locationManager, systemDialog])
     }
 }

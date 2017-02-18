@@ -19,7 +19,7 @@ class CLLocationManagerTests: FringesTest {
         tapAppIcon()
         examplesUI.tapCLLocationManagerRow()
         clLocationManagerUI.tapRequestAuthorizationRow()
-        XCTAssertEqual(locationManager.dialog, .requestAccessWhileInUse)
+        XCTAssertEqual(visibleDialog, .locationManager(.requestAccessWhileInUse))
     }
 
     func test_acceptingAnAuthorizationRequest() {
