@@ -24,7 +24,9 @@ class FringesSpecSystem: SpecSystem {
         self.dialogManager = _dialogManager
         let locationServices = SpecLocationServices()
         let locationAuthorizationStatus = SpecLocationAuthorizationStatus()
+        let userLocation = SpecUserLocation()
         let _locationManager = SpecLocationManager(dialogManager: dialogManager,
+                                                   userLocation: userLocation,
                                                    locationServices: locationServices,
                                                    locationAuthorizationStatus: locationAuthorizationStatus)
         self.locationManager = _locationManager

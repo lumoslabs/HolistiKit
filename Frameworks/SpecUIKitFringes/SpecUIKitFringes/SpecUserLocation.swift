@@ -2,6 +2,8 @@ import CoreLocation
 
 public class SpecUserLocation {
 
+    public init() { }
+
     var location: CLLocation? {
         didSet { notifier.post() }
     }
