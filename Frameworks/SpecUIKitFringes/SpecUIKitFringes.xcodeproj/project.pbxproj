@@ -176,22 +176,14 @@
 		885EC1261E338E8A00A61FA1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */,
-				885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */,
-				885EC1431E338F4200A61FA1 /* SpecSharedApplication.swift */,
-				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
-				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
-				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
-				88FED4261E59C38300217628 /* SpecURLSession.swift */,
-				88FED4271E59C38300217628 /* SpecURLSessionDataTask.swift */,
-				88FED40F1E59B97700217628 /* SpecDateProvider.swift */,
-				88FED40B1E59B76700217628 /* SpecTimeZoneProvider.swift */,
+				88FED4071E58F10000217628 /* SpecSettingsApp.swift */,
+				88FED42C1E59C50F00217628 /* App Lifecycle */,
+				88FED42D1E59C51600217628 /* View Lifecycle */,
+				88FED42E1E59C51E00217628 /* URLSession */,
+				88FED42F1E59C52800217628 /* Time */,
 				88FED3F21E5868ED00217628 /* SpecDialogManager */,
 				88FED3FC1E58C51D00217628 /* SpecLocationManager */,
-				88FED4191E59BDFD00217628 /* SpecTimer */,
-				88FED4051E58DEA500217628 /* SpecMulticaster.swift */,
-				883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */,
-				88FED4071E58F10000217628 /* SpecSettingsApp.swift */,
+				88FED4301E59C53B00217628 /* Utilities */,
 				885EC13F1E338EBD00A61FA1 /* Supporting Files */,
 			);
 			name = Source;
@@ -305,6 +297,54 @@
 				88FED4161E59BDF800217628 /* SpecTimerFactory.swift */,
 			);
 			name = SpecTimer;
+			sourceTree = "<group>";
+		};
+		88FED42C1E59C50F00217628 /* App Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */,
+				885EC15B1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift */,
+				885EC1431E338F4200A61FA1 /* SpecSharedApplication.swift */,
+			);
+			name = "App Lifecycle";
+			sourceTree = "<group>";
+		};
+		88FED42D1E59C51600217628 /* View Lifecycle */ = {
+			isa = PBXGroup;
+			children = (
+				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
+				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
+				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
+			);
+			name = "View Lifecycle";
+			sourceTree = "<group>";
+		};
+		88FED42E1E59C51E00217628 /* URLSession */ = {
+			isa = PBXGroup;
+			children = (
+				88FED4261E59C38300217628 /* SpecURLSession.swift */,
+				88FED4271E59C38300217628 /* SpecURLSessionDataTask.swift */,
+			);
+			name = URLSession;
+			sourceTree = "<group>";
+		};
+		88FED42F1E59C52800217628 /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				88FED4191E59BDFD00217628 /* SpecTimer */,
+				88FED40F1E59B97700217628 /* SpecDateProvider.swift */,
+				88FED40B1E59B76700217628 /* SpecTimeZoneProvider.swift */,
+			);
+			name = Time;
+			sourceTree = "<group>";
+		};
+		88FED4301E59C53B00217628 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				88FED4051E58DEA500217628 /* SpecMulticaster.swift */,
+				883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

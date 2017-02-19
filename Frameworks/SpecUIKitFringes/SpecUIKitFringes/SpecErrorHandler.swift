@@ -1,14 +1,14 @@
 /*
- During normal usage of Spec fake classes in specs, incorrect usage should
- fatalError immediately. If you're trying to do something that wouldn't be
- possible, or something that wouldn't actually be happening/possible, we
- should know right away. However, in testing this fatalError behavior itself,
- we need to be able to log these errors instead of fatal erroring.
+ During normal usage of Spec classes, incorrect usage should fatalError 
+ immediately. If you're trying to do something that wouldn't be possible,
+ or something that wouldn't actually be happening, we should know right 
+ away. However, in testing this fatalError behavior itself, we need to be 
+ able to log these errors instead of fatal erroring.
 
  Note: When testing for these errors, ensure that the tests test nothing 
  further afterward, since a fatalError would normally halt operation.
- However, in tests, execution can continue, so any state after the error is 
- unreliable.
+ However, if logging instead of fatal erroring, execution continues. So,
+ any state after the error is unreliable.
  */
     
 public class SpecErrorHandler {

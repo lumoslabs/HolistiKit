@@ -413,23 +413,6 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		885371CD1E326E8700CC5B75 /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */,
-				885F9D261E2BC8FC003ADC21 /* DatePrinter.swift */,
-			);
-			name = Internal;
-			sourceTree = "<group>";
-		};
-		885371CE1E326E9E00CC5B75 /* Fringe */ = {
-			isa = PBXGroup;
-			children = (
-				886013E71E2D4E4000C86FDE /* ErrorLogger.swift */,
-			);
-			name = Fringe;
-			sourceTree = "<group>";
-		};
 		885371CF1E3271C800CC5B75 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,8 +480,9 @@
 		885F9D201E2BB3C1003ADC21 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				885371CE1E326E9E00CC5B75 /* Fringe */,
-				885371CD1E326E8700CC5B75 /* Internal */,
+				886013E71E2D4E4000C86FDE /* ErrorLogger.swift */,
+				885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */,
+				885F9D261E2BC8FC003ADC21 /* DatePrinter.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
