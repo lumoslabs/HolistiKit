@@ -33,6 +33,7 @@
 		88B4E06F1E59D2780004C839 /* SpecTimeZoneProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */; };
 		88B4E0711E59D35E0004C839 /* SpecDateProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */; };
 		88B4E0731E59D6920004C839 /* SpecScheduledTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0721E59D6920004C839 /* SpecScheduledTimerTests.swift */; };
+		88B4E0751E59DAE90004C839 /* SpecURLSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0741E59DAE90004C839 /* SpecURLSessionTests.swift */; };
 		88D2C8B31E562D810065882D /* SpecLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B21E562D810065882D /* SpecLocationManager.swift */; };
 		88D2C8D21E562FF70065882D /* AuthorizationInSettingsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8C41E562FB30065882D /* AuthorizationInSettingsAppTests.swift */; };
 		88D2C8D31E562FF70065882D /* SpecLocationManagerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8C51E562FB30065882D /* SpecLocationManagerTestCase.swift */; };
@@ -101,6 +102,7 @@
 		88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimeZoneProviderTests.swift; sourceTree = "<group>"; };
 		88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProviderTests.swift; sourceTree = "<group>"; };
 		88B4E0721E59D6920004C839 /* SpecScheduledTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecScheduledTimerTests.swift; sourceTree = "<group>"; };
+		88B4E0741E59DAE90004C839 /* SpecURLSessionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSessionTests.swift; sourceTree = "<group>"; };
 		88D2C8B21E562D810065882D /* SpecLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationManager.swift; sourceTree = "<group>"; };
 		88D2C8C41E562FB30065882D /* AuthorizationInSettingsAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationInSettingsAppTests.swift; sourceTree = "<group>"; };
 		88D2C8C51E562FB30065882D /* SpecLocationManagerTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationManagerTestCase.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				88D2C8C31E562F8B0065882D /* SpecLocationManager */,
 				883E437C1E3D13DB0051BD21 /* SpecSystem */,
 				885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */,
+				88B4E0741E59DAE90004C839 /* SpecURLSessionTests.swift */,
 				88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */,
 				88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */,
 				88B4E0721E59D6920004C839 /* SpecScheduledTimerTests.swift */,
@@ -503,6 +506,7 @@
 				88D2C8D21E562FF70065882D /* AuthorizationInSettingsAppTests.swift in Sources */,
 				885EC1571E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift in Sources */,
 				88D2C8D71E562FF70065882D /* RequestingAuthorizationTests.swift in Sources */,
+				88B4E0751E59DAE90004C839 /* SpecURLSessionTests.swift in Sources */,
 				885EC14F1E33981F00A61FA1 /* RecordingSpecViewController.swift in Sources */,
 				885EC1551E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift in Sources */,
 				88FED4021E58D30100217628 /* MultipleLocationManagersTests.swift in Sources */,
