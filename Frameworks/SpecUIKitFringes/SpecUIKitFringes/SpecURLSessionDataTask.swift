@@ -1,12 +1,12 @@
 import Foundation
-@testable import ExampleApp
+import UIKitFringes
 
-class SpecURLSessionDataTask: URLSessionDataTaskProtocol {
+public class SpecURLSessionDataTask: URLSessionDataTaskProtocol {
 
-    typealias Handler = (Data?, URLResponse?, Error?) -> Void
+    public typealias Handler = (Data?, URLResponse?, Error?) -> Void
 
     let url: SpecURLSession.RequestURL
-    var state: URLSessionTask.State = .suspended
+    public var state: URLSessionTask.State = .suspended
     private let handler: Handler
 
     init(url: SpecURLSession.RequestURL, handler: @escaping Handler) {
@@ -14,7 +14,7 @@ class SpecURLSessionDataTask: URLSessionDataTaskProtocol {
         self.handler = handler
     }
 
-    func resume() {
+    public func resume() {
         state = .running
     }
 

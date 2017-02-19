@@ -2,19 +2,19 @@ import Foundation
 
 extension URLSession: URLSessionProtocol {
 
-    func urlDataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
+    public func urlDataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
         return dataTask(with: url, completionHandler: completionHandler)
     }
 }
 
-protocol URLSessionProtocol {
+public protocol URLSessionProtocol {
 
     func urlDataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
 }
 
 extension URLSessionDataTask: URLSessionDataTaskProtocol { }
 
-protocol URLSessionDataTaskProtocol {
+public protocol URLSessionDataTaskProtocol {
     
     var state: URLSessionTask.State { get }
     func resume()

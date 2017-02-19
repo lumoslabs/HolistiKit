@@ -54,6 +54,8 @@
 		88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED40F1E59B97700217628 /* SpecDateProvider.swift */; };
 		88FED4171E59BDF800217628 /* SpecScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4151E59BDF800217628 /* SpecScheduledTimer.swift */; };
 		88FED4181E59BDF800217628 /* SpecTimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4161E59BDF800217628 /* SpecTimerFactory.swift */; };
+		88FED4281E59C38300217628 /* SpecURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4261E59C38300217628 /* SpecURLSession.swift */; };
+		88FED4291E59C38300217628 /* SpecURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4271E59C38300217628 /* SpecURLSessionDataTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		88FED40F1E59B97700217628 /* SpecDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProvider.swift; sourceTree = "<group>"; };
 		88FED4151E59BDF800217628 /* SpecScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecScheduledTimer.swift; sourceTree = "<group>"; };
 		88FED4161E59BDF800217628 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
+		88FED4261E59C38300217628 /* SpecURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSession.swift; sourceTree = "<group>"; };
+		88FED4271E59C38300217628 /* SpecURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSessionDataTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,8 @@
 				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
+				88FED4261E59C38300217628 /* SpecURLSession.swift */,
+				88FED4271E59C38300217628 /* SpecURLSessionDataTask.swift */,
 				88FED40F1E59B97700217628 /* SpecDateProvider.swift */,
 				88FED40B1E59B76700217628 /* SpecTimeZoneProvider.swift */,
 				88FED3F21E5868ED00217628 /* SpecDialogManager */,
@@ -423,6 +429,7 @@
 				885EC15C1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift in Sources */,
 				88FED4061E58DEA500217628 /* SpecMulticaster.swift in Sources */,
 				88FED40C1E59B76700217628 /* SpecTimeZoneProvider.swift in Sources */,
+				88FED4281E59C38300217628 /* SpecURLSession.swift in Sources */,
 				88FED4181E59BDF800217628 /* SpecTimerFactory.swift in Sources */,
 				88FED40A1E58F56300217628 /* SpecUserLocation.swift in Sources */,
 				885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */,
@@ -430,6 +437,7 @@
 				885EC1491E338F4200A61FA1 /* SpecWindow.swift in Sources */,
 				883E43731E3CF9880051BD21 /* SpecErrorHandler.swift in Sources */,
 				88FED3FE1E58C81000217628 /* SpecLocationServices.swift in Sources */,
+				88FED4291E59C38300217628 /* SpecURLSessionDataTask.swift in Sources */,
 				88FED4081E58F10000217628 /* SpecSettingsApp.swift in Sources */,
 				885EC1461E338F4200A61FA1 /* SpecNavigationController.swift in Sources */,
 				88D2C8B31E562D810065882D /* SpecLocationManager.swift in Sources */,

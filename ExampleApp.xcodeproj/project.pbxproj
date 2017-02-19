@@ -34,7 +34,6 @@
 		8835668B1E2F57EA00289510 /* URLSessionViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835668A1E2F57EA00289510 /* URLSessionViewControllerFactory.swift */; };
 		8835668D1E2F582900289510 /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835668C1E2F582900289510 /* URLSessionViewController.swift */; };
 		8835668F1E2F5A5700289510 /* URLSessionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8835668E1E2F5A5700289510 /* URLSessionViewController.storyboard */; };
-		883E43861E3D33C80051BD21 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43851E3D33C80051BD21 /* URLSessionProtocol.swift */; };
 		885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */; };
 		885407031E51B9CD00575105 /* SpecUIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885407021E51B9CD00575105 /* SpecUIKitFringes.framework */; };
 		885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */; };
@@ -61,8 +60,6 @@
 		8863D4AA1E46143500CD5DD2 /* SpecErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */; };
 		8863D4AB1E46143C00CD5DD2 /* FringesSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */; };
 		8863D4AC1E46143C00CD5DD2 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
-		8863D4B21E46144A00CD5DD2 /* SpecURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43871E3D3CA30051BD21 /* SpecURLSession.swift */; };
-		8863D4B31E46144A00CD5DD2 /* SpecURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */; };
 		8863D4B41E46144A00CD5DD2 /* SpecExamplesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */; };
 		8863D4B51E46144A00CD5DD2 /* SpecExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */; };
 		8863D4B61E46144A00CD5DD2 /* SpecDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecDateViewController.swift */; };
@@ -122,7 +119,6 @@
 		880741751E22896C00CECDDF /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		8807417D1E239A3F00CECDDF /* ExamplesModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesModuleFactory.swift; sourceTree = "<group>"; };
 		8807417F1E23A4C400CECDDF /* DateModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModuleFactory.swift; sourceTree = "<group>"; };
-		8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSessionDataTask.swift; sourceTree = "<group>"; };
 		8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseCreator.swift; sourceTree = "<group>"; };
 		8814F2DD1E3DFFFD005506DB /* UIView+PerformWithAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PerformWithAnimations.swift"; sourceTree = "<group>"; };
 		8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
@@ -139,8 +135,6 @@
 		8835668A1E2F57EA00289510 /* URLSessionViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionViewControllerFactory.swift; sourceTree = "<group>"; };
 		8835668C1E2F582900289510 /* URLSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 		8835668E1E2F5A5700289510 /* URLSessionViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = URLSessionViewController.storyboard; sourceTree = "<group>"; };
-		883E43851E3D33C80051BD21 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
-		883E43871E3D3CA30051BD21 /* SpecURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSession.swift; sourceTree = "<group>"; };
 		885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityManager.swift; sourceTree = "<group>"; };
 		885407021E51B9CD00575105 /* SpecUIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecUIKitFringes.framework; path = "../../Library/Developer/Xcode/DerivedData/ExampleApp-golmhypkpfrpjvbhyxvodazgaipo/Build/Products/Debug-iphonesimulator/SpecUIKitFringes.framework"; sourceTree = "<group>"; };
 		885EC1401E338EEE00A61FA1 /* SpecUIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecUIKitFringes.framework; path = "Frameworks/SpecUIKitFringes/build/Debug-iphoneos/SpecUIKitFringes.framework"; sourceTree = "<group>"; };
@@ -264,7 +258,6 @@
 				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
 				8814F2D41E3D4BFC005506DB /* App Lifecycle */,
 				885371CF1E3271C800CC5B75 /* ViewControllers */,
-				8814F2D21E3D4BDF005506DB /* URLSession */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -334,15 +327,6 @@
 				880740E01E21100200CECDDF /* ExamplesViewController.storyboard */,
 			);
 			name = View;
-			sourceTree = "<group>";
-		};
-		8814F2D21E3D4BDF005506DB /* URLSession */ = {
-			isa = PBXGroup;
-			children = (
-				883E43871E3D3CA30051BD21 /* SpecURLSession.swift */,
-				8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */,
-			);
-			name = URLSession;
 			sourceTree = "<group>";
 		};
 		8814F2D41E3D4BFC005506DB /* App Lifecycle */ = {
@@ -441,7 +425,6 @@
 		885371CE1E326E9E00CC5B75 /* Fringe */ = {
 			isa = PBXGroup;
 			children = (
-				883E43851E3D33C80051BD21 /* URLSessionProtocol.swift */,
 				886013E71E2D4E4000C86FDE /* ErrorLogger.swift */,
 			);
 			name = Fringe;
@@ -795,7 +778,6 @@
 				880741641E2270BC00CECDDF /* DatePresenter.swift in Sources */,
 				883566881E2F577F00289510 /* URLSessionPresenter.swift in Sources */,
 				880740CC1E1F916700CECDDF /* ExamplesPresenter.swift in Sources */,
-				883E43861E3D33C80051BD21 /* URLSessionProtocol.swift in Sources */,
 				887CDC071E52178F008465FE /* CLLocationManagerPresenter.swift in Sources */,
 				8863D4C71E50C43100CD5DD2 /* ExamplesInteractor.swift in Sources */,
 				885F9D141E2A4D62003ADC21 /* PushingPresenter.swift in Sources */,
@@ -833,8 +815,6 @@
 				887CDBF81E51F7E3008465FE /* CLLocationManagerTests.swift in Sources */,
 				8863D4AC1E46143C00CD5DD2 /* SpecAppDelegate.swift in Sources */,
 				887CDBFA1E51F884008465FE /* SpecCLLocationManagerViewController.swift in Sources */,
-				8863D4B21E46144A00CD5DD2 /* SpecURLSession.swift in Sources */,
-				8863D4B31E46144A00CD5DD2 /* SpecURLSessionDataTask.swift in Sources */,
 				8863D4A41E46142F00CD5DD2 /* ExamplesTests.swift in Sources */,
 				8863D4BA1E46144F00CD5DD2 /* NetworkResponseCreator.swift in Sources */,
 				8863D4B41E46144A00CD5DD2 /* SpecExamplesNavigationController.swift in Sources */,

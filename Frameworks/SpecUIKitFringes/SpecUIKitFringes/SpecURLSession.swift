@@ -1,18 +1,20 @@
 import Foundation
-@testable import ExampleApp
+import UIKitFringes
 
-class SpecURLSession: URLSessionProtocol {
+public class SpecURLSession: URLSessionProtocol {
+
+    public init() { }
     
     private var requests = [SpecURLSessionDataTask]()
 
-    func urlDataTask(with url: URL, completionHandler: @escaping SpecURLSessionDataTask.Handler) -> URLSessionDataTaskProtocol {
+    public func urlDataTask(with url: URL, completionHandler: @escaping SpecURLSessionDataTask.Handler) -> URLSessionDataTaskProtocol {
         let requestURL = RequestURL(url.absoluteString)
         let request = SpecURLSessionDataTask(url: requestURL, handler: completionHandler)
         requests.append(request)
         return request
     }
 
-    func respond(to url: RequestURL, with response: Response) {
+    public func respond(to url: RequestURL, with response: Response) {
         guard let request = firstRunningRequest(forURL: url) else {
             fatalError("There was no request for \(url.rawValue) in the app at the moment.")
         }
@@ -26,7 +28,7 @@ class SpecURLSession: URLSessionProtocol {
 
 extension SpecURLSession {
     
-    enum RequestURL: String {
+    public enum RequestURL: String {
         case json = "https://httpbin.org/delay/3"
         case html = "https://httpbin.org/html"
 
@@ -41,7 +43,7 @@ extension SpecURLSession {
         }
     }
 
-    enum Response {
+    public enum Response {
         case success(Data, URLResponse)
     }
 }
