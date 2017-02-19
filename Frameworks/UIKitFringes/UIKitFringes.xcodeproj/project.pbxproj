@@ -12,7 +12,7 @@
 		885EC10F1E3384BB00A61FA1 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC10B1E3384BB00A61FA1 /* UIViewController.swift */; };
 		885EC1101E3384BB00A61FA1 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC10C1E3384BB00A61FA1 /* UIWindow.swift */; };
 		88A1E1711E337FE300CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1671E337FE300CFA0CD /* UIKitFringes.framework */; };
-		88A1E1761E337FE300CFA0CD /* UIKitFringesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1E1751E337FE300CFA0CD /* UIKitFringesTests.swift */; };
+		88A1E1761E337FE300CFA0CD /* CLLocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1E1751E337FE300CFA0CD /* CLLocationManagerTests.swift */; };
 		88A1E1781E337FE300CFA0CD /* UIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B01E562C600065882D /* CLLocationManager.swift */; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 		88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitFringes.h; sourceTree = "<group>"; };
 		88A1E16B1E337FE300CFA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88A1E1701E337FE300CFA0CD /* UIKitFringesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitFringesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		88A1E1751E337FE300CFA0CD /* UIKitFringesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitFringesTests.swift; sourceTree = "<group>"; };
+		88A1E1751E337FE300CFA0CD /* CLLocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerTests.swift; sourceTree = "<group>"; };
 		88A1E1771E337FE300CFA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88D2C8B01E562C600065882D /* CLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +103,7 @@
 		88A1E1741E337FE300CFA0CD /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				88A1E1751E337FE300CFA0CD /* UIKitFringesTests.swift */,
+				88A1E1751E337FE300CFA0CD /* CLLocationManagerTests.swift */,
 				885EC1111E33883C00A61FA1 /* Supporting Files */,
 			);
 			name = Tests;
@@ -242,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88A1E1761E337FE300CFA0CD /* UIKitFringesTests.swift in Sources */,
+				88A1E1761E337FE300CFA0CD /* CLLocationManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

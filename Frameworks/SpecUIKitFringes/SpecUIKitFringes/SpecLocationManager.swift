@@ -18,7 +18,7 @@ import UIKitFringes
 
 public class SpecLocationManager {
 
-    public weak var delegate: CLLocationManagerDelegate?
+    public weak var delegate: LocationManagingDelegate?
     public var location: CLLocation? { return userLocation.location }
 
     fileprivate let userLocation: SpecUserLocation
@@ -26,7 +26,6 @@ public class SpecLocationManager {
     fileprivate let errorHandler: SpecErrorHandler
     fileprivate let locationServices: SpecLocationServices
     fileprivate let locationAuthorizationStatus: SpecLocationAuthorizationStatus
-    fileprivate let bsFirstArg = CLLocationManager()
     fileprivate var requestedLocation = false
     fileprivate var updatingLocation = false
 
@@ -61,7 +60,7 @@ public class SpecLocationManager {
     func didChangeLocation() {
         if requestedLocation || updatingLocation {
             requestedLocation = false
-            delegate!.locationManager?(bsFirstArg, didUpdateLocations: [userLocation.location!])
+            delegate!.locationManager?(didUpdateLocations: [userLocation.location!])
         }
     }
 
@@ -75,8 +74,8 @@ public class SpecLocationManager {
         sendCurrentStatus()
     }
 
-    fileprivate func sendCurrentStatus() {
-        delegate?.locationManager?(bsFirstArg, didChangeAuthorization: authorizationStatus())
+    private func sendCurrentStatus() {
+        delegate?.locationManager?(didChangeAuthorization: authorizationStatus())
     }
 }
 
@@ -173,7 +172,7 @@ extension SpecLocationManager: LocationManaging {
     private func requestLocationWhileNotDetermined() {
         let error = NSError(domain: kCLErrorDomain, code: 0, userInfo: nil)
         // this actually happens about 10 seconds later
-        delegate!.locationManager!(bsFirstArg, didFailWithError: error)
+        delegate!.locationManager!(didFailWithError: error)
     }
 
     private func requestLocationWhileWhenInUse() {
