@@ -60,7 +60,7 @@ public class SpecLocationManager {
     func didChangeLocation() {
         if requestedLocation || updatingLocation {
             requestedLocation = false
-            delegate!.locationManager?(didUpdateLocations: [userLocation.location!])
+            delegate!.locationManager(didUpdateLocations: [userLocation.location!])
         }
     }
 
@@ -75,7 +75,7 @@ public class SpecLocationManager {
     }
 
     private func sendCurrentStatus() {
-        delegate?.locationManager?(didChangeAuthorization: authorizationStatus())
+        delegate?.locationManager(didChangeAuthorization: authorizationStatus())
     }
 }
 
@@ -172,7 +172,7 @@ extension SpecLocationManager: LocationManaging {
     private func requestLocationWhileNotDetermined() {
         let error = NSError(domain: kCLErrorDomain, code: 0, userInfo: nil)
         // this actually happens about 10 seconds later
-        delegate!.locationManager!(didFailWithError: error)
+        delegate!.locationManager(didFailWithError: error)
     }
 
     private func requestLocationWhileWhenInUse() {

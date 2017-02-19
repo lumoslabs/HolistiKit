@@ -18,7 +18,7 @@ public protocol LocationManagingDelegate: class {
     func locationManager(didFailWithError: Error)
 }
 
-extension LocationManagingDelegate {
+public extension LocationManagingDelegate {
     
     func locationManager(didUpdateLocations: [CLLocation]) { }
     func locationManager(didChangeAuthorization: CLAuthorizationStatus) { }

@@ -15,6 +15,7 @@
 		88A1E1761E337FE300CFA0CD /* CLLocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A1E1751E337FE300CFA0CD /* CLLocationManagerTests.swift */; };
 		88A1E1781E337FE300CFA0CD /* UIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B01E562C600065882D /* CLLocationManager.swift */; };
+		88FED40E1E59B7AF00217628 /* TimeZoneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED40D1E59B7AE00217628 /* TimeZoneProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		88A1E1751E337FE300CFA0CD /* CLLocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationManagerTests.swift; sourceTree = "<group>"; };
 		88A1E1771E337FE300CFA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88D2C8B01E562C600065882D /* CLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManager.swift; sourceTree = "<group>"; };
+		88FED40D1E59B7AE00217628 /* TimeZoneProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZoneProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				885EC10A1E3384BB00A61FA1 /* UINavigationController.swift */,
 				885EC10B1E3384BB00A61FA1 /* UIViewController.swift */,
 				885EC10C1E3384BB00A61FA1 /* UIWindow.swift */,
+				88FED40D1E59B7AE00217628 /* TimeZoneProvider.swift */,
 				88D2C8B01E562C600065882D /* CLLocationManager.swift */,
 				88A1E1841E3381AE00CFA0CD /* Supporting Files */,
 			);
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */,
+				88FED40E1E59B7AF00217628 /* TimeZoneProvider.swift in Sources */,
 				88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */,
 				885EC10E1E3384BB00A61FA1 /* UINavigationController.swift in Sources */,
 				885EC10F1E3384BB00A61FA1 /* UIViewController.swift in Sources */,
