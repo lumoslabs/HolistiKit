@@ -14,7 +14,7 @@ public class SpecDateProvider: DateProviding {
         return formatter.date(from: initialDateString)!
     }()
 
-    public func progress(seconds: Int) {
+    public func progress(seconds: UInt) {
         for _ in 0..<seconds {
             date = date.addingTimeInterval(1)
             notifier.post()
