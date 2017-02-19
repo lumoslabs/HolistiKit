@@ -11,12 +11,18 @@ public protocol LocationManaging: class {
     func startUpdatingLocation()
 }
 
-@objc
 public protocol LocationManagingDelegate: class {
     
-    @objc optional func locationManager(didUpdateLocations: [CLLocation])
-    @objc optional func locationManager(didChangeAuthorization: CLAuthorizationStatus)
-    @objc optional func locationManager(didFailWithError: Error)
+    func locationManager(didUpdateLocations: [CLLocation])
+    func locationManager(didChangeAuthorization: CLAuthorizationStatus)
+    func locationManager(didFailWithError: Error)
+}
+
+extension LocationManagingDelegate {
+    
+    func locationManager(didUpdateLocations: [CLLocation]) { }
+    func locationManager(didChangeAuthorization: CLAuthorizationStatus) { }
+    func locationManager(didFailWithError: Error) { }
 }
 
 class LocationManager: NSObject, LocationManaging, CLLocationManagerDelegate {
@@ -41,13 +47,13 @@ class LocationManager: NSObject, LocationManaging, CLLocationManagerDelegate {
     func requestWhenInUseAuthorization() { clLocationManager.requestWhenInUseAuthorization() }
     func startUpdatingLocation() { clLocationManager.startUpdatingLocation() }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        delegate?.locationManager?(didUpdateLocations: locations)
+        delegate?.locationManager(didUpdateLocations: locations)
     }
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        delegate?.locationManager?(didChangeAuthorization: status)
+        delegate?.locationManager(didChangeAuthorization: status)
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        delegate?.locationManager?(didFailWithError: error)
+        delegate?.locationManager(didFailWithError: error)
     }
 }
 
