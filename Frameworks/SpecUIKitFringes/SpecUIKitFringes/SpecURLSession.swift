@@ -3,7 +3,16 @@ import UIKitFringes
 
 public class SpecURLSession: URLSessionProtocol {
 
-    public init() { }
+    public convenience init() {
+        let errorHandler = SpecErrorHandler()
+        self.init(errorHandler: errorHandler)
+    }
+
+    private let errorHandler: SpecErrorHandler
+
+    init(errorHandler: SpecErrorHandler) {
+        self.errorHandler = errorHandler
+    }
     
     private var requests = [SpecURLSessionDataTask]()
 
@@ -15,7 +24,8 @@ public class SpecURLSession: URLSessionProtocol {
 
     public func respond(to url: String, with response: Response) {
         guard let request = firstRunningRequest(forURL: url) else {
-            fatalError("There was no request for \(url) in the app at the moment.")
+            errorHandler.error(.noSuchURLRequestInProgress)
+            return
         }
         request.finish(withResponse: response)
     }

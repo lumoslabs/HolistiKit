@@ -22,6 +22,7 @@ class SpecErrorHandler {
         case notOnSpringBoard
         case noDialog
         case notAValidDialogResponse
+        case noSuchURLRequestInProgress
 
         var message: String {
             switch self {
@@ -35,6 +36,8 @@ class SpecErrorHandler {
                 return "There is no dialog visible"
             case .notAValidDialogResponse:
                 return "The dialog has no such available response"
+            case .noSuchURLRequestInProgress:
+                return "There was no such URL request in the app at the moment"
             }
         }
     }

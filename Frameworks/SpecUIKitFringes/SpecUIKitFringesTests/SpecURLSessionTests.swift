@@ -5,10 +5,12 @@ import UIKitFringes
 class SpecURLSessionTests: XCTestCase {
 
     var subject: SpecURLSession!
+    var errorHandler: SpecErrorHandler!
     
     override func setUp() {
         super.setUp()
-        subject = SpecURLSession()
+        errorHandler = SpecErrorHandler()
+        subject = SpecURLSession(errorHandler: errorHandler)
     }
 
     func test_respondingToARequest() {
@@ -28,5 +30,15 @@ class SpecURLSessionTests: XCTestCase {
         XCTAssertEqual(receivedData, data)
         XCTAssertEqual(receivedURLResponse, urlResponse)
         XCTAssertNil(receivedError)
+    }
+
+    func test_respondingToANonExistentRequest() {
+        let url = URL(string: "http://www.google.com")!
+        let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
+        let data = "blah".data(using: .utf8)!
+        errorHandler.fatalErrorsOff {
+            self.subject.respond(to: "http://www.google.com", with: .success(data, urlResponse))
+        }
+        XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress)
     }
 }
