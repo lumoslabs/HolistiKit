@@ -10,7 +10,7 @@
  However, if logging instead of fatal erroring, execution continues. So,
  any state after the error is unreliable.
  */
-    
+
 public class SpecErrorHandler {
 
     var recordedError: FatalError?

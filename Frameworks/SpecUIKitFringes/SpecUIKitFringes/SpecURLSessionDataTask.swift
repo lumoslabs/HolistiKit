@@ -5,11 +5,11 @@ public class SpecURLSessionDataTask: URLSessionDataTaskProtocol {
 
     public typealias Handler = (Data?, URLResponse?, Error?) -> Void
 
-    let url: SpecURLSession.RequestURL
+    let url: String
     public var state: URLSessionTask.State = .suspended
     private let handler: Handler
 
-    init(url: SpecURLSession.RequestURL, handler: @escaping Handler) {
+    init(url: String, handler: @escaping Handler) {
         self.url = url
         self.handler = handler
     }
@@ -33,7 +33,7 @@ extension Array where Element: SpecURLSessionDataTask {
         return filter { $0.state == .running }
     }
 
-    func with(url: SpecURLSession.RequestURL) -> [Element] {
+    func with(url: String) -> [Element] {
         return filter { $0.url == url }
     }
 }
