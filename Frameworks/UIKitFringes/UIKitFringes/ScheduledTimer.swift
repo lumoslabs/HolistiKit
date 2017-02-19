@@ -1,22 +1,24 @@
 import Foundation
 
-class TimerFactory: TimerFactoryProtocol {
+public class TimerFactory: TimerFactoryProtocol {
+
+    public init() { }
     
-    func create() -> Timing {
+    public func create() -> Timing {
         return ScheduledTimer()
     }
 }
 
-protocol TimerFactoryProtocol {
+public protocol TimerFactoryProtocol {
 
     func create() -> Timing
 }
 
-class ScheduledTimer: Timing {
+public class ScheduledTimer: Timing {
     
     private var timer: Timer?
 
-    func start(interval: TimeInterval, repeats: Bool, block: @escaping () -> Void) {
+    public func start(interval: TimeInterval, repeats: Bool, block: @escaping () -> Void) {
         // invalidate timer if already started
         self.timer?.invalidate()
         
@@ -47,7 +49,7 @@ class ScheduledTimer: Timing {
 
 }
 
-protocol Timing {
+public protocol Timing {
     
     func start(interval: TimeInterval, repeats: Bool, block: @escaping () -> Void)
 }

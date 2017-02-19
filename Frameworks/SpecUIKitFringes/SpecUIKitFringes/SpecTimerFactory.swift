@@ -1,16 +1,14 @@
 import UIKitFringes
-import SpecUIKitFringes
-@testable import ExampleApp
 
-class SpecTimerFactory: TimerFactoryProtocol {
+public class SpecTimerFactory: TimerFactoryProtocol {
 
     private let dateProvider: SpecDateProvider
 
-    init(dateProvider: SpecDateProvider) {
+    public init(dateProvider: SpecDateProvider) {
         self.dateProvider = dateProvider
     }
 
-    func create() -> Timing {
+    public func create() -> Timing {
         return SpecScheduledTimer(dateProvider: dateProvider)
     }
 }

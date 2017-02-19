@@ -1,17 +1,16 @@
 import Foundation
-import SpecUIKitFringes
-@testable import ExampleApp
+import UIKitFringes
 
-class SpecScheduledTimer: Timing {
+public class SpecScheduledTimer: Timing {
 
-    typealias TimerBlock = () -> Void
+    public typealias TimerBlock = () -> Void
 
     private let dateProvider: SpecDateProvider
     private var block: TimerBlock?
     private var interval: TimeInterval?
     private var lastFiredDate: Date?
 
-    init(dateProvider: SpecDateProvider) {
+    public init(dateProvider: SpecDateProvider) {
         self.dateProvider = dateProvider
         dateProvider.observe(on: self, selector: #selector(dateDidChange))
     }
@@ -28,7 +27,7 @@ class SpecScheduledTimer: Timing {
         }
     }
 
-    func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
+    public func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
         self.interval = interval
         self.block = block
         lastFiredDate = dateProvider.date

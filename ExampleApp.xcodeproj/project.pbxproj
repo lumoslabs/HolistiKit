@@ -61,8 +61,6 @@
 		8863D4AA1E46143500CD5DD2 /* SpecErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */; };
 		8863D4AB1E46143C00CD5DD2 /* FringesSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */; };
 		8863D4AC1E46143C00CD5DD2 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
-		8863D4B01E46144A00CD5DD2 /* SpecTimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */; };
-		8863D4B11E46144A00CD5DD2 /* SpecScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */; };
 		8863D4B21E46144A00CD5DD2 /* SpecURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43871E3D3CA30051BD21 /* SpecURLSession.swift */; };
 		8863D4B31E46144A00CD5DD2 /* SpecURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */; };
 		8863D4B41E46144A00CD5DD2 /* SpecExamplesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */; };
@@ -85,7 +83,6 @@
 		887CDC0A1E521AE7008465FE /* CLLocationManagerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887CDC091E521AE7008465FE /* CLLocationManagerViewController.storyboard */; };
 		887CDC0C1E521DC7008465FE /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CDC0B1E521DC7008465FE /* CLAuthorizationStatus+CustomStringConvertible.swift */; };
 		888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */; };
-		888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */; };
 		88A1E1831E33802800CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1821E33802800CFA0CD /* UIKitFringes.framework */; };
 		88A7D3471E3E3FD80004C1FB /* PresentingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7D3461E3E3FD80004C1FB /* PresentingPresenter.swift */; };
 /* End PBXBuildFile section */
@@ -182,9 +179,6 @@
 		887CDC091E521AE7008465FE /* CLLocationManagerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CLLocationManagerViewController.storyboard; sourceTree = "<group>"; };
 		887CDC0B1E521DC7008465FE /* CLAuthorizationStatus+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLAuthorizationStatus+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
-		888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
-		888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
-		888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecScheduledTimer.swift; sourceTree = "<group>"; };
 		88A1E1821E33802800CFA0CD /* UIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKitFringes.framework; path = "Frameworks/UIKitFringes/build/Debug-iphoneos/UIKitFringes.framework"; sourceTree = "<group>"; };
 		88A7D3461E3E3FD80004C1FB /* PresentingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,7 +264,6 @@
 				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
 				8814F2D41E3D4BFC005506DB /* App Lifecycle */,
 				885371CF1E3271C800CC5B75 /* ViewControllers */,
-				8814F2D31E3D4BEE005506DB /* Time */,
 				8814F2D21E3D4BDF005506DB /* URLSession */,
 			);
 			name = Fakes;
@@ -352,14 +345,6 @@
 			name = URLSession;
 			sourceTree = "<group>";
 		};
-		8814F2D31E3D4BEE005506DB /* Time */ = {
-			isa = PBXGroup;
-			children = (
-				8814F2DB1E3D51C6005506DB /* Timer */,
-			);
-			name = Time;
-			sourceTree = "<group>";
-		};
 		8814F2D41E3D4BFC005506DB /* App Lifecycle */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,15 +360,6 @@
 				8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */,
 			);
 			name = Utilities;
-			sourceTree = "<group>";
-		};
-		8814F2DB1E3D51C6005506DB /* Timer */ = {
-			isa = PBXGroup;
-			children = (
-				888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */,
-				888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */,
-			);
-			name = Timer;
 			sourceTree = "<group>";
 		};
 		8814F2DC1E3DFFEE005506DB /* Extensions */ = {
@@ -467,7 +443,6 @@
 			children = (
 				883E43851E3D33C80051BD21 /* URLSessionProtocol.swift */,
 				886013E71E2D4E4000C86FDE /* ErrorLogger.swift */,
-				888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */,
 			);
 			name = Fringe;
 			sourceTree = "<group>";
@@ -833,7 +808,6 @@
 				885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */,
 				885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */,
 				880740D61E201C2300CECDDF /* ExamplesViewControllerFactory.swift in Sources */,
-				888B2D191E2E4CB500FB3165 /* ScheduledTimer.swift in Sources */,
 				886013F51E2D68FC00C86FDE /* TimerViewController.swift in Sources */,
 				8863D4C41E50BFE900CD5DD2 /* UIViewControllerInteractor.swift in Sources */,
 				886013F01E2D67FD00C86FDE /* TimerPresenter.swift in Sources */,
@@ -858,7 +832,6 @@
 				8863D4B91E46144A00CD5DD2 /* SpecUIViewControllerViewController.swift in Sources */,
 				887CDBF81E51F7E3008465FE /* CLLocationManagerTests.swift in Sources */,
 				8863D4AC1E46143C00CD5DD2 /* SpecAppDelegate.swift in Sources */,
-				8863D4B01E46144A00CD5DD2 /* SpecTimerFactory.swift in Sources */,
 				887CDBFA1E51F884008465FE /* SpecCLLocationManagerViewController.swift in Sources */,
 				8863D4B21E46144A00CD5DD2 /* SpecURLSession.swift in Sources */,
 				8863D4B31E46144A00CD5DD2 /* SpecURLSessionDataTask.swift in Sources */,
@@ -870,7 +843,6 @@
 				8863D4B51E46144A00CD5DD2 /* SpecExamplesViewController.swift in Sources */,
 				8863D4A71E46142F00CD5DD2 /* NetworkRequestTests.swift in Sources */,
 				8863D4B71E46144A00CD5DD2 /* SpecTimerViewController.swift in Sources */,
-				8863D4B11E46144A00CD5DD2 /* SpecScheduledTimer.swift in Sources */,
 				8863D4A81E46142F00CD5DD2 /* UIViewControllerTests.swift in Sources */,
 				8863D4A61E46142F00CD5DD2 /* TimerTests.swift in Sources */,
 			);
