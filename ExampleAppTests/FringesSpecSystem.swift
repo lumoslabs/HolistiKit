@@ -2,19 +2,13 @@ import SpecUIKitFringes
 
 class FringesSpecSystem: SpecSystem {
 
-    let sharedApplication: SpecSharedApplication
-    let dateProvider: SpecDateProvider
-    let timeZoneProvider: SpecTimeZoneProvider
+    let sharedApplication = SpecSharedApplication()
+    let dateProvider = SpecDateProvider()
+    let timeZoneProvider = SpecTimeZoneProvider()
+    let userLocation = SpecUserLocation()
     
     weak var urlSession: SpecURLSession!
-    weak var locationManager: SpecLocationManager!
     weak var dialogManager: SpecDialogManager!
-
-    override init() {
-        self.sharedApplication = SpecSharedApplication()
-        self.dateProvider = SpecDateProvider()
-        self.timeZoneProvider = SpecTimeZoneProvider()
-    }
 
     override open func createAppDelegateBundle() -> AppDelegateBundle {
         // TODO if these were created via a factory which will aggregate their state it wouldn't be necessary to play this weak/strong game
@@ -24,18 +18,16 @@ class FringesSpecSystem: SpecSystem {
         self.dialogManager = _dialogManager
         let locationServices = SpecLocationServices()
         let locationAuthorizationStatus = SpecLocationAuthorizationStatus()
-        let userLocation = SpecUserLocation()
-        let _locationManager = SpecLocationManager(dialogManager: dialogManager,
-                                                   userLocation: userLocation,
-                                                   locationServices: locationServices,
-                                                   locationAuthorizationStatus: locationAuthorizationStatus)
-        self.locationManager = _locationManager
+        let locationManagerFactory = SpecLocationManagerFactory(dialogManager: dialogManager,
+                                                                userLocation: userLocation,
+                                                                locationServices: locationServices,
+                                                                locationAuthorizationStatus: locationAuthorizationStatus)
         let appDelegate = SpecAppDelegate(sharedApplication: sharedApplication,
                                           dateProvider: dateProvider,
                                           timeZoneProvider: timeZoneProvider,
                                           urlSession: urlSession,
-                                          locationManager: locationManager)
+                                          locationManagerFactory: locationManagerFactory)
         return AppDelegateBundle(appDelegate: appDelegate,
-                                 temporarilyStrong: [urlSession, locationManager, dialogManager])
+                                 temporarilyStrong: [urlSession, locationManagerFactory, dialogManager])
     }
 }

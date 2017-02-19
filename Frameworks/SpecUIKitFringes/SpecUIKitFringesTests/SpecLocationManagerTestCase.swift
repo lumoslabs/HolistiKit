@@ -1,9 +1,10 @@
 import XCTest
+import UIKitFringes
 @testable import SpecUIKitFringes
 
 class SpecLocationManagerTestCase: XCTestCase {
 
-    var subject: SpecLocationManager!
+    var subject: LocationManaging!
     var factory: SpecLocationManagerFactory!
     var delegate: SpecLocationManagerDelegate!
     var dialogManager: SpecDialogManager!

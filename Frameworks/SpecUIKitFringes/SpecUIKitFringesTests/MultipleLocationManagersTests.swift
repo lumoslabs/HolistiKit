@@ -1,9 +1,10 @@
 import XCTest
+import UIKitFringes
 @testable import SpecUIKitFringes
 
 class MultipleLocationManagersTests: SpecLocationManagerTestCase {
 
-    var subject2: SpecLocationManager!
+    var subject2: LocationManaging!
     var delegate2: SpecLocationManagerDelegate!
 
     override func setUp() {

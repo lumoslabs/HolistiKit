@@ -84,8 +84,8 @@ extension FringesTest {
 // MARK: CLLocationManager
 extension FringesTest {
 
-    var locationManager: SpecLocationManager {
-        return system.locationManager
+    var userLocation: SpecUserLocation {
+        return system.userLocation
     }
 }
 

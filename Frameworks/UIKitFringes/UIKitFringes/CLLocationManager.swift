@@ -1,5 +1,19 @@
 import CoreLocation
 
+public protocol LocationManagingFactoryProtocol {
+
+    func create() -> LocationManaging
+}
+
+public class CLLocationManagerFactory: LocationManagingFactoryProtocol {
+
+    public init() { }
+
+    public func create() -> LocationManaging {
+        return CLLocationManager()
+    }
+}
+
 public protocol LocationManaging: class {
 
     /*

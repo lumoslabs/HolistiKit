@@ -17,7 +17,7 @@ class AppCoordinator {
          timerFactory: TimerFactoryProtocol,
          sharedApplication: ApplicationProtocol,
          urlSession: URLSessionProtocol,
-         locationManager: LocationManaging) {
+         locationManagerFactory: LocationManagingFactoryProtocol) {
         let networkActivityManager = NetworkActivityManager(sharedApplication: sharedApplication)
         let examplesNavigationModuleFactory = ExamplesNavigationModuleFactory(viewControllerFactory: examplesNavigationControllerFactory)
         let examplesModuleFactory = ExamplesModuleFactory(viewControllerFactory: examplesViewControllerFactory,
@@ -36,7 +36,7 @@ class AppCoordinator {
         let uiViewControllerModuleFactory = UIViewControllerModuleFactory(viewControllerFactory: uiViewControllerViewControllerFactory,
                                                                           errorLogger: errorLogger)
         let clLocationManagerModuleFactory = CLLocationManagerModuleFactory(viewControllerFactory: clLocationManagerViewControllerFactory,
-                                                                            locationManager: locationManager,
+                                                                            locationManagerFactory: locationManagerFactory,
                                                                             errorLogger: errorLogger)
         let examplesRouterFactory = ExamplesRouterFactory(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
                                                           examplesModuleFactory: examplesModuleFactory,
