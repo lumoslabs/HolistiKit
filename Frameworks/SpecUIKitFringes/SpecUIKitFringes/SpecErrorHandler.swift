@@ -11,7 +11,7 @@
  any state after the error is unreliable.
  */
 
-public class SpecErrorHandler {
+class SpecErrorHandler {
 
     var recordedError: FatalError?
     private var recordingMode = false
