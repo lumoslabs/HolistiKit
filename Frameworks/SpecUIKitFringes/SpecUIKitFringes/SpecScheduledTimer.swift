@@ -17,12 +17,13 @@ public class SpecScheduledTimer: Timing {
 
     @objc
     func dateDidChange() {
-        let currentDate = dateProvider.date
         guard let lastFiredDate = lastFiredDate,
             let interval = interval,
             let block = block else { return }
+        let currentDate = dateProvider.date
         let delta = currentDate.timeIntervalSince(lastFiredDate)
         if delta >= interval {
+            self.lastFiredDate = currentDate
             block()
         }
     }
