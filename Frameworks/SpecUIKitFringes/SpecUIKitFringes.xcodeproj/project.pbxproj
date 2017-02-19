@@ -51,6 +51,7 @@
 		88FED4081E58F10000217628 /* SpecSettingsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4071E58F10000217628 /* SpecSettingsApp.swift */; };
 		88FED40A1E58F56300217628 /* SpecUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4091E58F56300217628 /* SpecUserLocation.swift */; };
 		88FED40C1E59B76700217628 /* SpecTimeZoneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED40B1E59B76700217628 /* SpecTimeZoneProvider.swift */; };
+		88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED40F1E59B97700217628 /* SpecDateProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		88FED4071E58F10000217628 /* SpecSettingsApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSettingsApp.swift; sourceTree = "<group>"; };
 		88FED4091E58F56300217628 /* SpecUserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUserLocation.swift; sourceTree = "<group>"; };
 		88FED40B1E59B76700217628 /* SpecTimeZoneProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimeZoneProvider.swift; sourceTree = "<group>"; };
+		88FED40F1E59B97700217628 /* SpecDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
+				88FED40F1E59B97700217628 /* SpecDateProvider.swift */,
 				88FED3FC1E58C51D00217628 /* SpecLocationManager */,
 				88FED4051E58DEA500217628 /* SpecMulticaster.swift */,
 				883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */,
@@ -395,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */,
 				88FED4041E58D39700217628 /* SpecLocationManagerFactory.swift in Sources */,
 				88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */,
 				88D2C8E41E56E3B40065882D /* SpecDialogManager.swift in Sources */,

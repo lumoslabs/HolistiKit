@@ -1,38 +1,36 @@
 import Foundation
+import SpecUIKitFringes
 @testable import ExampleApp
 
 class SpecScheduledTimer: Timing {
 
     typealias TimerBlock = () -> Void
 
-    private let dateProvider: DateProviding
+    private let dateProvider: SpecDateProvider
     private var block: TimerBlock?
-    private var dateObserverToken: Any?
+    private var interval: TimeInterval?
     private var lastFiredDate: Date?
 
-    init(dateProvider: DateProviding) {
+    init(dateProvider: SpecDateProvider) {
         self.dateProvider = dateProvider
+        dateProvider.observe(on: self, selector: #selector(dateDidChange))
     }
 
-    func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
-        removeObserver()
-        lastFiredDate = dateProvider.date
-        dateObserverToken = SpecDateProviderNotifier.observe { [weak self] date in
-            guard let strongSelf = self, let lastFiredDate = strongSelf.lastFiredDate else { return }
-            let currentDate = strongSelf.dateProvider.date
-            let delta = currentDate.timeIntervalSince(lastFiredDate)
-            if delta >= interval {
-                block()
-            }
+    @objc
+    func dateDidChange() {
+        let currentDate = dateProvider.date
+        guard let lastFiredDate = lastFiredDate,
+            let interval = interval,
+            let block = block else { return }
+        let delta = currentDate.timeIntervalSince(lastFiredDate)
+        if delta >= interval {
+            block()
         }
     }
 
-    private func removeObserver() {
-        guard let existingToken = dateObserverToken else { return }
-        SpecDateProviderNotifier.remove(observer: existingToken)
-    }
-
-    deinit {
-        removeObserver()
+    func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
+        self.interval = interval
+        self.block = block
+        lastFiredDate = dateProvider.date
     }
 }

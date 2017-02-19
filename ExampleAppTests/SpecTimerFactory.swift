@@ -1,10 +1,12 @@
+import UIKitFringes
+import SpecUIKitFringes
 @testable import ExampleApp
 
 class SpecTimerFactory: TimerFactoryProtocol {
 
-    private let dateProvider: DateProviding
+    private let dateProvider: SpecDateProvider
 
-    init(dateProvider: DateProviding) {
+    init(dateProvider: SpecDateProvider) {
         self.dateProvider = dateProvider
     }
 

@@ -45,7 +45,6 @@
 		885F9D141E2A4D62003ADC21 /* PushingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D131E2A4D62003ADC21 /* PushingPresenter.swift */; };
 		885F9D1A1E2B8036003ADC21 /* ExamplesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D191E2B8036003ADC21 /* ExamplesDataSource.swift */; };
 		885F9D1C1E2BA5F5003ADC21 /* DateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1B1E2BA5F5003ADC21 /* DateInteractor.swift */; };
-		885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D211E2BB3D2003ADC21 /* DateProvider.swift */; };
 		885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D261E2BC8FC003ADC21 /* DatePrinter.swift */; };
 		886013E81E2D4E4000C86FDE /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013E71E2D4E4000C86FDE /* ErrorLogger.swift */; };
 		886013EE1E2D67AE00C86FDE /* TimerModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013ED1E2D67AE00C86FDE /* TimerModuleFactory.swift */; };
@@ -62,8 +61,6 @@
 		8863D4AA1E46143500CD5DD2 /* SpecErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */; };
 		8863D4AB1E46143C00CD5DD2 /* FringesSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */; };
 		8863D4AC1E46143C00CD5DD2 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
-		8863D4AE1E46144A00CD5DD2 /* SpecDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */; };
-		8863D4AF1E46144A00CD5DD2 /* SpecDateProviderNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2D81E3D516F005506DB /* SpecDateProviderNotifier.swift */; };
 		8863D4B01E46144A00CD5DD2 /* SpecTimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D161E2E4B8A00FB3165 /* SpecTimerFactory.swift */; };
 		8863D4B11E46144A00CD5DD2 /* SpecScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D1A1E2E57E300FB3165 /* SpecScheduledTimer.swift */; };
 		8863D4B21E46144A00CD5DD2 /* SpecURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43871E3D3CA30051BD21 /* SpecURLSession.swift */; };
@@ -130,7 +127,6 @@
 		8807417F1E23A4C400CECDDF /* DateModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateModuleFactory.swift; sourceTree = "<group>"; };
 		8814F2D01E3D4B60005506DB /* SpecURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSessionDataTask.swift; sourceTree = "<group>"; };
 		8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkResponseCreator.swift; sourceTree = "<group>"; };
-		8814F2D81E3D516F005506DB /* SpecDateProviderNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProviderNotifier.swift; sourceTree = "<group>"; };
 		8814F2DD1E3DFFFD005506DB /* UIView+PerformWithAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PerformWithAnimations.swift"; sourceTree = "<group>"; };
 		8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
 		8814F2E21E3E30FF005506DB /* SpecUIViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUIViewControllerViewController.swift; sourceTree = "<group>"; };
@@ -162,8 +158,6 @@
 		885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecAppDelegate.swift; sourceTree = "<group>"; };
 		885F9D191E2B8036003ADC21 /* ExamplesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesDataSource.swift; sourceTree = "<group>"; };
 		885F9D1B1E2BA5F5003ADC21 /* DateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInteractor.swift; sourceTree = "<group>"; };
-		885F9D211E2BB3D2003ADC21 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
-		885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProvider.swift; sourceTree = "<group>"; };
 		885F9D261E2BC8FC003ADC21 /* DatePrinter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePrinter.swift; sourceTree = "<group>"; };
 		886013E31E2D4CD500C86FDE /* TimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTests.swift; sourceTree = "<group>"; };
 		886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerViewController.swift; sourceTree = "<group>"; };
@@ -275,9 +269,9 @@
 			children = (
 				886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */,
 				8814F2D41E3D4BFC005506DB /* App Lifecycle */,
+				885371CF1E3271C800CC5B75 /* ViewControllers */,
 				8814F2D31E3D4BEE005506DB /* Time */,
 				8814F2D21E3D4BDF005506DB /* URLSession */,
-				885371CF1E3271C800CC5B75 /* ViewControllers */,
 			);
 			name = Fakes;
 			sourceTree = "<group>";
@@ -361,7 +355,6 @@
 		8814F2D31E3D4BEE005506DB /* Time */ = {
 			isa = PBXGroup;
 			children = (
-				8814F2DA1E3D51BD005506DB /* Date */,
 				8814F2DB1E3D51C6005506DB /* Timer */,
 			);
 			name = Time;
@@ -382,15 +375,6 @@
 				8814F2D61E3D4CFB005506DB /* NetworkResponseCreator.swift */,
 			);
 			name = Utilities;
-			sourceTree = "<group>";
-		};
-		8814F2DA1E3D51BD005506DB /* Date */ = {
-			isa = PBXGroup;
-			children = (
-				885F9D231E2BB41A003ADC21 /* SpecDateProvider.swift */,
-				8814F2D81E3D516F005506DB /* SpecDateProviderNotifier.swift */,
-			);
-			name = Date;
 			sourceTree = "<group>";
 		};
 		8814F2DB1E3D51C6005506DB /* Timer */ = {
@@ -481,7 +465,6 @@
 		885371CE1E326E9E00CC5B75 /* Fringe */ = {
 			isa = PBXGroup;
 			children = (
-				885F9D211E2BB3D2003ADC21 /* DateProvider.swift */,
 				883E43851E3D33C80051BD21 /* URLSessionProtocol.swift */,
 				886013E71E2D4E4000C86FDE /* ErrorLogger.swift */,
 				888B2D181E2E4CB500FB3165 /* ScheduledTimer.swift */,
@@ -857,7 +840,6 @@
 				885F9CFE1E2A2825003ADC21 /* ExamplesdNavigationControllerFactory.swift in Sources */,
 				8814F2EE1E3E34A6005506DB /* UIViewControllerModuleFactory.swift in Sources */,
 				886013F31E2D685900C86FDE /* TimerViewControllerFactory.swift in Sources */,
-				885F9D221E2BB3D2003ADC21 /* DateProvider.swift in Sources */,
 				885F9D1A1E2B8036003ADC21 /* ExamplesDataSource.swift in Sources */,
 				886013EE1E2D67AE00C86FDE /* TimerModuleFactory.swift in Sources */,
 				88A7D3471E3E3FD80004C1FB /* PresentingPresenter.swift in Sources */,
@@ -879,7 +861,6 @@
 				8863D4B01E46144A00CD5DD2 /* SpecTimerFactory.swift in Sources */,
 				887CDBFA1E51F884008465FE /* SpecCLLocationManagerViewController.swift in Sources */,
 				8863D4B21E46144A00CD5DD2 /* SpecURLSession.swift in Sources */,
-				8863D4AE1E46144A00CD5DD2 /* SpecDateProvider.swift in Sources */,
 				8863D4B31E46144A00CD5DD2 /* SpecURLSessionDataTask.swift in Sources */,
 				8863D4A41E46142F00CD5DD2 /* ExamplesTests.swift in Sources */,
 				8863D4BA1E46144F00CD5DD2 /* NetworkResponseCreator.swift in Sources */,
@@ -890,7 +871,6 @@
 				8863D4A71E46142F00CD5DD2 /* NetworkRequestTests.swift in Sources */,
 				8863D4B71E46144A00CD5DD2 /* SpecTimerViewController.swift in Sources */,
 				8863D4B11E46144A00CD5DD2 /* SpecScheduledTimer.swift in Sources */,
-				8863D4AF1E46144A00CD5DD2 /* SpecDateProviderNotifier.swift in Sources */,
 				8863D4A81E46142F00CD5DD2 /* UIViewControllerTests.swift in Sources */,
 				8863D4A61E46142F00CD5DD2 /* TimerTests.swift in Sources */,
 			);
