@@ -31,6 +31,6 @@ public class SpecScheduledTimer: Timing {
     public func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
         self.interval = interval
         self.block = block
-        lastFiredDate = dateProvider.date
+        self.lastFiredDate = dateProvider.date
     }
 }

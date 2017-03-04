@@ -293,8 +293,8 @@
 		88FED3FC1E58C51D00217628 /* SpecLocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				88FED4031E58D39700217628 /* SpecLocationManagerFactory.swift */,
 				88D2C8B21E562D810065882D /* SpecLocationManager.swift */,
+				88FED4031E58D39700217628 /* SpecLocationManagerFactory.swift */,
 				88FED3FD1E58C81000217628 /* SpecLocationServices.swift */,
 				88FED3FF1E58CDC000217628 /* SpecLocationAuthorizationStatus.swift */,
 				88FED4091E58F56300217628 /* SpecUserLocation.swift */,
