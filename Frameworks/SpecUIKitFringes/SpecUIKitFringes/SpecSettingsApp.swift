@@ -1,12 +1,12 @@
 import CoreLocation
 
-class SpecSettingsApp {
-    
+public class SpecSettingsApp {
+
     private let locationAuthorizationStatus: SpecLocationAuthorizationStatus
     private let locationServices: SpecLocationServices
     
-    init(locationAuthorizationStatus: SpecLocationAuthorizationStatus,
-        locationServices: SpecLocationServices) {
+    public init(locationAuthorizationStatus: SpecLocationAuthorizationStatus,
+                locationServices: SpecLocationServices) {
         self.locationAuthorizationStatus = locationAuthorizationStatus
         self.locationServices = locationServices
     }
