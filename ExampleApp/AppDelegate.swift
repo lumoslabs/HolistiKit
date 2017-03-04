@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let timerFactory = TimerFactory()
         let sharedApplication = UIApplication.shared
         let urlSession = URLSession.shared
-        let locationManagerFactory = LocationManagerFactory()
+        let locationManagerFactory = CLLocationManagerFactory()
         let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
                                             examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,

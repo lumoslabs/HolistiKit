@@ -1,7 +1,7 @@
 import UIKitFringes
 import CoreLocation
 
-class CLLocationManagerInteractor: NSObject, LocationManagingDelegate {
+class CLLocationManagerInteractor: NSObject, CLLocationManagerDelegate {
 
     private let presenter: CLLocationManagerPresenter
     private let locationManager: LocationManaging
@@ -29,7 +29,7 @@ class CLLocationManagerInteractor: NSObject, LocationManagingDelegate {
         }
     }
 
-    func locationManager(didChangeAuthorization status: CLAuthorizationStatus) {
+    func locationManager(_: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         presenter.set(authorizationStatus: status)
     }
 }

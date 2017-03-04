@@ -1,72 +1,54 @@
 import CoreLocation
 
-public protocol LocationManaging: class {
-
-    func authorizationStatus() -> CLAuthorizationStatus
-    func isLocationServicesEnabled() -> Bool
-    weak var delegate: LocationManagingDelegate? { get set }
-    var location: CLLocation? { get }
-    func requestLocation()
-    func requestWhenInUseAuthorization()
-    func startUpdatingLocation()
-}
-
-public protocol LocationManagingDelegate: class {
-    
-    func locationManager(didUpdateLocations: [CLLocation])
-    func locationManager(didChangeAuthorization: CLAuthorizationStatus)
-    func locationManager(didFailWithError: Error)
-}
-
-public extension LocationManagingDelegate {
-    
-    func locationManager(didUpdateLocations: [CLLocation]) { }
-    func locationManager(didChangeAuthorization: CLAuthorizationStatus) { }
-    func locationManager(didFailWithError: Error) { }
-}
-
-class LocationManager: NSObject, LocationManaging, CLLocationManagerDelegate {
-
-    weak var delegate: LocationManagingDelegate?
-    var location: CLLocation? { return clLocationManager.location }
-    private let clLocationManager: CLLocationManager
-
-    public override convenience init() {
-        self.init(clLocationManager: CLLocationManager())
-    }
-
-    init(clLocationManager: CLLocationManager) {
-        self.clLocationManager = clLocationManager
-        super.init()
-        self.clLocationManager.delegate = self
-    }
-    
-    public func authorizationStatus() -> CLAuthorizationStatus { return type(of: clLocationManager).authorizationStatus() }
-    public func isLocationServicesEnabled() -> Bool { return type(of: clLocationManager).locationServicesEnabled() }
-    func requestLocation() { clLocationManager.requestLocation() }
-    func requestWhenInUseAuthorization() { clLocationManager.requestWhenInUseAuthorization() }
-    func startUpdatingLocation() { clLocationManager.startUpdatingLocation() }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        delegate?.locationManager(didUpdateLocations: locations)
-    }
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        delegate?.locationManager(didChangeAuthorization: status)
-    }
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        delegate?.locationManager(didFailWithError: error)
-    }
-}
-
 public protocol LocationManagingFactoryProtocol {
 
     func create() -> LocationManaging
 }
 
-public class LocationManagerFactory: LocationManagingFactoryProtocol {
+public class CLLocationManagerFactory: LocationManagingFactoryProtocol {
 
     public init() { }
 
     public func create() -> LocationManaging {
-        return LocationManager()
+        return CLLocationManager()
     }
+}
+
+public protocol LocationManaging: class {
+
+    /*
+     IMPORTANT: Use these instance methods instead of the equivalent
+     class methods from CLLocationManager.
+
+     These methods are exposed as instance methods, since they need
+     to be testable. If they were left as class methods, in
+     SpecLocationManager their backing variables would need to be
+     class variables, be Swift doesn't support class variables, so
+     they would have to be static, but static won't reset itself
+     between tests, so the values would pollute other tests.
+
+     Ensure that you do not cast to CLLocationManager and you will
+     Not have access to the original class methods, and you'll be fine.
+     */
+    func authorizationStatus() -> CLAuthorizationStatus
+    func isLocationServicesEnabled() -> Bool
+
+    // Supported subset interface from CLLocationManager
+    weak var delegate: CLLocationManagerDelegate? { get set }
+    var location: CLLocation? { get }
+    func requestLocation()
+    func requestWhenInUseAuthorization()
+    func startUpdatingLocation()
+    
+}
+extension CLLocationManager: LocationManaging {
+    
+    public func authorizationStatus() -> CLAuthorizationStatus {
+        return CLLocationManager.authorizationStatus()
+    }
+    
+    public func isLocationServicesEnabled() -> Bool {
+        return CLLocationManager.locationServicesEnabled()
+    }
+
 }

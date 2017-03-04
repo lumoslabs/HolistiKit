@@ -1,21 +1,21 @@
 import CoreLocation
-import UIKitFringes
 
-class SpecLocationManagerDelegate: LocationManagingDelegate {
+class SpecLocationManagerDelegate: NSObject, CLLocationManagerDelegate {
 
     var receivedAuthorizationChange: CLAuthorizationStatus?
     var receivedUpdatedLocations = [CLLocation]()
     var receivedError: Error?
     
-    func locationManager(didChangeAuthorization status: CLAuthorizationStatus) {
+    func locationManager(_: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         receivedAuthorizationChange = status
     }
 
-    func locationManager(didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         receivedUpdatedLocations.append(contentsOf: locations)
     }
 
-    func locationManager(didFailWithError error: Error) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         receivedError = error
     }
+
 }
