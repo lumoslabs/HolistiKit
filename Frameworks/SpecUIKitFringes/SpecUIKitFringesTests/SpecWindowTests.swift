@@ -1,18 +1,22 @@
 import XCTest
 @testable import SpecUIKitFringes
 
-class SpecWindowTests: XCTestCase {
+class UIWindowTests: XCTestCase {
 
-    var subject: SpecWindow!
+    var subject: UIWindow!
+    var recorder: Recorder!
     
     override func setUp() {
         super.setUp()
-        subject = SpecWindow()
+        recorder = Recorder()
+        subject = UIWindow()
     }
 
-    func test_settingRootViewControllerCallsViewLifecycleMethods() {
-        let viewController = RecordingSpecViewController()
-        subject.set(rootViewController: viewController)
-        XCTAssertEqual(viewController.events, [ .viewDidLoad, .viewWillAppear, .viewDidAppear ])
-    }
+//    func test_presentingAViewController() {
+//        let viewController = RecordingUIViewController(recorder: recorder)
+//        subject.rootViewController = viewController
+//        XCTAssertEqual(recorder.events, [.viewDidLoad(viewController),
+//                                         .viewWillAppear(viewController),
+//                                         .viewDidAppear(viewController)])
+//    }
 }
