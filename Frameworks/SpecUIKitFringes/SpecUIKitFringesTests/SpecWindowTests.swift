@@ -12,11 +12,12 @@ class UIWindowTests: XCTestCase {
         subject = UIWindow()
     }
 
-//    func test_presentingAViewController() {
-//        let viewController = RecordingUIViewController(recorder: recorder)
-//        subject.rootViewController = viewController
-//        XCTAssertEqual(recorder.events, [.viewDidLoad(viewController),
-//                                         .viewWillAppear(viewController),
-//                                         .viewDidAppear(viewController)])
-//    }
+    func test_settingRootViewController() {
+        let viewController = RecordingUIViewController(recorder: recorder)
+        subject.rootViewController = viewController
+        XCTAssertEqual(recorder.events, [.viewDidLoad(viewController),
+                                         .viewWillAppear(viewController),
+                                         .viewDidAppear(viewController)])
+        XCTAssertEqual(subject.rootViewController, viewController)
+    }
 }

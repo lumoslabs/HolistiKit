@@ -13,6 +13,7 @@
 		883BC3ED1E75A41E00B2D7DB /* RecordingUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3EC1E75A41E00B2D7DB /* RecordingUIViewController.swift */; };
 		883BC3EF1E75A45C00B2D7DB /* Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3EE1E75A45C00B2D7DB /* Recorder.swift */; };
 		883BC3F31E75ADCD00B2D7DB /* UIWindowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3F21E75ADCD00B2D7DB /* UIWindowTests.swift */; };
+		883BC3F51E75AEB800B2D7DB /* UIWindow+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3F41E75AEB800B2D7DB /* UIWindow+HolistiKit.swift */; };
 		883E43731E3CF9880051BD21 /* SpecErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */; };
 		883E437E1E3D140F0051BD21 /* AppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E437D1E3D140F0051BD21 /* AppIconTests.swift */; };
 		883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */; };
@@ -85,6 +86,7 @@
 		883BC3EC1E75A41E00B2D7DB /* RecordingUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingUIViewController.swift; sourceTree = "<group>"; };
 		883BC3EE1E75A45C00B2D7DB /* Recorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recorder.swift; sourceTree = "<group>"; };
 		883BC3F21E75ADCD00B2D7DB /* UIWindowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowTests.swift; sourceTree = "<group>"; };
+		883BC3F41E75AEB800B2D7DB /* UIWindow+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+HolistiKit.swift"; sourceTree = "<group>"; };
 		883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecErrorHandler.swift; sourceTree = "<group>"; };
 		883E437D1E3D140F0051BD21 /* AppIconTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIconTests.swift; sourceTree = "<group>"; };
 		883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecSystem.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				885EC1451E338F4200A61FA1 /* SpecWindow.swift */,
+				883BC3F41E75AEB800B2D7DB /* UIWindow+HolistiKit.swift */,
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */,
 				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
@@ -491,6 +494,7 @@
 				88FED4171E59BDF800217628 /* SpecScheduledTimer.swift in Sources */,
 				88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */,
 				88FED4041E58D39700217628 /* SpecLocationManagerFactory.swift in Sources */,
+				883BC3F51E75AEB800B2D7DB /* UIWindow+HolistiKit.swift in Sources */,
 				88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */,
 				88D2C8E41E56E3B40065882D /* SpecDialogManager.swift in Sources */,
 				885EC1481E338F4200A61FA1 /* SpecViewController.swift in Sources */,
