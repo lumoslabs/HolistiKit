@@ -12,7 +12,7 @@ extension UIWindow {
         }
     }
 
-    var holistikit_rootViewController: UIViewController? {
+    @objc private var holistikit_rootViewController: UIViewController? {
         get { return _rootViewController }
         set {
             _rootViewController = newValue
@@ -22,7 +22,7 @@ extension UIWindow {
         }
     }
     
-    var _rootViewController: UIViewController? {
+    private var _rootViewController: UIViewController? {
         get { return objc_getAssociatedObject(self, &_rootViewControllerKey) as? UIViewController }
         set { objc_setAssociatedObject(self, &_rootViewControllerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }

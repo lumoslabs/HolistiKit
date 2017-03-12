@@ -14,7 +14,7 @@ extension UIViewController {
         }
     }
 
-    func holistikit_present(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Swift.Void)? = nil) {
+    @objc private func holistikit_present(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Swift.Void)? = nil) {
         _presentedViewController = viewControllerToPresent
         viewControllerToPresent._presentingViewController = self
         viewControllerToPresent.viewDidLoad()
@@ -24,12 +24,12 @@ extension UIViewController {
         self.viewDidDisappear(animated)
     } 
     
-    var _presentedViewController: UIViewController? {
+    @objc private var _presentedViewController: UIViewController? {
         get { return objc_getAssociatedObject(self, &_presentedViewControllerKey) as? UIViewController }
         set { objc_setAssociatedObject(self, &_presentedViewControllerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
-    var _presentingViewController: UIViewController? {
+    @objc private var _presentingViewController: UIViewController? {
         get { return objc_getAssociatedObject(self, &_presentingViewControllerKey) as? UIViewController }
         set { objc_setAssociatedObject(self, &_presentingViewControllerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
