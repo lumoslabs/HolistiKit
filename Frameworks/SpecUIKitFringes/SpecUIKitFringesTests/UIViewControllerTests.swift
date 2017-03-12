@@ -20,6 +20,8 @@ class UIViewControllerTests: XCTestCase {
                                          .viewWillAppear(presentedViewController),
                                          .viewDidAppear(presentedViewController),
                                          .viewDidDisappear(subject)])
+        XCTAssertEqual(subject.presentedViewController, presentedViewController)
+        XCTAssertEqual(presentedViewController.presentingViewController, subject)
     }
 
     func test_gettingTheNavigationController() {
