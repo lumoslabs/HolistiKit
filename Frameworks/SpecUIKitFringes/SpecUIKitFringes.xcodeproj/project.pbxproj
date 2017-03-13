@@ -50,6 +50,9 @@
 		88D2C8D81E562FF70065882D /* SpecLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8CA1E562FB30065882D /* SpecLocationManagerDelegate.swift */; };
 		88D2C8E41E56E3B40065882D /* SpecDialogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8E31E56E3B40065882D /* SpecDialogManager.swift */; };
 		88D2C8E61E56E3D80065882D /* SpecDialogManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8E51E56E3D80065882D /* SpecDialogManagerTests.swift */; };
+		88EAAF151E76982300C2B769 /* UINavigationControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EAAF141E76982300C2B769 /* UINavigationControllerTests.swift */; };
+		88EAAF171E76985400C2B769 /* RecordingUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EAAF161E76985400C2B769 /* RecordingUINavigationController.swift */; };
+		88EAAF231E76FEF100C2B769 /* UINavigationController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EAAF221E76FEF100C2B769 /* UINavigationController+HolistiKit.swift */; };
 		88FED3F41E58690300217628 /* SpecDialogIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */; };
 		88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F71E5870CD00217628 /* SpecDialog.swift */; };
 		88FED3FB1E58AFE100217628 /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */; };
@@ -125,6 +128,9 @@
 		88D2C8CA1E562FB30065882D /* SpecLocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationManagerDelegate.swift; sourceTree = "<group>"; };
 		88D2C8E31E56E3B40065882D /* SpecDialogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogManager.swift; sourceTree = "<group>"; };
 		88D2C8E51E56E3D80065882D /* SpecDialogManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogManagerTests.swift; sourceTree = "<group>"; };
+		88EAAF141E76982300C2B769 /* UINavigationControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerTests.swift; sourceTree = "<group>"; };
+		88EAAF161E76985400C2B769 /* RecordingUINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingUINavigationController.swift; sourceTree = "<group>"; };
+		88EAAF221E76FEF100C2B769 /* UINavigationController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+HolistiKit.swift"; sourceTree = "<group>"; };
 		88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogIdentifier.swift; sourceTree = "<group>"; };
 		88FED3F71E5870CD00217628 /* SpecDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialog.swift; sourceTree = "<group>"; };
 		88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLAuthorizationStatus+CustomStringConvertible.swift"; sourceTree = "<group>"; };
@@ -225,6 +231,7 @@
 				885EC1501E33BBB300A61FA1 /* SpecViewControllerTests.swift */,
 				883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */,
 				885EC1541E33C9FF00A61FA1 /* SpecNavigationControllerTests.swift */,
+				88EAAF141E76982300C2B769 /* UINavigationControllerTests.swift */,
 				885EC14D1E33980B00A61FA1 /* Fakes */,
 				885EC1581E33E0A600A61FA1 /* Extensions */,
 				885EC13E1E338EB400A61FA1 /* Supporting Files */,
@@ -266,6 +273,7 @@
 				885EC1561E33CA3F00A61FA1 /* RecordingSpecNavigationController.swift */,
 				883E437F1E3D149D0051BD21 /* RecordingSpecSystem.swift */,
 				883BC3EC1E75A41E00B2D7DB /* RecordingUIViewController.swift */,
+				88EAAF161E76985400C2B769 /* RecordingUINavigationController.swift */,
 				883BC3EE1E75A45C00B2D7DB /* Recorder.swift */,
 			);
 			name = Fakes;
@@ -344,6 +352,7 @@
 				885EC1441E338F4200A61FA1 /* SpecViewController.swift */,
 				883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */,
 				885EC1421E338F4200A61FA1 /* SpecNavigationController.swift */,
+				88EAAF221E76FEF100C2B769 /* UINavigationController+HolistiKit.swift */,
 			);
 			name = "View Lifecycle";
 			sourceTree = "<group>";
@@ -512,6 +521,7 @@
 				88FED3FE1E58C81000217628 /* SpecLocationServices.swift in Sources */,
 				88FED4291E59C38300217628 /* SpecURLSessionDataTask.swift in Sources */,
 				88FED4081E58F10000217628 /* SpecSettingsApp.swift in Sources */,
+				88EAAF231E76FEF100C2B769 /* UINavigationController+HolistiKit.swift in Sources */,
 				885EC1461E338F4200A61FA1 /* SpecNavigationController.swift in Sources */,
 				88D2C8B31E562D810065882D /* SpecLocationManager.swift in Sources */,
 			);
@@ -536,11 +546,13 @@
 				883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */,
 				88D2C8D51E562FF70065882D /* LocationServicesTests.swift in Sources */,
 				885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */,
+				88EAAF171E76985400C2B769 /* RecordingUINavigationController.swift in Sources */,
 				883BC3EF1E75A45C00B2D7DB /* Recorder.swift in Sources */,
 				88D2C8D31E562FF70065882D /* SpecLocationManagerTestCase.swift in Sources */,
 				88D2C8D61E562FF70065882D /* LocationUpdatingTests.swift in Sources */,
 				88FED3FB1E58AFE100217628 /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */,
 				883E43841E3D15050051BD21 /* AppSwitcherTests.swift in Sources */,
+				88EAAF151E76982300C2B769 /* UINavigationControllerTests.swift in Sources */,
 				883BC3EB1E75A3C400B2D7DB /* UIViewControllerTests.swift in Sources */,
 				88B4E0711E59D35E0004C839 /* SpecDateProviderTests.swift in Sources */,
 				88D2C8D41E562FF70065882D /* GeneralAuthorizationStatusesTests.swift in Sources */,
