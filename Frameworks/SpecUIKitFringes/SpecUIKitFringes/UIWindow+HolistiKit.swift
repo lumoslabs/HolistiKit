@@ -15,10 +15,19 @@ extension UIWindow {
     @objc private var holistikit_rootViewController: UIViewController? {
         get { return _rootViewController }
         set {
-            _rootViewController = newValue
-            _rootViewController?.viewDidLoad()
-            _rootViewController?.viewWillAppear(false)
-            _rootViewController?.viewDidAppear(false)
+            if let previous = _rootViewController {
+                _rootViewController = newValue
+                previous.viewWillDisappear(false)
+                newValue?.viewDidLoad()
+                newValue?.viewWillAppear(false)
+                previous.viewDidDisappear(false)
+                newValue?.viewDidAppear(false)
+            } else {
+                _rootViewController = newValue
+                newValue?.viewDidLoad()
+                newValue?.viewWillAppear(false)
+                newValue?.viewDidAppear(false)
+            }
         }
     }
     

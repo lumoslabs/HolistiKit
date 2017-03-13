@@ -20,4 +20,30 @@ class UIWindowTests: XCTestCase {
                                          .viewDidAppear(viewController)])
         XCTAssertEqual(subject.rootViewController, viewController)
     }
+
+    func test_changingRootViewController() {
+        let first = RecordingUIViewController(recorder: recorder)
+        subject.rootViewController = first
+        recorder.events.removeAll()
+
+        let second = RecordingUIViewController(recorder: recorder)
+        subject.rootViewController = second
+        XCTAssertEqual(recorder.events, [.viewWillDisappear(first),
+                                         .viewDidLoad(second),
+                                         .viewWillAppear(second),
+                                         .viewDidDisappear(first),
+                                         .viewDidAppear(second)])
+        XCTAssertEqual(subject.rootViewController, second)
+    }
+    
+    func test_removingRootViewController() {
+        let viewController = RecordingUIViewController(recorder: recorder)
+        subject.rootViewController = viewController
+        recorder.events.removeAll()
+        
+        subject.rootViewController = nil
+        XCTAssertEqual(recorder.events, [.viewWillDisappear(viewController),
+                                         .viewDidDisappear(viewController)])
+        XCTAssertEqual(subject.rootViewController, nil)
+    }
 }
