@@ -1,7 +1,7 @@
 import UIKit
 import UIKitFringes
 
-class URLSessionViewController: UITableViewController, URLSessionViewControlling, UITextViewDelegate {
+class URLSessionViewController: UITableViewController, UITextViewDelegate {
 
     var interactor: URLSessionInteractor!
 
@@ -41,10 +41,4 @@ class URLSessionViewController: UITableViewController, URLSessionViewControlling
             self?.tableView.endUpdates()
         }
     }
-}
-
-protocol URLSessionViewControlling: class, ViewControlling {
-
-    func set(title text: String)
-    func set(data text: String, animated: Bool)
 }

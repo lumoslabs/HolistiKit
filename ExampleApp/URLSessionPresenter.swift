@@ -2,10 +2,10 @@ import UIKitFringes
 
 class URLSessionPresenter {
 
-    fileprivate weak var viewController: URLSessionViewControlling!
+    fileprivate weak var viewController: URLSessionViewController!
     fileprivate let errorLogger: ErrorLogging
 
-    func set(viewController: URLSessionViewControlling) {
+    func set(viewController: URLSessionViewController) {
         self.viewController = viewController
     }
 

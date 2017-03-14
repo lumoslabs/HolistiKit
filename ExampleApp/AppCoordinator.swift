@@ -4,8 +4,7 @@ class AppCoordinator {
 
     private let router: RootRouter
 
-    init(examplesNavigationControllerFactory: ExamplesNavigationControllerFactoryProtocol,
-         examplesViewControllerFactory: ExamplesViewControllerFactoryProtocol,
+    init(examplesViewControllerFactory: ExamplesViewControllerFactoryProtocol,
          timerViewControllerFactory: TimerViewControllerFactoryProtocol,
          urlSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol,
          dateViewControllerFactory: DateViewControllerFactoryProtocol,
@@ -19,7 +18,6 @@ class AppCoordinator {
          urlSession: URLSessionProtocol,
          locationManagerFactory: LocationManagingFactoryProtocol) {
         let networkActivityManager = NetworkActivityManager(sharedApplication: sharedApplication)
-        let examplesNavigationModuleFactory = ExamplesNavigationModuleFactory(viewControllerFactory: examplesNavigationControllerFactory)
         let examplesModuleFactory = ExamplesModuleFactory(viewControllerFactory: examplesViewControllerFactory,
                                                           errorLogger: errorLogger)
         let timerModuleFactory = TimerModuleFactory(viewControllerFactory: timerViewControllerFactory,
@@ -38,8 +36,7 @@ class AppCoordinator {
         let clLocationManagerModuleFactory = CLLocationManagerModuleFactory(viewControllerFactory: clLocationManagerViewControllerFactory,
                                                                             locationManagerFactory: locationManagerFactory,
                                                                             errorLogger: errorLogger)
-        let examplesRouterFactory = ExamplesRouterFactory(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
-                                                          examplesModuleFactory: examplesModuleFactory,
+        let examplesRouterFactory = ExamplesRouterFactory(examplesModuleFactory: examplesModuleFactory,
                                                           timerModuleFactory: timerModuleFactory,
                                                           urlSessionModuleFactory: urlSessionModuleFactory,
                                                           dateModuleFactory: dateModuleFactory,
@@ -48,7 +45,7 @@ class AppCoordinator {
         self.router = RootRouter(examplesRouterFactory: examplesRouterFactory)
     }
 
-    func didFinishLaunching(withWindow window: Windowing) {
+    func didFinishLaunching(withWindow window: UIWindow) {
         router.present(onWindow: window)
     }
 }

@@ -3,7 +3,7 @@ import SpecUIKitFringes
 
 class SpecAppDelegate: SpecApplicationDelegateProtocol {
     
-    private(set) var window: SpecWindow!
+    private(set) var window: UIWindow!
     
     private weak var sharedApplication: SpecSharedApplication!
     private weak var dateProvider: SpecDateProvider!
@@ -25,9 +25,8 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
 
     func applicationDidLaunch() {
 
-        window = SpecWindow()
+        window = UIWindow()
 
-        let examplesNavigationControllerFactory = SpecExamplesNavigationControllerFactory()
         let examplesViewControllerFactory = SpecExamplesViewControllerFactory()
         let timerViewControllerFactory = SpecTimerViewControllerFactory()
         let urlSessionViewControllerFactory = SpecURLSessionViewControllerFactory()
@@ -36,8 +35,7 @@ class SpecAppDelegate: SpecApplicationDelegateProtocol {
         let clLocationManagerViewControllerFactory = SpecCLLocationManagerViewControllerFactory()
         let errorLogger = SpecErrorLogger()
         let timerFactory = SpecTimerFactory(dateProvider: dateProvider)
-        let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
-                                            examplesViewControllerFactory: examplesViewControllerFactory,
+        let appCoordinator = AppCoordinator(examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
                                             urlSessionViewControllerFactory: urlSessionViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,

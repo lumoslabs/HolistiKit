@@ -12,7 +12,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let _window = UIWindow(frame: UIScreen.main.bounds)
         window = _window
 
-        let examplesNavigationControllerFactory = ExamplesNavigationControllerFactory()
         let examplesViewControllerFactory = ExamplesViewControllerFactory()
         let timerViewControllerFactory = TimerViewControllerFactory()
         let urlSessionViewControllerFactory = URLSessionViewControllerFactory()
@@ -26,8 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let sharedApplication = UIApplication.shared
         let urlSession = URLSession.shared
         let locationManagerFactory = CLLocationManagerFactory()
-        let appCoordinator = AppCoordinator(examplesNavigationControllerFactory: examplesNavigationControllerFactory,
-                                            examplesViewControllerFactory: examplesViewControllerFactory,
+        let appCoordinator = AppCoordinator( examplesViewControllerFactory: examplesViewControllerFactory,
                                             timerViewControllerFactory: timerViewControllerFactory,
                                             urlSessionViewControllerFactory: urlSessionViewControllerFactory,
                                             dateViewControllerFactory: dateViewControllerFactory,

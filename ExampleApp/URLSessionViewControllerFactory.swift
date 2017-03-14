@@ -2,7 +2,7 @@ import UIKit
 
 class URLSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol {
 
-    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewControlling {
+    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewController {
         return URLSessionViewController.create(withInteractor: interactor)
     }
 }
@@ -21,5 +21,5 @@ extension URLSessionViewController {
 
 protocol URLSessionViewControllerFactoryProtocol {
 
-    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewControlling
+    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewController
 }

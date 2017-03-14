@@ -6,18 +6,15 @@ class ExamplesRouter {
     private let dateModuleFactory: DateModuleFactory
     private let timerModuleFactory: TimerModuleFactory
     private let urlSessionModuleFactory: URLSessionModuleFactory
-    private let examplesNavigationModuleFactory: ExamplesNavigationModuleFactory
     private let uiViewControllerModuleFactory: UIViewControllerModuleFactory
     private let clLocationManagerModuleFactory: CLLocationManagerModuleFactory
 
-    init(examplesNavigationModuleFactory: ExamplesNavigationModuleFactory,
-         examplesModuleFactory: ExamplesModuleFactory,
+    init(examplesModuleFactory: ExamplesModuleFactory,
          timerModuleFactory: TimerModuleFactory,
          urlSessionModuleFactory: URLSessionModuleFactory,
          dateModuleFactory: DateModuleFactory,
          uiViewControllerModuleFactory: UIViewControllerModuleFactory,
          clLocationManagerModuleFactory: CLLocationManagerModuleFactory) {
-        self.examplesNavigationModuleFactory = examplesNavigationModuleFactory
         self.examplesModuleFactory = examplesModuleFactory
         self.timerModuleFactory = timerModuleFactory
         self.urlSessionModuleFactory = urlSessionModuleFactory
@@ -26,10 +23,10 @@ class ExamplesRouter {
         self.clLocationManagerModuleFactory = clLocationManagerModuleFactory
     }
 
-    func present(onWindow window: Windowing) {
+    func present(onWindow window: UIWindow) {
         let examplesViewController = examplesModuleFactory.create(withRouter: self)
-        let examplesNavigationViewController = examplesNavigationModuleFactory.create(rootViewController: examplesViewController)
-        window.set(rootViewController: examplesNavigationViewController)
+        let examplesNavigationViewController = UINavigationController(rootViewController: examplesViewController)
+        window.rootViewController = examplesNavigationViewController
     }
 
     enum ModuleIdentifier {
@@ -53,7 +50,7 @@ class ExamplesRouter {
         }
     }
 
-    private func viewController(for module: ModuleIdentifier) -> ViewControlling {
+    private func viewController(for module: ModuleIdentifier) -> UIViewController {
         switch module {
         case .uiViewController: return uiViewControllerModuleFactory.create(withRouter: self)
         case .date: return dateModuleFactory.create()
@@ -66,7 +63,6 @@ class ExamplesRouter {
 
 class ExamplesRouterFactory {
     
-    private let examplesNavigationModuleFactory: ExamplesNavigationModuleFactory
     private let examplesModuleFactory: ExamplesModuleFactory
     private let timerModuleFactory: TimerModuleFactory
     private let urlSessionModuleFactory: URLSessionModuleFactory
@@ -74,14 +70,12 @@ class ExamplesRouterFactory {
     private let uiViewControllerModuleFactory: UIViewControllerModuleFactory
     private let clLocationManagerModuleFactory: CLLocationManagerModuleFactory
 
-    init(examplesNavigationModuleFactory: ExamplesNavigationModuleFactory,
-         examplesModuleFactory: ExamplesModuleFactory,
+    init(examplesModuleFactory: ExamplesModuleFactory,
          timerModuleFactory: TimerModuleFactory,
          urlSessionModuleFactory: URLSessionModuleFactory,
          dateModuleFactory: DateModuleFactory,
          uiViewControllerModuleFactory: UIViewControllerModuleFactory,
          clLocationManagerModuleFactory: CLLocationManagerModuleFactory) {
-        self.examplesNavigationModuleFactory = examplesNavigationModuleFactory
         self.examplesModuleFactory = examplesModuleFactory
         self.timerModuleFactory = timerModuleFactory
         self.urlSessionModuleFactory = urlSessionModuleFactory
@@ -91,8 +85,7 @@ class ExamplesRouterFactory {
     }
 
     func create() -> ExamplesRouter {
-        return ExamplesRouter(examplesNavigationModuleFactory: examplesNavigationModuleFactory,
-                              examplesModuleFactory: examplesModuleFactory,
+        return ExamplesRouter(examplesModuleFactory: examplesModuleFactory,
                               timerModuleFactory: timerModuleFactory,
                               urlSessionModuleFactory: urlSessionModuleFactory,
                               dateModuleFactory: dateModuleFactory,

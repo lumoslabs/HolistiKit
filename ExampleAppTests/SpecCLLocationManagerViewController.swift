@@ -4,8 +4,10 @@ import UIKitFringes
 
 class SpecCLLocationManagerViewControllerFactory: CLLocationManagerViewControllerFactoryProtocol {
     
-    func create(withInteractor interactor: CLLocationManagerInteractor) -> CLLocationManagerViewControlling {
-        return SpecCLLocationManagerViewController(interactor: interactor)
+    func create(withInteractor interactor: CLLocationManagerInteractor) -> CLLocationManagerViewController {
+        let viewController = SpecCLLocationManagerViewController()
+        viewController.interactor = interactor
+        return viewController
     }
 }
 
@@ -18,30 +20,15 @@ protocol SpecCLLocationManagerViewControllerUI {
     var authorizationStatus: String? { get }
 }
 
-class SpecCLLocationManagerViewController: SpecViewController, CLLocationManagerViewControlling, SpecCLLocationManagerViewControllerUI {
+class SpecCLLocationManagerViewController: CLLocationManagerViewController, SpecCLLocationManagerViewControllerUI {
 
-    private(set) var title: String?
     private(set) var authorizationStatus: String?
-    private let interactor: CLLocationManagerInteractor
-
-    init(interactor: CLLocationManagerInteractor) {
-        self.interactor = interactor
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        interactor.viewDidLoad()
-    }
 
     func tapRequestAuthorizationRow() {
         interactor.didTap(rowAt: IndexPath(row: 0, section: 1))
     }
 
-    func set(title text: String) {
-        title = text
-    }
-
-    func set(authorizationStatus text: String) {
+    override func set(authorizationStatus text: String) {
         authorizationStatus = text
     }
 }

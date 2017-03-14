@@ -4,8 +4,10 @@ import UIKitFringes
 
 class SpecUIViewControllerViewControllerFactory: UIViewControllerViewControllerFactoryProtocol {
     
-    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewControlling {
-        return SpecUIViewControllerViewController(interactor: interactor)
+    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewController {
+        let viewController = SpecUIViewControllerViewController()
+        viewController.interactor = interactor
+        return viewController
     }
 }
 
@@ -15,24 +17,12 @@ protocol SpecUIViewControllerViewControllerUI {
     func tapPresentViewController()
     // Output
     var title: String? { get }
-    var presentedViewControlling: ViewControlling? { get }
+    var presentedViewController: UIViewController? { get }
 }
 
-class SpecUIViewControllerViewController: SpecViewController, UIViewControllerViewControlling, SpecUIViewControllerViewControllerUI {
+class SpecUIViewControllerViewController: UIViewControllerViewController, SpecUIViewControllerViewControllerUI {
 
-    private(set) var title: String?
-    private let interactor: UIViewControllerInteractor
-
-    init(interactor: UIViewControllerInteractor) {
-        self.interactor = interactor
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        interactor.viewDidLoad()
-    }
-
-    func set(title text: String) {
+    override func set(title text: String) {
         title = text
     }
 

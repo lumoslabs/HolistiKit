@@ -16,12 +16,13 @@ class UINavigationControllerTests: XCTestCase {
         let viewController = RecordingUIViewController(recorder: recorder)
         navigationController.pushViewController(viewController, animated: false)
         XCTAssertEqual(viewController.navigationController, navigationController)
+        XCTAssertEqual(navigationController.viewControllers, [viewController])
         XCTAssertEqual(navigationController.topViewController, viewController)
     }
 
     func test_pushingASecondViewController() {
         let first = RecordingUIViewController(recorder: recorder)
-        navigationController.push(viewController: first, animated: false)
+        navigationController.pushViewController(first, animated: false)
         recorder.events.removeAll()
         
         let second = RecordingUIViewController(recorder: recorder)
@@ -40,7 +41,7 @@ class UINavigationControllerTests: XCTestCase {
 
     func test_settingViewControllersWhenThereIsAlreadyAViewController() {
         let first = RecordingUIViewController(recorder: recorder)
-        navigationController.push(viewController: first, animated: false)
+        navigationController.pushViewController(first, animated: false)
         recorder.events.removeAll()
         
         let second = RecordingUIViewController(recorder: recorder)
@@ -55,5 +56,23 @@ class UINavigationControllerTests: XCTestCase {
         XCTAssertEqual(navigationController.topViewController, second)
         XCTAssertNil(first.navigationController)
         XCTAssertEqual(second.navigationController, navigationController)
+    }
+
+    func test_popViewControllerWhenThereAreMoreThanOneViewControllers() {
+        let first = RecordingUIViewController(recorder: recorder)
+        let second = RecordingUIViewController(recorder: recorder)
+        navigationController.setViewControllers([first, second], animated: false)
+        recorder.events.removeAll()
+
+        let poppedViewController = navigationController.popViewController(animated: false)
+        XCTAssertEqual(recorder.events, [.viewWillDisappear(second),
+                                         .viewWillAppear(first),
+                                         .viewDidDisappear(second),
+                                         .viewDidAppear(first)])
+        XCTAssertEqual(poppedViewController, second)
+        XCTAssertEqual(navigationController.viewControllers, [first])
+        XCTAssertEqual(navigationController.topViewController, first)
+        XCTAssertNil(second.navigationController)
+        XCTAssertEqual(first.navigationController, navigationController)
     }
 }

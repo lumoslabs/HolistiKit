@@ -1,6 +1,6 @@
 public protocol SpecApplicationDelegateProtocol {
     
-    var window: SpecWindow! { get }
+    var window: UIWindow! { get }
     
     func applicationDidLaunch()
     func applicationWillResignActive()

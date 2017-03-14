@@ -3,8 +3,10 @@ import SpecUIKitFringes
 
 class SpecURLSessionViewControllerFactory: URLSessionViewControllerFactoryProtocol {
     
-    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewControlling {
-        return SpecURLSessionViewController(interactor: interactor)
+    func create(withInteractor interactor: URLSessionInteractor) -> URLSessionViewController {
+        let viewController = SpecURLSessionViewController()
+        viewController.interactor = interactor
+        return viewController
     }
 }
 
@@ -18,34 +20,19 @@ protocol SpecURLSessionViewControllerUI {
     var dataLabel: SpecURLSessionViewController.DataLabel? { get }
 }
 
-class SpecURLSessionViewController: SpecViewController, URLSessionViewControlling, SpecURLSessionViewControllerUI {
+class SpecURLSessionViewController: URLSessionViewController, SpecURLSessionViewControllerUI {
 
-    private(set) var title: String?
     private(set) var dataLabel: DataLabel?
-    private let interactor: URLSessionInteractor
 
     struct DataLabel {
         let text: String
         let animated: Bool
     }
 
-    init(interactor: URLSessionInteractor) {
-        self.interactor = interactor
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        interactor.viewDidLoad()
-    }
-
     func tapRequestJSON() { tap(row: 0) }
     func tapRequestHTML() { tap(row: 1) }
 
-    func set(title text: String) {
-        title = text
-    }
-
-    func set(data text: String, animated: Bool) {
+    override func set(data text: String, animated: Bool) {
         dataLabel = DataLabel(text: text, animated: animated)
     }
 

@@ -1,7 +1,7 @@
 import UIKit
 import UIKitFringes
 
-class ExamplesViewController: UITableViewController, ExamplesViewControlling {
+class ExamplesViewController: UITableViewController {
 
     var interactor: ExamplesInteractor!
     private static let cellIdentifier = "ExamplesCell"
@@ -36,9 +36,4 @@ class ExamplesViewController: UITableViewController, ExamplesViewControlling {
                             didSelectRowAt indexPath: IndexPath) {
         interactor.tap(rowAt: indexPath)
     }
-}
-
-protocol ExamplesViewControlling: class, ViewControlling {
-
-    func set(title: String)
 }

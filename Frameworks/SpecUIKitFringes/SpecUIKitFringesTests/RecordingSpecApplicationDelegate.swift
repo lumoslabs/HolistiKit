@@ -2,7 +2,7 @@
 
 class RecordingSpecApplicationDelegate: SpecApplicationDelegateProtocol {
     
-    public var window: SpecWindow!
+    public var window: UIWindow!
     
     enum Event {
         case applicationDidLaunch

@@ -2,7 +2,7 @@ import UIKit
 
 class UIViewControllerViewControllerFactory: UIViewControllerViewControllerFactoryProtocol {
 
-    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewControlling {
+    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewController {
         return UIViewControllerViewController.create(withInteractor: interactor)
     }
 }
@@ -21,5 +21,5 @@ extension UIViewControllerViewController {
 
 protocol UIViewControllerViewControllerFactoryProtocol {
     
-    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewControlling
+    func create(withInteractor interactor: UIViewControllerInteractor) -> UIViewControllerViewController
 }

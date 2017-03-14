@@ -17,7 +17,7 @@ class TimerModuleFactory {
         self.timerFactory = timerFactory
     }
 
-    func create() -> ViewControlling {
+    func create() -> UIViewController {
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
         let presenter = TimerPresenter(datePrinter: datePrinter)
         let interactor = TimerInteractor(dateProvider: dateProvider,

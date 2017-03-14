@@ -1,7 +1,7 @@
 import UIKit
 import UIKitFringes
 
-class CLLocationManagerViewController: UITableViewController, CLLocationManagerViewControlling {
+class CLLocationManagerViewController: UITableViewController {
 
     @IBOutlet private weak var authorizationStatusCell: UITableViewCell!
 
@@ -25,10 +25,4 @@ class CLLocationManagerViewController: UITableViewController, CLLocationManagerV
         tableView.deselectRow(at: indexPath, animated: true)
         interactor.didTap(rowAt: indexPath)
     }
-}
-
-protocol CLLocationManagerViewControlling: class, ViewControlling {
-
-    func set(title text: String)
-    func set(authorizationStatus text: String)
 }

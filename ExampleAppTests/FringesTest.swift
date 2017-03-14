@@ -104,7 +104,7 @@ extension FringesTest {
 // MARK: Top View Controller Accessing
 extension FringesTest {
 
-    var window: SpecWindow {
+    var window: UIWindow {
         guard let window = system.appDelegate.window else {
             fatalError("There is no window. Did you forget to launch the app?")
         }
@@ -135,8 +135,8 @@ extension FringesTest {
         return topViewController(as: SpecCLLocationManagerViewControllerUI.self)
     }
 
-    var navigationController: SpecNavigationControllerUI {
-        guard let navigationController = window.topViewController.navigationController else {
+    var navigationController: UINavigationController {
+        guard let navigationController = window.rootViewController?.topViewController.navigationController else {
             fatalError("The top view controller is not inside a navigation controller.")
         }
         return navigationController

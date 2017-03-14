@@ -1,7 +1,7 @@
 import UIKit
 import UIKitFringes
 
-class UIViewControllerViewController: UITableViewController, UIViewControllerViewControlling {
+class UIViewControllerViewController: UITableViewController {
     
     var interactor: UIViewControllerInteractor!
 
@@ -16,9 +16,4 @@ class UIViewControllerViewController: UITableViewController, UIViewControllerVie
     override func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         interactor.didTap(rowAt: indexPath)
     }
-}
-
-protocol UIViewControllerViewControlling: class, ViewControlling {
-    
-    func set(title text: String)
 }

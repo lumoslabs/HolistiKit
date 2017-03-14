@@ -4,8 +4,10 @@ import UIKit
 
 class SpecExamplesViewControllerFactory: ExamplesViewControllerFactoryProtocol {
 
-    func create(withInteractor interactor: ExamplesInteractor) -> ExamplesViewControlling {
-        return SpecExamplesViewController(interactor: interactor)
+    func create(withInteractor interactor: ExamplesInteractor) -> ExamplesViewController {
+        let viewController = SpecExamplesViewController()
+        viewController.interactor = interactor
+        return viewController
     }
 }
 
@@ -24,24 +26,8 @@ protocol SpecExamplesViewControllerUI {
     func accessoryIndicator(forRow: Int) -> UITableViewCellAccessoryType
 }
 
-class SpecExamplesViewController: SpecViewController, ExamplesViewControlling, SpecExamplesViewControllerUI {
-    
-    private(set) var title: String?
-    private let interactor: ExamplesInteractor
+class SpecExamplesViewController: ExamplesViewController, SpecExamplesViewControllerUI {
 
-    init(interactor: ExamplesInteractor) {
-        self.interactor = interactor
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        interactor.viewDidLoad()
-    }
-
-    func set(title text: String) {
-        title = text
-    }
-    
     func title(forRow row: Int) -> String {
         return cellConfiguration(forRow: row).title
     }

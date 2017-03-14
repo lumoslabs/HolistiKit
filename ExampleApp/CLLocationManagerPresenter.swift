@@ -3,9 +3,9 @@ import CoreLocation
 
 class CLLocationManagerPresenter {
     
-    fileprivate weak var viewController: CLLocationManagerViewControlling!
+    fileprivate weak var viewController: CLLocationManagerViewController!
 
-    func set(viewController: CLLocationManagerViewControlling) {
+    func set(viewController: CLLocationManagerViewController) {
         self.viewController = viewController
     }
 

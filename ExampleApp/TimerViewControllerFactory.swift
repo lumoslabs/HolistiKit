@@ -2,7 +2,7 @@ import UIKit
 
 class TimerViewControllerFactory: TimerViewControllerFactoryProtocol {
 
-    func create(withInteractor interactor: TimerInteractor) -> TimerViewControlling {
+    func create(withInteractor interactor: TimerInteractor) -> TimerViewController {
         return TimerViewController.create(interactor: interactor)
     }
 }
@@ -21,5 +21,5 @@ extension TimerViewController {
 
 protocol TimerViewControllerFactoryProtocol {
     
-    func create(withInteractor interactor: TimerInteractor) -> TimerViewControlling
+    func create(withInteractor interactor: TimerInteractor) -> TimerViewController
 }

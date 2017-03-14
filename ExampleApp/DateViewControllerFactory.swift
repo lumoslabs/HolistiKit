@@ -2,7 +2,7 @@ import UIKit
 
 class DateViewControllerFactory: DateViewControllerFactoryProtocol {
     
-    func create(withInteractor interactor: DateInteractor) -> DateViewControlling {
+    func create(withInteractor interactor: DateInteractor) -> DateViewController {
         return DateViewController.create(withInteractor: interactor)
     }
 }
@@ -21,5 +21,5 @@ extension DateViewController {
 
 protocol DateViewControllerFactoryProtocol {
     
-    func create(withInteractor interactor: DateInteractor) -> DateViewControlling
+    func create(withInteractor interactor: DateInteractor) -> DateViewController
 }

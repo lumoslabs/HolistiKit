@@ -37,10 +37,6 @@
 		885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */; };
 		885407031E51B9CD00575105 /* SpecUIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 885407021E51B9CD00575105 /* SpecUIKitFringes.framework */; };
 		885F9CFA1E2A265B003ADC21 /* ExamplesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */; };
-		885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */; };
-		885F9CFE1E2A2825003ADC21 /* ExamplesdNavigationControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllerFactory.swift */; };
-		885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */; };
-		885F9D061E2A302E003ADC21 /* ExamplesNavigationModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D051E2A302E003ADC21 /* ExamplesNavigationModuleFactory.swift */; };
 		885F9D141E2A4D62003ADC21 /* PushingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D131E2A4D62003ADC21 /* PushingPresenter.swift */; };
 		885F9D1A1E2B8036003ADC21 /* ExamplesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D191E2B8036003ADC21 /* ExamplesDataSource.swift */; };
 		885F9D1C1E2BA5F5003ADC21 /* DateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D1B1E2BA5F5003ADC21 /* DateInteractor.swift */; };
@@ -60,7 +56,6 @@
 		8863D4AA1E46143500CD5DD2 /* SpecErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */; };
 		8863D4AB1E46143C00CD5DD2 /* FringesSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */; };
 		8863D4AC1E46143C00CD5DD2 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
-		8863D4B41E46144A00CD5DD2 /* SpecExamplesNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */; };
 		8863D4B51E46144A00CD5DD2 /* SpecExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */; };
 		8863D4B61E46144A00CD5DD2 /* SpecDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecDateViewController.swift */; };
 		8863D4B71E46144A00CD5DD2 /* SpecTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */; };
@@ -82,6 +77,9 @@
 		888B2D121E2E1D8600FB3165 /* TimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */; };
 		88A1E1831E33802800CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1821E33802800CFA0CD /* UIKitFringes.framework */; };
 		88A7D3471E3E3FD80004C1FB /* PresentingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A7D3461E3E3FD80004C1FB /* PresentingPresenter.swift */; };
+		88EAAF271E7839F900C2B769 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EAAF251E7839B900C2B769 /* UINavigationController.swift */; };
+		88EAAF2B1E783A7000C2B769 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EAAF2A1E783A7000C2B769 /* UIWindow.swift */; };
+		88EAAF2C1E783A7300C2B769 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EAAF281E783A5400C2B769 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,11 +138,6 @@
 		885EC1401E338EEE00A61FA1 /* SpecUIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecUIKitFringes.framework; path = "Frameworks/SpecUIKitFringes/build/Debug-iphoneos/SpecUIKitFringes.framework"; sourceTree = "<group>"; };
 		885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FringesSpecSystem.swift; sourceTree = "<group>"; };
 		885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesRouter.swift; sourceTree = "<group>"; };
-		885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationPresenter.swift; sourceTree = "<group>"; };
-		885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesdNavigationControllerFactory.swift; sourceTree = "<group>"; };
-		885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationController.swift; sourceTree = "<group>"; };
-		885F9D051E2A302E003ADC21 /* ExamplesNavigationModuleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesNavigationModuleFactory.swift; sourceTree = "<group>"; };
-		885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecExamplesNavigationController.swift; sourceTree = "<group>"; };
 		885F9D131E2A4D62003ADC21 /* PushingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushingPresenter.swift; sourceTree = "<group>"; };
 		885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecAppDelegate.swift; sourceTree = "<group>"; };
 		885F9D191E2B8036003ADC21 /* ExamplesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesDataSource.swift; sourceTree = "<group>"; };
@@ -175,6 +168,9 @@
 		888B2D111E2E1D8600FB3165 /* TimerInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInteractor.swift; sourceTree = "<group>"; };
 		88A1E1821E33802800CFA0CD /* UIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKitFringes.framework; path = "Frameworks/UIKitFringes/build/Debug-iphoneos/UIKitFringes.framework"; sourceTree = "<group>"; };
 		88A7D3461E3E3FD80004C1FB /* PresentingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentingPresenter.swift; sourceTree = "<group>"; };
+		88EAAF251E7839B900C2B769 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		88EAAF281E783A5400C2B769 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		88EAAF2A1E783A7000C2B769 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,7 +412,6 @@
 		885371CF1E3271C800CC5B75 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				885F9D081E2A38BF003ADC21 /* SpecExamplesNavigationController.swift */,
 				880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */,
 				880741731E22889000CECDDF /* SpecDateViewController.swift */,
 				886013E51E2D4D5500C86FDE /* SpecTimerViewController.swift */,
@@ -427,38 +422,10 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		885F9CF81E2A2639003ADC21 /* ExamplesNavigation */ = {
-			isa = PBXGroup;
-			children = (
-				885F9D051E2A302E003ADC21 /* ExamplesNavigationModuleFactory.swift */,
-				885F9D031E2A2FE4003ADC21 /* Presenter */,
-				885F9D041E2A2FEC003ADC21 /* View */,
-			);
-			name = ExamplesNavigation;
-			sourceTree = "<group>";
-		};
-		885F9D031E2A2FE4003ADC21 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				885F9CFB1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift */,
-			);
-			name = Presenter;
-			sourceTree = "<group>";
-		};
-		885F9D041E2A2FEC003ADC21 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				885F9CFD1E2A2825003ADC21 /* ExamplesdNavigationControllerFactory.swift */,
-				885F9CFF1E2A288D003ADC21 /* ExamplesNavigationController.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		885F9D171E2A9582003ADC21 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */,
-				885F9CF81E2A2639003ADC21 /* ExamplesNavigation */,
 				880740CA1E1F911200CECDDF /* Examples */,
 				880741621E2270A700CECDDF /* Date */,
 				886013EB1E2D678900C86FDE /* Timer */,
@@ -526,6 +493,7 @@
 				8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */,
 				887CDBF71E51F7E3008465FE /* CLLocationManagerTests.swift */,
 				880740DB1E21079B00CECDDF /* FringesTest.swift */,
+				88EAAF241E7839A800C2B769 /* Extensions */,
 				880740D71E21038500CECDDF /* Fakes */,
 				8814F2D51E3D4CB0005506DB /* Utilities */,
 				88A1E1851E3381C600CFA0CD /* Supporting Files */,
@@ -627,6 +595,16 @@
 				880740C11E1F8C9400CECDDF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		88EAAF241E7839A800C2B769 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				88EAAF251E7839B900C2B769 /* UINavigationController.swift */,
+				88EAAF281E783A5400C2B769 /* UIViewController.swift */,
+				88EAAF2A1E783A7000C2B769 /* UIWindow.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -745,7 +723,6 @@
 				8814F2E71E3E31E6005506DB /* UIViewControllerViewControllerFactory.swift in Sources */,
 				8807417E1E239A3F00CECDDF /* ExamplesModuleFactory.swift in Sources */,
 				8814F2EC1E3E328F005506DB /* UIViewControllerPresenter.swift in Sources */,
-				885F9D001E2A288D003ADC21 /* ExamplesNavigationController.swift in Sources */,
 				885371C61E3237E700CC5B75 /* NetworkActivityManager.swift in Sources */,
 				8835668B1E2F57EA00289510 /* URLSessionViewControllerFactory.swift in Sources */,
 				880740DF1E2108CE00CECDDF /* main.swift in Sources */,
@@ -769,15 +746,12 @@
 				886013E81E2D4E4000C86FDE /* ErrorLogger.swift in Sources */,
 				887CDBFE1E51FD39008465FE /* CLLocationManagerViewController.swift in Sources */,
 				887CDC031E51FE2C008465FE /* CLLocationManagerInteractor.swift in Sources */,
-				885F9D061E2A302E003ADC21 /* ExamplesNavigationModuleFactory.swift in Sources */,
 				8814F2E91E3E322D005506DB /* UIViewControllerViewController.swift in Sources */,
-				885F9CFC1E2A276E003ADC21 /* ExamplesNavigationPresenter.swift in Sources */,
 				885F9D271E2BC8FC003ADC21 /* DatePrinter.swift in Sources */,
 				880740D61E201C2300CECDDF /* ExamplesViewControllerFactory.swift in Sources */,
 				886013F51E2D68FC00C86FDE /* TimerViewController.swift in Sources */,
 				8863D4C41E50BFE900CD5DD2 /* UIViewControllerInteractor.swift in Sources */,
 				886013F01E2D67FD00C86FDE /* TimerPresenter.swift in Sources */,
-				885F9CFE1E2A2825003ADC21 /* ExamplesdNavigationControllerFactory.swift in Sources */,
 				8814F2EE1E3E34A6005506DB /* UIViewControllerModuleFactory.swift in Sources */,
 				886013F31E2D685900C86FDE /* TimerViewControllerFactory.swift in Sources */,
 				885F9D1A1E2B8036003ADC21 /* ExamplesDataSource.swift in Sources */,
@@ -794,6 +768,7 @@
 				8863D4AB1E46143C00CD5DD2 /* FringesSpecSystem.swift in Sources */,
 				8863D4B81E46144A00CD5DD2 /* SpecUISessionViewController.swift in Sources */,
 				8863D4A91E46142F00CD5DD2 /* FringesTest.swift in Sources */,
+				88EAAF2B1E783A7000C2B769 /* UIWindow.swift in Sources */,
 				8863D4B61E46144A00CD5DD2 /* SpecDateViewController.swift in Sources */,
 				8863D4B91E46144A00CD5DD2 /* SpecUIViewControllerViewController.swift in Sources */,
 				887CDBF81E51F7E3008465FE /* CLLocationManagerTests.swift in Sources */,
@@ -801,12 +776,13 @@
 				887CDBFA1E51F884008465FE /* SpecCLLocationManagerViewController.swift in Sources */,
 				8863D4A41E46142F00CD5DD2 /* ExamplesTests.swift in Sources */,
 				8863D4BA1E46144F00CD5DD2 /* NetworkResponseCreator.swift in Sources */,
-				8863D4B41E46144A00CD5DD2 /* SpecExamplesNavigationController.swift in Sources */,
 				8863D4A51E46142F00CD5DD2 /* DateTests.swift in Sources */,
 				8863D4AA1E46143500CD5DD2 /* SpecErrorLogger.swift in Sources */,
 				8863D4B51E46144A00CD5DD2 /* SpecExamplesViewController.swift in Sources */,
+				88EAAF2C1E783A7300C2B769 /* UIViewController.swift in Sources */,
 				8863D4A71E46142F00CD5DD2 /* NetworkRequestTests.swift in Sources */,
 				8863D4B71E46144A00CD5DD2 /* SpecTimerViewController.swift in Sources */,
+				88EAAF271E7839F900C2B769 /* UINavigationController.swift in Sources */,
 				8863D4A81E46142F00CD5DD2 /* UIViewControllerTests.swift in Sources */,
 				8863D4A61E46142F00CD5DD2 /* TimerTests.swift in Sources */,
 			);

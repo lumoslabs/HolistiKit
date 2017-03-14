@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1091E3384BB00A61FA1 /* UIApplication.swift */; };
-		885EC10E1E3384BB00A61FA1 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC10A1E3384BB00A61FA1 /* UINavigationController.swift */; };
-		885EC10F1E3384BB00A61FA1 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC10B1E3384BB00A61FA1 /* UIViewController.swift */; };
-		885EC1101E3384BB00A61FA1 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC10C1E3384BB00A61FA1 /* UIWindow.swift */; };
 		88A1E1711E337FE300CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1671E337FE300CFA0CD /* UIKitFringes.framework */; };
 		88A1E1781E337FE300CFA0CD /* UIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B01E562C600065882D /* CLLocationManager.swift */; };
@@ -32,9 +29,6 @@
 
 /* Begin PBXFileReference section */
 		885EC1091E3384BB00A61FA1 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
-		885EC10A1E3384BB00A61FA1 /* UINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
-		885EC10B1E3384BB00A61FA1 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		885EC10C1E3384BB00A61FA1 /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		88A1E1671E337FE300CFA0CD /* UIKitFringes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitFringes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitFringes.h; sourceTree = "<group>"; };
 		88A1E16B1E337FE300CFA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,9 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				885EC1091E3384BB00A61FA1 /* UIApplication.swift */,
-				885EC10A1E3384BB00A61FA1 /* UINavigationController.swift */,
-				885EC10B1E3384BB00A61FA1 /* UIViewController.swift */,
-				885EC10C1E3384BB00A61FA1 /* UIWindow.swift */,
 				88FED40D1E59B7AE00217628 /* TimeZoneProvider.swift */,
 				88FED4111E59BA3500217628 /* DateProvider.swift */,
 				88FED41A1E59BE6B00217628 /* ScheduledTimer.swift */,
@@ -245,9 +236,6 @@
 				885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */,
 				88FED40E1E59B7AF00217628 /* TimeZoneProvider.swift in Sources */,
 				88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */,
-				885EC10E1E3384BB00A61FA1 /* UINavigationController.swift in Sources */,
-				885EC10F1E3384BB00A61FA1 /* UIViewController.swift in Sources */,
-				885EC1101E3384BB00A61FA1 /* UIWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

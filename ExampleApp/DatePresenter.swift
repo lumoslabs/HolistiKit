@@ -3,9 +3,9 @@ import UIKitFringes
 class DatePresenter {
 
     fileprivate let datePrinter: DatePrinter
-    fileprivate weak var viewController: DateViewControlling!
+    fileprivate weak var viewController: DateViewController!
 
-    func set(viewController: DateViewControlling) {
+    func set(viewController: DateViewController) {
         self.viewController = viewController
     }
 

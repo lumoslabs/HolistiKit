@@ -3,13 +3,13 @@ import UIKitFringes
 class TimerPresenter {
 
     private let datePrinter: DatePrinter
-    private weak var viewController: TimerViewControlling!
+    private weak var viewController: TimerViewController!
 
     init(datePrinter: DatePrinter) {
         self.datePrinter = datePrinter
     }
 
-    func set(viewController: TimerViewControlling) {
+    func set(viewController: TimerViewController) {
         self.viewController = viewController
     }
     

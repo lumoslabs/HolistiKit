@@ -8,7 +8,7 @@ class RootRouter {
         self.examplesRouterFactory = examplesRouterFactory
     }
 
-    func present(onWindow window: Windowing) {
+    func present(onWindow window: UIWindow) {
         let examplesRouter = examplesRouterFactory.create()
         examplesRouter.present(onWindow: window)
     }

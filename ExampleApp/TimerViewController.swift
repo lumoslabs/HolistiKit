@@ -1,7 +1,7 @@
 import UIKit
 import UIKitFringes
 
-class TimerViewController: UITableViewController, TimerViewControlling {
+class TimerViewController: UITableViewController {
 
     var interactor: TimerInteractor!
     
@@ -19,10 +19,4 @@ class TimerViewController: UITableViewController, TimerViewControlling {
         super.viewDidLoad()
         interactor.viewDidLoad()
     }
-}
-
-protocol TimerViewControlling: class, ViewControlling {
-    
-    func set(title text: String)
-    func set(dateLabel text: String)
 }

@@ -11,7 +11,7 @@ class ExamplesModuleFactory {
         self.errorLogger = errorLogger
     }
 
-    func create(withRouter router: ExamplesRouter) -> ViewControlling {
+    func create(withRouter router: ExamplesRouter) -> UIViewController {
         let presenter = ExamplesPresenter(router: router)
         let interactor = ExamplesInteractor(presenter: presenter,
                                             errorLogger: errorLogger)

@@ -14,6 +14,6 @@ class UIViewControllerTests: FringesTest {
         examplesUI.tapUIViewControllerRow()
         let vc = uiViewControllerUI
         uiViewControllerUI.tapPresentViewController()
-        XCTAssertNotNil(vc?.presentedViewControlling)
+        XCTAssertNotNil(vc?.presentedViewController)
     }
 }

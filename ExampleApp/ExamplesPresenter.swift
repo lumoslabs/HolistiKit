@@ -3,13 +3,13 @@ import UIKitFringes
 class ExamplesPresenter {
 
     fileprivate let router: ExamplesRouter
-    fileprivate weak var viewController: ExamplesViewControlling?
+    fileprivate weak var viewController: ExamplesViewController?
 
     init(router: ExamplesRouter) {
         self.router = router
     }
 
-    func set(viewController: ExamplesViewControlling) {
+    func set(viewController: ExamplesViewController) {
         self.viewController = viewController
     }
     
@@ -24,7 +24,7 @@ class ExamplesPresenter {
 
 extension ExamplesPresenter: PushingPresenter {
 
-    func push(viewController: ViewControlling) {
-        self.viewController?.navigationControlling?.push(viewController: viewController, animated: true)
+    func push(viewController: UIViewController) {
+        self.viewController?.navigationController?.pushViewController(viewController, animated: true)
     }
 }

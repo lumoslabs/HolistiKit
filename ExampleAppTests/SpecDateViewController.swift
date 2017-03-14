@@ -3,8 +3,10 @@ import SpecUIKitFringes
 
 class SpecDateViewControllerFactory: DateViewControllerFactoryProtocol {
 
-    func create(withInteractor interactor: DateInteractor) -> DateViewControlling {
-        return SpecDateViewController(interactor: interactor)
+    func create(withInteractor interactor: DateInteractor) -> DateViewController {
+        let viewController = SpecDateViewController()
+        viewController.interactor = interactor
+        return viewController
     }
 }
 
@@ -14,26 +16,15 @@ protocol SpecDateViewControllerUI {
     var title: String? { get }
 }
 
-class SpecDateViewController: SpecViewController, DateViewControlling, SpecDateViewControllerUI {
+class SpecDateViewController: DateViewController, SpecDateViewControllerUI {
 
     private(set) var dateLabel: String?
-    private(set) var title: String?
-    private let interactor: DateInteractor
 
-    init(interactor: DateInteractor) {
-        self.interactor = interactor
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        interactor.viewDidLoad()
-    }
-
-    func set(dateLabel text: String) {
+    override func set(dateLabel text: String) {
         dateLabel = text
     }
 
-    func set(title text: String) {
+    override func set(title text: String) {
         title = text
     }
 }

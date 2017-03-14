@@ -14,7 +14,7 @@ class DateModuleFactory {
         self.timeZoneProvider = timeZoneProvider
     }
 
-    func create() -> ViewControlling {
+    func create() -> UIViewController {
         let datePrinter = DatePrinter(timeZoneProvider: timeZoneProvider)
         let presenter = DatePresenter(datePrinter: datePrinter)
         let interactor = DateInteractor(presenter: presenter,

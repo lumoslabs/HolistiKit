@@ -14,7 +14,7 @@ class CLLocationManagerModuleFactory {
         self.errorLogger = errorLogger
     }
 
-    func create() -> ViewControlling {
+    func create() -> UIViewController {
         let presenter = CLLocationManagerPresenter()
         let locationManager = locationManagerFactory.create()
         let interactor = CLLocationManagerInteractor(presenter: presenter,

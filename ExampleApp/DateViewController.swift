@@ -1,7 +1,7 @@
 import UIKit
 import UIKitFringes
 
-class DateViewController: UITableViewController, DateViewControlling {
+class DateViewController: UITableViewController {
 
     var interactor: DateInteractor!
     
@@ -19,10 +19,4 @@ class DateViewController: UITableViewController, DateViewControlling {
         super.viewDidLoad()
         interactor.viewDidLoad()
     }
-}
-
-protocol DateViewControlling: class, ViewControlling {
-    
-    func set(dateLabel text: String)
-    func set(title text: String)
 }
