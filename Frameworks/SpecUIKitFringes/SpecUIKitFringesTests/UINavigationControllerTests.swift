@@ -37,4 +37,23 @@ class UINavigationControllerTests: XCTestCase {
         XCTAssertEqual(first.navigationController, navigationController)
         XCTAssertEqual(second.navigationController, navigationController)
     }
+
+    func test_settingViewControllersWhenThereIsAlreadyAViewController() {
+        let first = RecordingUIViewController(recorder: recorder)
+        navigationController.push(viewController: first, animated: false)
+        recorder.events.removeAll()
+        
+        let second = RecordingUIViewController(recorder: recorder)
+        navigationController.setViewControllers([second], animated: false)
+        XCTAssertEqual(recorder.events, [.setViewControllers(navigationController, [second]),
+                                         .viewDidLoad(second),
+                                         .viewWillDisappear(first),
+                                         .viewWillAppear(second),
+                                         .viewDidDisappear(first),
+                                         .viewDidAppear(second)])
+        XCTAssertEqual(navigationController.viewControllers, [second])
+        XCTAssertEqual(navigationController.topViewController, second)
+        XCTAssertNil(first.navigationController)
+        XCTAssertEqual(second.navigationController, navigationController)
+    }
 }

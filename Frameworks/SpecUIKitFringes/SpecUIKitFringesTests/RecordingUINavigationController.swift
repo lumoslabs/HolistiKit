@@ -20,6 +20,11 @@ class RecordingUINavigationController: UINavigationController {
         super.pushViewController(viewController, animated: animated)
     }
 
+    override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+        record(.setViewControllers(self, viewControllers))
+        super.setViewControllers(viewControllers, animated: animated)
+    }
+
     private func record(_ event: Recorder.Event) { recorder.record(event) }
     required init?(coder aDecoder: NSCoder) { fatalError() }
 }
