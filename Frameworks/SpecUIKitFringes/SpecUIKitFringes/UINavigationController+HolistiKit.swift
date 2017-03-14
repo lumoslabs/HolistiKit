@@ -6,6 +6,8 @@ extension UINavigationController {
         guard self === UINavigationController.self else { return }
         [(#selector(UINavigationController.pushViewController(_:animated:)),
           #selector(UINavigationController.holistikit_pushViewController(_:animated:))),
+         (#selector(getter: UINavigationController.topViewController),
+          #selector(getter: UINavigationController._topViewController)),
          (#selector(getter: UINavigationController.viewControllers),
           #selector(getter: UINavigationController._viewControllers)),
          (#selector(setter: UINavigationController.viewControllers),
@@ -28,6 +30,10 @@ extension UINavigationController {
     @objc private var _viewControllers: [UIViewController] {
         get { return objc_getAssociatedObject(self, &_viewControllersKey) as? [UIViewController] ?? [UIViewController]() }
         set { objc_setAssociatedObject(self, &_viewControllersKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
+    
+    @objc private var _topViewController: UIViewController? {
+        return viewControllers.last
     }
 }
 
