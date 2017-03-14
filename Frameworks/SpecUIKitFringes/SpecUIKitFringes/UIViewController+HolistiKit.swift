@@ -9,7 +9,9 @@ extension UIViewController {
          (#selector(getter: UIViewController.presentedViewController),
           #selector(getter: UIViewController._presentedViewController)),
          (#selector(getter: UIViewController.presentingViewController),
-          #selector(getter: UIViewController._presentingViewController))].forEach {
+          #selector(getter: UIViewController._presentingViewController)),
+         (#selector(getter: UIViewController.navigationController),
+          #selector(getter: UIViewController._navigationController))].forEach {
             swizzle(UIViewController.self, from: $0, to: $1)
         }
     }
@@ -33,7 +35,13 @@ extension UIViewController {
         get { return objc_getAssociatedObject(self, &_presentingViewControllerKey) as? UIViewController }
         set { objc_setAssociatedObject(self, &_presentingViewControllerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
+
+    internal var _navigationController: UINavigationController? {
+        get { return objc_getAssociatedObject(self, &_navigationControllerKey) as? UINavigationController }
+        set { objc_setAssociatedObject(self, &_navigationControllerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
 }
 
 private var _presentedViewControllerKey: Void?
 private var _presentingViewControllerKey: Void?
+private var _navigationControllerKey: Void?

@@ -12,13 +12,19 @@ class UINavigationControllerTests: XCTestCase {
         navigationController = RecordingUINavigationController(recorder: recorder)
     }
 
+    func test_pushingAViewController() {
+        let viewController = RecordingUIViewController(recorder: recorder)
+        navigationController.pushViewController(viewController, animated: false)
+        XCTAssertEqual(viewController.navigationController, navigationController)
+    }
+
     func test_pushingASecondViewController() {
         let first = RecordingUIViewController(recorder: recorder)
         navigationController.push(viewController: first, animated: false)
         recorder.events.removeAll()
         
         let second = RecordingUIViewController(recorder: recorder)
-        navigationController.push(viewController: second, animated: false)
+        navigationController.pushViewController(second, animated: false)
         XCTAssertEqual(recorder.events, [.pushViewController(navigationController, second),
                                          .viewDidLoad(second),
                                          .viewWillDisappear(first),
@@ -26,5 +32,7 @@ class UINavigationControllerTests: XCTestCase {
                                          .viewDidDisappear(first),
                                          .viewDidAppear(second)])
         XCTAssertEqual(navigationController.viewControllers, [first, second])
+        XCTAssertEqual(first.navigationController, navigationController)
+        XCTAssertEqual(second.navigationController, navigationController)
     }
 }

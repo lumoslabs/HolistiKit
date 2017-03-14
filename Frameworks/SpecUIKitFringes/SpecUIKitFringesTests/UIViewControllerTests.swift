@@ -23,11 +23,4 @@ class UIViewControllerTests: XCTestCase {
         XCTAssertEqual(subject.presentedViewController, presentedViewController)
         XCTAssertEqual(presentedViewController.presentingViewController, subject)
     }
-
-    func test_gettingTheNavigationController() {
-//        let navigationController = SpecNavigationController()
-//        XCTAssertNil(subject.navigationControlling)
-//        navigationController.push(viewController: subject, animated: true)
-//        XCTAssertNotNil(subject.navigationControlling)
-    }
 }
