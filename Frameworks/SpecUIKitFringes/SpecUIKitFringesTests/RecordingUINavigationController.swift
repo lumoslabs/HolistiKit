@@ -15,16 +15,6 @@ class RecordingUINavigationController: UINavigationController {
     override func viewWillAppear(_ animated: Bool) { record(.viewWillAppear(self)) }
     override func viewWillDisappear(_ animated: Bool) { record(.viewWillDisappear(self)) }
     
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        record(.pushViewController(self, viewController))
-        super.pushViewController(viewController, animated: animated)
-    }
-
-    override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
-        record(.setViewControllers(self, viewControllers))
-        super.setViewControllers(viewControllers, animated: animated)
-    }
-
     private func record(_ event: Recorder.Event) { recorder.record(event) }
     required init?(coder aDecoder: NSCoder) { fatalError() }
 }

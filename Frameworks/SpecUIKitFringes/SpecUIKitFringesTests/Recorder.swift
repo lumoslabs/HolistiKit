@@ -8,8 +8,6 @@ class Recorder {
         case viewWillAppear(UIViewController)
         case viewDidAppear(UIViewController)
         case viewDidDisappear(UIViewController)
-        case pushViewController(UINavigationController, UIViewController)
-        case setViewControllers(UINavigationController, [UIViewController])
     }
 
     var events = [Event]()
@@ -32,10 +30,6 @@ func ==(lhs: Recorder.Event, rhs: Recorder.Event) -> Bool {
         return subL == subR
     case (.viewDidDisappear(let subL), .viewDidDisappear(let subR)):
         return subL == subR
-    case (.pushViewController(let navL, let vcL), .pushViewController(let navR, let vcR)):
-        return navL == navR && vcL == vcR
-    case (.setViewControllers(let navL, let vcL), .setViewControllers(let navR, let vcR)):
-        return navL == navR && vcL == vcR
     default:
         return false
     }

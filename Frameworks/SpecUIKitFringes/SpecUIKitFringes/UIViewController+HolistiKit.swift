@@ -6,6 +6,8 @@ extension UIViewController {
         guard self === UIViewController.self else { return }
         [(#selector(UIViewController.present(_:animated:completion:)),
           #selector(UIViewController.holistikit_present(_:animated:completion:))),
+         (#selector(UIViewController.dismiss(animated:completion:)),
+          #selector(UIViewController.holistikit_dismiss(animated:completion:))),
          (#selector(getter: UIViewController.presentedViewController),
           #selector(getter: UIViewController._presentedViewController)),
          (#selector(getter: UIViewController.presentingViewController),
@@ -14,6 +16,16 @@ extension UIViewController {
           #selector(getter: UIViewController._navigationController))].forEach {
             swizzle(UIViewController.self, from: $0, to: $1)
         }
+    }
+    
+    @objc private func holistikit_dismiss(animated: Bool, completion: (() -> Swift.Void)? = nil) {
+        let dismissedViewController = presentedViewController
+        _presentedViewController = nil
+        dismissedViewController?._presentingViewController = nil
+        dismissedViewController?.viewWillDisappear(animated)
+        self.viewWillAppear(animated)
+        self.viewDidAppear(animated)
+        dismissedViewController?.viewDidDisappear(animated)
     }
 
     @objc private func holistikit_present(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Swift.Void)? = nil) {

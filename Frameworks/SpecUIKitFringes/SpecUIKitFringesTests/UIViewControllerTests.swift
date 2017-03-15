@@ -23,4 +23,18 @@ class UIViewControllerTests: XCTestCase {
         XCTAssertEqual(subject.presentedViewController, presentedViewController)
         XCTAssertEqual(presentedViewController.presentingViewController, subject)
     }
+
+    func test_dismissingAViewController() {
+        let presentedViewController = RecordingUIViewController(recorder: recorder)
+        subject.present(presentedViewController, animated: false, completion: nil)
+        recorder.events.removeAll()
+
+        subject.dismiss(animated: false, completion: nil)
+        XCTAssertEqual(recorder.events, [.viewWillDisappear(presentedViewController),
+                                         .viewWillAppear(subject),
+                                         .viewDidAppear(subject),
+                                         .viewDidDisappear(presentedViewController)])
+        XCTAssertNil(subject.presentedViewController)
+        XCTAssertNil(presentedViewController.presentingViewController)
+    }
 }
