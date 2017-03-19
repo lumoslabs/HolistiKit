@@ -26,6 +26,7 @@ extension UIViewController {
         self.viewWillAppear(animated)
         self.viewDidAppear(animated)
         dismissedViewController?.viewDidDisappear(animated)
+        completion?()
     }
 
     @objc private func holistikit_present(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Swift.Void)? = nil) {
@@ -36,6 +37,7 @@ extension UIViewController {
         viewControllerToPresent.viewWillAppear(animated)
         viewControllerToPresent.viewDidAppear(animated)
         self.viewDidDisappear(animated)
+        completion?()
     } 
     
     @objc private var _presentedViewController: UIViewController? {

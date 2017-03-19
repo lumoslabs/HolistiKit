@@ -8,6 +8,7 @@ class Recorder {
         case viewWillAppear(UIViewController)
         case viewDidAppear(UIViewController)
         case viewDidDisappear(UIViewController)
+        case custom(String)
     }
 
     var events = [Event]()
@@ -30,6 +31,8 @@ func ==(lhs: Recorder.Event, rhs: Recorder.Event) -> Bool {
         return subL == subR
     case (.viewDidDisappear(let subL), .viewDidDisappear(let subR)):
         return subL == subR
+    case (.custom(let idL), .custom(let idR)):
+        return idL == idR
     default:
         return false
     }
