@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882004161E831F4E005F43C9 /* DispatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004151E831F4E005F43C9 /* DispatchHandler.swift */; };
 		885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1091E3384BB00A61FA1 /* UIApplication.swift */; };
 		88A1E1711E337FE300CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1671E337FE300CFA0CD /* UIKitFringes.framework */; };
 		88A1E1781E337FE300CFA0CD /* UIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		882004151E831F4E005F43C9 /* DispatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchHandler.swift; sourceTree = "<group>"; };
 		885EC1091E3384BB00A61FA1 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		88A1E1671E337FE300CFA0CD /* UIKitFringes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitFringes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitFringes.h; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				885EC1091E3384BB00A61FA1 /* UIApplication.swift */,
+				882004151E831F4E005F43C9 /* DispatchHandler.swift */,
 				88FED40D1E59B7AE00217628 /* TimeZoneProvider.swift */,
 				88FED4111E59BA3500217628 /* DateProvider.swift */,
 				88FED41A1E59BE6B00217628 /* ScheduledTimer.swift */,
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				882004161E831F4E005F43C9 /* DispatchHandler.swift in Sources */,
 				88FED42B1E59C3C300217628 /* URLSessionProtocol.swift in Sources */,
 				88FED4121E59BA3500217628 /* DateProvider.swift in Sources */,
 				88FED41B1E59BE6B00217628 /* ScheduledTimer.swift in Sources */,

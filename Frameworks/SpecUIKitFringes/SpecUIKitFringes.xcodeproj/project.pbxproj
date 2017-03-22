@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882004121E831CA9005F43C9 /* SpecDispatchHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004111E831CA9005F43C9 /* SpecDispatchHandlerTests.swift */; };
+		882004141E831D65005F43C9 /* SpecDispatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004131E831D65005F43C9 /* SpecDispatchHandler.swift */; };
 		883BC3E71E758E2A00B2D7DB /* UIViewController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */; };
 		883BC3E91E75A18600B2D7DB /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E81E75A18600B2D7DB /* Swizzle.swift */; };
 		883BC3EB1E75A3C400B2D7DB /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		882004111E831CA9005F43C9 /* SpecDispatchHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDispatchHandlerTests.swift; sourceTree = "<group>"; };
+		882004131E831D65005F43C9 /* SpecDispatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDispatchHandler.swift; sourceTree = "<group>"; };
 		883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HolistiKit.swift"; sourceTree = "<group>"; };
 		883BC3E81E75A18600B2D7DB /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
 		883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
@@ -189,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				88FED4071E58F10000217628 /* SpecSettingsApp.swift */,
+				882004131E831D65005F43C9 /* SpecDispatchHandler.swift */,
 				88FED42C1E59C50F00217628 /* App Lifecycle */,
 				88FED42D1E59C51600217628 /* View Lifecycle */,
 				88FED42E1E59C51E00217628 /* URLSession */,
@@ -213,6 +218,7 @@
 				88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */,
 				88B4E0721E59D6920004C839 /* SpecScheduledTimerTests.swift */,
 				88D2C8E51E56E3D80065882D /* SpecDialogManagerTests.swift */,
+				882004111E831CA9005F43C9 /* SpecDispatchHandlerTests.swift */,
 				885EC1321E338E8B00A61FA1 /* UIWindowTests.swift */,
 				883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */,
 				88EAAF141E76982300C2B769 /* UINavigationControllerTests.swift */,
@@ -476,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				882004141E831D65005F43C9 /* SpecDispatchHandler.swift in Sources */,
 				88FED4171E59BDF800217628 /* SpecScheduledTimer.swift in Sources */,
 				88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */,
 				88FED4041E58D39700217628 /* SpecLocationManagerFactory.swift in Sources */,
@@ -509,6 +516,7 @@
 			files = (
 				885EC1531E33C0E900A61FA1 /* SpecSharedApplicationTests.swift in Sources */,
 				885EC1331E338E8B00A61FA1 /* UIWindowTests.swift in Sources */,
+				882004121E831CA9005F43C9 /* SpecDispatchHandlerTests.swift in Sources */,
 				88B4E0731E59D6920004C839 /* SpecScheduledTimerTests.swift in Sources */,
 				88D2C8D21E562FF70065882D /* AuthorizationInSettingsAppTests.swift in Sources */,
 				883BC3ED1E75A41E00B2D7DB /* RecordingUIViewController.swift in Sources */,
