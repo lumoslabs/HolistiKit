@@ -1,12 +1,12 @@
 import Foundation
 import UIKitFringes
 
-class SpecDispatchHandler: DispatchHandling {
+public class SpecDispatchHandler: DispatchHandling {
 
     private let dateProvider: SpecDateProvider
     private var asyncBlocks = [AsyncBlock]()
 
-    init(dateProvider: SpecDateProvider) {
+    public init(dateProvider: SpecDateProvider) {
         self.dateProvider = dateProvider
         dateProvider.observe(on: self, selector: #selector(dateDidChange))
     }
