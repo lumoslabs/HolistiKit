@@ -2,7 +2,7 @@ import Foundation
 
 public protocol DispatchHandling {
     
-    func sync(on: DispatchQueue, block: @escaping () -> Void)
+    func sync(on: DispatchQueue, block: () -> Void)
     func async(on: DispatchQueue, block: @escaping () -> Void)
 }
 
@@ -10,7 +10,7 @@ public class DispatchHandler {
 
     public init() { }
 
-    public func sync(on queue: DispatchQueue, block: @escaping () -> Void) {
+    public func sync(on queue: DispatchQueue, block: () -> Void) {
         queue.sync(execute: block)
     }
 
