@@ -4,10 +4,10 @@ public protocol DispatchHandling {
     
     func sync(on: DispatchQueue, block: () -> Void)
     func async(on: DispatchQueue, block: @escaping () -> Void)
-    func async(on _: DispatchQueue, after: TimeInterval, block: @escaping () -> Void)
+    func async(on: DispatchQueue, after: TimeInterval, block: @escaping () -> Void)
 }
 
-public class DispatchHandler {
+public class DispatchHandler: DispatchHandling {
 
     public init() { }
 
@@ -19,7 +19,7 @@ public class DispatchHandler {
         queue.async(execute: block)
     }
 
-    func async(on queue: DispatchQueue, after: TimeInterval, block: @escaping () -> Void) {
+    public func async(on queue: DispatchQueue, after: TimeInterval, block: @escaping () -> Void) {
         queue.asyncAfter(deadline: .now() + after, execute: block)
     }
 }
