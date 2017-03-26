@@ -5,10 +5,12 @@ class SpecSharedApplicationTests: XCTestCase {
 
     var subject: SpecSharedApplication!
     var system: SpecSystem!
+    var recorder: Recorder!
     
     override func setUp() {
         super.setUp()
-        system = RecordingSpecSystem()
+        recorder = Recorder()
+        system = RecordingSpecSystem(recorder: recorder)
         subject = SpecSharedApplication(system: system)
     }
 

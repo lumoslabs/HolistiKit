@@ -5,25 +5,25 @@ class HomeButtonTests: SpecSystemTestCase {
 
     func test_tappingOnTheHomeInTheSpringBoard() {
         subject.tapHomeButton()
-        XCTAssertNil(appDelegate)
+        XCTAssertNil(subject.appDelegate)
     }
 
     func test_doubleTappingOnTheHomeButtonInTheSpringBoard() {
         subject.doubleTapHomeButton()
-        XCTAssertNil(appDelegate)
+        XCTAssertNil(subject.appDelegate)
     }
 
     func test_tappingOnTheHomeButtonInTheApp() {
         subject.tapAppIcon()
-        appDelegate.clearEvents()
+        recorder.removeAllEvents()
         subject.tapHomeButton()
-        XCTAssertEqual(appDelegate.events, [ .applicationWillResignActive, .applicationDidEnterBackground ])
+        XCTAssertEqual(recorder.events, [.applicationWillResignActive, .applicationDidEnterBackground])
     }
 
     func test_doubleTappingOnTheHomeButtonInTheApp() {
         subject.tapAppIcon()
-        appDelegate.clearEvents()
+        recorder.removeAllEvents()
         subject.doubleTapHomeButton()
-        XCTAssertEqual(appDelegate.events, [ .applicationWillResignActive ])
+        XCTAssertEqual(recorder.events, [.applicationWillResignActive])
     }
 }

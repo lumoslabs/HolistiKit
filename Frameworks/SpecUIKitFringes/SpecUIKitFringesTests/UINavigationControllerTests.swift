@@ -23,7 +23,7 @@ class UINavigationControllerTests: XCTestCase {
     func test_pushingASecondViewController() {
         let first = RecordingUIViewController(recorder: recorder)
         navigationController.pushViewController(first, animated: false)
-        recorder.events.removeAll()
+        recorder.removeAllEvents()
         
         let second = RecordingUIViewController(recorder: recorder)
         navigationController.pushViewController(second, animated: false)
@@ -41,7 +41,7 @@ class UINavigationControllerTests: XCTestCase {
     func test_settingViewControllersWhenThereIsAlreadyAViewController() {
         let first = RecordingUIViewController(recorder: recorder)
         navigationController.pushViewController(first, animated: false)
-        recorder.events.removeAll()
+        recorder.removeAllEvents()
         
         let second = RecordingUIViewController(recorder: recorder)
         navigationController.setViewControllers([second], animated: false)
@@ -60,7 +60,7 @@ class UINavigationControllerTests: XCTestCase {
         let first = RecordingUIViewController(recorder: recorder)
         let second = RecordingUIViewController(recorder: recorder)
         navigationController.setViewControllers([first, second], animated: false)
-        recorder.events.removeAll()
+        recorder.removeAllEvents()
 
         let poppedViewController = navigationController.popViewController(animated: false)
         XCTAssertEqual(recorder.events, [.viewWillDisappear(second),

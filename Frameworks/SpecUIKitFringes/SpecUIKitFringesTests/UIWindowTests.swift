@@ -24,7 +24,7 @@ class UIWindowTests: XCTestCase {
     func test_changingRootViewController() {
         let first = RecordingUIViewController(recorder: recorder)
         subject.rootViewController = first
-        recorder.events.removeAll()
+        recorder.removeAllEvents()
 
         let second = RecordingUIViewController(recorder: recorder)
         subject.rootViewController = second
@@ -39,7 +39,7 @@ class UIWindowTests: XCTestCase {
     func test_removingRootViewController() {
         let viewController = RecordingUIViewController(recorder: recorder)
         subject.rootViewController = viewController
-        recorder.events.removeAll()
+        recorder.removeAllEvents()
         
         subject.rootViewController = nil
         XCTAssertEqual(recorder.events, [.viewWillDisappear(viewController),

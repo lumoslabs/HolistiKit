@@ -3,20 +3,10 @@
 class RecordingSpecApplicationDelegate: SpecApplicationDelegateProtocol {
     
     public var window: UIWindow!
-    
-    enum Event {
-        case applicationDidLaunch
-        case applicationWillResignActive
-        case applicationDidEnterBackground
-        case applicationWillEnterForeground
-        case applicationDidBecomeActive
-        case applicationWillTerminate
-    }
+    private let recorder: Recorder
 
-    private(set) var events = [Event]()
-
-    func clearEvents() {
-        events.removeAll()
+    init(recorder: Recorder) {
+        self.recorder = recorder
     }
 
     func applicationDidLaunch() {
@@ -43,7 +33,7 @@ class RecordingSpecApplicationDelegate: SpecApplicationDelegateProtocol {
         add(event: .applicationWillTerminate)
     }
     
-    private func add(event: Event) {
-        events.append(event)
+    private func add(event: Recorder.Event) {
+        recorder.record(event)
     }
 }

@@ -6,57 +6,56 @@ class AppSwitcherTests: SpecSystemTestCase {
     func test_tappingOnTheHomeButtonComingFromTheSpringBoard() {
         subject.doubleTapHomeButton()
         subject.tapHomeButton()
-        XCTAssertNil(appDelegate)
+        XCTAssertNil(subject.appDelegate)
     }
 
     func test_doubleTappingOnTheHomeButtonComingFromTheSpringBoard() {
         subject.doubleTapHomeButton()
         subject.doubleTapHomeButton()
-        XCTAssertNil(appDelegate)
+        XCTAssertNil(subject.appDelegate)
     }
 
     func test_tappingOnTheHomeButtonComingFromTheSpringBoardWhileTheAppIsRunning() {
         subject.tapAppIcon()
         subject.tapHomeButton()
         subject.doubleTapHomeButton()
-        appDelegate.clearEvents()
+        recorder.removeAllEvents()
         subject.tapHomeButton()
-        XCTAssertEqual(appDelegate.events, [ ])
+        XCTAssertEqual(recorder.events, [])
     }
 
     func test_doubldTappingOnTheHomeButtonComingFromTheSpringBoardWhileTheAppIsRunning() {
         subject.tapAppIcon()
         subject.tapHomeButton()
         subject.doubleTapHomeButton()
-        appDelegate.clearEvents()
+        recorder.removeAllEvents()
         subject.doubleTapHomeButton()
-        XCTAssertEqual(appDelegate.events, [ ])
+        XCTAssertEqual(recorder.events, [])
     }
 
     func test_tappingOnTheHomeButtonComingFromTheApp() {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
-        appDelegate.clearEvents()
+        recorder.removeAllEvents()
         subject.tapHomeButton()
-        XCTAssertEqual(appDelegate.events, [ .applicationDidBecomeActive ])
+        XCTAssertEqual(recorder.events, [.applicationDidBecomeActive])
     }
 
     func test_tappingOnTheAppScreenshot() {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
-        appDelegate.clearEvents()
+        recorder.removeAllEvents()
         subject.tapAppScreenshot()
-        XCTAssertEqual(appDelegate.events, [ .applicationDidBecomeActive ])
+        XCTAssertEqual(recorder.events, [.applicationDidBecomeActive])
     }
 
     func test_swipingUpOnTheAppScreenshotWhenTheAppIsRunning() {
         subject.tapAppIcon()
         subject.doubleTapHomeButton()
-        appDelegate.clearEvents()
-        let retainedAppDelegate = appDelegate
+        recorder.removeAllEvents()
         subject.swipeUpAppScreenshot()
-        XCTAssertEqual(retainedAppDelegate!.events, [ .applicationDidEnterBackground, .applicationWillTerminate ])
-        XCTAssertNil(appDelegate)
+        XCTAssertEqual(recorder.events, [.applicationDidEnterBackground, .applicationWillTerminate])
+        XCTAssertNil(subject.appDelegate)
     }
 
     func test_tappingOnTheAppScreenshotWhileOnTheSpringBoard() {

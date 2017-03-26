@@ -30,7 +30,7 @@ class UIViewControllerTests: XCTestCase {
     func test_dismissingAViewController() {
         let presentedViewController = RecordingUIViewController(recorder: recorder)
         subject.present(presentedViewController, animated: false, completion: nil)
-        recorder.events.removeAll()
+        recorder.removeAllEvents()
 
         subject.dismiss(animated: false, completion: {
             self.recorder.record(.custom("completionCalled"))

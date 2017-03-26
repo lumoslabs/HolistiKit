@@ -4,15 +4,13 @@ import XCTest
 class SpecSystemTestCase: XCTestCase {
 
     var subject: SpecSystem!
+    var recorder: Recorder!
     var errorHandler: SpecErrorHandler!
     
     override func setUp() {
         super.setUp()
         errorHandler = SpecErrorHandler()
-        subject = RecordingSpecSystem(errorHandler: errorHandler)
-    }
-
-    var appDelegate: RecordingSpecApplicationDelegate! {
-        return subject.appDelegate as? RecordingSpecApplicationDelegate
+        recorder = Recorder()
+        subject = RecordingSpecSystem(recorder: recorder, errorHandler: errorHandler)
     }
 }
