@@ -16,6 +16,6 @@ public class SpecSharedApplication: ApplicationProtocol {
             system.jumpToSettings()
             return true
         }
-        return false
+        fatalError("Add tests/implement other URL handling once it's needed.")
     }
 }
