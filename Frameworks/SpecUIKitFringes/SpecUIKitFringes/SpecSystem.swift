@@ -14,10 +14,11 @@ open class SpecSystem {
     private var locations: [Location] = [.springBoard]
     private var screenshotInAppSwitcher = false
 
-    private enum Location {
+    public enum Location {
         case springBoard
         case app
         case appSwitcher
+        case settings
     }
 
     public struct AppDelegateBundle {
@@ -66,6 +67,8 @@ open class SpecSystem {
             appDelegate.applicationWillResignActive()
             appDelegate.applicationDidEnterBackground()
             move(to: .springBoard)
+        case .settings:
+            move(to: .springBoard)
         case .springBoard:
             break;
         }
@@ -87,7 +90,7 @@ open class SpecSystem {
         case .app:
             appDelegate.applicationWillResignActive()
             move(to: .appSwitcher)
-        case .springBoard:
+        case .springBoard, .settings:
             move(to: .appSwitcher)
         }
     }
@@ -108,6 +111,12 @@ open class SpecSystem {
         screenshotInAppSwitcher = false
     }
 
+    internal func jumpToSettings() {
+        appDelegate.applicationWillResignActive()
+        appDelegate.applicationDidEnterBackground()
+        move(to: .settings)
+    }
+
     private func move(to location: Location) {
         locations.append(location)
     }
@@ -116,7 +125,7 @@ open class SpecSystem {
         return self.location == location
     }
 
-    private var location: Location {
+    public var location: Location {
         return locations.last!
     }
 
