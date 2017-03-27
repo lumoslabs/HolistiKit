@@ -11,6 +11,7 @@
 		882004141E831D65005F43C9 /* SpecDispatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004131E831D65005F43C9 /* SpecDispatchHandler.swift */; };
 		8820041C1E8989B1005F43C9 /* UIAlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820041B1E8989B1005F43C9 /* UIAlertControllerTests.swift */; };
 		882004201E898D3A005F43C9 /* RecordingUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820041F1E898D3A005F43C9 /* RecordingUIAlertController.swift */; };
+		882004241E8994EC005F43C9 /* UIAlertController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004231E8994EC005F43C9 /* UIAlertController+HolistiKit.swift */; };
 		883BC3E71E758E2A00B2D7DB /* UIViewController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */; };
 		883BC3E91E75A18600B2D7DB /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E81E75A18600B2D7DB /* Swizzle.swift */; };
 		883BC3EB1E75A3C400B2D7DB /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */; };
@@ -83,6 +84,7 @@
 		882004131E831D65005F43C9 /* SpecDispatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDispatchHandler.swift; sourceTree = "<group>"; };
 		8820041B1E8989B1005F43C9 /* UIAlertControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerTests.swift; sourceTree = "<group>"; };
 		8820041F1E898D3A005F43C9 /* RecordingUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingUIAlertController.swift; sourceTree = "<group>"; };
+		882004231E8994EC005F43C9 /* UIAlertController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+HolistiKit.swift"; sourceTree = "<group>"; };
 		883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HolistiKit.swift"; sourceTree = "<group>"; };
 		883BC3E81E75A18600B2D7DB /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
 		883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				883BC3F41E75AEB800B2D7DB /* UIWindow+HolistiKit.swift */,
 				883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */,
 				88EAAF221E76FEF100C2B769 /* UINavigationController+HolistiKit.swift */,
+				882004231E8994EC005F43C9 /* UIAlertController+HolistiKit.swift */,
 			);
 			name = "View Lifecycle";
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				88FED4281E59C38300217628 /* SpecURLSession.swift in Sources */,
 				88FED4181E59BDF800217628 /* SpecTimerFactory.swift in Sources */,
 				88FED40A1E58F56300217628 /* SpecUserLocation.swift in Sources */,
+				882004241E8994EC005F43C9 /* UIAlertController+HolistiKit.swift in Sources */,
 				885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */,
 				88FED3F41E58690300217628 /* SpecDialogIdentifier.swift in Sources */,
 				883BC3E71E758E2A00B2D7DB /* UIViewController+HolistiKit.swift in Sources */,
