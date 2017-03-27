@@ -23,9 +23,10 @@ extension UIViewController {
         guard let _presenting = _presented.presentingViewController else { return }
         _presented._presentingViewController = nil
         _presenting._presentedViewController = nil
+        let hidesPresenter = !(_presented is UIAlertController)
         _presented.viewWillDisappear(animated)
-        _presenting.viewWillAppear(animated)
-        _presenting.viewDidAppear(animated)
+        if hidesPresenter { _presenting.viewWillAppear(animated) }
+        if hidesPresenter { _presenting.viewDidAppear(animated) }
         _presented.viewDidDisappear(animated)
         completion?()
     }

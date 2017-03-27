@@ -24,4 +24,19 @@ class UIAlertControllerTests: XCTestCase {
         XCTAssertEqual(presentingViewController.presentedViewController, subject)
         XCTAssertEqual(subject.presentingViewController, presentingViewController)
     }
+
+    func test_dismissingAnAlertController() {
+        let presentingViewController = RecordingUIViewController(recorder: recorder)
+        presentingViewController.present(subject, animated: false, completion: nil)
+        recorder.removeAllEvents()
+
+        presentingViewController.dismiss(animated: false, completion: {
+            self.recorder.record(.custom("completionCalled"))
+        })
+        XCTAssertEqual(recorder.events, [.viewWillDisappear(subject),
+                                         .viewDidDisappear(subject),
+                                         .custom("completionCalled")])
+        XCTAssertNil(presentingViewController.presentedViewController)
+        XCTAssertNil(subject.presentingViewController)
+    }
 }
