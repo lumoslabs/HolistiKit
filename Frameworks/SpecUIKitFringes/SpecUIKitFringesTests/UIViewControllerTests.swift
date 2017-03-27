@@ -79,4 +79,10 @@ class UIViewControllerTests: XCTestCase {
         XCTAssertNil(middlePresentedViewController.presentedViewController)
         XCTAssertNil(topPresentedViewController.presentingViewController)
     }
+
+    func test_dismissingWithNothingPresented() {
+        subject.dismiss(animated: false, completion: nil)
+        XCTAssertEqual(recorder.events, [])
+        XCTAssertNil(subject.presentedViewController)
+    }
 }

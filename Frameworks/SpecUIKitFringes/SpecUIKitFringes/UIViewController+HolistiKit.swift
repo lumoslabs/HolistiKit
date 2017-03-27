@@ -20,7 +20,7 @@ extension UIViewController {
     
     @objc private func holistikit_dismiss(animated: Bool, completion: (() -> Swift.Void)? = nil) {
         let _presented = presentedViewController ?? self
-        let _presenting = _presented.presentingViewController!
+        guard let _presenting = _presented.presentingViewController else { return }
         _presented._presentingViewController = nil
         _presenting._presentedViewController = nil
         _presented.viewWillDisappear(animated)
