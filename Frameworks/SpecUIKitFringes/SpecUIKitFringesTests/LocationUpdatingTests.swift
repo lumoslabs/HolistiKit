@@ -1,6 +1,6 @@
 import XCTest
 import CoreLocation
-@testable import SpecUIKitFringes
+import SpecUIKitFringes
 
 class LocationUpdatingTests: SpecLocationManagerTestCase {
 

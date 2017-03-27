@@ -1,6 +1,6 @@
 import XCTest
 import UIKitFringes
-@testable import SpecUIKitFringes
+import SpecUIKitFringes
 
 class MultipleLocationManagersTests: SpecLocationManagerTestCase {
 

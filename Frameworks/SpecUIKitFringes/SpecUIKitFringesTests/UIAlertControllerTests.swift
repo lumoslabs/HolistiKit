@@ -1,5 +1,5 @@
 import XCTest
-@testable import SpecUIKitFringes
+import SpecUIKitFringes
 
 class UIAlertControllerTests: XCTestCase {
 

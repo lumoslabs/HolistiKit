@@ -13,7 +13,7 @@ public class SpecUserLocation {
         notifier.observe(on: observer, selector: selector)
     }
 
-    func userIsInBerlin() {
+    public func userIsInBerlin() {
         location = CLLocation(latitude: 52.52, longitude: 13.40)
     }
 }

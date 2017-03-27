@@ -1,4 +1,4 @@
-@testable import SpecUIKitFringes
+import SpecUIKitFringes
 
 class RecordingSpecApplicationDelegate: SpecApplicationDelegateProtocol {
     
