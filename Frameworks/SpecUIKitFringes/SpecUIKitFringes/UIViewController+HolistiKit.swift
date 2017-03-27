@@ -33,11 +33,12 @@ extension UIViewController {
     @objc private func holistikit_present(_ viewControllerToPresent: UIViewController, animated: Bool, completion: (() -> Swift.Void)? = nil) {
         _presentedViewController = viewControllerToPresent
         viewControllerToPresent._presentingViewController = self
+        let hidesPresenter = !(viewControllerToPresent is UIAlertController)
         viewControllerToPresent.viewDidLoad()
-        self.viewWillDisappear(animated)
+        if hidesPresenter { self.viewWillDisappear(animated) }
         viewControllerToPresent.viewWillAppear(animated)
         viewControllerToPresent.viewDidAppear(animated)
-        self.viewDidDisappear(animated)
+        if hidesPresenter { self.viewDidDisappear(animated) }
         completion?()
     } 
     
