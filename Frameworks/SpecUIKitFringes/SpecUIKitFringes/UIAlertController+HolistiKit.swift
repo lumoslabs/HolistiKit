@@ -11,7 +11,7 @@ extension UIAlertController {
         return unsafeBitCast(blockPtr, to: Handler.self)
     }
 
-    func tapAction(at index: Int) {
+    public func tapAction(at index: Int) {
         let action = actions[index]
         let actionHandler = handler(for: action)
         dismiss(animated: true, completion: nil)
