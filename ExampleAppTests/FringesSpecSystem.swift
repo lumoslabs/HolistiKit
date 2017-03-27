@@ -2,13 +2,13 @@ import SpecUIKitFringes
 
 class FringesSpecSystem: SpecSystem {
 
-    let sharedApplication = SpecSharedApplication()
     let dateProvider = SpecDateProvider()
     let timeZoneProvider = SpecTimeZoneProvider()
     let userLocation = SpecUserLocation()
     
     weak var urlSession: SpecURLSession!
     weak var dialogManager: SpecDialogManager!
+    weak var sharedApplication: SpecSharedApplication!
 
     override open func createAppDelegateBundle() -> AppDelegateBundle {
         // TODO if these were created via a factory which will aggregate their state it wouldn't be necessary to play this weak/strong game
@@ -22,12 +22,14 @@ class FringesSpecSystem: SpecSystem {
                                                                 userLocation: userLocation,
                                                                 locationServices: locationServices,
                                                                 locationAuthorizationStatus: locationAuthorizationStatus)
+        let _sharedApplication = SpecSharedApplication(system: self)
+        self.sharedApplication = _sharedApplication
         let appDelegate = SpecAppDelegate(sharedApplication: sharedApplication,
                                           dateProvider: dateProvider,
                                           timeZoneProvider: timeZoneProvider,
                                           urlSession: urlSession,
                                           locationManagerFactory: locationManagerFactory)
         return AppDelegateBundle(appDelegate: appDelegate,
-                                 temporarilyStrong: [urlSession, locationManagerFactory, dialogManager])
+                                 temporarilyStrong: [urlSession, locationManagerFactory, dialogManager, sharedApplication])
     }
 }
