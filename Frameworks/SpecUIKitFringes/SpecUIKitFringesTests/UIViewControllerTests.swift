@@ -60,4 +60,23 @@ class UIViewControllerTests: XCTestCase {
         XCTAssertNil(subject.presentedViewController)
         XCTAssertNil(presentedViewController.presentingViewController)
     }
+
+    func test_dismissingFromAPresentedAndPresentingViewController() {
+        let middlePresentedViewController = RecordingUIViewController(recorder: recorder)
+        subject.present(middlePresentedViewController, animated: false, completion: nil)
+        let topPresentedViewController = RecordingUIViewController(recorder: recorder)
+        middlePresentedViewController.present(topPresentedViewController, animated: false, completion: nil)
+        recorder.removeAllEvents()
+
+        middlePresentedViewController.dismiss(animated: false, completion: {
+            self.recorder.record(.custom("completionCalled"))
+        })
+        XCTAssertEqual(recorder.events, [.viewWillDisappear(topPresentedViewController),
+                                         .viewWillAppear(middlePresentedViewController),
+                                         .viewDidAppear(middlePresentedViewController),
+                                         .viewDidDisappear(topPresentedViewController),
+                                         .custom("completionCalled")])
+        XCTAssertNil(middlePresentedViewController.presentedViewController)
+        XCTAssertNil(topPresentedViewController.presentingViewController)
+    }
 }
