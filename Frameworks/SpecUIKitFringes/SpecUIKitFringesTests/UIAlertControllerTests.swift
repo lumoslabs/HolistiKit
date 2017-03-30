@@ -40,7 +40,7 @@ class UIAlertControllerTests: XCTestCase {
         XCTAssertNil(subject.presentingViewController)
     }
 
-    func test_respondingToAnAlertController() {
+    func test_tappingOnAnActionWithAHandler() {
         let presentingViewController = RecordingUIViewController(recorder: recorder)
         presentingViewController.present(subject, animated: false, completion: nil)
         recorder.removeAllEvents()
@@ -53,6 +53,20 @@ class UIAlertControllerTests: XCTestCase {
         XCTAssertEqual(recorder.events, [.viewWillDisappear(subject),
                                          .viewDidDisappear(subject),
                                          .custom("handlerCalledWith:\(action)")])
+        XCTAssertNil(presentingViewController.presentedViewController)
+        XCTAssertNil(subject.presentingViewController)
+    }
+
+    func test_tappingOnAnActionWithoutAHandler() {
+        let presentingViewController = RecordingUIViewController(recorder: recorder)
+        presentingViewController.present(subject, animated: false, completion: nil)
+        recorder.removeAllEvents()
+        let action = UIAlertAction(title: "action title", style: .default, handler: nil)
+        subject.addAction(action)
+        
+        subject.tapAction(at: 0)
+        XCTAssertEqual(recorder.events, [.viewWillDisappear(subject),
+                                         .viewDidDisappear(subject)])
         XCTAssertNil(presentingViewController.presentedViewController)
         XCTAssertNil(subject.presentingViewController)
     }
