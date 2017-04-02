@@ -13,7 +13,7 @@
 		882004201E898D3A005F43C9 /* RecordingUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820041F1E898D3A005F43C9 /* RecordingUIAlertController.swift */; };
 		882004241E8994EC005F43C9 /* UIAlertController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004231E8994EC005F43C9 /* UIAlertController+HolistiKit.swift */; };
 		882D6E861E910B2600A12BB7 /* SpecUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E851E910B2600A12BB7 /* SpecUserDefaultsTests.swift */; };
-		882D6E881E910B7500A12BB7 /* SpecUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E871E910B7500A12BB7 /* SpecUserDefaults.swift */; };
+		882D6E8E1E912AC000A12BB7 /* SpecUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E871E910B7500A12BB7 /* SpecUserDefaults.swift */; };
 		883BC3E71E758E2A00B2D7DB /* UIViewController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */; };
 		883BC3E91E75A18600B2D7DB /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E81E75A18600B2D7DB /* Swizzle.swift */; };
 		883BC3EB1E75A3C400B2D7DB /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */; };
@@ -501,6 +501,7 @@
 				88FED4171E59BDF800217628 /* SpecScheduledTimer.swift in Sources */,
 				88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */,
 				88FED4041E58D39700217628 /* SpecLocationManagerFactory.swift in Sources */,
+				882D6E8E1E912AC000A12BB7 /* SpecUserDefaults.swift in Sources */,
 				883BC3F51E75AEB800B2D7DB /* UIWindow+HolistiKit.swift in Sources */,
 				88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */,
 				88D2C8E41E56E3B40065882D /* SpecDialogManager.swift in Sources */,
@@ -531,7 +532,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				885EC1531E33C0E900A61FA1 /* SpecSharedApplicationTests.swift in Sources */,
-				882D6E881E910B7500A12BB7 /* SpecUserDefaults.swift in Sources */,
 				885EC1331E338E8B00A61FA1 /* UIWindowTests.swift in Sources */,
 				882004121E831CA9005F43C9 /* SpecDispatchHandlerTests.swift in Sources */,
 				88B4E0731E59D6920004C839 /* SpecScheduledTimerTests.swift in Sources */,
