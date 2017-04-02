@@ -10,6 +10,8 @@ class SpecUserDefaultsTests: XCTestCase {
         subject = SpecUserDefaults()
     }
 
+    // object
+
     func test_objectForKeyWhenNotNil() {
         subject.set("bar", forKey: "foo")
         let value = subject.object(forKey: "foo") as! String
@@ -20,6 +22,8 @@ class SpecUserDefaultsTests: XCTestCase {
         let value = subject.object(forKey: "foo")
         XCTAssertNil(value)
     }
+
+    // integer
 
     func test_integerForKeyWhenAnInteger() {
         subject.set(42, forKey: "foo")
@@ -54,5 +58,66 @@ class SpecUserDefaultsTests: XCTestCase {
         subject.set(true, forKey: "foo")
         let value = subject.integer(forKey: "foo")
         XCTAssertEqual(value, 1)
+    }
+
+    // boolean
+
+    func test_boolForKeyWhenATrueBoolean() {
+        subject.set(true, forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertTrue(value)
+    }
+
+    func test_boolForKeyWhenAFalseBoolean() {
+        subject.set(false, forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertFalse(value)
+    }
+
+    func test_boolForKeyWhenNil() {
+        let value = subject.bool(forKey: "foo")
+        XCTAssertFalse(value)
+    }
+
+    func test_boolForKeyWhenATrueString() {
+        subject.set("true", forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertTrue(value)
+    }
+
+    func test_boolForKeyWhenAYesString() {
+        subject.set("YES", forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertTrue(value)
+    }
+
+    func test_boolForKeyWhenAFalseString() {
+        subject.set("false", forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertFalse(value)
+    }
+
+    func test_boolForKeyWhenANoString() {
+        subject.set("NO", forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertFalse(value)
+    }
+
+    func test_boolForKeyWhenZeroInteger() {
+        subject.set(0, forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertFalse(value)
+    }
+
+    func test_boolForKeyWhenNonZeroInteger() {
+        subject.set(1, forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertTrue(value)
+    }
+
+    func test_boolForKeyWhenNotConvertable() {
+        subject.set("bar", forKey: "foo")
+        let value = subject.bool(forKey: "foo")
+        XCTAssertFalse(value)
     }
 }

@@ -28,4 +28,18 @@ public class SpecUserDefaults: UserDefaulting {
         }
         return 0
     }
+    
+    public func bool(forKey key: String) -> Bool {
+        let obj = object(forKey: key)
+        if let boolean = obj as? Bool {
+            return boolean
+        }
+        if let str = obj as? String, ["YES", "true"].contains(str) {
+            return true
+        }
+        if let int = obj as? Int {
+            return int != 0
+        }
+        return false
+    }
 }
