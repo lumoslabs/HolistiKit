@@ -85,4 +85,37 @@ class UIViewControllerTests: XCTestCase {
         XCTAssertEqual(recorder.events, [])
         XCTAssertNil(subject.presentedViewController)
     }
+
+    func test_accessingView() {
+        _ = subject.view
+        XCTAssertEqual(recorder.events, [.viewDidLoad(subject)])
+    }
+
+    func test_accessingViewBeforePresentingViewController() {
+        let vc = RecordingUIViewController(recorder: recorder)
+        _ = subject.view
+        XCTAssertEqual(recorder.events, [.viewDidLoad(subject)])
+        vc.present(subject, animated: false, completion: nil)
+        XCTAssertEqual(recorder.events, [.viewDidLoad(subject),
+                                         .viewWillDisappear(vc),
+                                         .viewWillAppear(subject),
+                                         .viewDidAppear(subject),
+                                         .viewDidDisappear(vc)])
+    }
+
+    func test_accessingViewAfterPresentingViewController() {
+        let vc = RecordingUIViewController(recorder: recorder)
+        vc.present(subject, animated: false, completion: nil)
+        XCTAssertEqual(recorder.events, [.viewDidLoad(subject),
+                                         .viewWillDisappear(vc),
+                                         .viewWillAppear(subject),
+                                         .viewDidAppear(subject),
+                                         .viewDidDisappear(vc)])
+        _ = subject.view
+        XCTAssertEqual(recorder.events, [.viewDidLoad(subject),
+                                         .viewWillDisappear(vc),
+                                         .viewWillAppear(subject),
+                                         .viewDidAppear(subject),
+                                         .viewDidDisappear(vc)])
+    }
 }

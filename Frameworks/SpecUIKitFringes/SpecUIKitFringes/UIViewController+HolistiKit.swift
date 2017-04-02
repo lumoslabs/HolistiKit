@@ -35,7 +35,7 @@ extension UIViewController {
         _presentedViewController = viewControllerToPresent
         viewControllerToPresent._presentingViewController = self
         let hidesPresenter = !(viewControllerToPresent is UIAlertController)
-        viewControllerToPresent.viewDidLoad()
+        _ = viewControllerToPresent.view
         if hidesPresenter { self.viewWillDisappear(animated) }
         viewControllerToPresent.viewWillAppear(animated)
         viewControllerToPresent.viewDidAppear(animated)
