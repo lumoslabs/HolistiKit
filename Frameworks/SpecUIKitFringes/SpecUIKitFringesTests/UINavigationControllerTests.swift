@@ -15,6 +15,9 @@ class UINavigationControllerTests: XCTestCase {
     func test_pushingAViewController() {
         let viewController = RecordingUIViewController(recorder: recorder)
         navigationController.pushViewController(viewController, animated: false)
+        XCTAssertEqual(recorder.events, [.viewDidLoad(viewController),
+                                         .viewWillAppear(viewController),
+                                         .viewDidAppear(viewController)])
         XCTAssertEqual(viewController.navigationController, navigationController)
         XCTAssertEqual(navigationController.viewControllers, [viewController])
         XCTAssertEqual(navigationController.topViewController, viewController)
@@ -72,5 +75,14 @@ class UINavigationControllerTests: XCTestCase {
         XCTAssertEqual(navigationController.topViewController, first)
         XCTAssertNil(second.navigationController)
         XCTAssertEqual(first.navigationController, navigationController)
+    }
+
+    func test_accessingViewBeforePushingAViewController() {
+        let viewController = RecordingUIViewController(recorder: recorder)
+        _ = viewController.view
+        navigationController.pushViewController(viewController, animated: false)
+        XCTAssertEqual(recorder.events, [.viewDidLoad(viewController),
+                                         .viewWillAppear(viewController),
+                                         .viewDidAppear(viewController)])
     }
 }

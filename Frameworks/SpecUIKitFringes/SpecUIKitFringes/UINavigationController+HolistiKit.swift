@@ -38,7 +38,7 @@ extension UINavigationController {
         viewControllers.forEach { $0._navigationController = self }
         let newTop = viewControllers.last
         newTop?._navigationController = self
-        newTop?.viewDidLoad()
+        _ = newTop?.view
         previous?.viewWillDisappear(animated)
         newTop?.viewWillAppear(animated)
         previous?.viewDidDisappear(animated)
@@ -49,7 +49,7 @@ extension UINavigationController {
         let previous = viewControllers.last
         viewControllers.append(viewController)
         viewController._navigationController = self
-        viewController.viewDidLoad()
+        _ = viewController.view
         previous?.viewWillDisappear(animated)
         viewController.viewWillAppear(animated)
         previous?.viewDidDisappear(animated)
