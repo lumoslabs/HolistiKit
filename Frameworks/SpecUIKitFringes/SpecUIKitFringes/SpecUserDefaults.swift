@@ -7,11 +7,25 @@ public class SpecUserDefaults: UserDefaulting {
 
     public init() { }
 
+    public func set(_ value: Any?, forKey key: String) {
+        store[key] = value
+    }
+
     public func object(forKey key: String) -> Any? {
         return store[key]
     }
-
-    public func set(_ value: Any?, forKey key: String) {
-        store[key] = value
+    
+    public func integer(forKey key: String) -> Int {
+        let obj = object(forKey: key)
+        if let int = obj as? Int {
+            return int
+        }
+        if let str = obj as? String, let int = Int(str) {
+            return int
+        }
+        if let bool = obj as? Bool {
+            return bool ? 1 : 0
+        }
+        return 0
     }
 }
