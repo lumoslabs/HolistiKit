@@ -12,6 +12,8 @@
 		8820041C1E8989B1005F43C9 /* UIAlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820041B1E8989B1005F43C9 /* UIAlertControllerTests.swift */; };
 		882004201E898D3A005F43C9 /* RecordingUIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820041F1E898D3A005F43C9 /* RecordingUIAlertController.swift */; };
 		882004241E8994EC005F43C9 /* UIAlertController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004231E8994EC005F43C9 /* UIAlertController+HolistiKit.swift */; };
+		882D6E861E910B2600A12BB7 /* SpecUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E851E910B2600A12BB7 /* SpecUserDefaultsTests.swift */; };
+		882D6E881E910B7500A12BB7 /* SpecUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E871E910B7500A12BB7 /* SpecUserDefaults.swift */; };
 		883BC3E71E758E2A00B2D7DB /* UIViewController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */; };
 		883BC3E91E75A18600B2D7DB /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E81E75A18600B2D7DB /* Swizzle.swift */; };
 		883BC3EB1E75A3C400B2D7DB /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */; };
@@ -85,6 +87,8 @@
 		8820041B1E8989B1005F43C9 /* UIAlertControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerTests.swift; sourceTree = "<group>"; };
 		8820041F1E898D3A005F43C9 /* RecordingUIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingUIAlertController.swift; sourceTree = "<group>"; };
 		882004231E8994EC005F43C9 /* UIAlertController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+HolistiKit.swift"; sourceTree = "<group>"; };
+		882D6E851E910B2600A12BB7 /* SpecUserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUserDefaultsTests.swift; sourceTree = "<group>"; };
+		882D6E871E910B7500A12BB7 /* SpecUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUserDefaults.swift; sourceTree = "<group>"; };
 		883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HolistiKit.swift"; sourceTree = "<group>"; };
 		883BC3E81E75A18600B2D7DB /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
 		883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			children = (
 				88FED4071E58F10000217628 /* SpecSettingsApp.swift */,
 				882004131E831D65005F43C9 /* SpecDispatchHandler.swift */,
+				882D6E871E910B7500A12BB7 /* SpecUserDefaults.swift */,
 				88FED42C1E59C50F00217628 /* App Lifecycle */,
 				88FED42D1E59C51600217628 /* View Lifecycle */,
 				88FED42E1E59C51E00217628 /* URLSession */,
@@ -219,6 +224,7 @@
 				88D2C8C31E562F8B0065882D /* SpecLocationManager */,
 				883E437C1E3D13DB0051BD21 /* SpecSystem */,
 				885EC1521E33C0E900A61FA1 /* SpecSharedApplicationTests.swift */,
+				882D6E851E910B2600A12BB7 /* SpecUserDefaultsTests.swift */,
 				88B4E0741E59DAE90004C839 /* SpecURLSessionTests.swift */,
 				88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */,
 				88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */,
@@ -525,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				885EC1531E33C0E900A61FA1 /* SpecSharedApplicationTests.swift in Sources */,
+				882D6E881E910B7500A12BB7 /* SpecUserDefaults.swift in Sources */,
 				885EC1331E338E8B00A61FA1 /* UIWindowTests.swift in Sources */,
 				882004121E831CA9005F43C9 /* SpecDispatchHandlerTests.swift in Sources */,
 				88B4E0731E59D6920004C839 /* SpecScheduledTimerTests.swift in Sources */,
@@ -535,6 +542,7 @@
 				88B4E0751E59DAE90004C839 /* SpecURLSessionTests.swift in Sources */,
 				88FED4021E58D30100217628 /* MultipleLocationManagersTests.swift in Sources */,
 				883E43821E3D14DB0051BD21 /* HomeButtonTests.swift in Sources */,
+				882D6E861E910B2600A12BB7 /* SpecUserDefaultsTests.swift in Sources */,
 				883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */,
 				88D2C8D51E562FF70065882D /* LocationServicesTests.swift in Sources */,
 				885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */,
