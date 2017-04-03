@@ -37,7 +37,7 @@ end
 def xcodebuild(command, scheme)
   run "set -o pipefail && \
     xcodebuild #{xcodebuildCommand(command)} \
-      -workspace ExampleApp.xcworkspace \
+      -workspace HolistiKit.xcworkspace \
       -scheme '#{xcodebuildScheme(scheme)}' \
       -destination 'platform=iOS Simulator,name=#{DEVICE},OS=#{IOS_VERSION}' \
       #{xcodebuildCodeCoverage(command)} \
