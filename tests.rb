@@ -4,6 +4,7 @@ DEVICE = "iPhone 7"
 IOS_VERSION = "10.1"
 
 def run(command)
+  puts(command)
   @any_failures ||= !system(command)
 end
 
@@ -18,7 +19,11 @@ def xcodebuildCommand(command)
 end
 
 def xcodebuildCodeCoverage(command)
-  command == :test ? "-enableCodeCoverage YES" : ""
+  # Disabling code coverage for now. Xcode 8.3 crashes during
+  # compilation with a custom main.swift if code coverage is enabled
+  #command == :test ? "-enableCodeCoverage YES" : ""
+  return ""
+  #
 end
 
 def xcodebuildScheme(scheme)
