@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8802B2631E93FBEC008C1191 /* AppLifecycleNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802B2621E93FBEC008C1191 /* AppLifecycleNotificationTests.swift */; };
 		882004121E831CA9005F43C9 /* SpecDispatchHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004111E831CA9005F43C9 /* SpecDispatchHandlerTests.swift */; };
 		882004141E831D65005F43C9 /* SpecDispatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004131E831D65005F43C9 /* SpecDispatchHandler.swift */; };
 		8820041C1E8989B1005F43C9 /* UIAlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8820041B1E8989B1005F43C9 /* UIAlertControllerTests.swift */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8802B2621E93FBEC008C1191 /* AppLifecycleNotificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppLifecycleNotificationTests.swift; sourceTree = "<group>"; };
 		882004111E831CA9005F43C9 /* SpecDispatchHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDispatchHandlerTests.swift; sourceTree = "<group>"; };
 		882004131E831D65005F43C9 /* SpecDispatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDispatchHandler.swift; sourceTree = "<group>"; };
 		8820041B1E8989B1005F43C9 /* UIAlertControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerTests.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				883E437D1E3D140F0051BD21 /* AppIconTests.swift */,
 				883E43811E3D14DB0051BD21 /* HomeButtonTests.swift */,
 				883E43831E3D15050051BD21 /* AppSwitcherTests.swift */,
+				8802B2621E93FBEC008C1191 /* AppLifecycleNotificationTests.swift */,
 				885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */,
 			);
 			name = SpecSystem;
@@ -542,6 +545,7 @@
 				88B4E0751E59DAE90004C839 /* SpecURLSessionTests.swift in Sources */,
 				88FED4021E58D30100217628 /* MultipleLocationManagersTests.swift in Sources */,
 				883E43821E3D14DB0051BD21 /* HomeButtonTests.swift in Sources */,
+				8802B2631E93FBEC008C1191 /* AppLifecycleNotificationTests.swift in Sources */,
 				882D6E861E910B2600A12BB7 /* SpecUserDefaultsTests.swift in Sources */,
 				883E43801E3D149D0051BD21 /* RecordingSpecSystem.swift in Sources */,
 				88D2C8D51E562FF70065882D /* LocationServicesTests.swift in Sources */,

@@ -14,6 +14,7 @@ class Recorder {
         case viewWillAppear(UIViewController)
         case viewDidAppear(UIViewController)
         case viewDidDisappear(UIViewController)
+        case notification(NSNotification.Name)
         case custom(String)
     }
 
@@ -54,6 +55,8 @@ func ==(lhs: Recorder.Event, rhs: Recorder.Event) -> Bool {
     case (.viewDidDisappear(let subL), .viewDidDisappear(let subR)):
         return subL == subR
     case (.custom(let idL), .custom(let idR)):
+        return idL == idR
+    case (.notification(let idL), .notification(let idR)):
         return idL == idR
     default:
         return false

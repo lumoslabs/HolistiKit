@@ -53,10 +53,20 @@ open class SpecSystem {
     private func launch() {
         let newAppDelegateBundle = createAppDelegateBundle()
         appDelegate = newAppDelegateBundle.appDelegate
-        appDelegate.applicationDidLaunch()
-        appDelegate.applicationDidBecomeActive()
+        applicationDidLaunch()
+        applicationDidBecomeActive()
         screenshotInAppSwitcher = true
         move(to: .app)
+    }
+
+    private func applicationDidLaunch() {
+        appDelegate.applicationDidLaunch()
+        NotificationCenter.default.post(name: .UIApplicationDidFinishLaunching, object: nil)
+    }
+
+    private func applicationDidBecomeActive() {
+        appDelegate.applicationDidBecomeActive()
+        NotificationCenter.default.post(name: .UIApplicationDidBecomeActive, object: nil)
     }
 
     public func tapHomeButton() {
@@ -75,8 +85,8 @@ open class SpecSystem {
     }
 
     private func anyHomeButtonTapInAppSwitcher() {
-        if let appDelegate = appDelegate, cameFrom(.app) {
-            appDelegate.applicationDidBecomeActive()
+        if appDelegate != nil && cameFrom(.app) {
+            applicationDidBecomeActive()
             move(to: .app)
         } else {
             move(to: .springBoard)
@@ -99,7 +109,7 @@ open class SpecSystem {
         errorIfAppSwitcherIsNotOpen()
         errorIfNoScreenshotInAppSwitcher()
         if let appDelegate = appDelegate {
-            appDelegate.applicationDidBecomeActive()
+            applicationDidBecomeActive()
         } else {
         }
     }
