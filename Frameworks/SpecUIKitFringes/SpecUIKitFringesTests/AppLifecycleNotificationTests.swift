@@ -15,7 +15,13 @@ class AppLifecycleNotificationTests: XCTestCase {
         subject = RecordingSpecSystem(recorder: recorder)
 
         tokens = [NSObjectProtocol]()
-        [.UIApplicationDidFinishLaunching, .UIApplicationDidBecomeActive].forEach(addNotification)
+        [.UIApplicationDidEnterBackground,
+         .UIApplicationWillEnterForeground,
+         .UIApplicationWillResignActive,
+         .UIApplicationWillTerminate,
+         .UIApplicationDidFinishLaunching,
+         .UIApplicationDidBecomeActive
+            ].forEach(addNotification)
     }
 
     override func tearDown() {
@@ -23,12 +29,23 @@ class AppLifecycleNotificationTests: XCTestCase {
         tokens.forEach(notificationCenter.removeObserver)
     }
 
-    func testUIApplicationDidFinishLaunchingNotification() {
+    func testLaunchingApp() {
         subject.tapAppIcon()
         XCTAssertEqual(recorder.events, [.applicationDidLaunch,
                                          .notification(.UIApplicationDidFinishLaunching),
                                          .applicationDidBecomeActive,
                                          .notification(.UIApplicationDidBecomeActive)])
+    }
+
+    func testKillingApp() {
+        subject.tapAppIcon()
+        subject.doubleTapHomeButton()
+        recorder.removeAllEvents()
+        subject.swipeUpAppScreenshot()
+        XCTAssertEqual(recorder.events, [.applicationDidEnterBackground,
+                                         .notification(.UIApplicationDidEnterBackground),
+                                         .applicationWillTerminate,
+                                         .notification(.UIApplicationWillTerminate)])
     }
 
     private func addNotification(for notificationName: NSNotification.Name) {

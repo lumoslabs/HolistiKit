@@ -68,6 +68,16 @@ open class SpecSystem {
         appDelegate.applicationDidBecomeActive()
         NotificationCenter.default.post(name: .UIApplicationDidBecomeActive, object: nil)
     }
+    
+    private func applicationDidEnterBackground() {
+        appDelegate.applicationDidEnterBackground()
+        NotificationCenter.default.post(name: .UIApplicationDidEnterBackground, object: nil)
+    }
+
+    private func applicationWillTerminate() {
+        appDelegate.applicationWillTerminate()
+        NotificationCenter.default.post(name: .UIApplicationWillTerminate, object: nil)
+    }
 
     public func tapHomeButton() {
         switch location {
@@ -75,7 +85,7 @@ open class SpecSystem {
             anyHomeButtonTapInAppSwitcher()
         case .app:
             appDelegate.applicationWillResignActive()
-            appDelegate.applicationDidEnterBackground()
+            applicationDidEnterBackground()
             move(to: .springBoard)
         case .settings:
             move(to: .springBoard)
@@ -108,22 +118,22 @@ open class SpecSystem {
     public func tapAppScreenshot() {
         errorIfAppSwitcherIsNotOpen()
         errorIfNoScreenshotInAppSwitcher()
-        if let appDelegate = appDelegate {
+        if appDelegate != nil {
             applicationDidBecomeActive()
         } else {
         }
     }
 
     public func swipeUpAppScreenshot() {
-        appDelegate.applicationDidEnterBackground()
-        appDelegate.applicationWillTerminate()
+        applicationDidEnterBackground()
+        applicationWillTerminate()
         appDelegate = nil
         screenshotInAppSwitcher = false
     }
 
     internal func jumpToSettings() {
         appDelegate.applicationWillResignActive()
-        appDelegate.applicationDidEnterBackground()
+        applicationDidEnterBackground()
         move(to: .settings)
     }
 
