@@ -42,9 +42,9 @@ open class SpecSystem {
     
     public func tapAppIcon() {
         errorIfNotOnSpringBoard()
-        if let appDelegate = appDelegate {
-            appDelegate.applicationWillEnterForeground()
-            appDelegate.applicationDidBecomeActive()
+        if appDelegate != nil {
+            applicationWillEnterForeground()
+            applicationDidBecomeActive()
         } else {
             launch()
         }
@@ -57,6 +57,11 @@ open class SpecSystem {
         applicationDidBecomeActive()
         screenshotInAppSwitcher = true
         move(to: .app)
+    }
+
+    private func applicationWillEnterForeground() {
+        appDelegate.applicationWillEnterForeground()
+        NotificationCenter.default.post(name: .UIApplicationWillEnterForeground, object: nil)
     }
 
     private func applicationDidLaunch() {
@@ -78,13 +83,18 @@ open class SpecSystem {
         appDelegate.applicationWillTerminate()
         NotificationCenter.default.post(name: .UIApplicationWillTerminate, object: nil)
     }
+    
+    private func applicationWillResignActive() {
+        appDelegate.applicationWillResignActive()
+        NotificationCenter.default.post(name: .UIApplicationWillResignActive, object: nil)
+    }
 
     public func tapHomeButton() {
         switch location {
         case .appSwitcher:
             anyHomeButtonTapInAppSwitcher()
         case .app:
-            appDelegate.applicationWillResignActive()
+            applicationWillResignActive()
             applicationDidEnterBackground()
             move(to: .springBoard)
         case .settings:
@@ -108,7 +118,7 @@ open class SpecSystem {
         case .appSwitcher:
             anyHomeButtonTapInAppSwitcher()
         case .app:
-            appDelegate.applicationWillResignActive()
+            applicationWillResignActive()
             move(to: .appSwitcher)
         case .springBoard, .settings:
             move(to: .appSwitcher)
@@ -132,7 +142,7 @@ open class SpecSystem {
     }
 
     internal func jumpToSettings() {
-        appDelegate.applicationWillResignActive()
+        applicationWillResignActive()
         applicationDidEnterBackground()
         move(to: .settings)
     }

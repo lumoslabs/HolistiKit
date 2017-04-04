@@ -20,8 +20,7 @@ class AppLifecycleNotificationTests: XCTestCase {
          .UIApplicationWillResignActive,
          .UIApplicationWillTerminate,
          .UIApplicationDidFinishLaunching,
-         .UIApplicationDidBecomeActive
-            ].forEach(addNotification)
+         .UIApplicationDidBecomeActive].forEach(addNotification)
     }
 
     override func tearDown() {
@@ -33,6 +32,27 @@ class AppLifecycleNotificationTests: XCTestCase {
         subject.tapAppIcon()
         XCTAssertEqual(recorder.events, [.applicationDidLaunch,
                                          .notification(.UIApplicationDidFinishLaunching),
+                                         .applicationDidBecomeActive,
+                                         .notification(.UIApplicationDidBecomeActive)])
+    }
+
+    func testBackgrounding() {
+        subject.tapAppIcon()
+        recorder.removeAllEvents()
+        subject.tapHomeButton()
+        XCTAssertEqual(recorder.events, [.applicationWillResignActive,
+                                         .notification(.UIApplicationWillResignActive),
+                                         .applicationDidEnterBackground,
+                                         .notification(.UIApplicationDidEnterBackground)])
+    }
+
+    func testForegrounding() {
+        subject.tapAppIcon()
+        subject.tapHomeButton()
+        recorder.removeAllEvents()
+        subject.tapAppIcon()
+        XCTAssertEqual(recorder.events, [.applicationWillEnterForeground,
+                                         .notification(.UIApplicationWillEnterForeground),
                                          .applicationDidBecomeActive,
                                          .notification(.UIApplicationDidBecomeActive)])
     }
