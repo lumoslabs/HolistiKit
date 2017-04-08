@@ -3,6 +3,7 @@ import UIKitFringes
 
 public class SpecURLSessionDataTask: URLSessionDataTask {
 
+    public typealias Response = (Data?, URLResponse?, Error?)
     public typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
 
     private let completionHandler: CompletionHandler
@@ -22,12 +23,9 @@ public class SpecURLSessionDataTask: URLSessionDataTask {
         _state = .running
     }
 
-    func finish(withResponse response: SpecURLSession.Response) {
+    func finish(withResponse response: Response) {
         _state = .completed
-        switch response {
-        case .success(let data, let urlResponse, let error):
-            completionHandler(data, urlResponse, error)
-        }
+        completionHandler(response.0, response.1, response.2)
     }
 }
 

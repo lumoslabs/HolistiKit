@@ -29,7 +29,7 @@ class SpecURLSessionTests: XCTestCase {
         let requestIdentifier = SpecURLRequestIdentifier(url: "http://www.google.com", method: .get)
         let data = "blah".data(using: .utf8)!
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
-        subject.respond(to: requestIdentifier, with: .success(data, urlResponse, nil))
+        subject.respond(to: requestIdentifier, with: (data, urlResponse, nil))
         
         XCTAssertEqual(receivedData, data)
         XCTAssertEqual(receivedURLResponse, urlResponse)
@@ -61,7 +61,7 @@ class SpecURLSessionTests: XCTestCase {
         let requestIdentifier = SpecURLRequestIdentifier(url: urlString, method: .post)
         let data = "blah".data(using: .utf8)!
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
-        subject.respond(to: requestIdentifier, with: .success(data, urlResponse, nil))
+        subject.respond(to: requestIdentifier, with: (data, urlResponse, nil))
 
         XCTAssertFalse(respondedToTask1)
         XCTAssertTrue(respondedToTask2)
@@ -74,7 +74,7 @@ class SpecURLSessionTests: XCTestCase {
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
         let data = "blah".data(using: .utf8)!
         errorHandler.fatalErrorsOff {
-            self.subject.respond(to: requestIdentifier, with: .success(data, urlResponse, nil))
+            self.subject.respond(to: requestIdentifier, with: (data, urlResponse, nil))
         }
         XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress)
     }

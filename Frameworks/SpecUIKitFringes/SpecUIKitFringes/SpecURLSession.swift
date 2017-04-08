@@ -22,7 +22,7 @@ public class SpecURLSession: URLSessionProtocol {
         return request
     }
 
-    public func respond(to requestIdentifier: SpecURLRequestIdentifier, with response: Response) {
+    public func respond(to requestIdentifier: SpecURLRequestIdentifier, with response: SpecURLSessionDataTask.Response) {
         guard let request = firstRunningRequest(for: requestIdentifier) else {
             errorHandler.error(.noSuchURLRequestInProgress)
             return
@@ -32,12 +32,5 @@ public class SpecURLSession: URLSessionProtocol {
     
     private func firstRunningRequest(for requestIdentifier: SpecURLRequestIdentifier) -> SpecURLSessionDataTask? {
         return requests.running.matching(requestIdentifier).first
-    }
-}
-
-extension SpecURLSession {
-
-    public enum Response {
-        case success(Data?, URLResponse?, Error?)
     }
 }
