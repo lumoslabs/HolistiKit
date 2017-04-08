@@ -5,7 +5,12 @@ public struct SpecURLRequestIdentifier {
     let url: String
     let method: HTTPMethod
 
-    enum HTTPMethod: String {
+    public init(url: String, method: HTTPMethod) {
+        self.url = url
+        self.method = method
+    }
+
+    public enum HTTPMethod: String {
         case get = "GET"
         case post = "POST"
         case put = "PUT"

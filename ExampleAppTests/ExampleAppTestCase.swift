@@ -36,28 +36,30 @@ extension ExampleAppTestCase {
 // MARK: Network
 extension ExampleAppTestCase {
 
-    func respond(to urlRequest: String, withHTML html: String) {
+    func respond(to urlString: String, withHTML html: String) {
         let data = NetworkResponseCreator.data(from: html)
-        let url = URL(string: urlRequest)!
+        let url = URL(string: urlString)!
         let urlResponse = URLResponse(url: url,
                                       mimeType: "text/html",
                                       expectedContentLength: data.count,
                                       textEncodingName: "utf-8")
-        respond(to: urlRequest, with: .success(data, urlResponse))
+        let requestIdentifier = SpecURLRequestIdentifier(url: urlString, method: .get)
+        respond(to: requestIdentifier, with: (data, urlResponse, nil))
     }
 
-    func respond(to urlRequest: String, withJSON json: [String:Any]) {
+    func respond(to urlString: String, withJSON json: [String:Any]) {
         let data = NetworkResponseCreator.data(from: json)
-        let url = URL(string: urlRequest)!
+        let url = URL(string: urlString)!
         let urlResponse = URLResponse(url: url,
                                       mimeType: "application/json",
                                       expectedContentLength: data.count,
                                       textEncodingName: nil)
-        respond(to: urlRequest, with: .success(data, urlResponse))
+        let requestIdentifier = SpecURLRequestIdentifier(url: urlString, method: .get)
+        respond(to: requestIdentifier, with: (data, urlResponse, nil))
     }
 
-    private func respond(to urlRequest: String, with response: SpecURLSession.Response) {
-        urlSession.respond(to: urlRequest, with: response)
+    private func respond(to requestIdentifier: SpecURLRequestIdentifier, with response: SpecURLSessionDataTask.Response) {
+        urlSession.respond(to: requestIdentifier, with: response)
     }
 
     private var urlSession: SpecURLSession {
