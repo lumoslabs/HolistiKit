@@ -38,6 +38,6 @@ public class SpecURLSession: URLSessionProtocol {
 extension SpecURLSession {
 
     public enum Response {
-        case success(Data, URLResponse)
+        case success(Data?, URLResponse?, Error?)
     }
 }

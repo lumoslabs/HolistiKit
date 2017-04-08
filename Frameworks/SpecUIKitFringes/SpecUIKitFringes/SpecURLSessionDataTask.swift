@@ -25,8 +25,8 @@ public class SpecURLSessionDataTask: URLSessionDataTask {
     func finish(withResponse response: SpecURLSession.Response) {
         _state = .completed
         switch response {
-        case .success(let data, let urlResponse):
-            completionHandler(data, urlResponse, nil)
+        case .success(let data, let urlResponse, let error):
+            completionHandler(data, urlResponse, error)
         }
     }
 }
@@ -38,6 +38,6 @@ extension Array where Element: SpecURLSessionDataTask {
     }
 
     func matching(_ requestIdentifier: SpecURLRequestIdentifier) -> [Element] {
-        return filter { $0.originalRequest?.url?.absoluteString == requestIdentifier.url }
+        return filter { $0 == requestIdentifier }
     }
 }

@@ -29,11 +29,43 @@ class SpecURLSessionTests: XCTestCase {
         let requestIdentifier = SpecURLRequestIdentifier(url: "http://www.google.com", method: .get)
         let data = "blah".data(using: .utf8)!
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
-        subject.respond(to: requestIdentifier, with: .success(data, urlResponse))
+        subject.respond(to: requestIdentifier, with: .success(data, urlResponse, nil))
         
         XCTAssertEqual(receivedData, data)
         XCTAssertEqual(receivedURLResponse, urlResponse)
         XCTAssertNil(receivedError)
+    }
+
+    func test_respondingToARequestWithMatchingHTTPMethod() {
+        let urlString = "http://www.google.com"
+        let url = URL(string: urlString)!
+        
+        var respondedToTask1 = false
+        var request1 = URLRequest(url: url)
+        request1.httpMethod = "GET"
+        let task1 = subject.dataTask(with: request1) { _ in respondedToTask1 = true }
+        task1.resume()
+        
+        var respondedToTask2 = false
+        var request2 = URLRequest(url: url)
+        request2.httpMethod = "POST"
+        let task2 = subject.dataTask(with: request2) { _ in respondedToTask2 = true }
+        task2.resume()
+        
+        var respondedToTask3 = false
+        var request3 = URLRequest(url: url)
+        request3.httpMethod = "GET"
+        let task3 = subject.dataTask(with: request3) { _ in respondedToTask3 = true }
+        task3.resume()
+
+        let requestIdentifier = SpecURLRequestIdentifier(url: urlString, method: .post)
+        let data = "blah".data(using: .utf8)!
+        let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
+        subject.respond(to: requestIdentifier, with: .success(data, urlResponse, nil))
+
+        XCTAssertFalse(respondedToTask1)
+        XCTAssertTrue(respondedToTask2)
+        XCTAssertFalse(respondedToTask3)
     }
 
     func test_respondingToANonExistentRequest() {
@@ -42,7 +74,7 @@ class SpecURLSessionTests: XCTestCase {
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
         let data = "blah".data(using: .utf8)!
         errorHandler.fatalErrorsOff {
-            self.subject.respond(to: requestIdentifier, with: .success(data, urlResponse))
+            self.subject.respond(to: requestIdentifier, with: .success(data, urlResponse, nil))
         }
         XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress)
     }
