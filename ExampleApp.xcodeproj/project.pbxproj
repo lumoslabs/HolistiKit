@@ -52,9 +52,9 @@
 		8863D4A61E46142F00CD5DD2 /* TimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013E31E2D4CD500C86FDE /* TimerTests.swift */; };
 		8863D4A71E46142F00CD5DD2 /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835667F1E2F51F800289510 /* NetworkRequestTests.swift */; };
 		8863D4A81E46142F00CD5DD2 /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */; };
-		8863D4A91E46142F00CD5DD2 /* FringesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DB1E21079B00CECDDF /* FringesTest.swift */; };
+		8863D4A91E46142F00CD5DD2 /* ExampleAppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740DB1E21079B00CECDDF /* ExampleAppTestCase.swift */; };
 		8863D4AA1E46143500CD5DD2 /* SpecErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886013E91E2D4F5C00C86FDE /* SpecErrorLogger.swift */; };
-		8863D4AB1E46143C00CD5DD2 /* FringesSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */; };
+		8863D4AB1E46143C00CD5DD2 /* ExampleAppSpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1921E34EFA300A61FA1 /* ExampleAppSpecSystem.swift */; };
 		8863D4AC1E46143C00CD5DD2 /* SpecAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */; };
 		8863D4B51E46144A00CD5DD2 /* SpecExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */; };
 		8863D4B61E46144A00CD5DD2 /* SpecDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880741731E22889000CECDDF /* SpecDateViewController.swift */; };
@@ -106,7 +106,7 @@
 		880740D01E1FCC8700CECDDF /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		880740D51E201C2300CECDDF /* ExamplesViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesViewControllerFactory.swift; sourceTree = "<group>"; };
 		880740D81E2103A400CECDDF /* SpecExamplesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecExamplesViewController.swift; sourceTree = "<group>"; };
-		880740DB1E21079B00CECDDF /* FringesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FringesTest.swift; sourceTree = "<group>"; };
+		880740DB1E21079B00CECDDF /* ExampleAppTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAppTestCase.swift; sourceTree = "<group>"; };
 		880740DD1E21088B00CECDDF /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		880740E01E21100200CECDDF /* ExamplesViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExamplesViewController.storyboard; sourceTree = "<group>"; };
 		880741631E2270BC00CECDDF /* DatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePresenter.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		885371C51E3237E700CC5B75 /* NetworkActivityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkActivityManager.swift; sourceTree = "<group>"; };
 		885407021E51B9CD00575105 /* SpecUIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecUIKitFringes.framework; path = "../../Library/Developer/Xcode/DerivedData/ExampleApp-golmhypkpfrpjvbhyxvodazgaipo/Build/Products/Debug-iphonesimulator/SpecUIKitFringes.framework"; sourceTree = "<group>"; };
 		885EC1401E338EEE00A61FA1 /* SpecUIKitFringes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpecUIKitFringes.framework; path = "Frameworks/SpecUIKitFringes/build/Debug-iphoneos/SpecUIKitFringes.framework"; sourceTree = "<group>"; };
-		885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FringesSpecSystem.swift; sourceTree = "<group>"; };
+		885EC1921E34EFA300A61FA1 /* ExampleAppSpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleAppSpecSystem.swift; sourceTree = "<group>"; };
 		885F9CF91E2A265B003ADC21 /* ExamplesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExamplesRouter.swift; sourceTree = "<group>"; };
 		885F9D131E2A4D62003ADC21 /* PushingPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushingPresenter.swift; sourceTree = "<group>"; };
 		885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecAppDelegate.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		8814F2D41E3D4BFC005506DB /* App Lifecycle */ = {
 			isa = PBXGroup;
 			children = (
-				885EC1921E34EFA300A61FA1 /* FringesSpecSystem.swift */,
+				885EC1921E34EFA300A61FA1 /* ExampleAppSpecSystem.swift */,
 				885F9D151E2A9131003ADC21 /* SpecAppDelegate.swift */,
 			);
 			name = "App Lifecycle";
@@ -492,7 +492,7 @@
 				8835667F1E2F51F800289510 /* NetworkRequestTests.swift */,
 				8814F2E01E3E3023005506DB /* UIViewControllerTests.swift */,
 				887CDBF71E51F7E3008465FE /* CLLocationManagerTests.swift */,
-				880740DB1E21079B00CECDDF /* FringesTest.swift */,
+				880740DB1E21079B00CECDDF /* ExampleAppTestCase.swift */,
 				88EAAF241E7839A800C2B769 /* Extensions */,
 				880740D71E21038500CECDDF /* Fakes */,
 				8814F2D51E3D4CB0005506DB /* Utilities */,
@@ -765,9 +765,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8863D4AB1E46143C00CD5DD2 /* FringesSpecSystem.swift in Sources */,
+				8863D4AB1E46143C00CD5DD2 /* ExampleAppSpecSystem.swift in Sources */,
 				8863D4B81E46144A00CD5DD2 /* SpecUISessionViewController.swift in Sources */,
-				8863D4A91E46142F00CD5DD2 /* FringesTest.swift in Sources */,
+				8863D4A91E46142F00CD5DD2 /* ExampleAppTestCase.swift in Sources */,
 				88EAAF2B1E783A7000C2B769 /* UIWindow.swift in Sources */,
 				8863D4B61E46144A00CD5DD2 /* SpecDateViewController.swift in Sources */,
 				8863D4B91E46144A00CD5DD2 /* SpecUIViewControllerViewController.swift in Sources */,

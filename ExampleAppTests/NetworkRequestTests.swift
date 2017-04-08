@@ -1,7 +1,7 @@
 import XCTest
 @testable import ExampleApp
 
-class URLSessionTests: FringesTest {
+class URLSessionTests: ExampleAppTestCase {
 
     func test_titleIsCorrect() {
         tapAppIcon()

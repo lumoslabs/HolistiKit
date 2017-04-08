@@ -25,9 +25,11 @@ class SpecURLSessionTests: XCTestCase {
             receivedError = error
         }
         task.resume()
+        
         let data = "blah".data(using: .utf8)!
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
         subject.respond(to: "http://www.google.com", with: .success(data, urlResponse))
+        
         XCTAssertEqual(receivedData, data)
         XCTAssertEqual(receivedURLResponse, urlResponse)
         XCTAssertNil(receivedError)

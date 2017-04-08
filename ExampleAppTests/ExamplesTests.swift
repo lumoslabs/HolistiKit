@@ -1,6 +1,6 @@
 import XCTest
 
-class ExamplesTests: FringesTest {
+class ExamplesTests: ExampleAppTestCase {
 
     func test_titleIsCorrect() {
         tapAppIcon()

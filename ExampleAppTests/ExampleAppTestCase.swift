@@ -3,18 +3,18 @@ import UIKitFringes
 import SpecUIKitFringes
 @testable import ExampleApp
 
-class FringesTest: XCTestCase {
+class ExampleAppTestCase: XCTestCase {
 
-    fileprivate var system: FringesSpecSystem!
+    fileprivate var system: ExampleAppSpecSystem!
     
     override func setUp() {
         super.setUp()
-        system = FringesSpecSystem()
+        system = ExampleAppSpecSystem()
     }
 }
 
 // MARK: App Launching, Backgrounding, Killing, etc.
-extension FringesTest {
+extension ExampleAppTestCase {
 
     func tapAppIcon() {
         system.tapAppIcon()
@@ -22,7 +22,7 @@ extension FringesTest {
 }
 
 // MARK: Time
-extension FringesTest {
+extension ExampleAppTestCase {
 
     func progress(seconds: UInt) {
         dateProvider.progress(seconds: seconds)
@@ -34,7 +34,7 @@ extension FringesTest {
 }
 
 // MARK: Network
-extension FringesTest {
+extension ExampleAppTestCase {
 
     func respond(to urlRequest: String, withHTML html: String) {
         let data = NetworkResponseCreator.data(from: html)
@@ -66,7 +66,7 @@ extension FringesTest {
 }
 
 // MARK: CLLocationManager
-extension FringesTest {
+extension ExampleAppTestCase {
 
     var visibleDialog: SpecDialogManager.DialogIdentifier? {
         return dialogManager.visibleDialog
@@ -82,7 +82,7 @@ extension FringesTest {
 }
 
 // MARK: CLLocationManager
-extension FringesTest {
+extension ExampleAppTestCase {
 
     var userLocation: SpecUserLocation {
         return system.userLocation
@@ -90,7 +90,7 @@ extension FringesTest {
 }
 
 // MARK: Shared Application
-extension FringesTest {
+extension ExampleAppTestCase {
 
     var networkActivityIndicatorIsVisible: Bool {
         return sharedApplication.isNetworkActivityIndicatorVisible
@@ -102,7 +102,7 @@ extension FringesTest {
 }
 
 // MARK: Top View Controller Accessing
-extension FringesTest {
+extension ExampleAppTestCase {
 
     var window: UIWindow {
         guard let window = system.appDelegate.window else {

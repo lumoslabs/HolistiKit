@@ -1,6 +1,6 @@
 import SpecUIKitFringes
 
-class FringesSpecSystem: SpecSystem {
+class ExampleAppSpecSystem: SpecSystem {
 
     let dateProvider = SpecDateProvider()
     let timeZoneProvider = SpecTimeZoneProvider()

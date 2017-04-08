@@ -1,7 +1,7 @@
 import XCTest
 @testable import ExampleApp
 
-class CLLocationManagerTests: FringesTest {
+class CLLocationManagerTests: ExampleAppTestCase {
 
     func test_titleIsCorrect() {
         tapAppIcon()

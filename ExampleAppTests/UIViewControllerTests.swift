@@ -1,7 +1,7 @@
 import XCTest
 @testable import ExampleApp
 
-class UIViewControllerTests: FringesTest {
+class UIViewControllerTests: ExampleAppTestCase {
 
     func test_titleIsCorrect() {
         tapAppIcon()

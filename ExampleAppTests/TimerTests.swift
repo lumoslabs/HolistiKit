@@ -1,6 +1,6 @@
 import XCTest
 
-class TimerTests: FringesTest {
+class TimerTests: ExampleAppTestCase {
 
     func test_titleIsCorrect() {
         tapAppIcon()
