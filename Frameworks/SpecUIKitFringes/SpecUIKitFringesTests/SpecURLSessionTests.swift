@@ -15,10 +15,11 @@ class SpecURLSessionTests: XCTestCase {
 
     func test_respondingToARequest() {
         let url = URL(string: "http://www.google.com")!
+        let request = URLRequest(url: url)
         var receivedData: Data?
         var receivedURLResponse: URLResponse?
         var receivedError: Error?
-        let task = subject.urlDataTask(with: url) { (data, urlResponse, error) in
+        let task = subject.dataTask(with: request) { (data, urlResponse, error) in
             receivedData = data
             receivedURLResponse = urlResponse
             receivedError = error

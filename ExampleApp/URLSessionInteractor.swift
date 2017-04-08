@@ -38,7 +38,8 @@ class URLSessionInteractor {
         networkActivity = networkActivityManager.activityStarted()
         
         let url = URL(string: urlString)!
-        let task = urlSession.urlDataTask(with: url) { [weak self] (data, response, error) -> Void in
+        let request = URLRequest(url: url)
+        let task = urlSession.dataTask(with: request) { [weak self] (data, response, error) -> Void in
             self?.networkActivity?.finish()
             self?.handle(data: data, response: response, error: error)
         }

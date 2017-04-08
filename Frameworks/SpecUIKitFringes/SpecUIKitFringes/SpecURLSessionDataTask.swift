@@ -1,28 +1,32 @@
 import Foundation
 import UIKitFringes
 
-public class SpecURLSessionDataTask: URLSessionDataTaskProtocol {
+public class SpecURLSessionDataTask: URLSessionDataTask {
 
-    public typealias Handler = (Data?, URLResponse?, Error?) -> Void
+    public typealias CompletionHandler = (Data?, URLResponse?, Error?) -> Void
 
-    let url: String
-    public var state: URLSessionTask.State = .suspended
-    private let handler: Handler
+    private let completionHandler: CompletionHandler
 
-    init(url: String, handler: @escaping Handler) {
-        self.url = url
-        self.handler = handler
+    private let _originalRequest: URLRequest?
+    public override var originalRequest: URLRequest? { return _originalRequest }
+
+    private var _state: URLSessionTask.State = .suspended
+    override public var state: URLSessionTask.State { return _state }
+
+    init(request: URLRequest, completionHandler: @escaping CompletionHandler) {
+        self._originalRequest = request
+        self.completionHandler = completionHandler
     }
 
-    public func resume() {
-        state = .running
+    public override func resume() {
+        _state = .running
     }
 
     func finish(withResponse response: SpecURLSession.Response) {
-        state = .completed
+        _state = .completed
         switch response {
         case .success(let data, let urlResponse):
-            handler(data, urlResponse, nil)
+            completionHandler(data, urlResponse, nil)
         }
     }
 }
@@ -34,6 +38,6 @@ extension Array where Element: SpecURLSessionDataTask {
     }
 
     func with(url: String) -> [Element] {
-        return filter { $0.url == url }
+        return filter { $0.originalRequest?.url?.absoluteString == url }
     }
 }

@@ -16,8 +16,8 @@ public class SpecURLSession: URLSessionProtocol {
     
     private var requests = [SpecURLSessionDataTask]()
 
-    public func urlDataTask(with url: URL, completionHandler: @escaping SpecURLSessionDataTask.Handler) -> URLSessionDataTaskProtocol {
-        let request = SpecURLSessionDataTask(url: url.absoluteString, handler: completionHandler)
+    public func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        let request = SpecURLSessionDataTask(request: request, completionHandler: completionHandler)
         requests.append(request)
         return request
     }
