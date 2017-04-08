@@ -37,7 +37,7 @@ extension Array where Element: SpecURLSessionDataTask {
         return filter { $0.state == .running }
     }
 
-    func with(url: String) -> [Element] {
-        return filter { $0.originalRequest?.url?.absoluteString == url }
+    func matching(_ requestIdentifier: SpecURLRequestIdentifier) -> [Element] {
+        return filter { $0.originalRequest?.url?.absoluteString == requestIdentifier.url }
     }
 }

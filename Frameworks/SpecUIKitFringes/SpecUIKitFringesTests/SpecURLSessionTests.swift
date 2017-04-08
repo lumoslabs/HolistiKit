@@ -25,10 +25,11 @@ class SpecURLSessionTests: XCTestCase {
             receivedError = error
         }
         task.resume()
-        
+
+        let requestIdentifier = SpecURLRequestIdentifier(url: "http://www.google.com", method: .get)
         let data = "blah".data(using: .utf8)!
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
-        subject.respond(to: "http://www.google.com", with: .success(data, urlResponse))
+        subject.respond(to: requestIdentifier, with: .success(data, urlResponse))
         
         XCTAssertEqual(receivedData, data)
         XCTAssertEqual(receivedURLResponse, urlResponse)
@@ -36,11 +37,12 @@ class SpecURLSessionTests: XCTestCase {
     }
 
     func test_respondingToANonExistentRequest() {
+        let requestIdentifier = SpecURLRequestIdentifier(url: "http://www.google.com", method: .get)
         let url = URL(string: "http://www.google.com")!
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
         let data = "blah".data(using: .utf8)!
         errorHandler.fatalErrorsOff {
-            self.subject.respond(to: "http://www.google.com", with: .success(data, urlResponse))
+            self.subject.respond(to: requestIdentifier, with: .success(data, urlResponse))
         }
         XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress)
     }

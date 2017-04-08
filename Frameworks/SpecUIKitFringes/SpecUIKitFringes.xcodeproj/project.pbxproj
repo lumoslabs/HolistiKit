@@ -15,6 +15,7 @@
 		882004241E8994EC005F43C9 /* UIAlertController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004231E8994EC005F43C9 /* UIAlertController+HolistiKit.swift */; };
 		882D6E861E910B2600A12BB7 /* SpecUserDefaultsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E851E910B2600A12BB7 /* SpecUserDefaultsTests.swift */; };
 		882D6E8E1E912AC000A12BB7 /* SpecUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E871E910B7500A12BB7 /* SpecUserDefaults.swift */; };
+		882D6E901E996AB400A12BB7 /* SpecURLRequestIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E8F1E996AB400A12BB7 /* SpecURLRequestIdentifier.swift */; };
 		883BC3E71E758E2A00B2D7DB /* UIViewController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */; };
 		883BC3E91E75A18600B2D7DB /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3E81E75A18600B2D7DB /* Swizzle.swift */; };
 		883BC3EB1E75A3C400B2D7DB /* UIViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */; };
@@ -91,6 +92,7 @@
 		882004231E8994EC005F43C9 /* UIAlertController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+HolistiKit.swift"; sourceTree = "<group>"; };
 		882D6E851E910B2600A12BB7 /* SpecUserDefaultsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUserDefaultsTests.swift; sourceTree = "<group>"; };
 		882D6E871E910B7500A12BB7 /* SpecUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUserDefaults.swift; sourceTree = "<group>"; };
+		882D6E8F1E996AB400A12BB7 /* SpecURLRequestIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLRequestIdentifier.swift; sourceTree = "<group>"; };
 		883BC3E61E758E2A00B2D7DB /* UIViewController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+HolistiKit.swift"; sourceTree = "<group>"; };
 		883BC3E81E75A18600B2D7DB /* Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swizzle.swift; sourceTree = "<group>"; };
 		883BC3EA1E75A3C400B2D7DB /* UIViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerTests.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			children = (
 				88FED4261E59C38300217628 /* SpecURLSession.swift */,
 				88FED4271E59C38300217628 /* SpecURLSessionDataTask.swift */,
+				882D6E8F1E996AB400A12BB7 /* SpecURLRequestIdentifier.swift */,
 			);
 			name = URLSession;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				882004141E831D65005F43C9 /* SpecDispatchHandler.swift in Sources */,
 				88FED4171E59BDF800217628 /* SpecScheduledTimer.swift in Sources */,
 				88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */,
+				882D6E901E996AB400A12BB7 /* SpecURLRequestIdentifier.swift in Sources */,
 				88FED4041E58D39700217628 /* SpecLocationManagerFactory.swift in Sources */,
 				882D6E8E1E912AC000A12BB7 /* SpecUserDefaults.swift in Sources */,
 				883BC3F51E75AEB800B2D7DB /* UIWindow+HolistiKit.swift in Sources */,

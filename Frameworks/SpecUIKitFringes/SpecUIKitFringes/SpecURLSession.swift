@@ -22,16 +22,16 @@ public class SpecURLSession: URLSessionProtocol {
         return request
     }
 
-    public func respond(to url: String, with response: Response) {
-        guard let request = firstRunningRequest(forURL: url) else {
+    public func respond(to requestIdentifier: SpecURLRequestIdentifier, with response: Response) {
+        guard let request = firstRunningRequest(for: requestIdentifier) else {
             errorHandler.error(.noSuchURLRequestInProgress)
             return
         }
         request.finish(withResponse: response)
     }
     
-    private func firstRunningRequest(forURL url: String) -> SpecURLSessionDataTask? {
-        return requests.running.with(url: url).first
+    private func firstRunningRequest(for requestIdentifier: SpecURLRequestIdentifier) -> SpecURLSessionDataTask? {
+        return requests.running.matching(requestIdentifier).first
     }
 }
 
