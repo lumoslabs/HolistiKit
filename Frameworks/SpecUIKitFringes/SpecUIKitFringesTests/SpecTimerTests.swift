@@ -2,7 +2,7 @@ import XCTest
 import UIKitFringes
 import SpecUIKitFringes
 
-class SpecScheduledTimerTests: XCTestCase {
+class SpecTimerTests: XCTestCase {
 
     var subject: Timing!
     var factory: SpecTimerFactory!
@@ -48,6 +48,15 @@ class SpecScheduledTimerTests: XCTestCase {
         var firedCount = 0
         subject = factory.createScheduledTimer(withTimeInterval: 2, repeats: false) { firedCount += 1 }
         subject.invalidate()
+        dateProvider.progress(seconds: 2)
+        XCTAssertEqual(firedCount, 0)
+    }
+
+
+    func test_doesNotFireWhenDeallocated() {
+        var firedCount = 0
+        subject = factory.createScheduledTimer(withTimeInterval: 1, repeats: false) { firedCount += 1 }
+        subject = nil
         dateProvider.progress(seconds: 2)
         XCTAssertEqual(firedCount, 0)
     }

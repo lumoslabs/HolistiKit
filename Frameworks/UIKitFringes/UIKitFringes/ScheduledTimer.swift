@@ -32,7 +32,7 @@ public class ScheduledTimer: Timing {
                                           target: WeakTarget(block: block),
                                           selector: #selector(WeakTarget.execute),
                                           userInfo: nil,
-                                          repeats: true)
+                                          repeats: repeats)
     }
 
     deinit {
