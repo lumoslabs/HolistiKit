@@ -4,16 +4,17 @@ import UIKitFringes
 class TimerInteractor {
 
     private let dateProvider: DateProviding
-    private let timer: Timing
-    private let timerInterval: TimeInterval = 1
+    private let timerFactory: TimerFactoryProtocol
     private let presenter: TimerPresenter
+    private var timer: Timing!
+    private let timerInterval: TimeInterval = 1
 
     init(dateProvider: DateProviding,
          timerFactory: TimerFactoryProtocol,
          presenter: TimerPresenter) {
         self.dateProvider = dateProvider
+        self.timerFactory = timerFactory
         self.presenter = presenter
-        self.timer = timerFactory.create()
     }
 
     func viewDidLoad() {
@@ -23,7 +24,7 @@ class TimerInteractor {
 
     private func startUpdatingDate() {
         updateDate()
-        timer.start(interval: timerInterval, repeats: true) { [weak self] in
+        timer = timerFactory.createScheduledTimer(withTimeInterval: timerInterval, repeats: true) { [weak self] in
             self?.updateDate()
         }
     }

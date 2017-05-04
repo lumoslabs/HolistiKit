@@ -8,7 +8,7 @@ public class SpecTimerFactory: TimerFactoryProtocol {
         self.dateProvider = dateProvider
     }
 
-    public func create() -> Timing {
-        return SpecScheduledTimer(dateProvider: dateProvider)
+    public func createScheduledTimer(withTimeInterval timeInterval: TimeInterval, repeats: Bool, block: @escaping () -> Void) -> Timing {
+        return SpecTimer(dateProvider: dateProvider, interval: timeInterval, repeats: repeats, block: block)
     }
 }

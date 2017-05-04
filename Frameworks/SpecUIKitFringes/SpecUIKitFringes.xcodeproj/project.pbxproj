@@ -67,7 +67,7 @@
 		88FED40A1E58F56300217628 /* SpecUserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4091E58F56300217628 /* SpecUserLocation.swift */; };
 		88FED40C1E59B76700217628 /* SpecTimeZoneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED40B1E59B76700217628 /* SpecTimeZoneProvider.swift */; };
 		88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED40F1E59B97700217628 /* SpecDateProvider.swift */; };
-		88FED4171E59BDF800217628 /* SpecScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4151E59BDF800217628 /* SpecScheduledTimer.swift */; };
+		88FED4171E59BDF800217628 /* SpecTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4151E59BDF800217628 /* SpecTimer.swift */; };
 		88FED4181E59BDF800217628 /* SpecTimerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4161E59BDF800217628 /* SpecTimerFactory.swift */; };
 		88FED4281E59C38300217628 /* SpecURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4261E59C38300217628 /* SpecURLSession.swift */; };
 		88FED4291E59C38300217628 /* SpecURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4271E59C38300217628 /* SpecURLSessionDataTask.swift */; };
@@ -147,7 +147,7 @@
 		88FED4091E58F56300217628 /* SpecUserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecUserLocation.swift; sourceTree = "<group>"; };
 		88FED40B1E59B76700217628 /* SpecTimeZoneProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimeZoneProvider.swift; sourceTree = "<group>"; };
 		88FED40F1E59B97700217628 /* SpecDateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProvider.swift; sourceTree = "<group>"; };
-		88FED4151E59BDF800217628 /* SpecScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecScheduledTimer.swift; sourceTree = "<group>"; };
+		88FED4151E59BDF800217628 /* SpecTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimer.swift; sourceTree = "<group>"; };
 		88FED4161E59BDF800217628 /* SpecTimerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerFactory.swift; sourceTree = "<group>"; };
 		88FED4261E59C38300217628 /* SpecURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSession.swift; sourceTree = "<group>"; };
 		88FED4271E59C38300217628 /* SpecURLSessionDataTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecURLSessionDataTask.swift; sourceTree = "<group>"; };
@@ -335,7 +335,7 @@
 		88FED4191E59BDFD00217628 /* SpecTimer */ = {
 			isa = PBXGroup;
 			children = (
-				88FED4151E59BDF800217628 /* SpecScheduledTimer.swift */,
+				88FED4151E59BDF800217628 /* SpecTimer.swift */,
 				88FED4161E59BDF800217628 /* SpecTimerFactory.swift */,
 			);
 			name = SpecTimer;
@@ -504,7 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				882004141E831D65005F43C9 /* SpecDispatchHandler.swift in Sources */,
-				88FED4171E59BDF800217628 /* SpecScheduledTimer.swift in Sources */,
+				88FED4171E59BDF800217628 /* SpecTimer.swift in Sources */,
 				88FED4101E59B97700217628 /* SpecDateProvider.swift in Sources */,
 				882D6E901E996AB400A12BB7 /* SpecURLRequestIdentifier.swift in Sources */,
 				88FED4041E58D39700217628 /* SpecLocationManagerFactory.swift in Sources */,

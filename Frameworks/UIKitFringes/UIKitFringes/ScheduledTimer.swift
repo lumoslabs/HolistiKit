@@ -4,21 +4,27 @@ public class TimerFactory: TimerFactoryProtocol {
 
     public init() { }
     
-    public func create() -> Timing {
-        return ScheduledTimer()
+    public func createScheduledTimer(withTimeInterval timeInterval: TimeInterval, repeats: Bool, block: @escaping () -> Void) -> Timing {
+        let timer = ScheduledTimer()
+        timer.start(interval: timeInterval, repeats: repeats, block: block)
+        return timer
     }
 }
 
 public protocol TimerFactoryProtocol {
 
-    func create() -> Timing
+    func createScheduledTimer(withTimeInterval: TimeInterval, repeats: Bool, block: @escaping () -> Void) -> Timing
 }
 
 public class ScheduledTimer: Timing {
-    
+
     private var timer: Timer?
 
-    public func start(interval: TimeInterval, repeats: Bool, block: @escaping () -> Void) {
+    public func invalidate() {
+        timer?.invalidate()
+    }
+
+    fileprivate func start(interval: TimeInterval, repeats: Bool, block: @escaping () -> Void) {
         // invalidate timer if already started
         self.timer?.invalidate()
         
@@ -27,10 +33,6 @@ public class ScheduledTimer: Timing {
                                           selector: #selector(WeakTarget.execute),
                                           userInfo: nil,
                                           repeats: true)
-    }
-
-    public func invalidate() {
-        timer?.invalidate()
     }
 
     deinit {
@@ -48,13 +50,10 @@ public class ScheduledTimer: Timing {
         @objc func execute() {
             self.block?()
         }
-
     }
-
 }
 
 public protocol Timing {
     
-    func start(interval: TimeInterval, repeats: Bool, block: @escaping () -> Void)
     func invalidate()
 }

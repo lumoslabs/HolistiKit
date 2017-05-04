@@ -1,7 +1,7 @@
 import Foundation
 import UIKitFringes
 
-public class SpecScheduledTimer: Timing {
+public class SpecTimer: Timing {
 
     public typealias TimerBlock = () -> Void
 
@@ -13,17 +13,14 @@ public class SpecScheduledTimer: Timing {
     private var repeats: Bool?
     private var valid: Bool = false
 
-    public init(dateProvider: SpecDateProvider) {
+    public init(dateProvider: SpecDateProvider, interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
         self.dateProvider = dateProvider
-        dateProvider.observe(on: self, selector: #selector(dateDidChange))
-    }
-
-    public func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
         self.interval = interval
         self.block = block
         self.repeats = repeats
         self.startedDate = dateProvider.date
         self.valid = true
+        dateProvider.observe(on: self, selector: #selector(dateDidChange))
     }
 
     public func invalidate() {
