@@ -8,7 +8,9 @@ public class SpecScheduledTimer: Timing {
     private let dateProvider: SpecDateProvider
     private var block: TimerBlock?
     private var interval: TimeInterval?
+    private var startedDate: Date?
     private var lastFiredDate: Date?
+    private var repeats: Bool?
 
     public init(dateProvider: SpecDateProvider) {
         self.dateProvider = dateProvider
@@ -17,20 +19,40 @@ public class SpecScheduledTimer: Timing {
 
     @objc
     func dateDidChange() {
-        guard let lastFiredDate = lastFiredDate,
-            let interval = interval,
-            let block = block else { return }
+        if shouldExecute { execute() }
+    }
+
+    private func execute() {
+        lastFiredDate = dateProvider.date
+        block?()
+    }
+
+    private var shouldExecute: Bool {
+        return hasRemainingExecutions && enoughTimePassed
+    }
+
+    private var hasRemainingExecutions: Bool {
+        guard let repeats = repeats else { return false }
+        let hasNotExecutedYet = lastFiredDate == nil
+        return repeats || hasNotExecutedYet
+    }
+
+    private var enoughTimePassed: Bool {
+        guard let elapsedTimeInterval = elapsedTimeInterval,
+            let interval = interval else { return false }
+        return elapsedTimeInterval >= interval
+    }
+
+    private var elapsedTimeInterval: TimeInterval? {
+        guard let lastDate = lastFiredDate ?? startedDate else { return nil }
         let currentDate = dateProvider.date
-        let delta = currentDate.timeIntervalSince(lastFiredDate)
-        if delta >= interval {
-            self.lastFiredDate = currentDate
-            block()
-        }
+        return currentDate.timeIntervalSince(lastDate)
     }
 
     public func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
         self.interval = interval
         self.block = block
-        self.lastFiredDate = dateProvider.date
+        self.repeats = repeats
+        self.startedDate = dateProvider.date
     }
 }
