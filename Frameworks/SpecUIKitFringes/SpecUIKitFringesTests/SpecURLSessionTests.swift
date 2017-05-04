@@ -75,6 +75,6 @@ class SpecURLSessionTests: XCTestCase {
         errorHandler.fatalErrorsOff {
             self.subject.respond(to: requestIdentifier, with: (Data(), urlResponse, nil))
         }
-        XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress)
+        XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress(requestIdentifier, []))
     }
 }

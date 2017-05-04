@@ -27,6 +27,11 @@ public class SpecURLSessionDataTask: URLSessionDataTask {
         _state = .completed
         completionHandler(response.0, response.1, response.2)
     }
+
+    public override var description: String {
+        let request = originalRequest!
+        return "(\(request.url!), \(request.httpMethod!))"
+    }
 }
 
 extension Array where Element: SpecURLSessionDataTask {

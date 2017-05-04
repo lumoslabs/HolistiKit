@@ -10,11 +10,13 @@ public struct SpecURLRequestIdentifier {
         self.method = method
     }
 
-    public enum HTTPMethod: String {
+    public enum HTTPMethod: String, CustomStringConvertible {
         case get = "GET"
         case post = "POST"
         case put = "PUT"
         case delete = "DELETE"
+
+        public var description: String { return rawValue }
     }
 }
 

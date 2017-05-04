@@ -24,7 +24,7 @@ public class SpecURLSession: URLSessionProtocol {
 
     public func respond(to requestIdentifier: SpecURLRequestIdentifier, with response: SpecURLSessionDataTask.Response) {
         guard let request = firstRunningRequest(for: requestIdentifier) else {
-            errorHandler.error(.noSuchURLRequestInProgress)
+            errorHandler.error(.noSuchURLRequestInProgress(requestIdentifier, requests))
             return
         }
         request.finish(withResponse: response)
