@@ -29,6 +29,10 @@ public class ScheduledTimer: Timing {
                                           repeats: true)
     }
 
+    public func invalidate() {
+        timer?.invalidate()
+    }
+
     deinit {
         self.timer?.invalidate()
     }
@@ -52,4 +56,5 @@ public class ScheduledTimer: Timing {
 public protocol Timing {
     
     func start(interval: TimeInterval, repeats: Bool, block: @escaping () -> Void)
+    func invalidate()
 }

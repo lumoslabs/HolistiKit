@@ -43,4 +43,12 @@ class SpecScheduledTimerTests: XCTestCase {
         dateProvider.progress(seconds: 2)
         XCTAssertEqual(firedCount, 1)
     }
+
+    func test_doesNotFireIfInvalidated() {
+        var firedCount = 0
+        subject.start(interval: 2, repeats: false) { firedCount += 1 }
+        subject.invalidate()
+        dateProvider.progress(seconds: 2)
+        XCTAssertEqual(firedCount, 0)
+    }
 }

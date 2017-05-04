@@ -11,14 +11,27 @@ public class SpecScheduledTimer: Timing {
     private var startedDate: Date?
     private var lastFiredDate: Date?
     private var repeats: Bool?
+    private var valid: Bool = false
 
     public init(dateProvider: SpecDateProvider) {
         self.dateProvider = dateProvider
         dateProvider.observe(on: self, selector: #selector(dateDidChange))
     }
 
+    public func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
+        self.interval = interval
+        self.block = block
+        self.repeats = repeats
+        self.startedDate = dateProvider.date
+        self.valid = true
+    }
+
+    public func invalidate() {
+        valid = false
+    }
+
     @objc
-    func dateDidChange() {
+    private func dateDidChange() {
         if shouldExecute { execute() }
     }
 
@@ -28,7 +41,7 @@ public class SpecScheduledTimer: Timing {
     }
 
     private var shouldExecute: Bool {
-        return hasRemainingExecutions && enoughTimePassed
+        return valid && hasRemainingExecutions && enoughTimePassed
     }
 
     private var hasRemainingExecutions: Bool {
@@ -47,12 +60,5 @@ public class SpecScheduledTimer: Timing {
         guard let lastDate = lastFiredDate ?? startedDate else { return nil }
         let currentDate = dateProvider.date
         return currentDate.timeIntervalSince(lastDate)
-    }
-
-    public func start(interval: TimeInterval, repeats: Bool, block: @escaping TimerBlock) {
-        self.interval = interval
-        self.block = block
-        self.repeats = repeats
-        self.startedDate = dateProvider.date
     }
 }
