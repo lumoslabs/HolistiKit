@@ -19,11 +19,7 @@ def xcodebuildCommand(command)
 end
 
 def xcodebuildCodeCoverage(command)
-  # Disabling code coverage for now. Xcode 8.3 crashes during
-  # compilation with a custom main.swift if code coverage is enabled
-  #command == :test ? "-enableCodeCoverage YES" : ""
-  return ""
-  #
+  command == :test ? "-enableCodeCoverage YES" : ""
 end
 
 def xcodebuildScheme(scheme)
