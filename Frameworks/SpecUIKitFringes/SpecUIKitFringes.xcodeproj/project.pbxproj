@@ -59,7 +59,7 @@
 		88F5D3AD1EBE0C990095BFBE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 88F5D3AC1EBE0C990095BFBE /* Settings.bundle */; };
 		88F5D3AF1EBE28C40095BFBE /* NotificationCentering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D3AE1EBE28C40095BFBE /* NotificationCentering.swift */; };
 		88F5D3B11EBE2A930095BFBE /* SpecNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D3B01EBE2A930095BFBE /* SpecNotificationCenter.swift */; };
-		88F5D3B31EBE44C80095BFBE /* SettingsAppIconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D3B21EBE44C80095BFBE /* SettingsAppIconTests.swift */; };
+		88F5D3B31EBE44C80095BFBE /* SettingsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D3B21EBE44C80095BFBE /* SettingsAppTests.swift */; };
 		88FED3F41E58690300217628 /* SpecDialogIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */; };
 		88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F71E5870CD00217628 /* SpecDialog.swift */; };
 		88FED3FB1E58AFE100217628 /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */; };
@@ -144,7 +144,7 @@
 		88F5D3AC1EBE0C990095BFBE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		88F5D3AE1EBE28C40095BFBE /* NotificationCentering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCentering.swift; sourceTree = "<group>"; };
 		88F5D3B01EBE2A930095BFBE /* SpecNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNotificationCenter.swift; sourceTree = "<group>"; };
-		88F5D3B21EBE44C80095BFBE /* SettingsAppIconTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppIconTests.swift; sourceTree = "<group>"; };
+		88F5D3B21EBE44C80095BFBE /* SettingsAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppTests.swift; sourceTree = "<group>"; };
 		88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogIdentifier.swift; sourceTree = "<group>"; };
 		88FED3F71E5870CD00217628 /* SpecDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialog.swift; sourceTree = "<group>"; };
 		88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLAuthorizationStatus+CustomStringConvertible.swift"; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 				883E43811E3D14DB0051BD21 /* HomeButtonTests.swift */,
 				883E43831E3D15050051BD21 /* AppSwitcherTests.swift */,
 				885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */,
-				88F5D3B21EBE44C80095BFBE /* SettingsAppIconTests.swift */,
+				88F5D3B21EBE44C80095BFBE /* SettingsAppTests.swift */,
 			);
 			name = SpecSystem;
 			sourceTree = "<group>";
@@ -570,7 +570,7 @@
 				88B4E0731E59D6920004C839 /* SpecTimerTests.swift in Sources */,
 				882004201E898D3A005F43C9 /* RecordingUIAlertController.swift in Sources */,
 				88D2C8D21E562FF70065882D /* AuthorizationInSettingsAppTests.swift in Sources */,
-				88F5D3B31EBE44C80095BFBE /* SettingsAppIconTests.swift in Sources */,
+				88F5D3B31EBE44C80095BFBE /* SettingsAppTests.swift in Sources */,
 				883BC3ED1E75A41E00B2D7DB /* RecordingUIViewController.swift in Sources */,
 				88D2C8D71E562FF70065882D /* RequestingAuthorizationTests.swift in Sources */,
 				88B4E0751E59DAE90004C839 /* SpecURLSessionTests.swift in Sources */,

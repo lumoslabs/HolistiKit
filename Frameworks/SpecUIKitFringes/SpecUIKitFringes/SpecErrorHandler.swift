@@ -20,6 +20,7 @@ class SpecErrorHandler {
         case appSwitcherNotOpen
         case noScreenshotInAppSwitcher
         case notOnSpringBoard
+        case notInSettingsApp
         case noDialog
         case notAValidDialogResponse
         case noSuchPreferencesSpecifier(SpecSettingsPreferences.Specifier, [SpecSettingsPreferences.Specifier])
@@ -33,6 +34,8 @@ class SpecErrorHandler {
                 return "The screenshot is not in the App Switcher"
             case .notOnSpringBoard:
                 return "The user is not on the SpringBoard"
+            case .notInSettingsApp:
+                return "The user is not in the Settings App"
             case .noDialog:
                 return "There is no dialog visible"
             case .notAValidDialogResponse:
@@ -73,6 +76,7 @@ func ==(lhs: SpecErrorHandler.FatalError, rhs: SpecErrorHandler.FatalError) -> B
     case (.appSwitcherNotOpen, .appSwitcherNotOpen): return true
     case (.noScreenshotInAppSwitcher, .noScreenshotInAppSwitcher): return true
     case (.notOnSpringBoard, .notOnSpringBoard): return true
+    case (.notInSettingsApp, .notInSettingsApp): return true
     case (.noDialog, .noDialog): return true
     case (.notAValidDialogResponse, .notAValidDialogResponse): return true
     case (.noSuchURLRequestInProgress, .noSuchURLRequestInProgress): return true

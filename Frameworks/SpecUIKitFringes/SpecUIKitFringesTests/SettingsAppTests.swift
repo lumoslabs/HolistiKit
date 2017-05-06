@@ -1,7 +1,7 @@
 import XCTest
 @testable import SpecUIKitFringes
 
-class SettingsAppIconTests: SpecSystemTestCase {
+class SettingsAppTests: SpecSystemTestCase {
 
     func test_tappingOnTheSettingsAppIcon() {
         subject.tapSettingsAppIcon()
@@ -15,5 +15,17 @@ class SettingsAppIconTests: SpecSystemTestCase {
             subject.tapSettingsAppIcon()
         }
         XCTAssertEqual(errorHandler.recordedError, .notOnSpringBoard)
+    }
+
+    func test_accessingTheSettingsApp() {
+        subject.tapSettingsAppIcon()
+        _ = subject.settingsApp
+    }
+
+    func test_accessingTheSettingsAppWhenNotInTheSettingsApp() {
+        errorHandler.fatalErrorsOff {
+            _ = subject.settingsApp
+        }
+        XCTAssertEqual(errorHandler.recordedError, .notInSettingsApp)
     }
 }

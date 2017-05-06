@@ -1,5 +1,7 @@
 open class SpecSystem {
 
+    let locationServices = SpecLocationServices()
+    let locationAuthorizationStatus = SpecLocationAuthorizationStatus()
     private let errorHandler: SpecErrorHandler
     private let notificationCenter: NotificationCentering
     
@@ -17,6 +19,12 @@ open class SpecSystem {
     public private(set) var appDelegate: SpecApplicationDelegateProtocol!
     private var locations: [Location] = [.springBoard]
     private var screenshotInAppSwitcher = false
+
+    var settingsApp: SpecSettingsApp {
+        errorIfNotInSettingsApp()
+        return SpecSettingsApp(locationAuthorizationStatus: locationAuthorizationStatus,
+                               locationServices: locationServices)
+    }
 
     public enum Location {
         case springBoard
@@ -174,6 +182,10 @@ open class SpecSystem {
 
     private var lastLocation: Location {
         return locations[locations.count - 2]
+    }
+
+    private func errorIfNotInSettingsApp() {
+        if !at(.settings) { errorHandler.error(.notInSettingsApp) }
     }
 
     private func errorIfNotOnSpringBoard() {
