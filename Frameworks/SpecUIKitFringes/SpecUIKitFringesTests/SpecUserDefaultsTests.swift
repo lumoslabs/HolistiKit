@@ -4,10 +4,41 @@ import SpecUIKitFringes
 class SpecUserDefaultsTests: XCTestCase {
 
     var subject: SpecUserDefaults!
+    var recorder: Recorder!
+    var notificationCenter: NotificationCenter!
+    var tokens: [NSObjectProtocol]!
 
     override func setUp() {
         super.setUp()
+        
+        notificationCenter = NotificationCenter.default
+        recorder = Recorder()
         subject = SpecUserDefaults()
+
+        tokens = [NSObjectProtocol]()
+        [UserDefaults.didChangeNotification].forEach(addNotification)
+    }
+
+    override func tearDown() {
+        super.tearDown()
+        tokens.forEach(notificationCenter.removeObserver)
+    }
+
+    private func addNotification(for notificationName: NSNotification.Name) {
+        let token = notificationCenter.addObserver(
+            forName: notificationName,
+            object: nil,
+            queue: nil) { [weak self] _ in
+                self?.recorder.record(.notification(notificationName))
+        }
+        tokens.append(token)
+    }
+
+    // set
+
+    func test_changeNotification() {
+        subject.set("bar", forKey: "foo")
+        XCTAssertEqual(recorder.events, [.notification(UserDefaults.didChangeNotification)])
     }
 
     // object

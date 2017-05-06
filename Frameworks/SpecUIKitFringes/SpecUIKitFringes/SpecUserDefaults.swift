@@ -9,6 +9,7 @@ public class SpecUserDefaults: UserDefaulting {
 
     public func set(_ value: Any?, forKey key: String) {
         store[key] = value
+        NotificationCenter.default.post(name: UserDefaults.didChangeNotification, object: nil)
     }
 
     public func object(forKey key: String) -> Any? {
