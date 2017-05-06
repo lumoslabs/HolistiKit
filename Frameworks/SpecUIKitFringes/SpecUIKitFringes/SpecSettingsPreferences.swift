@@ -16,16 +16,16 @@ public class SpecSettingsPreferences {
         self.errorHandler = errorHandler
         self.userDefaults = userDefaults
     }
-    
-    public var specifiers: [Specifier] {
-        return rawSpecifiers.map(parseSpecifier)
-    }
 
     public func set(switch key: String, to value: Bool) {
         if !specifiers.contains(.toggleSwitch(key)) {
             errorHandler.error(.noSuchPreferencesSpecifier(.toggleSwitch(key), specifiers))
         }
         userDefaults.set(value, forKey: key)
+    }
+    
+    private var specifiers: [Specifier] {
+        return rawSpecifiers.map(parseSpecifier)
     }
 
     private var bundle: Bundle {
@@ -52,7 +52,7 @@ public class SpecSettingsPreferences {
         }
     }
 
-    public enum Specifier: CustomStringConvertible {
+    enum Specifier: CustomStringConvertible {
         case group
         case toggleSwitch(String)
 
@@ -67,7 +67,7 @@ public class SpecSettingsPreferences {
 
 extension SpecSettingsPreferences.Specifier: Equatable {}
 
-public func ==(lhs: SpecSettingsPreferences.Specifier, rhs: SpecSettingsPreferences.Specifier) -> Bool {
+func ==(lhs: SpecSettingsPreferences.Specifier, rhs: SpecSettingsPreferences.Specifier) -> Bool {
     switch (lhs, rhs) {
     case (.group, .group): return true
     case (.toggleSwitch(let lKey), .toggleSwitch(let rKey)):

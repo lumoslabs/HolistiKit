@@ -15,12 +15,6 @@ class SpecSettingsPreferencesTests: XCTestCase {
                                           userDefaults: userDefaults)
     }
 
-    func test_specifiers() {
-        let specifiers = subject.specifiers
-        XCTAssertEqual(specifiers, [.group,
-                                    .toggleSwitch("switch_key_1")])
-    }
-
     func test_initialSpecifierValueInUserDefaults() {
         let value = userDefaults.object(forKey: "switch_key_1")
         XCTAssertNil(value)

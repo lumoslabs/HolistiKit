@@ -30,4 +30,11 @@ class HomeButtonTests: SpecSystemTestCase {
         XCTAssertEqual(recorder.events, [.applicationWillResignActive,
                                          .notification(.UIApplicationWillResignActive)])
     }
+
+    func test_tappingOnTheHomeButtonInTheSettingsApp() {
+        subject.tapSettingsAppIcon()
+        recorder.removeAllEvents()
+        subject.tapHomeButton()
+        XCTAssertEqual(recorder.events, [])
+    }
 }

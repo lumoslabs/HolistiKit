@@ -53,6 +53,11 @@ open class SpecSystem {
             launch()
         }
     }
+    
+    public func tapSettingsAppIcon() {
+        errorIfNotOnSpringBoard()
+        move(to: .settings)
+    }
 
     private func launch() {
         let newAppDelegateBundle = createAppDelegateBundle()
