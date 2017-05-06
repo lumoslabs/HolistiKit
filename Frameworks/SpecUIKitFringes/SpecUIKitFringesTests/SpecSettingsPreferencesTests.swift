@@ -10,9 +10,9 @@ class SpecSettingsPreferencesTests: XCTestCase {
         subject = SpecSettingsPreferences()
     }
 
-    func test_parsesTheSettingsBundlePList() {
-        let firstSpecifier = subject.parsedSpecifiers![0]
-        let firstTitle = firstSpecifier["Title"] as! String
-        XCTAssertEqual(firstTitle, "Group Title 1")
+    func test_specifiers() {
+        let specifiers = subject.specifiers
+        XCTAssertEqual(specifiers, [.group,
+                                    .toggleSwitch("switch_key_1")])
     }
 }

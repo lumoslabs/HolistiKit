@@ -3,19 +3,48 @@ import Foundation
 public class SpecSettingsPreferences {
 
     public init() {}
+    
+    public var specifiers: [Specifier] {
+        return rawSpecifiers.map(parseSpecifier)
+    }
 
     private var bundle: Bundle {
         return Bundle(for: type(of: self))
     }
 
-    private var settingsBundleSpecifiers: [[String : Any]]? {
-        guard let settingsURL = bundle.url(forResource: "Root", withExtension: "plist", subdirectory: "Settings.bundle"),
-            let settings = NSDictionary(contentsOf: settingsURL),
-            let specifiers = settings["PreferenceSpecifiers"] as? [[String : Any]] else { return nil }
-        return specifiers
+    private var settingsURL: URL {
+        return bundle.url(forResource: "Root", withExtension: "plist", subdirectory: "Settings.bundle")!
     }
 
-    public var parsedSpecifiers: [[String : Any]]? {
-        return settingsBundleSpecifiers
+    private var rawSpecifiers: [[String : Any]] {
+        let settings = NSDictionary(contentsOf: settingsURL)!
+        return settings["PreferenceSpecifiers"] as! [[String : Any]]
+    }
+
+    private func parseSpecifier(rawSpecifier: [String : Any]) -> Specifier {
+        let type = rawSpecifier["Type"] as! String
+        let key = rawSpecifier["Key"] as? String
+        switch type {
+        case "PSGroupSpecifier": return .group
+        case "PSToggleSwitchSpecifier": return .toggleSwitch(key!)
+        default:
+            fatalError("Preference Specifier type '\(type)' is not supported.")
+        }
+    }
+
+    public enum Specifier {
+        case group
+        case toggleSwitch(String)
+    }
+}
+
+extension SpecSettingsPreferences.Specifier: Equatable {}
+
+public func ==(lhs: SpecSettingsPreferences.Specifier, rhs: SpecSettingsPreferences.Specifier) -> Bool {
+    switch (lhs, rhs) {
+    case (.group, .group): return true
+    case (.toggleSwitch(let lKey), .toggleSwitch(let rKey)):
+        return lKey == rKey
+    default: return false
     }
 }
