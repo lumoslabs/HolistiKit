@@ -3,13 +3,21 @@ import UIKitFringes
 
 public class SpecUserDefaults: UserDefaulting {
 
+    private let notificationCenter: NotificationCentering
     private var store = [String : Any?]()
 
-    public init() { }
+    public convenience init() {
+        let notificationCenter = NotificationCenter.default
+        self.init(notificationCenter: notificationCenter)
+    }
+    
+    init(notificationCenter: NotificationCentering) {
+        self.notificationCenter = notificationCenter
+    }
 
     public func set(_ value: Any?, forKey key: String) {
         store[key] = value
-        NotificationCenter.default.post(name: UserDefaults.didChangeNotification, object: nil)
+        notificationCenter.post(name: UserDefaults.didChangeNotification, object: nil)
     }
 
     public func object(forKey key: String) -> Any? {
