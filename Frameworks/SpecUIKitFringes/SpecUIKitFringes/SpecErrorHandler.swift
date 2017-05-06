@@ -22,6 +22,7 @@ class SpecErrorHandler {
         case notOnSpringBoard
         case noDialog
         case notAValidDialogResponse
+        case noSuchPreferencesSpecifier(SpecSettingsPreferences.Specifier, [SpecSettingsPreferences.Specifier])
         case noSuchURLRequestInProgress(SpecURLRequestIdentifier, [SpecURLSessionDataTask])
 
         var message: String {
@@ -38,6 +39,8 @@ class SpecErrorHandler {
                 return "The dialog has no such available response"
             case .noSuchURLRequestInProgress(let id, let requests):
                 return "There was no such URL request in the app at the moment for \(id). Running requests were: \(requests)"
+            case .noSuchPreferencesSpecifier(let specifier, let specifiers):
+                return "There is no such Preferences Specifier in the Settings Bundle for \(specifier). Available specifiers are: \(specifiers)"
             }
         }
     }
@@ -73,6 +76,8 @@ func ==(lhs: SpecErrorHandler.FatalError, rhs: SpecErrorHandler.FatalError) -> B
     case (.noDialog, .noDialog): return true
     case (.notAValidDialogResponse, .notAValidDialogResponse): return true
     case (.noSuchURLRequestInProgress, .noSuchURLRequestInProgress): return true
+    case (.noSuchPreferencesSpecifier(let lSpecifier, let lSpecifiers), .noSuchPreferencesSpecifier(let rSpecifier, let rSpecifiers)):
+        return lSpecifier == rSpecifier && lSpecifiers == rSpecifiers
     default: fatalError("We should never need to test for inequality in tests.")
     }
 }

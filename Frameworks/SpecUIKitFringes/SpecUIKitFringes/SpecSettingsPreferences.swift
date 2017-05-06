@@ -3,8 +3,17 @@ import Foundation
 public class SpecSettingsPreferences {
 
     private let userDefaults: SpecUserDefaults
+    private let errorHandler: SpecErrorHandler
 
-    public init(userDefaults: SpecUserDefaults) {
+    public convenience init(userDefaults: SpecUserDefaults) {
+        let errorHandler = SpecErrorHandler()
+        self.init(errorHandler: errorHandler,
+                  userDefaults: userDefaults)
+    }
+
+    init(errorHandler: SpecErrorHandler,
+         userDefaults: SpecUserDefaults) {
+        self.errorHandler = errorHandler
         self.userDefaults = userDefaults
     }
     
@@ -13,6 +22,9 @@ public class SpecSettingsPreferences {
     }
 
     public func set(switch key: String, to value: Bool) {
+        if !specifiers.contains(.toggleSwitch(key)) {
+            errorHandler.error(.noSuchPreferencesSpecifier(.toggleSwitch(key), specifiers))
+        }
         userDefaults.set(value, forKey: key)
     }
 

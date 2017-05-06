@@ -1,15 +1,18 @@
 import XCTest
-import SpecUIKitFringes
+@testable import SpecUIKitFringes
 
 class SpecSettingsPreferencesTests: XCTestCase {
 
     var subject: SpecSettingsPreferences!
     var userDefaults: SpecUserDefaults!
+    var errorHandler: SpecErrorHandler!
     
     override func setUp() {
         super.setUp()
+        errorHandler = SpecErrorHandler()
         userDefaults = SpecUserDefaults()
-        subject = SpecSettingsPreferences(userDefaults: userDefaults)
+        subject = SpecSettingsPreferences(errorHandler: errorHandler,
+                                          userDefaults: userDefaults)
     }
 
     func test_specifiers() {
@@ -27,5 +30,14 @@ class SpecSettingsPreferencesTests: XCTestCase {
         subject.set(switch: "switch_key_1", to: true)
         let value = userDefaults.bool(forKey: "switch_key_1")
         XCTAssertTrue(value)
+    }
+
+    func test_modifyingANonMatchingSpecifierValueInPreferences() {
+        errorHandler.fatalErrorsOff {
+            self.subject.set(switch: "i_dont_exist", to: true)
+        }
+        XCTAssertEqual(errorHandler.recordedError,
+                       .noSuchPreferencesSpecifier(.toggleSwitch("i_dont_exist"),
+                                                   [.group, .toggleSwitch("switch_key_1")]))
     }
 }
