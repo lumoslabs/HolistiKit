@@ -1,13 +1,17 @@
 open class SpecSystem {
 
     private let errorHandler: SpecErrorHandler
+    private let notificationCenter: NotificationCentering
     
     public init() {
         self.errorHandler = SpecErrorHandler()
+        self.notificationCenter = NotificationCenter.default
     }
-    
-    init(errorHandler: SpecErrorHandler) {
+
+    init(errorHandler: SpecErrorHandler,
+         notificationCenter: NotificationCentering) {
         self.errorHandler = errorHandler
+        self.notificationCenter = notificationCenter
     }
 
     public private(set) var appDelegate: SpecApplicationDelegateProtocol!
@@ -61,32 +65,32 @@ open class SpecSystem {
 
     private func applicationWillEnterForeground() {
         appDelegate.applicationWillEnterForeground()
-        NotificationCenter.default.post(name: .UIApplicationWillEnterForeground, object: nil)
+        notificationCenter.post(name: .UIApplicationWillEnterForeground, object: nil)
     }
 
     private func applicationDidLaunch() {
         appDelegate.applicationDidLaunch()
-        NotificationCenter.default.post(name: .UIApplicationDidFinishLaunching, object: nil)
+        notificationCenter.post(name: .UIApplicationDidFinishLaunching, object: nil)
     }
 
     private func applicationDidBecomeActive() {
         appDelegate.applicationDidBecomeActive()
-        NotificationCenter.default.post(name: .UIApplicationDidBecomeActive, object: nil)
+        notificationCenter.post(name: .UIApplicationDidBecomeActive, object: nil)
     }
     
     private func applicationDidEnterBackground() {
         appDelegate.applicationDidEnterBackground()
-        NotificationCenter.default.post(name: .UIApplicationDidEnterBackground, object: nil)
+        notificationCenter.post(name: .UIApplicationDidEnterBackground, object: nil)
     }
 
     private func applicationWillTerminate() {
         appDelegate.applicationWillTerminate()
-        NotificationCenter.default.post(name: .UIApplicationWillTerminate, object: nil)
+        notificationCenter.post(name: .UIApplicationWillTerminate, object: nil)
     }
     
     private func applicationWillResignActive() {
         appDelegate.applicationWillResignActive()
-        NotificationCenter.default.post(name: .UIApplicationWillResignActive, object: nil)
+        notificationCenter.post(name: .UIApplicationWillResignActive, object: nil)
     }
 
     public func tapHomeButton() {

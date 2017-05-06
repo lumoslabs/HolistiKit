@@ -38,7 +38,8 @@ class AppSwitcherTests: SpecSystemTestCase {
         subject.doubleTapHomeButton()
         recorder.removeAllEvents()
         subject.tapHomeButton()
-        XCTAssertEqual(recorder.events, [.applicationDidBecomeActive])
+        XCTAssertEqual(recorder.events, [.applicationDidBecomeActive,
+                                         .notification(.UIApplicationDidBecomeActive)])
     }
 
     func test_tappingOnTheAppScreenshot() {
@@ -46,7 +47,8 @@ class AppSwitcherTests: SpecSystemTestCase {
         subject.doubleTapHomeButton()
         recorder.removeAllEvents()
         subject.tapAppScreenshot()
-        XCTAssertEqual(recorder.events, [.applicationDidBecomeActive])
+        XCTAssertEqual(recorder.events, [.applicationDidBecomeActive,
+                                         .notification(.UIApplicationDidBecomeActive)])
     }
 
     func test_swipingUpOnTheAppScreenshotWhenTheAppIsRunning() {
@@ -54,7 +56,10 @@ class AppSwitcherTests: SpecSystemTestCase {
         subject.doubleTapHomeButton()
         recorder.removeAllEvents()
         subject.swipeUpAppScreenshot()
-        XCTAssertEqual(recorder.events, [.applicationDidEnterBackground, .applicationWillTerminate])
+        XCTAssertEqual(recorder.events, [.applicationDidEnterBackground,
+                                         .notification(.UIApplicationDidEnterBackground),
+                                         .applicationWillTerminate,
+                                         .notification(.UIApplicationWillTerminate)])
         XCTAssertNil(subject.appDelegate)
     }
 

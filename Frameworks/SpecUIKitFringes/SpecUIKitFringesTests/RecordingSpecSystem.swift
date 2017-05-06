@@ -4,14 +4,12 @@ class RecordingSpecSystem: SpecSystem {
 
     private let recorder: Recorder
 
-    init(recorder: Recorder) {
+    init(recorder: Recorder,
+         errorHandler: SpecErrorHandler,
+         notificationCenter: SpecNotificationCenter) {
         self.recorder = recorder
-        super.init()
-    }
-
-    init(recorder: Recorder, errorHandler: SpecErrorHandler) {
-        self.recorder = recorder
-        super.init(errorHandler: errorHandler)
+        super.init(errorHandler: errorHandler,
+                   notificationCenter: notificationCenter)
     }
 
     override func createAppDelegateBundle() -> SpecSystem.AppDelegateBundle {

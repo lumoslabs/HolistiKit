@@ -11,6 +11,9 @@ class SpecSystemTestCase: XCTestCase {
         super.setUp()
         errorHandler = SpecErrorHandler()
         recorder = Recorder()
-        subject = RecordingSpecSystem(recorder: recorder, errorHandler: errorHandler)
+        let notificationCenter = SpecNotificationCenter(recorder: recorder)
+        subject = RecordingSpecSystem(recorder: recorder,
+                                      errorHandler: errorHandler,
+                                      notificationCenter: notificationCenter)
     }
 }

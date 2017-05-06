@@ -1,5 +1,5 @@
 import XCTest
-import SpecUIKitFringes
+@testable import SpecUIKitFringes
 
 class SpecSharedApplicationTests: XCTestCase {
 
@@ -10,7 +10,11 @@ class SpecSharedApplicationTests: XCTestCase {
     override func setUp() {
         super.setUp()
         recorder = Recorder()
-        system = RecordingSpecSystem(recorder: recorder)
+        let errorHandler = SpecErrorHandler()
+        let notificationCenter = SpecNotificationCenter(recorder: recorder)
+        system = RecordingSpecSystem(recorder: recorder,
+                                     errorHandler: errorHandler,
+                                     notificationCenter: notificationCenter)
         subject = SpecSharedApplication(system: system)
     }
 
@@ -25,6 +29,9 @@ class SpecSharedApplicationTests: XCTestCase {
         let returnValue = subject.openURL(url)
         XCTAssertTrue(returnValue)
         XCTAssertEqual(system.location, .settings)
-        XCTAssertEqual(recorder.events, [.applicationWillResignActive, .applicationDidEnterBackground])
+        XCTAssertEqual(recorder.events, [.applicationWillResignActive,
+                                         .notification(.UIApplicationWillResignActive),
+                                         .applicationDidEnterBackground,
+                                         .notification(.UIApplicationDidEnterBackground)])
     }
 }

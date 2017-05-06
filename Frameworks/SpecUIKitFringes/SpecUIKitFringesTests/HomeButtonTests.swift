@@ -17,13 +17,17 @@ class HomeButtonTests: SpecSystemTestCase {
         subject.tapAppIcon()
         recorder.removeAllEvents()
         subject.tapHomeButton()
-        XCTAssertEqual(recorder.events, [.applicationWillResignActive, .applicationDidEnterBackground])
+        XCTAssertEqual(recorder.events, [.applicationWillResignActive,
+                                         .notification(.UIApplicationWillResignActive),
+                                         .applicationDidEnterBackground,
+                                         .notification(.UIApplicationDidEnterBackground)])
     }
 
     func test_doubleTappingOnTheHomeButtonInTheApp() {
         subject.tapAppIcon()
         recorder.removeAllEvents()
         subject.doubleTapHomeButton()
-        XCTAssertEqual(recorder.events, [.applicationWillResignActive])
+        XCTAssertEqual(recorder.events, [.applicationWillResignActive,
+                                         .notification(.UIApplicationWillResignActive)])
     }
 }

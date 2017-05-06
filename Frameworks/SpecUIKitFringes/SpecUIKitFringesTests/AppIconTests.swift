@@ -5,7 +5,10 @@ class AppIconTests: SpecSystemTestCase {
 
     func test_tappingOnTheAppIconWhenTheAppIsOff() {
         subject.tapAppIcon()
-        XCTAssertEqual(recorder.events, [.applicationDidLaunch, .applicationDidBecomeActive])
+        XCTAssertEqual(recorder.events, [.applicationDidLaunch,
+                                         .notification(.UIApplicationDidFinishLaunching),
+                                         .applicationDidBecomeActive,
+                                         .notification(.UIApplicationDidBecomeActive)])
     }
 
     func test_tappingOnTheAppIconWhenTheAppIsRunning() {
@@ -13,7 +16,10 @@ class AppIconTests: SpecSystemTestCase {
         subject.tapHomeButton()
         recorder.removeAllEvents()
         subject.tapAppIcon()
-        XCTAssertEqual(recorder.events, [.applicationWillEnterForeground, .applicationDidBecomeActive])
+        XCTAssertEqual(recorder.events, [.applicationWillEnterForeground,
+                                         .notification(.UIApplicationWillEnterForeground),
+                                         .applicationDidBecomeActive,
+                                         .notification(.UIApplicationDidBecomeActive)])
     }
 
     func test_tappingOnTheAppIconAfterTheAppHasBeenKilled() {
@@ -24,7 +30,10 @@ class AppIconTests: SpecSystemTestCase {
         recorder.removeAllEvents()
         subject.tapHomeButton()
         subject.tapAppIcon()
-        XCTAssertEqual(recorder.events, [.applicationDidLaunch, .applicationDidBecomeActive])
+        XCTAssertEqual(recorder.events, [.applicationDidLaunch,
+                                         .notification(.UIApplicationDidFinishLaunching),
+                                         .applicationDidBecomeActive,
+                                         .notification(.UIApplicationDidBecomeActive)])
         XCTAssertNotSame(oldAppDelegate, subject.appDelegate as! RecordingSpecApplicationDelegate)
     }
 
