@@ -67,7 +67,7 @@ class AppSwitcherTests: SpecSystemTestCase {
         errorHandler.fatalErrorsOff {
             subject.tapAppScreenshot()
         }
-        XCTAssertEqual(errorHandler.recordedError, .appSwitcherNotOpen)
+        XCTAssertEqual(errorHandler.recordedError, .expectedLocation(.appSwitcher))
     }
 
     func test_tappingOnTheAppScreenshotWhileInTheApp() {
@@ -75,7 +75,7 @@ class AppSwitcherTests: SpecSystemTestCase {
         errorHandler.fatalErrorsOff {
             subject.tapAppScreenshot()
         }
-        XCTAssertEqual(errorHandler.recordedError, .appSwitcherNotOpen)
+        XCTAssertEqual(errorHandler.recordedError, .expectedLocation(.appSwitcher))
     }
 
     func test_tappingOnTheAppScreenshotWhenTheAppHasNeverBeenRunBefore() {

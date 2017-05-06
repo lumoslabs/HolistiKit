@@ -17,10 +17,8 @@ class SpecErrorHandler {
     private var recordingMode = false
 
     enum FatalError: CustomStringConvertible {
-        case appSwitcherNotOpen
         case noScreenshotInAppSwitcher
-        case notOnSpringBoard
-        case notInSettingsApp
+        case expectedLocation(SpecSystem.Location)
         case noDialog
         case notAValidDialogResponse
         case noSuchPreferencesSpecifier(SpecSettingsPreferences.Specifier, [SpecSettingsPreferences.Specifier])
@@ -28,14 +26,10 @@ class SpecErrorHandler {
 
         var description: String {
             switch self {
-            case .appSwitcherNotOpen:
-                return "The user is not in the App Switcher"
+            case .expectedLocation(let location):
+                return "Expected user to be located at \(location)"
             case .noScreenshotInAppSwitcher:
                 return "The screenshot is not in the App Switcher"
-            case .notOnSpringBoard:
-                return "The user is not on the SpringBoard"
-            case .notInSettingsApp:
-                return "The user is not in the Settings App"
             case .noDialog:
                 return "There is no dialog visible"
             case .notAValidDialogResponse:
@@ -73,10 +67,9 @@ class SpecErrorHandler {
 extension SpecErrorHandler.FatalError: Equatable {}
 func ==(lhs: SpecErrorHandler.FatalError, rhs: SpecErrorHandler.FatalError) -> Bool {
     switch (lhs, rhs) {
-    case (.appSwitcherNotOpen, .appSwitcherNotOpen): return true
+    case (.expectedLocation(let lLocation), .expectedLocation(let rLocation)):
+        return lLocation == rLocation
     case (.noScreenshotInAppSwitcher, .noScreenshotInAppSwitcher): return true
-    case (.notOnSpringBoard, .notOnSpringBoard): return true
-    case (.notInSettingsApp, .notInSettingsApp): return true
     case (.noDialog, .noDialog): return true
     case (.notAValidDialogResponse, .notAValidDialogResponse): return true
     case (.noSuchURLRequestInProgress, .noSuchURLRequestInProgress): return true

@@ -28,7 +28,7 @@ class SpecSharedApplicationTests: XCTestCase {
         let url = URL(string: UIApplicationOpenSettingsURLString)!
         let returnValue = subject.openURL(url)
         XCTAssertTrue(returnValue)
-        XCTAssertEqual(system.location, .settings)
+        XCTAssertEqual(system.location, .settingsApp)
         XCTAssertEqual(recorder.events, [.applicationWillResignActive,
                                          .notification(.UIApplicationWillResignActive),
                                          .applicationDidEnterBackground,

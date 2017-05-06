@@ -21,7 +21,7 @@ open class SpecSystem {
     private var screenshotInAppSwitcher = false
 
     var settingsApp: SpecSettingsApp {
-        errorIfNotInSettingsApp()
+        assert(location: .settingsApp)
         return SpecSettingsApp(locationAuthorizationStatus: locationAuthorizationStatus,
                                locationServices: locationServices)
     }
@@ -30,7 +30,7 @@ open class SpecSystem {
         case springBoard
         case app
         case appSwitcher
-        case settings
+        case settingsApp
     }
 
     public struct AppDelegateBundle {
@@ -53,7 +53,7 @@ open class SpecSystem {
     }
     
     public func tapAppIcon() {
-        errorIfNotOnSpringBoard()
+        assert(location: .springBoard)
         if appDelegate != nil {
             applicationWillEnterForeground()
             applicationDidBecomeActive()
@@ -63,8 +63,8 @@ open class SpecSystem {
     }
     
     public func tapSettingsAppIcon() {
-        errorIfNotOnSpringBoard()
-        move(to: .settings)
+        assert(location: .springBoard)
+        move(to: .settingsApp)
     }
 
     private func launch() {
@@ -114,7 +114,7 @@ open class SpecSystem {
             applicationWillResignActive()
             applicationDidEnterBackground()
             move(to: .springBoard)
-        case .settings:
+        case .settingsApp:
             move(to: .springBoard)
         case .springBoard:
             break;
@@ -137,13 +137,13 @@ open class SpecSystem {
         case .app:
             applicationWillResignActive()
             move(to: .appSwitcher)
-        case .springBoard, .settings:
+        case .springBoard, .settingsApp:
             move(to: .appSwitcher)
         }
     }
 
     public func tapAppScreenshot() {
-        errorIfAppSwitcherIsNotOpen()
+        assert(location: .appSwitcher)
         errorIfNoScreenshotInAppSwitcher()
         if appDelegate != nil {
             applicationDidBecomeActive()
@@ -161,7 +161,7 @@ open class SpecSystem {
     internal func jumpToSettings() {
         applicationWillResignActive()
         applicationDidEnterBackground()
-        move(to: .settings)
+        move(to: .settingsApp)
     }
 
     private func move(to location: Location) {
@@ -184,16 +184,8 @@ open class SpecSystem {
         return locations[locations.count - 2]
     }
 
-    private func errorIfNotInSettingsApp() {
-        if !at(.settings) { errorHandler.error(.notInSettingsApp) }
-    }
-
-    private func errorIfNotOnSpringBoard() {
-        if !at(.springBoard) { errorHandler.error(.notOnSpringBoard) }
-    }
-
-    private func errorIfAppSwitcherIsNotOpen() {
-        if !at(.appSwitcher) { errorHandler.error(.appSwitcherNotOpen) }
+    private func assert(location: Location) {
+        if !at(location) { errorHandler.error(.expectedLocation(location)) }
     }
 
     private func errorIfNoScreenshotInAppSwitcher() {

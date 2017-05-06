@@ -5,7 +5,7 @@ class SettingsAppTests: SpecSystemTestCase {
 
     func test_tappingOnTheSettingsAppIcon() {
         subject.tapSettingsAppIcon()
-        XCTAssertEqual(subject.location, .settings)
+        XCTAssertEqual(subject.location, .settingsApp)
         XCTAssertEqual(recorder.events, [])
     }
 
@@ -14,7 +14,7 @@ class SettingsAppTests: SpecSystemTestCase {
         errorHandler.fatalErrorsOff {
             subject.tapSettingsAppIcon()
         }
-        XCTAssertEqual(errorHandler.recordedError, .notOnSpringBoard)
+        XCTAssertEqual(errorHandler.recordedError, .expectedLocation(.springBoard))
     }
 
     func test_accessingTheSettingsApp() {
@@ -26,6 +26,6 @@ class SettingsAppTests: SpecSystemTestCase {
         errorHandler.fatalErrorsOff {
             _ = subject.settingsApp
         }
-        XCTAssertEqual(errorHandler.recordedError, .notInSettingsApp)
+        XCTAssertEqual(errorHandler.recordedError, .expectedLocation(.settingsApp))
     }
 }
