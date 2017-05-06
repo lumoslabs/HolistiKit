@@ -2,10 +2,18 @@ import Foundation
 
 public class SpecSettingsPreferences {
 
-    public init() {}
+    private let userDefaults: SpecUserDefaults
+
+    public init(userDefaults: SpecUserDefaults) {
+        self.userDefaults = userDefaults
+    }
     
     public var specifiers: [Specifier] {
         return rawSpecifiers.map(parseSpecifier)
+    }
+
+    public func set(switch key: String, to value: Bool) {
+        userDefaults.set(value, forKey: key)
     }
 
     private var bundle: Bundle {
