@@ -29,7 +29,7 @@ class SpecDialogManagerTests: XCTestCase {
         let testDialog = TestDialog()
         subject.addDialog(testDialog)
         errorHandler.fatalErrorsOff {
-            self.subject.tap(.dontAllow)
+            subject.tap(.dontAllow)
         }
         XCTAssertEqual(errorHandler.recordedError, .notAValidDialogResponse)
     }

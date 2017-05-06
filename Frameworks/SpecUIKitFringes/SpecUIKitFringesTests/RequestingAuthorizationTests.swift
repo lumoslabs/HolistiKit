@@ -104,7 +104,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         XCTAssertNil(dialogManager.visibleDialog)
         
         errorHandler.fatalErrorsOff {
-            self.dialogManager.tap(.allow)
+            dialogManager.tap(.allow)
         }
         XCTAssertEqual(errorHandler.recordedError, .noDialog)
     }
@@ -115,7 +115,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
         errorHandler.fatalErrorsOff {
-            self.dialogManager.tap(.allow)
+            dialogManager.tap(.allow)
         }
         XCTAssertEqual(errorHandler.recordedError, .notAValidDialogResponse)
     }
@@ -124,7 +124,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         XCTAssertNil(dialogManager.visibleDialog)
         
         errorHandler.fatalErrorsOff {
-            self.dialogManager.tap(.dontAllow)
+            dialogManager.tap(.dontAllow)
         }
         XCTAssertEqual(errorHandler.recordedError, .noDialog)
     }
@@ -135,7 +135,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
         XCTAssertEqual(dialogManager.visibleDialog, .locationManager(.requestJumpToLocationServicesSettings))
         
         errorHandler.fatalErrorsOff {
-            self.dialogManager.tap(.dontAllow)
+            dialogManager.tap(.dontAllow)
         }
         XCTAssertEqual(errorHandler.recordedError, .notAValidDialogResponse)
     }

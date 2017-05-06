@@ -34,10 +34,17 @@ class SpecSettingsPreferencesTests: XCTestCase {
 
     func test_modifyingANonMatchingSpecifierValueInPreferences() {
         errorHandler.fatalErrorsOff {
-            self.subject.set(switch: "i_dont_exist", to: true)
+            subject.set(switch: "i_dont_exist", to: true)
         }
         XCTAssertEqual(errorHandler.recordedError,
                        .noSuchPreferencesSpecifier(.toggleSwitch("i_dont_exist"),
                                                    [.group, .toggleSwitch("switch_key_1")]))
+    }
+
+    func test_fatalErrorDescription() {
+        let error = SpecErrorHandler.FatalError.noSuchPreferencesSpecifier(.toggleSwitch("i_dont_exist"),
+                                                   [.group, .toggleSwitch("switch_key_1")])
+        XCTAssertEqual(error.description,
+                       "There is no such Preferences Specifier in the Settings Bundle for toggleSwitch(i_dont_exist). Available specifiers are [group, toggleSwitch(switch_key_1)]")
     }
 }

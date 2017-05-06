@@ -73,7 +73,7 @@ class SpecURLSessionTests: XCTestCase {
         let url = URL(string: "http://www.google.com")!
         let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
         errorHandler.fatalErrorsOff {
-            self.subject.respond(to: requestIdentifier, with: (Data(), urlResponse, nil))
+            subject.respond(to: requestIdentifier, with: (Data(), urlResponse, nil))
         }
         XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress(requestIdentifier, []))
     }

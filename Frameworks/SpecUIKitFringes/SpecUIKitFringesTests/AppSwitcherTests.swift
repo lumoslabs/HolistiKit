@@ -60,7 +60,7 @@ class AppSwitcherTests: SpecSystemTestCase {
 
     func test_tappingOnTheAppScreenshotWhileOnTheSpringBoard() {
         errorHandler.fatalErrorsOff {
-            self.subject.tapAppScreenshot()
+            subject.tapAppScreenshot()
         }
         XCTAssertEqual(errorHandler.recordedError, .appSwitcherNotOpen)
     }
@@ -68,7 +68,7 @@ class AppSwitcherTests: SpecSystemTestCase {
     func test_tappingOnTheAppScreenshotWhileInTheApp() {
         subject.tapAppIcon()
         errorHandler.fatalErrorsOff {
-            self.subject.tapAppScreenshot()
+            subject.tapAppScreenshot()
         }
         XCTAssertEqual(errorHandler.recordedError, .appSwitcherNotOpen)
     }
@@ -76,7 +76,7 @@ class AppSwitcherTests: SpecSystemTestCase {
     func test_tappingOnTheAppScreenshotWhenTheAppHasNeverBeenRunBefore() {
         subject.doubleTapHomeButton()
         errorHandler.fatalErrorsOff {
-            self.subject.tapAppScreenshot()
+            subject.tapAppScreenshot()
         }
         XCTAssertEqual(errorHandler.recordedError, .noScreenshotInAppSwitcher)
     }
@@ -86,7 +86,7 @@ class AppSwitcherTests: SpecSystemTestCase {
         subject.doubleTapHomeButton()
         subject.swipeUpAppScreenshot()
         errorHandler.fatalErrorsOff {
-            self.subject.tapAppScreenshot()
+            subject.tapAppScreenshot()
         }
         XCTAssertEqual(errorHandler.recordedError, .noScreenshotInAppSwitcher)
     }

@@ -36,7 +36,7 @@ class LocationServicesTests: SpecLocationManagerTestCase {
 
     func test_respondingToDialogWhenItIsNotPresented() {
         errorHandler.fatalErrorsOff {
-            self.dialogManager.tap(.cancel)
+            dialogManager.tap(.cancel)
         }
         XCTAssertEqual(errorHandler.recordedError, .noDialog)
     }

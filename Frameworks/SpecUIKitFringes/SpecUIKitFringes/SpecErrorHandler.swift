@@ -16,7 +16,7 @@ class SpecErrorHandler {
     var recordedError: FatalError?
     private var recordingMode = false
 
-    enum FatalError {
+    enum FatalError: CustomStringConvertible {
         case appSwitcherNotOpen
         case noScreenshotInAppSwitcher
         case notOnSpringBoard
@@ -25,7 +25,7 @@ class SpecErrorHandler {
         case noSuchPreferencesSpecifier(SpecSettingsPreferences.Specifier, [SpecSettingsPreferences.Specifier])
         case noSuchURLRequestInProgress(SpecURLRequestIdentifier, [SpecURLSessionDataTask])
 
-        var message: String {
+        var description: String {
             switch self {
             case .appSwitcherNotOpen:
                 return "The user is not in the App Switcher"
@@ -40,7 +40,7 @@ class SpecErrorHandler {
             case .noSuchURLRequestInProgress(let id, let requests):
                 return "There was no such URL request in the app at the moment for \(id). Running requests were: \(requests)"
             case .noSuchPreferencesSpecifier(let specifier, let specifiers):
-                return "There is no such Preferences Specifier in the Settings Bundle for \(specifier). Available specifiers are: \(specifiers)"
+                return "There is no such Preferences Specifier in the Settings Bundle for \(specifier). Available specifiers are \(specifiers)"
             }
         }
     }
@@ -49,7 +49,7 @@ class SpecErrorHandler {
         if recordingMode {
             record(error)
         } else {
-            fatalError(error.message)
+            fatalError(error.description)
         }
     }
 
@@ -59,7 +59,7 @@ class SpecErrorHandler {
         }
     }
 
-    func fatalErrorsOff(_ block: @escaping () -> Void) {
+    func fatalErrorsOff(_ block: () -> Void) {
         let initialMode = recordingMode
         recordingMode = true
         block()

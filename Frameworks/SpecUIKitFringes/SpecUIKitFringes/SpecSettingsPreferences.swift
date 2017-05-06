@@ -52,9 +52,16 @@ public class SpecSettingsPreferences {
         }
     }
 
-    public enum Specifier {
+    public enum Specifier: CustomStringConvertible {
         case group
         case toggleSwitch(String)
+
+        public var description: String {
+            switch self {
+            case .group: return "group"
+            case .toggleSwitch(let key): return "toggleSwitch(\(key))"
+            }
+        }
     }
 }
 
