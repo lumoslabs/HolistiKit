@@ -4,32 +4,34 @@ public class SpecSettingsPreferences {
 
     private let userDefaults: SpecUserDefaults
     private let errorHandler: SpecErrorHandler
+    private let bundle: Bundle
 
     public convenience init(userDefaults: SpecUserDefaults) {
         let errorHandler = SpecErrorHandler()
+        let bundle = Bundle.main
         self.init(errorHandler: errorHandler,
-                  userDefaults: userDefaults)
+                  userDefaults: userDefaults,
+                  bundle: bundle)
     }
 
     init(errorHandler: SpecErrorHandler,
-         userDefaults: SpecUserDefaults) {
+         userDefaults: SpecUserDefaults,
+         bundle: Bundle) {
         self.errorHandler = errorHandler
         self.userDefaults = userDefaults
+        self.bundle = bundle
     }
 
     public func set(switch key: String, to value: Bool) {
-        if !specifiers.contains(.toggleSwitch(key)) {
-            errorHandler.error(.noSuchPreferencesSpecifier(.toggleSwitch(key), specifiers))
+        let requiredSpecifier = Specifier.toggleSwitch(key)
+        if !specifiers.contains(requiredSpecifier) {
+            errorHandler.error(.noSuchPreferencesSpecifier(requiredSpecifier, specifiers))
         }
         userDefaults.set(value, forKey: key)
     }
     
     private var specifiers: [Specifier] {
         return rawSpecifiers.map(parseSpecifier)
-    }
-
-    private var bundle: Bundle {
-        return Bundle(for: type(of: self))
     }
 
     private var settingsURL: URL {

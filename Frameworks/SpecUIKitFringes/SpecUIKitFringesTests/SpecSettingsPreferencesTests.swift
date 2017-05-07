@@ -11,8 +11,10 @@ class SpecSettingsPreferencesTests: XCTestCase {
         super.setUp()
         errorHandler = SpecErrorHandler()
         userDefaults = SpecUserDefaults()
+        let bundle = Bundle(for: type(of: self))
         subject = SpecSettingsPreferences(errorHandler: errorHandler,
-                                          userDefaults: userDefaults)
+                                          userDefaults: userDefaults,
+                                          bundle: bundle)
     }
 
     func test_initialSpecifierValueInUserDefaults() {
