@@ -22,7 +22,7 @@ class SpecErrorHandler {
         case noDialog
         case notAValidDialogResponse
         case noSuchPreferencesSpecifier(SpecSettingsPreferences.Specifier, [SpecSettingsPreferences.Specifier])
-        case noSuchURLRequestInProgress(SpecURLRequestIdentifier, [SpecURLSessionDataTask])
+        case noSuchURLRequestInProgress(SpecURLRequestIdentifier, [URLSessionDataTask])
 
         var description: String {
             switch self {
@@ -72,8 +72,11 @@ func ==(lhs: SpecErrorHandler.FatalError, rhs: SpecErrorHandler.FatalError) -> B
     case (.noScreenshotInAppSwitcher, .noScreenshotInAppSwitcher): return true
     case (.noDialog, .noDialog): return true
     case (.notAValidDialogResponse, .notAValidDialogResponse): return true
-    case (.noSuchURLRequestInProgress, .noSuchURLRequestInProgress): return true
-    case (.noSuchPreferencesSpecifier(let lSpecifier, let lSpecifiers), .noSuchPreferencesSpecifier(let rSpecifier, let rSpecifiers)):
+    case (.noSuchURLRequestInProgress(let lId, let lRequests),
+          .noSuchURLRequestInProgress(let rId, let rRequests)):
+        return lId == rId && lRequests == rRequests
+    case (.noSuchPreferencesSpecifier(let lSpecifier, let lSpecifiers),
+          .noSuchPreferencesSpecifier(let rSpecifier, let rSpecifiers)):
         return lSpecifier == rSpecifier && lSpecifiers == rSpecifiers
     default: fatalError("We should never need to test for inequality in tests.")
     }

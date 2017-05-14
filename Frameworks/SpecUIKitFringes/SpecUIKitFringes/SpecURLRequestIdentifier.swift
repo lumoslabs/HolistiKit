@@ -20,6 +20,18 @@ public struct SpecURLRequestIdentifier {
     }
 }
 
+extension SpecURLRequestIdentifier: CustomStringConvertible {
+
+    public var description: String {
+        return "(\(url), \(method))"
+    }
+}
+
+func ==(lhs: SpecURLRequestIdentifier, rhs: SpecURLRequestIdentifier) -> Bool {
+    return lhs.url == rhs.url &&
+        lhs.method.rawValue == rhs.method.rawValue
+}
+
 func ==(lhs: SpecURLRequestIdentifier, rhs: SpecURLSessionDataTask) -> Bool {
     return lhs.url == rhs.originalRequest?.url?.absoluteString &&
         lhs.method.rawValue == rhs.originalRequest?.httpMethod
