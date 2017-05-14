@@ -21,7 +21,7 @@ public class SpecUserDefaults: UserDefaulting {
     }
 
     public func object(forKey key: String) -> Any? {
-        return store[key]
+        return store[key] ?? nil
     }
     
     public func integer(forKey key: String) -> Int {
