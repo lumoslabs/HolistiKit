@@ -37,6 +37,8 @@
 		885EC1601E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */; };
 		885EC18E1E34BC1700A61FA1 /* SpecSystemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */; };
 		885EC1911E34BC6600A61FA1 /* SpecSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */; };
+		88AF57961ED1B46B002ED478 /* SpecLocaleProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF57951ED1B46B002ED478 /* SpecLocaleProviderTests.swift */; };
+		88AF57991ED1B4B3002ED478 /* SpecLocaleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF57971ED1B4AE002ED478 /* SpecLocaleProvider.swift */; };
 		88B4E06F1E59D2780004C839 /* SpecTimeZoneProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */; };
 		88B4E0711E59D35E0004C839 /* SpecDateProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */; };
 		88B4E0731E59D6920004C839 /* SpecTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0721E59D6920004C839 /* SpecTimerTests.swift */; };
@@ -122,6 +124,8 @@
 		885EC15F1E33EB1B00A61FA1 /* RecordingSpecApplicationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingSpecApplicationDelegate.swift; sourceTree = "<group>"; };
 		885EC18D1E34BC1700A61FA1 /* SpecSystemTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystemTestCase.swift; sourceTree = "<group>"; };
 		885EC18F1E34BC6100A61FA1 /* SpecSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSystem.swift; sourceTree = "<group>"; };
+		88AF57951ED1B46B002ED478 /* SpecLocaleProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocaleProviderTests.swift; sourceTree = "<group>"; };
+		88AF57971ED1B4AE002ED478 /* SpecLocaleProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocaleProvider.swift; sourceTree = "<group>"; };
 		88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimeZoneProviderTests.swift; sourceTree = "<group>"; };
 		88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProviderTests.swift; sourceTree = "<group>"; };
 		88B4E0721E59D6920004C839 /* SpecTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerTests.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				882004131E831D65005F43C9 /* SpecDispatchHandler.swift */,
 				882D6E871E910B7500A12BB7 /* SpecUserDefaults.swift */,
 				88F5D39B1EBDD9A30095BFBE /* SpecSettingsPreferences.swift */,
+				88AF57971ED1B4AE002ED478 /* SpecLocaleProvider.swift */,
 				88FED42C1E59C50F00217628 /* App Lifecycle */,
 				88FED42D1E59C51600217628 /* View Lifecycle */,
 				88FED42E1E59C51E00217628 /* URLSession */,
@@ -252,6 +257,7 @@
 				88EAAF141E76982300C2B769 /* UINavigationControllerTests.swift */,
 				8820041B1E8989B1005F43C9 /* UIAlertControllerTests.swift */,
 				88F5D3991EBDD93F0095BFBE /* SpecSettingsPreferencesTests.swift */,
+				88AF57951ED1B46B002ED478 /* SpecLocaleProviderTests.swift */,
 				885EC14D1E33980B00A61FA1 /* Fakes */,
 				885EC1581E33E0A600A61FA1 /* Extensions */,
 				88F5D3AB1EBE0C840095BFBE /* Assets */,
@@ -542,6 +548,7 @@
 				88FED4001E58CDC000217628 /* SpecLocationAuthorizationStatus.swift in Sources */,
 				883BC3E91E75A18600B2D7DB /* Swizzle.swift in Sources */,
 				885EC1471E338F4200A61FA1 /* SpecSharedApplication.swift in Sources */,
+				88AF57991ED1B4B3002ED478 /* SpecLocaleProvider.swift in Sources */,
 				885EC15C1E33EA2A00A61FA1 /* SpecApplicationDelegate.swift in Sources */,
 				88FED4061E58DEA500217628 /* SpecMulticaster.swift in Sources */,
 				88FED40C1E59B76700217628 /* SpecTimeZoneProvider.swift in Sources */,
@@ -575,6 +582,7 @@
 				883BC3ED1E75A41E00B2D7DB /* RecordingUIViewController.swift in Sources */,
 				88D2C8D71E562FF70065882D /* RequestingAuthorizationTests.swift in Sources */,
 				88B4E0751E59DAE90004C839 /* SpecURLSessionTests.swift in Sources */,
+				88AF57961ED1B46B002ED478 /* SpecLocaleProviderTests.swift in Sources */,
 				88FED4021E58D30100217628 /* MultipleLocationManagersTests.swift in Sources */,
 				883E43821E3D14DB0051BD21 /* HomeButtonTests.swift in Sources */,
 				882D6E861E910B2600A12BB7 /* SpecUserDefaultsTests.swift in Sources */,

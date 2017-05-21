@@ -12,6 +12,7 @@
 		885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1091E3384BB00A61FA1 /* UIApplication.swift */; };
 		88A1E1711E337FE300CFA0CD /* UIKitFringes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E1671E337FE300CFA0CD /* UIKitFringes.framework */; };
 		88A1E1781E337FE300CFA0CD /* UIKitFringes.h in Headers */ = {isa = PBXBuildFile; fileRef = 88A1E16A1E337FE300CFA0CD /* UIKitFringes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88AF579B1ED1BAE7002ED478 /* LocaleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF579A1ED1BAE7002ED478 /* LocaleProvider.swift */; };
 		88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D2C8B01E562C600065882D /* CLLocationManager.swift */; };
 		88FED40E1E59B7AF00217628 /* TimeZoneProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED40D1E59B7AE00217628 /* TimeZoneProvider.swift */; };
 		88FED4121E59BA3500217628 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4111E59BA3500217628 /* DateProvider.swift */; };
@@ -38,6 +39,7 @@
 		88A1E16B1E337FE300CFA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88A1E1701E337FE300CFA0CD /* UIKitFringesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitFringesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A1E1771E337FE300CFA0CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88AF579A1ED1BAE7002ED478 /* LocaleProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocaleProvider.swift; sourceTree = "<group>"; };
 		88D2C8B01E562C600065882D /* CLLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationManager.swift; sourceTree = "<group>"; };
 		88FED40D1E59B7AE00217628 /* TimeZoneProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZoneProvider.swift; sourceTree = "<group>"; };
 		88FED4111E59BA3500217628 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				88FED41A1E59BE6B00217628 /* ScheduledTimer.swift */,
 				88FED42A1E59C3C300217628 /* URLSessionProtocol.swift */,
 				88D2C8B01E562C600065882D /* CLLocationManager.swift */,
+				88AF579A1ED1BAE7002ED478 /* LocaleProvider.swift */,
 				88A1E1841E3381AE00CFA0CD /* Supporting Files */,
 			);
 			name = Source;
@@ -242,6 +245,7 @@
 				88FED41B1E59BE6B00217628 /* ScheduledTimer.swift in Sources */,
 				882D6E8A1E910BB900A12BB7 /* UserDefaults.swift in Sources */,
 				885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */,
+				88AF579B1ED1BAE7002ED478 /* LocaleProvider.swift in Sources */,
 				88FED40E1E59B7AF00217628 /* TimeZoneProvider.swift in Sources */,
 				88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */,
 			);
