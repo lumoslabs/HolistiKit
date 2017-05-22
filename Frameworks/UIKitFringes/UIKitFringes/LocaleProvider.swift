@@ -5,9 +5,11 @@ public protocol LocaleProviding {
     var current: Locale { get }
 }
 
-class LocaleProvider: LocaleProviding {
+public class LocaleProvider: LocaleProviding {
 
-    var current: Locale {
+    public init() {}
+
+    public var current: Locale {
         return Locale.current
     }
 }
