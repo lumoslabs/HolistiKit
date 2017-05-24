@@ -2,7 +2,7 @@ import UIKit
 
 class Recorder {
 
-    enum Event {
+    enum Event: CustomStringConvertible {
         case applicationDidLaunch
         case applicationWillResignActive
         case applicationDidEnterBackground
@@ -16,6 +16,24 @@ class Recorder {
         case viewDidDisappear(UIViewController)
         case notification(NSNotification.Name)
         case custom(String)
+
+        var description: String {
+            switch self {
+            case .applicationDidLaunch: return "applicationDidLaunch"
+            case .applicationWillResignActive: return "applicationWillResignActive"
+            case .applicationDidEnterBackground: return "applicationDidEnterBackground"
+            case .applicationWillEnterForeground: return "applicationWillEnterForeground"
+            case .applicationDidBecomeActive: return "applicationDidBecomeActive"
+            case .applicationWillTerminate: return "applicationWillTerminate"
+            case .viewDidLoad(let vc): return "viewDidLoad(\(vc))"
+            case .viewWillDisappear(let vc): return "viewWillDisappear(\(vc))"
+            case .viewWillAppear(let vc): return "viewWillAppear(\(vc))"
+            case .viewDidAppear(let vc): return "viewDidAppear(\(vc))"
+            case .viewDidDisappear(let vc): return "viewDidDisappear(\(vc))"
+            case .notification(let name): return "notification(\(name))"
+            case .custom(let name): return "custom(\(name))"
+            }
+        }
     }
 
     private(set) var events = [Event]()

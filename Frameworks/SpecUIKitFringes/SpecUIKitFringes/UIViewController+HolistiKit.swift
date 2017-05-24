@@ -25,8 +25,17 @@ extension UIViewController {
         _presenting._presentedViewController = nil
         let hidesPresenter = !(_presented is UIAlertController)
         _presented.viewWillDisappear(animated)
-        if hidesPresenter { _presenting.viewWillAppear(animated) }
-        if hidesPresenter { _presenting.viewDidAppear(animated) }
+        if hidesPresenter {
+            if let nav = _presenting as? UINavigationController {
+                nav.topViewController!.viewWillAppear(animated)
+                nav.viewWillAppear(animated)
+                nav.topViewController!.viewDidAppear(animated)
+                nav.viewDidAppear(animated)
+            } else {
+                _presenting.viewWillAppear(animated)
+                _presenting.viewDidAppear(animated)
+            }
+        }
         _presented.viewDidDisappear(animated)
         completion?()
     }

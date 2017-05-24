@@ -3,9 +3,11 @@ import UIKit
 class RecordingUIViewController: UIViewController {
 
     let recorder: Recorder
+    private let id: String
 
-    init(recorder: Recorder) {
+    init(recorder: Recorder, id: String? = nil) {
         self.recorder = recorder
+        self.id = id ?? UUID().uuidString
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -17,4 +19,8 @@ class RecordingUIViewController: UIViewController {
 
     private func record(_ event: Recorder.Event) { recorder.record(event) }
     required init?(coder aDecoder: NSCoder) { fatalError() }
+
+    override var description: String {
+        return id
+    }
 }

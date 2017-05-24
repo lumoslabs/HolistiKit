@@ -9,7 +9,7 @@ class UINavigationControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         recorder = Recorder()
-        navigationController = RecordingUINavigationController(recorder: recorder)
+        navigationController = RecordingUINavigationController(recorder: recorder, id: "nav")
     }
 
     func test_pushingAViewController() {
@@ -84,5 +84,23 @@ class UINavigationControllerTests: XCTestCase {
         XCTAssertEqual(recorder.events, [.viewDidLoad(viewController),
                                          .viewWillAppear(viewController),
                                          .viewDidAppear(viewController)])
+    }
+
+    func test_dismissingAViewController() {
+        let topViewController = RecordingUIViewController(recorder: recorder, id: "top")
+        navigationController.pushViewController(topViewController, animated: false)
+        let presentedViewController = RecordingUIViewController(recorder: recorder, id: "presented")
+        navigationController.present(presentedViewController, animated: false)
+        recorder.removeAllEvents()
+        navigationController.dismiss(animated: false) {
+            self.recorder.record(.custom("completionCalled"))
+        }
+        XCTAssertEqual(recorder.events, [.viewWillDisappear(presentedViewController),
+                                         .viewWillAppear(topViewController),
+                                         .viewWillAppear(navigationController),
+                                         .viewDidAppear(topViewController),
+                                         .viewDidAppear(navigationController),
+                                         .viewDidDisappear(presentedViewController),
+                                         .custom("completionCalled")])
     }
 }
