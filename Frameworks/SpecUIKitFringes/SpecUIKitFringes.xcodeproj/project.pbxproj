@@ -319,17 +319,33 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
-		88D2C8C31E562F8B0065882D /* SpecLocationManager */ = {
+		88AF57A01ED6CB20002ED478 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
 				88D2C8C41E562FB30065882D /* AuthorizationInSettingsAppTests.swift */,
-				88FED4011E58D30100217628 /* MultipleLocationManagersTests.swift */,
 				88D2C8C61E562FB30065882D /* GeneralAuthorizationStatusesTests.swift */,
 				88D2C8C71E562FB30065882D /* LocationServicesTests.swift */,
+				88D2C8C91E562FB30065882D /* RequestingAuthorizationTests.swift */,
+			);
+			name = Authorization;
+			sourceTree = "<group>";
+		};
+		88AF57A11ED6CB40002ED478 /* Getting Location */ = {
+			isa = PBXGroup;
+			children = (
 				88AF579E1ED6C936002ED478 /* RequestLocationTests.swift */,
 				88D2C8C81E562FB30065882D /* GetLocationTests.swift */,
 				88AF579C1ED6C8F0002ED478 /* StartUpdatingLocationTests.swift */,
-				88D2C8C91E562FB30065882D /* RequestingAuthorizationTests.swift */,
+			);
+			name = "Getting Location";
+			sourceTree = "<group>";
+		};
+		88D2C8C31E562F8B0065882D /* SpecLocationManager */ = {
+			isa = PBXGroup;
+			children = (
+				88AF57A01ED6CB20002ED478 /* Authorization */,
+				88AF57A11ED6CB40002ED478 /* Getting Location */,
+				88FED4011E58D30100217628 /* MultipleLocationManagersTests.swift */,
 				88D2C8CA1E562FB30065882D /* SpecLocationManagerDelegate.swift */,
 				88D2C8C51E562FB30065882D /* SpecLocationManagerTestCase.swift */,
 			);
