@@ -15,5 +15,4 @@ class GeneralAuthorizationStatusesTests: SpecLocationManagerTestCase {
         
         XCTAssertEqual(subject.authorizationStatus(), .denied)
     }
-    
 }
