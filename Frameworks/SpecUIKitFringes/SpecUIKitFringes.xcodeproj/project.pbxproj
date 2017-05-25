@@ -41,6 +41,8 @@
 		88AF57991ED1B4B3002ED478 /* SpecLocaleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF57971ED1B4AE002ED478 /* SpecLocaleProvider.swift */; };
 		88AF579D1ED6C8F0002ED478 /* StartUpdatingLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF579C1ED6C8F0002ED478 /* StartUpdatingLocationTests.swift */; };
 		88AF579F1ED6C936002ED478 /* RequestLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF579E1ED6C936002ED478 /* RequestLocationTests.swift */; };
+		88AF57A31ED6CBA6002ED478 /* UserMovementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF57A21ED6CBA6002ED478 /* UserMovementTests.swift */; };
+		88AF57A71ED6D250002ED478 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF57A61ED6D250002ED478 /* CLLocationCoordinate2D.swift */; };
 		88B4E06F1E59D2780004C839 /* SpecTimeZoneProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */; };
 		88B4E0711E59D35E0004C839 /* SpecDateProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */; };
 		88B4E0731E59D6920004C839 /* SpecTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0721E59D6920004C839 /* SpecTimerTests.swift */; };
@@ -66,7 +68,7 @@
 		88F5D3B71EBF4B1A0095BFBE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 88F5D3B61EBF4B1A0095BFBE /* Settings.bundle */; };
 		88FED3F41E58690300217628 /* SpecDialogIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */; };
 		88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F71E5870CD00217628 /* SpecDialog.swift */; };
-		88FED3FB1E58AFE100217628 /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */; };
+		88FED3FB1E58AFE100217628 /* CLAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3F91E58AFD000217628 /* CLAuthorizationStatus.swift */; };
 		88FED3FE1E58C81000217628 /* SpecLocationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3FD1E58C81000217628 /* SpecLocationServices.swift */; };
 		88FED4001E58CDC000217628 /* SpecLocationAuthorizationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED3FF1E58CDC000217628 /* SpecLocationAuthorizationStatus.swift */; };
 		88FED4021E58D30100217628 /* MultipleLocationManagersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4011E58D30100217628 /* MultipleLocationManagersTests.swift */; };
@@ -130,6 +132,8 @@
 		88AF57971ED1B4AE002ED478 /* SpecLocaleProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocaleProvider.swift; sourceTree = "<group>"; };
 		88AF579C1ED6C8F0002ED478 /* StartUpdatingLocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartUpdatingLocationTests.swift; sourceTree = "<group>"; };
 		88AF579E1ED6C936002ED478 /* RequestLocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestLocationTests.swift; sourceTree = "<group>"; };
+		88AF57A21ED6CBA6002ED478 /* UserMovementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMovementTests.swift; sourceTree = "<group>"; };
+		88AF57A61ED6D250002ED478 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimeZoneProviderTests.swift; sourceTree = "<group>"; };
 		88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProviderTests.swift; sourceTree = "<group>"; };
 		88B4E0721E59D6920004C839 /* SpecTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerTests.swift; sourceTree = "<group>"; };
@@ -155,7 +159,7 @@
 		88F5D3B61EBF4B1A0095BFBE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		88FED3F31E58690300217628 /* SpecDialogIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialogIdentifier.swift; sourceTree = "<group>"; };
 		88FED3F71E5870CD00217628 /* SpecDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDialog.swift; sourceTree = "<group>"; };
-		88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CLAuthorizationStatus+CustomStringConvertible.swift"; sourceTree = "<group>"; };
+		88FED3F91E58AFD000217628 /* CLAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLAuthorizationStatus.swift; sourceTree = "<group>"; };
 		88FED3FD1E58C81000217628 /* SpecLocationServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationServices.swift; sourceTree = "<group>"; };
 		88FED3FF1E58CDC000217628 /* SpecLocationAuthorizationStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecLocationAuthorizationStatus.swift; sourceTree = "<group>"; };
 		88FED4011E58D30100217628 /* MultipleLocationManagersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleLocationManagersTests.swift; sourceTree = "<group>"; };
@@ -314,7 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				885EC1591E33E0C300A61FA1 /* XCTest.swift */,
-				88FED3F91E58AFD000217628 /* CLAuthorizationStatus+CustomStringConvertible.swift */,
+				88FED3F91E58AFD000217628 /* CLAuthorizationStatus.swift */,
+				88AF57A61ED6D250002ED478 /* CLLocationCoordinate2D.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			children = (
 				88AF57A01ED6CB20002ED478 /* Authorization */,
 				88AF57A11ED6CB40002ED478 /* Getting Location */,
+				88AF57A21ED6CBA6002ED478 /* UserMovementTests.swift */,
 				88FED4011E58D30100217628 /* MultipleLocationManagersTests.swift */,
 				88D2C8CA1E562FB30065882D /* SpecLocationManagerDelegate.swift */,
 				88D2C8C51E562FB30065882D /* SpecLocationManagerTestCase.swift */,
@@ -596,6 +602,7 @@
 			files = (
 				885EC1531E33C0E900A61FA1 /* SpecSharedApplicationTests.swift in Sources */,
 				885EC1331E338E8B00A61FA1 /* UIWindowTests.swift in Sources */,
+				88AF57A31ED6CBA6002ED478 /* UserMovementTests.swift in Sources */,
 				882004121E831CA9005F43C9 /* SpecDispatchHandlerTests.swift in Sources */,
 				88B4E0731E59D6920004C839 /* SpecTimerTests.swift in Sources */,
 				882004201E898D3A005F43C9 /* RecordingUIAlertController.swift in Sources */,
@@ -618,7 +625,7 @@
 				88D2C8D31E562FF70065882D /* SpecLocationManagerTestCase.swift in Sources */,
 				88D2C8D61E562FF70065882D /* GetLocationTests.swift in Sources */,
 				88F5D39A1EBDD93F0095BFBE /* SpecSettingsPreferencesTests.swift in Sources */,
-				88FED3FB1E58AFE100217628 /* CLAuthorizationStatus+CustomStringConvertible.swift in Sources */,
+				88FED3FB1E58AFE100217628 /* CLAuthorizationStatus.swift in Sources */,
 				88F5D3B11EBE2A930095BFBE /* SpecNotificationCenter.swift in Sources */,
 				883E43841E3D15050051BD21 /* AppSwitcherTests.swift in Sources */,
 				88EAAF151E76982300C2B769 /* UINavigationControllerTests.swift in Sources */,
@@ -628,6 +635,7 @@
 				883E437E1E3D140F0051BD21 /* AppIconTests.swift in Sources */,
 				88D2C8E61E56E3D80065882D /* SpecDialogManagerTests.swift in Sources */,
 				88AF579D1ED6C8F0002ED478 /* StartUpdatingLocationTests.swift in Sources */,
+				88AF57A71ED6D250002ED478 /* CLLocationCoordinate2D.swift in Sources */,
 				88D2C8D81E562FF70065882D /* SpecLocationManagerDelegate.swift in Sources */,
 				885EC18E1E34BC1700A61FA1 /* SpecSystemTestCase.swift in Sources */,
 				885EC15A1E33E0C300A61FA1 /* XCTest.swift in Sources */,

@@ -14,6 +14,6 @@ public class SpecUserLocation {
     }
 
     public func userIsInBerlin() {
-        location = CLLocation(latitude: 52.52, longitude: 13.40)
+        location = CLLocation(latitude: 52.52, longitude: 13.405)
     }
 }

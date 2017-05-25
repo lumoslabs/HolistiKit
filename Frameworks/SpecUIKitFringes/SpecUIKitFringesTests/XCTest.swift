@@ -1,4 +1,5 @@
 import XCTest
+import CoreLocation
 
 func XCTAssertSame<T: AnyObject>(_ object: T, _ otherObject: T,
                    file: StaticString = #file, line: UInt = #line) {
