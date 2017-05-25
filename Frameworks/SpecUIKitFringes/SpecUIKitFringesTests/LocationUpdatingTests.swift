@@ -5,6 +5,7 @@ import SpecUIKitFringes
 class LocationUpdatingTests: SpecLocationManagerTestCase {
 
     func test_requestLocation() {
+        subject.delegate = delegate
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 0)
 
@@ -15,6 +16,7 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
     }
 
     func test_requestLocation_WhileNotDetermined() {
+        subject.delegate = delegate
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
         XCTAssertNil(delegate.receivedError)
 
@@ -24,6 +26,7 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
     }
 
     func test_startUpdatingLocation() {
+        subject.delegate = delegate
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         subject.startUpdatingLocation()
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 0)
@@ -51,6 +54,7 @@ class LocationUpdatingTests: SpecLocationManagerTestCase {
     }
 
     func test_location_AfterHavingReceivedALocationBefore() {
+        subject.delegate = delegate
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         subject.requestLocation()
         userLocation.userIsInBerlin()

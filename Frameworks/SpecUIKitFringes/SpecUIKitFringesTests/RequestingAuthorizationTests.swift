@@ -5,6 +5,7 @@ import CoreLocation
 class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     
     func test_WhenStatusNotDetermined_ThenAllowed() {
+        subject.delegate = delegate
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
         delegate.receivedAuthorizationChange = nil
 
@@ -20,6 +21,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
     
     func test_WhenStatusNotDetermined_ThenNotAllowed() {
+        subject.delegate = delegate
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
         delegate.receivedAuthorizationChange = nil
 
@@ -35,6 +37,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
     
     func test_WhenStatusDenied() {
+        subject.delegate = delegate
         settingsApp.set(authorizationStatus: .denied)
         delegate.receivedAuthorizationChange = nil
         
@@ -46,6 +49,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
     
     func test_WhenStatusAuthorizedWhenInUse() {
+        subject.delegate = delegate
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         delegate.receivedAuthorizationChange = nil
 
@@ -57,6 +61,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
 
     func test_WhenStatusNotDetermined_AndLocationServicesOff() {
+        subject.delegate = delegate
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
         settingsApp.set(locationServicesEnabled: false)
         delegate.receivedAuthorizationChange = nil
@@ -71,6 +76,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
 
     func test_WhenStatusAuthorizedWhenInUse_AndLocationServicesOff_ThenOn() {
+        subject.delegate = delegate
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         settingsApp.set(locationServicesEnabled: false)
         delegate.receivedAuthorizationChange = nil
@@ -89,6 +95,7 @@ class RequestingAuthorizationTests: SpecLocationManagerTestCase {
     }
 
     func test_WhenStatusAuthorizedDenied_AndLocationServicesOff() {
+        subject.delegate = delegate
         settingsApp.set(authorizationStatus: .denied)
         settingsApp.set(locationServicesEnabled: false)
         delegate.receivedAuthorizationChange = nil

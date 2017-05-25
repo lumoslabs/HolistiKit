@@ -29,6 +29,5 @@ class SpecLocationManagerTestCase: XCTestCase {
                                              locationAuthorizationStatus: locationAuthorizationStatus)
         subject = factory.create()
         delegate = SpecLocationManagerDelegate()
-        subject.delegate = delegate
     }
 }

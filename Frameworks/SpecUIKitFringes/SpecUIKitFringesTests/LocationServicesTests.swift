@@ -5,6 +5,7 @@ import CoreLocation
 class LocationServicesTests: SpecLocationManagerTestCase {
 
     func test_WhenStatusAuthorizedWhenInUse_ThenLocationServicesOff() {
+        subject.delegate = delegate
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         
         settingsApp.set(locationServicesEnabled: false)

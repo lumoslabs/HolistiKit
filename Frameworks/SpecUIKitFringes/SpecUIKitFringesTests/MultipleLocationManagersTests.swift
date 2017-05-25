@@ -9,7 +9,9 @@ class MultipleLocationManagersTests: SpecLocationManagerTestCase {
 
     override func setUp() {
         super.setUp()
-        
+
+        subject.delegate = delegate
+
         subject2 = factory.create()
         delegate2 = SpecLocationManagerDelegate()
         subject2.delegate = delegate2

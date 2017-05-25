@@ -5,6 +5,7 @@ import SpecUIKitFringes
 class AuthorizationInSettingsAppTests: SpecLocationManagerTestCase {
 
     func test_WhenStatusNotDetermined_ThenAuthorizedWhenInUse() {
+        subject.delegate = delegate
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
 
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
@@ -14,6 +15,7 @@ class AuthorizationInSettingsAppTests: SpecLocationManagerTestCase {
     }
 
     func test_WhenStatusNotDetermined_ThenDenied() {
+        subject.delegate = delegate
         XCTAssertEqual(subject.authorizationStatus(), .notDetermined)
         
         settingsApp.set(authorizationStatus: .denied)
