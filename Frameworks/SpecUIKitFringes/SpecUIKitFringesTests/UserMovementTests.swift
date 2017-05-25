@@ -4,12 +4,17 @@ import SpecUIKitFringes
 
 class UserMovementTests: SpecLocationManagerTestCase {
 
-    func test_userIsInBerlin() {
+    func test_initialLocation() {
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
 
-        userLocation.userIsInBerlin()
+        XCTAssertNil(subject.location?.coordinate)
+    }
 
-        let berlin = CLLocationCoordinate2D(latitude: 52.52, longitude: 13.405)
-        XCTAssertEqual(subject.location?.coordinate, berlin)
+    func test_settingCoordinates() {
+        settingsApp.set(authorizationStatus: .authorizedWhenInUse)
+
+        userLocation.coordinates = .berlin
+
+        XCTAssertEqual(subject.location?.coordinate, .berlin)
     }
 }

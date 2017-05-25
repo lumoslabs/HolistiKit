@@ -10,7 +10,7 @@ class RequestLocationTests: SpecLocationManagerTestCase {
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 0)
 
         subject.requestLocation()
-        userLocation.userIsInBerlin()
+        userLocation.coordinates = .berlin
 
         XCTAssertEqual(delegate.receivedUpdatedLocations.count, 1)
     }

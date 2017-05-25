@@ -12,7 +12,7 @@ class GetLocationTests: SpecLocationManagerTestCase {
         subject.delegate = delegate
         settingsApp.set(authorizationStatus: .authorizedWhenInUse)
         subject.requestLocation()
-        userLocation.userIsInBerlin()
+        userLocation.coordinates = .berlin
         
         XCTAssertNotNil(subject.location)
     }

@@ -19,3 +19,10 @@ extension CLLocationCoordinate2D: Equatable {}
 public func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
     return lhs.consideredSame(as: rhs)
 }
+
+extension CLLocationCoordinate2D {
+
+    static var berlin: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: 52.52, longitude: 13.405)
+    }
+}

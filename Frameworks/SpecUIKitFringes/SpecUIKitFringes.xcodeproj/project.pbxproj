@@ -43,6 +43,7 @@
 		88AF579F1ED6C936002ED478 /* RequestLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF579E1ED6C936002ED478 /* RequestLocationTests.swift */; };
 		88AF57A31ED6CBA6002ED478 /* UserMovementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF57A21ED6CBA6002ED478 /* UserMovementTests.swift */; };
 		88AF57A71ED6D250002ED478 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF57A61ED6D250002ED478 /* CLLocationCoordinate2D.swift */; };
+		88AF57AA1ED6F8E3002ED478 /* CLLocationCoordinate2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AF57A91ED6F8E3002ED478 /* CLLocationCoordinate2D.swift */; };
 		88B4E06F1E59D2780004C839 /* SpecTimeZoneProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */; };
 		88B4E0711E59D35E0004C839 /* SpecDateProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */; };
 		88B4E0731E59D6920004C839 /* SpecTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4E0721E59D6920004C839 /* SpecTimerTests.swift */; };
@@ -134,6 +135,7 @@
 		88AF579E1ED6C936002ED478 /* RequestLocationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestLocationTests.swift; sourceTree = "<group>"; };
 		88AF57A21ED6CBA6002ED478 /* UserMovementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMovementTests.swift; sourceTree = "<group>"; };
 		88AF57A61ED6D250002ED478 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
+		88AF57A91ED6F8E3002ED478 /* CLLocationCoordinate2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2D.swift; sourceTree = "<group>"; };
 		88B4E06E1E59D2780004C839 /* SpecTimeZoneProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimeZoneProviderTests.swift; sourceTree = "<group>"; };
 		88B4E0701E59D35E0004C839 /* SpecDateProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecDateProviderTests.swift; sourceTree = "<group>"; };
 		88B4E0721E59D6920004C839 /* SpecTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTimerTests.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				88FED3F21E5868ED00217628 /* SpecDialogManager */,
 				88FED3FC1E58C51D00217628 /* SpecLocationManager */,
 				88FED4301E59C53B00217628 /* Utilities */,
+				88AF57A81ED6F8C4002ED478 /* Extensions */,
 				885EC13F1E338EBD00A61FA1 /* Supporting Files */,
 			);
 			name = Source;
@@ -343,6 +346,14 @@
 				88AF579C1ED6C8F0002ED478 /* StartUpdatingLocationTests.swift */,
 			);
 			name = "Getting Location";
+			sourceTree = "<group>";
+		};
+		88AF57A81ED6F8C4002ED478 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				88AF57A91ED6F8E3002ED478 /* CLLocationCoordinate2D.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		88D2C8C31E562F8B0065882D /* SpecLocationManager */ = {
@@ -581,6 +592,7 @@
 				88FED4061E58DEA500217628 /* SpecMulticaster.swift in Sources */,
 				88FED40C1E59B76700217628 /* SpecTimeZoneProvider.swift in Sources */,
 				88FED4281E59C38300217628 /* SpecURLSession.swift in Sources */,
+				88AF57AA1ED6F8E3002ED478 /* CLLocationCoordinate2D.swift in Sources */,
 				88FED4181E59BDF800217628 /* SpecTimerFactory.swift in Sources */,
 				88FED40A1E58F56300217628 /* SpecUserLocation.swift in Sources */,
 				882004241E8994EC005F43C9 /* UIAlertController+HolistiKit.swift in Sources */,
