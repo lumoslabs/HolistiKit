@@ -23,10 +23,15 @@ public class SpecURLSession: URLSessionProtocol {
     }
 
     public func respond(to requestIdentifier: SpecURLRequestIdentifier, with response: SpecURLSessionDataTask.Response) {
+        respond(to: requestIdentifier) { _ in return response }
+    }
+
+    public func respond(to requestIdentifier: SpecURLRequestIdentifier, using callback: (URLRequest) -> SpecURLSessionDataTask.Response) {
         guard let request = firstRunningRequest(for: requestIdentifier) else {
             errorHandler.error(.noSuchURLRequestInProgress(requestIdentifier, requests))
             return
         }
+        let response = callback(request.originalRequest!)
         request.finish(withResponse: response)
     }
     

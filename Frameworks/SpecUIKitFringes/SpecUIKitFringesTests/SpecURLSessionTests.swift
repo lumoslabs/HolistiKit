@@ -36,6 +36,36 @@ class SpecURLSessionTests: XCTestCase {
         XCTAssertNil(receivedError)
     }
 
+    func test_usingRespondingToARequestUsingACallback() {
+        let url = URL(string: "http://www.google.com")!
+        var request = URLRequest(url: url)
+        var receivedData: Data?
+        var receivedURLResponse: URLResponse?
+        var receivedError: Error?
+        let params = ["someKey": "someValue"]
+        request.httpBody = try! JSONSerialization.data(withJSONObject: params)
+        let task = subject.dataTask(with: request) { (data, urlResponse, error) in
+            receivedData = data
+            receivedURLResponse = urlResponse
+            receivedError = error
+        }
+        task.resume()
+
+        let requestIdentifier = SpecURLRequestIdentifier(url: "http://www.google.com", method: .get)
+        let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 1, textEncodingName: nil)
+        subject.respond(to: requestIdentifier) { request in
+            let body = try! JSONSerialization.jsonObject(with: request.httpBody!, options: []) as! [String: String]
+            let json = ["saw": body.keys.first]
+            let data = try! JSONSerialization.data(withJSONObject: json)
+            return (data, urlResponse, nil)
+        }
+
+        let receivedBody = try! JSONSerialization.jsonObject(with: receivedData!, options: []) as! [String: String]
+        XCTAssertEqual(receivedBody, ["saw": "someKey"])
+        XCTAssertEqual(receivedURLResponse, urlResponse)
+        XCTAssertNil(receivedError)
+    }
+
     func test_respondingToARequestWithMatchingHTTPMethod() {
         let urlString = "http://www.google.com"
         let url = URL(string: urlString)!
