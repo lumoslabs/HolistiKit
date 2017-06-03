@@ -35,7 +35,8 @@ class SpecErrorHandler {
             case .notAValidDialogResponse:
                 return "The dialog has no such available response"
             case .noSuchURLRequestInProgress(let id, let requests):
-                return "There was no such URL request in the app at the moment for \(id). Running requests were: \(requests)"
+                let requestsWithNewlines = requests.map { String(describing: $0) }.joined(separator: "\n")
+                return "There was no such URL request in the app at the moment for:\n\(id)\nRunning requests were:\n\(requestsWithNewlines)"
             case .noSuchPreferencesSpecifier(let specifier, let specifiers):
                 return "There is no such Preferences Specifier in the Settings Bundle for \(specifier). Available specifiers are \(specifiers)"
             }

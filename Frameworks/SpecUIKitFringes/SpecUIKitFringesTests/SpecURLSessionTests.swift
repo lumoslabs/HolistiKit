@@ -113,14 +113,32 @@ class SpecURLSessionTests: XCTestCase {
         XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress(requestIdentifier, [otherTask]))
     }
 
+    func test_respondingToAFinishedRequest() {
+        let url = URL(string: "http://www.google.com")!
+        let request = URLRequest(url: url)
+        let task = subject.dataTask(with: request) { _ in  }
+        task.resume()
+
+        let requestIdentifier = SpecURLRequestIdentifier(url: "http://www.google.com", method: .get)
+        let urlResponse = URLResponse(url: url, mimeType: nil, expectedContentLength: 0, textEncodingName: nil)
+        subject.respond(to: requestIdentifier, with: (Data(), urlResponse, nil))
+
+        errorHandler.fatalErrorsOff {
+            subject.respond(to: requestIdentifier, with: (Data(), urlResponse, nil))
+        }
+        XCTAssertEqual(errorHandler.recordedError, .noSuchURLRequestInProgress(requestIdentifier, []))
+    }
+
     func test_fatalErrorDescription() {
         let requestIdentifier = SpecURLRequestIdentifier(url: "http://www.google.com", method: .get)
+        
         let otherURL = URL(string: "http://www.someOtherURL.com")!
         let otherRequest = URLRequest(url: otherURL)
         let otherTask = subject.dataTask(with: otherRequest) { _ in  }
+        
         let error = SpecErrorHandler.FatalError.noSuchURLRequestInProgress(requestIdentifier, [otherTask])
         XCTAssertEqual(error.description,
-                       "There was no such URL request in the app at the moment for (http://www.google.com, GET). Running requests were: [(http://www.someOtherURL.com, GET)]")
+                       "There was no such URL request in the app at the moment for:\n(http://www.google.com, GET)\nRunning requests were:\n(http://www.someOtherURL.com, GET)")
 
     }
 }

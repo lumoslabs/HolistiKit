@@ -27,12 +27,13 @@ public class SpecURLSession: URLSessionProtocol {
     }
 
     public func respond(to requestIdentifier: SpecURLRequestIdentifier, using callback: (URLRequest) -> SpecURLSessionDataTask.Response) {
-        guard let request = firstRunningRequest(for: requestIdentifier) else {
-            errorHandler.error(.noSuchURLRequestInProgress(requestIdentifier, requests))
+        let runningRequests = requests.running
+        guard let matchingRequest = runningRequests.matching(requestIdentifier).first else {
+            errorHandler.error(.noSuchURLRequestInProgress(requestIdentifier, runningRequests))
             return
         }
-        let response = callback(request.originalRequest!)
-        request.finish(withResponse: response)
+        let response = callback(matchingRequest.originalRequest!)
+        matchingRequest.finish(withResponse: response)
     }
     
     private func firstRunningRequest(for requestIdentifier: SpecURLRequestIdentifier) -> SpecURLSessionDataTask? {
