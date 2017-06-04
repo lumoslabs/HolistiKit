@@ -3,7 +3,7 @@ import UIKitFringes
 
 public class SpecTimer: Timing {
 
-    public typealias TimerBlock = () -> Void
+    public typealias TimerBlock = (Timing) -> Void
 
     private let dateProvider: SpecDateProvider
     private var block: TimerBlock?
@@ -34,7 +34,7 @@ public class SpecTimer: Timing {
 
     private func execute() {
         lastFiredDate = dateProvider.date
-        block?()
+        block?(self)
     }
 
     private var shouldExecute: Bool {

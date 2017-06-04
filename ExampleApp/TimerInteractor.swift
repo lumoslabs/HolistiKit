@@ -24,7 +24,7 @@ class TimerInteractor {
 
     private func startUpdatingDate() {
         updateDate()
-        timer = timerFactory.createScheduledTimer(withTimeInterval: timerInterval, repeats: true) { [weak self] in
+        timer = timerFactory.createScheduledTimer(withTimeInterval: timerInterval, repeats: true) { [weak self] _ in
             self?.updateDate()
         }
     }
