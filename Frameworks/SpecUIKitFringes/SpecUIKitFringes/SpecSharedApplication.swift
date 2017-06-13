@@ -3,7 +3,7 @@ import UIKitFringes
 
 public class SpecSharedApplication: ApplicationProtocol {
 
-    private(set) var openedURL: URL?
+    public private(set) var openedURL: URL?
     private weak var system: SpecSystem!
 
     public init(system: SpecSystem) {
