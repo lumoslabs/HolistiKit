@@ -1,8 +1,9 @@
-import Foundation
+import UIKit
 import UIKitFringes
 
 public class SpecSharedApplication: ApplicationProtocol {
 
+    private(set) var openedURL: URL?
     private weak var system: SpecSystem!
 
     public init(system: SpecSystem) {
@@ -14,8 +15,10 @@ public class SpecSharedApplication: ApplicationProtocol {
     public func openURL(_ url: URL) -> Bool {
         if url == URL(string: UIApplicationOpenSettingsURLString)! {
             system.jumpToSettings()
-            return true
+        } else {
+            system.jumpToOtherApp()
         }
-        fatalError("Add tests/implement other URL handling once it's needed.")
+        openedURL = url
+        return true
     }
 }

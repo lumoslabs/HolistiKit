@@ -22,6 +22,20 @@ class SpecSharedApplicationTests: XCTestCase {
         XCTAssertFalse(subject.isNetworkActivityIndicatorVisible)
     }
 
+    func test_openURLWithHTTPURL() {
+        system.tapAppIcon()
+        recorder.removeAllEvents()
+        let url = URL(string: "https://www.google.com")!
+        let returnValue = subject.openURL(url)
+        XCTAssertTrue(returnValue)
+        XCTAssertEqual(system.location, .otherApp)
+        XCTAssertEqual(recorder.events, [.applicationWillResignActive,
+                                         .notification(.UIApplicationWillResignActive),
+                                         .applicationDidEnterBackground,
+                                         .notification(.UIApplicationDidEnterBackground)])
+        XCTAssertEqual(subject.openedURL, url)
+    }
+
     func test_openURLWithSettingsURL() {
         system.tapAppIcon()
         recorder.removeAllEvents()
@@ -33,5 +47,6 @@ class SpecSharedApplicationTests: XCTestCase {
                                          .notification(.UIApplicationWillResignActive),
                                          .applicationDidEnterBackground,
                                          .notification(.UIApplicationDidEnterBackground)])
+        XCTAssertEqual(subject.openedURL, url)
     }
 }

@@ -31,6 +31,7 @@ open class SpecSystem {
         case app
         case appSwitcher
         case settingsApp
+        case otherApp
     }
 
     public struct AppDelegateBundle {
@@ -116,7 +117,7 @@ open class SpecSystem {
             move(to: .springBoard)
         case .settingsApp:
             move(to: .springBoard)
-        case .springBoard:
+        case .springBoard, .otherApp:
             break;
         }
     }
@@ -137,7 +138,7 @@ open class SpecSystem {
         case .app:
             applicationWillResignActive()
             move(to: .appSwitcher)
-        case .springBoard, .settingsApp:
+        case .springBoard, .settingsApp, .otherApp:
             move(to: .appSwitcher)
         }
     }
@@ -162,6 +163,12 @@ open class SpecSystem {
         applicationWillResignActive()
         applicationDidEnterBackground()
         move(to: .settingsApp)
+    }
+
+    internal func jumpToOtherApp() {
+        applicationWillResignActive()
+        applicationDidEnterBackground()
+        move(to: .otherApp)
     }
 
     private func move(to location: Location) {
