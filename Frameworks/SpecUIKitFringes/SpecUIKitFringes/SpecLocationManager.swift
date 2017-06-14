@@ -6,7 +6,6 @@ import UIKitFringes
 public class SpecLocationManager {
 
     public weak var delegate: CLLocationManagerDelegate?
-    public var location: CLLocation? { return userLocation.location }
 
     fileprivate let userLocation: SpecUserLocation
     fileprivate let dialogManager: SpecDialogManager
@@ -101,6 +100,15 @@ extension SpecLocationManager {
 
 // MARK: LocationManaging
 extension SpecLocationManager: LocationManaging {
+
+    public var location: CLLocation? {
+        switch authorizationStatus() {
+        case .authorizedAlways, .authorizedWhenInUse:
+            return userLocation.location
+        case .denied, .notDetermined, .restricted:
+            return nil
+        }
+    }
 
     public func requestWhenInUseAuthorization() {
         switch authorizationStatus() {
