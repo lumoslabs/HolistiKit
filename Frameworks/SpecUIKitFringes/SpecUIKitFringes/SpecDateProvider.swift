@@ -21,7 +21,7 @@ public class SpecDateProvider: DateProviding {
         }
     }
     
-    func observe(on observer: Any, selector: Selector) {
+    public func observe(on observer: Any, selector: Selector) {
         notifier.observe(on: observer, selector: selector)
     }
 }
