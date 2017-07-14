@@ -18,13 +18,13 @@ extension UIWindow {
             if let previous = _rootViewController {
                 _rootViewController = newValue
                 previous.viewWillDisappear(false)
-                newValue?.viewDidLoad()
+                _ = newValue?.view
                 newValue?.viewWillAppear(false)
                 previous.viewDidDisappear(false)
                 newValue?.viewDidAppear(false)
             } else {
                 _rootViewController = newValue
-                newValue?.viewDidLoad()
+                _ = newValue?.view
                 newValue?.viewWillAppear(false)
                 newValue?.viewDidAppear(false)
             }
