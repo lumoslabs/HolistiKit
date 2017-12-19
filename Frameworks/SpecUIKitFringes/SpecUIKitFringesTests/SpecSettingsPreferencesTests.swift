@@ -34,7 +34,7 @@ class SpecSettingsPreferencesTests: XCTestCase {
         }
         XCTAssertEqual(errorHandler.recordedError,
                        .noSuchPreferencesSpecifier(.toggleSwitch("i_dont_exist"),
-                                                   [.group, .toggleSwitch("switch_key_1")]))
+                                                   [.unsupported, .group, .toggleSwitch("switch_key_1")]))
     }
 
     func test_fatalErrorDescription() {

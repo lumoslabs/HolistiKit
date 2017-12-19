@@ -49,19 +49,20 @@ public class SpecSettingsPreferences {
         switch type {
         case "PSGroupSpecifier": return .group
         case "PSToggleSwitchSpecifier": return .toggleSwitch(key!)
-        default:
-            fatalError("Preference Specifier type '\(type)' is not supported.")
+        default: return .unsupported
         }
     }
 
     enum Specifier: CustomStringConvertible {
         case group
         case toggleSwitch(String)
+        case unsupported
 
         public var description: String {
             switch self {
             case .group: return "group"
             case .toggleSwitch(let key): return "toggleSwitch(\(key))"
+            case .unsupported: return "unsupported"
             }
         }
     }
