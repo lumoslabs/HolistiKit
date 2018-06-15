@@ -62,7 +62,7 @@ extension UIViewController {
         set { objc_setAssociatedObject(self, &_presentingViewControllerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
 
-    internal var _navigationController: UINavigationController? {
+    @objc internal var _navigationController: UINavigationController? {
         get { return objc_getAssociatedObject(self, &_navigationControllerKey) as? UINavigationController }
         set { objc_setAssociatedObject(self, &_navigationControllerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
