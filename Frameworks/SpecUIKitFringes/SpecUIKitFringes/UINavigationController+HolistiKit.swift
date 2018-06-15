@@ -1,8 +1,8 @@
 import UIKit
 
 extension UINavigationController {
-
-    open override class func initialize() {
+    
+    open class func setupTestSwizzleNav() {
         guard self === UINavigationController.self else { return }
         [(#selector(UINavigationController.pushViewController(_:animated:)),
           #selector(UINavigationController.holistikit_pushViewController(_:animated:))),

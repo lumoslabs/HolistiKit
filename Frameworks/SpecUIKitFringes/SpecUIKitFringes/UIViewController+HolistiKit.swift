@@ -2,7 +2,7 @@ import UIKit
 
 extension UIViewController {
 
-    open override class func initialize() {
+    open class func setupTestSwizzle() {
         guard self === UIViewController.self else { return }
         [(#selector(UIViewController.present(_:animated:completion:)),
           #selector(UIViewController.holistikit_present(_:animated:completion:))),

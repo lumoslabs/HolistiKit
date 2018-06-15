@@ -2,7 +2,7 @@ import UIKit
 
 extension UIWindow {
 
-    open override class func initialize() {
+    open class func setupTestSwizzle() {
         guard self === UIWindow.self else { return }
         [(#selector(setter: UIWindow.rootViewController),
           #selector(setter: UIWindow.holistikit_rootViewController)),
