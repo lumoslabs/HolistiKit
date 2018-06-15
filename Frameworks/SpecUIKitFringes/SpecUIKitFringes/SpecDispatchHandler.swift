@@ -19,7 +19,7 @@ public class SpecDispatchHandler: DispatchHandling {
     @objc
     private func dateDidChange() {
         let currentDate = dateProvider.date
-        asyncBlocks = asyncBlocks.flatMap { asyncBlock in
+        asyncBlocks = asyncBlocks.compactMap { asyncBlock in
             if currentDate >= asyncBlock.date {
                 asyncBlock.block()
                 return nil
