@@ -2,6 +2,9 @@ import Foundation
 import UIKitFringes
 
 public class SpecUserDefaults: UserDefaulting {
+    public func removeObject(forKey defaultName: String) {
+        store.removeValue(forKey: defaultName)
+    }
 
     private let notificationCenter: NotificationCentering
     private var store = [String : Any?]()
