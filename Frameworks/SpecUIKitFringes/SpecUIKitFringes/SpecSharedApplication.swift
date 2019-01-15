@@ -13,7 +13,7 @@ public class SpecSharedApplication: ApplicationProtocol {
     public var isNetworkActivityIndicatorVisible: Bool = false
     
     public func openURL(_ url: URL) -> Bool {
-        if url == URL(string: UIApplicationOpenSettingsURLString)! {
+        if url == URL(string: UIApplication.openSettingsURLString)! {
             system.jumpToSettings()
         } else {
             system.jumpToOtherApp()

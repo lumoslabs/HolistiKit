@@ -79,32 +79,32 @@ open class SpecSystem {
 
     private func applicationWillEnterForeground() {
         appDelegate.applicationWillEnterForeground()
-        notificationCenter.post(name: .UIApplicationWillEnterForeground, object: nil)
+        notificationCenter.post(name: UIApplication.willEnterForegroundNotification, object: nil)
     }
 
     private func applicationDidLaunch() {
         appDelegate.applicationDidLaunch()
-        notificationCenter.post(name: .UIApplicationDidFinishLaunching, object: nil)
+        notificationCenter.post(name: UIApplication.didFinishLaunchingNotification, object: nil)
     }
 
     private func applicationDidBecomeActive() {
         appDelegate.applicationDidBecomeActive()
-        notificationCenter.post(name: .UIApplicationDidBecomeActive, object: nil)
+        notificationCenter.post(name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     private func applicationDidEnterBackground() {
         appDelegate.applicationDidEnterBackground()
-        notificationCenter.post(name: .UIApplicationDidEnterBackground, object: nil)
+        notificationCenter.post(name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
     private func applicationWillTerminate() {
         appDelegate.applicationWillTerminate()
-        notificationCenter.post(name: .UIApplicationWillTerminate, object: nil)
+        notificationCenter.post(name: UIApplication.willTerminateNotification, object: nil)
     }
     
     private func applicationWillResignActive() {
         appDelegate.applicationWillResignActive()
-        notificationCenter.post(name: .UIApplicationWillResignActive, object: nil)
+        notificationCenter.post(name: UIApplication.willResignActiveNotification, object: nil)
     }
 
     public func tapHomeButton() {
