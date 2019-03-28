@@ -190,7 +190,7 @@
 				TargetAttributes = {
 					88A1E1661E337FE300CFA0CD = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					88A1E16F1E337FE300CFA0CD = {
@@ -204,6 +204,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 88A1E15D1E337FE300CFA0CD;
@@ -339,8 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.solidcell.UIKitFringes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Adhoc;
 		};
@@ -489,8 +489,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -509,8 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.solidcell.UIKitFringes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
