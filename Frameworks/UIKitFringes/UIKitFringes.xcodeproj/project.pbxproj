@@ -18,6 +18,8 @@
 		88FED4121E59BA3500217628 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED4111E59BA3500217628 /* DateProvider.swift */; };
 		88FED41B1E59BE6B00217628 /* ScheduledTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED41A1E59BE6B00217628 /* ScheduledTimer.swift */; };
 		88FED42B1E59C3C300217628 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED42A1E59C3C300217628 /* URLSessionProtocol.swift */; };
+		DB40E329225EAD69003A1107 /* NotificationCentering.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40E328225EAD69003A1107 /* NotificationCentering.swift */; };
+		DB40E32B225EAD90003A1107 /* OperationQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40E32A225EAD90003A1107 /* OperationQueueProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		88FED4111E59BA3500217628 /* DateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		88FED41A1E59BE6B00217628 /* ScheduledTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduledTimer.swift; sourceTree = "<group>"; };
 		88FED42A1E59C3C300217628 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		DB40E328225EAD69003A1107 /* NotificationCentering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCentering.swift; sourceTree = "<group>"; };
+		DB40E32A225EAD90003A1107 /* OperationQueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 				88FED42A1E59C3C300217628 /* URLSessionProtocol.swift */,
 				88D2C8B01E562C600065882D /* CLLocationManager.swift */,
 				88AF579A1ED1BAE7002ED478 /* LocaleProvider.swift */,
+				DB40E328225EAD69003A1107 /* NotificationCentering.swift */,
+				DB40E32A225EAD90003A1107 /* OperationQueueProtocol.swift */,
 				88A1E1841E3381AE00CFA0CD /* Supporting Files */,
 			);
 			name = Source;
@@ -239,9 +245,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB40E329225EAD69003A1107 /* NotificationCentering.swift in Sources */,
 				882004161E831F4E005F43C9 /* DispatchHandler.swift in Sources */,
 				88FED42B1E59C3C300217628 /* URLSessionProtocol.swift in Sources */,
 				88FED4121E59BA3500217628 /* DateProvider.swift in Sources */,
+				DB40E32B225EAD90003A1107 /* OperationQueueProtocol.swift in Sources */,
 				88FED41B1E59BE6B00217628 /* ScheduledTimer.swift in Sources */,
 				882D6E8A1E910BB900A12BB7 /* UserDefaults.swift in Sources */,
 				885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */,

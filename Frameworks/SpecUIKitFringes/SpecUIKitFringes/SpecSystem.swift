@@ -1,3 +1,5 @@
+import UIKitFringes
+
 open class SpecSystem {
 
     let locationServices = SpecLocationServices()
