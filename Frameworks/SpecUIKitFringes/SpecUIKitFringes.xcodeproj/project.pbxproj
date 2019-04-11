@@ -63,7 +63,6 @@
 		88EAAF231E76FEF100C2B769 /* UINavigationController+HolistiKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88EAAF221E76FEF100C2B769 /* UINavigationController+HolistiKit.swift */; };
 		88F5D39A1EBDD93F0095BFBE /* SpecSettingsPreferencesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D3991EBDD93F0095BFBE /* SpecSettingsPreferencesTests.swift */; };
 		88F5D3A91EBE0C0E0095BFBE /* SpecSettingsPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D39B1EBDD9A30095BFBE /* SpecSettingsPreferences.swift */; };
-		88F5D3AF1EBE28C40095BFBE /* NotificationCentering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D3AE1EBE28C40095BFBE /* NotificationCentering.swift */; };
 		88F5D3B11EBE2A930095BFBE /* SpecNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D3B01EBE2A930095BFBE /* SpecNotificationCenter.swift */; };
 		88F5D3B31EBE44C80095BFBE /* SettingsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F5D3B21EBE44C80095BFBE /* SettingsAppTests.swift */; };
 		88F5D3B71EBF4B1A0095BFBE /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 88F5D3B61EBF4B1A0095BFBE /* Settings.bundle */; };
@@ -155,7 +154,6 @@
 		88EAAF221E76FEF100C2B769 /* UINavigationController+HolistiKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+HolistiKit.swift"; sourceTree = "<group>"; };
 		88F5D3991EBDD93F0095BFBE /* SpecSettingsPreferencesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSettingsPreferencesTests.swift; sourceTree = "<group>"; };
 		88F5D39B1EBDD9A30095BFBE /* SpecSettingsPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecSettingsPreferences.swift; sourceTree = "<group>"; };
-		88F5D3AE1EBE28C40095BFBE /* NotificationCentering.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCentering.swift; sourceTree = "<group>"; };
 		88F5D3B01EBE2A930095BFBE /* SpecNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecNotificationCenter.swift; sourceTree = "<group>"; };
 		88F5D3B21EBE44C80095BFBE /* SettingsAppTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsAppTests.swift; sourceTree = "<group>"; };
 		88F5D3B61EBF4B1A0095BFBE /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -455,7 +453,6 @@
 			children = (
 				88FED4051E58DEA500217628 /* SpecMulticaster.swift */,
 				883E43721E3CF9880051BD21 /* SpecErrorHandler.swift */,
-				88F5D3AE1EBE28C40095BFBE /* NotificationCentering.swift */,
 				883BC3E81E75A18600B2D7DB /* Swizzle.swift */,
 			);
 			name = Utilities;
@@ -581,7 +578,6 @@
 				88FED4041E58D39700217628 /* SpecLocationManagerFactory.swift in Sources */,
 				882D6E8E1E912AC000A12BB7 /* SpecUserDefaults.swift in Sources */,
 				883BC3F51E75AEB800B2D7DB /* UIWindow+HolistiKit.swift in Sources */,
-				88F5D3AF1EBE28C40095BFBE /* NotificationCentering.swift in Sources */,
 				88FED3F81E5870CD00217628 /* SpecDialog.swift in Sources */,
 				88D2C8E41E56E3B40065882D /* SpecDialogManager.swift in Sources */,
 				88FED4001E58CDC000217628 /* SpecLocationAuthorizationStatus.swift in Sources */,
