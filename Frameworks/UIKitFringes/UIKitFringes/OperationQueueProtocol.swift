@@ -14,6 +14,7 @@ public protocol OperationQueueProtocol {
     var operations: [Operation] {get}
     func realQueue() -> OperationQueue
     var maxConcurrentOperationCount: Int {get set}
+    var isSuspended: Bool {get set}
 }
 
 extension OperationQueue: OperationQueueProtocol {
