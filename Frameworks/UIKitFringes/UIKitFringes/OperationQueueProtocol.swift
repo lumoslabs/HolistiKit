@@ -10,7 +10,10 @@ import Foundation
 
 public protocol OperationQueueProtocol {
     func addOperation(_ block: @escaping () -> Swift.Void)
+    func addOperation(_ op: Operation)
+    var operations: [Operation] {get}
     func realQueue() -> OperationQueue
+    var maxConcurrentOperationCount: Int {get set}
 }
 
 extension OperationQueue: OperationQueueProtocol {
