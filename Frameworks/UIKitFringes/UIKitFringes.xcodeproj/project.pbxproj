@@ -20,6 +20,7 @@
 		88FED42B1E59C3C300217628 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED42A1E59C3C300217628 /* URLSessionProtocol.swift */; };
 		DB40E329225EAD69003A1107 /* NotificationCentering.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40E328225EAD69003A1107 /* NotificationCentering.swift */; };
 		DB40E32B225EAD90003A1107 /* OperationQueueProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB40E32A225EAD90003A1107 /* OperationQueueProtocol.swift */; };
+		DBEFA02A228CD41B00953B21 /* RunLoopProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEFA029228CD41B00953B21 /* RunLoopProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		88FED42A1E59C3C300217628 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		DB40E328225EAD69003A1107 /* NotificationCentering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCentering.swift; sourceTree = "<group>"; };
 		DB40E32A225EAD90003A1107 /* OperationQueueProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueueProtocol.swift; sourceTree = "<group>"; };
+		DBEFA029228CD41B00953B21 /* RunLoopProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLoopProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				DB40E328225EAD69003A1107 /* NotificationCentering.swift */,
 				DB40E32A225EAD90003A1107 /* OperationQueueProtocol.swift */,
 				88A1E1841E3381AE00CFA0CD /* Supporting Files */,
+				DBEFA029228CD41B00953B21 /* RunLoopProtocol.swift */,
 			);
 			name = Source;
 			path = UIKitFringes;
@@ -210,6 +213,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 88A1E15D1E337FE300CFA0CD;
@@ -254,6 +258,7 @@
 				882D6E8A1E910BB900A12BB7 /* UserDefaults.swift in Sources */,
 				885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */,
 				88AF579B1ED1BAE7002ED478 /* LocaleProvider.swift in Sources */,
+				DBEFA02A228CD41B00953B21 /* RunLoopProtocol.swift in Sources */,
 				88FED40E1E59B7AF00217628 /* TimeZoneProvider.swift in Sources */,
 				88D2C8B11E562C600065882D /* CLLocationManager.swift in Sources */,
 			);
