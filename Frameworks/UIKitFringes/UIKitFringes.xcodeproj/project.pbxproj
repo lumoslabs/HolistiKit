@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DEB0E83229F381E00BE47B0 /* UNNotificationSettingsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEB0E82229F381E00BE47B0 /* UNNotificationSettingsProtocol.swift */; };
 		882004161E831F4E005F43C9 /* DispatchHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882004151E831F4E005F43C9 /* DispatchHandler.swift */; };
 		882D6E8A1E910BB900A12BB7 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882D6E891E910BB900A12BB7 /* UserDefaults.swift */; };
 		885EC10D1E3384BB00A61FA1 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885EC1091E3384BB00A61FA1 /* UIApplication.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4DEB0E82229F381E00BE47B0 /* UNNotificationSettingsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationSettingsProtocol.swift; sourceTree = "<group>"; };
 		882004151E831F4E005F43C9 /* DispatchHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchHandler.swift; sourceTree = "<group>"; };
 		882D6E891E910BB900A12BB7 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		885EC1091E3384BB00A61FA1 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				DB40E32A225EAD90003A1107 /* OperationQueueProtocol.swift */,
 				88A1E1841E3381AE00CFA0CD /* Supporting Files */,
 				DBEFA029228CD41B00953B21 /* RunLoopProtocol.swift */,
+				4DEB0E82229F381E00BE47B0 /* UNNotificationSettingsProtocol.swift */,
 			);
 			name = Source;
 			path = UIKitFringes;
@@ -251,6 +254,7 @@
 			files = (
 				DB40E329225EAD69003A1107 /* NotificationCentering.swift in Sources */,
 				882004161E831F4E005F43C9 /* DispatchHandler.swift in Sources */,
+				4DEB0E83229F381E00BE47B0 /* UNNotificationSettingsProtocol.swift in Sources */,
 				88FED42B1E59C3C300217628 /* URLSessionProtocol.swift in Sources */,
 				88FED4121E59BA3500217628 /* DateProvider.swift in Sources */,
 				DB40E32B225EAD90003A1107 /* OperationQueueProtocol.swift in Sources */,
